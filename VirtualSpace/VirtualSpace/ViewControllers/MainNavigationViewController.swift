@@ -21,10 +21,10 @@ extension MainNavigationController {
 
     private func setUpNavigation() {
         self.setRoot()
-//        self.removeBackTitleButtonColor()
-//        self.ChangeBackTitleButtonColor()
-//        self.setSmallTitleFont()
-//        self.setNavigationBarWhenScrollViewController()
+        self.removeBackTitleButtonColor()
+        self.ChangeBackTitleButtonColor()
+        self.setSmallTitleFont()
+        self.setNavigationBarWhenScrollViewController()
     }
 
     private func removeBackTitleButtonColor() {
@@ -33,16 +33,16 @@ extension MainNavigationController {
     }
 
     private func ChangeBackTitleButtonColor() {
-        UIBarButtonItem.appearance().tintColor = .black
+        UIBarButtonItem.appearance().tintColor = .color_000000
     }
 
     private func setSmallTitleFont() {
-//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: <#Color#>, NSAttributedString.Key.font: <#Font#>]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.color_000000, NSAttributedString.Key.font: UIFont.poppinsRegular17]
     }
 
-    private func removeShadow() {
-        UINavigationBar.appearance().shadowImage = UIImage.init()
-    }
+//    private func removeShadow() {
+//        UINavigationBar.appearance().shadowImage = UIImage.init()
+//    }
 
     private func setNavigationBarWhenScrollViewController() {
         UINavigationBar.appearance().barTintColor = .white
@@ -59,8 +59,8 @@ extension MainNavigationController {
     }
 
     static func showFirstView() {
-//        let vc = <#ViewController#>()
-//        vc._rootPush()
+        let vc = AuthenticationViewController()
+        vc._rootPush()
     }
 
 }

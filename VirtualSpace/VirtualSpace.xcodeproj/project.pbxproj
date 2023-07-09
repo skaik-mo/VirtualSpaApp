@@ -24,7 +24,16 @@
 		E7373F7D2A5AC9B5007A1186 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F7C2A5AC9B5007A1186 /* UIView.swift */; };
 		E7373F7F2A5AC9B5007A1186 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F7E2A5AC9B5007A1186 /* UIViewController.swift */; };
 		E7373F852A5AC9B5007A1186 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7373F842A5AC9B5007A1186 /* Assets.xcassets */; };
-		E7373F882A5AC9B5007A1186 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7373F862A5AC9B5007A1186 /* LaunchScreen.storyboard */; };
+		E75636322A5AD1410008C91B /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75636302A5AD1410008C91B /* AuthenticationViewController.swift */; };
+		E75636332A5AD1410008C91B /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75636312A5AD1410008C91B /* AuthenticationViewController.xib */; };
+		E75636362A5AD2EF0008C91B /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E75636352A5AD2EF0008C91B /* Poppins-Medium.ttf */; };
+		E75636382A5AD3040008C91B /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E75636372A5AD3040008C91B /* Poppins-Regular.ttf */; };
+		E756363A2A5AD4E00008C91B /* UIButton+style.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75636392A5AD4E00008C91B /* UIButton+style.swift */; };
+		E756363C2A5AE26A0008C91B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E756363B2A5AE26A0008C91B /* Launch Screen.storyboard */; };
+		E75636402A5AE4860008C91B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756363E2A5AE4860008C91B /* SignUpViewController.swift */; };
+		E75636412A5AE4860008C91B /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E756363F2A5AE4860008C91B /* SignUpViewController.xib */; };
+		E75636452A5AE49E0008C91B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75636432A5AE49E0008C91B /* SignInViewController.swift */; };
+		E75636462A5AE49E0008C91B /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75636442A5AE49E0008C91B /* SignInViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +55,17 @@
 		E7373F7C2A5AC9B5007A1186 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E7373F7E2A5AC9B5007A1186 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		E7373F842A5AC9B5007A1186 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E7373F872A5AC9B5007A1186 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7373F892A5AC9B5007A1186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E75636302A5AD1410008C91B /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		E75636312A5AD1410008C91B /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
+		E75636352A5AD2EF0008C91B /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		E75636372A5AD3040008C91B /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		E75636392A5AD4E00008C91B /* UIButton+style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+style.swift"; sourceTree = "<group>"; };
+		E756363B2A5AE26A0008C91B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		E756363E2A5AE4860008C91B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		E756363F2A5AE4860008C91B /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		E75636432A5AE49E0008C91B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		E75636442A5AE49E0008C91B /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +115,9 @@
 			children = (
 				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 				E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */,
+				E75636422A5AE4900008C91B /* SignIn */,
+				E756363D2A5AE4790008C91B /* SignUp */,
+				E756362F2A5AD1360008C91B /* Authentication */,
 				E7373F4A2A5AC9B5007A1186 /* Launch */,
 			);
 			path = ViewControllers;
@@ -194,6 +215,7 @@
 				E7373F7A2A5AC9B5007A1186 /* UITableView.swift */,
 				E7373F7C2A5AC9B5007A1186 /* UIView.swift */,
 				E7373F7E2A5AC9B5007A1186 /* UIViewController.swift */,
+				E75636392A5AD4E00008C91B /* UIButton+style.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -201,7 +223,7 @@
 		E7373F802A5AC9B5007A1186 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				E7373F862A5AC9B5007A1186 /* LaunchScreen.storyboard */,
+				E756363B2A5AE26A0008C91B /* Launch Screen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -209,10 +231,47 @@
 		E7373F8F2A5ACA6A007A1186 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				E75636342A5AD2D30008C91B /* Fonts */,
 				E7373F842A5AC9B5007A1186 /* Assets.xcassets */,
 				E7373F892A5AC9B5007A1186 /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		E756362F2A5AD1360008C91B /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E75636302A5AD1410008C91B /* AuthenticationViewController.swift */,
+				E75636312A5AD1410008C91B /* AuthenticationViewController.xib */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		E75636342A5AD2D30008C91B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E75636372A5AD3040008C91B /* Poppins-Regular.ttf */,
+				E75636352A5AD2EF0008C91B /* Poppins-Medium.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E756363D2A5AE4790008C91B /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				E756363E2A5AE4860008C91B /* SignUpViewController.swift */,
+				E756363F2A5AE4860008C91B /* SignUpViewController.xib */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		E75636422A5AE4900008C91B /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				E75636432A5AE49E0008C91B /* SignInViewController.swift */,
+				E75636442A5AE49E0008C91B /* SignInViewController.xib */,
+			);
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,9 +332,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E75636462A5AE49E0008C91B /* SignInViewController.xib in Resources */,
+				E756363C2A5AE26A0008C91B /* Launch Screen.storyboard in Resources */,
+				E75636332A5AD1410008C91B /* AuthenticationViewController.xib in Resources */,
+				E75636412A5AE4860008C91B /* SignUpViewController.xib in Resources */,
 				E7373F4E2A5AC9B5007A1186 /* LaunchViewController.xib in Resources */,
-				E7373F882A5AC9B5007A1186 /* LaunchScreen.storyboard in Resources */,
+				E75636382A5AD3040008C91B /* Poppins-Regular.ttf in Resources */,
 				E7373F852A5AC9B5007A1186 /* Assets.xcassets in Resources */,
+				E75636362A5AD2EF0008C91B /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,15 +353,19 @@
 				E7373F7D2A5AC9B5007A1186 /* UIView.swift in Sources */,
 				E7373F642A5AC9B5007A1186 /* Strings.swift in Sources */,
 				E7373F7F2A5AC9B5007A1186 /* UIViewController.swift in Sources */,
+				E756363A2A5AD4E00008C91B /* UIButton+style.swift in Sources */,
 				E7373F4C2A5AC9B5007A1186 /* LaunchViewController.swift in Sources */,
 				E7373F732A5AC9B5007A1186 /* UIColor.swift in Sources */,
+				E75636402A5AE4860008C91B /* SignUpViewController.swift in Sources */,
 				E7373F712A5AC9B5007A1186 /* UICollectionView.swift in Sources */,
 				E7373F772A5AC9B5007A1186 /* UIResponder.swift in Sources */,
+				E75636452A5AE49E0008C91B /* SignInViewController.swift in Sources */,
 				E7373F492A5AC9B5007A1186 /* MainNavigationViewController.swift in Sources */,
 				E7373F422A5AC9B5007A1186 /* AppDelegate.swift in Sources */,
 				E7373F752A5AC9B5007A1186 /* UIKitHelpers.swift in Sources */,
 				E7373F792A5AC9B5007A1186 /* UIStoryboard.swift in Sources */,
 				E7373F6F2A5AC9B5007A1186 /* String.swift in Sources */,
+				E75636322A5AD1410008C91B /* AuthenticationViewController.swift in Sources */,
 				E7373F662A5AC9B5007A1186 /* GlobalConstants.swift in Sources */,
 				E7373F442A5AC9B5007A1186 /* SceneDelegate.swift in Sources */,
 				E7373F7B2A5AC9B5007A1186 /* UITableView.swift in Sources */,
@@ -305,17 +373,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		E7373F862A5AC9B5007A1186 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E7373F872A5AC9B5007A1186 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E7373F8A2A5AC9B5007A1186 /* Debug */ = {
@@ -368,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -422,7 +479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -445,8 +502,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,9 +512,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "skaik-mo.VirtualSpace";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -473,8 +534,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -482,9 +544,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "skaik-mo.VirtualSpace";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

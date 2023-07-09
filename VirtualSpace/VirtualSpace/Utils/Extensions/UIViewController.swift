@@ -27,13 +27,6 @@ extension UIViewController {
         }
     }
 
-    class func _instantiateVC<T: UIViewController>(_ storyboard: GlobalConstants.AppStoryboards = .Main) -> T {
-        guard let vc = UIStoryboard.init(name: storyboard.rawValue, bundle: nil).instantiateVC(withIdentifier: self._id) as? T else {
-            fatalError("Couldn't find UIViewController for \(self._id), make sure the view controller is created")
-        }
-        return vc
-    }
-
     func _rootPush() {
         SceneDelegate.shared?.rootNavigationController?.setViewControllers([self], animated: true)
     }

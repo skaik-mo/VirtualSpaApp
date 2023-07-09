@@ -27,10 +27,6 @@ extension String {
         return UIImage.init(named: self)
     }
 
-    var _font: UIFont? {
-        return UIFont(name: self, size: 18)
-    }
-
     var _localizedKey: String {
         return NSLocalizedString(self, comment: "")
     }
