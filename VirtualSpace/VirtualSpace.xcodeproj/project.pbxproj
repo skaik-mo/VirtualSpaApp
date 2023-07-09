@@ -95,9 +95,9 @@
 		E7373F472A5AC9B5007A1186 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 				E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */,
 				E7373F4A2A5AC9B5007A1186 /* Launch */,
-				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
