@@ -95,7 +95,7 @@ extension UIViewController {
         }
 
         alert.addAction(okayAction)
-        alert._presentVC()
+        self.present(alert, animated: true)
     }
 
     func _showAlert(title: String = Strings.ALERT_TITLE, message: String?, buttonTitle1: String = Strings.OK_TITLE, buttonTitle2: String = Strings.CANCEL_TITLE, buttonAction1: @escaping (() -> Void), buttonAction2: (() -> Void)?) {

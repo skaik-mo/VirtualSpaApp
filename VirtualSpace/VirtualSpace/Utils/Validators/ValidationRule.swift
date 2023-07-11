@@ -25,7 +25,7 @@ extension ValidationRule {
             try validate(value)
             return true
         } catch let error {
-            SceneDelegate.shared?.rootNavigationController?._showErrorAlertOK(message: error.localizedDescription)
+            SceneDelegate.shared?._topVC?._showErrorAlertOK(message: error.localizedDescription)
             return false
         }
     }

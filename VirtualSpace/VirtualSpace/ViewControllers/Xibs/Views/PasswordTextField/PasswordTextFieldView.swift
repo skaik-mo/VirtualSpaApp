@@ -29,7 +29,10 @@ class PasswordTextFieldView: UIView {
         }
     }
     var isInvalid: Bool {
-        return CharacterCountValidationRule(field: Strings.PASSWORD_TITLE, minCount: 6, maxCount: nil).hasValidValue(self.textfield._getText)
+        return PasswordValidator().hasValidValue(self.textfield._getText)
+    }
+    var text: String {
+        self.textfield._getText
     }
 
     override init(frame: CGRect) {

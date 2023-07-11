@@ -18,6 +18,12 @@ class PhoneTextFieldView: UIView {
             self.label.text = self.title
         }
     }
+    var text: String {
+        self.textField.phoneNumber ?? ""
+    }
+    var isInvalid: Bool {
+        return PhoneValidator().hasValidValue(self.text)
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -25,10 +25,13 @@ class MainTextView: UIView {
     var isInvalid: Bool {
         switch style {
         case .Email:
-            return RegexValidationRule(field: Strings.EMAIL_TITLE, regex: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").hasValidValue(self.textfield._getText)
+            return EmailValidator().hasValidValue(self.textfield._getText)
         default:
             return NilValidationRule(field: self.label.text ?? "").hasValidValue(self.textfield._getText)
         }
+    }
+    var text: String {
+        self.textfield._getText
     }
 
     enum MainFieldStyle {

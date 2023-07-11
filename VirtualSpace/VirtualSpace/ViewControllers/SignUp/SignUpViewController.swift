@@ -29,6 +29,11 @@ class SignUpViewController: UIViewController {
             self.setUpUserType()
         }
     }
+    private var isEnableSignUp = true {
+        didSet {
+            self.signUpButton.isEnabled = isEnableSignUp
+        }
+    }
 
     // MARK: Init
     init() {
@@ -81,6 +86,7 @@ private extension SignUpViewController {
 
     @IBAction func signUpAction(_ sender: Any) {
         debugPrint(#function)
+        self.signUp()
     }
 }
 
@@ -130,3 +136,31 @@ private extension SignUpViewController {
         self.privacyButton.setAttributedTitle(attributedTitle, for: .normal)
     }
 }
+
+private extension SignUpViewController {
+
+    func validation() -> Bool {
+        guard self.nameTextField.isInvalid else { return false }
+        guard self.emailTextField.isInvalid else { return false }
+        guard self.phoneTextField.isInvalid else { return false }
+        guard self.passwordTextField.isInvalid else { return false }
+        return true
+    }
+
+    func getAuth() -> GlobalConstants.UserType {
+        return self.type
+    }
+
+    func signUp() {
+        self.isEnableSignUp = false
+        guard validation() else {
+            self.isEnableSignUp = true
+            return
+        }
+        AuthController().saveAuth(auth: getAuth())
+        MainNavigationController.showFirstView()
+        self.isEnableSignUp = true
+    }
+
+}
+

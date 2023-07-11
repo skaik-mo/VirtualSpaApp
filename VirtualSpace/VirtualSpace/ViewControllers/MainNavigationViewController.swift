@@ -48,8 +48,14 @@ extension MainNavigationController {
     }
 
     static func showFirstView() {
-        let vc = AuthenticationViewController()
-        vc._rootPush()
+        if let auth = AuthController().fetchAuth() {
+            let vc = MainTabBarController()
+            vc.auth = auth
+            vc._rootPush()
+        } else {
+            let vc = AuthenticationViewController()
+            vc._rootPush()
+        }
     }
 
 }

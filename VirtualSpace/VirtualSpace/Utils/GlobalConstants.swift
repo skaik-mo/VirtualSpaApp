@@ -15,10 +15,11 @@ class GlobalConstants {
     //typealias typealiasName = ((_ message: String?) -> Void)?
 
     // MARK: - enums
-    enum UserType {
-        case User, Business
+    enum UserType: Int {
+        case User = 0
+        case Business = 1
     }
-    
+
     // MARK: - Format
 
 }
@@ -28,6 +29,56 @@ extension UIImage {
     static var ic_back: UIImage? {
         "ic_back"._toImage
     }
+
+    static var ic_frinds: UIImage? {
+        "ic_frinds"._toImage
+    }
+
+    static var ic_frindsSelected: UIImage? {
+        "ic_frindsSelected"._toImage
+    }
+
+    static var ic_heart: UIImage? {
+        "ic_heart"._toImage
+    }
+
+    static var ic_heartSelected: UIImage? {
+        "ic_heartSelected"._toImage
+    }
+
+    static var ic_home: UIImage? {
+        "ic_home"._toImage
+    }
+
+    static var ic_homeSelected: UIImage? {
+        "ic_homeSelected"._toImage
+    }
+
+    static var ic_location: UIImage? {
+        "ic_location"._toImage
+    }
+
+    static var ic_locationSelected: UIImage? {
+        "ic_locationSelected"._toImage
+    }
+
+    static var ic_profile: UIImage? {
+        "ic_profile"._toImage
+    }
+
+    static var ic_profileSelected: UIImage? {
+        "ic_profileSelected"._toImage
+    }
+
+    static var ic_notification: UIImage? {
+        "ic_notification"._toImage
+    }
+
+    static var ic_notificationSelected: UIImage? {
+        "ic_notificationSelected"._toImage
+    }
+
+
 }
 
 

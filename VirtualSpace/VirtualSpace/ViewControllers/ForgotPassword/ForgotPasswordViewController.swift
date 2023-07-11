@@ -17,6 +17,11 @@ class ForgotPasswordViewController: UIViewController {
     @IBOutlet weak var sendButton: UIButton!
     
     // MARK: Properties
+    var isEnableSend = true {
+        didSet {
+            self.sendButton.isEnabled = isEnableSend
+        }
+    }
 
     // MARK: Init
     init() {
@@ -44,6 +49,7 @@ class ForgotPasswordViewController: UIViewController {
 private extension ForgotPasswordViewController {
     @IBAction func sendAction(_ sender: Any) {
         debugPrint(#function)
+        self.send()
     }
 }
 
@@ -65,3 +71,19 @@ private extension ForgotPasswordViewController {
 
 }
 
+private extension ForgotPasswordViewController {
+
+    func validation() -> Bool {
+        return self.emailTextField.isInvalid
+    }
+
+    func send() {
+        self.isEnableSend = false
+        guard validation() else {
+            self.isEnableSend = true
+            return
+        }
+        self.isEnableSend = true
+    }
+
+}

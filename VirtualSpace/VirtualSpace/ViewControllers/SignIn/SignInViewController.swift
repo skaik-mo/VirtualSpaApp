@@ -20,6 +20,11 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var forgotPasswordButton: UIButton!
 
     // MARK: Properties
+    private var isEnableSignIn = true {
+        didSet {
+            self.signInButton.isEnabled = isEnableSignIn
+        }
+    }
 
     // MARK: Init
     init() {
@@ -56,6 +61,7 @@ private extension SignInViewController {
 
     @IBAction func signInAction(_ sender: Any) {
         debugPrint(#function)
+        self.signIn()
     }
 
     @IBAction func forgotPasswordAction(_ sender: Any) {
@@ -89,3 +95,23 @@ private extension SignInViewController {
 
 }
 
+private extension SignInViewController {
+
+    func validation() -> Bool {
+        guard self.emailTextField.isInvalid else { return false }
+        guard self.passwordTextField.isInvalid else { return false }
+        return true
+    }
+
+    func signIn() {
+        self.isEnableSignIn = false
+        guard validation() else {
+            self.isEnableSignIn = true
+            return
+        }
+        AuthController().saveAuth(auth: .User)
+        MainNavigationController.showFirstView()
+        self.isEnableSignIn = true
+    }
+
+}
