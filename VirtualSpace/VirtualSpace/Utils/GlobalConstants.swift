@@ -34,14 +34,18 @@ extension UIImage {
 // MARK: - Fonts
 extension UIFont {
 
-    static var poppinsRegular14: UIFont {
-        UIFont(name: "Poppins-Medium", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .medium)
-//        UIFont(name: "Poppins-Regular", size: 34) ?? UIFont.systemFont(ofSize: 1, weight: .medium)
+    static var poppinsMedium13: UIFont {
+        UIFont(name: "Poppins-Medium", size: 13) ?? UIFont.systemFont(ofSize: 13, weight: .medium)
     }
 
-    static var poppinsRegular17: UIFont {
+    static var poppinsMedium17: UIFont {
         UIFont(name: "Poppins-Medium", size: 17) ?? UIFont.systemFont(ofSize: 17, weight: .medium)
     }
+
+    static var poppinsRegular14: UIFont {
+        UIFont(name: "Poppins-Regular", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .regular)
+    }
+
 
 }
 

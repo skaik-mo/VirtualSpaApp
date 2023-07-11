@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7765ABE8FD0FDC63B6B2A135 /* Pods_VirtualSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C626268165F8F279258A5969 /* Pods_VirtualSpace.framework */; };
+		E7107B142A5D2316008891B1 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7107B122A5D2316008891B1 /* ForgotPasswordViewController.swift */; };
+		E7107B152A5D2316008891B1 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7107B132A5D2316008891B1 /* ForgotPasswordViewController.xib */; };
 		E7373F422A5AC9B5007A1186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F412A5AC9B5007A1186 /* AppDelegate.swift */; };
 		E7373F442A5AC9B5007A1186 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F432A5AC9B5007A1186 /* SceneDelegate.swift */; };
 		E7373F492A5AC9B5007A1186 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */; };
@@ -54,6 +56,8 @@
 		B3CC08931C145678D57D34A0 /* Pods-VirtualSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSpace.release.xcconfig"; path = "Target Support Files/Pods-VirtualSpace/Pods-VirtualSpace.release.xcconfig"; sourceTree = "<group>"; };
 		B441F63201222CDCE855C910 /* Pods-VirtualSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSpace.debug.xcconfig"; path = "Target Support Files/Pods-VirtualSpace/Pods-VirtualSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		C626268165F8F279258A5969 /* Pods_VirtualSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtualSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7107B122A5D2316008891B1 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		E7107B132A5D2316008891B1 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		E7373F3E2A5AC9B5007A1186 /* VirtualSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7373F412A5AC9B5007A1186 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7373F432A5AC9B5007A1186 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +131,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E7107B112A5D22FD008891B1 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				E7107B122A5D2316008891B1 /* ForgotPasswordViewController.swift */,
+				E7107B132A5D2316008891B1 /* ForgotPasswordViewController.xib */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
 		E7373F352A5AC9B4007A1186 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +178,7 @@
 			children = (
 				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 				E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */,
+				E7107B112A5D22FD008891B1 /* ForgotPassword */,
 				E75636422A5AE4900008C91B /* SignIn */,
 				E756363D2A5AE4790008C91B /* SignUp */,
 				E756362F2A5AD1360008C91B /* Authentication */,
@@ -434,6 +448,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7107B152A5D2316008891B1 /* ForgotPasswordViewController.xib in Resources */,
 				E75636462A5AE49E0008C91B /* SignInViewController.xib in Resources */,
 				E756363C2A5AE26A0008C91B /* Launch Screen.storyboard in Resources */,
 				E73AA0652A5BE59E0022F8BE /* MainTextView.xib in Resources */,
@@ -488,6 +503,7 @@
 				E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */,
 				E756363A2A5AD4E00008C91B /* UIButton+style.swift in Sources */,
 				E7373F4C2A5AC9B5007A1186 /* LaunchViewController.swift in Sources */,
+				E7107B142A5D2316008891B1 /* ForgotPasswordViewController.swift in Sources */,
 				E77CF7CB2A5BD5B400E01D49 /* PhoneValidator.swift in Sources */,
 				E7373F732A5AC9B5007A1186 /* UIColor.swift in Sources */,
 				E77CF7C92A5BD5B400E01D49 /* ValidationError.swift in Sources */,

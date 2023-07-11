@@ -19,11 +19,7 @@ class MainTextView: UIView {
     var title: String = "" {
         didSet {
             self.label.text = self.title
-        }
-    }
-    var placeholder: String = "" {
-        didSet {
-            self.textfield.placeholder = self.placeholder
+            self.textfield.placeholder = self.title
         }
     }
     var isInvalid: Bool {

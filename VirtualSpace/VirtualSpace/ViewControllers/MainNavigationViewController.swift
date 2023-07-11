@@ -26,7 +26,7 @@ extension MainNavigationController {
     }
 
     private func setSmallTitleFont() {
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.color_000000, NSAttributedString.Key.font: UIFont.poppinsRegular17]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.color_000000, NSAttributedString.Key.font: UIFont.poppinsMedium17]
     }
 
 //    private func removeShadow() {

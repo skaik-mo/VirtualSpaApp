@@ -47,4 +47,8 @@ class Strings {
     static let SIGN_IN_PLACEHOLER = "Using jon.inventory@gmail.com to log in."._localizedKey
     static let FORGOT_TITLE = "Forgot Password?"._localizedKey
 
+    // MARK: - Forgot Password
+    static let FORGOT_PASSWORD_TITLE = "Forgot Password"._localizedKey
+    static let SEND_TITLE = "Send"._localizedKey
+
 }

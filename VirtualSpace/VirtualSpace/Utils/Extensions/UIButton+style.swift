@@ -79,7 +79,7 @@ extension UIButton {
         }
 
         var font: UIFont {
-            return .poppinsRegular14
+            return .poppinsMedium13
         }
 
         func setCorner(_ height: CGFloat) -> CGFloat {
