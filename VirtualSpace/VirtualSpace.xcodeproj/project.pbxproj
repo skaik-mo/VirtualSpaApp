@@ -17,6 +17,18 @@
 		E723BB9A2A5D42480026782B /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BB992A5D42480026782B /* EmailValidator.swift */; };
 		E723BB9C2A5D42500026782B /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BB9B2A5D42500026782B /* PasswordValidator.swift */; };
 		E723BB9E2A5D54160026782B /* TabBarIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BB9D2A5D54160026782B /* TabBarIndicatorView.swift */; };
+		E723BBA22A5D634B0026782B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BBA02A5D634B0026782B /* ProfileViewController.swift */; };
+		E723BBA32A5D634B0026782B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E723BBA12A5D634B0026782B /* ProfileViewController.xib */; };
+		E723BBA62A5D6FB80026782B /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E723BBA42A5D6FB80026782B /* ProfileTableViewCell.xib */; };
+		E723BBA72A5D6FB80026782B /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BBA52A5D6FB80026782B /* ProfileTableViewCell.swift */; };
+		E723BBAF2A5D73D50026782B /* ProfileHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E723BBAD2A5D73D50026782B /* ProfileHeaderTableViewCell.xib */; };
+		E723BBB02A5D73D50026782B /* ProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BBAE2A5D73D50026782B /* ProfileHeaderTableViewCell.swift */; };
+		E723BBB22A5D77C10026782B /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E723BBB12A5D77C10026782B /* Poppins-SemiBold.ttf */; };
+		E723BBB72A5D7B3C0026782B /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E723BBB52A5D7B3C0026782B /* SwitchTableViewCell.xib */; };
+		E723BBB82A5D7B3C0026782B /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BBB62A5D7B3C0026782B /* SwitchTableViewCell.swift */; };
+		E723BBBC2A5D7C950026782B /* DeleteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E723BBBA2A5D7C950026782B /* DeleteTableViewCell.xib */; };
+		E723BBBD2A5D7C950026782B /* DeleteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BBBB2A5D7C950026782B /* DeleteTableViewCell.swift */; };
+		E723BBBF2A5D84110026782B /* UISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BBBE2A5D84110026782B /* UISwitch.swift */; };
 		E7373F422A5AC9B5007A1186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F412A5AC9B5007A1186 /* AppDelegate.swift */; };
 		E7373F442A5AC9B5007A1186 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F432A5AC9B5007A1186 /* SceneDelegate.swift */; };
 		E7373F492A5AC9B5007A1186 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */; };
@@ -72,6 +84,18 @@
 		E723BB992A5D42480026782B /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		E723BB9B2A5D42500026782B /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
 		E723BB9D2A5D54160026782B /* TabBarIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIndicatorView.swift; sourceTree = "<group>"; };
+		E723BBA02A5D634B0026782B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E723BBA12A5D634B0026782B /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		E723BBA42A5D6FB80026782B /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		E723BBA52A5D6FB80026782B /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		E723BBAD2A5D73D50026782B /* ProfileHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		E723BBAE2A5D73D50026782B /* ProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		E723BBB12A5D77C10026782B /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		E723BBB52A5D7B3C0026782B /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
+		E723BBB62A5D7B3C0026782B /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		E723BBBA2A5D7C950026782B /* DeleteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteTableViewCell.xib; sourceTree = "<group>"; };
+		E723BBBB2A5D7C950026782B /* DeleteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTableViewCell.swift; sourceTree = "<group>"; };
+		E723BBBE2A5D84110026782B /* UISwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISwitch.swift; sourceTree = "<group>"; };
 		E7373F3E2A5AC9B5007A1186 /* VirtualSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7373F412A5AC9B5007A1186 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7373F432A5AC9B5007A1186 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +187,51 @@
 			path = "Privacy Policy";
 			sourceTree = "<group>";
 		};
+		E723BB9F2A5D633F0026782B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E723BBA02A5D634B0026782B /* ProfileViewController.swift */,
+				E723BBA12A5D634B0026782B /* ProfileViewController.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		E723BBA82A5D731A0026782B /* ProfileHeader */ = {
+			isa = PBXGroup;
+			children = (
+				E723BBAD2A5D73D50026782B /* ProfileHeaderTableViewCell.xib */,
+				E723BBAE2A5D73D50026782B /* ProfileHeaderTableViewCell.swift */,
+			);
+			path = ProfileHeader;
+			sourceTree = "<group>";
+		};
+		E723BBB32A5D7B0A0026782B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E723BBA42A5D6FB80026782B /* ProfileTableViewCell.xib */,
+				E723BBA52A5D6FB80026782B /* ProfileTableViewCell.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		E723BBB42A5D7B180026782B /* Switch */ = {
+			isa = PBXGroup;
+			children = (
+				E723BBB52A5D7B3C0026782B /* SwitchTableViewCell.xib */,
+				E723BBB62A5D7B3C0026782B /* SwitchTableViewCell.swift */,
+			);
+			path = Switch;
+			sourceTree = "<group>";
+		};
+		E723BBB92A5D7C7F0026782B /* Delete */ = {
+			isa = PBXGroup;
+			children = (
+				E723BBBA2A5D7C950026782B /* DeleteTableViewCell.xib */,
+				E723BBBB2A5D7C950026782B /* DeleteTableViewCell.swift */,
+			);
+			path = Delete;
+			sourceTree = "<group>";
+		};
 		E7373F352A5AC9B4007A1186 = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +271,7 @@
 				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 				E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */,
 				E723BB932A5D3B190026782B /* MainTabBarController.swift */,
+				E723BB9F2A5D633F0026782B /* Profile */,
 				E7107B1A2A5D391B008891B1 /* Privacy Policy */,
 				E7107B112A5D22FD008891B1 /* ForgotPassword */,
 				E75636422A5AE4900008C91B /* SignIn */,
@@ -241,6 +311,7 @@
 		E7373F542A5AC9B5007A1186 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E723BBA82A5D731A0026782B /* ProfileHeader */,
 				E799C9D02A5C1503003443C8 /* PhoneTextField */,
 				E73AA06A2A5C036A0022F8BE /* PasswordTextField */,
 				E73AA0612A5BE55D0022F8BE /* MainText */,
@@ -251,6 +322,9 @@
 		E7373F582A5AC9B5007A1186 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				E723BBB92A5D7C7F0026782B /* Delete */,
+				E723BBB42A5D7B180026782B /* Switch */,
+				E723BBB32A5D7B0A0026782B /* Profile */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -312,6 +386,7 @@
 				E7373F7C2A5AC9B5007A1186 /* UIView.swift */,
 				E7373F7E2A5AC9B5007A1186 /* UIViewController.swift */,
 				E75636392A5AD4E00008C91B /* UIButton+style.swift */,
+				E723BBBE2A5D84110026782B /* UISwitch.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -364,6 +439,7 @@
 		E75636342A5AD2D30008C91B /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				E723BBB12A5D77C10026782B /* Poppins-SemiBold.ttf */,
 				E75636372A5AD3040008C91B /* Poppins-Regular.ttf */,
 				E75636352A5AD2EF0008C91B /* Poppins-Medium.ttf */,
 			);
@@ -477,6 +553,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E723BBA32A5D634B0026782B /* ProfileViewController.xib in Resources */,
+				E723BBBC2A5D7C950026782B /* DeleteTableViewCell.xib in Resources */,
 				E7107B152A5D2316008891B1 /* ForgotPasswordViewController.xib in Resources */,
 				E75636462A5AE49E0008C91B /* SignInViewController.xib in Resources */,
 				E756363C2A5AE26A0008C91B /* Launch Screen.storyboard in Resources */,
@@ -488,8 +566,12 @@
 				E7107B192A5D3915008891B1 /* PrivacyPolicyViewController.xib in Resources */,
 				E7373F4E2A5AC9B5007A1186 /* LaunchViewController.xib in Resources */,
 				E75636382A5AD3040008C91B /* Poppins-Regular.ttf in Resources */,
+				E723BBAF2A5D73D50026782B /* ProfileHeaderTableViewCell.xib in Resources */,
 				E7373F852A5AC9B5007A1186 /* Assets.xcassets in Resources */,
 				E75636362A5AD2EF0008C91B /* Poppins-Medium.ttf in Resources */,
+				E723BBB72A5D7B3C0026782B /* SwitchTableViewCell.xib in Resources */,
+				E723BBA62A5D6FB80026782B /* ProfileTableViewCell.xib in Resources */,
+				E723BBB22A5D77C10026782B /* Poppins-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,10 +608,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7373F7D2A5AC9B5007A1186 /* UIView.swift in Sources */,
+				E723BBBF2A5D84110026782B /* UISwitch.swift in Sources */,
 				E77CF7CA2A5BD5B400E01D49 /* ValidationRule.swift in Sources */,
 				E723BB942A5D3B190026782B /* MainTabBarController.swift in Sources */,
 				E7373F642A5AC9B5007A1186 /* Strings.swift in Sources */,
 				E77CF7B32A5BD41900E01D49 /* UITextField.swift in Sources */,
+				E723BBB82A5D7B3C0026782B /* SwitchTableViewCell.swift in Sources */,
 				E7373F7F2A5AC9B5007A1186 /* UIViewController.swift in Sources */,
 				E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */,
 				E756363A2A5AD4E00008C91B /* UIButton+style.swift in Sources */,
@@ -546,6 +630,7 @@
 				E7373F712A5AC9B5007A1186 /* UICollectionView.swift in Sources */,
 				E7373F772A5AC9B5007A1186 /* UIResponder.swift in Sources */,
 				E75636452A5AE49E0008C91B /* SignInViewController.swift in Sources */,
+				E723BBA72A5D6FB80026782B /* ProfileTableViewCell.swift in Sources */,
 				E7373F492A5AC9B5007A1186 /* MainNavigationViewController.swift in Sources */,
 				E7373F422A5AC9B5007A1186 /* AppDelegate.swift in Sources */,
 				E723BB962A5D3E4D0026782B /* AuthController.swift in Sources */,
@@ -554,9 +639,12 @@
 				E7373F6F2A5AC9B5007A1186 /* String.swift in Sources */,
 				E75636322A5AD1410008C91B /* AuthenticationViewController.swift in Sources */,
 				E73AA0682A5C03620022F8BE /* PasswordTextFieldView.swift in Sources */,
+				E723BBBD2A5D7C950026782B /* DeleteTableViewCell.swift in Sources */,
+				E723BBB02A5D73D50026782B /* ProfileHeaderTableViewCell.swift in Sources */,
 				E7373F662A5AC9B5007A1186 /* GlobalConstants.swift in Sources */,
 				E77CF7CC2A5BD5B400E01D49 /* Validator.swift in Sources */,
 				E723BB9A2A5D42480026782B /* EmailValidator.swift in Sources */,
+				E723BBA22A5D634B0026782B /* ProfileViewController.swift in Sources */,
 				E7373F442A5AC9B5007A1186 /* SceneDelegate.swift in Sources */,
 				E7373F7B2A5AC9B5007A1186 /* UITableView.swift in Sources */,
 			);

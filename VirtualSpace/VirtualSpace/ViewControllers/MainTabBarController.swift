@@ -12,7 +12,12 @@ class MainTabBarController: UITabBarController {
 
     var auth: GlobalConstants.UserType = .User
     var indicatorView: TabBarIndicatorView?
-
+    override var title: String? {
+        didSet {
+            self.navigationItem.title = title
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpView()
@@ -36,9 +41,14 @@ private extension MainTabBarController {
         if let indicatorView {
             self.view.addSubview(indicatorView)
         }
+        self.tabBar.backgroundColor = .color_FFFFFF
+        self.tabBar.barTintColor = .color_FFFFFF
+        self.tabBar.shadowImage = UIImage()
+        self.tabBar.backgroundImage = UIImage()
     }
 
     func setUpUserViewControllers() {
+        self.navigationController?.navigationBar.backgroundColor = .red
         let vc1 = PrivacyPolicyViewController()
         vc1.tabBarItem.image = .ic_home
         vc1.tabBarItem.selectedImage = .ic_homeSelected
@@ -55,7 +65,7 @@ private extension MainTabBarController {
         vc4.tabBarItem.image = .ic_heart
         vc4.tabBarItem.selectedImage = .ic_heartSelected
 
-        let vc5 = PrivacyPolicyViewController()
+        let vc5 = ProfileViewController()
         vc5.tabBarItem.image = .ic_profile
         vc5.tabBarItem.selectedImage = .ic_profileSelected
 
@@ -75,7 +85,7 @@ private extension MainTabBarController {
         vc4.tabBarItem.image = .ic_notification
         vc4.tabBarItem.selectedImage = .ic_notificationSelected
 
-        let vc5 = PrivacyPolicyViewController()
+        let vc5 = ProfileViewController()
         vc5.tabBarItem.image = .ic_profile
         vc5.tabBarItem.selectedImage = .ic_profileSelected
 
@@ -92,12 +102,10 @@ private extension MainTabBarController {
 
 extension MainTabBarController: UITabBarControllerDelegate {
 
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        debugPrint(#function)
-        debugPrint(self.selectedIndex)
-//        tabBar.selectionIndicatorImage = item.image?.createSelectionIndicator(color: UIColor.red, size: CGSize(width: tabBar.frame.width / CGFloat(tabBar.items!.count), height: 18), lineHeight: 2.0)
-
-    }
+//    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+//        debugPrint(#function)
+//        debugPrint(self.selectedIndex)
+//    }
 
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         debugPrint(#function)
@@ -105,21 +113,4 @@ extension MainTabBarController: UITabBarControllerDelegate {
         indicatorView?.selectIndex(self.selectedIndex)
     }
 
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        debugPrint(#function)
-        debugPrint(self.selectedIndex)
-        return true
-    }
-
 }
-//
-//extension UIImage {
-//    func createSelectionIndicator(color: UIColor, size: CGSize, lineHeight: CGFloat) -> UIImage? {
-//        UIGraphicsBeginImageContextWithOptions(size, false, 0)
-//        color.setFill()
-//        UIRectFill(CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: size.width, height: lineHeight)))
-//        let image = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//        return image
-//    }
-//}

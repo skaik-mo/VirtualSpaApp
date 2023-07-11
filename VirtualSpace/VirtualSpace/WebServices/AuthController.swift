@@ -21,4 +21,10 @@ class AuthController {
         return GlobalConstants.UserType.User.rawValue == auth ? .User : .Business
     }
 
+    func clearUserDefaults() {
+        if let appDomain = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: appDomain)
+        }
+    }
+
 }

@@ -20,12 +20,52 @@ class GlobalConstants {
         case Business = 1
     }
 
+    enum ProfileMenu: String {
+        case AccountPrivacy = "Account Privacy"
+        case Reservations = "My reservations"
+        case Massages = "Massages"
+        case Following = "Following"
+        case Followers = "Followers"
+        case Friends = "My Friends"
+        case EditProfile = "Edit Profile"
+        case ChangePassword = "Change Password"
+        case DeleteAccount = "Delete account"
+
+        func action() {
+            switch self {
+            case .AccountPrivacy:
+                debugPrint("AccountPrivacy")
+            case .Reservations:
+                debugPrint("Reservations")
+            case .Massages:
+                debugPrint("Massages")
+            case .Following:
+                debugPrint("Following")
+            case .Followers:
+                debugPrint("Followers")
+            case .Friends:
+                debugPrint("Friends")
+            case .EditProfile:
+                debugPrint("EditProfile")
+            case .ChangePassword:
+                debugPrint("ChangePassword")
+            case .DeleteAccount:
+                debugPrint("DeleteAccount")
+            }
+
+        }
+    }
+
     // MARK: - Format
 
 }
 
 // MARK: - Images
 extension UIImage {
+    static var demo: UIImage? {
+        "demo"._toImage
+    }
+
     static var ic_back: UIImage? {
         "ic_back"._toImage
     }
@@ -95,6 +135,10 @@ extension UIFont {
 
     static var poppinsRegular14: UIFont {
         UIFont(name: "Poppins-Regular", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .regular)
+    }
+
+    static var poppinsSemiBold14: UIFont {
+        UIFont(name: "Poppins-SemiBold", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .semibold)
     }
 
 

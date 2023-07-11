@@ -51,4 +51,8 @@ class Strings {
     static let FORGOT_PASSWORD_TITLE = "Forgot Password"._localizedKey
     static let SEND_TITLE = "Send"._localizedKey
 
+    // MARK: - Profile
+    static let PROFILE_TITLE = "Profile"._localizedKey
+    static let LOGOUT_TITLE = "Log out"._localizedKey
+
 }
