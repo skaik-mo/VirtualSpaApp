@@ -43,4 +43,8 @@ class Strings {
     static let TERMS_TITLE = "Terms of Service"._localizedKey
     static let POLICY_TITLE = "Privacy Policy."._localizedKey
 
+    // MARK: - Sign In
+    static let SIGN_IN_PLACEHOLER = "Using jon.inventory@gmail.com to log in."._localizedKey
+    static let FORGOT_TITLE = "Forgot Password?"._localizedKey
+
 }
