@@ -27,6 +27,19 @@ extension UIViewController {
         }
     }
 
+    var getAllPresentedViews: [UIViewController]? {
+        guard let rootViewController = UIApplication.shared.keyWindow?.rootViewController else { return nil }
+        var presentedViewControllers = [UIViewController]()
+        func getAllPresentedViews(from viewController: UIViewController) {
+            if let presentedViewController = viewController.presentedViewController {
+                presentedViewControllers.append(presentedViewController)
+                getAllPresentedViews(from: presentedViewController)
+            }
+        }
+        getAllPresentedViews(from: rootViewController)
+        return presentedViewControllers
+    }
+
     func _rootPush() {
         SceneDelegate.shared?.rootNavigationController?.setViewControllers([self], animated: true)
     }

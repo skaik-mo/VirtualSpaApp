@@ -56,6 +56,11 @@ class SignUpViewController: UIViewController {
 private extension SignUpViewController {
     @IBAction func signInAction(_ sender: Any) {
         debugPrint(#function)
+        guard let allPresentedViews = self.getAllPresentedViews, allPresentedViews.firstIndex(of: self) == 0 else {
+            self._dismissVC()
+            return }
+        let vc = SignInViewController()
+        self.present(vc, animated: true)
     }
 
     @IBAction func userAction(_ sender: Any) {
@@ -99,12 +104,9 @@ private extension SignUpViewController {
         self.descriptionLabel.text = Strings.FILL_DATA_TITLE
         self.userButton.titleLabel?.text = Strings.USER_TITLE
         self.nameTextField.title = Strings.NAME_TITLE
-        self.nameTextField.placeholder = Strings.NAME_TITLE
         self.emailTextField.title = Strings.EMAIL_TITLE
-        self.emailTextField.placeholder = Strings.EMAIL_TITLE
         self.phoneTextField.title = Strings.PHONE_TITLE
         self.passwordTextField.title = Strings.PASSWORD_TITLE
-        self.passwordTextField.placeholder = Strings.PASSWORD_TITLE
         self.busniessButton.titleLabel?.text = Strings.BUSNIESS_TITLE
         self.signUpButton.titleLabel?.text = Strings.SIGN_UP
     }
@@ -127,4 +129,3 @@ private extension SignUpViewController {
         self.privacyButton.setAttributedTitle(attributedTitle, for: .normal)
     }
 }
-

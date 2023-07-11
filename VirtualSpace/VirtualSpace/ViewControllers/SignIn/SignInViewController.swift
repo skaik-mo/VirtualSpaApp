@@ -47,6 +47,11 @@ class SignInViewController: UIViewController {
 private extension SignInViewController {
     @IBAction func signUpAction(_ sender: Any) {
         debugPrint(#function)
+        guard let allPresentedViews = self.getAllPresentedViews, allPresentedViews.firstIndex(of: self) == 0 else {
+            self._dismissVC()
+            return }
+        let vc = SignUpViewController()
+        self.present(vc, animated: true)
     }
 
     @IBAction func signInAction(_ sender: Any) {
@@ -55,6 +60,8 @@ private extension SignInViewController {
 
     @IBAction func forgotPasswordAction(_ sender: Any) {
         debugPrint(#function)
+        let vc = ForgotPasswordViewController()
+        self.present(vc, animated: true) // This code for second present
     }
 
 }
@@ -75,9 +82,7 @@ private extension SignInViewController {
         self.signInLabel.text = Strings.SIGN_IN
         self.descriptionLabel.text = Strings.SIGN_IN_PLACEHOLER
         self.emailTextField.title = Strings.EMAIL_TITLE
-        self.emailTextField.placeholder = Strings.EMAIL_TITLE
         self.passwordTextField.title = Strings.PASSWORD_TITLE
-        self.passwordTextField.placeholder = Strings.PASSWORD_TITLE
         self.signInButton.titleLabel?.text = Strings.SIGN_IN
         self.forgotPasswordButton.titleLabel?.text = Strings.FORGOT_TITLE
     }
