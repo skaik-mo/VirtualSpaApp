@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "iqkeyboardmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hackiftekhar/IQKeyboardManager",
+      "state" : {
+        "revision" : "ea08e08958890043019d248065fe3d825f338087",
+        "version" : "6.5.12"
+      }
+    },
+    {
+      "identity" : "nkvphonepicker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NikKovIos/NKVPhonePicker.git",
+      "state" : {
+        "revision" : "8e6d2a74217a2249e272d6a1f26d0e28a0f5cf9d",
+        "version" : "2.1.1"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7765ABE8FD0FDC63B6B2A135 /* Pods_VirtualSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C626268165F8F279258A5969 /* Pods_VirtualSpace.framework */; };
 		E7373F422A5AC9B5007A1186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F412A5AC9B5007A1186 /* AppDelegate.swift */; };
 		E7373F442A5AC9B5007A1186 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F432A5AC9B5007A1186 /* SceneDelegate.swift */; };
 		E7373F492A5AC9B5007A1186 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */; };
@@ -24,6 +25,10 @@
 		E7373F7D2A5AC9B5007A1186 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F7C2A5AC9B5007A1186 /* UIView.swift */; };
 		E7373F7F2A5AC9B5007A1186 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F7E2A5AC9B5007A1186 /* UIViewController.swift */; };
 		E7373F852A5AC9B5007A1186 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7373F842A5AC9B5007A1186 /* Assets.xcassets */; };
+		E73AA0642A5BE59E0022F8BE /* MainTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73AA0622A5BE59E0022F8BE /* MainTextView.swift */; };
+		E73AA0652A5BE59E0022F8BE /* MainTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73AA0632A5BE59E0022F8BE /* MainTextView.xib */; };
+		E73AA0682A5C03620022F8BE /* PasswordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73AA0662A5C03620022F8BE /* PasswordTextFieldView.swift */; };
+		E73AA0692A5C03620022F8BE /* PasswordTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73AA0672A5C03620022F8BE /* PasswordTextFieldView.xib */; };
 		E75636322A5AD1410008C91B /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75636302A5AD1410008C91B /* AuthenticationViewController.swift */; };
 		E75636332A5AD1410008C91B /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75636312A5AD1410008C91B /* AuthenticationViewController.xib */; };
 		E75636362A5AD2EF0008C91B /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E75636352A5AD2EF0008C91B /* Poppins-Medium.ttf */; };
@@ -34,9 +39,21 @@
 		E75636412A5AE4860008C91B /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E756363F2A5AE4860008C91B /* SignUpViewController.xib */; };
 		E75636452A5AE49E0008C91B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75636432A5AE49E0008C91B /* SignInViewController.swift */; };
 		E75636462A5AE49E0008C91B /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75636442A5AE49E0008C91B /* SignInViewController.xib */; };
+		E77CF7B32A5BD41900E01D49 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7B22A5BD41900E01D49 /* UITextField.swift */; };
+		E77CF7C92A5BD5B400E01D49 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7C52A5BD5B400E01D49 /* ValidationError.swift */; };
+		E77CF7CA2A5BD5B400E01D49 /* ValidationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7C62A5BD5B400E01D49 /* ValidationRule.swift */; };
+		E77CF7CB2A5BD5B400E01D49 /* PhoneValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7C72A5BD5B400E01D49 /* PhoneValidator.swift */; };
+		E77CF7CC2A5BD5B400E01D49 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7C82A5BD5B400E01D49 /* Validator.swift */; };
+		E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E799C9D12A5C1513003443C8 /* PhoneTextFieldView.swift */; };
+		E799C9D42A5C1513003443C8 /* PhoneTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */; };
+		E799C9F02A5C3705003443C8 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E799C9EF2A5C3705003443C8 /* IQKeyboardManagerSwift */; };
+		E799C9F32A5C3785003443C8 /* NKVPhonePicker in Frameworks */ = {isa = PBXBuildFile; productRef = E799C9F22A5C3785003443C8 /* NKVPhonePicker */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B3CC08931C145678D57D34A0 /* Pods-VirtualSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSpace.release.xcconfig"; path = "Target Support Files/Pods-VirtualSpace/Pods-VirtualSpace.release.xcconfig"; sourceTree = "<group>"; };
+		B441F63201222CDCE855C910 /* Pods-VirtualSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSpace.debug.xcconfig"; path = "Target Support Files/Pods-VirtualSpace/Pods-VirtualSpace.debug.xcconfig"; sourceTree = "<group>"; };
+		C626268165F8F279258A5969 /* Pods_VirtualSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtualSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7373F3E2A5AC9B5007A1186 /* VirtualSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7373F412A5AC9B5007A1186 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7373F432A5AC9B5007A1186 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +73,10 @@
 		E7373F7E2A5AC9B5007A1186 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		E7373F842A5AC9B5007A1186 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7373F892A5AC9B5007A1186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E73AA0622A5BE59E0022F8BE /* MainTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextView.swift; sourceTree = "<group>"; };
+		E73AA0632A5BE59E0022F8BE /* MainTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTextView.xib; sourceTree = "<group>"; };
+		E73AA0662A5C03620022F8BE /* PasswordTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldView.swift; sourceTree = "<group>"; };
+		E73AA0672A5C03620022F8BE /* PasswordTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordTextFieldView.xib; sourceTree = "<group>"; };
 		E75636302A5AD1410008C91B /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		E75636312A5AD1410008C91B /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
 		E75636352A5AD2EF0008C91B /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
@@ -66,6 +87,13 @@
 		E756363F2A5AE4860008C91B /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		E75636432A5AE49E0008C91B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E75636442A5AE49E0008C91B /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
+		E77CF7B22A5BD41900E01D49 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		E77CF7C52A5BD5B400E01D49 /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		E77CF7C62A5BD5B400E01D49 /* ValidationRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationRule.swift; sourceTree = "<group>"; };
+		E77CF7C72A5BD5B400E01D49 /* PhoneValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneValidator.swift; sourceTree = "<group>"; };
+		E77CF7C82A5BD5B400E01D49 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		E799C9D12A5C1513003443C8 /* PhoneTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextFieldView.swift; sourceTree = "<group>"; };
+		E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTextFieldView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,17 +101,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7765ABE8FD0FDC63B6B2A135 /* Pods_VirtualSpace.framework in Frameworks */,
+				E799C9F32A5C3785003443C8 /* NKVPhonePicker in Frameworks */,
+				E799C9F02A5C3705003443C8 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A4171909CC91B2DC7253DDEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C626268165F8F279258A5969 /* Pods_VirtualSpace.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AFBAE2DD3FD3254B01BB5109 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B441F63201222CDCE855C910 /* Pods-VirtualSpace.debug.xcconfig */,
+				B3CC08931C145678D57D34A0 /* Pods-VirtualSpace.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E7373F352A5AC9B4007A1186 = {
 			isa = PBXGroup;
 			children = (
 				E7373F402A5AC9B5007A1186 /* VirtualSpace */,
 				E7373F3F2A5AC9B5007A1186 /* Products */,
+				AFBAE2DD3FD3254B01BB5109 /* Pods */,
+				A4171909CC91B2DC7253DDEC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,8 +185,8 @@
 		E7373F4F2A5AC9B5007A1186 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
-				E7373F502A5AC9B5007A1186 /* CollectionCells */,
 				E7373F542A5AC9B5007A1186 /* Views */,
+				E7373F502A5AC9B5007A1186 /* CollectionCells */,
 				E7373F582A5AC9B5007A1186 /* TableCells */,
 			);
 			path = Xibs;
@@ -152,6 +202,9 @@
 		E7373F542A5AC9B5007A1186 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E799C9D02A5C1503003443C8 /* PhoneTextField */,
+				E73AA06A2A5C036A0022F8BE /* PasswordTextField */,
+				E73AA0612A5BE55D0022F8BE /* MainText */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,6 +235,7 @@
 			children = (
 				E7373F632A5AC9B5007A1186 /* Strings.swift */,
 				E7373F652A5AC9B5007A1186 /* GlobalConstants.swift */,
+				E77CF7B42A5BD51800E01D49 /* Validators */,
 				E7373F672A5AC9B5007A1186 /* Designables */,
 				E7373F6A2A5AC9B5007A1186 /* Libs */,
 				E7373F6D2A5AC9B5007A1186 /* Extensions */,
@@ -207,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				E7373F6E2A5AC9B5007A1186 /* String.swift */,
+				E77CF7B22A5BD41900E01D49 /* UITextField.swift */,
 				E7373F702A5AC9B5007A1186 /* UICollectionView.swift */,
 				E7373F722A5AC9B5007A1186 /* UIColor.swift */,
 				E7373F742A5AC9B5007A1186 /* UIKitHelpers.swift */,
@@ -236,6 +291,24 @@
 				E7373F892A5AC9B5007A1186 /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		E73AA0612A5BE55D0022F8BE /* MainText */ = {
+			isa = PBXGroup;
+			children = (
+				E73AA0622A5BE59E0022F8BE /* MainTextView.swift */,
+				E73AA0632A5BE59E0022F8BE /* MainTextView.xib */,
+			);
+			path = MainText;
+			sourceTree = "<group>";
+		};
+		E73AA06A2A5C036A0022F8BE /* PasswordTextField */ = {
+			isa = PBXGroup;
+			children = (
+				E73AA0662A5C03620022F8BE /* PasswordTextFieldView.swift */,
+				E73AA0672A5C03620022F8BE /* PasswordTextFieldView.xib */,
+			);
+			path = PasswordTextField;
 			sourceTree = "<group>";
 		};
 		E756362F2A5AD1360008C91B /* Authentication */ = {
@@ -274,6 +347,26 @@
 			path = SignIn;
 			sourceTree = "<group>";
 		};
+		E77CF7B42A5BD51800E01D49 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				E77CF7C72A5BD5B400E01D49 /* PhoneValidator.swift */,
+				E77CF7C52A5BD5B400E01D49 /* ValidationError.swift */,
+				E77CF7C62A5BD5B400E01D49 /* ValidationRule.swift */,
+				E77CF7C82A5BD5B400E01D49 /* Validator.swift */,
+			);
+			path = Validators;
+			sourceTree = "<group>";
+		};
+		E799C9D02A5C1503003443C8 /* PhoneTextField */ = {
+			isa = PBXGroup;
+			children = (
+				E799C9D12A5C1513003443C8 /* PhoneTextFieldView.swift */,
+				E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */,
+			);
+			path = PhoneTextField;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,6 +374,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7373F8C2A5AC9B5007A1186 /* Build configuration list for PBXNativeTarget "VirtualSpace" */;
 			buildPhases = (
+				9C124FB03678F729205A9853 /* [CP] Check Pods Manifest.lock */,
 				E7373F3A2A5AC9B5007A1186 /* Sources */,
 				E7373F3B2A5AC9B5007A1186 /* Frameworks */,
 				E7373F3C2A5AC9B5007A1186 /* Resources */,
@@ -290,6 +384,10 @@
 			dependencies = (
 			);
 			name = VirtualSpace;
+			packageProductDependencies = (
+				E799C9EF2A5C3705003443C8 /* IQKeyboardManagerSwift */,
+				E799C9F22A5C3785003443C8 /* NKVPhonePicker */,
+			);
 			productName = VirtualSpace;
 			productReference = E7373F3E2A5AC9B5007A1186 /* VirtualSpace.app */;
 			productType = "com.apple.product-type.application";
@@ -310,7 +408,7 @@
 				};
 			};
 			buildConfigurationList = E7373F392A5AC9B4007A1186 /* Build configuration list for PBXProject "VirtualSpace" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -318,6 +416,10 @@
 				Base,
 			);
 			mainGroup = E7373F352A5AC9B4007A1186;
+			packageReferences = (
+				E799C9EE2A5C3705003443C8 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				E799C9F12A5C3785003443C8 /* XCRemoteSwiftPackageReference "NKVPhonePicker" */,
+			);
 			productRefGroup = E7373F3F2A5AC9B5007A1186 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -334,8 +436,11 @@
 			files = (
 				E75636462A5AE49E0008C91B /* SignInViewController.xib in Resources */,
 				E756363C2A5AE26A0008C91B /* Launch Screen.storyboard in Resources */,
+				E73AA0652A5BE59E0022F8BE /* MainTextView.xib in Resources */,
 				E75636332A5AD1410008C91B /* AuthenticationViewController.xib in Resources */,
 				E75636412A5AE4860008C91B /* SignUpViewController.xib in Resources */,
+				E799C9D42A5C1513003443C8 /* PhoneTextFieldView.xib in Resources */,
+				E73AA0692A5C03620022F8BE /* PasswordTextFieldView.xib in Resources */,
 				E7373F4E2A5AC9B5007A1186 /* LaunchViewController.xib in Resources */,
 				E75636382A5AD3040008C91B /* Poppins-Regular.ttf in Resources */,
 				E7373F852A5AC9B5007A1186 /* Assets.xcassets in Resources */,
@@ -345,18 +450,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9C124FB03678F729205A9853 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VirtualSpace-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E7373F3A2A5AC9B5007A1186 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E7373F7D2A5AC9B5007A1186 /* UIView.swift in Sources */,
+				E77CF7CA2A5BD5B400E01D49 /* ValidationRule.swift in Sources */,
 				E7373F642A5AC9B5007A1186 /* Strings.swift in Sources */,
+				E77CF7B32A5BD41900E01D49 /* UITextField.swift in Sources */,
 				E7373F7F2A5AC9B5007A1186 /* UIViewController.swift in Sources */,
+				E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */,
 				E756363A2A5AD4E00008C91B /* UIButton+style.swift in Sources */,
 				E7373F4C2A5AC9B5007A1186 /* LaunchViewController.swift in Sources */,
+				E77CF7CB2A5BD5B400E01D49 /* PhoneValidator.swift in Sources */,
 				E7373F732A5AC9B5007A1186 /* UIColor.swift in Sources */,
+				E77CF7C92A5BD5B400E01D49 /* ValidationError.swift in Sources */,
 				E75636402A5AE4860008C91B /* SignUpViewController.swift in Sources */,
+				E73AA0642A5BE59E0022F8BE /* MainTextView.swift in Sources */,
 				E7373F712A5AC9B5007A1186 /* UICollectionView.swift in Sources */,
 				E7373F772A5AC9B5007A1186 /* UIResponder.swift in Sources */,
 				E75636452A5AE49E0008C91B /* SignInViewController.swift in Sources */,
@@ -366,7 +502,9 @@
 				E7373F792A5AC9B5007A1186 /* UIStoryboard.swift in Sources */,
 				E7373F6F2A5AC9B5007A1186 /* String.swift in Sources */,
 				E75636322A5AD1410008C91B /* AuthenticationViewController.swift in Sources */,
+				E73AA0682A5C03620022F8BE /* PasswordTextFieldView.swift in Sources */,
 				E7373F662A5AC9B5007A1186 /* GlobalConstants.swift in Sources */,
+				E77CF7CC2A5BD5B400E01D49 /* Validator.swift in Sources */,
 				E7373F442A5AC9B5007A1186 /* SceneDelegate.swift in Sources */,
 				E7373F7B2A5AC9B5007A1186 /* UITableView.swift in Sources */,
 			);
@@ -491,6 +629,7 @@
 		};
 		E7373F8D2A5AC9B5007A1186 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B441F63201222CDCE855C910 /* Pods-VirtualSpace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -523,6 +662,7 @@
 		};
 		E7373F8E2A5AC9B5007A1186 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3CC08931C145678D57D34A0 /* Pods-VirtualSpace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -575,6 +715,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E799C9EE2A5C3705003443C8 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.12;
+			};
+		};
+		E799C9F12A5C3785003443C8 /* XCRemoteSwiftPackageReference "NKVPhonePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NikKovIos/NKVPhonePicker.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E799C9EF2A5C3705003443C8 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E799C9EE2A5C3705003443C8 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		E799C9F22A5C3785003443C8 /* NKVPhonePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E799C9F12A5C3785003443C8 /* XCRemoteSwiftPackageReference "NKVPhonePicker" */;
+			productName = NKVPhonePicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E7373F362A5AC9B4007A1186 /* Project object */;
 }

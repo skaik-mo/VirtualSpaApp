@@ -21,19 +21,8 @@ extension MainNavigationController {
 
     private func setUpNavigation() {
         self.setRoot()
-        self.removeBackTitleButtonColor()
-        self.ChangeBackTitleButtonColor()
         self.setSmallTitleFont()
         self.setNavigationBarWhenScrollViewController()
-    }
-
-    private func removeBackTitleButtonColor() {
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: UIControl.State.highlighted)
-    }
-
-    private func ChangeBackTitleButtonColor() {
-        UIBarButtonItem.appearance().tintColor = .color_000000
     }
 
     private func setSmallTitleFont() {
@@ -63,4 +52,17 @@ extension MainNavigationController {
         vc._rootPush()
     }
 
+}
+
+extension UINavigationController {
+
+    open override func viewWillLayoutSubviews() {
+        self.setBackButton()
+    }
+
+    private func setBackButton() {
+        UINavigationBar.appearance().backIndicatorImage = .ic_back
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = .ic_back
+        navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
 }

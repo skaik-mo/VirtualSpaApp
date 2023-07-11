@@ -45,13 +45,13 @@ private extension AuthenticationViewController {
 
     @IBAction func signUpAction(_ sender: Any) {
         debugPrint(#function)
-        let vc = SignInViewController()
+        let vc = SignUpViewController()
         vc._presentVC()
     }
 
     @IBAction func signInAction(_ sender: Any) {
         debugPrint(#function)
-        let vc = SignUpViewController()
+        let vc = SignInViewController()
         vc._presentVC()
     }
 }

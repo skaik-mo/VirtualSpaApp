@@ -15,14 +15,23 @@ class GlobalConstants {
     //typealias typealiasName = ((_ message: String?) -> Void)?
 
     // MARK: - enums
-
-    // MARK: - Images
-    //let ic_imageName = "ic_imageName"
-
+    enum UserType {
+        case User, Business
+    }
+    
     // MARK: - Format
 
 }
 
+// MARK: - Images
+extension UIImage {
+    static var ic_back: UIImage? {
+        "ic_back"._toImage
+    }
+}
+
+
+// MARK: - Fonts
 extension UIFont {
 
     static var poppinsRegular14: UIFont {
@@ -36,6 +45,7 @@ extension UIFont {
 
 }
 
+// MARK: - Colors
 extension UIColor {
     static var color_8C4EFF: UIColor {
         return UIColor(hexString: "#8C4EFF")
@@ -59,6 +69,14 @@ extension UIColor {
 
     static var color_000000: UIColor {
         return UIColor(hexString: "#000000")
+    }
+
+    static var color_7A7A7A: UIColor {
+        return UIColor(hexString: "#7A7A7A")
+    }
+
+    static var color_424343: UIColor {
+        return UIColor(hexString: "#424343")
     }
 
 //    static var color_: UIColor {

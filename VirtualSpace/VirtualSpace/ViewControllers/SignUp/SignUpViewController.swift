@@ -1,5 +1,5 @@
 //_________SKAIK_MO_________
-//  
+//
 //  SignUpViewController.swift
 //  VirtualSpace
 //
@@ -11,8 +11,24 @@ import UIKit
 class SignUpViewController: UIViewController {
 
     // MARK: Outlets
+    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var signUpLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var userButton: UIButton!
+    @IBOutlet weak var busniessButton: UIButton!
+    @IBOutlet weak var nameTextField: MainTextView!
+    @IBOutlet weak var emailTextField: MainTextView!
+    @IBOutlet weak var phoneTextField: PhoneTextFieldView!
+    @IBOutlet weak var passwordTextField: PasswordTextFieldView!
+    @IBOutlet weak var privacyButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
 
     // MARK: Properties
+    private var type: GlobalConstants.UserType = .User {
+        didSet {
+            self.setUpUserType()
+        }
+    }
 
     // MARK: Init
     init() {
@@ -26,9 +42,8 @@ class SignUpViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpView()
         setUpData()
-        fetchData()
+        setUpView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -39,23 +54,77 @@ class SignUpViewController: UIViewController {
 
 // MARK: - Actions
 private extension SignUpViewController {
+    @IBAction func signInAction(_ sender: Any) {
+        debugPrint(#function)
+    }
 
+    @IBAction func userAction(_ sender: Any) {
+        debugPrint(#function)
+        self.type = .User
+    }
+
+    @IBAction func businessAction(_ sender: Any) {
+        debugPrint(#function)
+        self.type = .Business
+    }
+
+    @IBAction func privacyAction(_ sender: Any) {
+        debugPrint(#function)
+        self._showAlertOK(message: "Privacy")
+    }
+
+    @IBAction func signUpAction(_ sender: Any) {
+        debugPrint(#function)
+    }
 }
 
 // MARK: - Configurations
 private extension SignUpViewController {
 
     func setUpView() {
-
+        self.view.cornerRadius = 25
+        self.userButton.applyButtonStyle(.OutlinedPurple)
+        self.busniessButton.applyButtonStyle(.SecondaryLightGray)
+        self.nameTextField.setUpView(.Normal)
+        self.emailTextField.setUpView(.Email)
+        self.phoneTextField.setUpView(vc: self)
+        self.passwordTextField.setUpView()
+        self.signUpButton.applyButtonStyle(.Primary)
+        setButtonAttribute()
     }
 
     func setUpData() {
-
+        self.signInButton.titleLabel?.text = Strings.SIGN_IN
+        self.signUpLabel.text = Strings.SIGN_UP
+        self.descriptionLabel.text = Strings.FILL_DATA_TITLE
+        self.userButton.titleLabel?.text = Strings.USER_TITLE
+        self.nameTextField.title = Strings.NAME_TITLE
+        self.nameTextField.placeholder = Strings.NAME_TITLE
+        self.emailTextField.title = Strings.EMAIL_TITLE
+        self.emailTextField.placeholder = Strings.EMAIL_TITLE
+        self.phoneTextField.title = Strings.PHONE_TITLE
+        self.passwordTextField.title = Strings.PASSWORD_TITLE
+        self.passwordTextField.placeholder = Strings.PASSWORD_TITLE
+        self.busniessButton.titleLabel?.text = Strings.BUSNIESS_TITLE
+        self.signUpButton.titleLabel?.text = Strings.SIGN_UP
     }
 
-    func fetchData() {
-
+    func setUpUserType() {
+        switch self.type {
+        case .User:
+            self.userButton.applyButtonStyle(.OutlinedPurple)
+            self.busniessButton.applyButtonStyle(.SecondaryLightGray)
+        case .Business:
+            self.userButton.applyButtonStyle(.SecondaryLightGray)
+            self.busniessButton.applyButtonStyle(.OutlinedPurple)
+        }
     }
 
+    func setButtonAttribute() {
+        let attributedTitle = NSMutableAttributedString(string: Strings.PRIVACY_AGREE_TITLE)
+        attributedTitle.addAttribute(.foregroundColor, value: UIColor.color_8C4EFF, range: NSRange.init(location: 47, length: Strings.TERMS_TITLE.count))
+        attributedTitle.addAttribute(.foregroundColor, value: UIColor.color_8C4EFF, range: NSRange.init(location: 68, length: Strings.POLICY_TITLE.count))
+        self.privacyButton.setAttributedTitle(attributedTitle, for: .normal)
+    }
 }
 
