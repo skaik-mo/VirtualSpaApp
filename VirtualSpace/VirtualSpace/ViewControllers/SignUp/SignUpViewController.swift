@@ -75,7 +75,8 @@ private extension SignUpViewController {
 
     @IBAction func privacyAction(_ sender: Any) {
         debugPrint(#function)
-        self._showAlertOK(message: "Privacy")
+        let vc = PrivacyPolicyViewController()
+        self.present(vc, animated: true)
     }
 
     @IBAction func signUpAction(_ sender: Any) {

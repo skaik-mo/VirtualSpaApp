@@ -10,6 +10,8 @@
 		7765ABE8FD0FDC63B6B2A135 /* Pods_VirtualSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C626268165F8F279258A5969 /* Pods_VirtualSpace.framework */; };
 		E7107B142A5D2316008891B1 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7107B122A5D2316008891B1 /* ForgotPasswordViewController.swift */; };
 		E7107B152A5D2316008891B1 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7107B132A5D2316008891B1 /* ForgotPasswordViewController.xib */; };
+		E7107B182A5D3915008891B1 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7107B162A5D3915008891B1 /* PrivacyPolicyViewController.swift */; };
+		E7107B192A5D3915008891B1 /* PrivacyPolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7107B172A5D3915008891B1 /* PrivacyPolicyViewController.xib */; };
 		E7373F422A5AC9B5007A1186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F412A5AC9B5007A1186 /* AppDelegate.swift */; };
 		E7373F442A5AC9B5007A1186 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F432A5AC9B5007A1186 /* SceneDelegate.swift */; };
 		E7373F492A5AC9B5007A1186 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */; };
@@ -58,6 +60,8 @@
 		C626268165F8F279258A5969 /* Pods_VirtualSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtualSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7107B122A5D2316008891B1 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		E7107B132A5D2316008891B1 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		E7107B162A5D3915008891B1 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		E7107B172A5D3915008891B1 /* PrivacyPolicyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyPolicyViewController.xib; sourceTree = "<group>"; };
 		E7373F3E2A5AC9B5007A1186 /* VirtualSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7373F412A5AC9B5007A1186 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7373F432A5AC9B5007A1186 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +144,15 @@
 			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
+		E7107B1A2A5D391B008891B1 /* Privacy Policy */ = {
+			isa = PBXGroup;
+			children = (
+				E7107B162A5D3915008891B1 /* PrivacyPolicyViewController.swift */,
+				E7107B172A5D3915008891B1 /* PrivacyPolicyViewController.xib */,
+			);
+			path = "Privacy Policy";
+			sourceTree = "<group>";
+		};
 		E7373F352A5AC9B4007A1186 = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +191,7 @@
 			children = (
 				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 				E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */,
+				E7107B1A2A5D391B008891B1 /* Privacy Policy */,
 				E7107B112A5D22FD008891B1 /* ForgotPassword */,
 				E75636422A5AE4900008C91B /* SignIn */,
 				E756363D2A5AE4790008C91B /* SignUp */,
@@ -456,6 +470,7 @@
 				E75636412A5AE4860008C91B /* SignUpViewController.xib in Resources */,
 				E799C9D42A5C1513003443C8 /* PhoneTextFieldView.xib in Resources */,
 				E73AA0692A5C03620022F8BE /* PasswordTextFieldView.xib in Resources */,
+				E7107B192A5D3915008891B1 /* PrivacyPolicyViewController.xib in Resources */,
 				E7373F4E2A5AC9B5007A1186 /* LaunchViewController.xib in Resources */,
 				E75636382A5AD3040008C91B /* Poppins-Regular.ttf in Resources */,
 				E7373F852A5AC9B5007A1186 /* Assets.xcassets in Resources */,
@@ -509,6 +524,7 @@
 				E77CF7C92A5BD5B400E01D49 /* ValidationError.swift in Sources */,
 				E75636402A5AE4860008C91B /* SignUpViewController.swift in Sources */,
 				E73AA0642A5BE59E0022F8BE /* MainTextView.swift in Sources */,
+				E7107B182A5D3915008891B1 /* PrivacyPolicyViewController.swift in Sources */,
 				E7373F712A5AC9B5007A1186 /* UICollectionView.swift in Sources */,
 				E7373F772A5AC9B5007A1186 /* UIResponder.swift in Sources */,
 				E75636452A5AE49E0008C91B /* SignInViewController.swift in Sources */,
