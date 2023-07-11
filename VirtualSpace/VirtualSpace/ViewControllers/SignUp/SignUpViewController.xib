@@ -35,11 +35,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Z7p-vy-pFz">
-                    <rect key="frame" x="0.0" y="50" width="375" height="704.33333333333337"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Z7p-vy-pFz">
+                    <rect key="frame" x="0.0" y="50" width="375" height="616.33333333333337"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VwH-Eh-6Q7">
-                            <rect key="frame" x="15" y="20" width="345" height="33"/>
+                            <rect key="frame" x="15" y="15" width="345" height="33"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKt-1e-b2g">
                                     <rect key="frame" x="0.0" y="0.0" width="16" height="33"/>
@@ -63,8 +63,8 @@
                             </subviews>
                             <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="5"/>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gLl-MK-8GJ">
-                            <rect key="frame" x="15" y="78" width="345" height="57.666666666666657"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gLl-MK-8GJ">
+                            <rect key="frame" x="15" y="63" width="345" height="52.666666666666657"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3Y-ld-FWZ">
                                     <rect key="frame" x="0.0" y="0.0" width="345" height="28"/>
@@ -73,7 +73,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please fill in a few details below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djy-H9-1Tv">
-                                    <rect key="frame" x="0.0" y="38" width="345" height="19.666666666666671"/>
+                                    <rect key="frame" x="0.0" y="33" width="345" height="19.666666666666671"/>
                                     <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                     <color key="textColor" name="#6B6B6B"/>
                                     <nil key="highlightedColor"/>
@@ -81,7 +81,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="8F0-dY-vYH">
-                            <rect key="frame" x="15" y="160.66666666666666" width="345" height="34.333333333333343"/>
+                            <rect key="frame" x="15" y="130.66666666666666" width="345" height="34.333333333333343"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="N7B-UG-eah">
                                     <rect key="frame" x="0.0" y="0.0" width="160" height="34.333333333333336"/>
@@ -106,8 +106,8 @@
                                 </stackView>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7tf-Y0-cCj">
-                            <rect key="frame" x="15" y="220" width="345" height="345"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7tf-Y0-cCj">
+                            <rect key="frame" x="15" y="180" width="345" height="324"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xl6-d6-7tz" customClass="MainTextView" customModule="VirtualSpace" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="345" height="75"/>
@@ -117,21 +117,21 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yat-eW-nst" customClass="MainTextView" customModule="VirtualSpace" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="90" width="345" height="75"/>
+                                    <rect key="frame" x="0.0" y="83" width="345" height="75"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fN-Vf-AyI" customClass="PhoneTextFieldView" customModule="VirtualSpace" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="180" width="345" height="75"/>
+                                    <rect key="frame" x="0.0" y="166" width="345" height="75"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="paa-hB-ah9" customClass="PasswordTextFieldView" customModule="VirtualSpace" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="270" width="345" height="75"/>
+                                    <rect key="frame" x="0.0" y="249" width="345" height="75"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ush-YV-gmy">
-                            <rect key="frame" x="15" y="590" width="345" height="94.333333333333371"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ush-YV-gmy">
+                            <rect key="frame" x="15" y="519" width="345" height="82.333333333333371"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Hxq-m2-kDi">
                                     <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
@@ -150,7 +150,7 @@ Service and Privacy Policy.</string>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dh8-jA-vHd">
-                                    <rect key="frame" x="0.0" y="60" width="345" height="34.333333333333343"/>
+                                    <rect key="frame" x="0.0" y="48" width="345" height="34.333333333333343"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                     <connections>
@@ -160,7 +160,7 @@ Service and Privacy Policy.</string>
                             </subviews>
                         </stackView>
                     </subviews>
-                    <directionalEdgeInsets key="directionalLayoutMargins" top="20" leading="15" bottom="20" trailing="15"/>
+                    <directionalEdgeInsets key="directionalLayoutMargins" top="15" leading="15" bottom="15" trailing="15"/>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="CTI-YQ-sjF"/>
