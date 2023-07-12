@@ -23,18 +23,24 @@ extension MainNavigationController {
         self.setRoot()
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.shadowColor = "#A3A3A3"._color
-        navigationBarAppearance.titleTextAttributes = self.setSmallTitleFont()
-        navigationBarAppearance.backgroundColor = setNavigationBarWhenScrollViewController()
+        navigationBarAppearance.titleTextAttributes = getSmallTitleFont()
+        navigationBarAppearance.backgroundColor = getBackgroundColor()
         navigationBarAppearance.setBackIndicatorImage(.ic_back, transitionMaskImage: .ic_back)
         navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        navigationBarAppearance.backgroundColor = getBackgroundColorWhenScrollViewController()
+        navigationBar.standardAppearance = navigationBarAppearance
     }
 
-    private func setSmallTitleFont() -> [NSAttributedString.Key: Any] {
+    private func getSmallTitleFont() -> [NSAttributedString.Key: Any] {
         [NSAttributedString.Key.foregroundColor: UIColor.color_000000, NSAttributedString.Key.font: UIFont.poppinsMedium17]
     }
 
-    private func setNavigationBarWhenScrollViewController() -> UIColor {
+    private func getBackgroundColor() -> UIColor {
             .color_FFFFFF
+    }
+
+    private func getBackgroundColorWhenScrollViewController() -> UIColor {
+         .color_FFFFFF
     }
 
 }
