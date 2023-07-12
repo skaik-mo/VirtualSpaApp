@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FollowingTableViewCell" id="KGk-i7-Jjw" customClass="FollowingTableViewCell" customModule="VirtualSpace" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qtg-di-6pP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo" translatesAutoresizingMaskIntoConstraints="NO" id="fbd-QP-XoH" customClass="rImage" customModule="VirtualSpace" customModuleProvider="target">
+                                <rect key="frame" x="16" y="22.666666666666671" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7co-p4-Ue5"/>
+                                    <constraint firstAttribute="width" secondItem="fbd-QP-XoH" secondAttribute="height" multiplier="1:1" id="hfr-Ah-bT8"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="0AO-U8-p9Q">
+                                <rect key="frame" x="66" y="18.333333333333329" width="254" height="48.333333333333343"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6r7-JQ-s1l">
+                                        <rect key="frame" x="0.0" y="0.0" width="254" height="34.333333333333336"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eee-NF-I3E">
+                                                <rect key="frame" x="0.0" y="0.0" width="42" height="34.333333333333336"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                                                <color key="textColor" name="#000000"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxv-3U-0Jm">
+                                                <rect key="frame" x="163" y="0.0" width="75" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                            </button>
+                                        </subviews>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="16"/>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fbg-LZ-Pvz">
+                                        <rect key="frame" x="0.0" y="47.333333333333343" width="254" height="1"/>
+                                        <color key="backgroundColor" name="#F2F2F2"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="fQP-ld-oAf"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <directionalEdgeInsets key="directionalLayoutMargins" top="15" leading="16" bottom="0.0" trailing="0.0"/>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="qtg-di-6pP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="1d5-9y-LWy"/>
+                    <constraint firstAttribute="bottom" secondItem="qtg-di-6pP" secondAttribute="bottom" id="5bO-nd-gxD"/>
+                    <constraint firstAttribute="trailing" secondItem="qtg-di-6pP" secondAttribute="trailing" id="guf-ro-oa7"/>
+                    <constraint firstItem="qtg-di-6pP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hra-Wg-Qfa"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="authImage" destination="fbd-QP-XoH" id="OkB-jp-R4N"/>
+                <outlet property="authNameLabel" destination="Eee-NF-I3E" id="Y8t-2s-ahn"/>
+                <outlet property="followingButton" destination="Mxv-3U-0Jm" id="n8C-H8-CIl"/>
+            </connections>
+            <point key="canvasLocation" x="-356" y="-35"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="demo" width="1280" height="1280"/>
+        <namedColor name="#000000">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="#F2F2F2">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

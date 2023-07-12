@@ -40,7 +40,8 @@ class GlobalConstants {
             case .Massages:
                 debugPrint("Massages")
             case .Following:
-                debugPrint("Following")
+                let vc = FollowingViewController()
+                vc._push()
             case .Followers:
                 debugPrint("Followers")
             case .Friends:

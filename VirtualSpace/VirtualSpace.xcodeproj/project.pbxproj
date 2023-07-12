@@ -64,6 +64,10 @@
 		E77058562A5E9C3D004ADBF9 /* FriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E77058542A5E9C3D004ADBF9 /* FriendsViewController.xib */; };
 		E770585A2A5E9CBB004ADBF9 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E77058582A5E9CBB004ADBF9 /* FriendTableViewCell.xib */; };
 		E770585B2A5E9CBB004ADBF9 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77058592A5E9CBB004ADBF9 /* FriendTableViewCell.swift */; };
+		E770585F2A5EA222004ADBF9 /* FollowingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E770585D2A5EA222004ADBF9 /* FollowingTableViewCell.xib */; };
+		E77058602A5EA222004ADBF9 /* FollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E770585E2A5EA222004ADBF9 /* FollowingTableViewCell.swift */; };
+		E77058642A5EA2BC004ADBF9 /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77058622A5EA2BC004ADBF9 /* FollowingViewController.swift */; };
+		E77058652A5EA2BC004ADBF9 /* FollowingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E77058632A5EA2BC004ADBF9 /* FollowingViewController.xib */; };
 		E77CF7B32A5BD41900E01D49 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7B22A5BD41900E01D49 /* UITextField.swift */; };
 		E77CF7C92A5BD5B400E01D49 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7C52A5BD5B400E01D49 /* ValidationError.swift */; };
 		E77CF7CA2A5BD5B400E01D49 /* ValidationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7C62A5BD5B400E01D49 /* ValidationRule.swift */; };
@@ -145,6 +149,10 @@
 		E77058542A5E9C3D004ADBF9 /* FriendsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsViewController.xib; sourceTree = "<group>"; };
 		E77058582A5E9CBB004ADBF9 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
 		E77058592A5E9CBB004ADBF9 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		E770585D2A5EA222004ADBF9 /* FollowingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowingTableViewCell.xib; sourceTree = "<group>"; };
+		E770585E2A5EA222004ADBF9 /* FollowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingTableViewCell.swift; sourceTree = "<group>"; };
+		E77058622A5EA2BC004ADBF9 /* FollowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingViewController.swift; sourceTree = "<group>"; };
+		E77058632A5EA2BC004ADBF9 /* FollowingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowingViewController.xib; sourceTree = "<group>"; };
 		E77CF7B22A5BD41900E01D49 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		E77CF7C52A5BD5B400E01D49 /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		E77CF7C62A5BD5B400E01D49 /* ValidationRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationRule.swift; sourceTree = "<group>"; };
@@ -295,6 +303,7 @@
 				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 				E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */,
 				E723BB932A5D3B190026782B /* MainTabBarController.swift */,
+				E77058612A5EA2A9004ADBF9 /* Following */,
 				E77058522A5E9C2B004ADBF9 /* Friends */,
 				E7B6F9292A5E9734002A0693 /* Notification */,
 				E7E35A272A5E7D9500733459 /* ChangePassword */,
@@ -350,6 +359,7 @@
 		E7373F582A5AC9B5007A1186 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				E770585C2A5EA211004ADBF9 /* Following */,
 				E77058572A5E9CA8004ADBF9 /* Friend */,
 				E7B6F92E2A5E97D6002A0693 /* Notification */,
 				E723BBB92A5D7C7F0026782B /* Delete */,
@@ -512,6 +522,24 @@
 			path = Friend;
 			sourceTree = "<group>";
 		};
+		E770585C2A5EA211004ADBF9 /* Following */ = {
+			isa = PBXGroup;
+			children = (
+				E770585D2A5EA222004ADBF9 /* FollowingTableViewCell.xib */,
+				E770585E2A5EA222004ADBF9 /* FollowingTableViewCell.swift */,
+			);
+			path = Following;
+			sourceTree = "<group>";
+		};
+		E77058612A5EA2A9004ADBF9 /* Following */ = {
+			isa = PBXGroup;
+			children = (
+				E77058622A5EA2BC004ADBF9 /* FollowingViewController.swift */,
+				E77058632A5EA2BC004ADBF9 /* FollowingViewController.xib */,
+			);
+			path = Following;
+			sourceTree = "<group>";
+		};
 		E77CF7B42A5BD51800E01D49 /* Validators */ = {
 			isa = PBXGroup;
 			children = (
@@ -639,6 +667,7 @@
 			files = (
 				E723BBA32A5D634B0026782B /* ProfileViewController.xib in Resources */,
 				E723BBBC2A5D7C950026782B /* DeleteTableViewCell.xib in Resources */,
+				E77058652A5EA2BC004ADBF9 /* FollowingViewController.xib in Resources */,
 				E7107B152A5D2316008891B1 /* ForgotPasswordViewController.xib in Resources */,
 				E75636462A5AE49E0008C91B /* SignInViewController.xib in Resources */,
 				E756363C2A5AE26A0008C91B /* Launch Screen.storyboard in Resources */,
@@ -648,6 +677,7 @@
 				E75636412A5AE4860008C91B /* SignUpViewController.xib in Resources */,
 				E799C9D42A5C1513003443C8 /* PhoneTextFieldView.xib in Resources */,
 				E73AA0692A5C03620022F8BE /* PasswordTextFieldView.xib in Resources */,
+				E770585F2A5EA222004ADBF9 /* FollowingTableViewCell.xib in Resources */,
 				E7107B192A5D3915008891B1 /* PrivacyPolicyViewController.xib in Resources */,
 				E7373F4E2A5AC9B5007A1186 /* LaunchViewController.xib in Resources */,
 				E7E35A262A5E6DE100733459 /* EditProfileViewController.xib in Resources */,
@@ -702,6 +732,7 @@
 				E723BBBF2A5D84110026782B /* UISwitch.swift in Sources */,
 				E77CF7CA2A5BD5B400E01D49 /* ValidationRule.swift in Sources */,
 				E723BB942A5D3B190026782B /* MainTabBarController.swift in Sources */,
+				E77058602A5EA222004ADBF9 /* FollowingTableViewCell.swift in Sources */,
 				E7373F642A5AC9B5007A1186 /* Strings.swift in Sources */,
 				E7B6F92C2A5E973D002A0693 /* NotificationViewController.swift in Sources */,
 				E77CF7B32A5BD41900E01D49 /* UITextField.swift in Sources */,
@@ -736,6 +767,7 @@
 				E73AA0682A5C03620022F8BE /* PasswordTextFieldView.swift in Sources */,
 				E723BBBD2A5D7C950026782B /* DeleteTableViewCell.swift in Sources */,
 				E723BBB02A5D73D50026782B /* ProfileHeaderTableViewCell.swift in Sources */,
+				E77058642A5EA2BC004ADBF9 /* FollowingViewController.swift in Sources */,
 				E7373F662A5AC9B5007A1186 /* GlobalConstants.swift in Sources */,
 				E77CF7CC2A5BD5B400E01D49 /* Validator.swift in Sources */,
 				E770585B2A5E9CBB004ADBF9 /* FriendTableViewCell.swift in Sources */,

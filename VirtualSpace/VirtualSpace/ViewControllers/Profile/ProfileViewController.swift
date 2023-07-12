@@ -60,7 +60,7 @@ private extension ProfileViewController {
     }
 
     func setUpData() {
-        let userMenu: [GlobalConstants.ProfileMenu] = [.AccountPrivacy, .Reservations, .Massages, .Following, .Friends, .Followers, .EditProfile, .ChangePassword, .DeleteAccount]
+        let userMenu: [GlobalConstants.ProfileMenu] = [.AccountPrivacy, .Reservations, .Massages, .Following, .Friends, .EditProfile, .ChangePassword, .DeleteAccount]
         let busniessMenu: [GlobalConstants.ProfileMenu] = [.AccountPrivacy, .Massages, .Followers, .EditProfile, .ChangePassword]
         self.menu = AuthController().fetchAuth() == .User ? userMenu : busniessMenu
     }
