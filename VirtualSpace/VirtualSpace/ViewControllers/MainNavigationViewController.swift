@@ -25,6 +25,7 @@ extension MainNavigationController {
         navigationBarAppearance.shadowColor = "#A3A3A3"._color
         navigationBarAppearance.titleTextAttributes = self.setSmallTitleFont()
         navigationBarAppearance.backgroundColor = setNavigationBarWhenScrollViewController()
+        navigationBarAppearance.setBackIndicatorImage(.ic_back, transitionMaskImage: .ic_back)
         navigationBar.scrollEdgeAppearance = navigationBarAppearance
     }
 
@@ -68,8 +69,7 @@ extension UINavigationController {
     }
 
     private func setBackButton() {
-        UINavigationBar.appearance().backIndicatorImage = .ic_back
-        UINavigationBar.appearance().backIndicatorTransitionMaskImage = .ic_back
-        navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationBar.topItem?.backBarButtonItem = backButton
     }
 }
