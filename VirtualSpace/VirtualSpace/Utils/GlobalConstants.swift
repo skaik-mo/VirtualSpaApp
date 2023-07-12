@@ -46,7 +46,8 @@ class GlobalConstants {
             case .Friends:
                 debugPrint("Friends")
             case .EditProfile:
-                debugPrint("EditProfile")
+                let vc = EditProfileViewController()
+                vc._push()
             case .ChangePassword:
                 debugPrint("ChangePassword")
             case .DeleteAccount:
@@ -118,6 +119,10 @@ extension UIImage {
         "ic_notificationSelected"._toImage
     }
 
+    static var ic_camera: UIImage? {
+        "ic_camera"._toImage
+    }
+
 
 }
 
@@ -176,6 +181,10 @@ extension UIColor {
 
     static var color_424343: UIColor {
         return UIColor(hexString: "#424343")
+    }
+
+    static var color_ECECEC: UIColor {
+        return UIColor(hexString: "#ECECEC")
     }
 
 //    static var color_: UIColor {

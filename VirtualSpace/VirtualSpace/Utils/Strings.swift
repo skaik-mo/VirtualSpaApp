@@ -55,4 +55,9 @@ class Strings {
     static let PROFILE_TITLE = "Profile"._localizedKey
     static let LOGOUT_TITLE = "Log out"._localizedKey
 
+    // MARK: - Edit Profile
+    static let EDIT_PROFILE_TITLE = "Edit Profile"._localizedKey
+    static let BIO_TITLE = "Bio"._localizedKey
+    static let SAVE_TITLE = "Save"._localizedKey
+
 }
