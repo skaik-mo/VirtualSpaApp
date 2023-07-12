@@ -111,7 +111,7 @@ private extension SignInViewController {
         }
         AuthController().saveAuth(auth: .User)
         MainNavigationController.showFirstView()
-        self._dismissVC()
+        self._dismissAllVCs()
         self.isEnableSignIn = true
     }
 

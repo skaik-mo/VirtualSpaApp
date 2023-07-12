@@ -60,6 +60,10 @@ extension UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 
+    func _dismissAllVCs() {
+        SceneDelegate.shared?.window?.rootViewController?.dismiss(animated: true)
+    }
+
     @IBAction func _popViewController(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

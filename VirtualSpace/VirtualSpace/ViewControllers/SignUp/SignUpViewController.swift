@@ -159,7 +159,7 @@ private extension SignUpViewController {
         }
         AuthController().saveAuth(auth: getAuth())
         MainNavigationController.showFirstView()
-        self._dismissVC()
+        self._dismissAllVCs()
         self.isEnableSignUp = true
     }
 
