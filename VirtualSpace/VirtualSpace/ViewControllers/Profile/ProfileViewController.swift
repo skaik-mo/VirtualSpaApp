@@ -29,11 +29,11 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        setUpData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setUpData()
     }
 
 }
@@ -52,10 +52,6 @@ private extension ProfileViewController {
 private extension ProfileViewController {
 
     func setUpView() {
-        self.tabBarController?.title = Strings.PROFILE_TITLE
-        let logout = UIBarButtonItem(title: Strings.LOGOUT_TITLE, style: .plain, target: self, action: #selector(logoutAction))
-        logout.setTitleTextAttributes([.font: UIFont.poppinsSemiBold14, .foregroundColor: UIColor.color_8C4EFF], for: .normal)
-        self.tabBarController?.navigationItem.rightBarButtonItem = logout
         self.setUpTableView()
     }
 
@@ -76,6 +72,18 @@ private extension ProfileViewController {
         self.tableView.delegate = self
     }
 
+}
+
+// MARK: - set Up Navigation
+extension ProfileViewController {
+    func getUpNavigationItem() -> UINavigationItem {
+        let navigationItem = UINavigationItem()
+        navigationItem.title = Strings.PROFILE_TITLE
+        let logout = UIBarButtonItem(title: Strings.LOGOUT_TITLE, style: .plain, target: self, action: #selector(logoutAction))
+        logout.setTitleTextAttributes([.font: UIFont.poppinsSemiBold14, .foregroundColor: UIColor.color_8C4EFF], for: .normal)
+        navigationItem.rightBarButtonItems = [logout]
+        return navigationItem
+    }
 }
 
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {

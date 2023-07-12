@@ -17,7 +17,7 @@ class MainTabBarController: UITabBarController {
             self.navigationItem.title = title
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpView()
@@ -66,15 +66,15 @@ private extension MainTabBarController {
         vc3.tabBarItem.image = .ic_frinds
         vc3.tabBarItem.selectedImage = .ic_frindsSelected
 
-        let vc4 = PrivacyPolicyViewController()
-        vc4.tabBarItem.image = .ic_heart
-        vc4.tabBarItem.selectedImage = .ic_heartSelected
+        let favorite = FavoriteViewController()
+        favorite.tabBarItem.image = .ic_heart
+        favorite.tabBarItem.selectedImage = .ic_heartSelected
 
-        let vc5 = ProfileViewController()
-        vc5.tabBarItem.image = .ic_profile
-        vc5.tabBarItem.selectedImage = .ic_profileSelected
+        let profile = ProfileViewController()
+        profile.tabBarItem.image = .ic_profile
+        profile.tabBarItem.selectedImage = .ic_profileSelected
 
-        self.setViewControllers([vc1, vc2, vc3, vc4, vc5], animated: true)
+        self.setViewControllers([vc1, vc2, vc3, favorite, profile], animated: true)
     }
 
     func setUpBusinessViewControllers() {
@@ -90,11 +90,11 @@ private extension MainTabBarController {
         vc4.tabBarItem.image = .ic_notification
         vc4.tabBarItem.selectedImage = .ic_notificationSelected
 
-        let vc5 = ProfileViewController()
-        vc5.tabBarItem.image = .ic_profile
-        vc5.tabBarItem.selectedImage = .ic_profileSelected
+        let profile = ProfileViewController()
+        profile.tabBarItem.image = .ic_profile
+        profile.tabBarItem.selectedImage = .ic_profileSelected
 
-        self.setViewControllers([vc1, vc3, vc4, vc5], animated: true)
+        self.setViewControllers([vc1, vc3, vc4, profile], animated: true)
     }
 
     func addLineInTabBar() {
@@ -103,19 +103,34 @@ private extension MainTabBarController {
         tabBar.addSubview(lineView)
     }
 
+    func setUpNavigation(selectedVC: UIViewController?) {
+        guard let selectedVC else { return }
+        if let selectedVC = selectedVC as? ProfileViewController {
+            self.setUpNavigationItem(selectedVC.getUpNavigationItem())
+        } else if let selectedVC = selectedVC as? FavoriteViewController {
+            self.setUpNavigationItem(selectedVC.getUpNavigationItem())
+        } else {
+            self.setUpNavigationItem(UINavigationItem())
+        }
+    }
+
 }
 
 extension MainTabBarController: UITabBarControllerDelegate {
 
-//    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-//        debugPrint(#function)
-//        debugPrint(self.selectedIndex)
-//    }
-
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        debugPrint(#function)
-        debugPrint(self.selectedIndex)
         indicatorView?.selectIndex(self.selectedIndex)
+        self.setUpNavigation(selectedVC: tabBarController.selectedViewController)
+    }
+
+}
+
+extension UITabBarController {
+
+    func setUpNavigationItem(_ navigationItem: UINavigationItem) {
+        self.title = navigationItem.title
+        self.navigationItem.leftBarButtonItems = navigationItem.leftBarButtonItems
+        self.navigationItem.rightBarButtonItems = navigationItem.rightBarButtonItems
     }
 
 }

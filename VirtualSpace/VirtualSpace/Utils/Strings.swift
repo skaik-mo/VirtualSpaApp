@@ -86,4 +86,7 @@ class Strings {
     // MARK: - Invite
     static let NEARBY_TITLE = "Nearby"._localizedKey
 
+    // MARK: - Favorite
+    static let FAVORITE_TITLE = "Favorite"._localizedKey
+
 }

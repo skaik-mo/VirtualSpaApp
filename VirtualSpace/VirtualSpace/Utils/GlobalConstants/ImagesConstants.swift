@@ -70,4 +70,12 @@ extension UIImage {
         "ic_camera"._toImage
     }
 
+    static var ic_remove: UIImage? {
+        "ic_remove"._toImage
+    }
+    
+    static var ic_circleArrow: UIImage? {
+        "ic_circleArrow"._toImage
+    }
+
 }

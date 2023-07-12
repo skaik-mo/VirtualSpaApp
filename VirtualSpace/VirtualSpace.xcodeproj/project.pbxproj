@@ -80,6 +80,8 @@
 		E770587D2A5EB21C004ADBF9 /* InviteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E770587B2A5EB21C004ADBF9 /* InviteTableViewCell.swift */; };
 		E77058812A5EB3FB004ADBF9 /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E770587F2A5EB3FB004ADBF9 /* InviteViewController.swift */; };
 		E77058822A5EB3FB004ADBF9 /* InviteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E77058802A5EB3FB004ADBF9 /* InviteViewController.xib */; };
+		E7715DED2A5ED0EC00143F92 /* PlaceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7715DEB2A5ED0EC00143F92 /* PlaceInfoViewController.swift */; };
+		E7715DEE2A5ED0EC00143F92 /* PlaceInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7715DEC2A5ED0EC00143F92 /* PlaceInfoViewController.xib */; };
 		E77CF7B32A5BD41900E01D49 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7B22A5BD41900E01D49 /* UITextField.swift */; };
 		E77CF7C92A5BD5B400E01D49 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7C52A5BD5B400E01D49 /* ValidationError.swift */; };
 		E77CF7CA2A5BD5B400E01D49 /* ValidationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7C62A5BD5B400E01D49 /* ValidationRule.swift */; };
@@ -89,6 +91,10 @@
 		E799C9D42A5C1513003443C8 /* PhoneTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */; };
 		E799C9F02A5C3705003443C8 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E799C9EF2A5C3705003443C8 /* IQKeyboardManagerSwift */; };
 		E799C9F32A5C3785003443C8 /* NKVPhonePicker in Frameworks */ = {isa = PBXBuildFile; productRef = E799C9F22A5C3785003443C8 /* NKVPhonePicker */; };
+		E7A861942A5EC0A100CFA14B /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A861922A5EC0A100CFA14B /* FavoriteViewController.swift */; };
+		E7A861952A5EC0A100CFA14B /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A861932A5EC0A100CFA14B /* FavoriteViewController.xib */; };
+		E7A861992A5EC81200CFA14B /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A861972A5EC81200CFA14B /* PlaceTableViewCell.xib */; };
+		E7A8619A2A5EC81200CFA14B /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A861982A5EC81200CFA14B /* PlaceTableViewCell.swift */; };
 		E7B6F92C2A5E973D002A0693 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B6F92A2A5E973D002A0693 /* NotificationViewController.swift */; };
 		E7B6F92D2A5E973D002A0693 /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B6F92B2A5E973D002A0693 /* NotificationViewController.xib */; };
 		E7B6F9312A5E97E0002A0693 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B6F92F2A5E97E0002A0693 /* NotificationTableViewCell.xib */; };
@@ -177,6 +183,8 @@
 		E770587B2A5EB21C004ADBF9 /* InviteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteTableViewCell.swift; sourceTree = "<group>"; };
 		E770587F2A5EB3FB004ADBF9 /* InviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
 		E77058802A5EB3FB004ADBF9 /* InviteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InviteViewController.xib; sourceTree = "<group>"; };
+		E7715DEB2A5ED0EC00143F92 /* PlaceInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoViewController.swift; sourceTree = "<group>"; };
+		E7715DEC2A5ED0EC00143F92 /* PlaceInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceInfoViewController.xib; sourceTree = "<group>"; };
 		E77CF7B22A5BD41900E01D49 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		E77CF7C52A5BD5B400E01D49 /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		E77CF7C62A5BD5B400E01D49 /* ValidationRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationRule.swift; sourceTree = "<group>"; };
@@ -184,6 +192,10 @@
 		E77CF7C82A5BD5B400E01D49 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		E799C9D12A5C1513003443C8 /* PhoneTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextFieldView.swift; sourceTree = "<group>"; };
 		E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTextFieldView.xib; sourceTree = "<group>"; };
+		E7A861922A5EC0A100CFA14B /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		E7A861932A5EC0A100CFA14B /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
+		E7A861972A5EC81200CFA14B /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
+		E7A861982A5EC81200CFA14B /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		E7B6F92A2A5E973D002A0693 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		E7B6F92B2A5E973D002A0693 /* NotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
 		E7B6F92F2A5E97E0002A0693 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
@@ -327,6 +339,9 @@
 				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 				E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */,
 				E723BB932A5D3B190026782B /* MainTabBarController.swift */,
+				E7715DEA2A5ED0D800143F92 /* PlaceInfo */,
+				E7715DE92A5ED0D100143F92 /* TherapistsPlaces */,
+				E7A861912A5EC09900CFA14B /* Favorite */,
 				E770587E2A5EB3E8004ADBF9 /* Invite */,
 				E770586A2A5EA6E7004ADBF9 /* Reservations */,
 				E77058612A5EA2A9004ADBF9 /* Following */,
@@ -385,6 +400,7 @@
 		E7373F582A5AC9B5007A1186 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				E7A861962A5EC7F200CFA14B /* Place */,
 				E77058792A5EB214004ADBF9 /* Invite */,
 				E770586B2A5EA755004ADBF9 /* Reservation */,
 				E770585C2A5EA211004ADBF9 /* Following */,
@@ -616,6 +632,22 @@
 			path = Invite;
 			sourceTree = "<group>";
 		};
+		E7715DE92A5ED0D100143F92 /* TherapistsPlaces */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TherapistsPlaces;
+			sourceTree = "<group>";
+		};
+		E7715DEA2A5ED0D800143F92 /* PlaceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E7715DEB2A5ED0EC00143F92 /* PlaceInfoViewController.swift */,
+				E7715DEC2A5ED0EC00143F92 /* PlaceInfoViewController.xib */,
+			);
+			path = PlaceInfo;
+			sourceTree = "<group>";
+		};
 		E77CF7B42A5BD51800E01D49 /* Validators */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,6 +668,24 @@
 				E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */,
 			);
 			path = PhoneTextField;
+			sourceTree = "<group>";
+		};
+		E7A861912A5EC09900CFA14B /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				E7A861922A5EC0A100CFA14B /* FavoriteViewController.swift */,
+				E7A861932A5EC0A100CFA14B /* FavoriteViewController.xib */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		E7A861962A5EC7F200CFA14B /* Place */ = {
+			isa = PBXGroup;
+			children = (
+				E7A861972A5EC81200CFA14B /* PlaceTableViewCell.xib */,
+				E7A861982A5EC81200CFA14B /* PlaceTableViewCell.swift */,
+			);
+			path = Place;
 			sourceTree = "<group>";
 		};
 		E7B6F9292A5E9734002A0693 /* Notification */ = {
@@ -741,6 +791,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7715DEE2A5ED0EC00143F92 /* PlaceInfoViewController.xib in Resources */,
 				E770587C2A5EB21C004ADBF9 /* InviteTableViewCell.xib in Resources */,
 				E77058822A5EB3FB004ADBF9 /* InviteViewController.xib in Resources */,
 				E723BBA32A5D634B0026782B /* ProfileViewController.xib in Resources */,
@@ -751,6 +802,7 @@
 				E756363C2A5AE26A0008C91B /* Launch Screen.storyboard in Resources */,
 				E73AA0652A5BE59E0022F8BE /* MainTextView.xib in Resources */,
 				E75636332A5AD1410008C91B /* AuthenticationViewController.xib in Resources */,
+				E7A861952A5EC0A100CFA14B /* FavoriteViewController.xib in Resources */,
 				E7E35A2B2A5E7DAC00733459 /* ChangePasswordViewController.xib in Resources */,
 				E75636412A5AE4860008C91B /* SignUpViewController.xib in Resources */,
 				E799C9D42A5C1513003443C8 /* PhoneTextFieldView.xib in Resources */,
@@ -766,6 +818,7 @@
 				E75636362A5AD2EF0008C91B /* Poppins-Medium.ttf in Resources */,
 				E7B6F9312A5E97E0002A0693 /* NotificationTableViewCell.xib in Resources */,
 				E723BBB72A5D7B3C0026782B /* SwitchTableViewCell.xib in Resources */,
+				E7A861992A5EC81200CFA14B /* PlaceTableViewCell.xib in Resources */,
 				E770585A2A5E9CBB004ADBF9 /* FriendTableViewCell.xib in Resources */,
 				E77058562A5E9C3D004ADBF9 /* FriendsViewController.xib in Resources */,
 				E723BBA62A5D6FB80026782B /* ProfileTableViewCell.xib in Resources */,
@@ -848,6 +901,7 @@
 				E7373F752A5AC9B5007A1186 /* UIKitHelpers.swift in Sources */,
 				E770587D2A5EB21C004ADBF9 /* InviteTableViewCell.swift in Sources */,
 				E7373F792A5AC9B5007A1186 /* UIStoryboard.swift in Sources */,
+				E7A8619A2A5EC81200CFA14B /* PlaceTableViewCell.swift in Sources */,
 				E7B6F9322A5E97E0002A0693 /* NotificationTableViewCell.swift in Sources */,
 				E7373F6F2A5AC9B5007A1186 /* String.swift in Sources */,
 				E75636322A5AD1410008C91B /* AuthenticationViewController.swift in Sources */,
@@ -859,6 +913,8 @@
 				E7373F662A5AC9B5007A1186 /* GlobalConstants.swift in Sources */,
 				E77CF7CC2A5BD5B400E01D49 /* Validator.swift in Sources */,
 				E770585B2A5E9CBB004ADBF9 /* FriendTableViewCell.swift in Sources */,
+				E7715DED2A5ED0EC00143F92 /* PlaceInfoViewController.swift in Sources */,
+				E7A861942A5EC0A100CFA14B /* FavoriteViewController.swift in Sources */,
 				E723BB9A2A5D42480026782B /* EmailValidator.swift in Sources */,
 				E723BBA22A5D634B0026782B /* ProfileViewController.swift in Sources */,
 				E7373F442A5AC9B5007A1186 /* SceneDelegate.swift in Sources */,
