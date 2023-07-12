@@ -71,6 +71,8 @@
 		E799C9F32A5C3785003443C8 /* NKVPhonePicker in Frameworks */ = {isa = PBXBuildFile; productRef = E799C9F22A5C3785003443C8 /* NKVPhonePicker */; };
 		E7E35A252A5E6DE100733459 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E35A232A5E6DE100733459 /* EditProfileViewController.swift */; };
 		E7E35A262A5E6DE100733459 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E35A242A5E6DE100733459 /* EditProfileViewController.xib */; };
+		E7E35A2A2A5E7DAC00733459 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E35A282A5E7DAC00733459 /* ChangePasswordViewController.swift */; };
+		E7E35A2B2A5E7DAC00733459 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E35A292A5E7DAC00733459 /* ChangePasswordViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,6 +142,8 @@
 		E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTextFieldView.xib; sourceTree = "<group>"; };
 		E7E35A232A5E6DE100733459 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		E7E35A242A5E6DE100733459 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
+		E7E35A282A5E7DAC00733459 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		E7E35A292A5E7DAC00733459 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +279,7 @@
 				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 				E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */,
 				E723BB932A5D3B190026782B /* MainTabBarController.swift */,
+				E7E35A272A5E7D9500733459 /* ChangePassword */,
 				E7E35A222A5E6DCA00733459 /* EditProfile */,
 				E723BB9F2A5D633F0026782B /* Profile */,
 				E7107B1A2A5D391B008891B1 /* Privacy Policy */,
@@ -500,6 +505,15 @@
 			path = EditProfile;
 			sourceTree = "<group>";
 		};
+		E7E35A272A5E7D9500733459 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				E7E35A282A5E7DAC00733459 /* ChangePasswordViewController.swift */,
+				E7E35A292A5E7DAC00733459 /* ChangePasswordViewController.xib */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -574,6 +588,7 @@
 				E756363C2A5AE26A0008C91B /* Launch Screen.storyboard in Resources */,
 				E73AA0652A5BE59E0022F8BE /* MainTextView.xib in Resources */,
 				E75636332A5AD1410008C91B /* AuthenticationViewController.xib in Resources */,
+				E7E35A2B2A5E7DAC00733459 /* ChangePasswordViewController.xib in Resources */,
 				E75636412A5AE4860008C91B /* SignUpViewController.xib in Resources */,
 				E799C9D42A5C1513003443C8 /* PhoneTextFieldView.xib in Resources */,
 				E73AA0692A5C03620022F8BE /* PasswordTextFieldView.xib in Resources */,
@@ -649,6 +664,7 @@
 				E723BBA72A5D6FB80026782B /* ProfileTableViewCell.swift in Sources */,
 				E7373F492A5AC9B5007A1186 /* MainNavigationViewController.swift in Sources */,
 				E7373F422A5AC9B5007A1186 /* AppDelegate.swift in Sources */,
+				E7E35A2A2A5E7DAC00733459 /* ChangePasswordViewController.swift in Sources */,
 				E723BB962A5D3E4D0026782B /* AuthController.swift in Sources */,
 				E7373F752A5AC9B5007A1186 /* UIKitHelpers.swift in Sources */,
 				E7373F792A5AC9B5007A1186 /* UIStoryboard.swift in Sources */,

@@ -60,4 +60,10 @@ class Strings {
     static let BIO_TITLE = "Bio"._localizedKey
     static let SAVE_TITLE = "Save"._localizedKey
 
+    // MARK: - Change Password
+    static let CHANGE_PASS_TITLE = "Change Password"._localizedKey
+    static let CURRENT_PASS_TITLE = "Current password"._localizedKey
+    static let NEW_PASS_TITLE = "New password"._localizedKey
+    static let REPEAT_PASS_TITLE = "Repeat password"._localizedKey
+
 }

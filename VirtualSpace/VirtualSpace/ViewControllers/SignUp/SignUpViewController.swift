@@ -114,6 +114,7 @@ private extension SignUpViewController {
         self.emailTextField.title = Strings.EMAIL_TITLE
         self.phoneTextField.title = Strings.PHONE_TITLE
         self.passwordTextField.title = Strings.PASSWORD_TITLE
+        self.passwordTextField.placeholder = Strings.PASSWORD_TITLE
         self.busniessButton.titleLabel?.text = Strings.BUSNIESS_TITLE
         self.signUpButton.titleLabel?.text = Strings.SIGN_UP
     }

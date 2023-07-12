@@ -25,6 +25,10 @@ class PasswordTextFieldView: UIView {
     var title: String = "" {
         didSet {
             self.label.text = self.title
+        }
+    }
+    var placeholder: String = "" {
+        didSet {
             self.textfield.placeholder = self.title
         }
     }

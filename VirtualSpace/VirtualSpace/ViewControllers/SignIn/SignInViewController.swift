@@ -89,6 +89,7 @@ private extension SignInViewController {
         self.descriptionLabel.text = Strings.SIGN_IN_PLACEHOLER
         self.emailTextField.title = Strings.EMAIL_TITLE
         self.passwordTextField.title = Strings.PASSWORD_TITLE
+        self.passwordTextField.placeholder = Strings.PASSWORD_TITLE
         self.signInButton.titleLabel?.text = Strings.SIGN_IN
         self.forgotPasswordButton.titleLabel?.text = Strings.FORGOT_TITLE
     }

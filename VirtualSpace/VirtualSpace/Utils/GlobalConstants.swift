@@ -49,7 +49,8 @@ class GlobalConstants {
                 let vc = EditProfileViewController()
                 vc._push()
             case .ChangePassword:
-                debugPrint("ChangePassword")
+                let vc = ChangePasswordViewController()
+                vc._push()
             case .DeleteAccount:
                 debugPrint("DeleteAccount")
             }
