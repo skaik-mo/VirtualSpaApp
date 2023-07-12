@@ -23,6 +23,11 @@ class MainTabBarController: UITabBarController {
         self.setUpView()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        self._isHideNavigation = false
+    }
+
 }
 
 private extension MainTabBarController {

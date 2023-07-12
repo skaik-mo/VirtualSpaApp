@@ -35,7 +35,6 @@ class LaunchViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self._isHideNavigation = false
         timer?.invalidate()
     }
 

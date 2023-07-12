@@ -21,20 +21,19 @@ extension MainNavigationController {
 
     private func setUpNavigation() {
         self.setRoot()
-        self.setSmallTitleFont()
-        self.setNavigationBarWhenScrollViewController()
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.shadowColor = "#A3A3A3"._color
+        navigationBarAppearance.titleTextAttributes = self.setSmallTitleFont()
+        navigationBarAppearance.backgroundColor = setNavigationBarWhenScrollViewController()
+        navigationBar.scrollEdgeAppearance = navigationBarAppearance
     }
 
-    private func setSmallTitleFont() {
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.color_000000, NSAttributedString.Key.font: UIFont.poppinsMedium17]
+    private func setSmallTitleFont() -> [NSAttributedString.Key: Any] {
+        [NSAttributedString.Key.foregroundColor: UIColor.color_000000, NSAttributedString.Key.font: UIFont.poppinsMedium17]
     }
 
-//    private func removeShadow() {
-//        UINavigationBar.appearance().shadowImage = UIImage.init()
-//    }
-
-    private func setNavigationBarWhenScrollViewController() {
-        UINavigationBar.appearance().barTintColor = .white
+    private func setNavigationBarWhenScrollViewController() -> UIColor {
+            .color_FFFFFF
     }
 
 }
@@ -52,9 +51,11 @@ extension MainNavigationController {
             let vc = MainTabBarController()
             vc.auth = auth
             vc._rootPush()
+            vc._isHideNavigation = false
         } else {
             let vc = AuthenticationViewController()
             vc._rootPush()
+            vc._isHideNavigation = true
         }
     }
 
