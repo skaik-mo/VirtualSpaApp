@@ -16,7 +16,11 @@ class PlaceTableViewCell: UITableViewCell {
     @IBOutlet weak var availableTimeLabel: UILabel!
     @IBOutlet weak var iconButton: UIButton!
 
-    private var isFavoriteVC = false
+    private var isFavoriteVC = false {
+        didSet {
+            self.setIconButton()
+        }
+    }
     var object: Any?
 
     override func awakeFromNib() {
@@ -27,7 +31,6 @@ class PlaceTableViewCell: UITableViewCell {
 
     func configureCell() {
         self.isFavoriteVC = self._topVC is FavoriteViewController
-        self.setIconButton()
         if let object = object as? String {
             self.placeNameLabel.text = object
         }
@@ -35,6 +38,7 @@ class PlaceTableViewCell: UITableViewCell {
 
     private func setIconButton() {
         self.iconButton.setImage(isFavoriteVC ? .ic_remove: .ic_circleArrow, for: .normal)
+        self.iconButton.isUserInteractionEnabled = isFavoriteVC
     }
 
     @IBAction func removeAction(_ sender: Any) {

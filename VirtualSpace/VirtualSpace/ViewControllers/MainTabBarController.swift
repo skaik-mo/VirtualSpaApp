@@ -58,7 +58,7 @@ private extension MainTabBarController {
         vc1.tabBarItem.image = .ic_home
         vc1.tabBarItem.selectedImage = .ic_homeSelected
 
-        let vc2 = PrivacyPolicyViewController()
+        let vc2 = TherapistsPlacesViewController()
         vc2.tabBarItem.image = .ic_location
         vc2.tabBarItem.selectedImage = .ic_locationSelected
 
@@ -108,6 +108,8 @@ private extension MainTabBarController {
         if let selectedVC = selectedVC as? ProfileViewController {
             self.setUpNavigationItem(selectedVC.getUpNavigationItem())
         } else if let selectedVC = selectedVC as? FavoriteViewController {
+            self.setUpNavigationItem(selectedVC.getUpNavigationItem())
+        } else if let selectedVC = selectedVC as? TherapistsPlacesViewController {
             self.setUpNavigationItem(selectedVC.getUpNavigationItem())
         } else {
             self.setUpNavigationItem(UINavigationItem())

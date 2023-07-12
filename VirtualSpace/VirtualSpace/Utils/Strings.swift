@@ -89,4 +89,7 @@ class Strings {
     // MARK: - Favorite
     static let FAVORITE_TITLE = "Favorite"._localizedKey
 
+    // MARK: - Therapists Places
+    static let THERAPISTS_PLACES_TITLE = "Therapists Places"._localizedKey
+
 }

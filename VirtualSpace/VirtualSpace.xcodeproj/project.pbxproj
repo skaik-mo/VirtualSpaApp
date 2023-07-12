@@ -82,6 +82,8 @@
 		E77058822A5EB3FB004ADBF9 /* InviteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E77058802A5EB3FB004ADBF9 /* InviteViewController.xib */; };
 		E7715DED2A5ED0EC00143F92 /* PlaceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7715DEB2A5ED0EC00143F92 /* PlaceInfoViewController.swift */; };
 		E7715DEE2A5ED0EC00143F92 /* PlaceInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7715DEC2A5ED0EC00143F92 /* PlaceInfoViewController.xib */; };
+		E7715DF12A5ED18F00143F92 /* TherapistsPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7715DEF2A5ED18F00143F92 /* TherapistsPlacesViewController.swift */; };
+		E7715DF22A5ED19000143F92 /* TherapistsPlacesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7715DF02A5ED18F00143F92 /* TherapistsPlacesViewController.xib */; };
 		E77CF7B32A5BD41900E01D49 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7B22A5BD41900E01D49 /* UITextField.swift */; };
 		E77CF7C92A5BD5B400E01D49 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7C52A5BD5B400E01D49 /* ValidationError.swift */; };
 		E77CF7CA2A5BD5B400E01D49 /* ValidationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7C62A5BD5B400E01D49 /* ValidationRule.swift */; };
@@ -185,6 +187,8 @@
 		E77058802A5EB3FB004ADBF9 /* InviteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InviteViewController.xib; sourceTree = "<group>"; };
 		E7715DEB2A5ED0EC00143F92 /* PlaceInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoViewController.swift; sourceTree = "<group>"; };
 		E7715DEC2A5ED0EC00143F92 /* PlaceInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceInfoViewController.xib; sourceTree = "<group>"; };
+		E7715DEF2A5ED18F00143F92 /* TherapistsPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapistsPlacesViewController.swift; sourceTree = "<group>"; };
+		E7715DF02A5ED18F00143F92 /* TherapistsPlacesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TherapistsPlacesViewController.xib; sourceTree = "<group>"; };
 		E77CF7B22A5BD41900E01D49 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		E77CF7C52A5BD5B400E01D49 /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		E77CF7C62A5BD5B400E01D49 /* ValidationRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationRule.swift; sourceTree = "<group>"; };
@@ -635,6 +639,8 @@
 		E7715DE92A5ED0D100143F92 /* TherapistsPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				E7715DEF2A5ED18F00143F92 /* TherapistsPlacesViewController.swift */,
+				E7715DF02A5ED18F00143F92 /* TherapistsPlacesViewController.xib */,
 			);
 			path = TherapistsPlaces;
 			sourceTree = "<group>";
@@ -791,6 +797,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7715DF22A5ED19000143F92 /* TherapistsPlacesViewController.xib in Resources */,
 				E7715DEE2A5ED0EC00143F92 /* PlaceInfoViewController.xib in Resources */,
 				E770587C2A5EB21C004ADBF9 /* InviteTableViewCell.xib in Resources */,
 				E77058822A5EB3FB004ADBF9 /* InviteViewController.xib in Resources */,
@@ -889,6 +896,7 @@
 				E7107B182A5D3915008891B1 /* PrivacyPolicyViewController.swift in Sources */,
 				E723BB9C2A5D42500026782B /* PasswordValidator.swift in Sources */,
 				E7373F712A5AC9B5007A1186 /* UICollectionView.swift in Sources */,
+				E7715DF12A5ED18F00143F92 /* TherapistsPlacesViewController.swift in Sources */,
 				E7373F772A5AC9B5007A1186 /* UIResponder.swift in Sources */,
 				E75636452A5AE49E0008C91B /* SignInViewController.swift in Sources */,
 				E77058762A5EB05E004ADBF9 /* EnumsConstants.swift in Sources */,
