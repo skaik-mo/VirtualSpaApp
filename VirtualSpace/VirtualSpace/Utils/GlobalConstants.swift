@@ -44,7 +44,8 @@ class GlobalConstants {
             case .Followers:
                 debugPrint("Followers")
             case .Friends:
-                debugPrint("Friends")
+                let vc = FriendsViewController()
+                vc._push()
             case .EditProfile:
                 let vc = EditProfileViewController()
                 vc._push()

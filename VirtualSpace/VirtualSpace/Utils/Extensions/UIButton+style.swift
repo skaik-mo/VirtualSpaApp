@@ -12,7 +12,7 @@ import UIKit
 extension UIButton {
     enum ButtonStyle {
         case Primary
-        case SecondaryLightPurple
+        case SecondaryLightPurple(CGFloat)
         case SecondaryLightGray
         case SecondaryGreen
         case SecondaryRed
@@ -21,8 +21,10 @@ extension UIButton {
 
         var height: CGFloat {
             switch self {
-            case .Primary, .OutlinedWhite, .SecondaryLightPurple:
+            case .Primary, .OutlinedWhite:
                 return 40.0
+            case .SecondaryLightPurple(let height):
+                return height
             case .OutlinedPurple, .SecondaryLightGray:
                 return 36.0
             case .SecondaryGreen, .SecondaryRed:

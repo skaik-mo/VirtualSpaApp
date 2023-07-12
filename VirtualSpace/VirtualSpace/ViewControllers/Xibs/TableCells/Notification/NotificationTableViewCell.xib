@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationTableViewCell" id="KGk-i7-Jjw" customClass="NotificationTableViewCell" customModule="VirtualSpace" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Vls-fn-W4u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo" translatesAutoresizingMaskIntoConstraints="NO" id="DAx-6C-Zev" customClass="rImage" customModule="VirtualSpace" customModuleProvider="target">
+                                <rect key="frame" x="16" y="22.666666666666671" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5KE-19-xeq"/>
+                                    <constraint firstAttribute="width" secondItem="DAx-6C-Zev" secondAttribute="height" multiplier="1:1" id="7Ar-OD-jeZ"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="1jp-Lk-g5z">
+                                <rect key="frame" x="68" y="19" width="252" height="47"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kUv-Lt-Lm6">
+                                        <rect key="frame" x="0.0" y="0.0" width="252" height="19.666666666666668"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4Z-gJ-67r">
+                                                <rect key="frame" x="0.0" y="0.0" width="26.666666666666668" height="19.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                                                <color key="textColor" name="#000000"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uf7-0L-GqW">
+                                                <rect key="frame" x="207.66666666666669" y="1.3333333333333321" width="28.333333333333343" height="17"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
+                                                <color key="textColor" name="#7A7A7A"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="16"/>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descritpion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hQ-WJ-vZ4">
+                                        <rect key="frame" x="0.0" y="23.666666666666664" width="252" height="18.333333333333336"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
+                                        <color key="textColor" name="#000000"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Scb-kJ-Zt4">
+                                        <rect key="frame" x="0.0" y="46" width="252" height="1"/>
+                                        <color key="backgroundColor" name="#F2F2F2"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="cj6-wJ-Ist"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <directionalEdgeInsets key="directionalLayoutMargins" top="15" leading="16" bottom="0.0" trailing="0.0"/>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Vls-fn-W4u" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8Dh-fq-g9T"/>
+                    <constraint firstItem="Vls-fn-W4u" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="JQI-VP-tTf"/>
+                    <constraint firstAttribute="bottom" secondItem="Vls-fn-W4u" secondAttribute="bottom" id="KRu-yg-VJ4"/>
+                    <constraint firstAttribute="trailing" secondItem="Vls-fn-W4u" secondAttribute="trailing" id="Wdn-m4-XGF"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="notifyDateLabel" destination="Uf7-0L-GqW" id="HMe-dK-jcG"/>
+                <outlet property="notifyDescrition" destination="3hQ-WJ-vZ4" id="Sc3-j2-tV3"/>
+                <outlet property="notifyImage" destination="DAx-6C-Zev" id="4Q2-W8-JWq"/>
+                <outlet property="notifyTtitleLabel" destination="r4Z-gJ-67r" id="ecA-No-dc9"/>
+            </connections>
+            <point key="canvasLocation" x="-356" y="-35"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="demo" width="1280" height="1280"/>
+        <namedColor name="#000000">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="#7A7A7A">
+            <color red="0.47843137254901963" green="0.47843137254901963" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="#F2F2F2">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

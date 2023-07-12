@@ -128,7 +128,7 @@
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="CTI-YQ-sjF"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" name="#FFFFFF"/>
             <constraints>
                 <constraint firstItem="CTI-YQ-sjF" firstAttribute="bottom" secondItem="4X1-U2-H4z" secondAttribute="bottom" id="6xI-rg-72V"/>
                 <constraint firstItem="4X1-U2-H4z" firstAttribute="leading" secondItem="CTI-YQ-sjF" secondAttribute="leading" id="Oaf-QQ-BLV"/>
@@ -145,6 +145,9 @@
         </namedColor>
         <namedColor name="#ECECEC">
             <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="#FFFFFF">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

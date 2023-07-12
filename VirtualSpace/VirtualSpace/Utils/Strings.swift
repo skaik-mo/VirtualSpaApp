@@ -66,4 +66,11 @@ class Strings {
     static let NEW_PASS_TITLE = "New password"._localizedKey
     static let REPEAT_PASS_TITLE = "Repeat password"._localizedKey
 
+    // MARK: - Notification
+    static let  NOTIFY_TITLE = "Notification"._localizedKey
+
+    // MARK: - Friend
+    static let MY_FRIENDS_TITLE = "My friends"._localizedKey
+    static let UNFRIEND_TITLE = "unfriend"._localizedKey
+
 }
