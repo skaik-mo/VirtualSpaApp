@@ -74,6 +74,8 @@ class Strings {
     static let UNFRIEND_TITLE = "unfriend"._localizedKey
 
     // MARK: - Following
-    static let FOLLOWING_TITLE = "Following"
+    static let FOLLOWING_TITLE = "Following"._localizedKey
 
+    // MARK: - Reservations
+    static let RESERVATIONS_TITLE = "My reservations"._localizedKey
 }

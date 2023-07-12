@@ -68,6 +68,14 @@
 		E77058602A5EA222004ADBF9 /* FollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E770585E2A5EA222004ADBF9 /* FollowingTableViewCell.swift */; };
 		E77058642A5EA2BC004ADBF9 /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77058622A5EA2BC004ADBF9 /* FollowingViewController.swift */; };
 		E77058652A5EA2BC004ADBF9 /* FollowingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E77058632A5EA2BC004ADBF9 /* FollowingViewController.xib */; };
+		E77058682A5EA6DB004ADBF9 /* ReservationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77058662A5EA6DB004ADBF9 /* ReservationsViewController.swift */; };
+		E77058692A5EA6DB004ADBF9 /* ReservationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E77058672A5EA6DB004ADBF9 /* ReservationsViewController.xib */; };
+		E770586E2A5EA765004ADBF9 /* ReservationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E770586C2A5EA765004ADBF9 /* ReservationTableViewCell.xib */; };
+		E770586F2A5EA765004ADBF9 /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E770586D2A5EA765004ADBF9 /* ReservationTableViewCell.swift */; };
+		E77058722A5EB04B004ADBF9 /* ImagesConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77058712A5EB04B004ADBF9 /* ImagesConstants.swift */; };
+		E77058742A5EB055004ADBF9 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77058732A5EB055004ADBF9 /* ColorConstants.swift */; };
+		E77058762A5EB05E004ADBF9 /* EnumsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77058752A5EB05E004ADBF9 /* EnumsConstants.swift */; };
+		E77058782A5EB0FB004ADBF9 /* FontsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77058772A5EB0FB004ADBF9 /* FontsConstants.swift */; };
 		E77CF7B32A5BD41900E01D49 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7B22A5BD41900E01D49 /* UITextField.swift */; };
 		E77CF7C92A5BD5B400E01D49 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7C52A5BD5B400E01D49 /* ValidationError.swift */; };
 		E77CF7CA2A5BD5B400E01D49 /* ValidationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7C62A5BD5B400E01D49 /* ValidationRule.swift */; };
@@ -153,6 +161,14 @@
 		E770585E2A5EA222004ADBF9 /* FollowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingTableViewCell.swift; sourceTree = "<group>"; };
 		E77058622A5EA2BC004ADBF9 /* FollowingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingViewController.swift; sourceTree = "<group>"; };
 		E77058632A5EA2BC004ADBF9 /* FollowingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowingViewController.xib; sourceTree = "<group>"; };
+		E77058662A5EA6DB004ADBF9 /* ReservationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsViewController.swift; sourceTree = "<group>"; };
+		E77058672A5EA6DB004ADBF9 /* ReservationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationsViewController.xib; sourceTree = "<group>"; };
+		E770586C2A5EA765004ADBF9 /* ReservationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationTableViewCell.xib; sourceTree = "<group>"; };
+		E770586D2A5EA765004ADBF9 /* ReservationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTableViewCell.swift; sourceTree = "<group>"; };
+		E77058712A5EB04B004ADBF9 /* ImagesConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesConstants.swift; sourceTree = "<group>"; };
+		E77058732A5EB055004ADBF9 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
+		E77058752A5EB05E004ADBF9 /* EnumsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumsConstants.swift; sourceTree = "<group>"; };
+		E77058772A5EB0FB004ADBF9 /* FontsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsConstants.swift; sourceTree = "<group>"; };
 		E77CF7B22A5BD41900E01D49 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		E77CF7C52A5BD5B400E01D49 /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		E77CF7C62A5BD5B400E01D49 /* ValidationRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationRule.swift; sourceTree = "<group>"; };
@@ -303,6 +319,7 @@
 				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 				E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */,
 				E723BB932A5D3B190026782B /* MainTabBarController.swift */,
+				E770586A2A5EA6E7004ADBF9 /* Reservations */,
 				E77058612A5EA2A9004ADBF9 /* Following */,
 				E77058522A5E9C2B004ADBF9 /* Friends */,
 				E7B6F9292A5E9734002A0693 /* Notification */,
@@ -359,6 +376,7 @@
 		E7373F582A5AC9B5007A1186 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				E770586B2A5EA755004ADBF9 /* Reservation */,
 				E770585C2A5EA211004ADBF9 /* Following */,
 				E77058572A5E9CA8004ADBF9 /* Friend */,
 				E7B6F92E2A5E97D6002A0693 /* Notification */,
@@ -388,7 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				E7373F632A5AC9B5007A1186 /* Strings.swift */,
-				E7373F652A5AC9B5007A1186 /* GlobalConstants.swift */,
+				E77058702A5EB01B004ADBF9 /* GlobalConstants */,
 				E77CF7B42A5BD51800E01D49 /* Validators */,
 				E7373F672A5AC9B5007A1186 /* Designables */,
 				E7373F6A2A5AC9B5007A1186 /* Libs */,
@@ -540,6 +558,36 @@
 			path = Following;
 			sourceTree = "<group>";
 		};
+		E770586A2A5EA6E7004ADBF9 /* Reservations */ = {
+			isa = PBXGroup;
+			children = (
+				E77058662A5EA6DB004ADBF9 /* ReservationsViewController.swift */,
+				E77058672A5EA6DB004ADBF9 /* ReservationsViewController.xib */,
+			);
+			path = Reservations;
+			sourceTree = "<group>";
+		};
+		E770586B2A5EA755004ADBF9 /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				E770586C2A5EA765004ADBF9 /* ReservationTableViewCell.xib */,
+				E770586D2A5EA765004ADBF9 /* ReservationTableViewCell.swift */,
+			);
+			path = Reservation;
+			sourceTree = "<group>";
+		};
+		E77058702A5EB01B004ADBF9 /* GlobalConstants */ = {
+			isa = PBXGroup;
+			children = (
+				E7373F652A5AC9B5007A1186 /* GlobalConstants.swift */,
+				E77058772A5EB0FB004ADBF9 /* FontsConstants.swift */,
+				E77058732A5EB055004ADBF9 /* ColorConstants.swift */,
+				E77058752A5EB05E004ADBF9 /* EnumsConstants.swift */,
+				E77058712A5EB04B004ADBF9 /* ImagesConstants.swift */,
+			);
+			path = GlobalConstants;
+			sourceTree = "<group>";
+		};
 		E77CF7B42A5BD51800E01D49 /* Validators */ = {
 			isa = PBXGroup;
 			children = (
@@ -676,6 +724,7 @@
 				E7E35A2B2A5E7DAC00733459 /* ChangePasswordViewController.xib in Resources */,
 				E75636412A5AE4860008C91B /* SignUpViewController.xib in Resources */,
 				E799C9D42A5C1513003443C8 /* PhoneTextFieldView.xib in Resources */,
+				E770586E2A5EA765004ADBF9 /* ReservationTableViewCell.xib in Resources */,
 				E73AA0692A5C03620022F8BE /* PasswordTextFieldView.xib in Resources */,
 				E770585F2A5EA222004ADBF9 /* FollowingTableViewCell.xib in Resources */,
 				E7107B192A5D3915008891B1 /* PrivacyPolicyViewController.xib in Resources */,
@@ -692,6 +741,7 @@
 				E723BBA62A5D6FB80026782B /* ProfileTableViewCell.xib in Resources */,
 				E723BBB22A5D77C10026782B /* Poppins-SemiBold.ttf in Resources */,
 				E7B6F92D2A5E973D002A0693 /* NotificationViewController.xib in Resources */,
+				E77058692A5EA6DB004ADBF9 /* ReservationsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,9 +783,12 @@
 				E77CF7CA2A5BD5B400E01D49 /* ValidationRule.swift in Sources */,
 				E723BB942A5D3B190026782B /* MainTabBarController.swift in Sources */,
 				E77058602A5EA222004ADBF9 /* FollowingTableViewCell.swift in Sources */,
+				E77058782A5EB0FB004ADBF9 /* FontsConstants.swift in Sources */,
 				E7373F642A5AC9B5007A1186 /* Strings.swift in Sources */,
 				E7B6F92C2A5E973D002A0693 /* NotificationViewController.swift in Sources */,
+				E770586F2A5EA765004ADBF9 /* ReservationTableViewCell.swift in Sources */,
 				E77CF7B32A5BD41900E01D49 /* UITextField.swift in Sources */,
+				E77058682A5EA6DB004ADBF9 /* ReservationsViewController.swift in Sources */,
 				E723BBB82A5D7B3C0026782B /* SwitchTableViewCell.swift in Sources */,
 				E7373F7F2A5AC9B5007A1186 /* UIViewController.swift in Sources */,
 				E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */,
@@ -754,10 +807,12 @@
 				E7373F712A5AC9B5007A1186 /* UICollectionView.swift in Sources */,
 				E7373F772A5AC9B5007A1186 /* UIResponder.swift in Sources */,
 				E75636452A5AE49E0008C91B /* SignInViewController.swift in Sources */,
+				E77058762A5EB05E004ADBF9 /* EnumsConstants.swift in Sources */,
 				E723BBA72A5D6FB80026782B /* ProfileTableViewCell.swift in Sources */,
 				E7373F492A5AC9B5007A1186 /* MainNavigationViewController.swift in Sources */,
 				E7373F422A5AC9B5007A1186 /* AppDelegate.swift in Sources */,
 				E7E35A2A2A5E7DAC00733459 /* ChangePasswordViewController.swift in Sources */,
+				E77058722A5EB04B004ADBF9 /* ImagesConstants.swift in Sources */,
 				E723BB962A5D3E4D0026782B /* AuthController.swift in Sources */,
 				E7373F752A5AC9B5007A1186 /* UIKitHelpers.swift in Sources */,
 				E7373F792A5AC9B5007A1186 /* UIStoryboard.swift in Sources */,
@@ -767,6 +822,7 @@
 				E73AA0682A5C03620022F8BE /* PasswordTextFieldView.swift in Sources */,
 				E723BBBD2A5D7C950026782B /* DeleteTableViewCell.swift in Sources */,
 				E723BBB02A5D73D50026782B /* ProfileHeaderTableViewCell.swift in Sources */,
+				E77058742A5EB055004ADBF9 /* ColorConstants.swift in Sources */,
 				E77058642A5EA2BC004ADBF9 /* FollowingViewController.swift in Sources */,
 				E7373F662A5AC9B5007A1186 /* GlobalConstants.swift in Sources */,
 				E77CF7CC2A5BD5B400E01D49 /* Validator.swift in Sources */,
