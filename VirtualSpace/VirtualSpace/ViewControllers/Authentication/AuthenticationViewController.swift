@@ -61,7 +61,7 @@ private extension AuthenticationViewController {
 
     func setUpView() {
         self.signInButton.applyButtonStyle(.OutlinedWhite)
-        self.signUpButton.applyButtonStyle(.Primary)
+        self.signUpButton.applyButtonStyle(.Primary(40))
     }
 
     func setUpData() {

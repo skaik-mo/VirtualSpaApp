@@ -56,7 +56,7 @@ private extension ChangePasswordViewController {
         self.currentPasswordTextField.setUpView()
         self.newPassworTextField.setUpView()
         self.repeatPassworTextField.setUpView()
-        self.saveButton.applyButtonStyle(.Primary)
+        self.saveButton.applyButtonStyle(.Primary(40))
     }
 
     func setUpData() {

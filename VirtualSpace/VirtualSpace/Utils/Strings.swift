@@ -54,6 +54,10 @@ class Strings {
     // MARK: - Profile
     static let PROFILE_TITLE = "Profile"._localizedKey
     static let LOGOUT_TITLE = "Log out"._localizedKey
+    static let DELETE_ACCOUNT_TITLE = "Delete account"._localizedKey
+    static let FOLLOWERS_TITLE = "Followers"._localizedKey
+    static let MESSAGES_TITLE = "Massages"._localizedKey
+    static let ACCOUNT_PRIVACY_TITLE = "Account Privacy"._localizedKey
 
     // MARK: - Edit Profile
     static let EDIT_PROFILE_TITLE = "Edit Profile"._localizedKey
@@ -70,12 +74,16 @@ class Strings {
     static let  NOTIFY_TITLE = "Notification"._localizedKey
 
     // MARK: - Friend
-    static let MY_FRIENDS_TITLE = "My friends"._localizedKey
+    static let MY_FRIENDS_TITLE = "My Friends"._localizedKey
     static let UNFRIEND_TITLE = "unfriend"._localizedKey
 
     // MARK: - Following
     static let FOLLOWING_TITLE = "Following"._localizedKey
 
     // MARK: - Reservations
-    static let RESERVATIONS_TITLE = "My reservations"._localizedKey
+    static let MY_RESERVATIONS_TITLE = "My reservations"._localizedKey
+
+    // MARK: - Invite
+    static let NEARBY_TITLE = "Nearby"._localizedKey
+
 }

@@ -15,8 +15,12 @@ extension GlobalConstants {
         case Business = 1
     }
 
+}
+
+// MARK: - Button Style
+extension GlobalConstants {
     enum ButtonStyle: Equatable {
-        case Primary
+        case Primary(CGFloat)
         case SecondaryLightPurple(CGFloat)
         case SecondaryLightGray
         case SecondaryDarkGray
@@ -27,12 +31,14 @@ extension GlobalConstants {
 
         var height: CGFloat {
             switch self {
-            case .Primary, .OutlinedWhite:
+            case .Primary(let height):
+                return height
+            case .OutlinedWhite:
                 return 40.0
             case .SecondaryLightPurple(let height):
                 return height
             case .OutlinedPurple, .SecondaryLightGray:
-                return 36.0
+                return 35.0
             case .SecondaryGreen, .SecondaryRed, .SecondaryDarkGray:
                 return 28
             }
@@ -103,24 +109,50 @@ extension GlobalConstants {
             }
         }
     }
+}
 
-    enum ProfileMenu: String {
-        case AccountPrivacy = "Account Privacy"
-        case Reservations = "My reservations"
-        case Massages = "Massages"
-        case Following = "Following"
-        case Followers = "Followers"
-        case Friends = "My Friends"
-        case EditProfile = "Edit Profile"
-        case ChangePassword = "Change Password"
-        case DeleteAccount = "Delete account"
+// MARK: - Menu
+extension GlobalConstants {
+    enum ProfileMenu {
+        case AccountPrivacy
+        case Reservations
+        case Massages
+        case Following
+        case Followers
+        case Friends
+        case EditProfile
+        case ChangePassword
+        case DeleteAccount
+
+        var title: String {
+            switch self {
+            case .AccountPrivacy:
+                return  Strings.ACCOUNT_PRIVACY_TITLE
+            case .Reservations:
+                return Strings.MY_RESERVATIONS_TITLE
+            case .Massages:
+                return Strings.MESSAGES_TITLE
+            case .Following:
+                return Strings.FOLLOWING_TITLE
+            case .Followers:
+                return Strings.FOLLOWERS_TITLE
+            case .Friends:
+                return Strings.MY_FRIENDS_TITLE
+            case .EditProfile:
+                return Strings.EDIT_PROFILE_TITLE
+            case .ChangePassword:
+                return Strings.CHANGE_PASS_TITLE
+            case .DeleteAccount:
+                return Strings.DELETE_ACCOUNT_TITLE
+            }
+        }
 
         func action() {
             switch self {
             case .AccountPrivacy:
                 debugPrint("AccountPrivacy")
             case .Reservations:
-                let vc = ReservationsViewController()
+                let vc = InviteViewController()
                 vc._push()
             case .Massages:
                 debugPrint("Massages")

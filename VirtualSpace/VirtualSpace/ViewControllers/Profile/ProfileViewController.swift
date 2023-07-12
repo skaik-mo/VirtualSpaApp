@@ -87,17 +87,17 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         let item = self.menu[indexPath.row]
         if item == .AccountPrivacy {
             let cell: SwitchTableViewCell = tableView._dequeueReusableCell()
-            cell.object = item.rawValue
+            cell.object = item.title
             cell.configureCell()
             return cell
         } else if item == .DeleteAccount {
             let cell: DeleteTableViewCell = tableView._dequeueReusableCell()
-            cell.object = item.rawValue
+            cell.object = item.title
             cell.configureCell()
             return cell
         }
         let cell: ProfileTableViewCell = tableView._dequeueReusableCell()
-        cell.object = item.rawValue
+        cell.object = item.title
         cell.configureCell()
         return cell
     }

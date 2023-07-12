@@ -1,6 +1,6 @@
 //_________SKAIK_MO_________
 //  
-//  ReservationsViewController.swift
+//  InviteViewController.swift
 //  VirtualSpace
 //
 //  Created by Mohammed Skaik on 12/07/2023.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReservationsViewController: UIViewController {
+class InviteViewController: UIViewController {
 
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -39,18 +39,18 @@ class ReservationsViewController: UIViewController {
 }
 
 // MARK: - Configurations
-private extension ReservationsViewController {
+private extension InviteViewController {
 
     func setUpView() {
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
-        self.tableView._registerCell = ReservationTableViewCell.self
+        self.tableView._registerCell = InviteTableViewCell.self
         self.tableView.rowHeight = 70
         self.tableView.dataSource = self
         self.tableView.delegate = self
     }
 
     func setUpData() {
-        self.title = Strings.MY_RESERVATIONS_TITLE
+        self.title = Strings.NEARBY_TITLE
     }
 
     func fetchData() {
@@ -60,14 +60,15 @@ private extension ReservationsViewController {
 }
 
 
-extension ReservationsViewController: UITableViewDataSource, UITableViewDelegate {
+extension InviteViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         20
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ReservationTableViewCell = tableView._dequeueReusableCell()
-        cell.object = indexPath.row % 2 == 0 ? GlobalConstants.ButtonStyle.SecondaryGreen : GlobalConstants.ButtonStyle.SecondaryDarkGray
+        let cell: InviteTableViewCell = tableView._dequeueReusableCell()
+        cell.isInvited = indexPath.row % 2 == 0
+//        cell.object =
         cell.configureCell()
         return cell
     }

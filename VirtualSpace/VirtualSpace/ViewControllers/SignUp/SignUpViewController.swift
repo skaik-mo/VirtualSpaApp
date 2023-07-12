@@ -101,7 +101,7 @@ private extension SignUpViewController {
         self.emailTextField.setUpView(.Email)
         self.phoneTextField.setUpView(vc: self)
         self.passwordTextField.setUpView()
-        self.signUpButton.applyButtonStyle(.Primary)
+        self.signUpButton.applyButtonStyle(.Primary(40))
         setButtonAttribute()
     }
 
