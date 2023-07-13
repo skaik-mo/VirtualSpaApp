@@ -1,5 +1,5 @@
 //_________SKAIK_MO_________
-//  
+//
 //  PlaceInfoViewController.swift
 //  VirtualSpace
 //
@@ -11,6 +11,7 @@ import UIKit
 class PlaceInfoViewController: UIViewController {
 
     // MARK: Outlets
+    @IBOutlet weak var tableView: UITableView!
 
     // MARK: Properties
 
@@ -27,7 +28,6 @@ class PlaceInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-        setUpData()
         fetchData()
     }
 
@@ -37,20 +37,16 @@ class PlaceInfoViewController: UIViewController {
 
 }
 
-// MARK: - Actions
-private extension PlaceInfoViewController {
-
-}
-
 // MARK: - Configurations
 private extension PlaceInfoViewController {
 
     func setUpView() {
-
-    }
-
-    func setUpData() {
-
+        self.tableView._registerHeaderAndFooter = PlaceInfoHeaderTableViewCell.self
+        self.tableView.sectionHeaderHeight = 360//UITableView.automaticDimension
+        self.tableView._registerCell = CallTableViewCell.self
+        self.tableView.rowHeight = 60
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
 
     func fetchData() {
@@ -59,3 +55,27 @@ private extension PlaceInfoViewController {
 
 }
 
+extension PlaceInfoViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        10
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: CallTableViewCell = tableView._dequeueReusableCell()
+//        cell.object = item.title
+        cell.configureCell()
+        return cell
+    }
+
+    // MARK: Header
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: PlaceInfoHeaderTableViewCell._id) as? PlaceInfoHeaderTableViewCell {
+            header.headerOject = ""
+            header.configureHeader()
+            return header
+        }
+        return tableView.tableHeaderView
+    }
+
+
+}

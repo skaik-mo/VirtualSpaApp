@@ -82,6 +82,7 @@ extension TherapistsPlacesViewController: UITableViewDataSource, UITableViewDele
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = PlaceInfoViewController()
+        vc.title = object[indexPath.row]
         vc._push()
     }
 }

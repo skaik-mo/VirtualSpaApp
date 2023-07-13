@@ -12,6 +12,10 @@
 		E7107B152A5D2316008891B1 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7107B132A5D2316008891B1 /* ForgotPasswordViewController.xib */; };
 		E7107B182A5D3915008891B1 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7107B162A5D3915008891B1 /* PrivacyPolicyViewController.swift */; };
 		E7107B192A5D3915008891B1 /* PrivacyPolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7107B172A5D3915008891B1 /* PrivacyPolicyViewController.xib */; };
+		E72346922A5FC1210061877B /* CallTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72346902A5FC1210061877B /* CallTableViewCell.xib */; };
+		E72346932A5FC1210061877B /* CallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72346912A5FC1210061877B /* CallTableViewCell.swift */; };
+		E72346972A5FC6140061877B /* PlaceInfoHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72346952A5FC6140061877B /* PlaceInfoHeaderTableViewCell.xib */; };
+		E72346982A5FC6140061877B /* PlaceInfoHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72346962A5FC6140061877B /* PlaceInfoHeaderTableViewCell.swift */; };
 		E723BB942A5D3B190026782B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BB932A5D3B190026782B /* MainTabBarController.swift */; };
 		E723BB962A5D3E4D0026782B /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BB952A5D3E4D0026782B /* AuthController.swift */; };
 		E723BB9A2A5D42480026782B /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BB992A5D42480026782B /* EmailValidator.swift */; };
@@ -115,6 +119,10 @@
 		E7107B132A5D2316008891B1 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		E7107B162A5D3915008891B1 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		E7107B172A5D3915008891B1 /* PrivacyPolicyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyPolicyViewController.xib; sourceTree = "<group>"; };
+		E72346902A5FC1210061877B /* CallTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CallTableViewCell.xib; sourceTree = "<group>"; };
+		E72346912A5FC1210061877B /* CallTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallTableViewCell.swift; sourceTree = "<group>"; };
+		E72346952A5FC6140061877B /* PlaceInfoHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceInfoHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		E72346962A5FC6140061877B /* PlaceInfoHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		E723BB932A5D3B190026782B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E723BB952A5D3E4D0026782B /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		E723BB992A5D42480026782B /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
@@ -259,6 +267,24 @@
 			path = "Privacy Policy";
 			sourceTree = "<group>";
 		};
+		E723468F2A5FC1120061877B /* Call */ = {
+			isa = PBXGroup;
+			children = (
+				E72346902A5FC1210061877B /* CallTableViewCell.xib */,
+				E72346912A5FC1210061877B /* CallTableViewCell.swift */,
+			);
+			path = Call;
+			sourceTree = "<group>";
+		};
+		E72346942A5FC5FB0061877B /* PlaceInfoHeader */ = {
+			isa = PBXGroup;
+			children = (
+				E72346952A5FC6140061877B /* PlaceInfoHeaderTableViewCell.xib */,
+				E72346962A5FC6140061877B /* PlaceInfoHeaderTableViewCell.swift */,
+			);
+			path = PlaceInfoHeader;
+			sourceTree = "<group>";
+		};
 		E723BB9F2A5D633F0026782B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +419,7 @@
 		E7373F542A5AC9B5007A1186 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E72346942A5FC5FB0061877B /* PlaceInfoHeader */,
 				E723BBA82A5D731A0026782B /* ProfileHeader */,
 				E799C9D02A5C1503003443C8 /* PhoneTextField */,
 				E73AA06A2A5C036A0022F8BE /* PasswordTextField */,
@@ -404,6 +431,7 @@
 		E7373F582A5AC9B5007A1186 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				E723468F2A5FC1120061877B /* Call */,
 				E7A861962A5EC7F200CFA14B /* Place */,
 				E77058792A5EB214004ADBF9 /* Invite */,
 				E770586B2A5EA755004ADBF9 /* Reservation */,
@@ -822,6 +850,7 @@
 				E75636382A5AD3040008C91B /* Poppins-Regular.ttf in Resources */,
 				E723BBAF2A5D73D50026782B /* ProfileHeaderTableViewCell.xib in Resources */,
 				E7373F852A5AC9B5007A1186 /* Assets.xcassets in Resources */,
+				E72346972A5FC6140061877B /* PlaceInfoHeaderTableViewCell.xib in Resources */,
 				E75636362A5AD2EF0008C91B /* Poppins-Medium.ttf in Resources */,
 				E7B6F9312A5E97E0002A0693 /* NotificationTableViewCell.xib in Resources */,
 				E723BBB72A5D7B3C0026782B /* SwitchTableViewCell.xib in Resources */,
@@ -830,6 +859,7 @@
 				E77058562A5E9C3D004ADBF9 /* FriendsViewController.xib in Resources */,
 				E723BBA62A5D6FB80026782B /* ProfileTableViewCell.xib in Resources */,
 				E723BBB22A5D77C10026782B /* Poppins-SemiBold.ttf in Resources */,
+				E72346922A5FC1210061877B /* CallTableViewCell.xib in Resources */,
 				E7B6F92D2A5E973D002A0693 /* NotificationViewController.xib in Resources */,
 				E77058692A5EA6DB004ADBF9 /* ReservationsViewController.xib in Resources */,
 			);
@@ -867,6 +897,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E72346932A5FC1210061877B /* CallTableViewCell.swift in Sources */,
 				E7373F7D2A5AC9B5007A1186 /* UIView.swift in Sources */,
 				E77058552A5E9C3D004ADBF9 /* FriendsViewController.swift in Sources */,
 				E723BBBF2A5D84110026782B /* UISwitch.swift in Sources */,
@@ -898,6 +929,7 @@
 				E7373F712A5AC9B5007A1186 /* UICollectionView.swift in Sources */,
 				E7715DF12A5ED18F00143F92 /* TherapistsPlacesViewController.swift in Sources */,
 				E7373F772A5AC9B5007A1186 /* UIResponder.swift in Sources */,
+				E72346982A5FC6140061877B /* PlaceInfoHeaderTableViewCell.swift in Sources */,
 				E75636452A5AE49E0008C91B /* SignInViewController.swift in Sources */,
 				E77058762A5EB05E004ADBF9 /* EnumsConstants.swift in Sources */,
 				E723BBA72A5D6FB80026782B /* ProfileTableViewCell.swift in Sources */,

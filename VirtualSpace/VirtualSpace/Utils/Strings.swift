@@ -24,7 +24,7 @@ class Strings {
     static let INVALID_LENGTH_BETWEEN_MINIMUM_MAXIMUM_MESSAGE = "Incorrect length in the {field} field. Must be between {minimum} and {maximum} characters."._localizedKey
     static let INVALID_LENGTH_MINIMUM_MESSAGE = "Incorrect length in the {field} field. Minimum length required is {minimum} characters."._localizedKey
     static let INVALID_LENGTH_MAXIMUM_MESSAGE = "Incorrect length in the {field} field. Maximum length allowed is {maximum} characters."._localizedKey
-    
+
     // MARK: - Authentication
     static let VIRTUAL_SPA_TITLE = "VIRTUAL SPA"._localizedKey
     static let LOREM_IPSUM_TITLE = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"._localizedKey
@@ -71,7 +71,7 @@ class Strings {
     static let REPEAT_PASS_TITLE = "Repeat password"._localizedKey
 
     // MARK: - Notification
-    static let  NOTIFY_TITLE = "Notification"._localizedKey
+    static let NOTIFY_TITLE = "Notification"._localizedKey
 
     // MARK: - Friend
     static let MY_FRIENDS_TITLE = "My Friends"._localizedKey
@@ -91,5 +91,9 @@ class Strings {
 
     // MARK: - Therapists Places
     static let THERAPISTS_PLACES_TITLE = "Therapists Places"._localizedKey
+
+    // MARK: - Place Info
+    static let DESCRIPTION_TITLE = "Description"._localizedKey
+    static let MESSAGE_THERAOISTS_TITLE = "Massage Therapists"._localizedKey
 
 }
