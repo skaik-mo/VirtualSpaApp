@@ -28,7 +28,6 @@ class CallTableViewCell: UITableViewCell {
     @IBAction func callAction(_ sender: Any) {
         debugPrint(#function)
         let authPhone = "+972594122010"
-        guard let url = URL(string: "tel://\(authPhone)"), UIApplication.shared.canOpenURL(url) else { return }
-        UIApplication.shared.open(url)
+        Helper.call(authPhone)
     }
 }

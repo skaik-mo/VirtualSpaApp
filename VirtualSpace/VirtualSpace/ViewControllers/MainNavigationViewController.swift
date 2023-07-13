@@ -22,7 +22,7 @@ extension MainNavigationController {
     private func setUpNavigation() {
         self.setRoot()
         let navigationBarAppearance = UINavigationBarAppearance()
-        navigationBarAppearance.shadowColor = "#A3A3A3"._color
+        navigationBarAppearance.shadowColor = .color_A3A3A3
         navigationBarAppearance.titleTextAttributes = getSmallTitleFont()
         navigationBarAppearance.backgroundColor = getBackgroundColor()
         navigationBarAppearance.setBackIndicatorImage(.ic_back, transitionMaskImage: .ic_back)
@@ -71,6 +71,7 @@ extension MainNavigationController {
 extension UINavigationController {
 
     open override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         self.setBackButton()
     }
 

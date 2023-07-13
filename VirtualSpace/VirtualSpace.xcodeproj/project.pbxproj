@@ -16,6 +16,16 @@
 		E72346932A5FC1210061877B /* CallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72346912A5FC1210061877B /* CallTableViewCell.swift */; };
 		E72346972A5FC6140061877B /* PlaceInfoHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72346952A5FC6140061877B /* PlaceInfoHeaderTableViewCell.xib */; };
 		E72346982A5FC6140061877B /* PlaceInfoHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72346962A5FC6140061877B /* PlaceInfoHeaderTableViewCell.swift */; };
+		E723469C2A5FD4B00061877B /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723469A2A5FD4B00061877B /* OrdersViewController.swift */; };
+		E723469D2A5FD4B00061877B /* OrdersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E723469B2A5FD4B00061877B /* OrdersViewController.xib */; };
+		E72346A12A5FD8EE0061877B /* AcceptedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E723469F2A5FD8EE0061877B /* AcceptedTableViewCell.xib */; };
+		E72346A22A5FD8EE0061877B /* AcceptedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72346A02A5FD8EE0061877B /* AcceptedTableViewCell.swift */; };
+		E72346A62A5FDD5D0061877B /* PendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72346A42A5FDD5D0061877B /* PendingTableViewCell.xib */; };
+		E72346A72A5FDD5D0061877B /* PendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72346A52A5FDD5D0061877B /* PendingTableViewCell.swift */; };
+		E72346AB2A5FDFCE0061877B /* OrdersAcceptedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72346A92A5FDFCE0061877B /* OrdersAcceptedViewController.swift */; };
+		E72346AC2A5FDFCE0061877B /* OrdersAcceptedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72346AA2A5FDFCE0061877B /* OrdersAcceptedViewController.xib */; };
+		E72346B02A5FE37C0061877B /* OrdersPendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72346AE2A5FE37C0061877B /* OrdersPendingViewController.swift */; };
+		E72346B12A5FE37C0061877B /* OrdersPendingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72346AF2A5FE37C0061877B /* OrdersPendingViewController.xib */; };
 		E723BB942A5D3B190026782B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BB932A5D3B190026782B /* MainTabBarController.swift */; };
 		E723BB962A5D3E4D0026782B /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BB952A5D3E4D0026782B /* AuthController.swift */; };
 		E723BB9A2A5D42480026782B /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BB992A5D42480026782B /* EmailValidator.swift */; };
@@ -93,6 +103,9 @@
 		E77CF7CA2A5BD5B400E01D49 /* ValidationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7C62A5BD5B400E01D49 /* ValidationRule.swift */; };
 		E77CF7CB2A5BD5B400E01D49 /* PhoneValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7C72A5BD5B400E01D49 /* PhoneValidator.swift */; };
 		E77CF7CC2A5BD5B400E01D49 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7C82A5BD5B400E01D49 /* Validator.swift */; };
+		E7868BA22A600F25008917DD /* AcceptedUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7868BA02A600F25008917DD /* AcceptedUserViewController.swift */; };
+		E7868BA32A600F25008917DD /* AcceptedUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7868BA12A600F25008917DD /* AcceptedUserViewController.xib */; };
+		E7868BA52A6014F7008917DD /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7868BA42A6014F7008917DD /* Helper.swift */; };
 		E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E799C9D12A5C1513003443C8 /* PhoneTextFieldView.swift */; };
 		E799C9D42A5C1513003443C8 /* PhoneTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */; };
 		E799C9F02A5C3705003443C8 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E799C9EF2A5C3705003443C8 /* IQKeyboardManagerSwift */; };
@@ -123,6 +136,16 @@
 		E72346912A5FC1210061877B /* CallTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallTableViewCell.swift; sourceTree = "<group>"; };
 		E72346952A5FC6140061877B /* PlaceInfoHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceInfoHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		E72346962A5FC6140061877B /* PlaceInfoHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		E723469A2A5FD4B00061877B /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		E723469B2A5FD4B00061877B /* OrdersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrdersViewController.xib; sourceTree = "<group>"; };
+		E723469F2A5FD8EE0061877B /* AcceptedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcceptedTableViewCell.xib; sourceTree = "<group>"; };
+		E72346A02A5FD8EE0061877B /* AcceptedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptedTableViewCell.swift; sourceTree = "<group>"; };
+		E72346A42A5FDD5D0061877B /* PendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PendingTableViewCell.xib; sourceTree = "<group>"; };
+		E72346A52A5FDD5D0061877B /* PendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingTableViewCell.swift; sourceTree = "<group>"; };
+		E72346A92A5FDFCE0061877B /* OrdersAcceptedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersAcceptedViewController.swift; sourceTree = "<group>"; };
+		E72346AA2A5FDFCE0061877B /* OrdersAcceptedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrdersAcceptedViewController.xib; sourceTree = "<group>"; };
+		E72346AE2A5FE37C0061877B /* OrdersPendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersPendingViewController.swift; sourceTree = "<group>"; };
+		E72346AF2A5FE37C0061877B /* OrdersPendingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrdersPendingViewController.xib; sourceTree = "<group>"; };
 		E723BB932A5D3B190026782B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		E723BB952A5D3E4D0026782B /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		E723BB992A5D42480026782B /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
@@ -202,6 +225,9 @@
 		E77CF7C62A5BD5B400E01D49 /* ValidationRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationRule.swift; sourceTree = "<group>"; };
 		E77CF7C72A5BD5B400E01D49 /* PhoneValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneValidator.swift; sourceTree = "<group>"; };
 		E77CF7C82A5BD5B400E01D49 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		E7868BA02A600F25008917DD /* AcceptedUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptedUserViewController.swift; sourceTree = "<group>"; };
+		E7868BA12A600F25008917DD /* AcceptedUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcceptedUserViewController.xib; sourceTree = "<group>"; };
+		E7868BA42A6014F7008917DD /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		E799C9D12A5C1513003443C8 /* PhoneTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextFieldView.swift; sourceTree = "<group>"; };
 		E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTextFieldView.xib; sourceTree = "<group>"; };
 		E7A861922A5EC0A100CFA14B /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
@@ -283,6 +309,51 @@
 				E72346962A5FC6140061877B /* PlaceInfoHeaderTableViewCell.swift */,
 			);
 			path = PlaceInfoHeader;
+			sourceTree = "<group>";
+		};
+		E72346992A5FD4A40061877B /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				E723469A2A5FD4B00061877B /* OrdersViewController.swift */,
+				E723469B2A5FD4B00061877B /* OrdersViewController.xib */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		E723469E2A5FD8E40061877B /* Accepted */ = {
+			isa = PBXGroup;
+			children = (
+				E723469F2A5FD8EE0061877B /* AcceptedTableViewCell.xib */,
+				E72346A02A5FD8EE0061877B /* AcceptedTableViewCell.swift */,
+			);
+			path = Accepted;
+			sourceTree = "<group>";
+		};
+		E72346A32A5FDD520061877B /* Pending */ = {
+			isa = PBXGroup;
+			children = (
+				E72346A42A5FDD5D0061877B /* PendingTableViewCell.xib */,
+				E72346A52A5FDD5D0061877B /* PendingTableViewCell.swift */,
+			);
+			path = Pending;
+			sourceTree = "<group>";
+		};
+		E72346A82A5FDFA40061877B /* OrdersAccepted */ = {
+			isa = PBXGroup;
+			children = (
+				E72346A92A5FDFCE0061877B /* OrdersAcceptedViewController.swift */,
+				E72346AA2A5FDFCE0061877B /* OrdersAcceptedViewController.xib */,
+			);
+			path = OrdersAccepted;
+			sourceTree = "<group>";
+		};
+		E72346AD2A5FE35C0061877B /* OrdersPending */ = {
+			isa = PBXGroup;
+			children = (
+				E72346AE2A5FE37C0061877B /* OrdersPendingViewController.swift */,
+				E72346AF2A5FE37C0061877B /* OrdersPendingViewController.xib */,
+			);
+			path = OrdersPending;
 			sourceTree = "<group>";
 		};
 		E723BB9F2A5D633F0026782B /* Profile */ = {
@@ -369,6 +440,10 @@
 				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 				E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */,
 				E723BB932A5D3B190026782B /* MainTabBarController.swift */,
+				E7868B9F2A600F1B008917DD /* AcceptedUser */,
+				E72346AD2A5FE35C0061877B /* OrdersPending */,
+				E72346A82A5FDFA40061877B /* OrdersAccepted */,
+				E72346992A5FD4A40061877B /* Orders */,
 				E7715DEA2A5ED0D800143F92 /* PlaceInfo */,
 				E7715DE92A5ED0D100143F92 /* TherapistsPlaces */,
 				E7A861912A5EC09900CFA14B /* Favorite */,
@@ -431,6 +506,8 @@
 		E7373F582A5AC9B5007A1186 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				E72346A32A5FDD520061877B /* Pending */,
+				E723469E2A5FD8E40061877B /* Accepted */,
 				E723468F2A5FC1120061877B /* Call */,
 				E7A861962A5EC7F200CFA14B /* Place */,
 				E77058792A5EB214004ADBF9 /* Invite */,
@@ -464,6 +541,7 @@
 			isa = PBXGroup;
 			children = (
 				E7373F632A5AC9B5007A1186 /* Strings.swift */,
+				E7868BA42A6014F7008917DD /* Helper.swift */,
 				E77058702A5EB01B004ADBF9 /* GlobalConstants */,
 				E77CF7B42A5BD51800E01D49 /* Validators */,
 				E7373F672A5AC9B5007A1186 /* Designables */,
@@ -695,6 +773,15 @@
 			path = Validators;
 			sourceTree = "<group>";
 		};
+		E7868B9F2A600F1B008917DD /* AcceptedUser */ = {
+			isa = PBXGroup;
+			children = (
+				E7868BA02A600F25008917DD /* AcceptedUserViewController.swift */,
+				E7868BA12A600F25008917DD /* AcceptedUserViewController.xib */,
+			);
+			path = AcceptedUser;
+			sourceTree = "<group>";
+		};
 		E799C9D02A5C1503003443C8 /* PhoneTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -769,6 +856,7 @@
 				E7373F3A2A5AC9B5007A1186 /* Sources */,
 				E7373F3B2A5AC9B5007A1186 /* Frameworks */,
 				E7373F3C2A5AC9B5007A1186 /* Resources */,
+				8C747C92217967E28380CA7E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -826,6 +914,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7715DF22A5ED19000143F92 /* TherapistsPlacesViewController.xib in Resources */,
+				E72346A62A5FDD5D0061877B /* PendingTableViewCell.xib in Resources */,
 				E7715DEE2A5ED0EC00143F92 /* PlaceInfoViewController.xib in Resources */,
 				E770587C2A5EB21C004ADBF9 /* InviteTableViewCell.xib in Resources */,
 				E77058822A5EB3FB004ADBF9 /* InviteViewController.xib in Resources */,
@@ -836,6 +925,7 @@
 				E75636462A5AE49E0008C91B /* SignInViewController.xib in Resources */,
 				E756363C2A5AE26A0008C91B /* Launch Screen.storyboard in Resources */,
 				E73AA0652A5BE59E0022F8BE /* MainTextView.xib in Resources */,
+				E72346A12A5FD8EE0061877B /* AcceptedTableViewCell.xib in Resources */,
 				E75636332A5AD1410008C91B /* AuthenticationViewController.xib in Resources */,
 				E7A861952A5EC0A100CFA14B /* FavoriteViewController.xib in Resources */,
 				E7E35A2B2A5E7DAC00733459 /* ChangePasswordViewController.xib in Resources */,
@@ -848,12 +938,16 @@
 				E7373F4E2A5AC9B5007A1186 /* LaunchViewController.xib in Resources */,
 				E7E35A262A5E6DE100733459 /* EditProfileViewController.xib in Resources */,
 				E75636382A5AD3040008C91B /* Poppins-Regular.ttf in Resources */,
+				E723469D2A5FD4B00061877B /* OrdersViewController.xib in Resources */,
+				E72346AC2A5FDFCE0061877B /* OrdersAcceptedViewController.xib in Resources */,
 				E723BBAF2A5D73D50026782B /* ProfileHeaderTableViewCell.xib in Resources */,
 				E7373F852A5AC9B5007A1186 /* Assets.xcassets in Resources */,
 				E72346972A5FC6140061877B /* PlaceInfoHeaderTableViewCell.xib in Resources */,
 				E75636362A5AD2EF0008C91B /* Poppins-Medium.ttf in Resources */,
+				E72346B12A5FE37C0061877B /* OrdersPendingViewController.xib in Resources */,
 				E7B6F9312A5E97E0002A0693 /* NotificationTableViewCell.xib in Resources */,
 				E723BBB72A5D7B3C0026782B /* SwitchTableViewCell.xib in Resources */,
+				E7868BA32A600F25008917DD /* AcceptedUserViewController.xib in Resources */,
 				E7A861992A5EC81200CFA14B /* PlaceTableViewCell.xib in Resources */,
 				E770585A2A5E9CBB004ADBF9 /* FriendTableViewCell.xib in Resources */,
 				E77058562A5E9C3D004ADBF9 /* FriendsViewController.xib in Resources */,
@@ -868,6 +962,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8C747C92217967E28380CA7E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VirtualSpace/Pods-VirtualSpace-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VirtualSpace/Pods-VirtualSpace-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VirtualSpace/Pods-VirtualSpace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9C124FB03678F729205A9853 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -909,13 +1020,17 @@
 				E7B6F92C2A5E973D002A0693 /* NotificationViewController.swift in Sources */,
 				E770586F2A5EA765004ADBF9 /* ReservationTableViewCell.swift in Sources */,
 				E77CF7B32A5BD41900E01D49 /* UITextField.swift in Sources */,
+				E7868BA22A600F25008917DD /* AcceptedUserViewController.swift in Sources */,
 				E77058682A5EA6DB004ADBF9 /* ReservationsViewController.swift in Sources */,
 				E723BBB82A5D7B3C0026782B /* SwitchTableViewCell.swift in Sources */,
 				E7373F7F2A5AC9B5007A1186 /* UIViewController.swift in Sources */,
 				E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */,
 				E756363A2A5AD4E00008C91B /* UIButton+style.swift in Sources */,
 				E723BB9E2A5D54160026782B /* TabBarIndicatorView.swift in Sources */,
+				E72346A22A5FD8EE0061877B /* AcceptedTableViewCell.swift in Sources */,
+				E7868BA52A6014F7008917DD /* Helper.swift in Sources */,
 				E7373F4C2A5AC9B5007A1186 /* LaunchViewController.swift in Sources */,
+				E72346B02A5FE37C0061877B /* OrdersPendingViewController.swift in Sources */,
 				E7107B142A5D2316008891B1 /* ForgotPasswordViewController.swift in Sources */,
 				E77058812A5EB3FB004ADBF9 /* InviteViewController.swift in Sources */,
 				E77CF7CB2A5BD5B400E01D49 /* PhoneValidator.swift in Sources */,
@@ -926,8 +1041,10 @@
 				E73AA0642A5BE59E0022F8BE /* MainTextView.swift in Sources */,
 				E7107B182A5D3915008891B1 /* PrivacyPolicyViewController.swift in Sources */,
 				E723BB9C2A5D42500026782B /* PasswordValidator.swift in Sources */,
+				E72346AB2A5FDFCE0061877B /* OrdersAcceptedViewController.swift in Sources */,
 				E7373F712A5AC9B5007A1186 /* UICollectionView.swift in Sources */,
 				E7715DF12A5ED18F00143F92 /* TherapistsPlacesViewController.swift in Sources */,
+				E723469C2A5FD4B00061877B /* OrdersViewController.swift in Sources */,
 				E7373F772A5AC9B5007A1186 /* UIResponder.swift in Sources */,
 				E72346982A5FC6140061877B /* PlaceInfoHeaderTableViewCell.swift in Sources */,
 				E75636452A5AE49E0008C91B /* SignInViewController.swift in Sources */,
@@ -936,6 +1053,7 @@
 				E7373F492A5AC9B5007A1186 /* MainNavigationViewController.swift in Sources */,
 				E7373F422A5AC9B5007A1186 /* AppDelegate.swift in Sources */,
 				E7E35A2A2A5E7DAC00733459 /* ChangePasswordViewController.swift in Sources */,
+				E72346A72A5FDD5D0061877B /* PendingTableViewCell.swift in Sources */,
 				E77058722A5EB04B004ADBF9 /* ImagesConstants.swift in Sources */,
 				E723BB962A5D3E4D0026782B /* AuthController.swift in Sources */,
 				E7373F752A5AC9B5007A1186 /* UIKitHelpers.swift in Sources */,

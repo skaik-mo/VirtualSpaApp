@@ -50,6 +50,18 @@ extension UIColor {
         return UIColor(hexString: "#5E5E5E")
     }
 
+    static var color_9B9B9B: UIColor {
+        return UIColor(hexString: "#9B9B9B")
+    }
+
+    static var color_A3A3A3: UIColor {
+        return UIColor(hexString: "#A3A3A3")
+    }
+
+    static var color_F2F2F2: UIColor {
+        return UIColor(hexString: "#F2F2F2")
+    }
+
 //    static var color_: UIColor {
 //        return UIColor(hexString: "#")
 //    }

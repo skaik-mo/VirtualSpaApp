@@ -10,7 +10,7 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
-    var auth: GlobalConstants.UserType = .User
+    var auth: GlobalConstants.UserType = .Business
     var indicatorView: TabBarIndicatorView?
     override var title: String? {
         didSet {
@@ -25,7 +25,12 @@ class MainTabBarController: UITabBarController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self._isHideNavigation = false
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        indicatorView?.indicatorWidth = self.tabBar.frame.width / CGFloat(self.tabBar.items?.count ?? 0)
+        indicatorView?.indicatorAnimate(0)
     }
 
 }
@@ -34,22 +39,14 @@ private extension MainTabBarController {
 
     func setUpView() {
         self.delegate = self
-        self.addLineInTabBar()
+        self.indicatorView = TabBarIndicatorView(frame: self.tabBar.frame)
+        self.setValue(indicatorView, forKey: "tabBar")
         switch self.auth {
         case .User:
             setUpUserViewControllers()
         case .Business:
             setUpBusinessViewControllers()
         }
-        let width = self.tabBar.frame.width / CGFloat(self.tabBar.items?.count ?? 0)
-        self.indicatorView = TabBarIndicatorView(atTabBarController: self, width: width, indicatorColor: .color_8C4EFF)
-        if let indicatorView {
-            self.view.addSubview(indicatorView)
-        }
-        self.tabBar.backgroundColor = .color_FFFFFF
-        self.tabBar.barTintColor = .color_FFFFFF
-        self.tabBar.shadowImage = UIImage()
-        self.tabBar.backgroundImage = UIImage()
     }
 
     func setUpUserViewControllers() {
@@ -82,9 +79,9 @@ private extension MainTabBarController {
         vc1.tabBarItem.image = .ic_home
         vc1.tabBarItem.selectedImage = .ic_homeSelected
 
-        let vc3 = PrivacyPolicyViewController()
-        vc3.tabBarItem.image = .ic_frinds
-        vc3.tabBarItem.selectedImage = .ic_frindsSelected
+        let orders = OrdersViewController()
+        orders.tabBarItem.image = .ic_frinds
+        orders.tabBarItem.selectedImage = .ic_frindsSelected
 
         let vc4 = PrivacyPolicyViewController()
         vc4.tabBarItem.image = .ic_notification
@@ -94,13 +91,7 @@ private extension MainTabBarController {
         profile.tabBarItem.image = .ic_profile
         profile.tabBarItem.selectedImage = .ic_profileSelected
 
-        self.setViewControllers([vc1, vc3, vc4, profile], animated: true)
-    }
-
-    func addLineInTabBar() {
-        let lineView = UIView(frame: CGRect(x: 0, y: 0, width: tabBar.frame.size.width, height: 1))
-        lineView.backgroundColor = .color_000000.withAlphaComponent(0.12)
-        tabBar.addSubview(lineView)
+        self.setViewControllers([vc1, orders, vc4, profile], animated: true)
     }
 
     func setUpNavigation(selectedVC: UIViewController?) {
@@ -110,6 +101,8 @@ private extension MainTabBarController {
         } else if let selectedVC = selectedVC as? FavoriteViewController {
             self.setUpNavigationItem(selectedVC.getUpNavigationItem())
         } else if let selectedVC = selectedVC as? TherapistsPlacesViewController {
+            self.setUpNavigationItem(selectedVC.getUpNavigationItem())
+        } else if let selectedVC = selectedVC as? OrdersViewController {
             self.setUpNavigationItem(selectedVC.getUpNavigationItem())
         } else {
             self.setUpNavigationItem(UINavigationItem())
@@ -121,7 +114,8 @@ private extension MainTabBarController {
 extension MainTabBarController: UITabBarControllerDelegate {
 
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        indicatorView?.selectIndex(self.selectedIndex)
+        indicatorView?.indicatorAnimate(self.selectedIndex)
+//        indicatorView?.selectIndex(self.selectedIndex)
         self.setUpNavigation(selectedVC: tabBarController.selectedViewController)
     }
 

@@ -57,6 +57,7 @@ class Strings {
     static let DELETE_ACCOUNT_TITLE = "Delete account"._localizedKey
     static let FOLLOWERS_TITLE = "Followers"._localizedKey
     static let MESSAGES_TITLE = "Massages"._localizedKey
+    static let MESSAGE_TITLE = "Massage"._localizedKey
     static let ACCOUNT_PRIVACY_TITLE = "Account Privacy"._localizedKey
 
     // MARK: - Edit Profile
@@ -96,4 +97,10 @@ class Strings {
     static let DESCRIPTION_TITLE = "Description"._localizedKey
     static let MESSAGE_THERAOISTS_TITLE = "Massage Therapists"._localizedKey
 
+    // MARK: - Orders
+    static let ORDERS_TITLE = "Orders"._localizedKey
+    static let PENDING_TITLE = "Pending"._localizedKey
+    static let ACCEPTED_TITLE = "Accepted"._localizedKey
+    static let ACCEPT_TITLE = "Accept"._localizedKey
+    static let REJECT_TITLE = "Reject"._localizedKey
 }
