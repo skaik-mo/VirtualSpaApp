@@ -78,4 +78,8 @@ extension UIImage {
         "ic_circleArrow"._toImage
     }
 
+    static var ic_trash: UIImage? {
+        "ic_trash"._toImage
+    }
+
 }

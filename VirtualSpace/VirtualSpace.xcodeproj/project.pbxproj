@@ -106,6 +106,10 @@
 		E7868BA22A600F25008917DD /* AcceptedUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7868BA02A600F25008917DD /* AcceptedUserViewController.swift */; };
 		E7868BA32A600F25008917DD /* AcceptedUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7868BA12A600F25008917DD /* AcceptedUserViewController.xib */; };
 		E7868BA52A6014F7008917DD /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7868BA42A6014F7008917DD /* Helper.swift */; };
+		E7868BA92A601E5A008917DD /* MassageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7868BA72A601E5A008917DD /* MassageTableViewCell.xib */; };
+		E7868BAA2A601E5A008917DD /* MassageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7868BA82A601E5A008917DD /* MassageTableViewCell.swift */; };
+		E7868BB02A6023E7008917DD /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7868BAE2A6023E7008917DD /* MessageViewController.swift */; };
+		E7868BB12A6023E7008917DD /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7868BAF2A6023E7008917DD /* MessageViewController.xib */; };
 		E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E799C9D12A5C1513003443C8 /* PhoneTextFieldView.swift */; };
 		E799C9D42A5C1513003443C8 /* PhoneTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */; };
 		E799C9F02A5C3705003443C8 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E799C9EF2A5C3705003443C8 /* IQKeyboardManagerSwift */; };
@@ -228,6 +232,10 @@
 		E7868BA02A600F25008917DD /* AcceptedUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptedUserViewController.swift; sourceTree = "<group>"; };
 		E7868BA12A600F25008917DD /* AcceptedUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcceptedUserViewController.xib; sourceTree = "<group>"; };
 		E7868BA42A6014F7008917DD /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		E7868BA72A601E5A008917DD /* MassageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MassageTableViewCell.xib; sourceTree = "<group>"; };
+		E7868BA82A601E5A008917DD /* MassageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassageTableViewCell.swift; sourceTree = "<group>"; };
+		E7868BAE2A6023E7008917DD /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		E7868BAF2A6023E7008917DD /* MessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
 		E799C9D12A5C1513003443C8 /* PhoneTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextFieldView.swift; sourceTree = "<group>"; };
 		E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTextFieldView.xib; sourceTree = "<group>"; };
 		E7A861922A5EC0A100CFA14B /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
@@ -440,6 +448,7 @@
 				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 				E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */,
 				E723BB932A5D3B190026782B /* MainTabBarController.swift */,
+				E7868BAB2A60230A008917DD /* Message */,
 				E7868B9F2A600F1B008917DD /* AcceptedUser */,
 				E72346AD2A5FE35C0061877B /* OrdersPending */,
 				E72346A82A5FDFA40061877B /* OrdersAccepted */,
@@ -506,6 +515,7 @@
 		E7373F582A5AC9B5007A1186 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				E7868BA62A601E51008917DD /* Massage */,
 				E72346A32A5FDD520061877B /* Pending */,
 				E723469E2A5FD8E40061877B /* Accepted */,
 				E723468F2A5FC1120061877B /* Call */,
@@ -782,6 +792,24 @@
 			path = AcceptedUser;
 			sourceTree = "<group>";
 		};
+		E7868BA62A601E51008917DD /* Massage */ = {
+			isa = PBXGroup;
+			children = (
+				E7868BA72A601E5A008917DD /* MassageTableViewCell.xib */,
+				E7868BA82A601E5A008917DD /* MassageTableViewCell.swift */,
+			);
+			path = Massage;
+			sourceTree = "<group>";
+		};
+		E7868BAB2A60230A008917DD /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				E7868BAE2A6023E7008917DD /* MessageViewController.swift */,
+				E7868BAF2A6023E7008917DD /* MessageViewController.xib */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
 		E799C9D02A5C1503003443C8 /* PhoneTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -934,10 +962,12 @@
 				E770586E2A5EA765004ADBF9 /* ReservationTableViewCell.xib in Resources */,
 				E73AA0692A5C03620022F8BE /* PasswordTextFieldView.xib in Resources */,
 				E770585F2A5EA222004ADBF9 /* FollowingTableViewCell.xib in Resources */,
+				E7868BA92A601E5A008917DD /* MassageTableViewCell.xib in Resources */,
 				E7107B192A5D3915008891B1 /* PrivacyPolicyViewController.xib in Resources */,
 				E7373F4E2A5AC9B5007A1186 /* LaunchViewController.xib in Resources */,
 				E7E35A262A5E6DE100733459 /* EditProfileViewController.xib in Resources */,
 				E75636382A5AD3040008C91B /* Poppins-Regular.ttf in Resources */,
+				E7868BB12A6023E7008917DD /* MessageViewController.xib in Resources */,
 				E723469D2A5FD4B00061877B /* OrdersViewController.xib in Resources */,
 				E72346AC2A5FDFCE0061877B /* OrdersAcceptedViewController.xib in Resources */,
 				E723BBAF2A5D73D50026782B /* ProfileHeaderTableViewCell.xib in Resources */,
@@ -1061,6 +1091,7 @@
 				E7373F792A5AC9B5007A1186 /* UIStoryboard.swift in Sources */,
 				E7A8619A2A5EC81200CFA14B /* PlaceTableViewCell.swift in Sources */,
 				E7B6F9322A5E97E0002A0693 /* NotificationTableViewCell.swift in Sources */,
+				E7868BAA2A601E5A008917DD /* MassageTableViewCell.swift in Sources */,
 				E7373F6F2A5AC9B5007A1186 /* String.swift in Sources */,
 				E75636322A5AD1410008C91B /* AuthenticationViewController.swift in Sources */,
 				E73AA0682A5C03620022F8BE /* PasswordTextFieldView.swift in Sources */,
@@ -1072,6 +1103,7 @@
 				E77CF7CC2A5BD5B400E01D49 /* Validator.swift in Sources */,
 				E770585B2A5E9CBB004ADBF9 /* FriendTableViewCell.swift in Sources */,
 				E7715DED2A5ED0EC00143F92 /* PlaceInfoViewController.swift in Sources */,
+				E7868BB02A6023E7008917DD /* MessageViewController.swift in Sources */,
 				E7A861942A5EC0A100CFA14B /* FavoriteViewController.swift in Sources */,
 				E723BB9A2A5D42480026782B /* EmailValidator.swift in Sources */,
 				E723BBA22A5D634B0026782B /* ProfileViewController.swift in Sources */,
