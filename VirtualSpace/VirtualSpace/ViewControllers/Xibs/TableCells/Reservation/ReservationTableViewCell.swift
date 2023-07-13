@@ -12,6 +12,7 @@ class ReservationTableViewCell: UITableViewCell {
 
     @IBOutlet weak var authImage: rImage!
     @IBOutlet weak var authNameLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var reservationButton: UIButton!
 
     var object: Any?

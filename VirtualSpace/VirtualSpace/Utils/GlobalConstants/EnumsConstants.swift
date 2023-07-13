@@ -152,10 +152,12 @@ extension GlobalConstants {
             case .AccountPrivacy:
                 debugPrint("AccountPrivacy")
             case .Reservations:
-                let vc = InviteViewController()
+                let vc = ReservationsViewController()
                 vc._push()
             case .Massages:
                 debugPrint("Massages")
+                let vc = MessageViewController()
+                vc._push()
             case .Following:
                 let vc = FollowingViewController()
                 vc._push()
