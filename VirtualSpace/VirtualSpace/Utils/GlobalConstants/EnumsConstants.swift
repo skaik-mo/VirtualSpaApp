@@ -159,14 +159,14 @@ extension GlobalConstants {
                 let vc = ReservationsViewController()
                 vc._push()
             case .Massages:
-                debugPrint("Massages")
                 let vc = MessageViewController()
                 vc._push()
             case .Following:
                 let vc = FollowingViewController()
                 vc._push()
             case .Followers:
-                debugPrint("Followers")
+                let vc = FollowingViewController()
+                vc._push()
             case .Friends:
                 let vc = FriendsViewController()
                 vc._push()

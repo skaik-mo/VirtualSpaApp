@@ -16,7 +16,7 @@ class ChatViewController: MessagesViewController {
     // MARK: Outlets
 
     // MARK: Properties
-    let inputBar = {
+    lazy var inputBar = {
         let inputBar = TextViewInputBar()
         inputBar.placeholder = "Write a message"
         return inputBar

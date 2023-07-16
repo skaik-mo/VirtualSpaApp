@@ -30,13 +30,9 @@ class PostDetailsViewController: UIViewController {
         "End",
     ]
     lazy var inputText: TextViewInputBar = {
-        let height: CGFloat = 90
-        let y = self.view.frame.height - height
-        let frame = CGRect.init(x: 0, y: y, width: self.view.frame.width, height: height)
-        let inputBar = TextViewInputBar(frame: frame)
+        let inputBar = TextViewInputBar()
         inputBar.delegate = self
         inputBar.placeholder = "Add a comment"
-        inputBar.backgroundColor = .red
         return inputBar
     }()
 
@@ -55,6 +51,10 @@ class PostDetailsViewController: UIViewController {
         setUpView()
         setUpData()
         fetchData()
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -80,15 +80,21 @@ private extension PostDetailsViewController {
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.dataSource = self
         self.tableView.delegate = self
+
         self.view.addSubview(inputText)
+        self.inputText.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.inputText.heightAnchor.constraint(equalToConstant: 90),
+            self.inputText.widthAnchor.constraint(equalToConstant: self.view.frame.width),
+            self.inputText.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            self.inputText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            self.inputText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            ])
     }
 
     func setUpData() {
         self.title = Strings.POSTS_DETAILS_TITLE
-
         self.objects["Comments"] = comments
-
-
     }
 
     func fetchData() {

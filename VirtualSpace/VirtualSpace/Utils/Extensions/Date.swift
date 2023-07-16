@@ -12,6 +12,7 @@ extension Date {
     var _timeAgoDisplay: String {
         let formatter = RelativeDateTimeFormatter()
         formatter.unitsStyle = .full
+        formatter.locale = Locale(identifier: "en")
         return formatter.localizedString(for: self, relativeTo: Date())
     }
 
@@ -28,6 +29,7 @@ extension Date {
         formatter.calendar = Calendar.init(identifier: .gregorian)
         formatter.dateFormat = dataFormat
         formatter.timeZone = TimeZone.init(identifier: timeZone)
+        formatter.locale = Locale(identifier: "en")
         return formatter.string(from: self)
     }
 

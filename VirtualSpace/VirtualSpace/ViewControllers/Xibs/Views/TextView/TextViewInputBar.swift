@@ -31,7 +31,8 @@ final class TextViewInputBar: InputBarAccessoryView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        inputTextView.cornerRadius = self.inputTextView.frame.height / 2
+        let height = self.inputTextView.frame.height
+        inputTextView.cornerRadius = (height == 0 ? 37.0 : height) / 2
     }
 
     func configure() {
