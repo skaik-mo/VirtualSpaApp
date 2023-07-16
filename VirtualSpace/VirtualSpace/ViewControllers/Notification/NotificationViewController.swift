@@ -39,6 +39,13 @@ class NotificationViewController: UIViewController {
 
 }
 
+// MARK: - set Up Navigation
+extension NotificationViewController {
+    func getUpNavigationItem() -> UINavigationItem {
+        return UINavigationItem(title: Strings.NOTIFY_TITLE)
+    }
+}
+
 // MARK: - Configurations
 private extension NotificationViewController {
 
@@ -51,7 +58,7 @@ private extension NotificationViewController {
     }
 
     func setUpData() {
-        self.title = Strings.NOTIFY_TITLE
+        self.navigationItem.title = Strings.NOTIFY_TITLE
     }
 
     func fetchData() {

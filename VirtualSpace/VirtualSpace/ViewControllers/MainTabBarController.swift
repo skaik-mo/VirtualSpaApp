@@ -10,7 +10,7 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
-    var auth: GlobalConstants.UserType = .Business//AuthController().fetchAuth() ?? .User
+    var auth: GlobalConstants.UserType = AuthController().fetchAuth() ?? .User
     var indicatorView: TabBarIndicatorView?
     override var title: String? {
         didSet {
@@ -84,15 +84,15 @@ private extension MainTabBarController {
         orders.tabBarItem.image = .ic_frinds
         orders.tabBarItem.selectedImage = .ic_frindsSelected
 
-        let vc4 = PrivacyPolicyViewController()
-        vc4.tabBarItem.image = .ic_notification
-        vc4.tabBarItem.selectedImage = .ic_notificationSelected
+        let notification = NotificationViewController()
+        notification.tabBarItem.image = .ic_notification
+        notification.tabBarItem.selectedImage = .ic_notificationSelected
 
         let profile = ProfileViewController()
         profile.tabBarItem.image = .ic_profile
         profile.tabBarItem.selectedImage = .ic_profileSelected
 
-        self.setViewControllers([homeBusiness, orders, vc4, profile], animated: true)
+        self.setViewControllers([homeBusiness, orders, notification, profile], animated: true)
     }
 
     func setUpNavigation(selectedVC: UIViewController?) {
@@ -106,6 +106,8 @@ private extension MainTabBarController {
         } else if let selectedVC = selectedVC as? TherapistsPlacesViewController {
             self.setUpNavigationItem(selectedVC.getUpNavigationItem())
         } else if let selectedVC = selectedVC as? HomeBusinessViewController {
+            self.setUpNavigationItem(selectedVC.getUpNavigationItem())
+        } else if let selectedVC = selectedVC as? NotificationViewController {
             self.setUpNavigationItem(selectedVC.getUpNavigationItem())
         } else if let selectedVC = selectedVC as? OrdersViewController {
             self.setUpNavigationItem(selectedVC.getUpNavigationItem())

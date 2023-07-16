@@ -120,6 +120,8 @@
 		E79925452A6418E500B87500 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79925432A6418E500B87500 /* CommentTableViewCell.swift */; };
 		E79925492A641BEC00B87500 /* HomeBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79925472A641BEC00B87500 /* HomeBusinessViewController.swift */; };
 		E799254A2A641BEC00B87500 /* HomeBusinessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79925482A641BEC00B87500 /* HomeBusinessViewController.xib */; };
+		E799254E2A64207700B87500 /* ZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E799254C2A64207700B87500 /* ZoomViewController.swift */; };
+		E799254F2A64207700B87500 /* ZoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E799254D2A64207700B87500 /* ZoomViewController.xib */; };
 		E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E799C9D12A5C1513003443C8 /* PhoneTextFieldView.swift */; };
 		E799C9D42A5C1513003443C8 /* PhoneTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */; };
 		E799C9F02A5C3705003443C8 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E799C9EF2A5C3705003443C8 /* IQKeyboardManagerSwift */; };
@@ -277,6 +279,8 @@
 		E79925432A6418E500B87500 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		E79925472A641BEC00B87500 /* HomeBusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBusinessViewController.swift; sourceTree = "<group>"; };
 		E79925482A641BEC00B87500 /* HomeBusinessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBusinessViewController.xib; sourceTree = "<group>"; };
+		E799254C2A64207700B87500 /* ZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomViewController.swift; sourceTree = "<group>"; };
+		E799254D2A64207700B87500 /* ZoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZoomViewController.xib; sourceTree = "<group>"; };
 		E799C9D12A5C1513003443C8 /* PhoneTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextFieldView.swift; sourceTree = "<group>"; };
 		E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTextFieldView.xib; sourceTree = "<group>"; };
 		E7A861922A5EC0A100CFA14B /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
@@ -514,6 +518,7 @@
 				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 				E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */,
 				E723BB932A5D3B190026782B /* MainTabBarController.swift */,
+				E799254B2A64206F00B87500 /* Zoom */,
 				E79925462A641BB700B87500 /* HomeBusiness */,
 				E79925372A640B1F00B87500 /* PostDetails */,
 				E7D1A8192A63FC5400A701E7 /* BookNow */,
@@ -929,6 +934,15 @@
 			path = HomeBusiness;
 			sourceTree = "<group>";
 		};
+		E799254B2A64206F00B87500 /* Zoom */ = {
+			isa = PBXGroup;
+			children = (
+				E799254C2A64207700B87500 /* ZoomViewController.swift */,
+				E799254D2A64207700B87500 /* ZoomViewController.xib */,
+			);
+			path = Zoom;
+			sourceTree = "<group>";
+		};
 		E799C9D02A5C1503003443C8 /* PhoneTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -1220,6 +1234,7 @@
 				E7D1A80A2A63F3F500A701E7 /* PostsViewController.xib in Resources */,
 				E770585A2A5E9CBB004ADBF9 /* FriendTableViewCell.xib in Resources */,
 				E77058562A5E9C3D004ADBF9 /* FriendsViewController.xib in Resources */,
+				E799254F2A64207700B87500 /* ZoomViewController.xib in Resources */,
 				E723BBA62A5D6FB80026782B /* ProfileTableViewCell.xib in Resources */,
 				E723BBB22A5D77C10026782B /* Poppins-SemiBold.ttf in Resources */,
 				E72346922A5FC1210061877B /* CallTableViewCell.xib in Resources */,
@@ -1309,6 +1324,7 @@
 				E72346B02A5FE37C0061877B /* OrdersPendingViewController.swift in Sources */,
 				E7107B142A5D2316008891B1 /* ForgotPasswordViewController.swift in Sources */,
 				E77058812A5EB3FB004ADBF9 /* InviteViewController.swift in Sources */,
+				E799254E2A64207700B87500 /* ZoomViewController.swift in Sources */,
 				E77CF7CB2A5BD5B400E01D49 /* PhoneValidator.swift in Sources */,
 				E7E35A252A5E6DE100733459 /* EditProfileViewController.swift in Sources */,
 				E7D1A8092A63F3F500A701E7 /* PostsViewController.swift in Sources */,

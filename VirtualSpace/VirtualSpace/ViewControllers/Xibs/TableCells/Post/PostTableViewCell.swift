@@ -29,6 +29,9 @@ class PostTableViewCell: UITableViewCell {
     }
 
     func configureCell() {
+        let imageGesture = UITapGestureRecognizer(target: self, action: #selector(showImage))
+        self.postImage.addGestureRecognizer(imageGesture)
+        self.postImage.isUserInteractionEnabled = true
         self.authImage.image = .demo
         self.authNameLabel.text = "Mohammed skaik"
         self.postTimeLabel.text = Date()._timeAgoDisplay
@@ -51,6 +54,14 @@ class PostTableViewCell: UITableViewCell {
 
     @IBAction func shareAction(_ sender: Any) {
         debugPrint(#function)
+    }
+
+    @objc private func showImage() {
+        let vc = ZoomViewController()
+        vc.imageSelected = self.postImage.image
+        vc.modalPresentationStyle = .custom
+        vc.modalTransitionStyle = .crossDissolve
+        vc._presentVC()
     }
 
 }
