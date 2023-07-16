@@ -63,6 +63,10 @@ class TherapistHeaderView: UIView {
 
     @IBAction func bookNowAction(_ sender: Any) {
         debugPrint(#function)
+        let vc = BookNowViewController()
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .custom
+        vc._presentVC()
     }
 
     @IBAction func callAction(_ sender: Any) {

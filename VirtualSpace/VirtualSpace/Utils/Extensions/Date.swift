@@ -15,6 +15,10 @@ extension Date {
         return formatter.localizedString(for: self, relativeTo: Date())
     }
 
+    var _stringDate: String {
+        return self._string(dataFormat: GlobalConstants.dateFormat)
+    }
+
     var _stringTime: String {
         return self._string(dataFormat: GlobalConstants.timeFormat)
     }

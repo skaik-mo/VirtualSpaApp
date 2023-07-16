@@ -142,6 +142,11 @@
 		E7D1A80F2A63F57100A701E7 /* TherapistInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7D1A80D2A63F57100A701E7 /* TherapistInfoViewController.xib */; };
 		E7D1A8172A63F75C00A701E7 /* TherapistInfoHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7D1A8152A63F75C00A701E7 /* TherapistInfoHeaderTableViewCell.xib */; };
 		E7D1A8182A63F75C00A701E7 /* TherapistInfoHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A8162A63F75C00A701E7 /* TherapistInfoHeaderTableViewCell.swift */; };
+		E7D1A81C2A63FC6700A701E7 /* BookNowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A81A2A63FC6700A701E7 /* BookNowViewController.swift */; };
+		E7D1A81D2A63FC6700A701E7 /* BookNowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7D1A81B2A63FC6700A701E7 /* BookNowViewController.xib */; };
+		E7D1A8222A64008600A701E7 /* UIViewEXForDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A81F2A64008500A701E7 /* UIViewEXForDatePicker.swift */; };
+		E7D1A8232A64008600A701E7 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A8202A64008600A701E7 /* DatePickerViewController.swift */; };
+		E7D1A8242A64008600A701E7 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A8212A64008600A701E7 /* UIAlertController+Extensions.swift */; };
 		E7E35A252A5E6DE100733459 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E35A232A5E6DE100733459 /* EditProfileViewController.swift */; };
 		E7E35A262A5E6DE100733459 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E35A242A5E6DE100733459 /* EditProfileViewController.xib */; };
 		E7E35A2A2A5E7DAC00733459 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E35A282A5E7DAC00733459 /* ChangePasswordViewController.swift */; };
@@ -284,6 +289,11 @@
 		E7D1A80D2A63F57100A701E7 /* TherapistInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TherapistInfoViewController.xib; sourceTree = "<group>"; };
 		E7D1A8152A63F75C00A701E7 /* TherapistInfoHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TherapistInfoHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		E7D1A8162A63F75C00A701E7 /* TherapistInfoHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapistInfoHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		E7D1A81A2A63FC6700A701E7 /* BookNowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookNowViewController.swift; sourceTree = "<group>"; };
+		E7D1A81B2A63FC6700A701E7 /* BookNowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookNowViewController.xib; sourceTree = "<group>"; };
+		E7D1A81F2A64008500A701E7 /* UIViewEXForDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewEXForDatePicker.swift; sourceTree = "<group>"; };
+		E7D1A8202A64008600A701E7 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		E7D1A8212A64008600A701E7 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 		E7E35A232A5E6DE100733459 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		E7E35A242A5E6DE100733459 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		E7E35A282A5E7DAC00733459 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -488,6 +498,7 @@
 				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 				E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */,
 				E723BB932A5D3B190026782B /* MainTabBarController.swift */,
+				E7D1A8192A63FC5400A701E7 /* BookNow */,
 				E7D1A8022A63F3C000A701E7 /* Posts */,
 				E7D1A80B2A63F55B00A701E7 /* TherapistInfo */,
 				E7D1A7F32A63E0C300A701E7 /* Therapist */,
@@ -622,6 +633,7 @@
 		E7373F6A2A5AC9B5007A1186 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				E7D1A81E2A64007E00A701E7 /*  AlertsAndPickers */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -993,6 +1005,25 @@
 			path = TherapistInfoHeader;
 			sourceTree = "<group>";
 		};
+		E7D1A8192A63FC5400A701E7 /* BookNow */ = {
+			isa = PBXGroup;
+			children = (
+				E7D1A81A2A63FC6700A701E7 /* BookNowViewController.swift */,
+				E7D1A81B2A63FC6700A701E7 /* BookNowViewController.xib */,
+			);
+			path = BookNow;
+			sourceTree = "<group>";
+		};
+		E7D1A81E2A64007E00A701E7 /*  AlertsAndPickers */ = {
+			isa = PBXGroup;
+			children = (
+				E7D1A8202A64008600A701E7 /* DatePickerViewController.swift */,
+				E7D1A8212A64008600A701E7 /* UIAlertController+Extensions.swift */,
+				E7D1A81F2A64008500A701E7 /* UIViewEXForDatePicker.swift */,
+			);
+			path = " AlertsAndPickers";
+			sourceTree = "<group>";
+		};
 		E7E35A222A5E6DCA00733459 /* EditProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -1091,6 +1122,7 @@
 				E723BBA32A5D634B0026782B /* ProfileViewController.xib in Resources */,
 				E7D1A7FB2A63E21C00A701E7 /* PostTableViewCell.xib in Resources */,
 				E723BBBC2A5D7C950026782B /* DeleteTableViewCell.xib in Resources */,
+				E7D1A81D2A63FC6700A701E7 /* BookNowViewController.xib in Resources */,
 				E77058652A5EA2BC004ADBF9 /* FollowingViewController.xib in Resources */,
 				E7107B152A5D2316008891B1 /* ForgotPasswordViewController.xib in Resources */,
 				E75636462A5AE49E0008C91B /* SignInViewController.xib in Resources */,
@@ -1238,6 +1270,7 @@
 				E77058762A5EB05E004ADBF9 /* EnumsConstants.swift in Sources */,
 				E723BBA72A5D6FB80026782B /* ProfileTableViewCell.swift in Sources */,
 				E7373F492A5AC9B5007A1186 /* MainNavigationViewController.swift in Sources */,
+				E7D1A81C2A63FC6700A701E7 /* BookNowViewController.swift in Sources */,
 				E7373F422A5AC9B5007A1186 /* AppDelegate.swift in Sources */,
 				E7E35A2A2A5E7DAC00733459 /* ChangePasswordViewController.swift in Sources */,
 				E72346A72A5FDD5D0061877B /* PendingTableViewCell.swift in Sources */,
@@ -1250,10 +1283,12 @@
 				E7B6F9322A5E97E0002A0693 /* NotificationTableViewCell.swift in Sources */,
 				E7868BAA2A601E5A008917DD /* MassageTableViewCell.swift in Sources */,
 				E7373F6F2A5AC9B5007A1186 /* String.swift in Sources */,
+				E7D1A8222A64008600A701E7 /* UIViewEXForDatePicker.swift in Sources */,
 				E75636322A5AD1410008C91B /* AuthenticationViewController.swift in Sources */,
 				E73AA0682A5C03620022F8BE /* PasswordTextFieldView.swift in Sources */,
 				E723BBBD2A5D7C950026782B /* DeleteTableViewCell.swift in Sources */,
 				E723BBB02A5D73D50026782B /* ProfileHeaderTableViewCell.swift in Sources */,
+				E7D1A8232A64008600A701E7 /* DatePickerViewController.swift in Sources */,
 				E77058742A5EB055004ADBF9 /* ColorConstants.swift in Sources */,
 				E77058642A5EA2BC004ADBF9 /* FollowingViewController.swift in Sources */,
 				E7373F662A5AC9B5007A1186 /* GlobalConstants.swift in Sources */,
@@ -1265,6 +1300,7 @@
 				E7D1A7F62A63E0D000A701E7 /* TherapistViewController.swift in Sources */,
 				E7D1A7FC2A63E21C00A701E7 /* PostTableViewCell.swift in Sources */,
 				E723BB9A2A5D42480026782B /* EmailValidator.swift in Sources */,
+				E7D1A8242A64008600A701E7 /* UIAlertController+Extensions.swift in Sources */,
 				E7D1A8182A63F75C00A701E7 /* TherapistInfoHeaderTableViewCell.swift in Sources */,
 				E723BBA22A5D634B0026782B /* ProfileViewController.swift in Sources */,
 				E7373F442A5AC9B5007A1186 /* SceneDelegate.swift in Sources */,

@@ -121,4 +121,8 @@ class Strings {
     // MARK: - TherapistInfo
     static let INFO_TITLE = "Information"._localizedKey
     static let WORK_IN_TITLE = "Work in"._localizedKey
+
+    // MARK: - BookNow
+    static let SELECT_DATE_TITLE = "Select date & time"._localizedKey
+    static let SUBMIT_TITLE = "Submit"._localizedKey
 }
