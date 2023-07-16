@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import InputBarAccessoryView
 
 class PostDetailsViewController: UIViewController {
 
@@ -17,17 +18,27 @@ class PostDetailsViewController: UIViewController {
     var objects: [String: Any] = [
         "Post": 1,
         "Comment_Title": 2,
-        "Comments": [
-            "Relaxation is a natural state that can be achieved through a variety of methods",
-            "Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.",
-            "Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.",
-            "Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.",
-            "Relaxation is a natural state that can be achieved through a variety of methods",
-            "Relaxation is a natural state that can be achieved through a variety of methods",
-            "Relaxation is a natural state that can be achieved through a variety of methods",
-            "End",
-        ]
     ]
+    var comments: [String] = [
+        "Relaxation is a natural state that can be achieved through a variety of methods",
+        "Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.",
+        "Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.",
+        "Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.",
+        "Relaxation is a natural state that can be achieved through a variety of methods",
+        "Relaxation is a natural state that can be achieved through a variety of methods",
+        "Relaxation is a natural state that can be achieved through a variety of methods",
+        "End",
+    ]
+    lazy var inputText: TextViewInputBar = {
+        let height: CGFloat = 90
+        let y = self.view.frame.height - height
+        let frame = CGRect.init(x: 0, y: y, width: self.view.frame.width, height: height)
+        let inputBar = TextViewInputBar(frame: frame)
+        inputBar.delegate = self
+        inputBar.placeholder = "Add a comment"
+        inputBar.backgroundColor = .red
+        return inputBar
+    }()
 
     // MARK: Init
     init() {
@@ -62,17 +73,21 @@ private extension PostDetailsViewController {
 private extension PostDetailsViewController {
 
     func setUpView() {
-        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
         self.tableView._registerCell = PostTableViewCell.self
         self.tableView._registerCell = LabelTableViewCell.self
         self.tableView._registerCell = CommentTableViewCell.self
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.view.addSubview(inputText)
     }
 
     func setUpData() {
         self.title = Strings.POSTS_DETAILS_TITLE
+
+        self.objects["Comments"] = comments
+
 
     }
 
@@ -109,6 +124,17 @@ extension PostDetailsViewController: UITableViewDataSource, UITableViewDelegate 
         cell.object = (objects["Comments"] as? [String])?[indexPath.row]
         cell.configureCell()
         return cell
+    }
+
+}
+
+extension PostDetailsViewController: InputBarAccessoryViewDelegate {
+
+    func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
+        comments.append(text)
+        objects["Comments"] = comments
+        self.tableView.reloadData()
+        inputBar.inputTextView.text = ""
     }
 
 }
