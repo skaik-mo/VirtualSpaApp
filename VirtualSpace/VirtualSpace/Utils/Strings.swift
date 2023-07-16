@@ -125,4 +125,9 @@ class Strings {
     // MARK: - BookNow
     static let SELECT_DATE_TITLE = "Select date & time"._localizedKey
     static let SUBMIT_TITLE = "Submit"._localizedKey
+
+    // MARK: - Post Detials
+    static let POSTS_DETAILS_TITLE = "Post Details"._localizedKey
+    static let COMMENTS_TITLE = "Comments"._localizedKey
+
 }

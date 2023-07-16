@@ -33,29 +33,29 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JKw-MC-KVB">
-                                        <rect key="frame" x="16" y="15.999999999999996" width="288" height="52.666666666666657"/>
+                                        <rect key="frame" x="16" y="16.000000000000004" width="288" height="46.333333333333343"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NUL-MW-67d">
-                                                <rect key="frame" x="0.0" y="10.333333333333332" width="104.66666666666667" height="32.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="4" width="115.66666666666667" height="38.666666666666657"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo" translatesAutoresizingMaskIntoConstraints="NO" id="olH-NV-7Wa" customClass="rImage" customModule="VirtualSpace" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="1" width="30" height="30"/>
+                                                        <rect key="frame" x="0.0" y="4.3333333333333321" width="30" height="29.999999999999996"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="olH-NV-7Wa" secondAttribute="height" multiplier="1:1" id="5j8-cW-354"/>
                                                             <constraint firstAttribute="height" constant="30" id="k2X-jk-NdV"/>
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="HDM-Np-gCb">
-                                                        <rect key="frame" x="40.000000000000007" y="0.0" width="64.666666666666686" height="32.333333333333336"/>
+                                                        <rect key="frame" x="40.000000000000007" y="0.0" width="75.666666666666686" height="38.666666666666664"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="auhtName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlM-0x-sSz">
-                                                                <rect key="frame" x="0.0" y="0.0" width="64.666666666666671" height="16.333333333333332"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="75.666666666666671" height="19.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                                                 <color key="textColor" name="#000000"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tha-X3-Faq">
-                                                                <rect key="frame" x="0.0" y="18.333333333333332" width="64.666666666666671" height="13.999999999999996"/>
+                                                                <rect key="frame" x="0.0" y="21.666666666666664" width="75.666666666666671" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                 <color key="textColor" name="#7A7A7A"/>
                                                                 <nil key="highlightedColor"/>
@@ -65,7 +65,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEk-gU-lat">
-                                                <rect key="frame" x="264" y="14.333333333333332" width="24" height="23.999999999999996"/>
+                                                <rect key="frame" x="264" y="11.333333333333332" width="24" height="23.999999999999996"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="QEk-gU-lat" secondAttribute="height" multiplier="1:1" id="TtI-jM-xll"/>
                                                 </constraints>
@@ -78,7 +78,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's important to prioritize self-care and relaxation in order to maintain good mental and physical health" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlK-bT-zpk">
-                                        <rect key="frame" x="16" y="80.666666666666671" width="288" height="30.333333333333329"/>
+                                        <rect key="frame" x="16" y="74.333333333333329" width="288" height="36.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                         <color key="textColor" name="#000000"/>
                                         <nil key="highlightedColor"/>
@@ -155,6 +155,7 @@
                 <outlet property="commentButton" destination="Shl-HX-gu1" id="lz8-CG-Z7Q"/>
                 <outlet property="descriptionLabel" destination="hlK-bT-zpk" id="3Bo-JG-fKB"/>
                 <outlet property="likeButton" destination="LRo-zs-K8s" id="X62-KZ-Lae"/>
+                <outlet property="lineView" destination="g3D-Ed-rI0" id="mZb-MU-dEC"/>
                 <outlet property="postImage" destination="3ot-oq-DJo" id="J0P-JC-Lgd"/>
                 <outlet property="postTimeLabel" destination="Tha-X3-Faq" id="kyB-Eo-wjC"/>
                 <outlet property="shareButton" destination="5Rk-Nc-tYY" id="feO-EG-XzN"/>

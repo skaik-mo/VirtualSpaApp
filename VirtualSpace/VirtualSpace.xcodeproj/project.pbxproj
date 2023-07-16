@@ -112,6 +112,12 @@
 		E7868BAA2A601E5A008917DD /* MassageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7868BA82A601E5A008917DD /* MassageTableViewCell.swift */; };
 		E7868BB02A6023E7008917DD /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7868BAE2A6023E7008917DD /* MessageViewController.swift */; };
 		E7868BB12A6023E7008917DD /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7868BAF2A6023E7008917DD /* MessageViewController.xib */; };
+		E799253A2A640B2B00B87500 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79925382A640B2B00B87500 /* PostDetailsViewController.swift */; };
+		E799253B2A640B2B00B87500 /* PostDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79925392A640B2B00B87500 /* PostDetailsViewController.xib */; };
+		E799253F2A64160800B87500 /* LabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E799253D2A64160800B87500 /* LabelTableViewCell.xib */; };
+		E79925402A64160800B87500 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E799253E2A64160800B87500 /* LabelTableViewCell.swift */; };
+		E79925442A6418E500B87500 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79925422A6418E500B87500 /* CommentTableViewCell.xib */; };
+		E79925452A6418E500B87500 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79925432A6418E500B87500 /* CommentTableViewCell.swift */; };
 		E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E799C9D12A5C1513003443C8 /* PhoneTextFieldView.swift */; };
 		E799C9D42A5C1513003443C8 /* PhoneTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */; };
 		E799C9F02A5C3705003443C8 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E799C9EF2A5C3705003443C8 /* IQKeyboardManagerSwift */; };
@@ -261,6 +267,12 @@
 		E7868BA82A601E5A008917DD /* MassageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassageTableViewCell.swift; sourceTree = "<group>"; };
 		E7868BAE2A6023E7008917DD /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		E7868BAF2A6023E7008917DD /* MessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
+		E79925382A640B2B00B87500 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
+		E79925392A640B2B00B87500 /* PostDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailsViewController.xib; sourceTree = "<group>"; };
+		E799253D2A64160800B87500 /* LabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelTableViewCell.xib; sourceTree = "<group>"; };
+		E799253E2A64160800B87500 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
+		E79925422A6418E500B87500 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		E79925432A6418E500B87500 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		E799C9D12A5C1513003443C8 /* PhoneTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextFieldView.swift; sourceTree = "<group>"; };
 		E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTextFieldView.xib; sourceTree = "<group>"; };
 		E7A861922A5EC0A100CFA14B /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
@@ -498,6 +510,7 @@
 				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 				E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */,
 				E723BB932A5D3B190026782B /* MainTabBarController.swift */,
+				E79925372A640B1F00B87500 /* PostDetails */,
 				E7D1A8192A63FC5400A701E7 /* BookNow */,
 				E7D1A8022A63F3C000A701E7 /* Posts */,
 				E7D1A80B2A63F55B00A701E7 /* TherapistInfo */,
@@ -574,6 +587,8 @@
 		E7373F582A5AC9B5007A1186 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				E79925412A6418D300B87500 /* Comment */,
+				E799253C2A6415FB00B87500 /* Label */,
 				E7D1A7F82A63E20800A701E7 /* Post */,
 				E7868BA62A601E51008917DD /* Massage */,
 				E72346A32A5FDD520061877B /* Pending */,
@@ -873,6 +888,33 @@
 			path = Message;
 			sourceTree = "<group>";
 		};
+		E79925372A640B1F00B87500 /* PostDetails */ = {
+			isa = PBXGroup;
+			children = (
+				E79925382A640B2B00B87500 /* PostDetailsViewController.swift */,
+				E79925392A640B2B00B87500 /* PostDetailsViewController.xib */,
+			);
+			path = PostDetails;
+			sourceTree = "<group>";
+		};
+		E799253C2A6415FB00B87500 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				E799253D2A64160800B87500 /* LabelTableViewCell.xib */,
+				E799253E2A64160800B87500 /* LabelTableViewCell.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
+		E79925412A6418D300B87500 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				E79925422A6418E500B87500 /* CommentTableViewCell.xib */,
+				E79925432A6418E500B87500 /* CommentTableViewCell.swift */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
 		E799C9D02A5C1503003443C8 /* PhoneTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -1114,6 +1156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E799253B2A640B2B00B87500 /* PostDetailsViewController.xib in Resources */,
 				E7715DF22A5ED19000143F92 /* TherapistsPlacesViewController.xib in Resources */,
 				E72346A62A5FDD5D0061877B /* PendingTableViewCell.xib in Resources */,
 				E7715DEE2A5ED0EC00143F92 /* PlaceInfoViewController.xib in Resources */,
@@ -1132,6 +1175,7 @@
 				E72346A12A5FD8EE0061877B /* AcceptedTableViewCell.xib in Resources */,
 				E75636332A5AD1410008C91B /* AuthenticationViewController.xib in Resources */,
 				E7A861952A5EC0A100CFA14B /* FavoriteViewController.xib in Resources */,
+				E79925442A6418E500B87500 /* CommentTableViewCell.xib in Resources */,
 				E7E35A2B2A5E7DAC00733459 /* ChangePasswordViewController.xib in Resources */,
 				E75636412A5AE4860008C91B /* SignUpViewController.xib in Resources */,
 				E799C9D42A5C1513003443C8 /* PhoneTextFieldView.xib in Resources */,
@@ -1155,6 +1199,7 @@
 				E72346B12A5FE37C0061877B /* OrdersPendingViewController.xib in Resources */,
 				E7B6F9312A5E97E0002A0693 /* NotificationTableViewCell.xib in Resources */,
 				E723BBB72A5D7B3C0026782B /* SwitchTableViewCell.xib in Resources */,
+				E799253F2A64160800B87500 /* LabelTableViewCell.xib in Resources */,
 				E7868BA32A600F25008917DD /* AcceptedUserViewController.xib in Resources */,
 				E7A861992A5EC81200CFA14B /* PlaceTableViewCell.xib in Resources */,
 				E7D1A80A2A63F3F500A701E7 /* PostsViewController.xib in Resources */,
@@ -1239,6 +1284,7 @@
 				E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */,
 				E756363A2A5AD4E00008C91B /* UIButton+style.swift in Sources */,
 				E7D1A7E72A63B7F500A701E7 /* Sender.swift in Sources */,
+				E799253A2A640B2B00B87500 /* PostDetailsViewController.swift in Sources */,
 				E723BB9E2A5D54160026782B /* TabBarIndicatorView.swift in Sources */,
 				E72346A22A5FD8EE0061877B /* AcceptedTableViewCell.swift in Sources */,
 				E7868BA52A6014F7008917DD /* Helper.swift in Sources */,
@@ -1263,6 +1309,7 @@
 				E7373F712A5AC9B5007A1186 /* UICollectionView.swift in Sources */,
 				E7715DF12A5ED18F00143F92 /* TherapistsPlacesViewController.swift in Sources */,
 				E723469C2A5FD4B00061877B /* OrdersViewController.swift in Sources */,
+				E79925402A64160800B87500 /* LabelTableViewCell.swift in Sources */,
 				E7373F772A5AC9B5007A1186 /* UIResponder.swift in Sources */,
 				E7D1A8002A63EAA900A701E7 /* TherapistHeaderView.swift in Sources */,
 				E72346982A5FC6140061877B /* PlaceInfoHeaderTableViewCell.swift in Sources */,
@@ -1283,6 +1330,7 @@
 				E7B6F9322A5E97E0002A0693 /* NotificationTableViewCell.swift in Sources */,
 				E7868BAA2A601E5A008917DD /* MassageTableViewCell.swift in Sources */,
 				E7373F6F2A5AC9B5007A1186 /* String.swift in Sources */,
+				E79925452A6418E500B87500 /* CommentTableViewCell.swift in Sources */,
 				E7D1A8222A64008600A701E7 /* UIViewEXForDatePicker.swift in Sources */,
 				E75636322A5AD1410008C91B /* AuthenticationViewController.swift in Sources */,
 				E73AA0682A5C03620022F8BE /* PasswordTextFieldView.swift in Sources */,

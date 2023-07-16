@@ -18,6 +18,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var lineView: UIView!
 
     var object: Any?
 
