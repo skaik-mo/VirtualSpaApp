@@ -9,6 +9,12 @@ import Foundation
 
 extension Date {
 
+    var _timeAgoDisplay: String {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .full
+        return formatter.localizedString(for: self, relativeTo: Date())
+    }
+
     var _stringTime: String {
         return self._string(dataFormat: GlobalConstants.timeFormat)
     }

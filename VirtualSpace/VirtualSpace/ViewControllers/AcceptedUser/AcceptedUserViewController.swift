@@ -63,7 +63,7 @@ private extension AcceptedUserViewController {
 private extension AcceptedUserViewController {
 
     func setUpView() {
-        self.messageButton.applyButtonStyle(.OutlinedPurple)
+        self.messageButton.applyButtonStyle(.OutlinedPurple(35))
     }
 
     func setUpData() {

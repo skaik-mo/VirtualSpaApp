@@ -27,7 +27,7 @@ extension GlobalConstants {
         case SecondaryGreen
         case SecondaryRed
         case OutlinedWhite
-        case OutlinedPurple
+        case OutlinedPurple((CGFloat))
 
         var height: CGFloat {
             switch self {
@@ -37,7 +37,9 @@ extension GlobalConstants {
                 return 40.0
             case .SecondaryLightPurple(let height):
                 return height
-            case .OutlinedPurple, .SecondaryLightGray:
+            case .OutlinedPurple(let height):
+                return height
+            case .SecondaryLightGray:
                 return 35.0
             case .SecondaryGreen, .SecondaryRed, .SecondaryDarkGray:
                 return 28
@@ -102,7 +104,9 @@ extension GlobalConstants {
 
         func setCorner(_ height: CGFloat) -> CGFloat {
             switch self {
-            case .Primary, .SecondaryLightPurple, .SecondaryLightGray, .OutlinedWhite, .OutlinedPurple:
+            case .Primary(let height), .SecondaryLightPurple(let height), .OutlinedPurple(let height):
+                return height / 2
+            case .SecondaryLightGray, .OutlinedWhite:
                 return height / 2
             case .SecondaryGreen, .SecondaryRed, .SecondaryDarkGray:
                 return 10
@@ -127,7 +131,7 @@ extension GlobalConstants {
         var title: String {
             switch self {
             case .AccountPrivacy:
-                return  Strings.ACCOUNT_PRIVACY_TITLE
+                return Strings.ACCOUNT_PRIVACY_TITLE
             case .Reservations:
                 return Strings.MY_RESERVATIONS_TITLE
             case .Massages:

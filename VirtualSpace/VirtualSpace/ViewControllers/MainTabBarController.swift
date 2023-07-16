@@ -10,7 +10,7 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
-    var auth: GlobalConstants.UserType = .Business
+    var auth: GlobalConstants.UserType = AuthController().fetchAuth() ?? .User
     var indicatorView: TabBarIndicatorView?
     override var title: String? {
         didSet {
@@ -59,9 +59,9 @@ private extension MainTabBarController {
         vc2.tabBarItem.image = .ic_location
         vc2.tabBarItem.selectedImage = .ic_locationSelected
 
-        let vc3 = PrivacyPolicyViewController()
-        vc3.tabBarItem.image = .ic_frinds
-        vc3.tabBarItem.selectedImage = .ic_frindsSelected
+        let posts = PostsViewController()
+        posts.tabBarItem.image = .ic_frinds
+        posts.tabBarItem.selectedImage = .ic_frindsSelected
 
         let favorite = FavoriteViewController()
         favorite.tabBarItem.image = .ic_heart
@@ -71,7 +71,7 @@ private extension MainTabBarController {
         profile.tabBarItem.image = .ic_profile
         profile.tabBarItem.selectedImage = .ic_profileSelected
 
-        self.setViewControllers([vc1, vc2, vc3, favorite, profile], animated: true)
+        self.setViewControllers([vc1, vc2, posts, favorite, profile], animated: true)
     }
 
     func setUpBusinessViewControllers() {
@@ -99,6 +99,8 @@ private extension MainTabBarController {
         if let selectedVC = selectedVC as? ProfileViewController {
             self.setUpNavigationItem(selectedVC.getUpNavigationItem())
         } else if let selectedVC = selectedVC as? FavoriteViewController {
+            self.setUpNavigationItem(selectedVC.getUpNavigationItem())
+        } else if let selectedVC = selectedVC as? PostsViewController {
             self.setUpNavigationItem(selectedVC.getUpNavigationItem())
         } else if let selectedVC = selectedVC as? TherapistsPlacesViewController {
             self.setUpNavigationItem(selectedVC.getUpNavigationItem())

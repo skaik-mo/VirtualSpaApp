@@ -35,7 +35,7 @@ class InviteTableViewCell: UITableViewCell {
         switch self.isInvited {
         case true:
             self.inviteButton.titleLabel?.text = "Invite"
-            self.inviteButton.applyButtonStyle(.OutlinedPurple)
+            self.inviteButton.applyButtonStyle(.OutlinedPurple(35))
         case false:
             self.inviteButton.titleLabel?.text = "Add"
             self.inviteButton.applyButtonStyle(.Primary(35))

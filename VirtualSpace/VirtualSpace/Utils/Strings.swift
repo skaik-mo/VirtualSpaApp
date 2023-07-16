@@ -107,4 +107,18 @@ class Strings {
     // MARK: - Chat
     static let TODAY_TITLE = "Today"._localizedKey
     static let YESTERDAY_TITLE = "Yesterday"._localizedKey
+
+    // MARK: - Therapist
+    static let MESSAGE_THERAPISTS_TITLE = "Massage Therapist"._localizedKey
+    static let FOLLOW_TITLE = "Follow"._localizedKey
+    static let BOOK_NOW_TITLE = "Book Now"._localizedKey
+
+    // MARK: - Posts
+    static let SOCIAL_MEDIA_POSTS_TITLE = "Social Media Posts"._localizedKey
+    static let POSTS_TITLE = "Posts"._localizedKey
+
+
+    // MARK: - TherapistInfo
+    static let INFO_TITLE = "Information"._localizedKey
+    static let WORK_IN_TITLE = "Work in"._localizedKey
 }

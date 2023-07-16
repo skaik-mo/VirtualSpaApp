@@ -132,6 +132,16 @@
 		E7D1A7F22A63CE6100A701E7 /* TextViewInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A7F12A63CE6100A701E7 /* TextViewInputBar.swift */; };
 		E7D1A7F62A63E0D000A701E7 /* TherapistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A7F42A63E0D000A701E7 /* TherapistViewController.swift */; };
 		E7D1A7F72A63E0D000A701E7 /* TherapistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7D1A7F52A63E0D000A701E7 /* TherapistViewController.xib */; };
+		E7D1A7FB2A63E21C00A701E7 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7D1A7F92A63E21C00A701E7 /* PostTableViewCell.xib */; };
+		E7D1A7FC2A63E21C00A701E7 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A7FA2A63E21C00A701E7 /* PostTableViewCell.swift */; };
+		E7D1A8002A63EAA900A701E7 /* TherapistHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A7FE2A63EAA900A701E7 /* TherapistHeaderView.swift */; };
+		E7D1A8012A63EAA900A701E7 /* TherapistHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7D1A7FF2A63EAA900A701E7 /* TherapistHeaderView.xib */; };
+		E7D1A8092A63F3F500A701E7 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A8072A63F3F500A701E7 /* PostsViewController.swift */; };
+		E7D1A80A2A63F3F500A701E7 /* PostsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7D1A8082A63F3F500A701E7 /* PostsViewController.xib */; };
+		E7D1A80E2A63F57100A701E7 /* TherapistInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A80C2A63F57100A701E7 /* TherapistInfoViewController.swift */; };
+		E7D1A80F2A63F57100A701E7 /* TherapistInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7D1A80D2A63F57100A701E7 /* TherapistInfoViewController.xib */; };
+		E7D1A8172A63F75C00A701E7 /* TherapistInfoHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7D1A8152A63F75C00A701E7 /* TherapistInfoHeaderTableViewCell.xib */; };
+		E7D1A8182A63F75C00A701E7 /* TherapistInfoHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A8162A63F75C00A701E7 /* TherapistInfoHeaderTableViewCell.swift */; };
 		E7E35A252A5E6DE100733459 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E35A232A5E6DE100733459 /* EditProfileViewController.swift */; };
 		E7E35A262A5E6DE100733459 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E35A242A5E6DE100733459 /* EditProfileViewController.xib */; };
 		E7E35A2A2A5E7DAC00733459 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E35A282A5E7DAC00733459 /* ChangePasswordViewController.swift */; };
@@ -264,6 +274,16 @@
 		E7D1A7F12A63CE6100A701E7 /* TextViewInputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewInputBar.swift; sourceTree = "<group>"; };
 		E7D1A7F42A63E0D000A701E7 /* TherapistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapistViewController.swift; sourceTree = "<group>"; };
 		E7D1A7F52A63E0D000A701E7 /* TherapistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TherapistViewController.xib; sourceTree = "<group>"; };
+		E7D1A7F92A63E21C00A701E7 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		E7D1A7FA2A63E21C00A701E7 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		E7D1A7FE2A63EAA900A701E7 /* TherapistHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapistHeaderView.swift; sourceTree = "<group>"; };
+		E7D1A7FF2A63EAA900A701E7 /* TherapistHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TherapistHeaderView.xib; sourceTree = "<group>"; };
+		E7D1A8072A63F3F500A701E7 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		E7D1A8082A63F3F500A701E7 /* PostsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsViewController.xib; sourceTree = "<group>"; };
+		E7D1A80C2A63F57100A701E7 /* TherapistInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapistInfoViewController.swift; sourceTree = "<group>"; };
+		E7D1A80D2A63F57100A701E7 /* TherapistInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TherapistInfoViewController.xib; sourceTree = "<group>"; };
+		E7D1A8152A63F75C00A701E7 /* TherapistInfoHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TherapistInfoHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		E7D1A8162A63F75C00A701E7 /* TherapistInfoHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapistInfoHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		E7E35A232A5E6DE100733459 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		E7E35A242A5E6DE100733459 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		E7E35A282A5E7DAC00733459 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -468,6 +488,8 @@
 				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 				E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */,
 				E723BB932A5D3B190026782B /* MainTabBarController.swift */,
+				E7D1A8022A63F3C000A701E7 /* Posts */,
+				E7D1A80B2A63F55B00A701E7 /* TherapistInfo */,
 				E7D1A7F32A63E0C300A701E7 /* Therapist */,
 				E7D1A7DC2A63B58E00A701E7 /* Chat */,
 				E7868BAB2A60230A008917DD /* Message */,
@@ -526,6 +548,8 @@
 		E7373F542A5AC9B5007A1186 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E7D1A8102A63F71C00A701E7 /* TherapistInfoHeader */,
+				E7D1A7FD2A63EA9700A701E7 /* TherapistHeader */,
 				E7D1A7F02A63CE0400A701E7 /* TextView */,
 				E72346942A5FC5FB0061877B /* PlaceInfoHeader */,
 				E723BBA82A5D731A0026782B /* ProfileHeader */,
@@ -539,6 +563,7 @@
 		E7373F582A5AC9B5007A1186 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				E7D1A7F82A63E20800A701E7 /* Post */,
 				E7868BA62A601E51008917DD /* Massage */,
 				E72346A32A5FDD520061877B /* Pending */,
 				E723469E2A5FD8E40061877B /* Accepted */,
@@ -923,6 +948,51 @@
 			path = Therapist;
 			sourceTree = "<group>";
 		};
+		E7D1A7F82A63E20800A701E7 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				E7D1A7F92A63E21C00A701E7 /* PostTableViewCell.xib */,
+				E7D1A7FA2A63E21C00A701E7 /* PostTableViewCell.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		E7D1A7FD2A63EA9700A701E7 /* TherapistHeader */ = {
+			isa = PBXGroup;
+			children = (
+				E7D1A7FE2A63EAA900A701E7 /* TherapistHeaderView.swift */,
+				E7D1A7FF2A63EAA900A701E7 /* TherapistHeaderView.xib */,
+			);
+			path = TherapistHeader;
+			sourceTree = "<group>";
+		};
+		E7D1A8022A63F3C000A701E7 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				E7D1A8072A63F3F500A701E7 /* PostsViewController.swift */,
+				E7D1A8082A63F3F500A701E7 /* PostsViewController.xib */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		E7D1A80B2A63F55B00A701E7 /* TherapistInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E7D1A80C2A63F57100A701E7 /* TherapistInfoViewController.swift */,
+				E7D1A80D2A63F57100A701E7 /* TherapistInfoViewController.xib */,
+			);
+			path = TherapistInfo;
+			sourceTree = "<group>";
+		};
+		E7D1A8102A63F71C00A701E7 /* TherapistInfoHeader */ = {
+			isa = PBXGroup;
+			children = (
+				E7D1A8152A63F75C00A701E7 /* TherapistInfoHeaderTableViewCell.xib */,
+				E7D1A8162A63F75C00A701E7 /* TherapistInfoHeaderTableViewCell.swift */,
+			);
+			path = TherapistInfoHeader;
+			sourceTree = "<group>";
+		};
 		E7E35A222A5E6DCA00733459 /* EditProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -1019,10 +1089,12 @@
 				E770587C2A5EB21C004ADBF9 /* InviteTableViewCell.xib in Resources */,
 				E77058822A5EB3FB004ADBF9 /* InviteViewController.xib in Resources */,
 				E723BBA32A5D634B0026782B /* ProfileViewController.xib in Resources */,
+				E7D1A7FB2A63E21C00A701E7 /* PostTableViewCell.xib in Resources */,
 				E723BBBC2A5D7C950026782B /* DeleteTableViewCell.xib in Resources */,
 				E77058652A5EA2BC004ADBF9 /* FollowingViewController.xib in Resources */,
 				E7107B152A5D2316008891B1 /* ForgotPasswordViewController.xib in Resources */,
 				E75636462A5AE49E0008C91B /* SignInViewController.xib in Resources */,
+				E7D1A80F2A63F57100A701E7 /* TherapistInfoViewController.xib in Resources */,
 				E756363C2A5AE26A0008C91B /* Launch Screen.storyboard in Resources */,
 				E73AA0652A5BE59E0022F8BE /* MainTextView.xib in Resources */,
 				E72346A12A5FD8EE0061877B /* AcceptedTableViewCell.xib in Resources */,
@@ -1044,6 +1116,8 @@
 				E72346AC2A5FDFCE0061877B /* OrdersAcceptedViewController.xib in Resources */,
 				E723BBAF2A5D73D50026782B /* ProfileHeaderTableViewCell.xib in Resources */,
 				E7373F852A5AC9B5007A1186 /* Assets.xcassets in Resources */,
+				E7D1A8172A63F75C00A701E7 /* TherapistInfoHeaderTableViewCell.xib in Resources */,
+				E7D1A8012A63EAA900A701E7 /* TherapistHeaderView.xib in Resources */,
 				E72346972A5FC6140061877B /* PlaceInfoHeaderTableViewCell.xib in Resources */,
 				E75636362A5AD2EF0008C91B /* Poppins-Medium.ttf in Resources */,
 				E72346B12A5FE37C0061877B /* OrdersPendingViewController.xib in Resources */,
@@ -1051,6 +1125,7 @@
 				E723BBB72A5D7B3C0026782B /* SwitchTableViewCell.xib in Resources */,
 				E7868BA32A600F25008917DD /* AcceptedUserViewController.xib in Resources */,
 				E7A861992A5EC81200CFA14B /* PlaceTableViewCell.xib in Resources */,
+				E7D1A80A2A63F3F500A701E7 /* PostsViewController.xib in Resources */,
 				E770585A2A5E9CBB004ADBF9 /* FriendTableViewCell.xib in Resources */,
 				E77058562A5E9C3D004ADBF9 /* FriendsViewController.xib in Resources */,
 				E723BBA62A5D6FB80026782B /* ProfileTableViewCell.xib in Resources */,
@@ -1122,6 +1197,7 @@
 				E7373F642A5AC9B5007A1186 /* Strings.swift in Sources */,
 				E7B6F92C2A5E973D002A0693 /* NotificationViewController.swift in Sources */,
 				E770586F2A5EA765004ADBF9 /* ReservationTableViewCell.swift in Sources */,
+				E7D1A80E2A63F57100A701E7 /* TherapistInfoViewController.swift in Sources */,
 				E77CF7B32A5BD41900E01D49 /* UITextField.swift in Sources */,
 				E7868BA22A600F25008917DD /* AcceptedUserViewController.swift in Sources */,
 				E77058682A5EA6DB004ADBF9 /* ReservationsViewController.swift in Sources */,
@@ -1141,6 +1217,7 @@
 				E77058812A5EB3FB004ADBF9 /* InviteViewController.swift in Sources */,
 				E77CF7CB2A5BD5B400E01D49 /* PhoneValidator.swift in Sources */,
 				E7E35A252A5E6DE100733459 /* EditProfileViewController.swift in Sources */,
+				E7D1A8092A63F3F500A701E7 /* PostsViewController.swift in Sources */,
 				E7D1A7EC2A63BD7300A701E7 /* Date.swift in Sources */,
 				E7373F732A5AC9B5007A1186 /* UIColor.swift in Sources */,
 				E77CF7C92A5BD5B400E01D49 /* ValidationError.swift in Sources */,
@@ -1155,6 +1232,7 @@
 				E7715DF12A5ED18F00143F92 /* TherapistsPlacesViewController.swift in Sources */,
 				E723469C2A5FD4B00061877B /* OrdersViewController.swift in Sources */,
 				E7373F772A5AC9B5007A1186 /* UIResponder.swift in Sources */,
+				E7D1A8002A63EAA900A701E7 /* TherapistHeaderView.swift in Sources */,
 				E72346982A5FC6140061877B /* PlaceInfoHeaderTableViewCell.swift in Sources */,
 				E75636452A5AE49E0008C91B /* SignInViewController.swift in Sources */,
 				E77058762A5EB05E004ADBF9 /* EnumsConstants.swift in Sources */,
@@ -1185,7 +1263,9 @@
 				E7868BB02A6023E7008917DD /* MessageViewController.swift in Sources */,
 				E7A861942A5EC0A100CFA14B /* FavoriteViewController.swift in Sources */,
 				E7D1A7F62A63E0D000A701E7 /* TherapistViewController.swift in Sources */,
+				E7D1A7FC2A63E21C00A701E7 /* PostTableViewCell.swift in Sources */,
 				E723BB9A2A5D42480026782B /* EmailValidator.swift in Sources */,
+				E7D1A8182A63F75C00A701E7 /* TherapistInfoHeaderTableViewCell.swift in Sources */,
 				E723BBA22A5D634B0026782B /* ProfileViewController.swift in Sources */,
 				E7373F442A5AC9B5007A1186 /* SceneDelegate.swift in Sources */,
 				E7373F7B2A5AC9B5007A1186 /* UITableView.swift in Sources */,

@@ -67,6 +67,11 @@ extension PlaceInfoViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = TherapistViewController()
+        vc._push()
+    }
+
     // MARK: Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: PlaceInfoHeaderTableViewCell._id) as? PlaceInfoHeaderTableViewCell {
