@@ -62,6 +62,19 @@ extension UIColor {
         return UIColor(hexString: "#F2F2F2")
     }
 
+    static var color_F9F9FC: UIColor {
+        return UIColor(hexString: "#F9F9FC")
+    }
+
+    static var color_E9E9E9: UIColor {
+        return UIColor(hexString: "#E9E9E9")
+    }
+
+    static var color_F9FAFF: UIColor {
+        return UIColor(hexString: "#F9FAFF")
+    }
+
+
 //    static var color_: UIColor {
 //        return UIColor(hexString: "#")
 //    }

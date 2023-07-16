@@ -82,4 +82,12 @@ extension UIImage {
         "ic_trash"._toImage
     }
 
+    static var ic_placeholder: UIImage? {
+        "ic_placeholder"._toImage
+    }
+
+    static var ic_send: UIImage? {
+        "ic_send"._toImage
+    }
+
 }

@@ -23,6 +23,10 @@ extension UIFont {
         UIFont(name: "Poppins-Regular", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .regular)
     }
 
+    static var poppinsRegular12: UIFont {
+        UIFont(name: "Poppins-Regular", size: 12) ?? UIFont.systemFont(ofSize: 12, weight: .regular)
+    }
+
     static var poppinsSemiBold14: UIFont {
         UIFont(name: "Poppins-SemiBold", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .semibold)
     }

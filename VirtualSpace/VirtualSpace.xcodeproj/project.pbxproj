@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7765ABE8FD0FDC63B6B2A135 /* Pods_VirtualSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C626268165F8F279258A5969 /* Pods_VirtualSpace.framework */; };
+		E707B1C52A6198C1003D3D04 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = E707B1C42A6198C1003D3D04 /* YPImagePicker */; };
+		E707B1C82A619B85003D3D04 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = E707B1C72A619B85003D3D04 /* MessageKit */; };
 		E7107B142A5D2316008891B1 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7107B122A5D2316008891B1 /* ForgotPasswordViewController.swift */; };
 		E7107B152A5D2316008891B1 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7107B132A5D2316008891B1 /* ForgotPasswordViewController.xib */; };
 		E7107B182A5D3915008891B1 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7107B162A5D3915008891B1 /* PrivacyPolicyViewController.swift */; };
@@ -122,6 +124,14 @@
 		E7B6F92D2A5E973D002A0693 /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B6F92B2A5E973D002A0693 /* NotificationViewController.xib */; };
 		E7B6F9312A5E97E0002A0693 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B6F92F2A5E97E0002A0693 /* NotificationTableViewCell.xib */; };
 		E7B6F9322A5E97E0002A0693 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B6F9302A5E97E0002A0693 /* NotificationTableViewCell.swift */; };
+		E7D1A7DF2A63B5A700A701E7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A7DD2A63B5A700A701E7 /* ChatViewController.swift */; };
+		E7D1A7E22A63B7B500A701E7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A7E12A63B7B500A701E7 /* Message.swift */; };
+		E7D1A7E72A63B7F500A701E7 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A7E62A63B7F500A701E7 /* Sender.swift */; };
+		E7D1A7EA2A63BC7D00A701E7 /* ChatDateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A7E92A63BC7D00A701E7 /* ChatDateHeader.swift */; };
+		E7D1A7EC2A63BD7300A701E7 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A7EB2A63BD7300A701E7 /* Date.swift */; };
+		E7D1A7F22A63CE6100A701E7 /* TextViewInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A7F12A63CE6100A701E7 /* TextViewInputBar.swift */; };
+		E7D1A7F62A63E0D000A701E7 /* TherapistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A7F42A63E0D000A701E7 /* TherapistViewController.swift */; };
+		E7D1A7F72A63E0D000A701E7 /* TherapistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7D1A7F52A63E0D000A701E7 /* TherapistViewController.xib */; };
 		E7E35A252A5E6DE100733459 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E35A232A5E6DE100733459 /* EditProfileViewController.swift */; };
 		E7E35A262A5E6DE100733459 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E35A242A5E6DE100733459 /* EditProfileViewController.xib */; };
 		E7E35A2A2A5E7DAC00733459 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E35A282A5E7DAC00733459 /* ChangePasswordViewController.swift */; };
@@ -246,6 +256,14 @@
 		E7B6F92B2A5E973D002A0693 /* NotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
 		E7B6F92F2A5E97E0002A0693 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
 		E7B6F9302A5E97E0002A0693 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		E7D1A7DD2A63B5A700A701E7 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		E7D1A7E12A63B7B500A701E7 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		E7D1A7E62A63B7F500A701E7 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		E7D1A7E92A63BC7D00A701E7 /* ChatDateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDateHeader.swift; sourceTree = "<group>"; };
+		E7D1A7EB2A63BD7300A701E7 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		E7D1A7F12A63CE6100A701E7 /* TextViewInputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewInputBar.swift; sourceTree = "<group>"; };
+		E7D1A7F42A63E0D000A701E7 /* TherapistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapistViewController.swift; sourceTree = "<group>"; };
+		E7D1A7F52A63E0D000A701E7 /* TherapistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TherapistViewController.xib; sourceTree = "<group>"; };
 		E7E35A232A5E6DE100733459 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		E7E35A242A5E6DE100733459 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		E7E35A282A5E7DAC00733459 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +278,8 @@
 				7765ABE8FD0FDC63B6B2A135 /* Pods_VirtualSpace.framework in Frameworks */,
 				E799C9F32A5C3785003443C8 /* NKVPhonePicker in Frameworks */,
 				E799C9F02A5C3705003443C8 /* IQKeyboardManagerSwift in Frameworks */,
+				E707B1C52A6198C1003D3D04 /* YPImagePicker in Frameworks */,
+				E707B1C82A619B85003D3D04 /* MessageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +468,8 @@
 				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 				E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */,
 				E723BB932A5D3B190026782B /* MainTabBarController.swift */,
+				E7D1A7F32A63E0C300A701E7 /* Therapist */,
+				E7D1A7DC2A63B58E00A701E7 /* Chat */,
 				E7868BAB2A60230A008917DD /* Message */,
 				E7868B9F2A600F1B008917DD /* AcceptedUser */,
 				E72346AD2A5FE35C0061877B /* OrdersPending */,
@@ -496,6 +518,7 @@
 		E7373F502A5AC9B5007A1186 /* CollectionCells */ = {
 			isa = PBXGroup;
 			children = (
+				E7D1A7E82A63BC7400A701E7 /* ChatDateHeader */,
 			);
 			path = CollectionCells;
 			sourceTree = "<group>";
@@ -503,6 +526,7 @@
 		E7373F542A5AC9B5007A1186 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E7D1A7F02A63CE0400A701E7 /* TextView */,
 				E72346942A5FC5FB0061877B /* PlaceInfoHeader */,
 				E723BBA82A5D731A0026782B /* ProfileHeader */,
 				E799C9D02A5C1503003443C8 /* PhoneTextField */,
@@ -535,6 +559,7 @@
 		E7373F5C2A5AC9B5007A1186 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E7D1A7E32A63B7D000A701E7 /* Chat */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -580,6 +605,7 @@
 			isa = PBXGroup;
 			children = (
 				E7373F6E2A5AC9B5007A1186 /* String.swift */,
+				E7D1A7EB2A63BD7300A701E7 /* Date.swift */,
 				E77CF7B22A5BD41900E01D49 /* UITextField.swift */,
 				E7373F702A5AC9B5007A1186 /* UICollectionView.swift */,
 				E7373F722A5AC9B5007A1186 /* UIColor.swift */,
@@ -855,6 +881,48 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		E7D1A7DC2A63B58E00A701E7 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				E7D1A7DD2A63B5A700A701E7 /* ChatViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		E7D1A7E32A63B7D000A701E7 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				E7D1A7E12A63B7B500A701E7 /* Message.swift */,
+				E7D1A7E62A63B7F500A701E7 /* Sender.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		E7D1A7E82A63BC7400A701E7 /* ChatDateHeader */ = {
+			isa = PBXGroup;
+			children = (
+				E7D1A7E92A63BC7D00A701E7 /* ChatDateHeader.swift */,
+			);
+			path = ChatDateHeader;
+			sourceTree = "<group>";
+		};
+		E7D1A7F02A63CE0400A701E7 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				E7D1A7F12A63CE6100A701E7 /* TextViewInputBar.swift */,
+			);
+			path = TextView;
+			sourceTree = "<group>";
+		};
+		E7D1A7F32A63E0C300A701E7 /* Therapist */ = {
+			isa = PBXGroup;
+			children = (
+				E7D1A7F42A63E0D000A701E7 /* TherapistViewController.swift */,
+				E7D1A7F52A63E0D000A701E7 /* TherapistViewController.xib */,
+			);
+			path = Therapist;
+			sourceTree = "<group>";
+		};
 		E7E35A222A5E6DCA00733459 /* EditProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -894,6 +962,8 @@
 			packageProductDependencies = (
 				E799C9EF2A5C3705003443C8 /* IQKeyboardManagerSwift */,
 				E799C9F22A5C3785003443C8 /* NKVPhonePicker */,
+				E707B1C42A6198C1003D3D04 /* YPImagePicker */,
+				E707B1C72A619B85003D3D04 /* MessageKit */,
 			);
 			productName = VirtualSpace;
 			productReference = E7373F3E2A5AC9B5007A1186 /* VirtualSpace.app */;
@@ -926,6 +996,8 @@
 			packageReferences = (
 				E799C9EE2A5C3705003443C8 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				E799C9F12A5C3785003443C8 /* XCRemoteSwiftPackageReference "NKVPhonePicker" */,
+				E707B1C32A6198C1003D3D04 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
+				E707B1C62A619B85003D3D04 /* XCRemoteSwiftPackageReference "MessageKit" */,
 			);
 			productRefGroup = E7373F3F2A5AC9B5007A1186 /* Products */;
 			projectDirPath = "";
@@ -986,6 +1058,7 @@
 				E72346922A5FC1210061877B /* CallTableViewCell.xib in Resources */,
 				E7B6F92D2A5E973D002A0693 /* NotificationViewController.xib in Resources */,
 				E77058692A5EA6DB004ADBF9 /* ReservationsViewController.xib in Resources */,
+				E7D1A7F72A63E0D000A701E7 /* TherapistViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1054,17 +1127,21 @@
 				E77058682A5EA6DB004ADBF9 /* ReservationsViewController.swift in Sources */,
 				E723BBB82A5D7B3C0026782B /* SwitchTableViewCell.swift in Sources */,
 				E7373F7F2A5AC9B5007A1186 /* UIViewController.swift in Sources */,
+				E7D1A7F22A63CE6100A701E7 /* TextViewInputBar.swift in Sources */,
 				E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */,
 				E756363A2A5AD4E00008C91B /* UIButton+style.swift in Sources */,
+				E7D1A7E72A63B7F500A701E7 /* Sender.swift in Sources */,
 				E723BB9E2A5D54160026782B /* TabBarIndicatorView.swift in Sources */,
 				E72346A22A5FD8EE0061877B /* AcceptedTableViewCell.swift in Sources */,
 				E7868BA52A6014F7008917DD /* Helper.swift in Sources */,
 				E7373F4C2A5AC9B5007A1186 /* LaunchViewController.swift in Sources */,
+				E7D1A7E22A63B7B500A701E7 /* Message.swift in Sources */,
 				E72346B02A5FE37C0061877B /* OrdersPendingViewController.swift in Sources */,
 				E7107B142A5D2316008891B1 /* ForgotPasswordViewController.swift in Sources */,
 				E77058812A5EB3FB004ADBF9 /* InviteViewController.swift in Sources */,
 				E77CF7CB2A5BD5B400E01D49 /* PhoneValidator.swift in Sources */,
 				E7E35A252A5E6DE100733459 /* EditProfileViewController.swift in Sources */,
+				E7D1A7EC2A63BD7300A701E7 /* Date.swift in Sources */,
 				E7373F732A5AC9B5007A1186 /* UIColor.swift in Sources */,
 				E77CF7C92A5BD5B400E01D49 /* ValidationError.swift in Sources */,
 				E75636402A5AE4860008C91B /* SignUpViewController.swift in Sources */,
@@ -1072,6 +1149,8 @@
 				E7107B182A5D3915008891B1 /* PrivacyPolicyViewController.swift in Sources */,
 				E723BB9C2A5D42500026782B /* PasswordValidator.swift in Sources */,
 				E72346AB2A5FDFCE0061877B /* OrdersAcceptedViewController.swift in Sources */,
+				E7D1A7DF2A63B5A700A701E7 /* ChatViewController.swift in Sources */,
+				E7D1A7EA2A63BC7D00A701E7 /* ChatDateHeader.swift in Sources */,
 				E7373F712A5AC9B5007A1186 /* UICollectionView.swift in Sources */,
 				E7715DF12A5ED18F00143F92 /* TherapistsPlacesViewController.swift in Sources */,
 				E723469C2A5FD4B00061877B /* OrdersViewController.swift in Sources */,
@@ -1105,6 +1184,7 @@
 				E7715DED2A5ED0EC00143F92 /* PlaceInfoViewController.swift in Sources */,
 				E7868BB02A6023E7008917DD /* MessageViewController.swift in Sources */,
 				E7A861942A5EC0A100CFA14B /* FavoriteViewController.swift in Sources */,
+				E7D1A7F62A63E0D000A701E7 /* TherapistViewController.swift in Sources */,
 				E723BB9A2A5D42480026782B /* EmailValidator.swift in Sources */,
 				E723BBA22A5D634B0026782B /* ProfileViewController.swift in Sources */,
 				E7373F442A5AC9B5007A1186 /* SceneDelegate.swift in Sources */,
@@ -1319,6 +1399,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E707B1C32A6198C1003D3D04 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.2.1;
+			};
+		};
+		E707B1C62A619B85003D3D04 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit";
+			requirement = {
+				kind = exactVersion;
+				version = 4.1.1;
+			};
+		};
 		E799C9EE2A5C3705003443C8 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -1338,6 +1434,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E707B1C42A6198C1003D3D04 /* YPImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E707B1C32A6198C1003D3D04 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
+			productName = YPImagePicker;
+		};
+		E707B1C72A619B85003D3D04 /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E707B1C62A619B85003D3D04 /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
+		};
 		E799C9EF2A5C3705003443C8 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E799C9EE2A5C3705003443C8 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;

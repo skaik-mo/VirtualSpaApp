@@ -15,6 +15,7 @@ class GlobalConstants {
     //typealias typealiasName = ((_ message: String?) -> Void)?
 
     // MARK: - Format
+    static let timeFormat = "hh:mm a"
 
 }
 

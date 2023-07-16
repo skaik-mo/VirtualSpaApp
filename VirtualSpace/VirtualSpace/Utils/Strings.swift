@@ -103,4 +103,8 @@ class Strings {
     static let ACCEPTED_TITLE = "Accepted"._localizedKey
     static let ACCEPT_TITLE = "Accept"._localizedKey
     static let REJECT_TITLE = "Reject"._localizedKey
+
+    // MARK: - Chat
+    static let TODAY_TITLE = "Today"._localizedKey
+    static let YESTERDAY_TITLE = "Yesterday"._localizedKey
 }
