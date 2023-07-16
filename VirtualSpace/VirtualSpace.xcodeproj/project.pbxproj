@@ -71,7 +71,7 @@
 		E75636362A5AD2EF0008C91B /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E75636352A5AD2EF0008C91B /* Poppins-Medium.ttf */; };
 		E75636382A5AD3040008C91B /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E75636372A5AD3040008C91B /* Poppins-Regular.ttf */; };
 		E756363A2A5AD4E00008C91B /* UIButton+style.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75636392A5AD4E00008C91B /* UIButton+style.swift */; };
-		E756363C2A5AE26A0008C91B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E756363B2A5AE26A0008C91B /* Launch Screen.storyboard */; };
+		E756363C2A5AE26A0008C91B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E756363B2A5AE26A0008C91B /* LaunchScreen.storyboard */; };
 		E75636402A5AE4860008C91B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E756363E2A5AE4860008C91B /* SignUpViewController.swift */; };
 		E75636412A5AE4860008C91B /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E756363F2A5AE4860008C91B /* SignUpViewController.xib */; };
 		E75636452A5AE49E0008C91B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75636432A5AE49E0008C91B /* SignInViewController.swift */; };
@@ -230,7 +230,7 @@
 		E75636352A5AD2EF0008C91B /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		E75636372A5AD3040008C91B /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		E75636392A5AD4E00008C91B /* UIButton+style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+style.swift"; sourceTree = "<group>"; };
-		E756363B2A5AE26A0008C91B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		E756363B2A5AE26A0008C91B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E756363E2A5AE4860008C91B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E756363F2A5AE4860008C91B /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		E75636432A5AE49E0008C91B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -686,7 +686,7 @@
 		E7373F802A5AC9B5007A1186 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				E756363B2A5AE26A0008C91B /* Launch Screen.storyboard */,
+				E756363B2A5AE26A0008C91B /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1199,7 +1199,7 @@
 				E7107B152A5D2316008891B1 /* ForgotPasswordViewController.xib in Resources */,
 				E75636462A5AE49E0008C91B /* SignInViewController.xib in Resources */,
 				E7D1A80F2A63F57100A701E7 /* TherapistInfoViewController.xib in Resources */,
-				E756363C2A5AE26A0008C91B /* Launch Screen.storyboard in Resources */,
+				E756363C2A5AE26A0008C91B /* LaunchScreen.storyboard in Resources */,
 				E73AA0652A5BE59E0022F8BE /* MainTextView.xib in Resources */,
 				E72346A12A5FD8EE0061877B /* AcceptedTableViewCell.xib in Resources */,
 				E75636332A5AD1410008C91B /* AuthenticationViewController.xib in Resources */,
