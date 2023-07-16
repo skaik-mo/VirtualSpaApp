@@ -56,6 +56,9 @@ private extension EditProfileViewController {
 
     @objc func selectImage() {
         debugPrint(#function)
+        Helper.takeImage { image, latitude, longitude in
+            self.authImage.image = image
+        }
     }
 }
 

@@ -42,9 +42,10 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hgo-MH-rJx">
                                     <rect key="frame" x="0.0" y="0.0" width="345" height="95"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_camera" translatesAutoresizingMaskIntoConstraints="NO" id="kfH-um-Fmi">
+                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_camera" translatesAutoresizingMaskIntoConstraints="NO" id="kfH-um-Fmi" customClass="rImage" customModule="VirtualSpace" customModuleProvider="target">
                                             <rect key="frame" x="125" y="0.0" width="95" height="95"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" secondItem="kfH-um-Fmi" secondAttribute="height" multiplier="1:1" id="8ri-Y5-0BJ"/>
                                                 <constraint firstAttribute="height" constant="95" id="vSh-nG-ptO"/>
                                             </constraints>
                                         </imageView>
@@ -139,7 +140,7 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_camera" width="95" height="95"/>
+        <image name="ic_camera" width="48" height="48"/>
         <namedColor name="#000000">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
