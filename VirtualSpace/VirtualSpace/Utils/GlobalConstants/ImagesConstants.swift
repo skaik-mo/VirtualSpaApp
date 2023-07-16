@@ -90,4 +90,12 @@ extension UIImage {
         "ic_send"._toImage
     }
 
+    static var ic_virtualSpace: UIImage? {
+        "ic_virtualSpace"._toImage
+    }
+
+    static var ic_add: UIImage? {
+        "ic_add"._toImage
+    }
+
 }

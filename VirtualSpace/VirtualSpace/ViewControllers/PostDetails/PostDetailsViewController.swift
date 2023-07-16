@@ -95,6 +95,7 @@ extension PostDetailsViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell: PostTableViewCell = tableView._dequeueReusableCell()
+            cell.descriptionLabel.numberOfLines = 0
             cell.lineView.alpha = 0
 //            cell.object = object[indexPath.row]
             cell.configureCell()

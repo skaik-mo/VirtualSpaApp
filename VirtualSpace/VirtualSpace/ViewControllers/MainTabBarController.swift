@@ -10,7 +10,7 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
-    var auth: GlobalConstants.UserType = AuthController().fetchAuth() ?? .User
+    var auth: GlobalConstants.UserType = .Business//AuthController().fetchAuth() ?? .User
     var indicatorView: TabBarIndicatorView?
     override var title: String? {
         didSet {
@@ -31,6 +31,7 @@ class MainTabBarController: UITabBarController {
         super.viewDidLayoutSubviews()
         indicatorView?.indicatorWidth = self.tabBar.frame.width / CGFloat(self.tabBar.items?.count ?? 0)
         indicatorView?.indicatorAnimate(0)
+        setUpNavigation(selectedVC: self.selectedViewController)
     }
 
 }
@@ -75,9 +76,9 @@ private extension MainTabBarController {
     }
 
     func setUpBusinessViewControllers() {
-        let vc1 = PrivacyPolicyViewController()
-        vc1.tabBarItem.image = .ic_home
-        vc1.tabBarItem.selectedImage = .ic_homeSelected
+        let homeBusiness = HomeBusinessViewController()
+        homeBusiness.tabBarItem.image = .ic_home
+        homeBusiness.tabBarItem.selectedImage = .ic_homeSelected
 
         let orders = OrdersViewController()
         orders.tabBarItem.image = .ic_frinds
@@ -91,7 +92,7 @@ private extension MainTabBarController {
         profile.tabBarItem.image = .ic_profile
         profile.tabBarItem.selectedImage = .ic_profileSelected
 
-        self.setViewControllers([vc1, orders, vc4, profile], animated: true)
+        self.setViewControllers([homeBusiness, orders, vc4, profile], animated: true)
     }
 
     func setUpNavigation(selectedVC: UIViewController?) {
@@ -103,6 +104,8 @@ private extension MainTabBarController {
         } else if let selectedVC = selectedVC as? PostsViewController {
             self.setUpNavigationItem(selectedVC.getUpNavigationItem())
         } else if let selectedVC = selectedVC as? TherapistsPlacesViewController {
+            self.setUpNavigationItem(selectedVC.getUpNavigationItem())
+        } else if let selectedVC = selectedVC as? HomeBusinessViewController {
             self.setUpNavigationItem(selectedVC.getUpNavigationItem())
         } else if let selectedVC = selectedVC as? OrdersViewController {
             self.setUpNavigationItem(selectedVC.getUpNavigationItem())
@@ -127,6 +130,7 @@ extension UITabBarController {
 
     func setUpNavigationItem(_ navigationItem: UINavigationItem) {
         self.title = navigationItem.title
+        self.navigationItem.titleView = navigationItem.titleView
         self.navigationItem.leftBarButtonItems = navigationItem.leftBarButtonItems
         self.navigationItem.rightBarButtonItems = navigationItem.rightBarButtonItems
     }
