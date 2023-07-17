@@ -25,13 +25,18 @@ class MainTabBarController: UITabBarController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setUpNavigation(selectedVC: self.selectedViewController)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        setUpShadowColor()
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         indicatorView?.indicatorWidth = self.tabBar.frame.width / CGFloat(self.tabBar.items?.count ?? 0)
         indicatorView?.indicatorAnimate(0)
-        setUpNavigation(selectedVC: self.selectedViewController)
     }
 
 }
@@ -52,9 +57,9 @@ private extension MainTabBarController {
 
     func setUpUserViewControllers() {
         self.navigationController?.navigationBar.backgroundColor = .red
-        let vc1 = PrivacyPolicyViewController()
-        vc1.tabBarItem.image = .ic_home
-        vc1.tabBarItem.selectedImage = .ic_homeSelected
+        let homeUser = HomeUserViewController()
+        homeUser.tabBarItem.image = .ic_home
+        homeUser.tabBarItem.selectedImage = .ic_homeSelected
 
         let vc2 = TherapistsPlacesViewController()
         vc2.tabBarItem.image = .ic_location
@@ -72,7 +77,7 @@ private extension MainTabBarController {
         profile.tabBarItem.image = .ic_profile
         profile.tabBarItem.selectedImage = .ic_profileSelected
 
-        self.setViewControllers([vc1, vc2, posts, favorite, profile], animated: true)
+        self.setViewControllers([homeUser, vc2, posts, favorite, profile], animated: true)
     }
 
     func setUpBusinessViewControllers() {
@@ -96,8 +101,10 @@ private extension MainTabBarController {
     }
 
     func setUpNavigation(selectedVC: UIViewController?) {
+        self.setUpShadowColor()
         guard let selectedVC else { return }
-        if let selectedVC = selectedVC as? ProfileViewController {
+        if let selectedVC = selectedVC as? HomeUserViewController {
+            self.setUpShadowColor(.clear)
             self.setUpNavigationItem(selectedVC.getUpNavigationItem())
         } else if let selectedVC = selectedVC as? FavoriteViewController {
             self.setUpNavigationItem(selectedVC.getUpNavigationItem())
@@ -111,9 +118,15 @@ private extension MainTabBarController {
             self.setUpNavigationItem(selectedVC.getUpNavigationItem())
         } else if let selectedVC = selectedVC as? OrdersViewController {
             self.setUpNavigationItem(selectedVC.getUpNavigationItem())
+        } else if let selectedVC = selectedVC as? ProfileViewController {
+            self.setUpNavigationItem(selectedVC.getUpNavigationItem())
         } else {
             self.setUpNavigationItem(UINavigationItem())
         }
+    }
+
+    func setUpShadowColor(_ shadowColor: UIColor = .color_A3A3A3) {
+        SceneDelegate.shared?.rootNavigationController?.shadowColor = shadowColor
     }
 
 }
@@ -122,7 +135,6 @@ extension MainTabBarController: UITabBarControllerDelegate {
 
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         indicatorView?.indicatorAnimate(self.selectedIndex)
-//        indicatorView?.selectIndex(self.selectedIndex)
         self.setUpNavigation(selectedVC: tabBarController.selectedViewController)
     }
 

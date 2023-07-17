@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		7765ABE8FD0FDC63B6B2A135 /* Pods_VirtualSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C626268165F8F279258A5969 /* Pods_VirtualSpace.framework */; };
 		E707B1C82A619B85003D3D04 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = E707B1C72A619B85003D3D04 /* MessageKit */; };
+		E70C100C2A65501B008DD58B /* HomeUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C100A2A65501B008DD58B /* HomeUserViewController.swift */; };
+		E70C100D2A65501C008DD58B /* HomeUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70C100B2A65501B008DD58B /* HomeUserViewController.xib */; };
+		E70C10112A6550ED008DD58B /* PagerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C100F2A6550ED008DD58B /* PagerCollectionViewCell.swift */; };
+		E70C10122A6550ED008DD58B /* PagerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70C10102A6550ED008DD58B /* PagerCollectionViewCell.xib */; };
+		E70C10162A65518B008DD58B /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C10142A65518B008DD58B /* CategoryCollectionViewCell.swift */; };
+		E70C10172A65518B008DD58B /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70C10152A65518B008DD58B /* CategoryCollectionViewCell.xib */; };
+		E70C101B2A6557D4008DD58B /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C10192A6557D4008DD58B /* HomeCollectionViewCell.swift */; };
+		E70C101C2A6557D4008DD58B /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70C101A2A6557D4008DD58B /* HomeCollectionViewCell.xib */; };
 		E70F20762A6536A300FE212E /* MSSTakeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70F20752A6536A300FE212E /* MSSTakeImage.swift */; };
 		E7107B142A5D2316008891B1 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7107B122A5D2316008891B1 /* ForgotPasswordViewController.swift */; };
 		E7107B152A5D2316008891B1 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7107B132A5D2316008891B1 /* ForgotPasswordViewController.xib */; };
@@ -168,6 +176,14 @@
 		B3CC08931C145678D57D34A0 /* Pods-VirtualSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSpace.release.xcconfig"; path = "Target Support Files/Pods-VirtualSpace/Pods-VirtualSpace.release.xcconfig"; sourceTree = "<group>"; };
 		B441F63201222CDCE855C910 /* Pods-VirtualSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSpace.debug.xcconfig"; path = "Target Support Files/Pods-VirtualSpace/Pods-VirtualSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		C626268165F8F279258A5969 /* Pods_VirtualSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtualSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E70C100A2A65501B008DD58B /* HomeUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUserViewController.swift; sourceTree = "<group>"; };
+		E70C100B2A65501B008DD58B /* HomeUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeUserViewController.xib; sourceTree = "<group>"; };
+		E70C100F2A6550ED008DD58B /* PagerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerCollectionViewCell.swift; sourceTree = "<group>"; };
+		E70C10102A6550ED008DD58B /* PagerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PagerCollectionViewCell.xib; sourceTree = "<group>"; };
+		E70C10142A65518B008DD58B /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		E70C10152A65518B008DD58B /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		E70C10192A6557D4008DD58B /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		E70C101A2A6557D4008DD58B /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		E70F20752A6536A300FE212E /* MSSTakeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSSTakeImage.swift; sourceTree = "<group>"; };
 		E7107B122A5D2316008891B1 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		E7107B132A5D2316008891B1 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
@@ -355,6 +371,33 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E70C100E2A6550DC008DD58B /* Pager */ = {
+			isa = PBXGroup;
+			children = (
+				E70C100F2A6550ED008DD58B /* PagerCollectionViewCell.swift */,
+				E70C10102A6550ED008DD58B /* PagerCollectionViewCell.xib */,
+			);
+			path = Pager;
+			sourceTree = "<group>";
+		};
+		E70C10132A655173008DD58B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				E70C10142A65518B008DD58B /* CategoryCollectionViewCell.swift */,
+				E70C10152A65518B008DD58B /* CategoryCollectionViewCell.xib */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		E70C10182A6557C9008DD58B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E70C10192A6557D4008DD58B /* HomeCollectionViewCell.swift */,
+				E70C101A2A6557D4008DD58B /* HomeCollectionViewCell.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		E70F20772A654A7700FE212E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +440,8 @@
 		E70F207A2A654B1400FE212E /* HomeUser */ = {
 			isa = PBXGroup;
 			children = (
+				E70C100A2A65501B008DD58B /* HomeUserViewController.swift */,
+				E70C100B2A65501B008DD58B /* HomeUserViewController.xib */,
 			);
 			path = HomeUser;
 			sourceTree = "<group>";
@@ -609,6 +654,9 @@
 		E7373F502A5AC9B5007A1186 /* CollectionCells */ = {
 			isa = PBXGroup;
 			children = (
+				E70C10182A6557C9008DD58B /* Home */,
+				E70C10132A655173008DD58B /* Category */,
+				E70C100E2A6550DC008DD58B /* Pager */,
 				E7D1A7E82A63BC7400A701E7 /* ChatDateHeader */,
 			);
 			path = CollectionCells;
@@ -1266,7 +1314,10 @@
 				E7D1A8172A63F75C00A701E7 /* TherapistInfoHeaderTableViewCell.xib in Resources */,
 				E7D1A8012A63EAA900A701E7 /* TherapistHeaderView.xib in Resources */,
 				E72346972A5FC6140061877B /* PlaceInfoHeaderTableViewCell.xib in Resources */,
+				E70C100D2A65501C008DD58B /* HomeUserViewController.xib in Resources */,
+				E70C10172A65518B008DD58B /* CategoryCollectionViewCell.xib in Resources */,
 				E75636362A5AD2EF0008C91B /* Poppins-Medium.ttf in Resources */,
+				E70C101C2A6557D4008DD58B /* HomeCollectionViewCell.xib in Resources */,
 				E72346B12A5FE37C0061877B /* OrdersPendingViewController.xib in Resources */,
 				E7B6F9312A5E97E0002A0693 /* NotificationTableViewCell.xib in Resources */,
 				E723BBB72A5D7B3C0026782B /* SwitchTableViewCell.xib in Resources */,
@@ -1279,6 +1330,7 @@
 				E799254F2A64207700B87500 /* ZoomViewController.xib in Resources */,
 				E723BBA62A5D6FB80026782B /* ProfileTableViewCell.xib in Resources */,
 				E723BBB22A5D77C10026782B /* Poppins-SemiBold.ttf in Resources */,
+				E70C10122A6550ED008DD58B /* PagerCollectionViewCell.xib in Resources */,
 				E7CE35A42A6506E400853993 /* NewPostViewController.xib in Resources */,
 				E72346922A5FC1210061877B /* CallTableViewCell.xib in Resources */,
 				E7B6F92D2A5E973D002A0693 /* NotificationViewController.xib in Resources */,
@@ -1373,6 +1425,7 @@
 				E77058682A5EA6DB004ADBF9 /* ReservationsViewController.swift in Sources */,
 				E723BBB82A5D7B3C0026782B /* SwitchTableViewCell.swift in Sources */,
 				E7373F7F2A5AC9B5007A1186 /* UIViewController.swift in Sources */,
+				E70C100C2A65501B008DD58B /* HomeUserViewController.swift in Sources */,
 				E70F20762A6536A300FE212E /* MSSTakeImage.swift in Sources */,
 				E7D1A7F22A63CE6100A701E7 /* TextViewInputBar.swift in Sources */,
 				E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */,
@@ -1403,6 +1456,7 @@
 				E7D1A7EA2A63BC7D00A701E7 /* ChatDateHeader.swift in Sources */,
 				E7373F712A5AC9B5007A1186 /* UICollectionView.swift in Sources */,
 				E7715DF12A5ED18F00143F92 /* TherapistsPlacesViewController.swift in Sources */,
+				E70C101B2A6557D4008DD58B /* HomeCollectionViewCell.swift in Sources */,
 				E7CE35A32A6506E400853993 /* NewPostViewController.swift in Sources */,
 				E723469C2A5FD4B00061877B /* OrdersViewController.swift in Sources */,
 				E79925402A64160800B87500 /* LabelTableViewCell.swift in Sources */,
@@ -1432,8 +1486,10 @@
 				E73AA0682A5C03620022F8BE /* PasswordTextFieldView.swift in Sources */,
 				E723BBBD2A5D7C950026782B /* DeleteTableViewCell.swift in Sources */,
 				E723BBB02A5D73D50026782B /* ProfileHeaderTableViewCell.swift in Sources */,
+				E70C10112A6550ED008DD58B /* PagerCollectionViewCell.swift in Sources */,
 				E7D1A8232A64008600A701E7 /* DatePickerViewController.swift in Sources */,
 				E77058742A5EB055004ADBF9 /* ColorConstants.swift in Sources */,
+				E70C10162A65518B008DD58B /* CategoryCollectionViewCell.swift in Sources */,
 				E77058642A5EA2BC004ADBF9 /* FollowingViewController.swift in Sources */,
 				E7373F662A5AC9B5007A1186 /* GlobalConstants.swift in Sources */,
 				E77CF7CC2A5BD5B400E01D49 /* Validator.swift in Sources */,

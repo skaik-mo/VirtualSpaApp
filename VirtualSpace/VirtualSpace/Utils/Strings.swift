@@ -134,4 +134,7 @@ class Strings {
     static let POST_TITLE = "Post"._localizedKey
     static let ASK_SOMTHING_PLACEHOLDER = "Ask Something"._localizedKey
 
+    // MARK: - Home User
+    static let SEARCH_FREIENDS_PLACEHOLDER = "Search Here…"._localizedKey
+
 }

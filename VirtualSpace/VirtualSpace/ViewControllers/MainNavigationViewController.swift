@@ -10,19 +10,25 @@ import UIKit
 
 class MainNavigationController: UINavigationController {
 
+    private let navigationBarAppearance = UINavigationBarAppearance()
+    var shadowColor: UIColor = .color_A3A3A3 {
+        didSet {
+            self.setUpNavigation()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpNavigation()
+        self.setRoot()
     }
 }
 
 // MARK: - Configuration
 extension MainNavigationController {
 
-    private func setUpNavigation() {
-        self.setRoot()
-        let navigationBarAppearance = UINavigationBarAppearance()
-        navigationBarAppearance.shadowColor = .color_A3A3A3
+    func setUpNavigation() {
+        navigationBarAppearance.shadowColor = self.shadowColor
         navigationBarAppearance.titleTextAttributes = getSmallTitleFont()
         navigationBarAppearance.backgroundColor = getBackgroundColor()
         navigationBarAppearance.setBackIndicatorImage(.ic_back, transitionMaskImage: .ic_back)

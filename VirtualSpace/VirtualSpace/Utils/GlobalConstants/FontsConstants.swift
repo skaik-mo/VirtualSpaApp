@@ -15,12 +15,20 @@ extension UIFont {
         UIFont(name: "Poppins-Medium", size: 13) ?? UIFont.systemFont(ofSize: 13, weight: .medium)
     }
 
+    static var poppinsMedium14: UIFont {
+        UIFont(name: "Poppins-Medium", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .medium)
+    }
+
     static var poppinsMedium17: UIFont {
         UIFont(name: "Poppins-Medium", size: 17) ?? UIFont.systemFont(ofSize: 17, weight: .medium)
     }
 
     static var poppinsRegular14: UIFont {
         UIFont(name: "Poppins-Regular", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .regular)
+    }
+
+    static var poppinsRegular13: UIFont {
+        UIFont(name: "Poppins-Regular", size: 13) ?? UIFont.systemFont(ofSize: 13, weight: .regular)
     }
 
     static var poppinsRegular12: UIFont {

@@ -98,4 +98,12 @@ extension UIImage {
         "ic_add"._toImage
     }
 
+    static var ic_heartOutlineWhite: UIImage? {
+        "ic_heartOutlineWhite"._toImage
+    }
+
+    static var ic_notification_ciracl: UIImage? {
+        "ic_notification_ciracl"._toImage
+    }
+
 }
