@@ -39,17 +39,17 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="lya-3d-yOX">
                                 <rect key="frame" x="68" y="15" width="252" height="55"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="U8H-hd-P3S">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="U8H-hd-P3S">
                                         <rect key="frame" x="0.0" y="0.0" width="252" height="39"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nag-bk-D5O">
-                                                <rect key="frame" x="0.0" y="0.0" width="26.666666666666668" height="19.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="26.666666666666668" height="18.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                                 <color key="textColor" name="#000000"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descritpion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UR-o2-afk">
-                                                <rect key="frame" x="0.0" y="21.666666666666664" width="73" height="17.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="20.666666666666664" width="73" height="18.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                 <color key="textColor" name="#7A7A7A"/>
                                                 <nil key="highlightedColor"/>

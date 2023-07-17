@@ -26,42 +26,6 @@
         "revision" : "14bfa7eb9f93267c3d7b8cdf58615bba27be672a",
         "version" : "4.1.1"
       }
-    },
-    {
-      "identity" : "nkvphonepicker",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/NikKovIos/NKVPhonePicker.git",
-      "state" : {
-        "revision" : "8e6d2a74217a2249e272d6a1f26d0e28a0f5cf9d",
-        "version" : "2.1.1"
-      }
-    },
-    {
-      "identity" : "prynttrimmerview",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/HHK1/PryntTrimmerView",
-      "state" : {
-        "revision" : "ac1b60a22c7e6a6514de7a66d2f3d5b537c956d5",
-        "version" : "4.0.2"
-      }
-    },
-    {
-      "identity" : "stevia",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/freshOS/Stevia",
-      "state" : {
-        "revision" : "87dd17a86240f16788239a78dd8be11c4b013150",
-        "version" : "4.8.0"
-      }
-    },
-    {
-      "identity" : "ypimagepicker",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Yummypets/YPImagePicker.git",
-      "state" : {
-        "revision" : "4dbae7a1f69db3d65c47f4106d0ca09f678edeaf",
-        "version" : "5.2.1"
-      }
     }
   ],
   "version" : 2

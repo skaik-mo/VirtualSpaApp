@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  ZoomViewController.swift
 //  VirtualSpace
@@ -64,4 +64,3 @@ extension ZoomViewController: UIScrollViewDelegate {
     }
 
 }
-

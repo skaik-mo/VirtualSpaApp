@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  PlaceTableViewCell.swift
 //  VirtualSpace

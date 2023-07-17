@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  FollowingTableViewCell.swift
 //  VirtualSpace
@@ -19,10 +19,10 @@ class FollowingTableViewCell: UITableViewCell {
         // Initialization code
         self.selectionStyle = .none
     }
-    
+
     func configureCell() {
         self.followingButton.titleLabel?.text = Strings.FOLLOWING_TITLE
         self.followingButton.applyButtonStyle(.SecondaryLightPurple(35))
     }
-    
+
 }

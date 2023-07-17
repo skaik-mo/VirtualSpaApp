@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  PostDetailsViewController.swift
 //  VirtualSpace
@@ -8,6 +8,7 @@
 
 import UIKit
 import InputBarAccessoryView
+import IQKeyboardManagerSwift
 
 class PostDetailsViewController: UIViewController {
 
@@ -17,17 +18,17 @@ class PostDetailsViewController: UIViewController {
     // MARK: Properties
     var objects: [String: Any] = [
         "Post": 1,
-        "Comment_Title": 2,
+        "Comment_Title": 2
     ]
     var comments: [String] = [
         "Relaxation is a natural state that can be achieved through a variety of methods",
         "Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.",
         "Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.",
-        "Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.",
+        "Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.Nature can be particularly beneficial for relaxation as it",
         "Relaxation is a natural state that can be achieved through a variety of methods",
         "Relaxation is a natural state that can be achieved through a variety of methods",
         "Relaxation is a natural state that can be achieved through a variety of methods",
-        "End",
+        "End"
     ]
     lazy var inputText: TextViewInputBar = {
         let inputBar = TextViewInputBar()
@@ -53,12 +54,18 @@ class PostDetailsViewController: UIViewController {
         fetchData()
     }
 
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-    }
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        IQKeyboardManager.shared.enable = false
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = true
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
 
 }
@@ -67,7 +74,6 @@ class PostDetailsViewController: UIViewController {
 private extension PostDetailsViewController {
 
 }
-
 
 // MARK: - Configurations
 private extension PostDetailsViewController {
@@ -88,7 +94,7 @@ private extension PostDetailsViewController {
             self.inputText.widthAnchor.constraint(equalToConstant: self.view.frame.width),
             self.inputText.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             self.inputText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            self.inputText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            self.inputText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
             ])
     }
 

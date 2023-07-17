@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //  
 //  InviteViewController.swift
 //  VirtualSpace
@@ -58,7 +58,6 @@ private extension InviteViewController {
     }
 
 }
-
 
 extension InviteViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

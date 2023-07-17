@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  TherapistInfoViewController.swift
 //  VirtualSpace
@@ -15,7 +15,7 @@ class TherapistInfoViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: Properties
-    var object: [String] = ["Title1","Title2","Title3","Title4","Title5","Title6","Title7"]
+    var object: [String] = ["Title1", "Title2", "Title3", "Title4", "Title5", "Title6", "Title7"]
 
     // MARK: Init
     init() {
@@ -97,4 +97,3 @@ extension TherapistInfoViewController: UITableViewDataSource, UITableViewDelegat
     }
 
 }
-

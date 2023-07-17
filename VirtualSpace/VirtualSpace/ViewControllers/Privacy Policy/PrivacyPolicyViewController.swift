@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //  
 //  PrivacyPolicyViewController.swift
 //  VirtualSpace
@@ -58,4 +58,3 @@ private extension PrivacyPolicyViewController {
     }
 
 }
-

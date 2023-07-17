@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  InviteTableViewCell.swift
 //  VirtualSpace
@@ -16,7 +16,7 @@ class InviteTableViewCell: UITableViewCell {
 
     var object: Any?
     var isInvited = false {
-        didSet{
+        didSet {
             self.setInviteButton()
         }
     }
@@ -26,7 +26,7 @@ class InviteTableViewCell: UITableViewCell {
         // Initialization code
         self.selectionStyle = .none
     }
-    
+
     func configureCell() {
 
     }

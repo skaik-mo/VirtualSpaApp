@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  UITableView.swift
 //  VirtualSpace
@@ -11,7 +11,7 @@ import UIKit
 
 extension UITableView {
 
-    // MARK:  Register Cell
+    // MARK: Register Cell
     var _registerCell: UITableViewCell.Type {
         get {
             return UITableViewCell.self
@@ -21,7 +21,7 @@ extension UITableView {
         }
     }
 
-    // MARK:  Register Header And Footer
+    // MARK: Register Header And Footer
     var _registerHeaderAndFooter: UITableViewHeaderFooterView.Type {
         get {
             return UITableViewHeaderFooterView.self

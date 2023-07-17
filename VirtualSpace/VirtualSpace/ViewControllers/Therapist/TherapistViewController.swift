@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //  
 //  TherapistViewController.swift
 //  VirtualSpace
@@ -58,8 +58,7 @@ private extension TherapistViewController {
         let line = UIView()
         line.backgroundColor = .color_A3A3A3.withAlphaComponent(0.3)
         let height: CGFloat = 1
-        line.frame = CGRect(x: 0, y: buttonBarView.frame.height - height - 0.5
-            , width: buttonBarView.frame.width, height: height)
+        line.frame = CGRect(x: 0, y: buttonBarView.frame.height - height - 0.5, width: buttonBarView.frame.width, height: height)
         buttonBarView.addSubview(line)
     }
 
@@ -83,7 +82,7 @@ private extension TherapistViewController {
         settings.style.buttonBarLeftContentInset = 100
         settings.style.buttonBarRightContentInset = 100
 
-        changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+        changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, _: CGFloat, changeCurrentIndex: Bool, _: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
             oldCell?.label.textColor = .color_9B9B9B
             newCell?.label.textColor = .color_000000

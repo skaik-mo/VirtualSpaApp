@@ -51,7 +51,6 @@ class PhoneTextFieldView: UIView {
         self.textField.country = country
     }
 
-
 }
 
 extension PhoneTextFieldView: CountriesViewControllerDelegate {

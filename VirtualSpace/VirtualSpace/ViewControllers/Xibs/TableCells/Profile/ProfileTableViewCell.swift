@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  ProfileTableViewCell.swift
 //  VirtualSpace
@@ -18,7 +18,7 @@ class ProfileTableViewCell: UITableViewCell {
         // Initialization code
         self.selectionStyle = .none
     }
-    
+
     func configureCell() {
         if let object = object as? String {
             self.titleLabel.text = object
@@ -26,5 +26,5 @@ class ProfileTableViewCell: UITableViewCell {
             self.titleLabel.text = nil
         }
     }
-    
+
 }

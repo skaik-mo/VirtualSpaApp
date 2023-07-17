@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  FriendTableViewCell.swift
 //  VirtualSpace
@@ -19,10 +19,10 @@ class FriendTableViewCell: UITableViewCell {
         // Initialization code
         self.selectionStyle = .none
     }
-    
+
     func configureCell() {
         self.friendButton.titleLabel?.text = Strings.UNFRIEND_TITLE
         self.friendButton.applyButtonStyle(.SecondaryLightPurple(35))
     }
-    
+
 }

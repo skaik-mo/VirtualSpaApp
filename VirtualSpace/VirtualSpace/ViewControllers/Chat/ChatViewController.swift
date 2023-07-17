@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  ChatViewController.swift
 //  VirtualSpace
@@ -132,7 +132,6 @@ extension ChatViewController: MessagesDataSource {
         messages[indexPath.section]
     }
 
-
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
         messages.count
     }
@@ -142,7 +141,6 @@ extension ChatViewController: MessagesDataSource {
     }
 
 }
-
 
 // MARK: - MessagesLayoutDelegate
 extension ChatViewController: MessagesLayoutDelegate {
@@ -154,12 +152,11 @@ extension ChatViewController: MessagesLayoutDelegate {
         } else if Calendar.current.isDateInYesterday(messages[indexPath.section].sentDate) {
             headerView.configure(date: Strings.YESTERDAY_TITLE)
         } else {
-            let text = MessageKitDateFormatter.shared.string (from: messages[indexPath.section].sentDate)
+            let text = MessageKitDateFormatter.shared.string(from: messages[indexPath.section].sentDate)
             headerView.configure(date: text)
         }
         return headerView
     }
-
 
     func headerViewSize(for section: Int, in messagesCollectionView: MessagesCollectionView) -> CGSize {
         return self.isFirstMessageOfDay(section) ? CGSize(width: messagesCollectionView.frame.width, height: 25) : .zero

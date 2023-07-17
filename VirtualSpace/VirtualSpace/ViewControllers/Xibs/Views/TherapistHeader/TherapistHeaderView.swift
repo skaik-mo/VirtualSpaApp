@@ -75,6 +75,4 @@ class TherapistHeaderView: UIView {
         Helper.call(authPhone)
     }
 
-
-
 }

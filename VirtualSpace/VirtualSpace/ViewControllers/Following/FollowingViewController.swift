@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //  
 //  FollowingViewController.swift
 //  VirtualSpace
@@ -59,7 +59,6 @@ private extension FollowingViewController {
     }
 
 }
-
 
 extension FollowingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

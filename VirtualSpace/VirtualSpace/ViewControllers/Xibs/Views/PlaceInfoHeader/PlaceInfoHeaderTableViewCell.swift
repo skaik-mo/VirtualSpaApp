@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  PlaceInfoHeaderTableViewCell.swift
 //  VirtualSpace
@@ -18,14 +18,14 @@ class PlaceInfoHeaderTableViewCell: UITableViewHeaderFooterView {
     @IBOutlet weak var descriptionTitleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var messageTherapistsLabel: UILabel!
-    
+
     var headerOject: Any?
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
+
     func configureHeader() {
         placeImage.image = .demo
         iconImage.image = .demo
@@ -37,5 +37,5 @@ class PlaceInfoHeaderTableViewCell: UITableViewHeaderFooterView {
         messageTherapistsLabel.text = Strings.MESSAGE_THERAOISTS_TITLE
 
     }
-    
+
 }

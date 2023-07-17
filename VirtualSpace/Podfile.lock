@@ -1,16 +1,20 @@
 PODS:
+  - NKVPhonePicker (2.1.1)
   - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
+  - NKVPhonePicker
   - XLPagerTabStrip (~> 9.0)
 
 SPEC REPOS:
   trunk:
+    - NKVPhonePicker
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
+  NKVPhonePicker: c71b3e8e53ce74e0b4e4d5c5adf54cbb3dd16fd8
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: bddf79787ff55b29d08132a8d675cc0111df64cb
+PODFILE CHECKSUM: fc534a9bd4b77e1d19c8c1f753c49d0a5448b9a8
 
 COCOAPODS: 1.12.1

@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  GlobalConstants.swift
 //  VirtualSpace
@@ -12,12 +12,10 @@ import UIKit
 class GlobalConstants {
 
     // MARK: - typealias
-    //typealias typealiasName = ((_ message: String?) -> Void)?
+    // typealias typealiasName = ((_ message: String?) -> Void)?
 
     // MARK: - Format
     static let timeFormat = "hh:mm a"
     static let dateFormat = "dd MMM yyyy"
 
 }
-
-

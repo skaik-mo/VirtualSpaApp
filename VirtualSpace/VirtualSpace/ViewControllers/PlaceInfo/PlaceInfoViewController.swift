@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  PlaceInfoViewController.swift
 //  VirtualSpace
@@ -42,7 +42,7 @@ private extension PlaceInfoViewController {
 
     func setUpView() {
         self.tableView._registerHeaderAndFooter = PlaceInfoHeaderTableViewCell.self
-        self.tableView.sectionHeaderHeight = 360//UITableView.automaticDimension
+        self.tableView.sectionHeaderHeight = 360// UITableView.automaticDimension
         self.tableView._registerCell = CallTableViewCell.self
         self.tableView.rowHeight = 60
         self.tableView.dataSource = self
@@ -81,6 +81,5 @@ extension PlaceInfoViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return tableView.tableHeaderView
     }
-
 
 }

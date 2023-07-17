@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  NotificationTableViewCell.swift
 //  VirtualSpace
@@ -22,9 +22,9 @@ class NotificationTableViewCell: UITableViewCell {
         // Initialization code
         self.selectionStyle = .none
     }
-    
+
     func configureCell() {
-        
+
     }
-    
+
 }

@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  Strings.swift
 //  VirtualSpace
@@ -117,7 +117,6 @@ class Strings {
     static let SOCIAL_MEDIA_POSTS_TITLE = "Social Media Posts"._localizedKey
     static let POSTS_TITLE = "Posts"._localizedKey
 
-
     // MARK: - TherapistInfo
     static let INFO_TITLE = "Information"._localizedKey
     static let WORK_IN_TITLE = "Work in"._localizedKey
@@ -129,5 +128,10 @@ class Strings {
     // MARK: - Post Detials
     static let POSTS_DETAILS_TITLE = "Post Details"._localizedKey
     static let COMMENTS_TITLE = "Comments"._localizedKey
+
+    // MARK: - New Post
+    static let NEW_POST_TITLE = "New Post"._localizedKey
+    static let POST_TITLE = "Post"._localizedKey
+    static let ASK_SOMTHING_PLACEHOLDER = "Ask Something"._localizedKey
 
 }

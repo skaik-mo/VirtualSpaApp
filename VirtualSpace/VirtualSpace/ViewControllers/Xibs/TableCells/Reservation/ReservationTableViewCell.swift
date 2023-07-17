@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  ReservationTableViewCell.swift
 //  VirtualSpace
@@ -22,7 +22,6 @@ class ReservationTableViewCell: UITableViewCell {
         // Initialization code
         self.selectionStyle = .none
     }
-
 
     func configureCell() {
         if let object = object as? GlobalConstants.ButtonStyle {

@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  MassageTableViewCell.swift
 //  VirtualSpace
@@ -22,9 +22,9 @@ class MassageTableViewCell: UITableViewCell {
         // Initialization code
         self.selectionStyle = .none
     }
-    
+
     func configureCell() {
-        
+
     }
-    
+
 }

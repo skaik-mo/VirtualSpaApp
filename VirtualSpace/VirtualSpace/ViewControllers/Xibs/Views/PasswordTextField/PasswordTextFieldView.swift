@@ -66,5 +66,4 @@ class PasswordTextFieldView: UIView {
         self.isSecure.toggle()
     }
 
-
 }

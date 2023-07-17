@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //  
 //  ReservationsViewController.swift
 //  VirtualSpace
@@ -58,7 +58,6 @@ private extension ReservationsViewController {
     }
 
 }
-
 
 extension ReservationsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

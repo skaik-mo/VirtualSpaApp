@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7765ABE8FD0FDC63B6B2A135 /* Pods_VirtualSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C626268165F8F279258A5969 /* Pods_VirtualSpace.framework */; };
-		E707B1C52A6198C1003D3D04 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = E707B1C42A6198C1003D3D04 /* YPImagePicker */; };
 		E707B1C82A619B85003D3D04 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = E707B1C72A619B85003D3D04 /* MessageKit */; };
+		E70F20762A6536A300FE212E /* MSSTakeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70F20752A6536A300FE212E /* MSSTakeImage.swift */; };
 		E7107B142A5D2316008891B1 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7107B122A5D2316008891B1 /* ForgotPasswordViewController.swift */; };
 		E7107B152A5D2316008891B1 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7107B132A5D2316008891B1 /* ForgotPasswordViewController.xib */; };
 		E7107B182A5D3915008891B1 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7107B162A5D3915008891B1 /* PrivacyPolicyViewController.swift */; };
@@ -125,7 +125,6 @@
 		E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E799C9D12A5C1513003443C8 /* PhoneTextFieldView.swift */; };
 		E799C9D42A5C1513003443C8 /* PhoneTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */; };
 		E799C9F02A5C3705003443C8 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E799C9EF2A5C3705003443C8 /* IQKeyboardManagerSwift */; };
-		E799C9F32A5C3785003443C8 /* NKVPhonePicker in Frameworks */ = {isa = PBXBuildFile; productRef = E799C9F22A5C3785003443C8 /* NKVPhonePicker */; };
 		E7A861942A5EC0A100CFA14B /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A861922A5EC0A100CFA14B /* FavoriteViewController.swift */; };
 		E7A861952A5EC0A100CFA14B /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A861932A5EC0A100CFA14B /* FavoriteViewController.xib */; };
 		E7A861992A5EC81200CFA14B /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A861972A5EC81200CFA14B /* PlaceTableViewCell.xib */; };
@@ -134,6 +133,8 @@
 		E7B6F92D2A5E973D002A0693 /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B6F92B2A5E973D002A0693 /* NotificationViewController.xib */; };
 		E7B6F9312A5E97E0002A0693 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B6F92F2A5E97E0002A0693 /* NotificationTableViewCell.xib */; };
 		E7B6F9322A5E97E0002A0693 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B6F9302A5E97E0002A0693 /* NotificationTableViewCell.swift */; };
+		E7CE35A32A6506E400853993 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CE35A12A6506E400853993 /* NewPostViewController.swift */; };
+		E7CE35A42A6506E400853993 /* NewPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7CE35A22A6506E400853993 /* NewPostViewController.xib */; };
 		E7D1A7DF2A63B5A700A701E7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A7DD2A63B5A700A701E7 /* ChatViewController.swift */; };
 		E7D1A7E22A63B7B500A701E7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A7E12A63B7B500A701E7 /* Message.swift */; };
 		E7D1A7E72A63B7F500A701E7 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A7E62A63B7F500A701E7 /* Sender.swift */; };
@@ -167,6 +168,7 @@
 		B3CC08931C145678D57D34A0 /* Pods-VirtualSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSpace.release.xcconfig"; path = "Target Support Files/Pods-VirtualSpace/Pods-VirtualSpace.release.xcconfig"; sourceTree = "<group>"; };
 		B441F63201222CDCE855C910 /* Pods-VirtualSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtualSpace.debug.xcconfig"; path = "Target Support Files/Pods-VirtualSpace/Pods-VirtualSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		C626268165F8F279258A5969 /* Pods_VirtualSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtualSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E70F20752A6536A300FE212E /* MSSTakeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSSTakeImage.swift; sourceTree = "<group>"; };
 		E7107B122A5D2316008891B1 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		E7107B132A5D2316008891B1 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		E7107B162A5D3915008891B1 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
@@ -291,6 +293,8 @@
 		E7B6F92B2A5E973D002A0693 /* NotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
 		E7B6F92F2A5E97E0002A0693 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
 		E7B6F9302A5E97E0002A0693 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		E7CE35A12A6506E400853993 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		E7CE35A22A6506E400853993 /* NewPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewPostViewController.xib; sourceTree = "<group>"; };
 		E7D1A7DD2A63B5A700A701E7 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E7D1A7E12A63B7B500A701E7 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E7D1A7E62A63B7F500A701E7 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
@@ -326,9 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7765ABE8FD0FDC63B6B2A135 /* Pods_VirtualSpace.framework in Frameworks */,
-				E799C9F32A5C3785003443C8 /* NKVPhonePicker in Frameworks */,
 				E799C9F02A5C3705003443C8 /* IQKeyboardManagerSwift in Frameworks */,
-				E707B1C52A6198C1003D3D04 /* YPImagePicker in Frameworks */,
 				E707B1C82A619B85003D3D04 /* MessageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +353,52 @@
 				B3CC08931C145678D57D34A0 /* Pods-VirtualSpace.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E70F20772A654A7700FE212E /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E756362F2A5AD1360008C91B /* Authentication */,
+				E7E35A272A5E7D9500733459 /* ChangePassword */,
+				E7E35A222A5E6DCA00733459 /* EditProfile */,
+				E7107B112A5D22FD008891B1 /* ForgotPassword */,
+				E75636422A5AE4900008C91B /* SignIn */,
+				E756363D2A5AE4790008C91B /* SignUp */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		E70F20782A654ABE00FE212E /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E723BB932A5D3B190026782B /* MainTabBarController.swift */,
+				E7A861912A5EC09900CFA14B /* Favorite */,
+				E79925462A641BB700B87500 /* HomeBusiness */,
+				E70F207A2A654B1400FE212E /* HomeUser */,
+				E7B6F9292A5E9734002A0693 /* Notification */,
+				E70F20792A654AE900FE212E /* Orders */,
+				E7D1A8022A63F3C000A701E7 /* Posts */,
+				E723BB9F2A5D633F0026782B /* Profile */,
+				E7715DE92A5ED0D100143F92 /* TherapistsPlaces */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		E70F20792A654AE900FE212E /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				E72346AD2A5FE35C0061877B /* OrdersPending */,
+				E72346A82A5FDFA40061877B /* OrdersAccepted */,
+				E72346992A5FD4A40061877B /* Orders */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		E70F207A2A654B1400FE212E /* HomeUser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeUser;
 			sourceTree = "<group>";
 		};
 		E7107B112A5D22FD008891B1 /* ForgotPassword */ = {
@@ -517,37 +565,24 @@
 			children = (
 				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 				E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */,
-				E723BB932A5D3B190026782B /* MainTabBarController.swift */,
-				E799254B2A64206F00B87500 /* Zoom */,
-				E79925462A641BB700B87500 /* HomeBusiness */,
-				E79925372A640B1F00B87500 /* PostDetails */,
-				E7D1A8192A63FC5400A701E7 /* BookNow */,
-				E7D1A8022A63F3C000A701E7 /* Posts */,
-				E7D1A80B2A63F55B00A701E7 /* TherapistInfo */,
-				E7D1A7F32A63E0C300A701E7 /* Therapist */,
-				E7D1A7DC2A63B58E00A701E7 /* Chat */,
-				E7868BAB2A60230A008917DD /* Message */,
 				E7868B9F2A600F1B008917DD /* AcceptedUser */,
-				E72346AD2A5FE35C0061877B /* OrdersPending */,
-				E72346A82A5FDFA40061877B /* OrdersAccepted */,
-				E72346992A5FD4A40061877B /* Orders */,
-				E7715DEA2A5ED0D800143F92 /* PlaceInfo */,
-				E7715DE92A5ED0D100143F92 /* TherapistsPlaces */,
-				E7A861912A5EC09900CFA14B /* Favorite */,
-				E770587E2A5EB3E8004ADBF9 /* Invite */,
-				E770586A2A5EA6E7004ADBF9 /* Reservations */,
+				E70F20772A654A7700FE212E /* Auth */,
+				E7D1A8192A63FC5400A701E7 /* BookNow */,
+				E7D1A7DC2A63B58E00A701E7 /* Chat */,
 				E77058612A5EA2A9004ADBF9 /* Following */,
 				E77058522A5E9C2B004ADBF9 /* Friends */,
-				E7B6F9292A5E9734002A0693 /* Notification */,
-				E7E35A272A5E7D9500733459 /* ChangePassword */,
-				E7E35A222A5E6DCA00733459 /* EditProfile */,
-				E723BB9F2A5D633F0026782B /* Profile */,
-				E7107B1A2A5D391B008891B1 /* Privacy Policy */,
-				E7107B112A5D22FD008891B1 /* ForgotPassword */,
-				E75636422A5AE4900008C91B /* SignIn */,
-				E756363D2A5AE4790008C91B /* SignUp */,
-				E756362F2A5AD1360008C91B /* Authentication */,
+				E770587E2A5EB3E8004ADBF9 /* Invite */,
 				E7373F4A2A5AC9B5007A1186 /* Launch */,
+				E7868BAB2A60230A008917DD /* Message */,
+				E7CE35A02A65065200853993 /* NewPost */,
+				E7715DEA2A5ED0D800143F92 /* PlaceInfo */,
+				E79925372A640B1F00B87500 /* PostDetails */,
+				E7107B1A2A5D391B008891B1 /* Privacy Policy */,
+				E770586A2A5EA6E7004ADBF9 /* Reservations */,
+				E70F20782A654ABE00FE212E /* TabBar */,
+				E7D1A7F32A63E0C300A701E7 /* Therapist */,
+				E7D1A80B2A63F55B00A701E7 /* TherapistInfo */,
+				E799254B2A64206F00B87500 /* Zoom */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -659,6 +694,7 @@
 			isa = PBXGroup;
 			children = (
 				E7D1A81E2A64007E00A701E7 /*  AlertsAndPickers */,
+				E70F20752A6536A300FE212E /* MSSTakeImage.swift */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -988,6 +1024,15 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		E7CE35A02A65065200853993 /* NewPost */ = {
+			isa = PBXGroup;
+			children = (
+				E7CE35A12A6506E400853993 /* NewPostViewController.swift */,
+				E7CE35A22A6506E400853993 /* NewPostViewController.xib */,
+			);
+			path = NewPost;
+			sourceTree = "<group>";
+		};
 		E7D1A7DC2A63B58E00A701E7 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -1124,6 +1169,7 @@
 				E7373F3B2A5AC9B5007A1186 /* Frameworks */,
 				E7373F3C2A5AC9B5007A1186 /* Resources */,
 				8C747C92217967E28380CA7E /* [CP] Embed Pods Frameworks */,
+				E7CE35A52A651DB700853993 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -1132,8 +1178,6 @@
 			name = VirtualSpace;
 			packageProductDependencies = (
 				E799C9EF2A5C3705003443C8 /* IQKeyboardManagerSwift */,
-				E799C9F22A5C3785003443C8 /* NKVPhonePicker */,
-				E707B1C42A6198C1003D3D04 /* YPImagePicker */,
 				E707B1C72A619B85003D3D04 /* MessageKit */,
 			);
 			productName = VirtualSpace;
@@ -1166,8 +1210,6 @@
 			mainGroup = E7373F352A5AC9B4007A1186;
 			packageReferences = (
 				E799C9EE2A5C3705003443C8 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				E799C9F12A5C3785003443C8 /* XCRemoteSwiftPackageReference "NKVPhonePicker" */,
-				E707B1C32A6198C1003D3D04 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 				E707B1C62A619B85003D3D04 /* XCRemoteSwiftPackageReference "MessageKit" */,
 			);
 			productRefGroup = E7373F3F2A5AC9B5007A1186 /* Products */;
@@ -1237,6 +1279,7 @@
 				E799254F2A64207700B87500 /* ZoomViewController.xib in Resources */,
 				E723BBA62A5D6FB80026782B /* ProfileTableViewCell.xib in Resources */,
 				E723BBB22A5D77C10026782B /* Poppins-SemiBold.ttf in Resources */,
+				E7CE35A42A6506E400853993 /* NewPostViewController.xib in Resources */,
 				E72346922A5FC1210061877B /* CallTableViewCell.xib in Resources */,
 				E7B6F92D2A5E973D002A0693 /* NotificationViewController.xib in Resources */,
 				E77058692A5EA6DB004ADBF9 /* ReservationsViewController.xib in Resources */,
@@ -1286,6 +1329,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E7CE35A52A651DB700853993 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint --fix && swiftlint --strict\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1311,6 +1373,7 @@
 				E77058682A5EA6DB004ADBF9 /* ReservationsViewController.swift in Sources */,
 				E723BBB82A5D7B3C0026782B /* SwitchTableViewCell.swift in Sources */,
 				E7373F7F2A5AC9B5007A1186 /* UIViewController.swift in Sources */,
+				E70F20762A6536A300FE212E /* MSSTakeImage.swift in Sources */,
 				E7D1A7F22A63CE6100A701E7 /* TextViewInputBar.swift in Sources */,
 				E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */,
 				E756363A2A5AD4E00008C91B /* UIButton+style.swift in Sources */,
@@ -1340,6 +1403,7 @@
 				E7D1A7EA2A63BC7D00A701E7 /* ChatDateHeader.swift in Sources */,
 				E7373F712A5AC9B5007A1186 /* UICollectionView.swift in Sources */,
 				E7715DF12A5ED18F00143F92 /* TherapistsPlacesViewController.swift in Sources */,
+				E7CE35A32A6506E400853993 /* NewPostViewController.swift in Sources */,
 				E723469C2A5FD4B00061877B /* OrdersViewController.swift in Sources */,
 				E79925402A64160800B87500 /* LabelTableViewCell.swift in Sources */,
 				E7373F772A5AC9B5007A1186 /* UIResponder.swift in Sources */,
@@ -1595,14 +1659,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E707B1C32A6198C1003D3D04 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
-			requirement = {
-				kind = exactVersion;
-				version = 5.2.1;
-			};
-		};
 		E707B1C62A619B85003D3D04 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MessageKit/MessageKit";
@@ -1619,22 +1675,9 @@
 				version = 6.5.12;
 			};
 		};
-		E799C9F12A5C3785003443C8 /* XCRemoteSwiftPackageReference "NKVPhonePicker" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/NikKovIos/NKVPhonePicker.git";
-			requirement = {
-				kind = exactVersion;
-				version = 2.1.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E707B1C42A6198C1003D3D04 /* YPImagePicker */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E707B1C32A6198C1003D3D04 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
-			productName = YPImagePicker;
-		};
 		E707B1C72A619B85003D3D04 /* MessageKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E707B1C62A619B85003D3D04 /* XCRemoteSwiftPackageReference "MessageKit" */;
@@ -1644,11 +1687,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E799C9EE2A5C3705003443C8 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
-		};
-		E799C9F22A5C3785003443C8 /* NKVPhonePicker */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E799C9F12A5C3785003443C8 /* XCRemoteSwiftPackageReference "NKVPhonePicker" */;
-			productName = NKVPhonePicker;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  LabelTableViewCell.swift
 //  VirtualSpace
@@ -11,7 +11,6 @@ import UIKit
 class LabelTableViewCell: UITableViewCell {
 
     @IBOutlet weak var label: UILabel!
-
 
     override func awakeFromNib() {
         super.awakeFromNib()

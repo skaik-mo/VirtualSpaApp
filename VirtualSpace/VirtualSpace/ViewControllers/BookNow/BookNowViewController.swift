@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  BookNowViewController.swift
 //  VirtualSpace
@@ -88,7 +88,7 @@ private extension BookNowViewController {
             handle(date._stringDate)
             isSelectedValue = true
         }
-        let okayAction = UIAlertAction.init(title: "OK", style: .cancel) { action in
+        let okayAction = UIAlertAction.init(title: "OK", style: .cancel) { _ in
             if !isSelectedValue {
                 handle(Date()._stringDate)
             }

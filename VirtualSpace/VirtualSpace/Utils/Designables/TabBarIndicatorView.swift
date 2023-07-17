@@ -57,4 +57,3 @@ class TabBarIndicatorView: UITabBar {
     }
 
 }
-

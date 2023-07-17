@@ -42,17 +42,17 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4X7-xj-TXN">
                                         <rect key="frame" x="0.0" y="0.0" width="236" height="39"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="CsI-En-Aaf">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="CsI-En-Aaf">
                                                 <rect key="frame" x="0.0" y="0.0" width="66" height="39"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzu-at-wch">
-                                                        <rect key="frame" x="0.0" y="0.0" width="26.666666666666668" height="19.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="26.666666666666668" height="18.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                                         <color key="textColor" name="#000000"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descritpion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13T-xK-uBb">
-                                                        <rect key="frame" x="0.0" y="21.666666666666664" width="50" height="17.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="20.666666666666664" width="50" height="18.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                         <color key="textColor" name="#7A7A7A"/>
                                                         <nil key="highlightedColor"/>

@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  UICollectionView.swift
 //  VirtualSpace
@@ -22,11 +22,11 @@ extension UICollectionView {
     }
 
     var _registerHeader: UICollectionReusableView.Type {
-        set {
-            self.register(newValue, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: newValue.self._id)
-        }
         get {
             return UICollectionReusableView.self
+        }
+        set {
+            self.register(newValue, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: newValue.self._id)
         }
     }
 

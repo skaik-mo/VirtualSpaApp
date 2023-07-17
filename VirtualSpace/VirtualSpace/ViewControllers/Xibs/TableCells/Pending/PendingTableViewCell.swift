@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  PendingTableViewCell.swift
 //  VirtualSpace
@@ -23,7 +23,7 @@ class PendingTableViewCell: UITableViewCell {
         // Initialization code
         self.selectionStyle = .none
     }
-    
+
     func configureCell() {
         self.authImage.image = .demo
         self.nameLabel.text = "Name"
@@ -33,7 +33,7 @@ class PendingTableViewCell: UITableViewCell {
         self.acceptButton.applyButtonStyle(.SecondaryGreen)
         self.rejectButton.applyButtonStyle(.SecondaryRed)
     }
-    
+
     @IBAction func acceptAction(_ sender: Any) {
 
     }

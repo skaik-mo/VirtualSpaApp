@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  UIResponder.swift
 //  VirtualSpace
@@ -13,9 +13,9 @@ extension UIResponder {
     static var _id: String {
         return String(describing: self)
     }
-    
+
     var _topVC: UIViewController? {
         return SceneDelegate.shared?.rootNavigationController?._topMostViewController
     }
-    
+
 }

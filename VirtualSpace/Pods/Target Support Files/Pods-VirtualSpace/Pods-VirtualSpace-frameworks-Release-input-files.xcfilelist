@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-VirtualSpace/Pods-VirtualSpace-frameworks.sh
+${BUILT_PRODUCTS_DIR}/NKVPhonePicker/NKVPhonePicker.framework
 ${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework

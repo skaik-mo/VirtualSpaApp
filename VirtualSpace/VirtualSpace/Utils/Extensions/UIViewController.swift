@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  UIViewController.swift
 //  VirtualSpace
@@ -154,4 +154,60 @@ extension UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
     }
 
+}
+
+// MARK: - Keyboard
+extension UIViewController {
+    @objc func keyboardNotificationWithoutSafeArea(notification: NSNotification) {
+        guard let userInfo = notification.userInfo else { return }
+
+        guard let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        let endFrameY = endFrame.origin.y
+        let duration: TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+        let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+        let animationCurve: UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+        let endFrameHeight = endFrame.size.height
+
+        if endFrameY >= UIScreen.main.bounds.size.height {
+            self.view.frame.origin.y = 0
+        } else {
+            self.view.frame.origin.y = -(endFrameHeight)
+        }
+
+        UIView.animate(
+            withDuration: duration,
+            delay: TimeInterval(0),
+            options: animationCurve,
+            animations: { self.view.layoutIfNeeded() },
+            completion: nil)
+
+    }
+
+    @objc func keyboardNotification(notification: NSNotification) {
+        guard let userInfo = notification.userInfo else { return }
+
+        guard let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        let endFrameY = endFrame.origin.y
+        let duration: TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+        let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+        let animationCurve: UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+        let endFrameHeight = endFrame.size.height
+        let safeAreaBottom = self.view.safeAreaInsets.bottom
+
+        if endFrameY >= UIScreen.main.bounds.size.height {
+            self.view.frame.origin.y = 0
+        } else {
+            self.view.frame.origin.y = -(endFrameHeight - safeAreaBottom)
+        }
+
+        UIView.animate(
+            withDuration: duration,
+            delay: TimeInterval(0),
+            options: animationCurve,
+            animations: { self.view.layoutIfNeeded() },
+            completion: nil)
+
+    }
 }

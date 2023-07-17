@@ -1,4 +1,4 @@
-//_________SKAIK_MO_________
+// _________SKAIK_MO_________
 //
 //  MessageViewController.swift
 //  VirtualSpace
@@ -14,7 +14,7 @@ class MessageViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: Properties
-    var object: [Any] = [1,1,1,1,1,1,1,1,1,1]
+    var object: [Any] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
     // MARK: Init
     init() {
@@ -71,7 +71,6 @@ extension MessageViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configureCell()
         return cell
     }
-
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         debugPrint(#function)
