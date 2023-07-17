@@ -29,12 +29,6 @@ final class TextViewInputBar: InputBarAccessoryView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        let height = self.inputTextView.frame.height
-        inputTextView.cornerRadius = (height == 0 ? 37.0 : height) / 2
-    }
-
     func configure() {
         sendButton.image = .ic_send
         sendButton.setTitle("", for: .normal)
@@ -43,9 +37,10 @@ final class TextViewInputBar: InputBarAccessoryView {
         inputTextView.borderColor = .color_E9E9E9
         inputTextView.borderWidth = 1.0
         inputTextView.backgroundColor = .color_F9FAFF
-        inputTextView.font = .poppinsRegular14
+        inputTextView.font = .poppinsRegular13
         inputTextView.placeholderTextColor = .color_7A7A7A
         inputTextView.textColor = .color_000000
+        inputTextView.cornerRadius = 20
     }
 
 }

@@ -34,10 +34,10 @@ class InviteTableViewCell: UITableViewCell {
     private func setInviteButton() {
         switch self.isInvited {
         case true:
-            self.inviteButton.titleLabel?.text = "Invite"
+            self.inviteButton.titleLabel?.text = Strings.INVITE_TITLE
             self.inviteButton.applyButtonStyle(.OutlinedPurple(35))
         case false:
-            self.inviteButton.titleLabel?.text = "Add"
+            self.inviteButton.titleLabel?.text = Strings.ADD_TITLE
             self.inviteButton.applyButtonStyle(.Primary(35))
         }
     }

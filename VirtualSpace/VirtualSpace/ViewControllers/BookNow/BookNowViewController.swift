@@ -88,7 +88,7 @@ private extension BookNowViewController {
             handle(date._stringDate)
             isSelectedValue = true
         }
-        let okayAction = UIAlertAction.init(title: "OK", style: .cancel) { _ in
+        let okayAction = UIAlertAction.init(title: Strings.OK_TITLE, style: .cancel) { _ in
             if !isSelectedValue {
                 handle(Date()._stringDate)
             }

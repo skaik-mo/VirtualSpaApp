@@ -42,7 +42,7 @@ private extension PlaceInfoViewController {
 
     func setUpView() {
         self.tableView._registerHeaderAndFooter = PlaceInfoHeaderTableViewCell.self
-        self.tableView.sectionHeaderHeight = 360// UITableView.automaticDimension
+        self.tableView.sectionHeaderHeight = 365// UITableView.automaticDimension
         self.tableView._registerCell = CallTableViewCell.self
         self.tableView.rowHeight = 60
         self.tableView.dataSource = self

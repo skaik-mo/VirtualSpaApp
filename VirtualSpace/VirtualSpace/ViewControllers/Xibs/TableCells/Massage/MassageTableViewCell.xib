@@ -37,13 +37,13 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="GYr-Jh-4QO">
-                                <rect key="frame" x="69" y="14" width="251" height="56"/>
+                                <rect key="frame" x="69" y="14" width="251" height="53"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SrG-Mc-2Mb">
-                                        <rect key="frame" x="0.0" y="0.0" width="251" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="251" height="38"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="iTc-02-qgh">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="41"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iTc-02-qgh">
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="38"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymC-al-0s8">
                                                         <rect key="frame" x="0.0" y="0.0" width="88" height="19.666666666666668"/>
@@ -52,7 +52,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8p3-HZ-MwU">
-                                                        <rect key="frame" x="0.0" y="22.666666666666664" width="88" height="18.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="19.666666666666664" width="88" height="18.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                         <color key="textColor" name="#A3A3A3"/>
                                                         <nil key="highlightedColor"/>
@@ -69,7 +69,7 @@
                                         <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="16"/>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeo-b0-evg">
-                                        <rect key="frame" x="0.0" y="55" width="251" height="1"/>
+                                        <rect key="frame" x="0.0" y="52" width="251" height="1"/>
                                         <color key="backgroundColor" name="#F2F2F2"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="eyq-18-EP9"/>

@@ -30,8 +30,8 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         self.categoryImage.image = .demo
         if let object = object as? String {
             self.categoryLabel.text = object
-            if let _topVC = _topVC as? HomeUserViewController {
-                self.isSelectedCell = _topVC.selectedSubCategories == object
+            if let _topVC = SceneDelegate.shared?.rootNavigationController?.topViewController as? MainTabBarController, let presnt = _topVC.selectedViewController as? HomeUserViewController {
+                self.isSelectedCell = presnt.selectedSubCategories == object
             }
         } else {
             self.categoryLabel.text = nil

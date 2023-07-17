@@ -86,6 +86,8 @@ class Strings {
 
     // MARK: - Invite
     static let NEARBY_TITLE = "Nearby"._localizedKey
+    static let INVITE_TITLE = "Invite"._localizedKey
+    static let ADD_TITLE = "Add"._localizedKey
 
     // MARK: - Favorite
     static let FAVORITE_TITLE = "Favorite"._localizedKey
@@ -107,6 +109,7 @@ class Strings {
     // MARK: - Chat
     static let TODAY_TITLE = "Today"._localizedKey
     static let YESTERDAY_TITLE = "Yesterday"._localizedKey
+    static let WRITE_PLACEHOLDER = "Write a message"._localizedKey
 
     // MARK: - Therapist
     static let MESSAGE_THERAPISTS_TITLE = "Massage Therapist"._localizedKey
@@ -128,6 +131,7 @@ class Strings {
     // MARK: - Post Detials
     static let POSTS_DETAILS_TITLE = "Post Details"._localizedKey
     static let COMMENTS_TITLE = "Comments"._localizedKey
+    static let ADD_COMMENT_PLACEHOLDER = "Add a comment"._localizedKey
 
     // MARK: - New Post
     static let NEW_POST_TITLE = "New Post"._localizedKey

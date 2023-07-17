@@ -33,7 +33,7 @@ class PostDetailsViewController: UIViewController {
     lazy var inputText: TextViewInputBar = {
         let inputBar = TextViewInputBar()
         inputBar.delegate = self
-        inputBar.placeholder = "Add a comment"
+        inputBar.placeholder = Strings.ADD_COMMENT_PLACEHOLDER
         return inputBar
     }()
 
@@ -84,6 +84,7 @@ private extension PostDetailsViewController {
         self.tableView._registerCell = LabelTableViewCell.self
         self.tableView._registerCell = CommentTableViewCell.self
         self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.keyboardDismissMode = .onDrag
         self.tableView.dataSource = self
         self.tableView.delegate = self
 

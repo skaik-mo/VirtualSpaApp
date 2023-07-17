@@ -28,8 +28,8 @@ class PagerCollectionViewCell: UICollectionViewCell {
     func configureCell() {
         if let object = object as? String {
             self.titleLabel.text = object
-            if let _topVC = _topVC as? HomeUserViewController {
-                self.isSelectedCell = _topVC.selectedCategories == object
+            if let _topVC = SceneDelegate.shared?.rootNavigationController?.topViewController as? MainTabBarController, let presnt = _topVC.selectedViewController as? HomeUserViewController {
+                self.isSelectedCell = presnt.selectedCategories == object
             }
         } else {
             self.titleLabel.text = nil
