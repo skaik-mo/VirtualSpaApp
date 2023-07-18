@@ -148,13 +148,14 @@ extension HomeUserViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == pagerCollectionView {
             self.selectedCategories = self.categories[indexPath.row]
-
+            collectionView.reloadData()
         } else if collectionView == categoryCollectionView {
             self.selectedSubCategories = self.subCategories[indexPath.row]
+            collectionView.reloadData()
         } else {
-
+            let vc = PlaceDetailsViewController()
+            vc._push()
         }
-        collectionView.reloadData()
     }
 
 }

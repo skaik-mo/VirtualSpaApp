@@ -16,6 +16,11 @@ class MainNavigationController: UINavigationController {
             self.setUpNavigation()
         }
     }
+    var backgroundColor: UIColor = .color_FFFFFF {
+        didSet {
+            self.setUpNavigation()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +33,10 @@ class MainNavigationController: UINavigationController {
 extension MainNavigationController {
 
     func setUpNavigation() {
+        navigationBarAppearance.configureWithOpaqueBackground()
         navigationBarAppearance.shadowColor = self.shadowColor
         navigationBarAppearance.titleTextAttributes = getSmallTitleFont()
-        navigationBarAppearance.backgroundColor = getBackgroundColor()
+        navigationBarAppearance.backgroundColor = self.backgroundColor
         navigationBarAppearance.setBackIndicatorImage(.ic_back, transitionMaskImage: .ic_back)
         navigationBar.scrollEdgeAppearance = navigationBarAppearance
         navigationBarAppearance.backgroundColor = getBackgroundColorWhenScrollViewController()
@@ -41,12 +47,8 @@ extension MainNavigationController {
         [NSAttributedString.Key.foregroundColor: UIColor.color_000000, NSAttributedString.Key.font: UIFont.poppinsMedium17]
     }
 
-    private func getBackgroundColor() -> UIColor {
-            .color_FFFFFF
-    }
-
     private func getBackgroundColorWhenScrollViewController() -> UIColor {
-         .color_FFFFFF
+            .color_FFFFFF
     }
 
 }

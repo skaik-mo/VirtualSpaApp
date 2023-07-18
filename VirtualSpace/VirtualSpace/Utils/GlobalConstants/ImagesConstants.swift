@@ -10,8 +10,14 @@ import UIKit
 
 // MARK: - Images
 extension UIImage {
+    // demo
     static var demo: UIImage? {
         "demo"._toImage
+    }
+
+    // demo
+    static var ic_360: UIImage? {
+        "ic_360"._toImage
     }
 
     static var ic_back: UIImage? {
@@ -104,6 +110,26 @@ extension UIImage {
 
     static var ic_notification_ciracl: UIImage? {
         "ic_notification_ciracl"._toImage
+    }
+
+    static var ic_backWhite: UIImage? {
+        "ic_backWhite"._toImage
+    }
+
+    static var ic_heartCircle: UIImage? {
+        "ic_heartCircle"._toImage
+    }
+
+    static var ic_heartCircleRed: UIImage? {
+        "ic_heartCircleRed"._toImage
+    }
+
+    static var ic_invite: UIImage? {
+        "ic_invite"._toImage
+    }
+
+    static var ic_auth: UIImage? {
+        "ic_auth"._toImage
     }
 
 }
