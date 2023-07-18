@@ -116,12 +116,10 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
 
     // MARK: Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: ProfileHeaderTableViewCell._id) as? ProfileHeaderTableViewCell {
-            header.headerOject = ""
-            header.configureHeader()
-            return header
-        }
-        return tableView.tableHeaderView
+        let header: ProfileHeaderTableViewCell = tableView._dequeueReusableHeaderFooterView()
+        header.headerOject = ""
+        header.configureHeader()
+        return header
     }
 
 }

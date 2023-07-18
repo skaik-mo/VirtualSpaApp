@@ -104,15 +104,24 @@ extension TherapistViewController: UITableViewDataSource, UITableViewDelegate {
 
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if isInfoSelected {
+            guard indexPath.item != 0 else { return }
+            let vc = PlaceInfoViewController()
+//            vc.title = object[indexPath.row]
+            vc._push()
+            return
+        }
+        let vc = PostDetailsViewController()
+        vc._push()
+    }
+
     // MARK: Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            let header: TherapistHeaderTableViewCell = tableView._dequeueReusableHeaderFooterView()
-            header.headerOject = ""
-            header.configureHeader()
-            return header
-        }
-        return nil
+        let header: TherapistHeaderTableViewCell = tableView._dequeueReusableHeaderFooterView()
+        header.headerOject = ""
+        header.configureHeader()
+        return header
     }
 
 }

@@ -161,6 +161,7 @@ extension PlaceDetailsViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.selectedPlaceImage = self.objectsTemp[indexPath.row]
         self.placeImageView.image = self.selectedPlaceImage
+        self.placeImageView.panoramaType = .cylindrical
         collectionView.reloadData()
     }
 }

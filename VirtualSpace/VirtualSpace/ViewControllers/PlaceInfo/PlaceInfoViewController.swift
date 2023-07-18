@@ -57,7 +57,7 @@ private extension PlaceInfoViewController {
 
 extension PlaceInfoViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        20
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,12 +74,10 @@ extension PlaceInfoViewController: UITableViewDataSource, UITableViewDelegate {
 
     // MARK: Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: PlaceInfoHeaderTableViewCell._id) as? PlaceInfoHeaderTableViewCell {
-            header.headerOject = ""
-            header.configureHeader()
-            return header
-        }
-        return tableView.tableHeaderView
+        let header: PlaceInfoHeaderTableViewCell = tableView._dequeueReusableHeaderFooterView()
+        header.headerOject = ""
+        header.configureHeader()
+        return header
     }
 
 }

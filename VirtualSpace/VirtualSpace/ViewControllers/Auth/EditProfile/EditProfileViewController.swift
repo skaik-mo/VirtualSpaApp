@@ -79,7 +79,7 @@ private extension EditProfileViewController {
         self.authImage.image = .ic_camera
         self.authNameTextField.title = Strings.NAME_TITLE
         self.authEmailTextField.title = Strings.EMAIL_TITLE
-        self.authPhoneTextField.title = Strings.PHONE_TITLE
+        self.authPhoneTextField.title = Strings.PHONE_NUM_TITLE
         self.bioLabel.text = Strings.BIO_TITLE
         self.saveButton.titleLabel?.text = Strings.SAVE_TITLE
     }

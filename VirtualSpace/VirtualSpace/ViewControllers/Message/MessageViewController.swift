@@ -14,7 +14,7 @@ class MessageViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: Properties
-    var object: [Any] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    var object: [Any] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
     // MARK: Init
     init() {

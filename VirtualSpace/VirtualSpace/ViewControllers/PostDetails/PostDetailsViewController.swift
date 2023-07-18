@@ -16,6 +16,7 @@ class PostDetailsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: Properties
+    var inpuTextHeight = 55.0
     var objects: [String: Any] = [
         "Post": 1,
         "Comment_Title": 2
@@ -87,11 +88,11 @@ private extension PostDetailsViewController {
         self.tableView.keyboardDismissMode = .onDrag
         self.tableView.dataSource = self
         self.tableView.delegate = self
-
+        self.inpuTextHeight += self._getStatusBarHeightBottom ?? 0
         self.view.addSubview(inputText)
         self.inputText.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.inputText.heightAnchor.constraint(equalToConstant: 90),
+            self.inputText.heightAnchor.constraint(equalToConstant: self.inpuTextHeight),
             self.inputText.widthAnchor.constraint(equalToConstant: self.view.frame.width),
             self.inputText.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             self.inputText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),

@@ -32,7 +32,7 @@ class Strings {
     static let SIGN_UP = "Sign up"._localizedKey
 
     // MARK: - Sign Up
-    static let PHONE_TITLE = "Phone"._localizedKey
+    static let PHONE_NUM_TITLE = "Phone number"._localizedKey
     static let EMAIL_TITLE = "Email"._localizedKey
     static let FILL_DATA_TITLE = "Please fill in a few details below"._localizedKey
     static let USER_TITLE = "User"._localizedKey
@@ -76,7 +76,7 @@ class Strings {
 
     // MARK: - Friend
     static let MY_FRIENDS_TITLE = "My Friends"._localizedKey
-    static let UNFRIEND_TITLE = "unfriend"._localizedKey
+    static let UNFRIEND_TITLE = "Unfriend"._localizedKey
 
     // MARK: - Following
     static let FOLLOWING_TITLE = "Following"._localizedKey

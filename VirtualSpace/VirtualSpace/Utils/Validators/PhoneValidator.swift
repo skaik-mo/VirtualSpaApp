@@ -8,7 +8,7 @@
 import Foundation
 
 struct PhoneValidator: Validator {
-    var field: String = Strings.PHONE_TITLE
+    var field: String = Strings.PHONE_NUM_TITLE
     var validationRules: [ValidationRule] = []
 
     init() {

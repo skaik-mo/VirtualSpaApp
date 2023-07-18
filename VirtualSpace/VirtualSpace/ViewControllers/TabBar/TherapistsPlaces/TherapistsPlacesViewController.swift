@@ -14,7 +14,7 @@ class TherapistsPlacesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: Properties
-    var object: [String] = ["Title1", "Title2", "Title3", "Title4", "Title5", "Title6", "Title7"]
+    var object: [String] = ["Title1", "Title2", "Title3", "Title4", "Title5", "Title6", "Title7", "Title11", "Title12", "Title13", "Title14", "Title15", "Title16", "Title17"]
 
     // MARK: Init
     init() {
