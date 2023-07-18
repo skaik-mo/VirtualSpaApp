@@ -34,7 +34,7 @@ class PlaceInfoHeaderTableViewCell: UITableViewHeaderFooterView {
         availableTimeLabel.text = "10 min . 0.7 im"
         descriptionTitleLabel.text = Strings.DESCRIPTION_TITLE
         descriptionLabel.text = "Massage therapy is considered an alternative means to alleviate pain, stiffness, reduce stress, and promote overall wellness."
-        messageTherapistsLabel.text = Strings.MESSAGE_THERAOISTS_TITLE
+        messageTherapistsLabel.text = Strings.MESSAGE_THERAPISTS_TITLE
 
     }
 

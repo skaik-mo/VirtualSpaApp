@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import XLPagerTabStrip
 
 class PostsViewController: UIViewController {
 
@@ -37,12 +36,6 @@ class PostsViewController: UIViewController {
         super.viewWillAppear(animated)
     }
 
-}
-
-extension PostsViewController: IndicatorInfoProvider {
-    func indicatorInfo(for pagerTabStripController: XLPagerTabStrip.PagerTabStripViewController) -> XLPagerTabStrip.IndicatorInfo {
-        return IndicatorInfo(title: Strings.POSTS_TITLE)
-    }
 }
 
 // MARK: - set Up Navigation

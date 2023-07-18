@@ -97,7 +97,7 @@ class Strings {
 
     // MARK: - Place Info
     static let DESCRIPTION_TITLE = "Description"._localizedKey
-    static let MESSAGE_THERAOISTS_TITLE = "Massage Therapists"._localizedKey
+    static let MESSAGE_THERAPISTS_TITLE = "Massage Therapists"._localizedKey
 
     // MARK: - Orders
     static let ORDERS_TITLE = "Orders"._localizedKey
@@ -112,7 +112,7 @@ class Strings {
     static let WRITE_PLACEHOLDER = "Write a message"._localizedKey
 
     // MARK: - Therapist
-    static let MESSAGE_THERAPISTS_TITLE = "Massage Therapist"._localizedKey
+    static let MESSAGE_THERAPIST_TITLE = "Massage Therapist"._localizedKey
     static let FOLLOW_TITLE = "Follow"._localizedKey
     static let BOOK_NOW_TITLE = "Book Now"._localizedKey
 

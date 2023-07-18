@@ -12,8 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TherapistViewController">
             <connections>
-                <outlet property="buttonBarView" destination="SO6-YS-n5S" id="xaF-iz-JBp"/>
-                <outlet property="containerView" destination="fA9-6n-FG8" id="Uv9-Hl-OW5"/>
+                <outlet property="tableView" destination="Eb8-ME-qLE" id="y9a-lq-2OW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,29 +24,10 @@
                 <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3ro-2f-81l">
                     <rect key="frame" x="0.0" y="50" width="375" height="762"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBm-no-UJp" customClass="TherapistHeaderView" customModule="VirtualSpace" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="290"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Eb8-ME-qLE">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="762"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="290" id="NKg-TG-Llt"/>
-                            </constraints>
-                        </view>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SO6-YS-n5S" customClass="ButtonBarView" customModule="XLPagerTabStrip">
-                            <rect key="frame" x="0.0" y="290" width="375" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="LBj-PJ-kGm"/>
-                            </constraints>
-                            <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8iU-du-Jib">
-                                <size key="itemSize" width="128" height="128"/>
-                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </collectionViewFlowLayout>
-                            <cells/>
-                        </collectionView>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fA9-6n-FG8">
-                            <rect key="frame" x="0.0" y="330" width="375" height="432"/>
-                        </scrollView>
+                        </tableView>
                     </subviews>
                 </stackView>
             </subviews>
