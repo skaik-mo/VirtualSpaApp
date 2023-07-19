@@ -13,13 +13,6 @@ class MSSTakeImage: NSObject {
 
     private var getImage: ((UIImage) -> Void)?
     var pickerController = UIImagePickerController()
-    var presentationController: UIViewController?
-
-    init(presentationController: UIViewController) {
-        super.init()
-        self.presentationController = presentationController
-    }
-
 
     func present(getImage: ((UIImage) -> Void)?) {
 //        if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -30,7 +23,7 @@ class MSSTakeImage: NSObject {
         self.pickerController.delegate = self
         self.pickerController.allowsEditing = true
         self.getImage = getImage
-        self.presentationController?.present(self.pickerController, animated: true, completion: nil)
+        SceneDelegate.shared?._topVC?.present(self.pickerController, animated: true, completion: nil)
     }
 }
 

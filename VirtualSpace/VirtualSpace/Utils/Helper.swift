@@ -11,12 +11,10 @@ import ProgressHUD
 
 class Helper {
 
-    static private var picker: MSSTakeImage?
+    static private var picker = MSSTakeImage()
 
     static func takeImage(getImage: ((UIImage) -> Void)?) {
-        guard let parent = SceneDelegate.shared?.rootNavigationController?._topMostViewController else { return }
-        picker = MSSTakeImage(presentationController: parent)
-        picker?.present { image in
+        picker.present { image in
             getImage?(image)
         }
     }
