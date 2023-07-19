@@ -110,10 +110,13 @@ private extension SignInViewController {
             self.isEnableSignIn = true
             return
         }
-        AuthController().saveAuth(auth: .User)
-        MainNavigationController.showFirstView()
-        self._dismissAllVCs()
-        self.isEnableSignIn = true
+        _ = UserController().signIn(email: self.emailTextField.text, password: self.passwordTextField.text).handlerDidFinishRequest {
+            debugPrint("handlerDidFinishRequest")
+            self.isEnableSignIn = true
+        }.handlerofflineLoad {
+            debugPrint("handlerofflineLoad")
+            self.isEnableSignIn = true
+        }
     }
 
 }

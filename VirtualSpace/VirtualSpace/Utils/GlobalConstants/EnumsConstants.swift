@@ -17,6 +17,14 @@ extension GlobalConstants {
 
 }
 
+// MARK: - Firbase Collections
+extension GlobalConstants {
+    enum Collection: String {
+        case User
+    }
+
+}
+
 // MARK: - Button Style
 extension GlobalConstants {
     enum ButtonStyle: Equatable {

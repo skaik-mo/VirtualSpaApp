@@ -99,10 +99,11 @@ extension UIViewController {
         }
 
         alert.addAction(okayAction)
-        self.present(alert, animated: true)
+        SceneDelegate.shared?.rootNavigationController?._topMostViewController?.present(alert, animated: true)
+//        self.present(alert, animated: true)
     }
 
-    func _showAlert(title: String = Strings.ALERT_TITLE, message: String?, buttonTitle1: String = Strings.OK_TITLE, buttonTitle2: String = Strings.CANCEL_TITLE, buttonAction1: @escaping (() -> Void), buttonAction2: (() -> Void)?) {
+    func _showAlert(title: String = Strings.ALERT_TITLE, message: String?, buttonTitle1: String = Strings.OK_TITLE, buttonTitle2: String = Strings.CANCEL_TITLE, buttonAction1: @escaping (() -> Void), buttonAction2: (() -> Void)? = nil) {
         let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
         let okayAction = UIAlertAction.init(title: buttonTitle1, style: .default) { _ in
             debugPrint("Okay aciton is pressed")

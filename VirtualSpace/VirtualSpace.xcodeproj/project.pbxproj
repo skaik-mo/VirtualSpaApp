@@ -37,7 +37,7 @@
 		E72346B02A5FE37C0061877B /* OrdersPendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72346AE2A5FE37C0061877B /* OrdersPendingViewController.swift */; };
 		E72346B12A5FE37C0061877B /* OrdersPendingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72346AF2A5FE37C0061877B /* OrdersPendingViewController.xib */; };
 		E723BB942A5D3B190026782B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BB932A5D3B190026782B /* MainTabBarController.swift */; };
-		E723BB962A5D3E4D0026782B /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BB952A5D3E4D0026782B /* AuthController.swift */; };
+		E723BB962A5D3E4D0026782B /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BB952A5D3E4D0026782B /* UserController.swift */; };
 		E723BB9A2A5D42480026782B /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BB992A5D42480026782B /* EmailValidator.swift */; };
 		E723BB9C2A5D42500026782B /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BB9B2A5D42500026782B /* PasswordValidator.swift */; };
 		E723BB9E2A5D54160026782B /* TabBarIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BB9D2A5D54160026782B /* TabBarIndicatorView.swift */; };
@@ -124,6 +124,18 @@
 		E7868BAA2A601E5A008917DD /* MassageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7868BA82A601E5A008917DD /* MassageTableViewCell.swift */; };
 		E7868BB02A6023E7008917DD /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7868BAE2A6023E7008917DD /* MessageViewController.swift */; };
 		E7868BB12A6023E7008917DD /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7868BAF2A6023E7008917DD /* MessageViewController.xib */; };
+		E798C61D2A67B15E009C7D86 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E798C61C2A67B15E009C7D86 /* FirebaseAuth */; };
+		E798C61F2A67B15E009C7D86 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E798C61E2A67B15E009C7D86 /* FirebaseFirestore */; };
+		E798C6212A67B15E009C7D86 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E798C6202A67B15E009C7D86 /* FirebaseStorage */; };
+		E798C6232A67B3EA009C7D86 /* HandlerFinish.swift in Sources */ = {isa = PBXBuildFile; fileRef = E798C6222A67B3EA009C7D86 /* HandlerFinish.swift */; };
+		E798C6252A67B407009C7D86 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E798C6242A67B407009C7D86 /* ResponseHandler.swift */; };
+		E798C6272A67B4B8009C7D86 /* FirebaseStorageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E798C6262A67B4B8009C7D86 /* FirebaseStorageController.swift */; };
+		E798C62A2A67B58C009C7D86 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = E798C6292A67B58C009C7D86 /* ProgressHUD */; };
+		E798C62C2A67B5F2009C7D86 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E798C62B2A67B5F2009C7D86 /* ActivityIndicator.swift */; };
+		E798C62F2A67B6F3009C7D86 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E798C62E2A67B6F3009C7D86 /* UserModel.swift */; };
+		E798C6312A67BBA2009C7D86 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E798C6302A67BBA2009C7D86 /* GoogleService-Info.plist */; };
+		E798C6332A67BE7E009C7D86 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E798C6322A67BE7E009C7D86 /* Reachability.swift */; };
+		E798C6352A67DAD3009C7D86 /* FirebaseFirestoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E798C6342A67DAD3009C7D86 /* FirebaseFirestoreController.swift */; };
 		E799253A2A640B2B00B87500 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79925382A640B2B00B87500 /* PostDetailsViewController.swift */; };
 		E799253B2A640B2B00B87500 /* PostDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79925392A640B2B00B87500 /* PostDetailsViewController.xib */; };
 		E799253F2A64160800B87500 /* LabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E799253D2A64160800B87500 /* LabelTableViewCell.xib */; };
@@ -207,7 +219,7 @@
 		E72346AE2A5FE37C0061877B /* OrdersPendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersPendingViewController.swift; sourceTree = "<group>"; };
 		E72346AF2A5FE37C0061877B /* OrdersPendingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrdersPendingViewController.xib; sourceTree = "<group>"; };
 		E723BB932A5D3B190026782B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		E723BB952A5D3E4D0026782B /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		E723BB952A5D3E4D0026782B /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		E723BB992A5D42480026782B /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		E723BB9B2A5D42500026782B /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
 		E723BB9D2A5D54160026782B /* TabBarIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIndicatorView.swift; sourceTree = "<group>"; };
@@ -296,6 +308,14 @@
 		E7868BA82A601E5A008917DD /* MassageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassageTableViewCell.swift; sourceTree = "<group>"; };
 		E7868BAE2A6023E7008917DD /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		E7868BAF2A6023E7008917DD /* MessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
+		E798C6222A67B3EA009C7D86 /* HandlerFinish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlerFinish.swift; sourceTree = "<group>"; };
+		E798C6242A67B407009C7D86 /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
+		E798C6262A67B4B8009C7D86 /* FirebaseStorageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageController.swift; sourceTree = "<group>"; };
+		E798C62B2A67B5F2009C7D86 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		E798C62E2A67B6F3009C7D86 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E798C6302A67BBA2009C7D86 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E798C6322A67BE7E009C7D86 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		E798C6342A67DAD3009C7D86 /* FirebaseFirestoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreController.swift; sourceTree = "<group>"; };
 		E79925382A640B2B00B87500 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		E79925392A640B2B00B87500 /* PostDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailsViewController.xib; sourceTree = "<group>"; };
 		E799253D2A64160800B87500 /* LabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelTableViewCell.xib; sourceTree = "<group>"; };
@@ -352,8 +372,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7765ABE8FD0FDC63B6B2A135 /* Pods_VirtualSpace.framework in Frameworks */,
+				E798C62A2A67B58C009C7D86 /* ProgressHUD in Frameworks */,
 				E799C9F02A5C3705003443C8 /* IQKeyboardManagerSwift in Frameworks */,
 				E707B1C82A619B85003D3D04 /* MessageKit in Frameworks */,
+				E798C61F2A67B15E009C7D86 /* FirebaseFirestore in Frameworks */,
+				E798C61D2A67B15E009C7D86 /* FirebaseAuth in Frameworks */,
+				E798C6212A67B15E009C7D86 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,6 +744,7 @@
 			isa = PBXGroup;
 			children = (
 				E7D1A7E32A63B7D000A701E7 /* Chat */,
+				E798C62E2A67B6F3009C7D86 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -727,7 +752,8 @@
 		E7373F5F2A5AC9B5007A1186 /* WebServices */ = {
 			isa = PBXGroup;
 			children = (
-				E723BB952A5D3E4D0026782B /* AuthController.swift */,
+				E798C62D2A67B67C009C7D86 /* Firebase */,
+				E723BB952A5D3E4D0026782B /* UserController.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -780,6 +806,7 @@
 				E75636392A5AD4E00008C91B /* UIButton+style.swift */,
 				E723BBBE2A5D84110026782B /* UISwitch.swift */,
 				E7B7C4D92A67057E008000D8 /* CALayer.swift */,
+				E798C62B2A67B5F2009C7D86 /* ActivityIndicator.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -798,6 +825,7 @@
 				E75636342A5AD2D30008C91B /* Fonts */,
 				E7373F842A5AC9B5007A1186 /* Assets.xcassets */,
 				E7373F892A5AC9B5007A1186 /* Info.plist */,
+				E798C6302A67BBA2009C7D86 /* GoogleService-Info.plist */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -1006,6 +1034,18 @@
 				E7868BAF2A6023E7008917DD /* MessageViewController.xib */,
 			);
 			path = Message;
+			sourceTree = "<group>";
+		};
+		E798C62D2A67B67C009C7D86 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				E798C6342A67DAD3009C7D86 /* FirebaseFirestoreController.swift */,
+				E798C6262A67B4B8009C7D86 /* FirebaseStorageController.swift */,
+				E798C6222A67B3EA009C7D86 /* HandlerFinish.swift */,
+				E798C6322A67BE7E009C7D86 /* Reachability.swift */,
+				E798C6242A67B407009C7D86 /* ResponseHandler.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		E79925372A640B1F00B87500 /* PostDetails */ = {
@@ -1244,6 +1284,10 @@
 			packageProductDependencies = (
 				E799C9EF2A5C3705003443C8 /* IQKeyboardManagerSwift */,
 				E707B1C72A619B85003D3D04 /* MessageKit */,
+				E798C61C2A67B15E009C7D86 /* FirebaseAuth */,
+				E798C61E2A67B15E009C7D86 /* FirebaseFirestore */,
+				E798C6202A67B15E009C7D86 /* FirebaseStorage */,
+				E798C6292A67B58C009C7D86 /* ProgressHUD */,
 			);
 			productName = VirtualSpace;
 			productReference = E7373F3E2A5AC9B5007A1186 /* VirtualSpace.app */;
@@ -1276,6 +1320,8 @@
 			packageReferences = (
 				E799C9EE2A5C3705003443C8 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				E707B1C62A619B85003D3D04 /* XCRemoteSwiftPackageReference "MessageKit" */,
+				E798C61B2A67B15E009C7D86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E798C6282A67B58C009C7D86 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
 			);
 			productRefGroup = E7373F3F2A5AC9B5007A1186 /* Products */;
 			projectDirPath = "";
@@ -1316,6 +1362,7 @@
 				E7E35A2B2A5E7DAC00733459 /* ChangePasswordViewController.xib in Resources */,
 				E75636412A5AE4860008C91B /* SignUpViewController.xib in Resources */,
 				E799C9D42A5C1513003443C8 /* PhoneTextFieldView.xib in Resources */,
+				E798C6312A67BBA2009C7D86 /* GoogleService-Info.plist in Resources */,
 				E770586E2A5EA765004ADBF9 /* ReservationTableViewCell.xib in Resources */,
 				E73AA0692A5C03620022F8BE /* PasswordTextFieldView.xib in Resources */,
 				E770585F2A5EA222004ADBF9 /* FollowingTableViewCell.xib in Resources */,
@@ -1429,6 +1476,7 @@
 				E7373F7D2A5AC9B5007A1186 /* UIView.swift in Sources */,
 				E79925492A641BEC00B87500 /* HomeBusinessViewController.swift in Sources */,
 				E77058552A5E9C3D004ADBF9 /* FriendsViewController.swift in Sources */,
+				E798C62C2A67B5F2009C7D86 /* ActivityIndicator.swift in Sources */,
 				E723BBBF2A5D84110026782B /* UISwitch.swift in Sources */,
 				E77CF7CA2A5BD5B400E01D49 /* ValidationRule.swift in Sources */,
 				E723BB942A5D3B190026782B /* MainTabBarController.swift in Sources */,
@@ -1441,6 +1489,7 @@
 				E77CF7B32A5BD41900E01D49 /* UITextField.swift in Sources */,
 				E7868BA22A600F25008917DD /* AcceptedUserViewController.swift in Sources */,
 				E77058682A5EA6DB004ADBF9 /* ReservationsViewController.swift in Sources */,
+				E798C6272A67B4B8009C7D86 /* FirebaseStorageController.swift in Sources */,
 				E723BBB82A5D7B3C0026782B /* SwitchTableViewCell.swift in Sources */,
 				E7373F7F2A5AC9B5007A1186 /* UIViewController.swift in Sources */,
 				E70C100C2A65501B008DD58B /* HomeUserViewController.swift in Sources */,
@@ -1477,12 +1526,15 @@
 				E7715DF12A5ED18F00143F92 /* TherapistsPlacesViewController.swift in Sources */,
 				E70C101B2A6557D4008DD58B /* HomeCollectionViewCell.swift in Sources */,
 				E7CE35A32A6506E400853993 /* NewPostViewController.swift in Sources */,
+				E798C6232A67B3EA009C7D86 /* HandlerFinish.swift in Sources */,
 				E723469C2A5FD4B00061877B /* OrdersViewController.swift in Sources */,
 				E79925402A64160800B87500 /* LabelTableViewCell.swift in Sources */,
 				E7373F772A5AC9B5007A1186 /* UIResponder.swift in Sources */,
+				E798C6332A67BE7E009C7D86 /* Reachability.swift in Sources */,
 				E72346982A5FC6140061877B /* PlaceInfoHeaderTableViewCell.swift in Sources */,
 				E75636452A5AE49E0008C91B /* SignInViewController.swift in Sources */,
 				E77058762A5EB05E004ADBF9 /* EnumsConstants.swift in Sources */,
+				E798C6252A67B407009C7D86 /* ResponseHandler.swift in Sources */,
 				E723BBA72A5D6FB80026782B /* ProfileTableViewCell.swift in Sources */,
 				E7373F492A5AC9B5007A1186 /* MainNavigationViewController.swift in Sources */,
 				E7D1A81C2A63FC6700A701E7 /* BookNowViewController.swift in Sources */,
@@ -1490,7 +1542,7 @@
 				E7E35A2A2A5E7DAC00733459 /* ChangePasswordViewController.swift in Sources */,
 				E72346A72A5FDD5D0061877B /* PendingTableViewCell.swift in Sources */,
 				E77058722A5EB04B004ADBF9 /* ImagesConstants.swift in Sources */,
-				E723BB962A5D3E4D0026782B /* AuthController.swift in Sources */,
+				E723BB962A5D3E4D0026782B /* UserController.swift in Sources */,
 				E7373F752A5AC9B5007A1186 /* UIKitHelpers.swift in Sources */,
 				E7B7C4DF2A670D90008000D8 /* TherapistInfoTableViewCell.swift in Sources */,
 				E770587D2A5EB21C004ADBF9 /* InviteTableViewCell.swift in Sources */,
@@ -1516,6 +1568,7 @@
 				E77CF7CC2A5BD5B400E01D49 /* Validator.swift in Sources */,
 				E770585B2A5E9CBB004ADBF9 /* FriendTableViewCell.swift in Sources */,
 				E7715DED2A5ED0EC00143F92 /* PlaceInfoViewController.swift in Sources */,
+				E798C62F2A67B6F3009C7D86 /* UserModel.swift in Sources */,
 				E7868BB02A6023E7008917DD /* MessageViewController.swift in Sources */,
 				E7A861942A5EC0A100CFA14B /* FavoriteViewController.swift in Sources */,
 				E7D1A7F62A63E0D000A701E7 /* TherapistViewController.swift in Sources */,
@@ -1525,6 +1578,7 @@
 				E723BBA22A5D634B0026782B /* ProfileViewController.swift in Sources */,
 				E7373F442A5AC9B5007A1186 /* SceneDelegate.swift in Sources */,
 				E7373F7B2A5AC9B5007A1186 /* UITableView.swift in Sources */,
+				E798C6352A67DAD3009C7D86 /* FirebaseFirestoreController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1657,18 +1711,21 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VirtualSpace/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Virtual Spa";
+				INFOPLIST_KEY_NSCameraUsageDescription = "By giving access to the camera, you can easily add your station icon.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "With access to photos, you can easily add your station icon.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "skaik-mo.VirtualSpace";
+				PRODUCT_BUNDLE_IDENTIFIER = "skaik-mo.VirtualSpa";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1691,18 +1748,21 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VirtualSpace/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Virtual Spa";
+				INFOPLIST_KEY_NSCameraUsageDescription = "By giving access to the camera, you can easily add your station icon.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "With access to photos, you can easily add your station icon.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "skaik-mo.VirtualSpace";
+				PRODUCT_BUNDLE_IDENTIFIER = "skaik-mo.VirtualSpa";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1745,6 +1805,22 @@
 				version = 4.1.1;
 			};
 		};
+		E798C61B2A67B15E009C7D86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 10.12.0;
+			};
+		};
+		E798C6282A67B58C009C7D86 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.0;
+			};
+		};
 		E799C9EE2A5C3705003443C8 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -1760,6 +1836,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E707B1C62A619B85003D3D04 /* XCRemoteSwiftPackageReference "MessageKit" */;
 			productName = MessageKit;
+		};
+		E798C61C2A67B15E009C7D86 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E798C61B2A67B15E009C7D86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E798C61E2A67B15E009C7D86 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E798C61B2A67B15E009C7D86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		E798C6202A67B15E009C7D86 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E798C61B2A67B15E009C7D86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		E798C6292A67B58C009C7D86 /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E798C6282A67B58C009C7D86 /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
 		};
 		E799C9EF2A5C3705003443C8 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;

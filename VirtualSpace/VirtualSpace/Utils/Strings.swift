@@ -25,6 +25,21 @@ class Strings {
     static let INVALID_LENGTH_MINIMUM_MESSAGE = "Incorrect length in the {field} field. Minimum length required is {minimum} characters."._localizedKey
     static let INVALID_LENGTH_MAXIMUM_MESSAGE = "Incorrect length in the {field} field. Maximum length allowed is {maximum} characters."._localizedKey
 
+    // MARK: - Firebase Errors
+    static let EMAIL_ALREADY_IN_USE_MESSAGE = "The email is already in use with another account."._localizedKey
+    static let USER_NOT_FOUND_MESSAGE = "Account not found for the specified user. Please check and try again"._localizedKey
+    static let INVALID_SENDER_RECIPIENT_EMAIL_MESSAGE = "Please enter a valid email"._localizedKey
+    static let WEAK_PASSWORD_MESSAGE = "Your password is too weak. The password must be 6 characters long or more."._localizedKey
+    static let WRONG_PASSWORD_MESSAGE = "Your password is incorrect. Please try again or use 'Forgot password' to reset your password"._localizedKey
+    static let QUOTA_EXCEEDED_MESSAGE = "The SMS quota for this project has been exceeded."._localizedKey
+    static let TOO_MANY_REQUESTS_MESSAGE = "We have blocked all requests from this device due to unusual activity. Try again later."._localizedKey
+    static let SESSION_EXPIRED_MESSAGE = "The verification code has expired. Please try again."._localizedKey
+    static let INVALID_CREDENTIAL_MESSAGE = "The verification ID used to create the phone auth credential is invalid."._localizedKey
+    static let INVALID_VERIFICATION_CODE_MESSAGE = "The verification code used to create the phone auth credential is invalid."._localizedKey
+    static let TOKEN_EXPIRED_MESSAGE = "User token has expired."._localizedKey
+    static let INVALID_TOKEN_MESSAGE = "Invalid user token."._localizedKey
+    static let USER_DISABLED_MESSAGE = "Your account has been disabled. Please contact support."._localizedKey
+
     // MARK: - Authentication
     static let VIRTUAL_SPA_TITLE = "VIRTUAL SPA"._localizedKey
     static let LOREM_IPSUM_TITLE = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"._localizedKey
@@ -59,6 +74,7 @@ class Strings {
     static let MESSAGES_TITLE = "Massages"._localizedKey
     static let MESSAGE_TITLE = "Massage"._localizedKey
     static let ACCOUNT_PRIVACY_TITLE = "Account Privacy"._localizedKey
+    static let CONFIRM_LOGOUT_MESSAGE = "Are you sure you want to logout?"._localizedKey
 
     // MARK: - Edit Profile
     static let EDIT_PROFILE_TITLE = "Edit Profile"._localizedKey

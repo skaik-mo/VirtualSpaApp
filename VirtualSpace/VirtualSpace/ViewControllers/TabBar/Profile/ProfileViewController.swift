@@ -42,9 +42,7 @@ class ProfileViewController: UIViewController {
 private extension ProfileViewController {
 
     @objc func logoutAction() {
-        debugPrint(#function)
-        AuthController().clearUserDefaults()
-        MainNavigationController.showFirstView()
+        UserController().logout()
     }
 }
 
@@ -58,7 +56,7 @@ private extension ProfileViewController {
     func setUpData() {
         let userMenu: [GlobalConstants.ProfileMenu] = [.AccountPrivacy, .Reservations, .Massages, .Following, .Friends, .EditProfile, .ChangePassword, .DeleteAccount]
         let busniessMenu: [GlobalConstants.ProfileMenu] = [.AccountPrivacy, .Massages, .Followers, .EditProfile, .ChangePassword]
-        self.menu = AuthController().fetchAuth() == .User ? userMenu : busniessMenu
+        self.menu = UserController().fetchUser()?.type == .User ? userMenu : busniessMenu
     }
 
     func setUpTableView() {

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>334607593089-5l8kiag9vbcnmhov0fil9chsgcqdfaa4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.334607593089-5l8kiag9vbcnmhov0fil9chsgcqdfaa4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBrBSXWTyr9tK77NcwlfN3Mk_Ui3wv8JF0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>334607593089</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>skaik-mo.VirtualSpa</string>
+	<key>PROJECT_ID</key>
+	<string>virtual-spa-c0bd0</string>
+	<key>STORAGE_BUCKET</key>
+	<string>virtual-spa-c0bd0.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:334607593089:ios:84e895c77dd04b2c55e780</string>
+</dict>
+</plist>

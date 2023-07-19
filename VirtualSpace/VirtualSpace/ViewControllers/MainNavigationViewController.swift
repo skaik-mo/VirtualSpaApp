@@ -62,11 +62,11 @@ extension MainNavigationController {
     }
 
     static func showFirstView() {
-        if let auth = AuthController().fetchAuth() {
+        if  UserController().isLoggedIn {
             let vc = MainTabBarController()
-            vc.auth = auth
             vc._rootPush()
             vc._isHideNavigation = false
+            vc._dismissAllVCs()
         } else {
             let vc = AuthenticationViewController()
             vc._rootPush()

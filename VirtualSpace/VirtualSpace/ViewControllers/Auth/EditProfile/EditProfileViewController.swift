@@ -21,7 +21,7 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
 
     // MARK: Properties
-    private var auth = AuthController().fetchAuth()
+    private var auth = UserController().fetchUser()
 
     // MARK: Init
     init() {
@@ -70,7 +70,7 @@ private extension EditProfileViewController {
         self.authNameTextField.setUpView(.Normal)
         self.authEmailTextField.setUpView(.Email)
         self.authPhoneTextField.setUpView(vc: self)
-        self.bioStack.isHidden = self.auth == .User ? true : false
+        self.bioStack.isHidden = self.auth?.type == .User ? true : false
         self.saveButton.applyButtonStyle(.Primary(40))
     }
 

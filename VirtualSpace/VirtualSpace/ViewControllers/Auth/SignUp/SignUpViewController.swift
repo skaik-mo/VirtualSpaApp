@@ -148,8 +148,8 @@ private extension SignUpViewController {
         return true
     }
 
-    func getAuth() -> GlobalConstants.UserType {
-        return self.type
+    func getAuth() -> UserModel {
+        return .init(email: emailTextField.text, password: passwordTextField.text, name: nameTextField.text, phone: phoneTextField.text, type: self.type)
     }
 
     func signUp() {
@@ -158,10 +158,11 @@ private extension SignUpViewController {
             self.isEnableSignUp = true
             return
         }
-        AuthController().saveAuth(auth: getAuth())
-        MainNavigationController.showFirstView()
-        self._dismissAllVCs()
-        self.isEnableSignUp = true
+        _ = UserController().signUp(userModel: getAuth()).handlerDidFinishRequest {
+            self.isEnableSignUp = true
+        }.handlerofflineLoad {
+            self.isEnableSignUp = true
+        }
     }
 
 }

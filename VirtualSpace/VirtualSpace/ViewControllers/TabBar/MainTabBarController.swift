@@ -10,7 +10,7 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
-    var auth: GlobalConstants.UserType = AuthController().fetchAuth() ?? .User
+    var auth: GlobalConstants.UserType = UserController().fetchUser()?.type ?? .User
     var indicatorView: TabBarIndicatorView?
     override var title: String? {
         didSet {

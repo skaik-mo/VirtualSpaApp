@@ -47,7 +47,7 @@ class PhoneTextFieldView: UIView {
         self.textField.countryPickerDelegate = self
         self.textField.phonePickerDelegate = vc
         self.textField.placeholder = "1xxxxx"
-        let country = Country.country(for: NKVSource(countryCode: "PS"))
+        let country = Country.country(for: NKVSource(countryCode: "US"))
         self.textField.country = country
     }
 
