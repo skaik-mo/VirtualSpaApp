@@ -111,10 +111,8 @@ private extension SignInViewController {
             return
         }
         _ = UserController().signIn(email: self.emailTextField.text, password: self.passwordTextField.text).handlerDidFinishRequest {
-            debugPrint("handlerDidFinishRequest")
             self.isEnableSignIn = true
         }.handlerofflineLoad {
-            debugPrint("handlerofflineLoad")
             self.isEnableSignIn = true
         }
     }

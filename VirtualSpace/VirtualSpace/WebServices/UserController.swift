@@ -118,7 +118,7 @@ extension UserController {
 
 }
 
-// MARK: - Logout && Change Password
+// MARK: - Logout
 extension UserController {
 
     func logout() {
@@ -132,4 +132,26 @@ extension UserController {
             }
         })
     }
+}
+
+// MARK: - Reset || Change Password
+extension UserController {
+
+    func passwordReset(_ email: String) -> UserController {
+        guard Reachability.shared.isConnected else {
+            DispatchQueue.main.async {
+                self.offlineLoad?()
+            }
+            return self
+        }
+        Helper.showLoader(isLoding: true)
+        auth.sendPasswordReset(withEmail: email) { error in
+            self.didFinishRequest?()
+            guard ResponseHandler.responseHandler(error: error) else { return }
+            Helper.showLoader(isLoding: false)
+            SceneDelegate.shared?._topVC?._showAlertOK(message: Strings.RESET_PASSWORD_Message.replacingOccurrences(of: "{email}", with: email))
+        }
+        return self
+    }
+
 }

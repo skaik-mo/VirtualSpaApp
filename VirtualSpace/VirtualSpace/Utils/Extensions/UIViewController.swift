@@ -89,7 +89,7 @@ extension UIViewController {
             okButtonAction?()
         }
         alert.addAction(okayAction)
-        alert._presentVC()
+        SceneDelegate.shared?.rootNavigationController?._topMostViewController?.present(alert, animated: true)
     }
 
     func _showErrorAlertOK(title: String = Strings.WRONG_TITLE, message: String?, okButtonAction: (() -> Void)? = nil) {

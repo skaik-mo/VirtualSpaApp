@@ -65,6 +65,7 @@ class Strings {
     // MARK: - Forgot Password
     static let FORGOT_PASSWORD_TITLE = "Forgot Password"._localizedKey
     static let SEND_TITLE = "Send"._localizedKey
+    static let RESET_PASSWORD_Message = "We have sent a password reset email to your email address:\n{email}.\nPlease check your inbox to continue."._localizedKey
 
     // MARK: - Profile
     static let PROFILE_TITLE = "Profile"._localizedKey

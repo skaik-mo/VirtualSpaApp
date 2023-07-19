@@ -83,7 +83,11 @@ private extension ForgotPasswordViewController {
             self.isEnableSend = true
             return
         }
-        self.isEnableSend = true
+        _ = UserController().passwordReset(emailTextField.text).handlerDidFinishRequest {
+            self.isEnableSend = true
+        }.handlerofflineLoad {
+            self.isEnableSend = true
+        }
     }
 
 }
