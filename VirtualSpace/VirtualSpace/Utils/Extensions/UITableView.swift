@@ -32,9 +32,9 @@ extension UITableView {
     }
 
     // MARK: Dequeue Cell
-    func _dequeueReusableCell<T: UITableViewCell>() -> T {
-        guard let cell = dequeueReusableCell(withIdentifier: String(describing: T.self)) as? T else {
-            fatalError("Could not locate viewcontroller with identifier \((T.self)._id) in storyboard.")
+    func _dequeueReusableCell<T: UITableViewCell>(withIdentifier identifier: String = String(describing: T.self)) -> T {
+        guard let cell = dequeueReusableCell(withIdentifier: identifier) as? T else {
+            fatalError("Could not locate viewcontroller with identifier \(identifier) in storyboard.")
         }
         return cell
     }
@@ -46,5 +46,18 @@ extension UITableView {
         }
         return headerFooterView
     }
+
+    func _dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView>(withIdentifier identifier: String) -> T {
+        guard let headerFooterView = dequeueReusableHeaderFooterView(withIdentifier: identifier) as? T else {
+            fatalError("Couldn't find UITableViewHeaderFooterView for \(identifier), make sure the view is registered with table view")
+        }
+        return headerFooterView
+    }
+//    func _dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView>(withIdentifier identifier: String = String(describing: T.self)) -> T {
+//        guard let headerFooterView = dequeueReusableHeaderFooterView(withIdentifier: identifier) as? T else {
+//            fatalError("Couldn't find UITableViewHeaderFooterView for \(identifier), make sure the view is registered with table view")
+//        }
+//        return headerFooterView
+//    }
 
 }

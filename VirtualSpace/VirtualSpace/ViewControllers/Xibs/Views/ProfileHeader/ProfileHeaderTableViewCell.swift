@@ -22,16 +22,14 @@ class ProfileHeaderTableViewCell: UITableViewHeaderFooterView {
     }
 
     func configureHeader() {
-        if let headerOject {
-            self.backgroundImage.image = .demo
-            self.authImage.image = .demo
-            self.authNameLabel.text = "Mohammed"
-            self.authEmailLabel.text = "m@s.com"
+        let user = UserController().fetchUser()
+        self.backgroundImage.fetchImage(user?.coverImage, .ic_placeholder)
+        self.authNameLabel.text = user?.name
+        self.authEmailLabel.text = user?.email
+        if let image = user?.image {
+            self.authImage.fetchImage(image, .ic_placeholder)
         } else {
-            self.backgroundImage.image = nil
-            self.authImage.image = nil
-            self.authNameLabel.text = nil
-            self.authEmailLabel.text = nil
+            self.authImage.image = .ic_placeholder2
         }
     }
 

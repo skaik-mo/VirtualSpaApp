@@ -13,6 +13,16 @@ class PhoneTextFieldView: UIView {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: NKVPhonePickerTextField!
+    var phone: String?
+    var countryCode: String? {
+        get {
+            return self.textField.country?.countryCode
+        }
+        set {
+            let country = Country.init(countryCode: newValue ?? "US", phoneExtension: phone ?? "")
+            self.textField.country = country
+        }
+    }
     var title: String = "" {
         didSet {
             self.label.text = self.title
@@ -47,8 +57,6 @@ class PhoneTextFieldView: UIView {
         self.textField.countryPickerDelegate = self
         self.textField.phonePickerDelegate = vc
         self.textField.placeholder = "1xxxxx"
-        let country = Country.country(for: NKVSource(countryCode: "US"))
-        self.textField.country = country
     }
 
 }

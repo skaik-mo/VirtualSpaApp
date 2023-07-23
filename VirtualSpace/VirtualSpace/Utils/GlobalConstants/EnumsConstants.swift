@@ -21,6 +21,7 @@ extension GlobalConstants {
 extension GlobalConstants {
     enum Collection: String {
         case User
+        case Test
     }
 
 }
@@ -185,7 +186,7 @@ extension GlobalConstants {
                 let vc = ChangePasswordViewController()
                 vc._push()
             case .DeleteAccount:
-                debugPrint("DeleteAccount")
+                UserController().deleteAccount()
             }
 
         }

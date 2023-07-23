@@ -16,6 +16,7 @@ class PasswordTextFieldView: UIView {
     @IBOutlet weak var iconButton: UIButton!
 
     // MARK: Properties
+    private var field = Strings.PASSWORD_TITLE
     private var isSecure = true {
         didSet {
             self.iconButton.isSelected = !isSecure
@@ -25,6 +26,7 @@ class PasswordTextFieldView: UIView {
     var title: String = "" {
         didSet {
             self.label.text = self.title
+            self.field = self.title
         }
     }
     var placeholder: String = "" {
@@ -33,7 +35,7 @@ class PasswordTextFieldView: UIView {
         }
     }
     var isInvalid: Bool {
-        return PasswordValidator().hasValidValue(self.textfield._getText)
+        return PasswordValidator(field: field).hasValidValue(self.textfield._getText)
     }
     var text: String {
         self.textfield._getText
@@ -60,6 +62,10 @@ class PasswordTextFieldView: UIView {
     func setUpView() {
         self.isSecure = true
         self.textfield._setAttributedPlaceholder(color: .color_7A7A7A, font: .poppinsRegular14)
+    }
+
+    func clear() {
+        self.textfield.text = nil
     }
 
     @IBAction func iconAction(_ sender: Any) {

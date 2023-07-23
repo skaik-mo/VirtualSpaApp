@@ -8,10 +8,11 @@
 import Foundation
 
 struct PasswordValidator: Validator {
-    var field: String = Strings.PASSWORD_TITLE
+    var field: String
     var validationRules: [ValidationRule]
 
-    init() {
+    init(field: String) {
+        self.field = field
         self.validationRules = [
             CharacterCountValidationRule(field: field, minCount: 6, maxCount: nil)
         ]

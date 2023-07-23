@@ -63,4 +63,69 @@ class FirebaseStorageController: HandlerFinish {
         })
         return self
     }
+
+    func uploadFiles(data values: [String: Data?], handler: @escaping ((_ urls: [String: URL]) -> Void)) -> Self {
+        guard !values.isEmpty else {
+            handler([:])
+            return self
+        }
+        var urls: [String: URL] = [:]
+        var uploadCount = 0
+
+        for data in values {
+            if let value = data.value {
+                let riversRef = storage.reference().child(data.key)
+                let metadata = StorageMetadata()
+                metadata.contentType = "image/jpeg"
+                _ = riversRef.putData(value, metadata: metadata) { _, error in
+                    guard ResponseHandler.responseHandler(error: error, isShowMessage: true) else {
+                        DispatchQueue.main.async {
+                            self.didFinishRequest?()
+                        }
+                        return
+                    }
+                    riversRef.downloadURL { (url, error) in
+                        guard ResponseHandler.responseHandler(error: error, isShowMessage: true) else {
+                            DispatchQueue.main.async {
+                                self.didFinishRequest?()
+                            }
+                            return
+                        }
+                        guard let downloadURL = url else {
+                            handler([:])
+                            DispatchQueue.main.async {
+                                self.didFinishRequest?()
+                            }
+                            return
+                        }
+                        urls[data.key] = downloadURL
+                        uploadCount += 1
+                        debugPrint("Number of images successfully uploaded: \(uploadCount)")
+                        if uploadCount == values.count {
+                            debugPrint("Image is uploaded successfully, uploadedImageUrlsArray: \(urls)")
+                            handler(urls)
+                        }
+                    }
+                }
+            }
+        }
+        return self
+    }
+}
+
+// MARK: - Delete File
+extension FirebaseStorageController {
+
+    func deleteFile(path: String, isShowLoder: Bool = true, success: @escaping () -> Void) {
+        if isShowLoder {
+            Helper.showLoader(isLoding: true)
+        }
+        storage.reference().child(path).delete { error in
+            if let error = error as? NSError, StorageErrorCode.init(rawValue: (error).code) != .objectNotFound, ResponseHandler.responseHandler(error: error) { return }
+            success()
+            if isShowLoder {
+                Helper.showLoader(isLoding: false)
+            }
+        }
+    }
 }

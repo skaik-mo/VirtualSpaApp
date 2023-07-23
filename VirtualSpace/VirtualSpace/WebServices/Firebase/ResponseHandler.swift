@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseStorage
 
 class ResponseHandler {
 
@@ -53,6 +54,36 @@ extension Error {
             return Strings.USER_DISABLED_MESSAGE
         case .networkError:
             return Strings.NETWORK_ERROR_TITLE
+        default:
+            return self.localizedFirebaseStorageErrorMessage
+        }
+    }
+
+    var localizedFirebaseStorageErrorMessage: String {
+        let authErrorCode = StorageErrorCode.init(rawValue: (self as NSError).code)
+        switch authErrorCode {
+        case .objectNotFound:
+            return Strings.OBJECT_NOT_FOUND_MESSAGE
+        case .bucketNotFound:
+            return Strings.BUCKET_NOT_FOUND_MESSAGE
+        case .projectNotFound:
+            return Strings.PROJECT_NOT_FOUND_MESSAGE
+        case .invalidArgument:
+            return Strings.INVALID_ARGUMENT_MESSAGE
+        case .downloadSizeExceeded:
+            return Strings.SIZE_EXCEEDED_MESSAGE
+        case .retryLimitExceeded:
+            return Strings.LIMIT_EXCEEDED_MESSAGE
+        case .unauthenticated:
+            return Strings.UNAUTHENTICATED_MESSAGE
+        case .unauthorized:
+            return Strings.UNAUTHORIZED_MESSAGE
+        case .quotaExceeded:
+            return Strings.QUOTA_EXCEEDED_STORAGE_MESSAGE
+        case .nonMatchingChecksum:
+            return Strings.MATCHING_CHECKSUM_MESSAGE
+        case .cancelled:
+            return Strings.CANCELLED_MESSAGE
         default:
             return self.localizedDescription
         }

@@ -40,6 +40,18 @@ class Strings {
     static let INVALID_TOKEN_MESSAGE = "Invalid user token."._localizedKey
     static let USER_DISABLED_MESSAGE = "Your account has been disabled. Please contact support."._localizedKey
 
+    static let OBJECT_NOT_FOUND_MESSAGE = "File doesn't exist."._localizedKey
+    static let BUCKET_NOT_FOUND_MESSAGE = "The specified bucket does not exist."._localizedKey
+    static let PROJECT_NOT_FOUND_MESSAGE = "No project is configured for Firebase Storage."._localizedKey
+    static let INVALID_ARGUMENT_MESSAGE = "An invalid argument was provided."._localizedKey
+    static let SIZE_EXCEEDED_MESSAGE = "The size of the downloaded file exceeds the limit (Maximum allowed: 2GB)."._localizedKey
+    static let LIMIT_EXCEEDED_MESSAGE = "The maximum time limit on an operation (upload, download, delete, etc.) has been exceeded."._localizedKey
+    static let UNAUTHENTICATED_MESSAGE = "User is unauthenticated. Authenticate and try again."._localizedKey
+    static let UNAUTHORIZED_MESSAGE = "Unauthorized to access the file."._localizedKey
+    static let QUOTA_EXCEEDED_STORAGE_MESSAGE = "Quota on your Firebase Storage bucket has been exceeded."._localizedKey
+    static let MATCHING_CHECKSUM_MESSAGE = "File on the client does not match the checksum of the file received by the server."._localizedKey
+    static let CANCELLED_MESSAGE = "The operation was cancelled."._localizedKey
+
     // MARK: - Authentication
     static let VIRTUAL_SPA_TITLE = "VIRTUAL SPA"._localizedKey
     static let LOREM_IPSUM_TITLE = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"._localizedKey
@@ -76,17 +88,23 @@ class Strings {
     static let MESSAGE_TITLE = "Massage"._localizedKey
     static let ACCOUNT_PRIVACY_TITLE = "Account Privacy"._localizedKey
     static let CONFIRM_LOGOUT_MESSAGE = "Are you sure you want to logout?"._localizedKey
+    static let CONFIRM_DELETE_ACCOUNT_MESSAGE = "Are you sure you want to delete your account?"._localizedKey
 
     // MARK: - Edit Profile
     static let EDIT_PROFILE_TITLE = "Edit Profile"._localizedKey
     static let BIO_TITLE = "Bio"._localizedKey
     static let SAVE_TITLE = "Save"._localizedKey
+    static let ADD_PHOTO_MESSSAGE = "Please add photo"._localizedKey
+    static let ADD_COVER_PHOTO_MESSSAGE = "Please add cover photo"._localizedKey
 
     // MARK: - Change Password
     static let CHANGE_PASS_TITLE = "Change Password"._localizedKey
     static let CURRENT_PASS_TITLE = "Current password"._localizedKey
     static let NEW_PASS_TITLE = "New password"._localizedKey
     static let REPEAT_PASS_TITLE = "Repeat password"._localizedKey
+    static let CURRENT_PASS_INCORRECT_MESSAGE = "The current password is incorrect"._localizedKey
+    static let NOT_SAME_PASS_MESSAGE = "The new password must not be the same as the current password"._localizedKey
+    static let SAME_PASS_MESSAGE = "Ensure that the repeat password is the same as the new password"._localizedKey
 
     // MARK: - Notification
     static let NOTIFY_TITLE = "Notification"._localizedKey

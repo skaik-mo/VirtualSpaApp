@@ -34,6 +34,7 @@ class ProfileViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tableView.reloadData()
     }
 
 }
@@ -115,7 +116,6 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header: ProfileHeaderTableViewCell = tableView._dequeueReusableHeaderFooterView()
-        header.headerOject = ""
         header.configureHeader()
         return header
     }

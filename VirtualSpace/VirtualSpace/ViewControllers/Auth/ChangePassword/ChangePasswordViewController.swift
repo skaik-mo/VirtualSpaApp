@@ -17,6 +17,12 @@ class ChangePasswordViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
 
     // MARK: Properties
+    let auth = UserController().fetchUser()
+    private var isEnableSave = true {
+        didSet {
+            self.saveButton.isEnabled = isEnableSave
+        }
+    }
 
     // MARK: Init
     init() {
@@ -46,6 +52,7 @@ private extension ChangePasswordViewController {
 
     @IBAction func saveAction(_ sender: Any) {
         debugPrint(#function)
+        self.save()
     }
 }
 
@@ -72,6 +79,55 @@ private extension ChangePasswordViewController {
 
     func fetchData() {
 
+    }
+
+}
+
+private extension ChangePasswordViewController {
+
+    func validation() -> Bool {
+        guard self.currentPasswordTextField.isInvalid else { return false }
+        guard self.newPassworTextField.isInvalid else { return false }
+        guard self.repeatPassworTextField.isInvalid else { return false }
+        guard currentPasswordTextField.text == auth?.password else {
+            self._showErrorAlertOK(message: Strings.CURRENT_PASS_INCORRECT_MESSAGE)
+            return false
+        }
+        guard currentPasswordTextField.text != newPassworTextField.text else {
+            self._showErrorAlertOK(message: Strings.NOT_SAME_PASS_MESSAGE)
+            return false
+        }
+        guard newPassworTextField.text == repeatPassworTextField.text else {
+            self._showErrorAlertOK(message: Strings.SAME_PASS_MESSAGE)
+            return false
+        }
+        return true
+    }
+
+    func clearData() {
+        self.currentPasswordTextField.clear()
+        self.newPassworTextField.clear()
+        self.repeatPassworTextField.clear()
+    }
+
+    func getAuth() -> UserModel? {
+        guard let auth else { return nil }
+        auth.password = self.newPassworTextField.text
+        return auth
+    }
+
+    func save() {
+        self.isEnableSave = false
+        guard validation(), let auth = getAuth() else {
+            self.isEnableSave = true
+            return
+        }
+        _ = UserController().changePassword(user: auth).handlerDidFinishRequest(handler: {
+            self.isEnableSave = true
+            self.clearData()
+        }).handlerofflineLoad(handler: {
+            self.isEnableSave = true
+        })
     }
 
 }

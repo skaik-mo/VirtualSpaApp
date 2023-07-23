@@ -92,6 +92,10 @@ extension UIImage {
         "ic_placeholder"._toImage
     }
 
+    static var ic_placeholder2: UIImage? {
+        "ic_placeholder2"._toImage
+    }
+
     static var ic_send: UIImage? {
         "ic_send"._toImage
     }

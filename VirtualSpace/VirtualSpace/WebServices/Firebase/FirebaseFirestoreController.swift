@@ -66,6 +66,50 @@ class FirebaseFirestoreController: HandlerFinish {
         }
         return self
     }
+
+    func getDocuments(isShowLoder: Bool = true, isShowMessage: Bool = true, success: @escaping ((_ objects: [Any]) -> Void)) -> Self {
+        guard Reachability.shared.isConnected else {
+            DispatchQueue.main.async {
+                self.offlineLoad?()
+            }
+            return self
+        }
+        if isShowLoder {
+            Helper.showLoader(isLoding: true)
+        }
+        reference?.getDocuments(completion: { response, error in
+            guard ResponseHandler.responseHandler(error: error) else {
+                self.didFinishRequest?()
+                return
+            }
+            if isShowLoder {
+                Helper.showLoader(isLoding: false)
+            }
+            var objects: [Any] = []
+            response?.documents.forEach({ data in
+                objects.append(data.data())
+            })
+            success(objects)
+            self.didFinishRequest?()
+        })
+        return self
+    }
+
+    func deleteDocument(document: String, isShowLoder: Bool = true, isShowMessage: Bool = true, success: @escaping () -> Void) {
+        guard Reachability.shared.isConnected else { return }
+        if isShowLoder {
+            Helper.showLoader(isLoding: true)
+        }
+        reference?.document(document).delete(completion: { error in
+            guard ResponseHandler.responseHandler(error: error) else { return }
+            if isShowLoder {
+                Helper.showLoader(isLoding: false)
+            }
+            success()
+            self.didFinishRequest?()
+        })
+    }
+
 }
 
 // extension DocumentReference {

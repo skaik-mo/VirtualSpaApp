@@ -149,7 +149,7 @@ private extension SignUpViewController {
     }
 
     func getAuth() -> UserModel {
-        return .init(email: emailTextField.text, password: passwordTextField.text, name: nameTextField.text, phone: phoneTextField.text, type: self.type)
+        return .init(email: emailTextField.text, password: passwordTextField.text, name: nameTextField.text, countryCode: phoneTextField.countryCode, phone: phoneTextField.text, type: self.type)
     }
 
     func signUp() {

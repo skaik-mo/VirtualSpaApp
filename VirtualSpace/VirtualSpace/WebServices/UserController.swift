@@ -59,7 +59,9 @@ extension UserController {
         Helper.showLoader(isLoding: true)
         self.createUser(email: userModel.email, password: userModel.password) { user in
             userModel.id = user.uid
-            self.setUser(user: userModel)
+            self.setUser(user: userModel, completion: {
+                MainNavigationController.showFirstView()
+            })
         }
         return self
     }
@@ -75,11 +77,11 @@ extension UserController {
         }
     }
 
-    private func setUser(user: UserModel) {
+    private func setUser(user: UserModel, completion: (() -> Void)? = nil) {
         guard let id = user.id else { fatalError("\(#function) The user id is nil") }
-        _ = userReference.setData(document: id, dictionary: user.getDictionary(), success: {
+        _ = userReference.setData(document: id, dictionary: user.getDictionaryForDatabse(), success: {
                 self.saveUser(user: user)
-                MainNavigationController.showFirstView()
+                completion?()
             }).handlerDidFinishRequest(handler: self.didFinishRequest).handlerofflineLoad(handler: self.offlineLoad)
     }
 
@@ -154,4 +156,103 @@ extension UserController {
         return self
     }
 
+    func changePassword(user: UserModel) -> Self {
+        guard let newPassword = user.password else { fatalError("\(#function) The new passowrd is nil") }
+        guard Reachability.shared.isConnected else {
+            DispatchQueue.main.async {
+                self.offlineLoad?()
+            }
+            return self
+        }
+        Helper.showLoader(isLoding: true)
+        auth.currentUser?.updatePassword(to: newPassword) { error in
+            guard ResponseHandler.responseHandler(error: error) else {
+                self.didFinishRequest?()
+                return
+            }
+            self.saveUser(user: user)
+            Helper.showLoader(isLoding: false)
+            self.didFinishRequest?()
+        }
+        return self
+    }
+}
+
+// MARK: - Edit
+extension UserController {
+
+    func editUser(user: UserModel, image: UIImage?, coverImage: UIImage?, imageCompletion: @escaping (_ isCoverImage: Bool) -> Void) -> Self {
+        guard let id = user.id else { fatalError("\(#function) The User id is nil") }
+        guard Reachability.shared.isConnected else {
+            DispatchQueue.main.async {
+                self.offlineLoad?()
+            }
+            return self
+        }
+        Helper.showLoader(isLoding: true)
+        self.updateEmail(email: user.email) {
+            var data: [String: Data?] = [:]
+            let imagePath = "Users/\(id)/userImage.jpeg"
+            let coverImagePath = "Users/\(id)/coverImage.jpeg"
+            if let image {
+                data[imagePath] = image.jpegData(compressionQuality: 0.8)
+            }
+            if let coverImage {
+                data[coverImagePath] = coverImage.jpegData(compressionQuality: 0.8)
+            }
+            _ = FirebaseStorageController().uploadFiles(data: data, handler: { urls in
+                if let image = urls[imagePath]?.absoluteString {
+                    imageCompletion(false)
+                    user.image = image
+                }
+                if let coverImage = urls[coverImagePath]?.absoluteString {
+                    imageCompletion(true)
+                    user.coverImage = coverImage
+                }
+                self.setUser(user: user)
+            }).handlerofflineLoad(handler: self.offlineLoad).handlerDidFinishRequest(handler: { self.didFinishRequest?() })
+        }
+        return self
+    }
+
+    func updateEmail(email: String?, completion: (() -> Void)?) {
+        guard let email, let oldEmail = self.fetchUser()?.email, email != oldEmail else {
+            completion?()
+            return
+        }
+        auth.currentUser?.updateEmail(to: email, completion: { error in
+            guard ResponseHandler.responseHandler(error: error) else {
+                self.didFinishRequest?()
+                return
+            }
+            completion?()
+            self.didFinishRequest?()
+        })
+    }
+}
+
+// MARK: - Delete Account
+extension UserController {
+
+    func deleteAccount() {
+        AppDelegate.shared?._topVC?._showAlert(message: Strings.CONFIRM_DELETE_ACCOUNT_MESSAGE, buttonAction1: {
+            guard let auth = self.auth.currentUser else { fatalError("\(#function) The User id is nil") }
+            let id = auth.uid
+            guard Reachability.shared.isConnected else { return }
+            Helper.showLoader(isLoding: true)
+            auth.delete { error in
+                guard ResponseHandler.responseHandler(error: error) else { return }
+                self.userReference.deleteDocument(document: id, isShowLoder: false) {
+                    let imagePath = "Users/\(id)/userImage.jpeg"
+                    let coverImagePath = "Users/\(id)/coverImage.jpeg"
+                    FirebaseStorageController().deleteFile(path: imagePath, isShowLoder: false) {
+                        FirebaseStorageController().deleteFile(path: coverImagePath, isShowLoder: false) {
+                            MainNavigationController.showFirstView()
+                            Helper.showLoader(isLoding: false)
+                        }
+                    }
+                }
+            }
+        })
+    }
 }
