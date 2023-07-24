@@ -12,7 +12,7 @@ class PlaceImageCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var placeImage: UIImageView!
 
-    var object: Any?
+    var object: String?
     private var isSelectedCell = false {
         didSet {
             self.setBorder()
@@ -25,11 +25,10 @@ class PlaceImageCollectionViewCell: UICollectionViewCell {
     }
 
     func configureCell() {
-        self.placeImage.image = .demo
-        if let object = object as? UIImage {
-            self.placeImage.image = object
+        if let object {
+            self.placeImage.fetchImage(object, .ic_placeholder)
             if let topVC = self._topVC as? PlaceDetailsViewController {
-                self.isSelectedCell = topVC.selectedPlaceImage == object
+                self.isSelectedCell = topVC.selectedPlaceImageStr == object
             }
         }
     }

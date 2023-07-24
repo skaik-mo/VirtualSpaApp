@@ -200,7 +200,13 @@ extension HomeUserViewController: UICollectionViewDelegate, UICollectionViewData
             collectionView.reloadData()
             self.homeCollectionView.reloadData()
         } else {
-            let vc = PlaceDetailsViewController()
+            let vc = PlaceDetailsViewController(place: self.placesFilters[indexPath.row])
+            vc.handleBack = { [weak self] place in
+                if let index = self?.placesFilters.firstIndex(where: { $0.id == place.id }) {
+                    self?.placesFilters[index] = place
+                    self?.homeCollectionView.reloadData()
+                }
+            }
             vc._push()
         }
     }

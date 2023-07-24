@@ -198,6 +198,7 @@
 		E7F3E8E42A6E5470007270F6 /* SubCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E8E32A6E5470007270F6 /* SubCategoryController.swift */; };
 		E7F3E8E62A6E586F007270F6 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E8E52A6E586F007270F6 /* Place.swift */; };
 		E7F3E8E82A6E58E6007270F6 /* PlaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E8E72A6E58E6007270F6 /* PlaceController.swift */; };
+		E7F3E8EB2A6E8DA9007270F6 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E8EA2A6E8DA9007270F6 /* AudioController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -389,6 +390,7 @@
 		E7F3E8E32A6E5470007270F6 /* SubCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryController.swift; sourceTree = "<group>"; };
 		E7F3E8E52A6E586F007270F6 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		E7F3E8E72A6E58E6007270F6 /* PlaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceController.swift; sourceTree = "<group>"; };
+		E7F3E8EA2A6E8DA9007270F6 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -794,12 +796,11 @@
 			isa = PBXGroup;
 			children = (
 				E7373F632A5AC9B5007A1186 /* Strings.swift */,
-				E7868BA42A6014F7008917DD /* Helper.swift */,
-				E77058702A5EB01B004ADBF9 /* GlobalConstants */,
-				E77CF7B42A5BD51800E01D49 /* Validators */,
 				E7373F672A5AC9B5007A1186 /* Designables */,
-				E7373F6A2A5AC9B5007A1186 /* Libs */,
 				E7373F6D2A5AC9B5007A1186 /* Extensions */,
+				E77058702A5EB01B004ADBF9 /* GlobalConstants */,
+				E7F3E8E92A6E8D86007270F6 /* Helper */,
+				E7373F6A2A5AC9B5007A1186 /* Libs */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1308,6 +1309,16 @@
 			path = ChangePassword;
 			sourceTree = "<group>";
 		};
+		E7F3E8E92A6E8D86007270F6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E7868BA42A6014F7008917DD /* Helper.swift */,
+				E7F3E8EA2A6E8DA9007270F6 /* AudioController.swift */,
+				E77CF7B42A5BD51800E01D49 /* Validators */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1590,6 +1601,7 @@
 				E72346982A5FC6140061877B /* PlaceInfoHeaderTableViewCell.swift in Sources */,
 				E75636452A5AE49E0008C91B /* SignInViewController.swift in Sources */,
 				E77058762A5EB05E004ADBF9 /* EnumsConstants.swift in Sources */,
+				E7F3E8EB2A6E8DA9007270F6 /* AudioController.swift in Sources */,
 				E798C6252A67B407009C7D86 /* ResponseHandler.swift in Sources */,
 				E723BBA72A5D6FB80026782B /* ProfileTableViewCell.swift in Sources */,
 				E7373F492A5AC9B5007A1186 /* MainNavigationViewController.swift in Sources */,

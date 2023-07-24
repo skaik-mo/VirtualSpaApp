@@ -28,6 +28,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
             self.placeImage.fetchImage(object.images.first, .ic_placeholder)
             self.placeNameLabel.text = object.name
             self.placeAddressLabel.text = object.address
+            self.likeButton.isSelected = object.isFavorite
             var time = ""
             var distance = ""
             if let _distance = object.distance {
@@ -41,8 +42,20 @@ class HomeCollectionViewCell: UICollectionViewCell {
 
     }
 
+    private func setFavorite() {
+        guard let object else { return }
+        object.isFavorite = self.likeButton.isSelected
+        PlaceController().addFivoraitePlace(place: object)
+        if let topVC = self._topVC as? HomeUserViewController {
+            if let index = topVC.placesFilters.firstIndex(where: { $0.id == object.id }) {
+                topVC.placesFilters[index] = object
+            }
+        }
+    }
+
     @IBAction func likeAction(_ sender: Any) {
         self.likeButton.isSelected.toggle()
+        self.setFavorite()
     }
 
 }

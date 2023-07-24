@@ -77,7 +77,7 @@ extension UserController {
         }
     }
 
-    private func setUser(user: UserModel, completion: (() -> Void)? = nil) {
+    func setUser(user: UserModel, completion: (() -> Void)? = nil) {
         guard let id = user.id else { fatalError("\(#function) The user id is nil") }
         _ = userReference.setData(document: id, dictionary: user.getDictionaryForDatabse(), success: {
                 self.saveUser(user: user)
@@ -124,7 +124,7 @@ extension UserController {
 extension UserController {
 
     func logout() {
-        AppDelegate.shared?._topVC?._showAlert(message: Strings.CONFIRM_LOGOUT_MESSAGE, buttonAction1: {
+        SceneDelegate.shared?._topVC?._showAlert(message: Strings.CONFIRM_LOGOUT_MESSAGE, buttonAction1: {
             do {
                 try self.auth.signOut()
                 Helper.clearUserDefaults()
@@ -235,7 +235,7 @@ extension UserController {
 extension UserController {
 
     func deleteAccount() {
-        AppDelegate.shared?._topVC?._showAlert(message: Strings.CONFIRM_DELETE_ACCOUNT_MESSAGE, buttonAction1: {
+        SceneDelegate.shared?._topVC?._showAlert(message: Strings.CONFIRM_DELETE_ACCOUNT_MESSAGE, buttonAction1: {
             guard let auth = self.auth.currentUser else { fatalError("\(#function) The User id is nil") }
             let id = auth.uid
             guard Reachability.shared.isConnected() else { return }

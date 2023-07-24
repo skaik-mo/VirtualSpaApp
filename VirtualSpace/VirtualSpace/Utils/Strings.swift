@@ -16,6 +16,9 @@ class Strings {
     static let ALERT_TITLE = "Alert"._localizedKey
     static let CANCEL_TITLE = "Cancel"._localizedKey
     static let NETWORK_ERROR_TITLE = "It seems that there is no internet connection."._localizedKey
+    static let PERMISSION_DENIED_TITLE = "Microphone Permission Denied"._localizedKey
+    static let PERMISSION_DENIED_MESSAGE = "Please grant microphone permission to use this feature. After changing the permission, please restart the app."._localizedKey
+    static let SETTINGS_TITLE = "Settings"._localizedKey
 
     // MARK: - Validators
     static let INVALID_VALUE_MESSAGE = "{field} field is required"._localizedKey
@@ -167,6 +170,7 @@ class Strings {
     static let POSTS_DETAILS_TITLE = "Post Details"._localizedKey
     static let COMMENTS_TITLE = "Comments"._localizedKey
     static let ADD_COMMENT_PLACEHOLDER = "Add a comment"._localizedKey
+    static let TAKE_TOUR_TITLE = "Take a tour of Club {Club} - Dominican Republic [360°]"._localizedKey
 
     // MARK: - New Post
     static let NEW_POST_TITLE = "New Post"._localizedKey

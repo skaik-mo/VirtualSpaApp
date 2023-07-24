@@ -17,6 +17,8 @@ class UserModel {
     var bio: String?
     var image: String?
     var coverImage: String?
+    var favoritePosts: [String] = []
+    var favoritePlaces: [String] = []
     var type: GlobalConstants.UserType?
 
     init(id: String? = nil, email: String? = nil, password: String? = nil, name: String? = nil, countryCode: String? = nil, phone: String? = nil, bio: String? = nil, image: String? = nil, coverImage: String? = nil, type: GlobalConstants.UserType? = nil) {
@@ -43,6 +45,8 @@ class UserModel {
         self.bio = dictionary["bio"] as? String
         self.image = dictionary["image"] as? String
         self.coverImage = dictionary["coverImage"] as? String
+        self.favoritePosts = dictionary["favoritePosts"] as? [String] ?? []
+        self.favoritePlaces = dictionary["favoritePlaces"] as? [String] ?? []
         self.type = (dictionary["type"] as? Int) == 0 ? .User : .Business
     }
 
@@ -61,6 +65,8 @@ class UserModel {
             "phone": self.phone,
             "image": self.image,
             "coverImage": self.coverImage,
+            "favoritePosts": self.favoritePosts,
+            "favoritePlaces": self.favoritePlaces,
             "type": self.type?.rawValue
         ]
         if self.type == .Business {

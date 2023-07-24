@@ -97,6 +97,36 @@ class FirebaseFirestoreController: HandlerFinish {
         return self
     }
 
+    func searchWithDocumentIDs(documentIDs: [String], isShowLoder: Bool = true, isShowMessage: Bool = true, success: @escaping ((_ objects: [Any]) -> Void)) -> Self {
+        guard Reachability.shared.isConnected(isShowMessage: isShowMessage) else {
+            DispatchQueue.main.async {
+                self.offlineLoad?()
+            }
+            return self
+        }
+        if isShowLoder {
+            Helper.showLoader(isLoding: true)
+        }
+        reference?.whereField(FieldPath.documentID(), in: documentIDs).getDocuments(completion: { response, error in
+            guard ResponseHandler.responseHandler(error: error, isShowMessage: isShowMessage) else {
+                self.didFinishRequest?()
+                return
+            }
+            if isShowLoder {
+                Helper.showLoader(isLoding: false)
+            }
+            var objects: [Any] = []
+            response?.documents.forEach({ data in
+                var dictionary = data.data()
+                dictionary["id"] = data.documentID
+                objects.append(dictionary)
+            })
+            success(objects)
+            self.didFinishRequest?()
+        })
+        return self
+    }
+
     func fetchDocuments(limit: Int, isShowLoder: Bool = true, lastDocument: QueryDocumentSnapshot?, completion: @escaping ((_ dic: [[String: Any]], _ lastDocument: QueryDocumentSnapshot?) -> Void)) -> Self {
         guard Reachability.shared.isConnected(isShowMessage: false) else {
             DispatchQueue.main.async {

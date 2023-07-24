@@ -21,22 +21,39 @@ class PlaceDetailsViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var bottomStack: UIStackView!
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet weak var heightCollectionConstraint: NSLayoutConstraint!
 
     // MARK: Properties
-    var objects: [UIImage?] = [.ic_360, .demo, .ic_auth]
-    var objectsTemp: [UIImage?] = []
-    var height = 90.0 // height for the collection view
-    var selectedPlaceImage: UIImage?
-    var likeButton: UIBarButtonItem?
-    var isLike = false {
+    private let audioController = AudioController()
+    private var place: Place
+    private var images: [String] = []
+    private var selectedPlaceImage: UIImage?
+    private var height = 90.0 // height for the collection view
+    private var likeButton: UIBarButtonItem?
+    private var isLike = false {
         didSet {
             self.likeButton?.image = isLike ? .ic_heartCircleRed: .ic_heartCircle
         }
     }
+    private var isLoading = false {
+        didSet {
+            self.setIndicator()
+        }
+    }
+    var handleBack: ((_ place: Place) -> Void)?
+    var selectedPlaceImageStr: String? {
+        didSet {
+            let imageView = UIImageView()
+            imageView.fetchImage(self.selectedPlaceImageStr, .ic_placeholder)
+            self.selectedPlaceImage = imageView.image
+        }
+    }
 
     // MARK: Init
-    init() {
+    init(place: Place) {
+        self.place = place
+        self.images = place.images
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -49,7 +66,6 @@ class PlaceDetailsViewController: UIViewController {
         super.viewDidLoad()
         setUpView()
         setUpData()
-        fetchData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -62,6 +78,7 @@ class PlaceDetailsViewController: UIViewController {
         super.viewWillDisappear(animated)
         SceneDelegate.shared?.rootNavigationController?.backgroundColor = .color_FFFFFF
         SceneDelegate.shared?.rootNavigationController?.shadowColor = .color_A3A3A3
+        self.stopPlayAudio()
     }
 }
 
@@ -69,7 +86,7 @@ class PlaceDetailsViewController: UIViewController {
 private extension PlaceDetailsViewController {
 
     @IBAction func playAction(_ sender: Any) {
-        self.playButton.isSelected.toggle()
+        self.setAudio()
     }
 
     @IBAction func zoomAction(_ sender: Any) {
@@ -87,6 +104,9 @@ private extension PlaceDetailsViewController {
 
     @objc func likeAction() {
         self.isLike.toggle()
+        self.place.isFavorite = self.isLike
+        PlaceController().addFivoraitePlace(place: place)
+        handleBack?(place)
     }
 
 }
@@ -95,6 +115,7 @@ private extension PlaceDetailsViewController {
 private extension PlaceDetailsViewController {
 
     func setUpView() {
+        self.isLoading = false
         self.heightCollectionConstraint.constant = height
         self.setUpNaicgation()
         self.placeImageView.angleOffset = 180
@@ -105,16 +126,13 @@ private extension PlaceDetailsViewController {
     }
 
     func setUpData() {
-        self.objectsTemp = self.objects
-        self.selectedPlaceImage = self.objects.first ?? nil
+        self.isLike = self.place.isFavorite
+        self.selectedPlaceImageStr = self.images.first
         self.placeImageView.image = self.selectedPlaceImage
         self.placeImageView.panoramaType = .cylindrical
-        self.musicNameLabel.text = "Relaxing Jazz Music for Study slkdmlsdmcklsdmcklsdmklm"
-        self.descriptionLabel.text = "Take a tour of Club Med Punta Cana - Dominican Republic [360°]"
-    }
-
-    func fetchData() {
-
+        self.musicNameLabel.text = self.place.audioName
+        self.descriptionLabel.numberOfLines = 3
+        self.descriptionLabel.text = Strings.TAKE_TOUR_TITLE.replacingOccurrences(of: "{Club}", with: self.place.name ?? "")
     }
 
     func setUpNaicgation() {
@@ -135,7 +153,7 @@ private extension PlaceDetailsViewController {
             self._isHideNavigation = self.zoomButton.isSelected
             self.rotationStack.isHidden = self.zoomButton.isSelected
             self.descriptionStack.isHidden = self.zoomButton.isSelected
-            self.objectsTemp = self.zoomButton.isSelected ? [] : self.objects
+            self.images = self.zoomButton.isSelected ? [] : self.place.images
             self.collectionView.reloadData()
             self.bottomStack.isLayoutMarginsRelativeArrangement = !self.zoomButton.isSelected
             self.heightCollectionConstraint.constant = self.zoomButton.isSelected ? 0 : self.height
@@ -148,18 +166,18 @@ private extension PlaceDetailsViewController {
 extension PlaceDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.objectsTemp.count
+        self.images.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: PlaceImageCollectionViewCell = collectionView._dequeueReusableCell(for: indexPath)
-        cell.object = self.objectsTemp[indexPath.row]
+        cell.object = self.images[indexPath.row]
         cell.configureCell()
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.selectedPlaceImage = self.objectsTemp[indexPath.row]
+        self.selectedPlaceImageStr = self.images[indexPath.row]
         self.placeImageView.image = self.selectedPlaceImage
         self.placeImageView.panoramaType = .cylindrical
         collectionView.reloadData()
@@ -175,4 +193,45 @@ extension PlaceDetailsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: 80, height: 80)
     }
+}
+
+private extension PlaceDetailsViewController {
+
+    func setIndicator() {
+        switch self.isLoading {
+        case true:
+            self.indicatorView.isHidden = false
+            self.indicatorView.color = .color_FFFFFF
+            self.playButton.isHidden = true
+            self.indicatorView.startAnimating()
+        case false:
+            self.indicatorView.isHidden = true
+            self.playButton.isHidden = false
+            self.indicatorView.stopAnimating()
+        }
+    }
+
+    func setAudio() {
+        if self.playButton.isSelected {
+            self.stopPlayAudio()
+        } else {
+            self.startPlayAudio()
+        }
+        self.playButton.isSelected.toggle()
+    }
+
+    func startPlayAudio() {
+        self.isLoading = true
+        self.audioController.downloadAudio(with: self.place.audio, completion: { url in
+            DispatchQueue.main.async {
+                self.isLoading = false
+                self.audioController.startPlaying(url: url) { _ in }
+            }
+        })
+    }
+
+    func stopPlayAudio() {
+        self.audioController.stopPlaying()
+    }
+
 }
