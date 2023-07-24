@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
-class FollowingTableViewCell: UITableViewCell {
+class FollowingTableViewCell: GeneralTableViewCell {
 
     @IBOutlet weak var authImage: rImage!
     @IBOutlet weak var authNameLabel: UILabel!
     @IBOutlet weak var followingButton: UIButton!
+
+    var last: DocumentSnapshot?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,9 +23,15 @@ class FollowingTableViewCell: UITableViewCell {
         self.selectionStyle = .none
     }
 
-    func configureCell() {
+    override func configureCell() {
         self.followingButton.titleLabel?.text = Strings.FOLLOWING_TITLE
         self.followingButton.applyButtonStyle(.SecondaryLightPurple(35))
+        if let object = object as? [String: String] {
+            self.authNameLabel.text = object["title"]
+        }
     }
 
+    override func didselect(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    }
 }

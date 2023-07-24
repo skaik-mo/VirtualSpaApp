@@ -29,7 +29,7 @@ class FirebaseFirestoreController: HandlerFinish {
     }
 
     func setData(document: String, dictionary: [String: Any], isShowLoder: Bool = true, isShowMessage: Bool = true, success: @escaping () -> Void) -> Self {
-        guard Reachability.shared.isConnected else {
+        guard Reachability.shared.isConnected() else {
             self.offlineLoad?()
             return self
         }
@@ -48,7 +48,7 @@ class FirebaseFirestoreController: HandlerFinish {
     }
 
     func getDocument(document: String, isShowLoder: Bool = true, isShowMessage: Bool = true, success: @escaping (_ dictionary: [String: Any]?) -> Void) -> Self {
-        guard Reachability.shared.isConnected else {
+        guard Reachability.shared.isConnected() else {
             self.offlineLoad?()
             return self
         }
@@ -68,7 +68,7 @@ class FirebaseFirestoreController: HandlerFinish {
     }
 
     func getDocuments(isShowLoder: Bool = true, isShowMessage: Bool = true, success: @escaping ((_ objects: [Any]) -> Void)) -> Self {
-        guard Reachability.shared.isConnected else {
+        guard Reachability.shared.isConnected(isShowMessage: false) else {
             DispatchQueue.main.async {
                 self.offlineLoad?()
             }
@@ -95,8 +95,44 @@ class FirebaseFirestoreController: HandlerFinish {
         return self
     }
 
+    func fetchDocuments(limit: Int, isShowLoder: Bool = true, lastDocument: QueryDocumentSnapshot?, completion: @escaping ((_ dic: [[String: Any]], _ lastDocument: QueryDocumentSnapshot?) -> Void)) -> Self {
+        guard Reachability.shared.isConnected(isShowMessage: false) else {
+            DispatchQueue.main.async {
+                self.offlineLoad?()
+            }
+            return self
+        }
+        if isShowLoder {
+            Helper.showLoader(isLoding: true)
+        }
+        var arrayOfDic: [[String: Any]] = []
+        var query: Query? = reference?.limit(to: limit)
+        if let lastDocument {
+            query = query?.start(afterDocument: lastDocument)
+        }
+        query?.getDocuments { response, error in
+            guard ResponseHandler.responseHandler(error: error) else { self.didFinishRequest?()
+                ; return }
+            for dictionary in response?.documents ?? [] {
+                let dictionary = dictionary.data()
+                arrayOfDic.append(dictionary)
+            }
+            if isShowLoder {
+                Helper.showLoader(isLoding: false)
+            }
+            if let lastDocument = response?.documents.last {
+                completion(arrayOfDic, lastDocument)
+                self.didFinishRequest?()
+                return
+            }
+            completion(arrayOfDic, nil)
+            self.didFinishRequest?()
+        }
+        return self
+    }
+
     func deleteDocument(document: String, isShowLoder: Bool = true, isShowMessage: Bool = true, success: @escaping () -> Void) {
-        guard Reachability.shared.isConnected else { return }
+        guard Reachability.shared.isConnected() else { return }
         if isShowLoder {
             Helper.showLoader(isLoding: true)
         }
@@ -111,33 +147,3 @@ class FirebaseFirestoreController: HandlerFinish {
     }
 
 }
-
-// extension DocumentReference {
-//    func getDocument(completion: @escaping ((_ dictionary: [String: Any]?) -> Void)) {
-//        self.getDocument { response, error in
-//            guard !ResponseHandler.responseHandler(error: error) else {
-//                completion(nil)
-//                return
-//            }
-//            let data = response?.data() as? [String: Any]
-//            completion(data)
-//        }
-//    }
-// }
-
-// extension Query {
-//    func getDocuments(completion: @escaping ((_ dictionary: [[String: Any]]) -> Void)) {
-//        self.getDocuments { response, error in
-//            guard !ResponseHandler.responseHandler(error: error) else {
-//                completion([])
-//                return
-//            }
-//
-//            let dictionary: [[String: Any]] = response?.documents.map({ data in
-//                return data.data()
-//            }) ?? []
-//            completion(dictionary)
-//
-//        }
-//    }
-// }

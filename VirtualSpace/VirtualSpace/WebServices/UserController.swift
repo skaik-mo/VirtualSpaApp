@@ -50,7 +50,7 @@ extension UserController {
 extension UserController {
 
     func signUp(userModel: UserModel) -> UserController {
-        guard Reachability.shared.isConnected else {
+        guard Reachability.shared.isConnected() else {
             DispatchQueue.main.async {
                 self.offlineLoad?()
             }
@@ -91,7 +91,7 @@ extension UserController {
 extension UserController {
 
     func signIn(email: String, password: String) -> UserController {
-        guard Reachability.shared.isConnected else {
+        guard Reachability.shared.isConnected() else {
             DispatchQueue.main.async {
                 self.offlineLoad?()
             }
@@ -140,7 +140,7 @@ extension UserController {
 extension UserController {
 
     func passwordReset(_ email: String) -> UserController {
-        guard Reachability.shared.isConnected else {
+        guard Reachability.shared.isConnected() else {
             DispatchQueue.main.async {
                 self.offlineLoad?()
             }
@@ -158,7 +158,7 @@ extension UserController {
 
     func changePassword(user: UserModel) -> Self {
         guard let newPassword = user.password else { fatalError("\(#function) The new passowrd is nil") }
-        guard Reachability.shared.isConnected else {
+        guard Reachability.shared.isConnected() else {
             DispatchQueue.main.async {
                 self.offlineLoad?()
             }
@@ -183,7 +183,7 @@ extension UserController {
 
     func editUser(user: UserModel, image: UIImage?, coverImage: UIImage?, imageCompletion: @escaping (_ isCoverImage: Bool) -> Void) -> Self {
         guard let id = user.id else { fatalError("\(#function) The User id is nil") }
-        guard Reachability.shared.isConnected else {
+        guard Reachability.shared.isConnected() else {
             DispatchQueue.main.async {
                 self.offlineLoad?()
             }
@@ -238,7 +238,7 @@ extension UserController {
         AppDelegate.shared?._topVC?._showAlert(message: Strings.CONFIRM_DELETE_ACCOUNT_MESSAGE, buttonAction1: {
             guard let auth = self.auth.currentUser else { fatalError("\(#function) The User id is nil") }
             let id = auth.uid
-            guard Reachability.shared.isConnected else { return }
+            guard Reachability.shared.isConnected() else { return }
             Helper.showLoader(isLoding: true)
             auth.delete { error in
                 guard ResponseHandler.responseHandler(error: error) else { return }

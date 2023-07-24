@@ -11,7 +11,7 @@ import UIKit
 class FollowingViewController: UIViewController {
 
     // MARK: Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: GeneralTableView!
 
     // MARK: Properties
 
@@ -43,10 +43,14 @@ private extension FollowingViewController {
 
     func setUpView() {
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
-        self.tableView._registerCell = FollowingTableViewCell.self
+        self.tableView.cell = FollowingTableViewCell.self
         self.tableView.rowHeight = 70
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
+//        self.tableView.isLoadMoreEnable = true
+//        self.tableView.isPullToRefreshEnable = true
+//        self.tableView.emptyImage = .ic_empty
+//        self.tableView.emptyTitle = "hhhh"
+//        self.tableView.emptySubTitle = "sdcsdcsdcksdcsdlc,sd;lc,sd;c,s;c,sd;lc,s;dls,c;,c;sdl,;lsd,s;dlc,;l,ds,l"
+//        self.tableView.resetTableView(request: .GetTest)
     }
 
     func setUpData() {
@@ -58,21 +62,4 @@ private extension FollowingViewController {
 
     }
 
-}
-
-extension FollowingViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: FollowingTableViewCell = tableView._dequeueReusableCell()
-//        cell.object =
-        cell.configureCell()
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        debugPrint(#function)
-    }
 }

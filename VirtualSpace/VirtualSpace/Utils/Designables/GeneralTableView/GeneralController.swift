@@ -6,14 +6,15 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 enum GeneralController {
     case GetTest
 
-    func getFunc(pageNumber: Int, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ totalPages: Int, _ pageNumber: Int, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
+    func sendRequest(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
         switch self {
         case .GetTest:
-            return TestController().getTests(pageNumber: 0, isShowLoader: isShowLoader, handlerResponse: handlerResponse, handlerOfflineLoad: nil)
+            return TestController().getTest(lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse, handlerOfflineLoad: nil)
         }
     }
 }
@@ -22,12 +23,11 @@ class TestController {
 
     private let reference = FirebaseFirestoreController().setFirebaseReference(.Test)
 
-    func getTests(pageNumber: Int, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ totalPages: Int, _ pageNumber: Int, _ headerObject: Any?) -> Void), handlerOfflineLoad: (() -> Void)?) -> FirebaseFirestoreController? {
-        return reference.getDocuments(isShowLoder: isShowLoader) { objects in
-
-            handlerResponse(objects, 0, 0, nil)
+    func getTest(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void), handlerOfflineLoad: (() -> Void)?) -> FirebaseFirestoreController? {
+        return reference.fetchDocuments(limit: 4, isShowLoder: isShowLoader, lastDocument: lastDocument) { dic, lastDocument in
+            guard let lastDocument = lastDocument else { handlerResponse([], nil, nil); return }
+            handlerResponse(dic, lastDocument, nil)
         }
-//        .handlerofflineLoad(handler: handlerOfflineLoad)
     }
 
 }

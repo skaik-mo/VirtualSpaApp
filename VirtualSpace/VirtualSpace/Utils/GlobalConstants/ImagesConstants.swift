@@ -20,6 +20,11 @@ extension UIImage {
         "ic_360"._toImage
     }
 
+    // demo
+    static var ic_empty: UIImage? {
+        "ic_empty"._toImage
+    }
+
     static var ic_back: UIImage? {
         "ic_back"._toImage
     }

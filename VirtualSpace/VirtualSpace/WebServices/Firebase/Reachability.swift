@@ -12,11 +12,13 @@ class Reachability {
 
     static let shared = Reachability()
 
-    var isConnected: Bool {
+    func isConnected(isShowMessage: Bool = true) -> Bool {
         if self.isConnectedToNetwork() == false {
             debugPrint("Disconnected")
             Helper.showLoader(isLoding: false)
-            SceneDelegate.shared?.rootNavigationController?._showErrorAlertOK(message: Strings.NETWORK_ERROR_TITLE)
+            if isShowMessage {
+                SceneDelegate.shared?.rootNavigationController?._showErrorAlertOK(message: Strings.NETWORK_ERROR_TITLE)
+            }
             return false
         }
         debugPrint("Connected")
