@@ -12,9 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeUserViewController">
             <connections>
-                <outlet property="categoryCollectionView" destination="VFK-zA-DY7" id="SaC-AG-Fr7"/>
+                <outlet property="categoryCollectionView" destination="16L-GO-5Ny" id="yLI-Hg-rCs"/>
                 <outlet property="homeCollectionView" destination="qqC-Gp-Al6" id="IAt-mL-T1H"/>
-                <outlet property="pagerCollectionView" destination="16L-GO-5Ny" id="UtY-cH-RcG"/>
+                <outlet property="subCategoryCollectionView" destination="VFK-zA-DY7" id="9aj-W5-beM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -11,16 +11,17 @@ import UIKit
 class HomeUserViewController: UIViewController {
 
     // MARK: Outlets
-    @IBOutlet weak var pagerCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
+    @IBOutlet weak var subCategoryCollectionView: UICollectionView!
     @IBOutlet weak var homeCollectionView: UICollectionView!
 
     // MARK: Properties
-    var categories: [String] = ["cat   1", "cat1", "categories1", "categories   1", "cat   2", "cat2", "categories2", "categories   2", "cat   3", "cat3", "categories3", "categories   3"]
-    var selectedCategories: String = ""
-    var subCategories: [String] = ["subcat   1", "subcat", "Sub Categories3", "Sub Categories   4"]
-    var selectedSubCategories: String = ""
-    var objjects: [Any] = [1, 1, 1, 11, 11, 1, 1, 1, 1, 1, 1, 1]
+    var categories: [Category] = []
+    var selectedCategories: Category?
+    var subCategories: [SubCategory] = []
+    var selectedSubCategories: SubCategory?
+    var places: [Place] = []
+    var placesFilters: [Place] = []
     let spacing: CGFloat = 10 // minimum Spacing For homeCollectionView
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 280, height: 0))
@@ -78,16 +79,16 @@ private extension HomeUserViewController {
 private extension HomeUserViewController {
 
     func setUpView() {
-        self.pagerCollectionView.dataSource = self
-        self.pagerCollectionView.delegate = self
-        self.pagerCollectionView._registerCell = PagerCollectionViewCell.self
-        self.pagerCollectionView.keyboardDismissMode = .onDrag
-        self.pagerCollectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
         self.categoryCollectionView.dataSource = self
         self.categoryCollectionView.delegate = self
+        self.categoryCollectionView._registerCell = PagerCollectionViewCell.self
         self.categoryCollectionView.keyboardDismissMode = .onDrag
-        self.categoryCollectionView._registerCell = CategoryCollectionViewCell.self
-        self.categoryCollectionView.contentInset = .init(top: 5, left: 16, bottom: 5, right: 16)
+        self.categoryCollectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
+        self.subCategoryCollectionView.dataSource = self
+        self.subCategoryCollectionView.delegate = self
+        self.subCategoryCollectionView.keyboardDismissMode = .onDrag
+        self.subCategoryCollectionView._registerCell = CategoryCollectionViewCell.self
+        self.subCategoryCollectionView.contentInset = .init(top: 5, left: 16, bottom: 5, right: 16)
         self.homeCollectionView.dataSource = self
         self.homeCollectionView.delegate = self
         self.homeCollectionView.keyboardDismissMode = .onDrag
@@ -96,12 +97,52 @@ private extension HomeUserViewController {
     }
 
     func setUpData() {
-        self.selectedCategories = self.categories.first ?? ""
-        self.selectedSubCategories = self.subCategories.first ?? ""
+
     }
 
     func fetchData() {
+        Helper.showLoader(isLoding: true)
+        _ = CategoryController().getCategories(isShowLoder: false) { categories in
+            self.categories = categories
+            self.selectedCategories = self.categories.first
+            _ = SubCategoryController().getSubCategories(isShowLoder: false) { subCategories in
+                self.subCategories = subCategories
+                self.selectedSubCategories = self.subCategories.first
+                _ = PlaceController().getPlaces(isShowLoder: false, success: { places in
+                    self.places = places
+                    self.setPlacesFilters()
+                }).handlerDidFinishRequest(handler: {
+                    self.homeCollectionView.reloadData()
+                    Helper.showLoader(isLoding: false)
+                }).handlerofflineLoad(handler: {
+                    self.homeCollectionView.reloadData()
+                    Helper.showLoader(isLoding: false)
+                })
+            }.handlerDidFinishRequest(handler: {
+                self.subCategoryCollectionView.reloadData()
+            }).handlerofflineLoad(handler: {
+                self.subCategoryCollectionView.reloadData()
+                Helper.showLoader(isLoding: false)
+            })
+        }.handlerDidFinishRequest(handler: {
+            self.categoryCollectionView.reloadData()
+        }).handlerofflineLoad(handler: {
+            self.categoryCollectionView.reloadData()
+            Helper.showLoader(isLoding: false)
+        })
+    }
 
+    func setPlacesFilters() {
+        self.placesFilters = places.filter({ $0.categories.contains(self.selectedCategories?.id ?? "") && $0.subCategories.contains(self.selectedSubCategories?.id ?? "") })
+    }
+
+    func searchPlaces(_ text: String?) {
+        if let text, text._isValidValue {
+            self.placesFilters = places.filter({ $0.name?.contains(text) ?? false })
+        } else {
+            setPlacesFilters()
+        }
+        self.homeCollectionView.reloadData()
     }
 
 }
@@ -109,9 +150,11 @@ private extension HomeUserViewController {
 extension HomeUserViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchPlaces(searchText)
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchPlaces(searchBar.text)
         searchBar.endEditing(true)
     }
 }
@@ -119,39 +162,43 @@ extension HomeUserViewController: UISearchBarDelegate {
 extension HomeUserViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == pagerCollectionView {
+        if collectionView == categoryCollectionView {
             return self.categories.count
-        } else if collectionView == categoryCollectionView {
+        } else if collectionView == subCategoryCollectionView {
             return self.subCategories.count
         }
-        return self.objjects.count
+        return self.placesFilters.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == pagerCollectionView {
+        if collectionView == categoryCollectionView {
             let cell: PagerCollectionViewCell = collectionView._dequeueReusableCell(for: indexPath)
             cell.object = self.categories[indexPath.row]
             cell.configureCell()
             return cell
-        } else if collectionView == categoryCollectionView {
+        } else if collectionView == subCategoryCollectionView {
             let cell: CategoryCollectionViewCell = collectionView._dequeueReusableCell(for: indexPath)
             cell.object = self.subCategories[indexPath.row]
             cell.configureCell()
             return cell
         }
         let cell: HomeCollectionViewCell = collectionView._dequeueReusableCell(for: indexPath)
-//        cell.object = self.subCategories[indexPath.row]
+        cell.object = self.placesFilters[indexPath.row]
         cell.configureCell()
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == pagerCollectionView {
+        if collectionView == categoryCollectionView {
             self.selectedCategories = self.categories[indexPath.row]
+            self.setPlacesFilters()
             collectionView.reloadData()
-        } else if collectionView == categoryCollectionView {
+            self.homeCollectionView.reloadData()
+        } else if collectionView == subCategoryCollectionView {
             self.selectedSubCategories = self.subCategories[indexPath.row]
+            self.setPlacesFilters()
             collectionView.reloadData()
+            self.homeCollectionView.reloadData()
         } else {
             let vc = PlaceDetailsViewController()
             vc._push()
@@ -163,9 +210,9 @@ extension HomeUserViewController: UICollectionViewDelegate, UICollectionViewData
 extension HomeUserViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        if collectionView == pagerCollectionView {
+        if collectionView == categoryCollectionView {
             return 0
-        } else if collectionView == categoryCollectionView {
+        } else if collectionView == subCategoryCollectionView {
             return 12
         }
         return spacing
@@ -176,12 +223,12 @@ extension HomeUserViewController: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == pagerCollectionView {
-            let width: CGFloat = self.categories[indexPath.row].size(withAttributes: [.font: UIFont.poppinsMedium14]).width + 18
+        if collectionView == categoryCollectionView {
+            let width: CGFloat = (self.categories[indexPath.row].name?.size(withAttributes: [.font: UIFont.poppinsMedium14]).width ?? 0) + 18
             return .init(width: width, height: 30)
 
-        } else if collectionView == categoryCollectionView {
-            let labelWidth: CGFloat = self.subCategories[indexPath.row].size(withAttributes: [.font: UIFont.poppinsMedium14]).width
+        } else if collectionView == subCategoryCollectionView {
+            let labelWidth: CGFloat = self.subCategories[indexPath.row].name?.size(withAttributes: [.font: UIFont.poppinsMedium14]).width ?? 0
             let imageWidth: CGFloat = 35
             let spacing: CGFloat = 10 * 3
             let width: CGFloat = labelWidth + imageWidth + spacing

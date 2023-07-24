@@ -21,6 +21,9 @@ extension GlobalConstants {
 extension GlobalConstants {
     enum Collection: String {
         case User
+        case Place
+        case Category
+        case SubCategory
         case Test
     }
 

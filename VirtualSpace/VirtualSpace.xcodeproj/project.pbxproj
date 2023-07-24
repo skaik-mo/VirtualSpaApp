@@ -192,6 +192,12 @@
 		E7E35A2B2A5E7DAC00733459 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E35A292A5E7DAC00733459 /* ChangePasswordViewController.xib */; };
 		E7EB1C702A6CF0B000757145 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EB1C6F2A6CF0B000757145 /* UIImageView.swift */; };
 		E7EB1C732A6CF2B000757145 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = E7EB1C722A6CF2B000757145 /* SDWebImage */; };
+		E7F3E8DE2A6E4D8D007270F6 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E8DD2A6E4D8D007270F6 /* Category.swift */; };
+		E7F3E8E02A6E4DE1007270F6 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E8DF2A6E4DE1007270F6 /* CategoryController.swift */; };
+		E7F3E8E22A6E5452007270F6 /* SubCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E8E12A6E5452007270F6 /* SubCategory.swift */; };
+		E7F3E8E42A6E5470007270F6 /* SubCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E8E32A6E5470007270F6 /* SubCategoryController.swift */; };
+		E7F3E8E62A6E586F007270F6 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E8E52A6E586F007270F6 /* Place.swift */; };
+		E7F3E8E82A6E58E6007270F6 /* PlaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F3E8E72A6E58E6007270F6 /* PlaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -377,6 +383,12 @@
 		E7E35A282A5E7DAC00733459 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		E7E35A292A5E7DAC00733459 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
 		E7EB1C6F2A6CF0B000757145 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		E7F3E8DD2A6E4D8D007270F6 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		E7F3E8DF2A6E4DE1007270F6 /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
+		E7F3E8E12A6E5452007270F6 /* SubCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategory.swift; sourceTree = "<group>"; };
+		E7F3E8E32A6E5470007270F6 /* SubCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryController.swift; sourceTree = "<group>"; };
+		E7F3E8E52A6E586F007270F6 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		E7F3E8E72A6E58E6007270F6 /* PlaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -759,6 +771,9 @@
 			children = (
 				E7D1A7E32A63B7D000A701E7 /* Chat */,
 				E798C62E2A67B6F3009C7D86 /* UserModel.swift */,
+				E7F3E8E52A6E586F007270F6 /* Place.swift */,
+				E7F3E8DD2A6E4D8D007270F6 /* Category.swift */,
+				E7F3E8E12A6E5452007270F6 /* SubCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -768,6 +783,9 @@
 			children = (
 				E798C62D2A67B67C009C7D86 /* Firebase */,
 				E723BB952A5D3E4D0026782B /* UserController.swift */,
+				E7F3E8E72A6E58E6007270F6 /* PlaceController.swift */,
+				E7F3E8DF2A6E4DE1007270F6 /* CategoryController.swift */,
+				E7F3E8E32A6E5470007270F6 /* SubCategoryController.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -1503,6 +1521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E72346932A5FC1210061877B /* CallTableViewCell.swift in Sources */,
+				E7F3E8E42A6E5470007270F6 /* SubCategoryController.swift in Sources */,
 				E7373F7D2A5AC9B5007A1186 /* UIView.swift in Sources */,
 				E79925492A641BEC00B87500 /* HomeBusinessViewController.swift in Sources */,
 				E7DE5EAF2A6C0CC0005B0DAE /* GeneralTableViewHeaderFooterView.swift in Sources */,
@@ -1514,6 +1533,7 @@
 				E77058602A5EA222004ADBF9 /* FollowingTableViewCell.swift in Sources */,
 				E77058782A5EB0FB004ADBF9 /* FontsConstants.swift in Sources */,
 				E7B7C4DA2A67057E008000D8 /* CALayer.swift in Sources */,
+				E7F3E8E22A6E5452007270F6 /* SubCategory.swift in Sources */,
 				E7373F642A5AC9B5007A1186 /* Strings.swift in Sources */,
 				E7B6F92C2A5E973D002A0693 /* NotificationViewController.swift in Sources */,
 				E770586F2A5EA765004ADBF9 /* ReservationTableViewCell.swift in Sources */,
@@ -1537,6 +1557,7 @@
 				E7373F4C2A5AC9B5007A1186 /* LaunchViewController.swift in Sources */,
 				E7D1A7E22A63B7B500A701E7 /* Message.swift in Sources */,
 				E72346B02A5FE37C0061877B /* OrdersPendingViewController.swift in Sources */,
+				E7F3E8E62A6E586F007270F6 /* Place.swift in Sources */,
 				E7107B142A5D2316008891B1 /* ForgotPasswordViewController.swift in Sources */,
 				E77058812A5EB3FB004ADBF9 /* InviteViewController.swift in Sources */,
 				E799254E2A64207700B87500 /* ZoomViewController.swift in Sources */,
@@ -1561,6 +1582,7 @@
 				E70C101B2A6557D4008DD58B /* HomeCollectionViewCell.swift in Sources */,
 				E7CE35A32A6506E400853993 /* NewPostViewController.swift in Sources */,
 				E798C6232A67B3EA009C7D86 /* HandlerFinish.swift in Sources */,
+				E7F3E8DE2A6E4D8D007270F6 /* Category.swift in Sources */,
 				E723469C2A5FD4B00061877B /* OrdersViewController.swift in Sources */,
 				E79925402A64160800B87500 /* LabelTableViewCell.swift in Sources */,
 				E7373F772A5AC9B5007A1186 /* UIResponder.swift in Sources */,
@@ -1573,10 +1595,12 @@
 				E7373F492A5AC9B5007A1186 /* MainNavigationViewController.swift in Sources */,
 				E7D1A81C2A63FC6700A701E7 /* BookNowViewController.swift in Sources */,
 				E7373F422A5AC9B5007A1186 /* AppDelegate.swift in Sources */,
+				E7F3E8E82A6E58E6007270F6 /* PlaceController.swift in Sources */,
 				E7E35A2A2A5E7DAC00733459 /* ChangePasswordViewController.swift in Sources */,
 				E72346A72A5FDD5D0061877B /* PendingTableViewCell.swift in Sources */,
 				E77058722A5EB04B004ADBF9 /* ImagesConstants.swift in Sources */,
 				E723BB962A5D3E4D0026782B /* UserController.swift in Sources */,
+				E7F3E8E02A6E4DE1007270F6 /* CategoryController.swift in Sources */,
 				E7373F752A5AC9B5007A1186 /* UIKitHelpers.swift in Sources */,
 				E7B7C4DF2A670D90008000D8 /* TherapistInfoTableViewCell.swift in Sources */,
 				E770587D2A5EB21C004ADBF9 /* InviteTableViewCell.swift in Sources */,

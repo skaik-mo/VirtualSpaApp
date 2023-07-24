@@ -13,7 +13,7 @@ class PagerCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ineView: UIView!
 
-    var object: Any?
+    var object: Category?
     var isSelectedCell = false {
         didSet {
             self.setCell()
@@ -26,10 +26,10 @@ class PagerCollectionViewCell: UICollectionViewCell {
     }
 
     func configureCell() {
-        if let object = object as? String {
-            self.titleLabel.text = object
+        if let object {
+            self.titleLabel.text = object.name
             if let _topVC = SceneDelegate.shared?.rootNavigationController?.topViewController as? MainTabBarController, let presnt = _topVC.selectedViewController as? HomeUserViewController {
-                self.isSelectedCell = presnt.selectedCategories == object
+                self.isSelectedCell = presnt.selectedCategories?.id == object.id
             }
         } else {
             self.titleLabel.text = nil

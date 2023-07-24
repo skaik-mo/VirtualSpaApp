@@ -16,16 +16,28 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var placeAddressLabel: UILabel!
     @IBOutlet weak var PlaceDistanceLabel: UILabel!
 
+    var object: Place?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
     func configureCell() {
-        self.placeImage.image = .demo
-        self.placeNameLabel.text = "Hilton Resorts"
-        self.placeAddressLabel.text = "MO 63017, United States"
-        self.PlaceDistanceLabel.text = "10 min . 0.7 im"
+        if let object {
+            self.placeImage.fetchImage(object.images.first, .ic_placeholder)
+            self.placeNameLabel.text = object.name
+            self.placeAddressLabel.text = object.address
+            var time = ""
+            var distance = ""
+            if let _distance = object.distance {
+                distance = "\(_distance) im"
+            }
+            if let _time = object.time {
+                time = "\(_time) min"
+            }
+            self.PlaceDistanceLabel.text = "\(time) . \(distance)"
+        }
 
     }
 
