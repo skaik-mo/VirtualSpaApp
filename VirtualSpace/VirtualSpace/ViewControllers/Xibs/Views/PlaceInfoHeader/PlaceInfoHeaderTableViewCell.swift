@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlaceInfoHeaderTableViewCell: UITableViewHeaderFooterView {
+class PlaceInfoHeaderTableViewCell: GeneralTableViewHeaderFooterView {
 
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var iconImage: rImage!
@@ -18,24 +18,37 @@ class PlaceInfoHeaderTableViewCell: UITableViewHeaderFooterView {
     @IBOutlet weak var descriptionTitleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var messageTherapistsLabel: UILabel!
-
-    var headerOject: Any?
+    @IBOutlet weak var clockImage: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    func configureHeader() {
-        placeImage.image = .demo
-        iconImage.image = .demo
-        placeNameLabel.text = "Place Name"
-        placeAddressLabel.text = "Stanley Avenue City, NY 11530"
-        availableTimeLabel.text = "10 min . 0.7 im"
-        descriptionTitleLabel.text = Strings.DESCRIPTION_TITLE
-        descriptionLabel.text = "Massage therapy is considered an alternative means to alleviate pain, stiffness, reduce stress, and promote overall wellness."
-        messageTherapistsLabel.text = Strings.MESSAGE_THERAPISTS_TITLE
-
+    override func configureHeader() {
+        if let object = object as? Place {
+            self.clockImage.isHidden = false
+            self.descriptionTitleLabel.text = Strings.DESCRIPTION_TITLE
+            self.messageTherapistsLabel.text = Strings.MESSAGE_THERAPISTS_TITLE
+            self.placeImage.fetchImage(object.coverImage, .ic_placeholder)
+            self.iconImage.fetchImage(object.icon, .ic_placeholder)
+            self.iconImage.isHidden = false
+            self.placeNameLabel.text = object.name
+            self.placeAddressLabel.text = object.address
+            self.availableTimeLabel.text = object.getTimeAndDistance()
+            self.descriptionLabel.text = object.description
+        } else {
+            self.clockImage.isHidden = true
+            self.descriptionTitleLabel.text = nil
+            self.messageTherapistsLabel.text = nil
+            self.placeImage.image = nil
+            self.iconImage.isHidden = true
+            self.iconImage.image = nil
+            self.placeNameLabel.text = nil
+            self.placeAddressLabel.text = nil
+            self.availableTimeLabel.text = nil
+            self.descriptionLabel.text = nil
+        }
     }
 
 }

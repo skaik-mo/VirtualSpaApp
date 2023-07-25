@@ -11,12 +11,14 @@ import UIKit
 class PlaceInfoViewController: UIViewController {
 
     // MARK: Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: GeneralTableView!
 
     // MARK: Properties
+    var place: Place
 
     // MARK: Init
-    init() {
+    init(place: Place) {
+        self.place = place
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -28,6 +30,7 @@ class PlaceInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        setData()
         fetchData()
     }
 
@@ -41,43 +44,22 @@ class PlaceInfoViewController: UIViewController {
 private extension PlaceInfoViewController {
 
     func setUpView() {
-        self.tableView._registerHeaderAndFooter = PlaceInfoHeaderTableViewCell.self
-        self.tableView.sectionHeaderHeight = 365// UITableView.automaticDimension
-        self.tableView._registerCell = CallTableViewCell.self
+        self.tableView.hedaer = PlaceInfoHeaderTableViewCell.self
+        self.tableView.sectionHeaderHeight = 360// UITableView.automaticDimension
+        self.tableView.cell = CallTableViewCell.self
         self.tableView.rowHeight = 60
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
+        self.tableView.isLoadMoreEnable = true
+        self.tableView.isPullToRefreshEnable = true
+        self.tableView.emptyHeaderHeight = 250
+        self.tableView.emptyTitle = Strings.THERAPISTS_EMPTY_TITLE
+    }
+
+    func setData() {
+        self.title = place.name
     }
 
     func fetchData() {
-
-    }
-
-}
-
-extension PlaceInfoViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: CallTableViewCell = tableView._dequeueReusableCell()
-//        cell.object = item.title
-        cell.configureCell()
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = TherapistViewController()
-        vc._push()
-    }
-
-    // MARK: Header
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header: PlaceInfoHeaderTableViewCell = tableView._dequeueReusableHeaderFooterView()
-        header.headerOject = ""
-        header.configureHeader()
-        return header
+        self.tableView.resetTableView(request: .GetTherapists(self.place))
     }
 
 }

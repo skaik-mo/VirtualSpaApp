@@ -29,15 +29,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
             self.placeNameLabel.text = object.name
             self.placeAddressLabel.text = object.address
             self.likeButton.isSelected = object.isFavorite
-            var time = ""
-            var distance = ""
-            if let _distance = object.distance {
-                distance = "\(_distance) im"
-            }
-            if let _time = object.time {
-                time = "\(_time) min"
-            }
-            self.PlaceDistanceLabel.text = "\(time) . \(distance)"
+            self.PlaceDistanceLabel.text = object.getTimeAndDistance()
         }
 
     }

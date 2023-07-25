@@ -97,37 +97,14 @@ class FirebaseFirestoreController: HandlerFinish {
         return self
     }
 
-    func searchWithDocumentIDs(documentIDs: [String], isShowLoder: Bool = true, isShowMessage: Bool = true, success: @escaping ((_ objects: [Any]) -> Void)) -> Self {
-        guard Reachability.shared.isConnected(isShowMessage: isShowMessage) else {
+    func fetchDocumentsWithDocumentIDs(documentIDs: [String], limit: Int, lastDocument: QueryDocumentSnapshot?, isShowLoder: Bool = true, isShowMessage: Bool = true, completion: @escaping ((_ objects: [[String: Any]], _ lastDocument: QueryDocumentSnapshot?) -> Void)) -> Self {
+        guard !documentIDs.isEmpty else {
+            completion([], nil)
             DispatchQueue.main.async {
-                self.offlineLoad?()
+                self.didFinishRequest?()
             }
             return self
         }
-        if isShowLoder {
-            Helper.showLoader(isLoding: true)
-        }
-        reference?.whereField(FieldPath.documentID(), in: documentIDs).getDocuments(completion: { response, error in
-            guard ResponseHandler.responseHandler(error: error, isShowMessage: isShowMessage) else {
-                self.didFinishRequest?()
-                return
-            }
-            if isShowLoder {
-                Helper.showLoader(isLoding: false)
-            }
-            var objects: [Any] = []
-            response?.documents.forEach({ data in
-                var dictionary = data.data()
-                dictionary["id"] = data.documentID
-                objects.append(dictionary)
-            })
-            success(objects)
-            self.didFinishRequest?()
-        })
-        return self
-    }
-
-    func fetchDocuments(limit: Int, isShowLoder: Bool = true, lastDocument: QueryDocumentSnapshot?, completion: @escaping ((_ dic: [[String: Any]], _ lastDocument: QueryDocumentSnapshot?) -> Void)) -> Self {
         guard Reachability.shared.isConnected(isShowMessage: false) else {
             DispatchQueue.main.async {
                 self.offlineLoad?()
@@ -137,7 +114,44 @@ class FirebaseFirestoreController: HandlerFinish {
         if isShowLoder {
             Helper.showLoader(isLoding: true)
         }
-        var arrayOfDic: [[String: Any]] = []
+        var objects: [[String: Any]] = []
+        var query: Query? = reference?.limit(to: limit)
+        if let lastDocument {
+            query = query?.start(afterDocument: lastDocument)
+        }
+        query?.whereField(FieldPath.documentID(), in: documentIDs).getDocuments { response, error in
+            guard ResponseHandler.responseHandler(error: error) else { self.didFinishRequest?()
+                ; return }
+            response?.documents.forEach({ data in
+                var dictionary = data.data()
+                dictionary["id"] = data.documentID
+                objects.append(dictionary)
+            })
+            if isShowLoder {
+                Helper.showLoader(isLoding: false)
+            }
+            if let lastDocument = response?.documents.last {
+                completion(objects, lastDocument)
+                self.didFinishRequest?()
+                return
+            }
+            completion(objects, nil)
+            self.didFinishRequest?()
+        }
+        return self
+    }
+
+    func fetchDocuments(limit: Int, lastDocument: QueryDocumentSnapshot?, isShowLoder: Bool = true, completion: @escaping ((_ objects: [[String: Any]], _ lastDocument: QueryDocumentSnapshot?) -> Void)) -> Self {
+        guard Reachability.shared.isConnected(isShowMessage: false) else {
+            DispatchQueue.main.async {
+                self.offlineLoad?()
+            }
+            return self
+        }
+        if isShowLoder {
+            Helper.showLoader(isLoding: true)
+        }
+        var objects: [[String: Any]] = []
         var query: Query? = reference?.limit(to: limit)
         if let lastDocument {
             query = query?.start(afterDocument: lastDocument)
@@ -145,19 +159,20 @@ class FirebaseFirestoreController: HandlerFinish {
         query?.getDocuments { response, error in
             guard ResponseHandler.responseHandler(error: error) else { self.didFinishRequest?()
                 ; return }
-            for dictionary in response?.documents ?? [] {
-                let dictionary = dictionary.data()
-                arrayOfDic.append(dictionary)
-            }
+            response?.documents.forEach({ data in
+                var dictionary = data.data()
+                dictionary["id"] = data.documentID
+                objects.append(dictionary)
+            })
             if isShowLoder {
                 Helper.showLoader(isLoding: false)
             }
             if let lastDocument = response?.documents.last {
-                completion(arrayOfDic, lastDocument)
+                completion(objects, lastDocument)
                 self.didFinishRequest?()
                 return
             }
-            completion(arrayOfDic, nil)
+            completion(objects, nil)
             self.didFinishRequest?()
         }
         return self

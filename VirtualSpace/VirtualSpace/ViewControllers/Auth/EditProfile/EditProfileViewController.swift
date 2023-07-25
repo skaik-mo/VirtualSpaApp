@@ -103,7 +103,7 @@ private extension EditProfileViewController {
         self.bioLabel.text = Strings.BIO_TITLE
         self.saveButton.titleLabel?.text = Strings.SAVE_TITLE
 
-        if let image = auth?.image {
+        if let image = auth?.image, image._isValidValue {
             self.authImage.fetchImage(image, .ic_placeholder)
         } else {
             self.authImage.image = .ic_camera
@@ -137,7 +137,7 @@ private extension EditProfileViewController {
         guard self.authEmailTextField.isInvalid else { return false }
         guard self.authPhoneTextField.isInvalid else { return false }
         if self.auth?.type == .Business {
-            guard  NilValidationRule(field: Strings.BIO_TITLE).hasValidValue(self.bioTextView.text) else { return false }
+            guard NilValidationRule(field: Strings.BIO_TITLE).hasValidValue(self.bioTextView.text) else { return false }
         }
         return true
     }

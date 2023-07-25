@@ -11,10 +11,9 @@ import UIKit
 class TherapistsPlacesViewController: UIViewController {
 
     // MARK: Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: GeneralTableView!
 
     // MARK: Properties
-    var object: [String] = ["Title1", "Title2", "Title3", "Title4", "Title5", "Title6", "Title7", "Title11", "Title12", "Title13", "Title14", "Title15", "Title16", "Title17"]
 
     // MARK: Init
     init() {
@@ -29,7 +28,6 @@ class TherapistsPlacesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-        setUpData()
         fetchData()
     }
 
@@ -44,18 +42,15 @@ private extension TherapistsPlacesViewController {
 
     func setUpView() {
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
-        self.tableView._registerCell = PlaceTableViewCell.self
+        self.tableView.cell = PlaceTableViewCell.self
         self.tableView.rowHeight = 85
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-    }
-
-    func setUpData() {
-
+        self.tableView.isLoadMoreEnable = true
+        self.tableView.isPullToRefreshEnable = true
+        self.tableView.emptyTitle = Strings.THERAPISTS_PLACES_EMPTY_TITLE
     }
 
     func fetchData() {
-
+        self.tableView.resetTableView(request: .GetPlaces)
     }
 
 }
@@ -64,24 +59,5 @@ private extension TherapistsPlacesViewController {
 extension TherapistsPlacesViewController {
     func getUpNavigationItem() -> UINavigationItem {
         return UINavigationItem(title: Strings.THERAPISTS_PLACES_TITLE)
-    }
-}
-
-extension TherapistsPlacesViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        object.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: PlaceTableViewCell = tableView._dequeueReusableCell()
-        cell.object = object[indexPath.row]
-        cell.configureCell()
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = PlaceInfoViewController()
-        vc.title = object[indexPath.row]
-        vc._push()
     }
 }

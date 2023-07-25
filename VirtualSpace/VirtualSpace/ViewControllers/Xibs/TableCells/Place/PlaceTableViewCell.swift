@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlaceTableViewCell: UITableViewCell {
+class PlaceTableViewCell: GeneralTableViewCell {
 
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var placeNameLabel: UILabel!
@@ -21,7 +21,6 @@ class PlaceTableViewCell: UITableViewCell {
             self.setIconButton()
         }
     }
-    var object: Any?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,10 +28,18 @@ class PlaceTableViewCell: UITableViewCell {
         self.selectionStyle = .none
     }
 
-    func configureCell() {
+    override func configureCell() {
         self.isFavoriteVC = self._topVC is FavoriteViewController
-        if let object = object as? String {
-            self.placeNameLabel.text = object
+        if let object = object as? Place {
+            self.placeImage.fetchImage(object.icon, .ic_placeholder)
+            self.placeNameLabel.text = object.name
+            self.placeAddressLabel.text = object.address
+            self.availableTimeLabel.text = object.getTimeAndDistance()
+        } else {
+            self.placeImage.image = nil
+            self.placeNameLabel.text = nil
+            self.placeAddressLabel.text = nil
+            self.availableTimeLabel.text = nil
         }
     }
 
@@ -42,8 +49,14 @@ class PlaceTableViewCell: UITableViewCell {
     }
 
     @IBAction func removeAction(_ sender: Any) {
-        guard let topVC = self._topVC as? FavoriteViewController, let object = object as? String, let index = topVC.object.firstIndex(of: object) else { return }
-        topVC.object.remove(at: index)
-        topVC.tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .left)
+        guard let topVC = self._topVC as? FavoriteViewController, let object = object as? Place, let index = topVC.tableView.objects.firstIndex(where: { ($0 as? Place)?.id == object.id }) else { return }
+        topVC.tableView.objects.remove(at: index)
+        PlaceController().addFivoraitePlace(place: object)
+    }
+
+    override func didselect(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let object = object as? Place else { return }
+        let vc = PlaceInfoViewController(place: object)
+        vc._push()
     }
 }

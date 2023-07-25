@@ -32,7 +32,7 @@ class GeneralTableView: UITableView {
     }
 
     // MARK: - Empty Data Properties
-    var headerHeight: CGFloat = 0
+    var emptyHeaderHeight: CGFloat = 0
     var emptyImage: UIImage?
     var emptyTitle = ""
     var emptySubTitle = ""
@@ -79,6 +79,7 @@ extension GeneralTableView {
         self.isShowLoader = isShowLoader
         self.lastDocument = nil
         self.objects.removeAll()
+        self.headerObject = nil
         self.sendRequest(request)
         self.isShowLoader = false
     }
@@ -104,14 +105,14 @@ extension GeneralTableView {
             self.objects += objects
             self.lastDocument = lastDocument
             self.headerObject = headerObject
-            debugPrint("objects =>> \(self.objects.count) || lastDocuments =>> \(lastDocument?.data().count ?? 0), headerObject =>> \(headerObject)")
+            debugPrint("objects =>> \(self.objects.count) || is lastDocuments nil =>> \(lastDocument == nil), headerObject =>> \(headerObject)")
         })?.handlerDidFinishRequest(handler: {
-            self.emptyDataSet(headerHeight: self.headerHeight, image: self.emptyImage, title: self.emptyTitle, subTitle: self.emptySubTitle, titleFont: .poppinsMedium17, subTitleFont: .poppinsMedium13)
+            self.emptyDataSet(headerHeight: self.emptyHeaderHeight, image: self.emptyImage, title: self.emptyTitle, subTitle: self.emptySubTitle, titleFont: .poppinsMedium17, subTitleFont: .poppinsMedium13)
             self.control.endRefreshing()
             self.stopLoading()
             self.handlerDidFinishRequest?()
         }).handlerofflineLoad(handler: {
-            self.emptyDataSet(headerHeight: self.headerHeight, image: self.emptyImage, title: self.emptyTitle, subTitle: self.emptySubTitle, titleFont: .poppinsMedium17, subTitleFont: .poppinsMedium13)
+            self.emptyDataSet(headerHeight: self.emptyHeaderHeight, image: self.emptyImage, title: self.emptyTitle, subTitle: self.emptySubTitle, titleFont: .poppinsMedium17, subTitleFont: .poppinsMedium13)
             self.control.endRefreshing()
             self.stopLoading()
             self.handlerDidFinishRequest?()

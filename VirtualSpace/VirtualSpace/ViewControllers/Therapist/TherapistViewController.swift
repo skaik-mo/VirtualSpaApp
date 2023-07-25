@@ -107,9 +107,9 @@ extension TherapistViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isInfoSelected {
             guard indexPath.item != 0 else { return }
-            let vc = PlaceInfoViewController()
+//            let vc = PlaceInfoViewController()
 //            vc.title = object[indexPath.row]
-            vc._push()
+//            vc._push()
             return
         }
         let vc = PostDetailsViewController()

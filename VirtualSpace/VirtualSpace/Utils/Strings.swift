@@ -129,13 +129,16 @@ class Strings {
 
     // MARK: - Favorite
     static let FAVORITE_TITLE = "Favorite"._localizedKey
+    static let FAVORITE_EMPTY_TITLE = "There are no favorite places"._localizedKey
 
     // MARK: - Therapists Places
     static let THERAPISTS_PLACES_TITLE = "Therapists Places"._localizedKey
+    static let THERAPISTS_PLACES_EMPTY_TITLE = "There are no therapists places"._localizedKey
 
     // MARK: - Place Info
     static let DESCRIPTION_TITLE = "Description"._localizedKey
     static let MESSAGE_THERAPISTS_TITLE = "Massage Therapists"._localizedKey
+    static let THERAPISTS_EMPTY_TITLE = "There are no therapists"._localizedKey
 
     // MARK: - Orders
     static let ORDERS_TITLE = "Orders"._localizedKey

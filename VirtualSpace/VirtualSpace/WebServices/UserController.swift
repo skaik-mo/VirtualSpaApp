@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class UserController: HandlerFinish {
 
@@ -254,5 +255,27 @@ extension UserController {
                 }
             }
         })
+    }
+}
+
+// MARK: - get Therapists
+extension UserController {
+
+    func getTherapists(place: Place, lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
+        return userReference.fetchDocumentsWithDocumentIDs(documentIDs: place.therapistIDs, limit: 10, lastDocument: lastDocument, isShowLoder: isShowLoader) { objects, lastDocument in
+            guard let lastDoument = lastDocument else { handlerResponse([], nil, place); return }
+            let users = self.setUsers(objects)
+            handlerResponse(users, lastDocument, place)
+        }
+    }
+
+    private func setUsers(_ objects: [Any]) -> [UserModel] {
+        var users: [UserModel] = []
+        objects.forEach { object in
+            if let user = UserModel.init(dictionary: object as? [String: Any]) {
+                users.append(user)
+            }
+        }
+        return users
     }
 }

@@ -8,26 +8,34 @@
 
 import UIKit
 
-class CallTableViewCell: UITableViewCell {
+class CallTableViewCell: GeneralTableViewCell {
 
     @IBOutlet weak var authImage: rImage!
     @IBOutlet weak var authName: UILabel!
 
-    var object: Any?
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.selectionStyle = .none
     }
 
-    func configureCell() {
-
+    override func configureCell() {
+        if let object = object as? UserModel {
+            self.authImage.fetchImage(object.image, .ic_placeholder)
+            self.authName.text = object.name
+        } else {
+            self.authImage.image = nil
+            self.authName.text = nil
+        }
     }
 
     @IBAction func callAction(_ sender: Any) {
+        guard let object = object as? UserModel, let phone = object.phone else { return }
         debugPrint(#function)
-        let authPhone = "+972594122010"
-        Helper.call(authPhone)
+        Helper.call(phone)
+    }
+
+    override func didselect(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = TherapistViewController()
+        vc._push()
     }
 }

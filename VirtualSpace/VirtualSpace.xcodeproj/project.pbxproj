@@ -162,6 +162,8 @@
 		E7B7C4DA2A67057E008000D8 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B7C4D92A67057E008000D8 /* CALayer.swift */; };
 		E7B7C4DE2A670D90008000D8 /* TherapistInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B7C4DC2A670D90008000D8 /* TherapistInfoTableViewCell.xib */; };
 		E7B7C4DF2A670D90008000D8 /* TherapistInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B7C4DD2A670D90008000D8 /* TherapistInfoTableViewCell.swift */; };
+		E7C836CD2A6FBF5E008EC7A3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C836CC2A6FBF5E008EC7A3 /* Post.swift */; };
+		E7C836CF2A6FC1BD008EC7A3 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C836CE2A6FC1BD008EC7A3 /* PostController.swift */; };
 		E7CE35A32A6506E400853993 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CE35A12A6506E400853993 /* NewPostViewController.swift */; };
 		E7CE35A42A6506E400853993 /* NewPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7CE35A22A6506E400853993 /* NewPostViewController.xib */; };
 		E7D1A7DF2A63B5A700A701E7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D1A7DD2A63B5A700A701E7 /* ChatViewController.swift */; };
@@ -355,6 +357,8 @@
 		E7B7C4D92A67057E008000D8 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		E7B7C4DC2A670D90008000D8 /* TherapistInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TherapistInfoTableViewCell.xib; sourceTree = "<group>"; };
 		E7B7C4DD2A670D90008000D8 /* TherapistInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapistInfoTableViewCell.swift; sourceTree = "<group>"; };
+		E7C836CC2A6FBF5E008EC7A3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		E7C836CE2A6FC1BD008EC7A3 /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		E7CE35A12A6506E400853993 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		E7CE35A22A6506E400853993 /* NewPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewPostViewController.xib; sourceTree = "<group>"; };
 		E7D1A7DD2A63B5A700A701E7 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -776,6 +780,7 @@
 				E7F3E8E52A6E586F007270F6 /* Place.swift */,
 				E7F3E8DD2A6E4D8D007270F6 /* Category.swift */,
 				E7F3E8E12A6E5452007270F6 /* SubCategory.swift */,
+				E7C836CC2A6FBF5E008EC7A3 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -788,6 +793,7 @@
 				E7F3E8E72A6E58E6007270F6 /* PlaceController.swift */,
 				E7F3E8DF2A6E4DE1007270F6 /* CategoryController.swift */,
 				E7F3E8E32A6E5470007270F6 /* SubCategoryController.swift */,
+				E7C836CE2A6FC1BD008EC7A3 /* PostController.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -1566,6 +1572,7 @@
 				E72346A22A5FD8EE0061877B /* AcceptedTableViewCell.swift in Sources */,
 				E7868BA52A6014F7008917DD /* Helper.swift in Sources */,
 				E7373F4C2A5AC9B5007A1186 /* LaunchViewController.swift in Sources */,
+				E7C836CF2A6FC1BD008EC7A3 /* PostController.swift in Sources */,
 				E7D1A7E22A63B7B500A701E7 /* Message.swift in Sources */,
 				E72346B02A5FE37C0061877B /* OrdersPendingViewController.swift in Sources */,
 				E7F3E8E62A6E586F007270F6 /* Place.swift in Sources */,
@@ -1642,6 +1649,7 @@
 				E7715DED2A5ED0EC00143F92 /* PlaceInfoViewController.swift in Sources */,
 				E798C62F2A67B6F3009C7D86 /* UserModel.swift in Sources */,
 				E7868BB02A6023E7008917DD /* MessageViewController.swift in Sources */,
+				E7C836CD2A6FBF5E008EC7A3 /* Post.swift in Sources */,
 				E7A861942A5EC0A100CFA14B /* FavoriteViewController.swift in Sources */,
 				E7D1A7F62A63E0D000A701E7 /* TherapistViewController.swift in Sources */,
 				E7D1A7FC2A63E21C00A701E7 /* PostTableViewCell.swift in Sources */,

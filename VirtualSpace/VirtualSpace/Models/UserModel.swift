@@ -47,7 +47,27 @@ class UserModel {
         self.coverImage = dictionary["coverImage"] as? String
         self.favoritePosts = dictionary["favoritePosts"] as? [String] ?? []
         self.favoritePlaces = dictionary["favoritePlaces"] as? [String] ?? []
-        self.type = (dictionary["type"] as? Int) == 0 ? .User : .Business
+        if let type = dictionary["type"] as? Int {
+            self.type = type == 0 ? .User : .Business
+        }
+    }
+
+    init?(id: String?, dictionary: [String: Any]?) {
+        guard let dictionary, !dictionary.isEmpty else { return nil }
+        self.id = id
+        self.email = dictionary["email"] as? String
+        self.password = dictionary["password"] as? String
+        self.countryCode = dictionary["countryCode"] as? String
+        self.phone = dictionary["phone"] as? String
+        self.name = dictionary["name"] as? String
+        self.bio = dictionary["bio"] as? String
+        self.image = dictionary["image"] as? String
+        self.coverImage = dictionary["coverImage"] as? String
+        self.favoritePosts = dictionary["favoritePosts"] as? [String] ?? []
+        self.favoritePlaces = dictionary["favoritePlaces"] as? [String] ?? []
+        if let type = dictionary["type"] as? Int {
+            self.type = type == 0 ? .User : .Business
+        }
     }
 
     func getDictionary() -> [String: Any] {

@@ -9,25 +9,18 @@ import UIKit
 import FirebaseFirestore
 
 enum GeneralController {
-    case GetTest
+    case GetPlaces
+    case GetFavoritePlaces
+    case GetTherapists(Place)
 
     func sendRequest(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
         switch self {
-        case .GetTest:
-            return TestController().getTest(lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse, handlerOfflineLoad: nil)
+        case .GetPlaces:
+            return PlaceController().getPlacesWithPagination(lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
+        case .GetFavoritePlaces:
+            return PlaceController().getFavoritePlaces(lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
+        case .GetTherapists(let place):
+            return UserController().getTherapists(place: place, lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
         }
     }
-}
-
-class TestController {
-
-    private let reference = FirebaseFirestoreController().setFirebaseReference(.Test)
-
-    func getTest(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void), handlerOfflineLoad: (() -> Void)?) -> FirebaseFirestoreController? {
-        return reference.fetchDocuments(limit: 4, isShowLoder: isShowLoader, lastDocument: lastDocument) { dic, lastDocument in
-            guard let lastDocument = lastDocument else { handlerResponse([], nil, nil); return }
-            handlerResponse(dic, lastDocument, nil)
-        }
-    }
-
 }
