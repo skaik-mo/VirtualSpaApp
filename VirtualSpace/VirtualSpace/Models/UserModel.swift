@@ -73,12 +73,12 @@ class UserModel {
     func getDictionary() -> [String: Any] {
         var dictionary: [String: Any] = self.getDictionaryForDatabse()
         dictionary["id"] = self.id
-        dictionary["email"] = self.email
         return dictionary
     }
 
     func getDictionaryForDatabse() -> [String: Any] {
         var dictionary: [String: Any?] = [
+            "email": self.email,
             "password": self.password,
             "name": self.name,
             "countryCode": self.countryCode,

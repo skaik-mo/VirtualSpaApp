@@ -29,12 +29,11 @@ class PostController {
         }
     }
 
-    func getPostsByUser(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
-        guard let user = UserController().fetchUser() else { return referance }
+    func getPostsByUser(user: UserModel, lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
         return referance.fetchDocumentsWithField(field: "user", value: user.getDictionaryForPost(), limit: 10, lastDocument: lastDocument, isShowLoder: isShowLoader) { objects, lastDocument in
-            guard let lastDocument = lastDocument else { handlerResponse([], nil, nil); return }
+            guard let lastDocument = lastDocument else { handlerResponse([], nil, user); return }
             let posts = self.setPosts(objects)
-            handlerResponse(posts, lastDocument, nil)
+            handlerResponse(posts, lastDocument, user)
         }
     }
 

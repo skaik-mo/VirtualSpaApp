@@ -35,6 +35,16 @@ class PlaceController {
         }
     }
 
+    func getPlacesByTherapist(therapist: UserModel, lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
+        guard let id = therapist.id else { return referance }
+        return referance.fetchDocumentsWithField(field: "therapists", value: [id], limit: 10, lastDocument: lastDocument, isShowLoder: isShowLoader) { objects, lastDocument in
+            guard let lastDocument = lastDocument else { handlerResponse([], nil, therapist); return }
+            var _objects = objects
+            _objects.insert(therapist.getDictionary(), at: 0)
+            handlerResponse(_objects, lastDocument, therapist)
+        }
+    }
+
     func getFavoritePlaces(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
         guard let user = UserController().fetchUser() else { return referance }
         return referance.fetchDocumentsWithDocumentIDs(documentIDs: user.favoritePlaces, limit: 10, lastDocument: lastDocument, isShowLoder: isShowLoader) { objects, lastDocument in

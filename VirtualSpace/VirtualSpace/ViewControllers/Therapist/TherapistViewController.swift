@@ -11,15 +11,17 @@ import UIKit
 class TherapistViewController: UIViewController {
 
     // MARK: Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: GeneralTableView!
 
     // MARK: Properties
+    var therapist: UserModel
     var posts: [Any] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     var places: [Any] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     var isInfoSelected = false
 
     // MARK: Init
-    init() {
+    init(therapist: UserModel) {
+        self.therapist = therapist
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -52,76 +54,75 @@ private extension TherapistViewController {
     func setUpView() {
         TherapistHeaderTableViewCell.isInfoSelected = false
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: -20, right: 0)
-        self.tableView._registerHeaderAndFooter = TherapistHeaderTableViewCell.self
+        self.tableView.isPullToRefreshEnable = true
+        self.tableView.isLoadMoreEnable = true
+        self.tableView.hedaer = TherapistHeaderTableViewCell.self
         self.tableView.sectionHeaderHeight = 335
-        self.tableView._registerCell = TherapistInfoTableViewCell.self
-        self.tableView._registerCell = PlaceTableViewCell.self
-        self.tableView._registerCell = PostTableViewCell.self
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
+        self.tableView.cell = TherapistInfoTableViewCell.self
+        self.tableView.cell = PlaceTableViewCell.self
+        self.tableView.cell = PostTableViewCell.self
+        self.tableView.handleCell = { indexPath in
+            if self.isInfoSelected {
+                if indexPath.row == 0 {
+                    let cell: TherapistInfoTableViewCell = self.tableView._dequeueReusableCell()
+                    cell.object = self.tableView.objects[indexPath.row]
+                    cell.configureCell()
+                    return cell
+                }
+                let cell: PlaceTableViewCell = self.tableView._dequeueReusableCell()
+                cell.object = self.tableView.objects[indexPath.row]
+                cell.configureCell()
+                return cell
+            }
+            return nil
+        }
+        self.tableView.handleHeightCell = { indexPath in
+            if indexPath.item == 0 {
+                return self.isInfoSelected ? UITableView.automaticDimension : 330
+            }
+            return self.isInfoSelected ? 85 : 330
+        }
     }
 
     func setUpData() {
         self.title = Strings.MESSAGE_THERAPIST_TITLE
     }
+}
 
+extension TherapistViewController {
     func fetchData() {
-
+        switch self.isInfoSelected {
+        case true:
+            self.tableView.resetTableView(request: .GetPlacesByTherapist(self.therapist))
+        case false:
+            self.tableView.resetTableView(request: .GetPostsByUser(self.therapist))
+        }
     }
-
 }
 
-extension TherapistViewController: UITableViewDataSource, UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isInfoSelected ? self.places.count + 1 : self.posts.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if isInfoSelected {
-            if indexPath.row == 0 {
-                let cell: TherapistInfoTableViewCell = tableView._dequeueReusableCell()
-//                cell.object = ""
-                cell.configureCell()
-                return cell
-            }
-            let cell: PlaceTableViewCell = tableView._dequeueReusableCell()
-//            cell.object = object[indexPath.row]
-            cell.configureCell()
-            return cell
-        }
-        let cell: PostTableViewCell = tableView._dequeueReusableCell()
-//        cell.object = object[indexPath.row]
-        cell.configureCell()
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.item == 0 {
-            return self.isInfoSelected ? UITableView.automaticDimension : 330
-        }
-        return self.isInfoSelected ? 85 : 330
-
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if isInfoSelected {
-            guard indexPath.item != 0 else { return }
-//            let vc = PlaceInfoViewController()
-//            vc.title = object[indexPath.row]
-//            vc._push()
-            return
-        }
-//        let vc = PostDetailsViewController()
-//        vc._push()
-    }
-
-    // MARK: Header
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header: TherapistHeaderTableViewCell = tableView._dequeueReusableHeaderFooterView()
-        header.headerOject = ""
-        header.configureHeader()
-        return header
-    }
-
-}
+// extension TherapistViewController: UITableViewDataSource, UITableViewDelegate {
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return isInfoSelected ? self.places.count + 1 : self.posts.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        if isInfoSelected {
+//            if indexPath.row == 0 {
+//                let cell: TherapistInfoTableViewCell = tableView._dequeueReusableCell()
+////                cell.object = ""
+//                cell.configureCell()
+//                return cell
+//            }
+//            let cell: PlaceTableViewCell = tableView._dequeueReusableCell()
+////            cell.object = object[indexPath.row]
+//            cell.configureCell()
+//            return cell
+//        }
+//        let cell: PostTableViewCell = tableView._dequeueReusableCell()
+////        cell.object = object[indexPath.row]
+//        cell.configureCell()
+//        return cell
+//    }
+//
+// }

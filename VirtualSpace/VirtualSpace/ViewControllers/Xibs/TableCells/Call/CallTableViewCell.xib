@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hAR-Sa-Gtk">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                <rect key="frame" x="0.0" y="5" width="320" height="40"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qHq-9a-DRr">
                                         <rect key="frame" x="16" y="0.0" width="79.333333333333329" height="40"/>
@@ -40,7 +40,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zR1-vz-NKF">
-                                                <rect key="frame" x="50.000000000000007" y="10.333333333333334" width="29.333333333333336" height="19.666666666666664"/>
+                                                <rect key="frame" x="50" y="10.333333333333329" width="29.333333333333343" height="19.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                                 <color key="textColor" name="#000000"/>
                                                 <nil key="highlightedColor"/>
@@ -59,7 +59,7 @@
                                 <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="16" bottom="0.0" trailing="16"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="v8M-d9-nAU">
-                                <rect key="frame" x="0.0" y="49" width="320" height="1"/>
+                                <rect key="frame" x="0.0" y="54" width="320" height="1"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="67z-tZ-VCv">
                                         <rect key="frame" x="70" y="0.0" width="250" height="1"/>
@@ -72,7 +72,7 @@
                                 <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="70" bottom="0.0" trailing="0.0"/>
                             </stackView>
                         </subviews>
-                        <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="10" trailing="0.0"/>
+                        <directionalEdgeInsets key="directionalLayoutMargins" top="5" leading="0.0" bottom="5" trailing="0.0"/>
                     </stackView>
                 </subviews>
                 <constraints>

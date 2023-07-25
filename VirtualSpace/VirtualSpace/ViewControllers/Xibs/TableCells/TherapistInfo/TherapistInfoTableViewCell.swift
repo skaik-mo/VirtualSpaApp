@@ -8,24 +8,25 @@
 
 import UIKit
 
-class TherapistInfoTableViewCell: UITableViewCell {
+class TherapistInfoTableViewCell: GeneralTableViewCell {
 
     @IBOutlet weak var bioTitleLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
     @IBOutlet weak var workInLabel: UILabel!
 
-//    var headerOject: Any?
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.selectionStyle = .none
     }
 
-    func configureCell() {
+    override func configureCell() {
         self.bioTitleLabel.text = Strings.BIO_TITLE
-        self.bioLabel.text = "Ahh, the great things that can happen when you kick off your shoes and give your feet a massage 🙅🏻‍♂️ #massaging."
         self.workInLabel.text = Strings.WORK_IN_TITLE
+        if let object = UserModel(dictionary: object as? [String: Any]) {
+            self.bioLabel.text = object.bio
+        } else {
+            self.bioLabel.text = nil
+        }
     }
 
 }

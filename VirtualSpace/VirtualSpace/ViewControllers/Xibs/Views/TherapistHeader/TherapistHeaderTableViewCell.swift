@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TherapistHeaderTableViewCell: UITableViewHeaderFooterView {
+class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
 
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var TherapistImage: rImage!
@@ -21,25 +21,32 @@ class TherapistHeaderTableViewCell: UITableViewHeaderFooterView {
     @IBOutlet weak var postsButton: UIButton!
     @IBOutlet weak var infoButton: UIButton!
 
-    var headerOject: Any?
     static var isInfoSelected = false
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    func configureHeader() {
+    override func configureHeader() {
         self.customizeButtons()
-        self.backgroundImage.image = .demo
-        self.TherapistImage.image = .demo
-        self.TherapistNameLabel.text = "Mohammed skiak"
-        self.TherapistEmailLabel.text = "mohamedsaeb.skaik@gmail.com"
         self.followButton.titleLabel?.text = Strings.FOLLOW_TITLE
-        self.followButton.applyButtonStyle(.Primary(40))
         self.messageButton.titleLabel?.text = Strings.MESSAGE_TITLE
-        self.messageButton.applyButtonStyle(.OutlinedPurple(40))
         self.bookNowButton.titleLabel?.text = Strings.BOOK_NOW_TITLE
+        self.followButton.applyButtonStyle(.Primary(40))
+        self.messageButton.applyButtonStyle(.OutlinedPurple(40))
         self.bookNowButton.applyButtonStyle(.SecondaryLightPurple(40))
+        if let object = object as? UserModel {
+            self.backgroundImage.fetchImage(object.coverImage, .ic_placeholder)
+            self.TherapistImage.fetchImage(object.image, .ic_placeholder)
+            self.TherapistNameLabel.text = object.name
+            self.TherapistEmailLabel.text = object.email
+        } else {
+            self.backgroundImage.image = nil
+            self.TherapistImage.image = nil
+            self.TherapistNameLabel.text = nil
+            self.TherapistEmailLabel.text = nil
+        }
     }
 
     private func customizeButtons() {
@@ -76,16 +83,16 @@ class TherapistHeaderTableViewCell: UITableViewHeaderFooterView {
     }
 
     @IBAction func callAction(_ sender: Any) {
+        guard let object = object as? UserModel, let phone = object.phone else { return }
         debugPrint(#function)
-        let authPhone = "+972594122010"
-        Helper.call(authPhone)
+        Helper.call(phone)
     }
 
     @IBAction func postAction(_ sender: Any) {
-    Self.isInfoSelected = false
+        Self.isInfoSelected = false
         if let topVC = self._topVC as? TherapistViewController {
             topVC.isInfoSelected = Self.isInfoSelected
-            topVC.tableView.reloadData()
+            topVC.fetchData()
         }
     }
 
@@ -93,7 +100,7 @@ class TherapistHeaderTableViewCell: UITableViewHeaderFooterView {
         Self.isInfoSelected = true
         if let topVC = self._topVC as? TherapistViewController {
             topVC.isInfoSelected = Self.isInfoSelected
-            topVC.tableView.reloadData()
+            topVC.fetchData()
         }
     }
 

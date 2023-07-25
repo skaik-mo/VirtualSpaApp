@@ -18,13 +18,15 @@ class GeneralTableView: UITableView {
             self.reloadData()
         }
     }
+    var handleHeightCell: ((_ indexPath: IndexPath) -> CGFloat)?
+    var handleCell: ((_ indexPath: IndexPath) -> UITableViewCell?)?
     var cell: UITableViewCell.Type = UITableViewCell.self {
         didSet {
             self._registerCell = cell.self
         }
     }
 
-    var headerObject: Any?
+    private var headerObject: Any?
     var hedaer: UITableViewHeaderFooterView.Type = UITableViewHeaderFooterView.self {
         didSet {
             self._registerHeaderAndFooter = hedaer.self
@@ -133,6 +135,9 @@ extension GeneralTableView: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = handleCell?(indexPath) {
+            return cell
+        }
         let cell: GeneralTableViewCell = tableView._dequeueReusableCell(withIdentifier: cell._id)
         cell.index = indexPath.item
         cell.object = self.objects[indexPath.item]
@@ -144,6 +149,13 @@ extension GeneralTableView: UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.cellForRow(at: indexPath) as? GeneralTableViewCell {
             cell.didselect(tableView, didSelectRowAt: indexPath)
         }
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if let height = handleHeightCell?(indexPath) {
+            return height
+        }
+        return self.rowHeight
     }
 
     // MARK: Header

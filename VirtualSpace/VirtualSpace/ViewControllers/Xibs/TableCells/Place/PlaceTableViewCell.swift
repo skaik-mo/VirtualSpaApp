@@ -35,6 +35,11 @@ class PlaceTableViewCell: GeneralTableViewCell {
             self.placeNameLabel.text = object.name
             self.placeAddressLabel.text = object.address
             self.availableTimeLabel.text = object.getTimeAndDistance()
+        } else if let object = Place(dictionary: object as? [String: Any]) {
+            self.placeImage.fetchImage(object.icon, .ic_placeholder)
+            self.placeNameLabel.text = object.name
+            self.placeAddressLabel.text = object.address
+            self.availableTimeLabel.text = object.getTimeAndDistance()
         } else {
             self.placeImage.image = nil
             self.placeNameLabel.text = nil
