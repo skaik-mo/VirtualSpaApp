@@ -148,6 +148,9 @@ private extension EditProfileViewController {
         auth.email = authEmailTextField.text
         auth.countryCode = authPhoneTextField.countryCode
         auth.phone = authPhoneTextField.text
+        if auth.type == .Business {
+            auth.bio = bioTextView.text
+        }
         return auth
     }
 
@@ -164,10 +167,8 @@ private extension EditProfileViewController {
                 self.image = nil
             }
         }).handlerDidFinishRequest(handler: {
-            debugPrint("handlerDidFinishRequest")
             self.isEnableSave = true
         }).handlerofflineLoad(handler: {
-            debugPrint("handlerofflineLoad")
             self.isEnableSave = true
         })
     }
