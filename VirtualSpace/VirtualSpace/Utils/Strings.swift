@@ -160,6 +160,7 @@ class Strings {
     // MARK: - Posts
     static let SOCIAL_MEDIA_POSTS_TITLE = "Social Media Posts"._localizedKey
     static let POSTS_TITLE = "Posts"._localizedKey
+    static let POST_EMPTY_TITLE = "There are no posts"._localizedKey
 
     // MARK: - TherapistInfo
     static let INFO_TITLE = "Information"._localizedKey
@@ -179,6 +180,9 @@ class Strings {
     static let NEW_POST_TITLE = "New Post"._localizedKey
     static let POST_TITLE = "Post"._localizedKey
     static let ASK_SOMTHING_PLACEHOLDER = "Ask Something"._localizedKey
+    static let DESCRIPTION_POST_MESSAGE = "Description Post"._localizedKey
+    static let INVALID_DESCRIPTION_POST_MESSAGE = "Description Post field is required"._localizedKey
+    static let INVALID_LENGTH_DESCRIPTION_POST_MESSAGE = "The description posted is too long"._localizedKey
 
     // MARK: - Home User
     static let SEARCH_FREIENDS_PLACEHOLDER = "Search Here…"._localizedKey

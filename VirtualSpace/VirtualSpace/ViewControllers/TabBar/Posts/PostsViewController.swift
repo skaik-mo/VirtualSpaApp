@@ -11,7 +11,7 @@ import UIKit
 class PostsViewController: UIViewController {
 
     // MARK: Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: GeneralTableView!
 
     // MARK: Properties
 
@@ -28,7 +28,6 @@ class PostsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-        setUpData()
         fetchData()
     }
 
@@ -50,37 +49,15 @@ private extension PostsViewController {
 
     func setUpView() {
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
-        self.tableView._registerCell = PostTableViewCell.self
+        self.tableView.cell = PostTableViewCell.self
         self.tableView.rowHeight = 330
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-    }
-
-    func setUpData() {
-
+        self.tableView.isPullToRefreshEnable = true
+        self.tableView.isLoadMoreEnable = true
+        self.tableView.emptyTitle = Strings.POST_EMPTY_TITLE
     }
 
     func fetchData() {
-
-    }
-
-}
-
-extension PostsViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: PostTableViewCell = tableView._dequeueReusableCell()
-//        cell.object = object[indexPath.row]
-        cell.configureCell()
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = PostDetailsViewController()
-        vc._push()
+        self.tableView.resetTableView(request: .GetPosts)
     }
 
 }

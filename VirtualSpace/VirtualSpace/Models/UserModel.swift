@@ -95,4 +95,13 @@ class UserModel {
         return dictionary as [String: Any]
     }
 
+    func getDictionaryForPost() -> [String: Any] {
+        var dictionary: [String: Any?] = [
+            "id": self.id,
+            "name": self.name,
+            "image": self.image
+        ]
+        return dictionary as [String: Any]
+    }
+
 }

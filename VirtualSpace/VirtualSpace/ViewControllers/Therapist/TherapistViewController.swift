@@ -112,8 +112,8 @@ extension TherapistViewController: UITableViewDataSource, UITableViewDelegate {
 //            vc._push()
             return
         }
-        let vc = PostDetailsViewController()
-        vc._push()
+//        let vc = PostDetailsViewController()
+//        vc._push()
     }
 
     // MARK: Header

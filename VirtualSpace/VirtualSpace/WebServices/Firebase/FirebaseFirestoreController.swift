@@ -28,9 +28,11 @@ class FirebaseFirestoreController: HandlerFinish {
         return self
     }
 
-    func setData(document: String, dictionary: [String: Any], isShowLoder: Bool = true, isShowMessage: Bool = true, success: @escaping () -> Void) -> Self {
+    func setData(document: String = UUID().uuidString, dictionary: [String: Any], isShowLoder: Bool = true, isShowMessage: Bool = true, success: @escaping () -> Void) -> Self {
         guard Reachability.shared.isConnected() else {
-            self.offlineLoad?()
+            DispatchQueue.main.async {
+                self.offlineLoad?()
+            }
             return self
         }
         if isShowLoder {
@@ -94,6 +96,50 @@ class FirebaseFirestoreController: HandlerFinish {
             success(objects)
             self.didFinishRequest?()
         })
+        return self
+    }
+
+    func fetchDocumentsWithField(field: String, value: Any, limit: Int, lastDocument: QueryDocumentSnapshot?, isShowLoder: Bool = true, isShowMessage: Bool = true, completion: @escaping ((_ objects: [[String: Any]], _ lastDocument: QueryDocumentSnapshot?) -> Void)) -> Self {
+//        guard !documentIDs.isEmpty else {
+//            completion([], nil)
+//            DispatchQueue.main.async {
+//                self.didFinishRequest?()
+//            }
+//            return self
+//        }
+        guard Reachability.shared.isConnected(isShowMessage: false) else {
+            DispatchQueue.main.async {
+                self.offlineLoad?()
+            }
+            return self
+        }
+        if isShowLoder {
+            Helper.showLoader(isLoding: true)
+        }
+        var objects: [[String: Any]] = []
+        var query: Query? = reference?.limit(to: limit)
+        if let lastDocument {
+            query = query?.start(afterDocument: lastDocument)
+        }
+        query?.whereField(field, isEqualTo: value).getDocuments { response, error in
+            guard ResponseHandler.responseHandler(error: error) else { self.didFinishRequest?()
+                ; return }
+            response?.documents.forEach({ data in
+                var dictionary = data.data()
+                dictionary["id"] = data.documentID
+                objects.append(dictionary)
+            })
+            if isShowLoder {
+                Helper.showLoader(isLoding: false)
+            }
+            if let lastDocument = response?.documents.last {
+                completion(objects, lastDocument)
+                self.didFinishRequest?()
+                return
+            }
+            completion(objects, nil)
+            self.didFinishRequest?()
+        }
         return self
     }
 

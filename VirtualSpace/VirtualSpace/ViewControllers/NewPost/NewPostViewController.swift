@@ -22,7 +22,14 @@ class NewPostViewController: UIViewController {
     @IBOutlet weak var postButton: UIButton!
 
     // MARK: Properties
-    var or: MSSTakeImage?
+    var handleBack: ((_ post: Post) -> Void)?
+    private var postImg: UIImage?
+    private let user = UserController().fetchUser()
+    private var isEnablePost = true {
+        didSet {
+            self.postButton.isEnabled = isEnablePost
+        }
+    }
 
     // MARK: Init
     init() {
@@ -38,7 +45,6 @@ class NewPostViewController: UIViewController {
         super.viewDidLoad()
         setUpData()
         setUpView()
-        fetchData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -61,11 +67,13 @@ class NewPostViewController: UIViewController {
 private extension NewPostViewController {
     @IBAction func postAction(_ sender: Any) {
         debugPrint(#function)
+        self.addPost()
     }
     @IBAction func cameraAction(_ sender: Any) {
         debugPrint(#function)
         Helper.takeImage { image in
             self.postImage.image = image
+            self.postImg = image
         }
     }
 }
@@ -74,7 +82,6 @@ private extension NewPostViewController {
 private extension NewPostViewController {
 
     func setUpView() {
-
         let mask = self.view._roundCorners(isTopLeft: true, isTopRight: true)
         self.superStack.layer.maskedCorners = mask
         self.superStack.cornerRadius = 16
@@ -85,23 +92,14 @@ private extension NewPostViewController {
 
     func setUpData() {
         self.newPostLabel.text = Strings.NEW_POST_TITLE
-        self.authImage.image = .demo
+        self.authImage.fetchImage(user?.image, .ic_placeholder)
         self.postImage.image = nil
-        self.lengthLabel.text = "0/200"
         self.postButton.titleLabel?.text = Strings.POST_TITLE
     }
 
-    func fetchData() {
-
-    }
-
     func setTextPlaceholder() {
-//        if self.object == nil {
         textView.text = Strings.ASK_SOMTHING_PLACEHOLDER
         textView.textColor = .color_7A7A7A
-//        } else {
-//        textView.textColor = .color_000000
-//        }
     }
 
 }
@@ -121,6 +119,64 @@ extension NewPostViewController: UITextViewDelegate {
         if textView.text.isEmpty {
             self.setTextPlaceholder()
         }
+    }
+
+    func textViewDidChange(_ textView: UITextView) {
+        self.lengthLabel.text = "\(textView.text.count)/200"
+    }
+
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let newValue = (textView.text as NSString?)?.replacingCharacters(in: range, with: text)
+        if newValue?.count ?? 0 > 200 {
+            textView.text = newValue
+            self.lengthLabel.textColor = .color_FF0101
+            return false
+        } else {
+            self.lengthLabel.textColor = .color_7A7A7A
+            return true
+        }
+    }
+
+}
+
+extension NewPostViewController {
+
+    func validation() -> Bool {
+        guard NilValidationRule(field: Strings.DESCRIPTION_POST_MESSAGE).hasValidValue(self.textView.text) else { return false }
+        guard self.textView.text != Strings.ASK_SOMTHING_PLACEHOLDER else {
+            self._showErrorAlertOK(message: Strings.INVALID_DESCRIPTION_POST_MESSAGE)
+            return false
+        }
+        guard self.textView.text?.count ?? 0 <= 200 else {
+            self._showErrorAlertOK(message: Strings.INVALID_LENGTH_DESCRIPTION_POST_MESSAGE)
+            return false
+        }
+        guard self.postImage.image != nil && self.postImg != nil else {
+            self._showErrorAlertOK(message: Strings.ADD_PHOTO_MESSSAGE)
+            return false
+        }
+        return true
+    }
+
+    func getPost() -> Post {
+            .init(description: self.textView.text, user: self.user)
+    }
+
+    func addPost() {
+        self.isEnablePost = false
+        guard validation() else {
+            self.isEnablePost = true
+            return
+        }
+        _ = PostController().addPost(post: self.getPost(), image: self.postImg) { post in
+            self.handleBack?(post)
+            self._dismissVC()
+        }.handlerDidFinishRequest {
+            self.isEnablePost = true
+        }.handlerofflineLoad {
+            self.isEnablePost = true
+        }
+
     }
 
 }

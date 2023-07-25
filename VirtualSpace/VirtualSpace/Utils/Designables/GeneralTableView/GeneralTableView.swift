@@ -68,6 +68,13 @@ class GeneralTableView: UITableView {
 
 }
 
+// MARK: - Empty Data
+extension GeneralTableView {
+    func setEmptyData() {
+        self.emptyDataSet(headerHeight: self.emptyHeaderHeight, image: self.emptyImage, title: self.emptyTitle, subTitle: self.emptySubTitle, titleFont: .poppinsMedium17, subTitleFont: .poppinsMedium13)
+    }
+}
+
 // MARK: - PullToRefresh
 extension GeneralTableView {
 
@@ -83,7 +90,6 @@ extension GeneralTableView {
         self.sendRequest(request)
         self.isShowLoader = false
     }
-
 }
 
 // MARK: - Pagination (load more)
@@ -107,12 +113,12 @@ extension GeneralTableView {
             self.headerObject = headerObject
             debugPrint("objects =>> \(self.objects.count) || is lastDocuments nil =>> \(lastDocument == nil), headerObject =>> \(headerObject)")
         })?.handlerDidFinishRequest(handler: {
-            self.emptyDataSet(headerHeight: self.emptyHeaderHeight, image: self.emptyImage, title: self.emptyTitle, subTitle: self.emptySubTitle, titleFont: .poppinsMedium17, subTitleFont: .poppinsMedium13)
+            self.setEmptyData()
             self.control.endRefreshing()
             self.stopLoading()
             self.handlerDidFinishRequest?()
         }).handlerofflineLoad(handler: {
-            self.emptyDataSet(headerHeight: self.emptyHeaderHeight, image: self.emptyImage, title: self.emptyTitle, subTitle: self.emptySubTitle, titleFont: .poppinsMedium17, subTitleFont: .poppinsMedium13)
+            self.setEmptyData()
             self.control.endRefreshing()
             self.stopLoading()
             self.handlerDidFinishRequest?()

@@ -16,6 +16,7 @@ class PostDetailsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: Properties
+    var post: Post
     var inpuTextHeight = 55.0
     var objects: [String: Any] = [
         "Post": 1,
@@ -39,7 +40,8 @@ class PostDetailsViewController: UIViewController {
     }()
 
     // MARK: Init
-    init() {
+    init(post: Post) {
+        self.post = post
         super.init(nibName: nil, bundle: nil)
     }
 

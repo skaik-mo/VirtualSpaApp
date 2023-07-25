@@ -28,6 +28,13 @@ class FirebaseStorageController: HandlerFinish {
             handler(nil)
             return self
         }
+        guard Reachability.shared.isConnected() else {
+            DispatchQueue.main.async {
+                self.offlineLoad?()
+                handler(nil)
+            }
+            return self
+        }
         let reference = storage.reference().child(path)
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"

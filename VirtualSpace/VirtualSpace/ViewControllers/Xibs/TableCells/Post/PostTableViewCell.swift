@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostTableViewCell: UITableViewCell {
+class PostTableViewCell: GeneralTableViewCell {
 
     @IBOutlet weak var authImage: rImage!
     @IBOutlet weak var authNameLabel: UILabel!
@@ -20,23 +20,29 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var lineView: UIView!
 
-    var object: Any?
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.selectionStyle = .none
     }
 
-    func configureCell() {
+    override func configureCell() {
         let imageGesture = UITapGestureRecognizer(target: self, action: #selector(showImage))
         self.postImage.addGestureRecognizer(imageGesture)
         self.postImage.isUserInteractionEnabled = true
-        self.authImage.image = .demo
-        self.authNameLabel.text = "Mohammed skaik"
-        self.postTimeLabel.text = Date()._timeAgoDisplay
-        self.descriptionLabel.text = "It's important to prioritize self-care and relaxation in order to maintain good mental and physical health, It's important to prioritize self-care and relaxation in order to maintain good mental and physical health"
-        self.postImage.image = .demo
+        if let object = object as? Post {
+            self.authImage.fetchImage(object.user?.image, .ic_placeholder)
+            self.authNameLabel.text = object.user?.name
+            self.postTimeLabel.text = object.modifiedAt?._timeAgoDisplay
+            self.descriptionLabel.text = object.description
+            self.postImage.fetchImage(object.image, .ic_placeholder)
+            self.likeButton.isSelected = object.isFavorite
+        } else {
+            self.authImage.image = nil
+            self.authNameLabel.text = nil
+            self.postTimeLabel.text = nil
+            self.descriptionLabel.text = nil
+            self.postImage.image = nil
+        }
     }
 
     @IBAction func moreAction(_ sender: Any) {
@@ -45,15 +51,19 @@ class PostTableViewCell: UITableViewCell {
 
     @IBAction func likeAction(_ sender: Any) {
         debugPrint(#function)
+        guard let object = object as? Post else { return }
         self.likeButton.isSelected.toggle()
+        object.isFavorite = self.likeButton.isSelected
+        PostController().addFivoraitePost(post: object)
     }
 
     @IBAction func commentAction(_ sender: Any) {
-        debugPrint(#function)
+        self.goToPostDetails()
     }
 
     @IBAction func shareAction(_ sender: Any) {
         debugPrint(#function)
+        self._topVC?._showAlertOK(message: "not working")
     }
 
     @objc private func showImage() {
@@ -62,6 +72,16 @@ class PostTableViewCell: UITableViewCell {
         vc.modalPresentationStyle = .custom
         vc.modalTransitionStyle = .crossDissolve
         vc._presentVC()
+    }
+
+    override func didselect(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.goToPostDetails()
+    }
+
+    func goToPostDetails() {
+        guard let object = object as? Post else { return }
+        let vc = PostDetailsViewController(post: object)
+        vc._push()
     }
 
 }

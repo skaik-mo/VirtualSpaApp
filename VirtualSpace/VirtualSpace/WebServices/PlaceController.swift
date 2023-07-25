@@ -5,7 +5,7 @@
 //  Created by Mohammed Skaik on 24/07/2023.
 //
 
-import Foundation
+import FirebaseFirestore
 
 class PlaceController {
 
@@ -27,10 +27,20 @@ class PlaceController {
         }
     }
 
-    func getFavoritePlaces(isShowLoder: Bool = true, success: @escaping ((_ places: [Place]) -> Void)) -> FirebaseFirestoreController {
+    func getPlacesWithPagination(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
+        return referance.fetchDocuments(limit: 10, lastDocument: lastDocument, isShowLoder: isShowLoader) { objects, lastDocument in
+            guard let lastDocument = lastDocument else { handlerResponse([], nil, nil); return }
+            let places = self.setPlaces(objects)
+            handlerResponse(places, lastDocument, nil)
+        }
+    }
+
+    func getFavoritePlaces(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
         guard let user = UserController().fetchUser() else { return referance }
-        return referance.searchWithDocumentIDs(documentIDs: user.favoritePlaces) { objects in
-            success(self.setPlaces(objects))
+        return referance.fetchDocumentsWithDocumentIDs(documentIDs: user.favoritePlaces, limit: 10, lastDocument: lastDocument, isShowLoder: isShowLoader) { objects, lastDocument in
+            guard let lastDocument = lastDocument else { handlerResponse([], nil, nil); return }
+            let places = self.setPlaces(objects)
+            handlerResponse(places, lastDocument, nil)
         }
     }
 
