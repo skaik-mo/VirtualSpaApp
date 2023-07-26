@@ -30,7 +30,8 @@ class PostController {
     }
 
     func getPostsByUser(user: UserModel, lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
-        return referance.fetchDocumentsWithField(field: "user", value: user.getDictionaryForPost(), limit: 10, lastDocument: lastDocument, isShowLoder: isShowLoader) { objects, lastDocument in
+        guard let id = user.id else { return referance }
+        return referance.fetchDocumentsWithField(field: "userID", value: id, limit: 10, lastDocument: lastDocument, isShowLoder: isShowLoader) { objects, lastDocument in
             guard let lastDocument = lastDocument else { handlerResponse([], nil, user); return }
             let posts = self.setPosts(objects)
             handlerResponse(posts, lastDocument, user)

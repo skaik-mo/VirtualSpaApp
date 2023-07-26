@@ -30,8 +30,8 @@ class PostTableViewCell: GeneralTableViewCell {
         self.postImage.addGestureRecognizer(imageGesture)
         self.postImage.isUserInteractionEnabled = true
         if let object = object as? Post {
-            self.authImage.fetchImage(object.user?.image, .ic_placeholder)
-            self.authNameLabel.text = object.user?.name
+            self.authImage.fetchImage(object.userImage, .ic_placeholder)
+            self.authNameLabel.text = object.userName
             self.postTimeLabel.text = object.modifiedAt?._timeAgoDisplay
             self.descriptionLabel.text = object.description
             self.postImage.fetchImage(object.image, .ic_placeholder)

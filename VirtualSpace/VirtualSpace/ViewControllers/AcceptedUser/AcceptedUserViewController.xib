@@ -37,7 +37,7 @@
                     <rect key="frame" x="0.0" y="50" width="375" height="728"/>
                     <subviews>
                         <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="K00-qw-0Kz">
-                            <rect key="frame" x="15" y="223.99999999999997" width="345" height="280.33333333333326"/>
+                            <rect key="frame" x="15" y="220.33333333333329" width="345" height="287.66666666666674"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="yXB-pE-uHf">
                                     <rect key="frame" x="0.0" y="0.0" width="345" height="150"/>
@@ -51,7 +51,7 @@
                                                         <constraint firstAttribute="height" constant="110" id="Iqm-mD-wG1"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo" translatesAutoresizingMaskIntoConstraints="NO" id="Lqd-Cp-QNl" customClass="rImage" customModule="VirtualSpace" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo" translatesAutoresizingMaskIntoConstraints="NO" id="Lqd-Cp-QNl" customClass="rImage" customModule="VirtualSpace" customModuleProvider="target">
                                                     <rect key="frame" x="132.66666666666666" y="70" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Lqd-Cp-QNl" secondAttribute="height" multiplier="1:1" id="3dE-Us-zod"/>
@@ -87,16 +87,16 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tR4-tC-3on">
-                                    <rect key="frame" x="0.0" y="150" width="345" height="76"/>
+                                    <rect key="frame" x="0.0" y="150" width="345" height="83.333333333333314"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XU9-W7-o0M">
-                                            <rect key="frame" x="151.33333333333334" y="18" width="42.666666666666657" height="18.666666666666671"/>
+                                            <rect key="frame" x="148" y="18" width="49" height="22.666666666666671"/>
                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                             <color key="textColor" name="#000000"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eamile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4G6-AC-1Ls">
-                                            <rect key="frame" x="151.66666666666666" y="41.666666666666686" width="42" height="16.333333333333329"/>
+                                            <rect key="frame" x="149.33333333333334" y="45.666666666666686" width="46.666666666666657" height="19.666666666666671"/>
                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                             <color key="textColor" name="#7A7A7A"/>
                                             <nil key="highlightedColor"/>
@@ -105,7 +105,7 @@
                                     <directionalEdgeInsets key="directionalLayoutMargins" top="18" leading="0.0" bottom="18" trailing="0.0"/>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1zc-m1-dGl">
-                                    <rect key="frame" x="0.0" y="226" width="345" height="54.333333333333314"/>
+                                    <rect key="frame" x="0.0" y="233.3333333333334" width="345" height="54.333333333333343"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sp9-bC-RJQ">
                                             <rect key="frame" x="16" y="0.0" width="273" height="34.333333333333336"/>
