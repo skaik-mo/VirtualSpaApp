@@ -15,6 +15,9 @@ enum GeneralController {
     case GetTherapists(Place)
     case GetPostsByUser(UserModel)
     case GetPosts
+    case GetMyReservations
+    case GetBusinessPendingReservations
+    case GetBusinessAcceptedReservations
 
     func sendRequest(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
         switch self {
@@ -30,6 +33,12 @@ enum GeneralController {
             return PostController().getPostsByUser(user: user, lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
         case .GetPosts:
             return PostController().getPosts(lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
+        case .GetMyReservations:
+            return ReservationController().getMyReservations(lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
+        case .GetBusinessPendingReservations:
+            return ReservationController().getBusinessPendingReservations(lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
+        case .GetBusinessAcceptedReservations:
+            return ReservationController().getBusinessAcceptedReservations(lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
         }
     }
 }

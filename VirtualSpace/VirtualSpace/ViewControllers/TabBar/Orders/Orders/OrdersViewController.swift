@@ -30,8 +30,6 @@ class OrdersViewController: ButtonBarPagerTabStripViewController {
         self.setUpButtonBarPagerTab()
         super.viewDidLoad()
         setUpView()
-        setUpData()
-        fetchData()
     }
 
     // MARK: - PagerTabStripDataSource
@@ -53,14 +51,6 @@ private extension OrdersViewController {
         let height: CGFloat = 1
         line.frame = CGRect(x: 0, y: buttonBarView.frame.height - height - 0.5, width: buttonBarView.frame.width, height: height)
         buttonBarView.addSubview(line)
-    }
-
-    func setUpData() {
-
-    }
-
-    func fetchData() {
-
     }
 
     func setUpButtonBarPagerTab() {

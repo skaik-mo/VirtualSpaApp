@@ -149,6 +149,8 @@
 		E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E799C9D12A5C1513003443C8 /* PhoneTextFieldView.swift */; };
 		E799C9D42A5C1513003443C8 /* PhoneTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */; };
 		E799C9F02A5C3705003443C8 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E799C9EF2A5C3705003443C8 /* IQKeyboardManagerSwift */; };
+		E79F63B12A70E48F00A7D8EE /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79F63B02A70E48F00A7D8EE /* Reservation.swift */; };
+		E79F63B32A70E6AE00A7D8EE /* ReservationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79F63B22A70E6AE00A7D8EE /* ReservationController.swift */; };
 		E7A861942A5EC0A100CFA14B /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A861922A5EC0A100CFA14B /* FavoriteViewController.swift */; };
 		E7A861952A5EC0A100CFA14B /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A861932A5EC0A100CFA14B /* FavoriteViewController.xib */; };
 		E7A861992A5EC81200CFA14B /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A861972A5EC81200CFA14B /* PlaceTableViewCell.xib */; };
@@ -344,6 +346,8 @@
 		E799254D2A64207700B87500 /* ZoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZoomViewController.xib; sourceTree = "<group>"; };
 		E799C9D12A5C1513003443C8 /* PhoneTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextFieldView.swift; sourceTree = "<group>"; };
 		E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTextFieldView.xib; sourceTree = "<group>"; };
+		E79F63B02A70E48F00A7D8EE /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
+		E79F63B22A70E6AE00A7D8EE /* ReservationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationController.swift; sourceTree = "<group>"; };
 		E7A861922A5EC0A100CFA14B /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		E7A861932A5EC0A100CFA14B /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
 		E7A861972A5EC81200CFA14B /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
@@ -781,6 +785,7 @@
 				E7F3E8DD2A6E4D8D007270F6 /* Category.swift */,
 				E7F3E8E12A6E5452007270F6 /* SubCategory.swift */,
 				E7C836CC2A6FBF5E008EC7A3 /* Post.swift */,
+				E79F63B02A70E48F00A7D8EE /* Reservation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -794,6 +799,7 @@
 				E7F3E8DF2A6E4DE1007270F6 /* CategoryController.swift */,
 				E7F3E8E32A6E5470007270F6 /* SubCategoryController.swift */,
 				E7C836CE2A6FC1BD008EC7A3 /* PostController.swift */,
+				E79F63B22A70E6AE00A7D8EE /* ReservationController.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -1569,6 +1575,7 @@
 				E7D1A7E72A63B7F500A701E7 /* Sender.swift in Sources */,
 				E799253A2A640B2B00B87500 /* PostDetailsViewController.swift in Sources */,
 				E723BB9E2A5D54160026782B /* TabBarIndicatorView.swift in Sources */,
+				E79F63B12A70E48F00A7D8EE /* Reservation.swift in Sources */,
 				E72346A22A5FD8EE0061877B /* AcceptedTableViewCell.swift in Sources */,
 				E7868BA52A6014F7008917DD /* Helper.swift in Sources */,
 				E7373F4C2A5AC9B5007A1186 /* LaunchViewController.swift in Sources */,
@@ -1652,6 +1659,7 @@
 				E7C836CD2A6FBF5E008EC7A3 /* Post.swift in Sources */,
 				E7A861942A5EC0A100CFA14B /* FavoriteViewController.swift in Sources */,
 				E7D1A7F62A63E0D000A701E7 /* TherapistViewController.swift in Sources */,
+				E79F63B32A70E6AE00A7D8EE /* ReservationController.swift in Sources */,
 				E7D1A7FC2A63E21C00A701E7 /* PostTableViewCell.swift in Sources */,
 				E723BB9A2A5D42480026782B /* EmailValidator.swift in Sources */,
 				E7D1A8242A64008600A701E7 /* UIAlertController+Extensions.swift in Sources */,

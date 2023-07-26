@@ -100,13 +100,6 @@ class FirebaseFirestoreController: HandlerFinish {
     }
 
     func fetchDocumentsWithField(field: String, value: Any, limit: Int, lastDocument: QueryDocumentSnapshot?, isShowLoder: Bool = true, isShowMessage: Bool = true, completion: @escaping ((_ objects: [[String: Any]], _ lastDocument: QueryDocumentSnapshot?) -> Void)) -> Self {
-//        guard !documentIDs.isEmpty else {
-//            completion([], nil)
-//            DispatchQueue.main.async {
-//                self.didFinishRequest?()
-//            }
-//            return self
-//        }
         guard Reachability.shared.isConnected(isShowMessage: false) else {
             DispatchQueue.main.async {
                 self.offlineLoad?()

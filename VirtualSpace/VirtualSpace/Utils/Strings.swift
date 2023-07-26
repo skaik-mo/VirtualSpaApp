@@ -121,6 +121,7 @@ class Strings {
 
     // MARK: - Reservations
     static let MY_RESERVATIONS_TITLE = "My reservations"._localizedKey
+    static let RESERVATIONS_EMPTY_TITLE = "You haven't made any reservations yet"._localizedKey
 
     // MARK: - Invite
     static let NEARBY_TITLE = "Nearby"._localizedKey
@@ -146,6 +147,9 @@ class Strings {
     static let ACCEPTED_TITLE = "Accepted"._localizedKey
     static let ACCEPT_TITLE = "Accept"._localizedKey
     static let REJECT_TITLE = "Reject"._localizedKey
+    static let REJECTED_TITLE = "Rejected"._localizedKey
+    static let ORDERS_EMPTY_TITLE = "No orders received yet"._localizedKey
+    static let ORDERS_EMPTY_ACCEPTED_TITLE = "No orders have been accepted yet"._localizedKey
 
     // MARK: - Chat
     static let TODAY_TITLE = "Today"._localizedKey
@@ -169,6 +173,7 @@ class Strings {
     // MARK: - BookNow
     static let SELECT_DATE_TITLE = "Select date & time"._localizedKey
     static let SUBMIT_TITLE = "Submit"._localizedKey
+    static let INVALID_DATE_TIME_MESSAGE = "date & time"._localizedKey
 
     // MARK: - Post Detials
     static let POSTS_DETAILS_TITLE = "Post Details"._localizedKey

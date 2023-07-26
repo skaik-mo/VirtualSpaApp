@@ -12,7 +12,7 @@ import XLPagerTabStrip
 class OrdersPendingViewController: UIViewController {
 
     // MARK: Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: GeneralTableView!
 
     // MARK: Properties
 
@@ -29,7 +29,6 @@ class OrdersPendingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-        setUpData()
         fetchData()
     }
 
@@ -44,18 +43,15 @@ private extension OrdersPendingViewController {
 
     func setUpView() {
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
-        self.tableView._registerCell = PendingTableViewCell.self
+        self.tableView.isLoadMoreEnable = true
+        self.tableView.isPullToRefreshEnable = true
+        self.tableView.emptyTitle = Strings.ORDERS_EMPTY_TITLE
+        self.tableView.cell = PendingTableViewCell.self
         self.tableView.rowHeight = 65
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-    }
-
-    func setUpData() {
-
     }
 
     func fetchData() {
-
+        self.tableView.resetTableView(request: .GetBusinessPendingReservations)
     }
 
 }
@@ -64,18 +60,4 @@ extension OrdersPendingViewController: IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: XLPagerTabStrip.PagerTabStripViewController) -> XLPagerTabStrip.IndicatorInfo {
         return IndicatorInfo(title: Strings.PENDING_TITLE)
     }
-}
-
-extension OrdersPendingViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: PendingTableViewCell = tableView._dequeueReusableCell()
-//        cell.object = object[indexPath.row]
-        cell.configureCell()
-        return cell
-    }
-
 }

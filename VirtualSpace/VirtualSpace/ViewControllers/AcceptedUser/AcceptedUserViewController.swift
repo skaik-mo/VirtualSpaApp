@@ -19,9 +19,10 @@ class AcceptedUserViewController: UIViewController {
     @IBOutlet weak var callButton: UIButton!
 
     // MARK: Properties
-
+    private var reservationUser: UserModel
     // MARK: Init
-    init() {
+    init(reservationUser: UserModel) {
+        self.reservationUser = reservationUser
         super.init(nibName: nil, bundle: nil)
     }
 

@@ -25,6 +25,7 @@ extension GlobalConstants {
         case Place
         case Category
         case SubCategory
+        case Reservation
     }
 
 }

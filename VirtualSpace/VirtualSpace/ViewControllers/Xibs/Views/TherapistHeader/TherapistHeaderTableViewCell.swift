@@ -75,8 +75,8 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
     }
 
     @IBAction func bookNowAction(_ sender: Any) {
-        debugPrint(#function)
-        let vc = BookNowViewController()
+        guard let object = object as? UserModel else { return }
+        let vc = BookNowViewController(therapist: object)
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .custom
         vc._presentVC()

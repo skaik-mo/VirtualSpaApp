@@ -18,9 +18,17 @@ class BookNowViewController: UIViewController {
     @IBOutlet weak var dateStack: UIStackView!
 
     // MARK: Properties
+    private var therapist: UserModel
+    private var date: Date?
+    private var isEnableSubmit = true {
+        didSet {
+            self.submitButton.isEnabled = isEnableSubmit
+        }
+    }
 
     // MARK: Init
-    init() {
+    init(therapist: UserModel) {
+        self.therapist = therapist
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -33,7 +41,6 @@ class BookNowViewController: UIViewController {
         super.viewDidLoad()
         setUpData()
         setUpView()
-        fetchData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -46,12 +53,13 @@ class BookNowViewController: UIViewController {
 private extension BookNowViewController {
 
     @IBAction func submitAction(_ sender: Any) {
-        debugPrint(#function)
+        self.booking()
     }
 
     @objc func selectDate() {
         self.showDateOrTime { value in
-            self.dateLabel.text = value
+            self.date = value
+            self.dateLabel.text = value?._stringDate
         }
     }
 
@@ -70,30 +78,54 @@ private extension BookNowViewController {
     func setUpData() {
         self.bookNowLabel.text = Strings.BOOK_NOW_TITLE
         self.selectdateLabel.text = Strings.SELECT_DATE_TITLE
-        self.dateLabel.text = "9 Jul 2023"
+        self.date = Date()
+        self.dateLabel.text = self.date?._stringDate
         self.submitButton.titleLabel?.text = Strings.SUBMIT_TITLE
-    }
-
-    func fetchData() {
-
     }
 
 }
 
 private extension BookNowViewController {
-    func showDateOrTime(handle: @escaping (_ value: String?) -> Void) {
+    func showDateOrTime(handle: @escaping (_ value: Date?) -> Void) {
         let alert = UIAlertController(style: .actionSheet, title: Strings.SELECT_DATE_TITLE)
         var isSelectedValue = false
         alert.addDatePicker(mode: .date, date: Date(), minimumDate: Date(), maximumDate: nil) { date in
-            handle(date._stringDate)
+            handle(date)
             isSelectedValue = true
         }
         let okayAction = UIAlertAction.init(title: Strings.OK_TITLE, style: .cancel) { _ in
             if !isSelectedValue {
-                handle(Date()._stringDate)
+                handle(Date())
             }
         }
         alert.addAction(okayAction)
         self.present(alert, animated: true)
+    }
+}
+
+private extension BookNowViewController {
+    func validation() -> Bool {
+        guard NilValidationRule(field: Strings.INVALID_DATE_TIME_MESSAGE).hasValidValue(self.dateLabel.text ?? "") else { return false }
+        return true
+    }
+
+    func getReservation() -> Reservation? {
+        guard let therapistID = self.therapist.id, let reservationUser = UserController().fetchUser(), let reservationUserID = reservationUser.id, let date else { return nil }
+        return .init(therapistID: therapistID, therapistName: self.therapist.name, therapistImage: self.therapist.image, reservationUserID: reservationUserID, reservationUserName: reservationUser.name, reservationUserImage: reservationUser.image, date: date, status: .Pending)
+    }
+
+    func booking() {
+        self.isEnableSubmit = false
+        guard validation(), let reservation = getReservation() else {
+            self.isEnableSubmit = true
+            return
+        }
+        _ = ReservationController().setReservation(reservation: reservation, success: {
+            self._dismissVC()
+        }).handlerDidFinishRequest(handler: {
+            self.isEnableSubmit = true
+        }).handlerofflineLoad(handler: {
+            self.isEnableSubmit = true
+        })
     }
 }

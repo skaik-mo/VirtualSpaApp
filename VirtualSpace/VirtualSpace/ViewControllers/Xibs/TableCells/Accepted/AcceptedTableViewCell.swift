@@ -8,24 +8,34 @@
 
 import UIKit
 
-class AcceptedTableViewCell: UITableViewCell {
+class AcceptedTableViewCell: GeneralTableViewCell {
 
     @IBOutlet weak var authImage: rImage!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
 
-    var object: Any?
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.selectionStyle = .none
     }
 
-    func configureCell() {
-        self.authImage.image = .demo
-        self.nameLabel.text = "Name"
-        self.dateLabel.text = "13 Jul 2023"
+    override func configureCell() {
+        if let object = object as? Reservation {
+            self.authImage.fetchImage(object.reservationUserImage, .ic_placeholder)
+            self.nameLabel.text = object.reservationUserName
+            self.dateLabel.text = object.date?._stringDate
+        } else {
+            self.authImage.image = nil
+            self.nameLabel.text = nil
+            self.dateLabel.text = nil
+        }
     }
 
+    override func didselect(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        guard let object = object as? Reservation, let reservationUser = object.reservationUser else { return }
+//        let vc = AcceptedUserViewController(reservationUser: reservationUser)
+//        vc.modalTransitionStyle = .crossDissolve
+//        vc.modalPresentationStyle = .custom
+//        vc._presentVC()
+    }
 }
