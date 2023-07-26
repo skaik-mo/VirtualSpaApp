@@ -22,6 +22,12 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
     @IBOutlet weak var infoButton: UIButton!
 
     static var isInfoSelected = false
+    let followController = FollowController()
+    var follow: Follow? {
+        didSet {
+            self.setTitleButtons()
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,22 +36,21 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
 
     override func configureHeader() {
         self.customizeButtons()
-        self.followButton.titleLabel?.text = Strings.FOLLOW_TITLE
-        self.messageButton.titleLabel?.text = Strings.MESSAGE_TITLE
-        self.bookNowButton.titleLabel?.text = Strings.BOOK_NOW_TITLE
-        self.followButton.applyButtonStyle(.Primary(40))
-        self.messageButton.applyButtonStyle(.OutlinedPurple(40))
-        self.bookNowButton.applyButtonStyle(.SecondaryLightPurple(40))
         if let object = object as? UserModel {
             self.backgroundImage.fetchImage(object.coverImage, .ic_placeholder)
-            self.TherapistImage.fetchImage(object.image, .ic_placeholder)
+            self.TherapistImage.fetchImage(object.image, .ic_placeholder2)
             self.TherapistNameLabel.text = object.name
             self.TherapistEmailLabel.text = object.email
+            self.checkFollow()
         } else {
             self.backgroundImage.image = nil
             self.TherapistImage.image = nil
             self.TherapistNameLabel.text = nil
             self.TherapistEmailLabel.text = nil
+            self.followButton.isHidden = true
+            self.messageButton.isHidden = true
+            self.bookNowButton.isHidden = true
+            self.callButton.isHidden = true
         }
     }
 
@@ -64,8 +69,45 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
         }
     }
 
-    @IBAction func followAction(_ sender: Any) {
+    private func checkFollow() {
         debugPrint(#function)
+        guard let followingUserID = (object as? UserModel)?.id, let followerUserID = UserController().fetchUser()?.id else { return }
+        _ = followController.searchFollowing(followerUserID: followerUserID, followingUserID: followingUserID, isShowLoder: false) { follow in
+            self.follow = follow
+        }
+    }
+
+    private func setTitleButtons() {
+        debugPrint(#function)
+        if let follow {
+            self.followButton.titleLabel?.text = Strings.FOLLOWING_TITLE
+            self.followButton.applyButtonStyle(.OutlinedPurple(40))
+        } else {
+            self.followButton.titleLabel?.text = Strings.FOLLOW_TITLE
+            self.followButton.applyButtonStyle(.Primary(40))
+        }
+        self.messageButton.titleLabel?.text = Strings.MESSAGE_TITLE
+        self.bookNowButton.titleLabel?.text = Strings.BOOK_NOW_TITLE
+        self.messageButton.applyButtonStyle(.OutlinedPurple(40))
+        self.bookNowButton.applyButtonStyle(.SecondaryLightPurple(40))
+        self.followButton.isHidden = false
+        self.messageButton.isHidden = false
+        self.bookNowButton.isHidden = false
+        self.callButton.isHidden = false
+    }
+
+    @IBAction func followAction(_ sender: Any) {
+        guard let object = object as? UserModel, let followingUserID = object.id, let followerUserID = UserController().fetchUser()?.id else { return }
+        if let follow, let followID = follow.id {
+            _ = self.followController.removeFollowing(followID: followID) {
+                self.follow = nil
+            }
+        } else {
+            let follow = Follow(followerUserID: followerUserID, followingUserID: followingUserID)
+            _ = followController.addFollowing(follow: follow) {
+                self.follow = follow
+            }
+        }
     }
 
     @IBAction func messageAction(_ sender: Any) {

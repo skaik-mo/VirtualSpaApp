@@ -243,7 +243,7 @@ extension UserController {
             Helper.showLoader(isLoding: true)
             auth.delete { error in
                 guard ResponseHandler.responseHandler(error: error) else { return }
-                self.userReference.deleteDocument(document: id, isShowLoder: false) {
+                self.userReference.deleteDocument(documentID: id, isShowLoder: false) {
                     let imagePath = "Users/\(id)/userImage.jpeg"
                     let coverImagePath = "Users/\(id)/coverImage.jpeg"
                     FirebaseStorageController().deleteFile(path: imagePath, isShowLoder: false) {
@@ -258,14 +258,21 @@ extension UserController {
     }
 }
 
-// MARK: - get Therapists
+// MARK: - get Users
 extension UserController {
 
     func getTherapists(place: Place, lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
         return userReference.fetchDocumentsWithDocumentIDs(documentIDs: place.therapistIDs, limit: 10, lastDocument: lastDocument, isShowLoder: isShowLoader) { objects, lastDocument in
-            guard let lastDoument = lastDocument else { handlerResponse([], nil, place); return }
+            guard let lastDocument else { handlerResponse([], nil, place); return }
             let users = self.setUsers(objects)
             handlerResponse(users, lastDocument, place)
+        }
+    }
+
+    func getUsers(userIDs: [String], isShowLoader: Bool, handlerResponse: @escaping ((_ users: [UserModel]) -> Void)) -> FirebaseFirestoreController? {
+        return userReference.getDocuments(isShowLoder: isShowLoader) { objects in
+            let users = self.setUsers(objects)
+            handlerResponse(users)
         }
     }
 

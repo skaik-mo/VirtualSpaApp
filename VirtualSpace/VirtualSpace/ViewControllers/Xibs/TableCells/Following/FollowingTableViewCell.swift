@@ -15,23 +15,29 @@ class FollowingTableViewCell: GeneralTableViewCell {
     @IBOutlet weak var authNameLabel: UILabel!
     @IBOutlet weak var followingButton: UIButton!
 
-    var last: DocumentSnapshot?
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.selectionStyle = .none
     }
 
     override func configureCell() {
-        self.followingButton.titleLabel?.text = Strings.FOLLOWING_TITLE
-        self.followingButton.applyButtonStyle(.SecondaryLightPurple(35))
-        if let object = object as? [String: String] {
-            self.authNameLabel.text = object["title"]
+        if let object = object as? Follow, let user = object.user {
+            self.authImage.fetchImage(user.image, .ic_placeholder)
+            self.authNameLabel.text = user.name
+            self.followingButton.titleLabel?.text = Strings.FOLLOWING_TITLE
+        } else {
+            self.authImage.image = nil
+            self.authNameLabel.text = nil
+            self.followingButton.titleLabel?.text = nil
         }
+        self.followingButton.applyButtonStyle(.SecondaryLightPurple(35))
     }
 
-    override func didselect(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+    @IBAction func followAction(_ sender: Any) {
+        guard let object = object as? Follow, let id = object.id, let _topVC = _topVC as? FollowingViewController, let index = _topVC.tableView.objects.firstIndex(where: { ($0 as? Follow)?.id == object.id }) else { return }
+        _ = FollowController().removeFollowing(followID: id, success: {
+            _topVC.tableView.objects.remove(at: index)
+        })
     }
+
 }

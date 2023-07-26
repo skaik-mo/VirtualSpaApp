@@ -1,5 +1,5 @@
 // _________SKAIK_MO_________
-//  
+//
 //  FollowingViewController.swift
 //  VirtualSpace
 //
@@ -43,23 +43,20 @@ private extension FollowingViewController {
 
     func setUpView() {
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
+        self.tableView.isLoadMoreEnable = true
+        self.tableView.isPullToRefreshEnable = true
         self.tableView.cell = FollowingTableViewCell.self
         self.tableView.rowHeight = 70
-//        self.tableView.isLoadMoreEnable = true
-//        self.tableView.isPullToRefreshEnable = true
-//        self.tableView.emptyImage = .ic_empty
-//        self.tableView.emptyTitle = "hhhh"
-//        self.tableView.emptySubTitle = "sdcsdcsdcksdcsdlc,sd;lc,sd;c,s;c,sd;lc,s;dls,c;,c;sdl,;lsd,s;dlc,;l,ds,l"
-//        self.tableView.resetTableView(request: .GetTest)
     }
 
     func setUpData() {
         self.title = Strings.FOLLOWING_TITLE
-
     }
 
     func fetchData() {
-
+        guard let user = UserController().fetchUser() else { return }
+        let request: GeneralController = user.type == .Business ? .GetFollowing : .GetFollowers
+        self.tableView.resetTableView(request: request)
     }
 
 }
