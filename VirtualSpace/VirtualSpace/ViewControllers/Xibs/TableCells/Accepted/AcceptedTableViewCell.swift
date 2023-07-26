@@ -32,10 +32,21 @@ class AcceptedTableViewCell: GeneralTableViewCell {
     }
 
     override func didselect(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let object = object as? Reservation, let reservationUser = object.reservationUser else { return }
-//        let vc = AcceptedUserViewController(reservationUser: reservationUser)
-//        vc.modalTransitionStyle = .crossDissolve
-//        vc.modalPresentationStyle = .custom
-//        vc._presentVC()
+        guard let object = object as? Reservation,
+            let reservationUserID = object.reservationUserID,
+            let reservationUserName = object.reservationUserName,
+            let reservationUserEmail = object.reservationUserEmail,
+            let reservationUserPhone = object.reservationUserPhone,
+            let reservationUserImage = object.reservationUserImage,
+            let reservationUserCoverImage = object.reservationUserCoverImage else { return }
+        let vc = AcceptedUserViewController(reservationUserID: reservationUserID,
+                                            reservationUserName: reservationUserName,
+                                            reservationUserEmail: reservationUserEmail,
+                                            reservationUserPhone: reservationUserPhone,
+                                            reservationUserImage: reservationUserImage,
+                                            reservationUserCoverImage: reservationUserCoverImage)
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .custom
+        vc._presentVC()
     }
 }

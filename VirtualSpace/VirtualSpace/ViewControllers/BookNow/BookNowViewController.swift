@@ -111,7 +111,11 @@ private extension BookNowViewController {
 
     func getReservation() -> Reservation? {
         guard let therapistID = self.therapist.id, let reservationUser = UserController().fetchUser(), let reservationUserID = reservationUser.id, let date else { return nil }
-        return .init(therapistID: therapistID, therapistName: self.therapist.name, therapistImage: self.therapist.image, reservationUserID: reservationUserID, reservationUserName: reservationUser.name, reservationUserImage: reservationUser.image, date: date, status: .Pending)
+        return .init(therapistID: therapistID, therapistName: self.therapist.name, therapistImage: self.therapist.image,
+                     reservationUserID: reservationUserID, reservationUserName: reservationUser.name,
+                     reservationUserEmail: reservationUser.email, reservationUserPhone: reservationUser.phone,
+                     reservationUserImage: reservationUser.image, reservationUserCoverImage: reservationUser.coverImage,
+                     date: date, status: .Pending)
     }
 
     func booking() {

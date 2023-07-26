@@ -19,10 +19,21 @@ class AcceptedUserViewController: UIViewController {
     @IBOutlet weak var callButton: UIButton!
 
     // MARK: Properties
-    private var reservationUser: UserModel
+    private var reservationUserID: String
+    private var reservationUserName: String
+    private var reservationUserImage: String
+    private var reservationUserEmail: String
+    private var reservationUserPhone: String
+    private var reservationUserCoverImage: String
+
     // MARK: Init
-    init(reservationUser: UserModel) {
-        self.reservationUser = reservationUser
+    init(reservationUserID: String, reservationUserName: String, reservationUserEmail: String, reservationUserPhone: String, reservationUserImage: String, reservationUserCoverImage: String) {
+        self.reservationUserID = reservationUserID
+        self.reservationUserName = reservationUserName
+        self.reservationUserEmail = reservationUserEmail
+        self.reservationUserPhone = reservationUserPhone
+        self.reservationUserImage = reservationUserImage
+        self.reservationUserCoverImage = reservationUserCoverImage
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -48,8 +59,7 @@ private extension AcceptedUserViewController {
 
     @IBAction func callAction(_ sender: Any) {
         debugPrint(#function)
-        let authPhone = "+972594122010"
-        Helper.call(authPhone)
+        Helper.call(reservationUserPhone)
     }
 
     @IBAction func messageAction(_ sender: Any) {
@@ -69,6 +79,10 @@ private extension AcceptedUserViewController {
 
     func setUpData() {
         self.messageButton.titleLabel?.text = Strings.MESSAGE_TITLE
+        self.backgroundImage.fetchImage(reservationUserCoverImage, .ic_placeholder)
+        self.authImage.fetchImage(reservationUserImage, .ic_placeholder2)
+        self.authNameLabel.text = reservationUserName
+        self.authEmailLabel.text = reservationUserEmail
     }
 
 }
