@@ -155,7 +155,6 @@
                 <outlet property="commentButton" destination="Shl-HX-gu1" id="lz8-CG-Z7Q"/>
                 <outlet property="descriptionLabel" destination="hlK-bT-zpk" id="3Bo-JG-fKB"/>
                 <outlet property="likeButton" destination="LRo-zs-K8s" id="X62-KZ-Lae"/>
-                <outlet property="lineView" destination="g3D-Ed-rI0" id="mZb-MU-dEC"/>
                 <outlet property="postImage" destination="3ot-oq-DJo" id="J0P-JC-Lgd"/>
                 <outlet property="postTimeLabel" destination="Tha-X3-Faq" id="kyB-Eo-wjC"/>
                 <outlet property="shareButton" destination="5Rk-Nc-tYY" id="feO-EG-XzN"/>

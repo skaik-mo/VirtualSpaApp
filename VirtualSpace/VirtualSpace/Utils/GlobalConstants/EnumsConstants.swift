@@ -22,6 +22,7 @@ extension GlobalConstants {
     enum Collection: String {
         case User
         case Post
+        case Comment
         case Place
         case Category
         case SubCategory

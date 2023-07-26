@@ -180,6 +180,7 @@ class Strings {
     static let COMMENTS_TITLE = "Comments"._localizedKey
     static let ADD_COMMENT_PLACEHOLDER = "Add a comment"._localizedKey
     static let TAKE_TOUR_TITLE = "Take a tour of Club {Club} - Dominican Republic [360°]"._localizedKey
+    static let NO_COMMENTS_EMPTY_TITLE = "No comments yet"._localizedKey
 
     // MARK: - New Post
     static let NEW_POST_TITLE = "New Post"._localizedKey

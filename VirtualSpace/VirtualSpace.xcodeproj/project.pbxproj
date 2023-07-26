@@ -138,8 +138,6 @@
 		E798C6352A67DAD3009C7D86 /* FirebaseFirestoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E798C6342A67DAD3009C7D86 /* FirebaseFirestoreController.swift */; };
 		E799253A2A640B2B00B87500 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79925382A640B2B00B87500 /* PostDetailsViewController.swift */; };
 		E799253B2A640B2B00B87500 /* PostDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79925392A640B2B00B87500 /* PostDetailsViewController.xib */; };
-		E799253F2A64160800B87500 /* LabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E799253D2A64160800B87500 /* LabelTableViewCell.xib */; };
-		E79925402A64160800B87500 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E799253E2A64160800B87500 /* LabelTableViewCell.swift */; };
 		E79925442A6418E500B87500 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79925422A6418E500B87500 /* CommentTableViewCell.xib */; };
 		E79925452A6418E500B87500 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79925432A6418E500B87500 /* CommentTableViewCell.swift */; };
 		E79925492A641BEC00B87500 /* HomeBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79925472A641BEC00B87500 /* HomeBusinessViewController.swift */; };
@@ -155,6 +153,10 @@
 		E7A861952A5EC0A100CFA14B /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A861932A5EC0A100CFA14B /* FavoriteViewController.xib */; };
 		E7A861992A5EC81200CFA14B /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A861972A5EC81200CFA14B /* PlaceTableViewCell.xib */; };
 		E7A8619A2A5EC81200CFA14B /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A861982A5EC81200CFA14B /* PlaceTableViewCell.swift */; };
+		E7A9BAF42A711E7500921DFE /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9BAF32A711E7500921DFE /* Comment.swift */; };
+		E7A9BAF62A711FA200921DFE /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9BAF52A711FA200921DFE /* CommentController.swift */; };
+		E7A9BAFE2A7128FF00921DFE /* PostHeaderViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A9BAFC2A7128FF00921DFE /* PostHeaderViewTableViewCell.xib */; };
+		E7A9BAFF2A7128FF00921DFE /* PostHeaderViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9BAFD2A7128FF00921DFE /* PostHeaderViewTableViewCell.swift */; };
 		E7B6F92C2A5E973D002A0693 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B6F92A2A5E973D002A0693 /* NotificationViewController.swift */; };
 		E7B6F92D2A5E973D002A0693 /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B6F92B2A5E973D002A0693 /* NotificationViewController.xib */; };
 		E7B6F9312A5E97E0002A0693 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B6F92F2A5E97E0002A0693 /* NotificationTableViewCell.xib */; };
@@ -336,8 +338,6 @@
 		E798C6342A67DAD3009C7D86 /* FirebaseFirestoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreController.swift; sourceTree = "<group>"; };
 		E79925382A640B2B00B87500 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		E79925392A640B2B00B87500 /* PostDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailsViewController.xib; sourceTree = "<group>"; };
-		E799253D2A64160800B87500 /* LabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelTableViewCell.xib; sourceTree = "<group>"; };
-		E799253E2A64160800B87500 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		E79925422A6418E500B87500 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		E79925432A6418E500B87500 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		E79925472A641BEC00B87500 /* HomeBusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBusinessViewController.swift; sourceTree = "<group>"; };
@@ -352,6 +352,10 @@
 		E7A861932A5EC0A100CFA14B /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
 		E7A861972A5EC81200CFA14B /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
 		E7A861982A5EC81200CFA14B /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
+		E7A9BAF32A711E7500921DFE /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		E7A9BAF52A711FA200921DFE /* CommentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
+		E7A9BAFC2A7128FF00921DFE /* PostHeaderViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostHeaderViewTableViewCell.xib; sourceTree = "<group>"; };
+		E7A9BAFD2A7128FF00921DFE /* PostHeaderViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeaderViewTableViewCell.swift; sourceTree = "<group>"; };
 		E7B6F92A2A5E973D002A0693 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		E7B6F92B2A5E973D002A0693 /* NotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
 		E7B6F92F2A5E97E0002A0693 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
@@ -741,6 +745,7 @@
 		E7373F542A5AC9B5007A1186 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E7A9BAF72A7123A100921DFE /* PostView */,
 				E7D1A7FD2A63EA9700A701E7 /* TherapistHeader */,
 				E7D1A7F02A63CE0400A701E7 /* TextView */,
 				E72346942A5FC5FB0061877B /* PlaceInfoHeader */,
@@ -757,7 +762,6 @@
 			children = (
 				E7B7C4DB2A670D82008000D8 /* TherapistInfo */,
 				E79925412A6418D300B87500 /* Comment */,
-				E799253C2A6415FB00B87500 /* Label */,
 				E7D1A7F82A63E20800A701E7 /* Post */,
 				E7868BA62A601E51008917DD /* Massage */,
 				E72346A32A5FDD520061877B /* Pending */,
@@ -786,6 +790,7 @@
 				E7F3E8E12A6E5452007270F6 /* SubCategory.swift */,
 				E7C836CC2A6FBF5E008EC7A3 /* Post.swift */,
 				E79F63B02A70E48F00A7D8EE /* Reservation.swift */,
+				E7A9BAF32A711E7500921DFE /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -800,6 +805,7 @@
 				E7F3E8E32A6E5470007270F6 /* SubCategoryController.swift */,
 				E7C836CE2A6FC1BD008EC7A3 /* PostController.swift */,
 				E79F63B22A70E6AE00A7D8EE /* ReservationController.swift */,
+				E7A9BAF52A711FA200921DFE /* CommentController.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -1105,15 +1111,6 @@
 			path = PostDetails;
 			sourceTree = "<group>";
 		};
-		E799253C2A6415FB00B87500 /* Label */ = {
-			isa = PBXGroup;
-			children = (
-				E799253D2A64160800B87500 /* LabelTableViewCell.xib */,
-				E799253E2A64160800B87500 /* LabelTableViewCell.swift */,
-			);
-			path = Label;
-			sourceTree = "<group>";
-		};
 		E79925412A6418D300B87500 /* Comment */ = {
 			isa = PBXGroup;
 			children = (
@@ -1166,6 +1163,15 @@
 				E7A861982A5EC81200CFA14B /* PlaceTableViewCell.swift */,
 			);
 			path = Place;
+			sourceTree = "<group>";
+		};
+		E7A9BAF72A7123A100921DFE /* PostView */ = {
+			isa = PBXGroup;
+			children = (
+				E7A9BAFC2A7128FF00921DFE /* PostHeaderViewTableViewCell.xib */,
+				E7A9BAFD2A7128FF00921DFE /* PostHeaderViewTableViewCell.swift */,
+			);
+			path = PostView;
 			sourceTree = "<group>";
 		};
 		E7B6F9292A5E9734002A0693 /* Notification */ = {
@@ -1453,9 +1459,9 @@
 				E75636362A5AD2EF0008C91B /* Poppins-Medium.ttf in Resources */,
 				E70C101C2A6557D4008DD58B /* HomeCollectionViewCell.xib in Resources */,
 				E72346B12A5FE37C0061877B /* OrdersPendingViewController.xib in Resources */,
+				E7A9BAFE2A7128FF00921DFE /* PostHeaderViewTableViewCell.xib in Resources */,
 				E7B6F9312A5E97E0002A0693 /* NotificationTableViewCell.xib in Resources */,
 				E723BBB72A5D7B3C0026782B /* SwitchTableViewCell.xib in Resources */,
-				E799253F2A64160800B87500 /* LabelTableViewCell.xib in Resources */,
 				E7868BA32A600F25008917DD /* AcceptedUserViewController.xib in Resources */,
 				E7A861992A5EC81200CFA14B /* PlaceTableViewCell.xib in Resources */,
 				E7D1A80A2A63F3F500A701E7 /* PostsViewController.xib in Resources */,
@@ -1561,6 +1567,7 @@
 				E7B6F92C2A5E973D002A0693 /* NotificationViewController.swift in Sources */,
 				E770586F2A5EA765004ADBF9 /* ReservationTableViewCell.swift in Sources */,
 				E77CF7B32A5BD41900E01D49 /* UITextField.swift in Sources */,
+				E7A9BAFF2A7128FF00921DFE /* PostHeaderViewTableViewCell.swift in Sources */,
 				E7868BA22A600F25008917DD /* AcceptedUserViewController.swift in Sources */,
 				E7DE5EAD2A6C0C89005B0DAE /* GeneralTableViewCell.swift in Sources */,
 				E77058682A5EA6DB004ADBF9 /* ReservationsViewController.swift in Sources */,
@@ -1578,6 +1585,8 @@
 				E79F63B12A70E48F00A7D8EE /* Reservation.swift in Sources */,
 				E72346A22A5FD8EE0061877B /* AcceptedTableViewCell.swift in Sources */,
 				E7868BA52A6014F7008917DD /* Helper.swift in Sources */,
+				E7A9BAF62A711FA200921DFE /* CommentController.swift in Sources */,
+				E7A9BAF42A711E7500921DFE /* Comment.swift in Sources */,
 				E7373F4C2A5AC9B5007A1186 /* LaunchViewController.swift in Sources */,
 				E7C836CF2A6FC1BD008EC7A3 /* PostController.swift in Sources */,
 				E7D1A7E22A63B7B500A701E7 /* Message.swift in Sources */,
@@ -1609,7 +1618,6 @@
 				E798C6232A67B3EA009C7D86 /* HandlerFinish.swift in Sources */,
 				E7F3E8DE2A6E4D8D007270F6 /* Category.swift in Sources */,
 				E723469C2A5FD4B00061877B /* OrdersViewController.swift in Sources */,
-				E79925402A64160800B87500 /* LabelTableViewCell.swift in Sources */,
 				E7373F772A5AC9B5007A1186 /* UIResponder.swift in Sources */,
 				E798C6332A67BE7E009C7D86 /* Reachability.swift in Sources */,
 				E72346982A5FC6140061877B /* PlaceInfoHeaderTableViewCell.swift in Sources */,

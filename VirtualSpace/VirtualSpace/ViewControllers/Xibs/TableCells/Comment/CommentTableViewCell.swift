@@ -8,27 +8,26 @@
 
 import UIKit
 
-class CommentTableViewCell: UITableViewCell {
+class CommentTableViewCell: GeneralTableViewCell {
 
     @IBOutlet weak var authImage: UIImageView!
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var commentTimeLabel: UILabel!
 
-    var object: Any?
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.selectionStyle = .none
     }
 
-    func configureCell() {
-        authImage.image = .demo
-        commentTimeLabel.text = Date()._timeAgoDisplay
-        if let object = object as? String {
-            commentLabel.text = object
+    override func configureCell() {
+        if let object = object as? Comment {
+            authImage.fetchImage(object.userImage, .ic_placeholder)
+            commentLabel.text = object.description
+            commentTimeLabel.text = object.createdAt?._timeAgoDisplay
         } else {
+            authImage.image = nil
             commentLabel.text = nil
+            commentTimeLabel.text = nil
         }
     }
 

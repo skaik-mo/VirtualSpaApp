@@ -13,26 +13,12 @@ import IQKeyboardManagerSwift
 class PostDetailsViewController: UIViewController {
 
     // MARK: Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: GeneralTableView!
 
     // MARK: Properties
-    var post: Post
-    var inpuTextHeight = 55.0
-    var objects: [String: Any] = [
-        "Post": 1,
-        "Comment_Title": 2
-    ]
-    var comments: [String] = [
-        "Relaxation is a natural state that can be achieved through a variety of methods",
-        "Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.",
-        "Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.",
-        "Nature can be particularly beneficial for relaxation as it has a calming effect on the mind and body.Nature can be particularly beneficial for relaxation as it",
-        "Relaxation is a natural state that can be achieved through a variety of methods",
-        "Relaxation is a natural state that can be achieved through a variety of methods",
-        "Relaxation is a natural state that can be achieved through a variety of methods",
-        "End"
-    ]
-    lazy var inputText: TextViewInputBar = {
+    private var post: Post
+    private var inpuTextHeight = 55.0
+    lazy private var inputText: TextViewInputBar = {
         let inputBar = TextViewInputBar()
         inputBar.delegate = self
         inputBar.placeholder = Strings.ADD_COMMENT_PLACEHOLDER
@@ -82,14 +68,7 @@ private extension PostDetailsViewController {
 private extension PostDetailsViewController {
 
     func setUpView() {
-        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
-        self.tableView._registerCell = PostTableViewCell.self
-        self.tableView._registerCell = LabelTableViewCell.self
-        self.tableView._registerCell = CommentTableViewCell.self
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.keyboardDismissMode = .onDrag
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
+        self.setUpTableView()
         self.inpuTextHeight += self._getStatusBarHeightBottom ?? 0
         self.view.addSubview(inputText)
         self.inputText.translatesAutoresizingMaskIntoConstraints = false
@@ -104,53 +83,36 @@ private extension PostDetailsViewController {
 
     func setUpData() {
         self.title = Strings.POSTS_DETAILS_TITLE
-        self.objects["Comments"] = comments
     }
 
     func fetchData() {
-
+        self.tableView.resetTableView(request: .GetCommentsForPost(self.post))
     }
 
-}
-
-extension PostDetailsViewController: UITableViewDataSource, UITableViewDelegate {
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        objects.keys.count
+    func setUpTableView() {
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
+        self.tableView.keyboardDismissMode = .onDrag
+        self.tableView.isLoadMoreEnable = true
+        self.tableView.isPullToRefreshEnable = true
+        self.tableView.emptyTitle = Strings.NO_COMMENTS_EMPTY_TITLE
+        self.tableView.emptyHeaderHeight = 300
+        self.tableView.hedaer = PostHeaderViewTableViewCell.self
+        self.tableView.sectionHeaderHeight = UITableView.automaticDimension
+        self.tableView.cell = CommentTableViewCell.self
+        self.tableView.rowHeight = UITableView.automaticDimension
     }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        section == 2 ? ((self.objects["Comments"] as? [String])?.count ?? 0) : 1
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let cell: PostTableViewCell = tableView._dequeueReusableCell()
-            cell.descriptionLabel.numberOfLines = 0
-            cell.lineView.alpha = 0
-//            cell.object = object[indexPath.row]
-            cell.configureCell()
-            return cell
-        } else if indexPath.section == 1 {
-            let cell: LabelTableViewCell = tableView._dequeueReusableCell()
-            cell.configureCell()
-            return cell
-        }
-        let cell: CommentTableViewCell = tableView._dequeueReusableCell()
-        cell.object = (objects["Comments"] as? [String])?[indexPath.row]
-        cell.configureCell()
-        return cell
-    }
-
 }
 
 extension PostDetailsViewController: InputBarAccessoryViewDelegate {
 
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-        comments.append(text)
-        objects["Comments"] = comments
-        self.tableView.reloadData()
+        guard let user = UserController().fetchUser(), let userID = user.id, let userImage = user.image else { return }
+        let comment = Comment(postID: self.post.id, userID: userID, userImage: userImage, description: text)
+        self.tableView.objects.insert(comment, at: 0)
+        self.tableView.setEmptyData()
         inputBar.inputTextView.text = ""
+        _ = CommentController().setComment(comment: comment)
+
     }
 
 }
