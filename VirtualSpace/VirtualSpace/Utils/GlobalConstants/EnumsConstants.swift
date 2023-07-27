@@ -28,6 +28,8 @@ extension GlobalConstants {
         case SubCategory
         case Reservation
         case Follow
+        case Conversation
+        case Message
     }
 
 }

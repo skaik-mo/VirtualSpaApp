@@ -21,6 +21,7 @@ enum GeneralController {
     case GetCommentsForPost(Post)
     case GetFollowing
     case GetFollowers
+    case GetConversations
 
     // swiftlint:disable cyclomatic_complexity
     func sendRequest(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
@@ -49,6 +50,10 @@ enum GeneralController {
             return FollowController().getFollowing(lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
         case .GetFollowers:
             return FollowController().getFollowers(lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
+        case .GetConversations:
+            return ConversationController().getConversations(isShowLoader: isShowLoader) { objects, headerObject in
+                handlerResponse(objects, nil, headerObject)
+            }
         }
     }
 }

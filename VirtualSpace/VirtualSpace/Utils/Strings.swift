@@ -193,4 +193,6 @@ class Strings {
     // MARK: - Home User
     static let SEARCH_FREIENDS_PLACEHOLDER = "Search Here…"._localizedKey
 
+    // MARK: - Message
+    static let MESSAGE_EMPTY_TITLE = "There are no message"._localizedKey
 }

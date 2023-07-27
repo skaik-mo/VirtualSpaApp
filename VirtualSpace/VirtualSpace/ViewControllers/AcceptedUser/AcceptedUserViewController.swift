@@ -65,8 +65,8 @@ private extension AcceptedUserViewController {
     @IBAction func messageAction(_ sender: Any) {
         debugPrint(#function)
         self._dismissVC()
-        let vc = ChatViewController()
-        vc._push()
+//        let vc = ChatViewController(conversationID: <#T##String#>, currentUser: <#T##UserModel#>, otherUser: <#T##UserModel#>)
+//        vc._push()
     }
 }
 

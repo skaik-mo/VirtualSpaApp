@@ -149,6 +149,9 @@
 		E799C9F02A5C3705003443C8 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E799C9EF2A5C3705003443C8 /* IQKeyboardManagerSwift */; };
 		E79F63B12A70E48F00A7D8EE /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79F63B02A70E48F00A7D8EE /* Reservation.swift */; };
 		E79F63B32A70E6AE00A7D8EE /* ReservationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79F63B22A70E6AE00A7D8EE /* ReservationController.swift */; };
+		E7A3305C2A72372A007D4852 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3305B2A72372A007D4852 /* Conversation.swift */; };
+		E7A3305F2A723B4D007D4852 /* ConversationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3305E2A723B4D007D4852 /* ConversationController.swift */; };
+		E7A330612A725D81007D4852 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A330602A725D81007D4852 /* MessageController.swift */; };
 		E7A861942A5EC0A100CFA14B /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A861922A5EC0A100CFA14B /* FavoriteViewController.swift */; };
 		E7A861952A5EC0A100CFA14B /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A861932A5EC0A100CFA14B /* FavoriteViewController.xib */; };
 		E7A861992A5EC81200CFA14B /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A861972A5EC81200CFA14B /* PlaceTableViewCell.xib */; };
@@ -350,6 +353,9 @@
 		E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTextFieldView.xib; sourceTree = "<group>"; };
 		E79F63B02A70E48F00A7D8EE /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		E79F63B22A70E6AE00A7D8EE /* ReservationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationController.swift; sourceTree = "<group>"; };
+		E7A3305B2A72372A007D4852 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		E7A3305E2A723B4D007D4852 /* ConversationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationController.swift; sourceTree = "<group>"; };
+		E7A330602A725D81007D4852 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		E7A861922A5EC0A100CFA14B /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		E7A861932A5EC0A100CFA14B /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
 		E7A861972A5EC81200CFA14B /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
@@ -803,6 +809,7 @@
 		E7373F5F2A5AC9B5007A1186 /* WebServices */ = {
 			isa = PBXGroup;
 			children = (
+				E7A3305D2A723B3A007D4852 /* Chat */,
 				E798C62D2A67B67C009C7D86 /* Firebase */,
 				E723BB952A5D3E4D0026782B /* UserController.swift */,
 				E7F3E8E72A6E58E6007270F6 /* PlaceController.swift */,
@@ -1153,6 +1160,15 @@
 			path = PhoneTextField;
 			sourceTree = "<group>";
 		};
+		E7A3305D2A723B3A007D4852 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				E7A3305E2A723B4D007D4852 /* ConversationController.swift */,
+				E7A330602A725D81007D4852 /* MessageController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		E7A861912A5EC09900CFA14B /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
@@ -1229,6 +1245,7 @@
 			children = (
 				E7D1A7E12A63B7B500A701E7 /* Message.swift */,
 				E7D1A7E62A63B7F500A701E7 /* Sender.swift */,
+				E7A3305B2A72372A007D4852 /* Conversation.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -1572,6 +1589,7 @@
 				E7F3E8E22A6E5452007270F6 /* SubCategory.swift in Sources */,
 				E7373F642A5AC9B5007A1186 /* Strings.swift in Sources */,
 				E7B6F92C2A5E973D002A0693 /* NotificationViewController.swift in Sources */,
+				E7A330612A725D81007D4852 /* MessageController.swift in Sources */,
 				E770586F2A5EA765004ADBF9 /* ReservationTableViewCell.swift in Sources */,
 				E77CF7B32A5BD41900E01D49 /* UITextField.swift in Sources */,
 				E7A9BAFF2A7128FF00921DFE /* PostHeaderViewTableViewCell.swift in Sources */,
@@ -1593,6 +1611,7 @@
 				E72346A22A5FD8EE0061877B /* AcceptedTableViewCell.swift in Sources */,
 				E7868BA52A6014F7008917DD /* Helper.swift in Sources */,
 				E7A9BAF62A711FA200921DFE /* CommentController.swift in Sources */,
+				E7A3305F2A723B4D007D4852 /* ConversationController.swift in Sources */,
 				E7A9BAF42A711E7500921DFE /* Comment.swift in Sources */,
 				E7373F4C2A5AC9B5007A1186 /* LaunchViewController.swift in Sources */,
 				E7C836CF2A6FC1BD008EC7A3 /* PostController.swift in Sources */,
@@ -1603,6 +1622,7 @@
 				E77058812A5EB3FB004ADBF9 /* InviteViewController.swift in Sources */,
 				E799254E2A64207700B87500 /* ZoomViewController.swift in Sources */,
 				E77CF7CB2A5BD5B400E01D49 /* PhoneValidator.swift in Sources */,
+				E7A3305C2A72372A007D4852 /* Conversation.swift in Sources */,
 				E7E35A252A5E6DE100733459 /* EditProfileViewController.swift in Sources */,
 				E7D1A8092A63F3F500A701E7 /* PostsViewController.swift in Sources */,
 				E7D1A7EC2A63BD7300A701E7 /* Date.swift in Sources */,

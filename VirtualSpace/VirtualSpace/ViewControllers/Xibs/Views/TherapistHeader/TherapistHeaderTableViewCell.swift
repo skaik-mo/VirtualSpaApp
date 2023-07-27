@@ -112,7 +112,8 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
 
     @IBAction func messageAction(_ sender: Any) {
         debugPrint(#function)
-        let vc = ChatViewController()
+        guard let therapist = object as? UserModel else { return }
+        let vc = ChatViewController(otherUser: therapist)
         vc._push()
     }
 

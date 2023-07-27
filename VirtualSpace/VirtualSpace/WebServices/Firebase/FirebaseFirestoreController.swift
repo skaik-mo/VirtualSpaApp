@@ -8,8 +8,9 @@
 import Foundation
 import FirebaseFirestore
 
+// swiftlint:disable type_body_length
 class FirebaseFirestoreController: HandlerFinish {
-    private var reference: CollectionReference?
+    var reference: CollectionReference?
     var didFinishRequest: (() -> Void)?
     var offlineLoad: (() -> Void)?
 
@@ -99,6 +100,65 @@ class FirebaseFirestoreController: HandlerFinish {
         return self
     }
 
+    func getDocuments(query: Query?, isShowLoder: Bool = true, isShowMessage: Bool = true, success: @escaping ((_ objects: [Any]) -> Void)) -> Self {
+        guard Reachability.shared.isConnected(isShowMessage: isShowMessage) else {
+            DispatchQueue.main.async {
+                self.offlineLoad?()
+            }
+            return self
+        }
+        if isShowLoder {
+            Helper.showLoader(isLoding: true)
+        }
+        query?.getDocuments(completion: { response, error in
+            guard ResponseHandler.responseHandler(error: error, isShowMessage: isShowMessage) else {
+                self.didFinishRequest?()
+                return
+            }
+            if isShowLoder {
+                Helper.showLoader(isLoding: false)
+            }
+            var objects: [Any] = []
+            response?.documents.forEach({ data in
+                var dictionary = data.data()
+                dictionary["id"] = data.documentID
+                objects.append(dictionary)
+            })
+            success(objects)
+            self.didFinishRequest?()
+        })
+        return self
+    }
+
+    func getDocumentsWithField(field: String, value: Any, isShowLoder: Bool = true, isShowMessage: Bool = true, completion: @escaping ((_ objects: [[String: Any]]) -> Void)) -> Self {
+        guard Reachability.shared.isConnected(isShowMessage: false) else {
+            DispatchQueue.main.async {
+                self.offlineLoad?()
+            }
+            return self
+        }
+        if isShowLoder {
+            Helper.showLoader(isLoding: true)
+        }
+        var objects: [[String: Any]] = []
+        reference?.whereField(field, isEqualTo: value).getDocuments { response, error in
+            guard ResponseHandler.responseHandler(error: error) else { self.didFinishRequest?()
+                ; return }
+            objects.removeAll()
+            response?.documents.forEach({ data in
+                var dictionary = data.data()
+                dictionary["id"] = data.documentID
+                objects.append(dictionary)
+            })
+            if isShowLoder {
+                Helper.showLoader(isLoding: false)
+            }
+            completion(objects)
+            self.didFinishRequest?()
+        }
+        return self
+    }
+
     func fetchDocumentsWithField(field: String, value: Any, limit: Int, lastDocument: QueryDocumentSnapshot?, isShowLoder: Bool = true, isShowMessage: Bool = true, completion: @escaping ((_ objects: [[String: Any]], _ lastDocument: QueryDocumentSnapshot?) -> Void)) -> Self {
         guard Reachability.shared.isConnected(isShowMessage: false) else {
             DispatchQueue.main.async {
@@ -171,6 +231,34 @@ class FirebaseFirestoreController: HandlerFinish {
                 return
             }
             completion(objects, nil)
+            self.didFinishRequest?()
+        }
+        return self
+    }
+
+    func fetchDocumentsWithFields(query: Query?, isShowLoder: Bool = true, isShowMessage: Bool = true, completion: @escaping ((_ objects: [[String: Any]]) -> Void)) -> Self {
+        guard Reachability.shared.isConnected(isShowMessage: false) else {
+            DispatchQueue.main.async {
+                self.offlineLoad?()
+            }
+            return self
+        }
+        if isShowLoder {
+            Helper.showLoader(isLoding: true)
+        }
+        var objects: [[String: Any]] = []
+        query?.getDocuments { response, error in
+            guard ResponseHandler.responseHandler(error: error) else { self.didFinishRequest?()
+                ; return }
+            response?.documents.forEach({ data in
+                var dictionary = data.data()
+                dictionary["id"] = data.documentID
+                objects.append(dictionary)
+            })
+            if isShowLoder {
+                Helper.showLoader(isLoding: false)
+            }
+            completion(objects)
             self.didFinishRequest?()
         }
         return self
@@ -255,6 +343,34 @@ class FirebaseFirestoreController: HandlerFinish {
             self.didFinishRequest?()
         }
         return self
+    }
+
+    func fetchDocumentsWithListener(query: Query?, isShowLoder: Bool = true, completion: @escaping ((_ objects: [[String: Any]]) -> Void)) -> ListenerRegistration? {
+        guard Reachability.shared.isConnected(isShowMessage: false) else {
+            DispatchQueue.main.async {
+                self.offlineLoad?()
+            }
+            return nil
+        }
+        if isShowLoder {
+            Helper.showLoader(isLoding: true)
+        }
+        var objects: [[String: Any]] = []
+        return query?.addSnapshotListener({ response, error in
+            guard ResponseHandler.responseHandler(error: error) else { self.didFinishRequest?()
+                ; return }
+            objects.removeAll()
+            response?.documents.forEach({ data in
+                var dictionary = data.data()
+                dictionary["id"] = data.documentID
+                objects.append(dictionary)
+            })
+            if isShowLoder {
+                Helper.showLoader(isLoding: false)
+            }
+            completion(objects)
+            self.didFinishRequest?()
+        })
     }
 
     func deleteDocument(documentID: String, isShowLoder: Bool = true, isShowMessage: Bool = true, success: @escaping () -> Void) -> Self {

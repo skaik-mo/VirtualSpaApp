@@ -89,7 +89,7 @@ extension GeneralTableView {
         self.lastDocument = nil
         self.objects.removeAll()
         self.headerObject = nil
-        self.sendRequest(request)
+        self.sendRequest(isAdd: false, request)
         self.isShowLoader = false
     }
 }
@@ -100,17 +100,21 @@ extension GeneralTableView {
     private func setPagination(_ indexPath: IndexPath) {
         guard self.isLoadMoreEnable, self.lastDocument != nil else { return }
         self.addLoading(indexPath) {
-            self.sendRequest(self.request)
+            self.sendRequest(isAdd: true, self.request)
         }
     }
 }
 
 // MARK: - Request
 extension GeneralTableView {
-    private func sendRequest(_ request: GeneralController?) {
+    private func sendRequest(isAdd: Bool, _ request: GeneralController?) {
         self.request = request
         _ = request?.sendRequest(lastDocument: self.lastDocument, isShowLoader: isShowLoader, handlerResponse: { objects, lastDocument, headerObject in
-            self.objects += objects
+            if isAdd {
+                self.objects += objects
+            } else {
+                self.objects = objects
+            }
             self.lastDocument = lastDocument
             self.headerObject = headerObject
             debugPrint("objects =>> \(self.objects.count) || is lastDocuments nil =>> \(lastDocument == nil), headerObject =>> \(headerObject)")

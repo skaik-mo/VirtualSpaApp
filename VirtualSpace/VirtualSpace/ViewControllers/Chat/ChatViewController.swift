@@ -21,16 +21,22 @@ class ChatViewController: MessagesViewController {
         inputBar.placeholder = Strings.WRITE_PLACEHOLDER
         return inputBar
     }()
+    let messageController = MessageController()
+    let conversationController = ConversationController()
     var messages: [MessageType] = []
-    var otherUser: Sender {
-        return Sender(senderId: "2", displayName: "User")
+    var conversationID: String?
+    var currentUser: UserModel? = UserController().fetchUser()
+    var otherUser: UserModel
+    var otherSender: Sender {
+        return Sender(senderId: otherUser.id ?? "", displayName: otherUser.name ?? "")
     }
-    var currentUser: Sender {
-        return Sender(senderId: "1", displayName: "Mohamed")
+    var authSender: Sender {
+        return Sender(senderId: currentUser?.id ?? "", displayName: currentUser?.name ?? "")
     }
 
     // MARK: Init
-    init() {
+    init(otherUser: UserModel) {
+        self.otherUser = otherUser
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -51,9 +57,10 @@ class ChatViewController: MessagesViewController {
         IQKeyboardManager.shared.enable = false
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         IQKeyboardManager.shared.enable = true
+        messageController.removeListener()
     }
 
     override var canBecomeFirstResponder: Bool {
@@ -88,27 +95,33 @@ private extension ChatViewController {
     }
 
     func setUpData() {
-        self.title = "auth Name"
-        self.messages.append(Message(sender: currentUser, messageId: "1", sentDate: Date()._add(days: -4) ?? Date(), kind: .text("ddddd"), toId: otherUser.senderId))
-        self.messages.append(Message(sender: otherUser, messageId: "1", sentDate: Date()._add(days: -3) ?? Date(), kind: .text("message1\nsdcsdcscs\nsdcsdcsdcsdcsdcsdcsdcscsdcsdcsdcsdcsdcsdcsdcscd"), toId: currentUser.senderId))
-        self.messages.append(Message(sender: currentUser, messageId: "1", sentDate: Date()._add(days: -1) ?? Date(), kind: .text("message2\nmmmmmmmmmm"), toId: otherUser.senderId))
-        self.messages.append(Message(sender: otherUser, messageId: "1", sentDate: Date(), kind: .text("message3"), toId: currentUser.senderId))
-        self.messages.append(Message(sender: currentUser, messageId: "1", sentDate: Date(), kind: .text("message4"), toId: otherUser.senderId))
-        self.messages.append(Message(sender: currentUser, messageId: "1", sentDate: Date(), kind: .text("message4"), toId: otherUser.senderId))
-        self.messages.append(Message(sender: currentUser, messageId: "1", sentDate: Date(), kind: .text("message4"), toId: otherUser.senderId))
-        self.messages.append(Message(sender: currentUser, messageId: "1", sentDate: Date(), kind: .text("message4"), toId: otherUser.senderId))
-        self.messages.append(Message(sender: currentUser, messageId: "1", sentDate: Date(), kind: .text("message4"), toId: otherUser.senderId))
-        self.messages.append(Message(sender: currentUser, messageId: "1", sentDate: Date(), kind: .text("message4"), toId: otherUser.senderId))
-        self.messages.append(Message(sender: currentUser, messageId: "1", sentDate: Date(), kind: .text("message4"), toId: otherUser.senderId))
-        self.messages.append(Message(sender: currentUser, messageId: "1", sentDate: Date(), kind: .text("message4"), toId: otherUser.senderId))
-        DispatchQueue.main.async {
-            self.messagesCollectionView.reloadData()
-            self.messagesCollectionView.scrollToLastItem(animated: true)
-        }
+        self.title = otherUser.name
     }
 
     func fetchData() {
+        self.setConversation(getConversationID: { conversationID in
+            _ = self.messageController.getMessages(conversationID: conversationID) { messages in
+                self.messages = messages
+            }.handlerDidFinishRequest(handler: {
+                DispatchQueue.main.async {
+                    self.messagesCollectionView.reloadData()
+                    self.messagesCollectionView.scrollToLastItem(animated: true)
+                }
+            })
+        })
+    }
 
+    private func setConversation(getConversationID: @escaping (_ conversationID: String) -> Void) {
+        if let conversationID {
+            getConversationID(conversationID)
+        } else {
+            _ = ConversationController().getConversation(otherUser: self.otherUser, isShowLoader: false) { object in
+                if let id = object.id {
+                    self.conversationID = id
+                    getConversationID(id)
+                }
+            }
+        }
     }
 
     func isFirstMessageOfDay(_ section: Int) -> Bool {
@@ -125,7 +138,7 @@ private extension ChatViewController {
 // MARK: - MessagesDataSource
 extension ChatViewController: MessagesDataSource {
     var currentSender: MessageKit.SenderType {
-        currentUser
+        authSender
     }
 
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
@@ -176,7 +189,7 @@ extension ChatViewController: MessagesDisplayDelegate {
             avatarView.isHidden = true
             avatarView.image = nil
         } else {
-            avatarView.image = otherUser.image
+            avatarView.fetchImage(otherUser.image, .ic_placeholder)
             avatarView.isHidden = false
         }
 
@@ -202,12 +215,20 @@ extension ChatViewController: MessagesDisplayDelegate {
 extension ChatViewController: InputBarAccessoryViewDelegate {
 
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-        let message = Message(sender: currentUser, messageId: UUID().uuidString, sentDate: Date(), kind: .text(text._removeWhiteSpace), toId: otherUser.senderId)
+        guard let conversationID, let currentUser else { return }
+        let newMessage = text._removeWhiteSpace
+        let conversation = Conversation(id: conversationID, userIDs: [self.authSender.senderId, self.otherSender.senderId], users: [currentUser, otherUser], lastMessage: newMessage)
+        let message = Message(conversationID: conversationID, sender: self.authSender, kind: .text(newMessage))
         messages.append(message)
         inputBar.inputTextView.text = ""
         DispatchQueue.main.async {
             self.messagesCollectionView.reloadData()
             self.messagesCollectionView.scrollToLastItem(animated: true)
+        }
+        _ = ConversationController().addConversation(conversation: conversation) {
+            _ = self.messageController.addMessage(message: message) {
+                debugPrint("message added")
+            }
         }
     }
 
