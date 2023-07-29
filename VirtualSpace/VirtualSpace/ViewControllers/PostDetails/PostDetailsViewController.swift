@@ -18,7 +18,7 @@ class PostDetailsViewController: UIViewController {
     // MARK: Properties
     private var post: Post
     private var inpuTextHeight = 55.0
-    lazy private var inputText: TextViewInputBar = {
+    lazy var inputText: TextViewInputBar = {
         let inputBar = TextViewInputBar()
         inputBar.delegate = self
         inputBar.placeholder = Strings.ADD_COMMENT_PLACEHOLDER

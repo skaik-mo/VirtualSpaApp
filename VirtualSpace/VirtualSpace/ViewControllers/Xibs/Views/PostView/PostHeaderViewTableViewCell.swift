@@ -61,6 +61,9 @@ class PostHeaderViewTableViewCell: GeneralTableViewHeaderFooterView {
 
     @IBAction func commentAction(_ sender: Any) {
         debugPrint(#function)
+        guard let _topVC = _topVC as? PostDetailsViewController else { return }
+        _topVC.inputText.inputTextView.becomeFirstResponder()
+
     }
 
     @IBAction func shareAction(_ sender: Any) {
