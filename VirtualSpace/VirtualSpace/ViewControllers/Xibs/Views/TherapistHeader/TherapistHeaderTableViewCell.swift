@@ -72,7 +72,7 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
     private func checkFollow() {
         debugPrint(#function)
         guard let followingUserID = (object as? UserModel)?.id, let followerUserID = UserController().fetchUser()?.id else { return }
-        _ = followController.searchFollowing(followerUserID: followerUserID, followingUserID: followingUserID, isShowLoder: false) { follow in
+        _ = followController.searchFollowing(followerUserID: followerUserID, followingUserID: followingUserID, isShowLoader: false) { follow in
             self.follow = follow
         }
     }

@@ -123,14 +123,14 @@ class FirebaseStorageController: HandlerFinish {
 // MARK: - Delete File
 extension FirebaseStorageController {
 
-    func deleteFile(path: String, isShowLoder: Bool = true, success: @escaping () -> Void) {
-        if isShowLoder {
+    func deleteFile(path: String, isShowLoader: Bool = true, success: @escaping () -> Void) {
+        if isShowLoader {
             Helper.showLoader(isLoding: true)
         }
         storage.reference().child(path).delete { error in
             if let error = error as? NSError, StorageErrorCode.init(rawValue: (error).code) != .objectNotFound, ResponseHandler.responseHandler(error: error) { return }
             success()
-            if isShowLoder {
+            if isShowLoader {
                 Helper.showLoader(isLoding: false)
             }
         }

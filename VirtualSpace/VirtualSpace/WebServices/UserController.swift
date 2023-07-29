@@ -109,7 +109,7 @@ extension UserController {
 
     private func getUserData(password: String) {
         guard let currentUser = auth.currentUser else { return }
-        _ = userReference.getDocument(document: currentUser.uid) { dictionary in
+        _ = userReference.fetchDocument(document: currentUser.uid) { dictionary in
             guard let user = UserModel(dictionary: dictionary) else { return }
             user.id = currentUser.uid
             user.email = currentUser.email
@@ -243,11 +243,11 @@ extension UserController {
             Helper.showLoader(isLoding: true)
             auth.delete { error in
                 guard ResponseHandler.responseHandler(error: error) else { return }
-                self.userReference.deleteDocument(documentID: id, isShowLoder: false) {
+                self.userReference.deleteDocument(documentID: id, isShowLoader: false) {
                     let imagePath = "Users/\(id)/userImage.jpeg"
                     let coverImagePath = "Users/\(id)/coverImage.jpeg"
-                    FirebaseStorageController().deleteFile(path: imagePath, isShowLoder: false) {
-                        FirebaseStorageController().deleteFile(path: coverImagePath, isShowLoder: false) {
+                    FirebaseStorageController().deleteFile(path: imagePath, isShowLoader: false) {
+                        FirebaseStorageController().deleteFile(path: coverImagePath, isShowLoader: false) {
                             MainNavigationController.showFirstView()
                             Helper.showLoader(isLoding: false)
                         }
@@ -262,7 +262,9 @@ extension UserController {
 extension UserController {
 
     func getTherapists(place: Place, lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
-        return userReference.fetchDocumentsWithDocumentIDs(documentIDs: place.therapistIDs, limit: 10, lastDocument: lastDocument, isShowLoder: isShowLoader) { objects, lastDocument in
+        guard !place.therapistIDs.isEmpty else { return userReference }
+        let query = userReference.reference?.limit(to: 10).whereField(FieldPath.documentID(), in: place.therapistIDs)
+        return userReference.fetchDocuments(query: query, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, lastDocument in
             guard let lastDocument else { handlerResponse([], nil, place); return }
             let users = self.setUsers(objects)
             handlerResponse(users, lastDocument, place)
@@ -270,7 +272,7 @@ extension UserController {
     }
 
     func getUsers(userIDs: [String], isShowLoader: Bool, handlerResponse: @escaping ((_ users: [UserModel]) -> Void)) -> FirebaseFirestoreController? {
-        return userReference.getDocuments(isShowLoder: isShowLoader) { objects in
+        return userReference.fetchDocuments(isShowLoader: isShowLoader) { objects in
             let users = self.setUsers(objects)
             handlerResponse(users)
         }

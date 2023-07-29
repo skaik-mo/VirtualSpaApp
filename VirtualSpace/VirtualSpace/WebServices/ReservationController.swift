@@ -31,18 +31,21 @@ class ReservationController {
             })
     }
 
-    private func getReservations(field: String, value: Any, lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
-        return referance.fetchDocumentsWithField(field: field, value: value, limit: 10, lastDocument: lastDocument, isShowLoder: isShowLoader) { objects, lastDocument in
+    private func getReservations(field: String, value: Any, lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Reservation], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
+//        Not working order
+//        let query = referance.reference?.order(by: "date", descending: true).limit(to: 10).whereField(field, isEqualTo: value)
+        let query = referance.reference?.limit(to: 10).whereField(field, isEqualTo: value)
+        return referance.fetchDocuments(query: query, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, lastDocument in
             guard let lastDocument = lastDocument else { handlerResponse([], nil, nil); return }
-            handlerResponse(objects, lastDocument, nil)
+            let reservations = self.setReservations(objects)
+            handlerResponse(reservations, lastDocument, nil)
         }
     }
 
     func getBusinessPendingReservations(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
         guard let therapistID = UserController().fetchUser()?.id else { fatalError("\(#function) The user id is nil") }
         return self.getReservations(field: "therapistID", value: therapistID, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, _, _ in
-            var reservations = self.setReservations(objects)
-            reservations = reservations.filter({ $0.status == .Pending })
+            let reservations = objects.filter({ $0.status == .Pending })
             handlerResponse(reservations, lastDocument, nil)
         }
     }
@@ -50,8 +53,7 @@ class ReservationController {
     func getBusinessAcceptedReservations(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
         guard let therapistID = UserController().fetchUser()?.id else { fatalError("\(#function) The user id is nil") }
         return self.getReservations(field: "therapistID", value: therapistID, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, _, _ in
-            var reservations = self.setReservations(objects)
-            reservations = reservations.filter({ $0.status == .Accept })
+            let reservations = objects.filter({ $0.status == .Accept })
             handlerResponse(reservations, lastDocument, nil)
         }
     }
@@ -59,8 +61,7 @@ class ReservationController {
     func getMyReservations(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
         guard let reservationUserID = UserController().fetchUser()?.id else { fatalError("\(#function) The user id is nil") }
         return self.getReservations(field: "reservationUserID", value: reservationUserID, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, _, _ in
-            let reservations = self.setReservations(objects)
-            handlerResponse(reservations, lastDocument, nil)
+            handlerResponse(objects, lastDocument, nil)
         }
     }
 

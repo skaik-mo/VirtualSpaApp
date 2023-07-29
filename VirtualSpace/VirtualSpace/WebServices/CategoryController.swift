@@ -11,11 +11,11 @@ class CategoryController {
 
     private let referance: FirebaseFirestoreController = FirebaseFirestoreController().setFirebaseReference(.Category)
 
-    func getCategories(isShowLoder: Bool = true, success: @escaping ((_ categories: [Category]) -> Void)) -> FirebaseFirestoreController {
-        return referance.getDocuments(isShowLoder: isShowLoder) { objects in
+    func getCategories(isShowLoader: Bool = true, success: @escaping ((_ categories: [Category]) -> Void)) -> FirebaseFirestoreController {
+        return referance.fetchDocuments(isShowLoader: isShowLoader) { objects in
             var categories: [Category] = []
             objects.forEach { object in
-                if let category = Category.init(dictionary: object as? [String: Any]) {
+                if let category = Category.init(dictionary: object) {
                     categories.append(category)
                 }
             }

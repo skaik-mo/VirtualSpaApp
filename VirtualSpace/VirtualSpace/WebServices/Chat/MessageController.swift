@@ -10,7 +10,6 @@ import FirebaseFirestore
 class MessageController {
 
     private let referance: FirebaseFirestoreController = FirebaseFirestoreController().setFirebaseReference(.Message)
-    static var listener: ListenerRegistration?
 
     private func setMessages(_ objects: [Any]) -> [Message] {
         var messages: [Message] = []
@@ -24,26 +23,28 @@ class MessageController {
     }
 
     func addMessage(message: Message, success: @escaping () -> Void) -> FirebaseFirestoreController {
-        return referance.setData(document: message.messageId, dictionary: message.getDictionary(), isShowLoder: false, success: success)
+        return referance.setData(document: message.messageId, dictionary: message.getDictionary(), isShowLoader: false, success: success)
     }
 
+    // MARK: - Text Fetch
     func getMessages(conversationID: String, handlerResponse: @escaping ((_ messages: [Message]) -> Void)) -> FirebaseFirestoreController {
-        Self.listener = referance.fetchDocumentsWithListener(query: referance.reference?.whereField("conversationID", isEqualTo: conversationID)) { objects in
+        let query = referance.reference?.whereField("conversationID", isEqualTo: conversationID)
+        return referance.fetchDocumentsWithListener(query: query, lastDocument: nil, isShowLoader: true) { objects, _ in
             let messages = self.setMessages(objects)
             handlerResponse(messages)
         }
-        return referance
     }
 
     func removeListener() {
-        Self.listener?.remove()
+        referance.removeListener()
     }
 
     func deleteMessages(conversationID: String) {
-        _ = referance.getDocuments(query: referance.reference?.whereField("conversationID", isEqualTo: conversationID), isShowLoder: false) { objects in
+        let query = referance.reference?.whereField("conversationID", isEqualTo: conversationID)
+        _ = referance.fetchDocuments(query: query, lastDocument: nil, isShowLoader: false) { objects, _ in
             let messages = self.setMessages(objects)
             messages.forEach { message in
-                _ = self.referance.deleteDocument(documentID: message.messageId, isShowLoder: false) {}
+                _ = self.referance.deleteDocument(documentID: message.messageId, isShowLoader: false) { }
             }
         }
     }

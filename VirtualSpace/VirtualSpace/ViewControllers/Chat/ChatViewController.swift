@@ -49,11 +49,11 @@ class ChatViewController: MessagesViewController {
         super.viewDidLoad()
         setUpView()
         setUpData()
-        fetchData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        fetchData()
         IQKeyboardManager.shared.enable = false
     }
 
@@ -81,7 +81,7 @@ private extension ChatViewController {
 private extension ChatViewController {
 
     func setUpView() {
-        self.messagesCollectionView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
+        self.messagesCollectionView.contentInset = .init(top: 10, left: 0, bottom: 0, right: 0)
         self.messagesCollectionView.messagesDataSource = self
         self.messagesCollectionView.messagesLayoutDelegate = self
         self.messagesCollectionView.messagesDisplayDelegate = self

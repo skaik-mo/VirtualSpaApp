@@ -102,13 +102,13 @@ private extension HomeUserViewController {
 
     func fetchData() {
         Helper.showLoader(isLoding: true)
-        _ = CategoryController().getCategories(isShowLoder: false) { categories in
+        _ = CategoryController().getCategories(isShowLoader: false) { categories in
             self.categories = categories
             self.selectedCategories = self.categories.first
-            _ = SubCategoryController().getSubCategories(isShowLoder: false) { subCategories in
+            _ = SubCategoryController().getSubCategories(isShowLoader: false) { subCategories in
                 self.subCategories = subCategories
                 self.selectedSubCategories = self.subCategories.first
-                _ = PlaceController().getPlaces(isShowLoder: false, success: { places in
+                _ = PlaceController().getPlaces(isShowLoader: false, success: { places in
                     self.places = places
                     self.setPlacesFilters()
                 }).handlerDidFinishRequest(handler: {

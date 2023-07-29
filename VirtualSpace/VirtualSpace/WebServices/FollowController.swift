@@ -22,7 +22,8 @@ class FollowController {
     }
 
     private func getFollows(field: String, value: Any, lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Follow], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController {
-        return referance.fetchDocumentsWithField(field: field, value: value, limit: 10, lastDocument: lastDocument, isShowLoder: isShowLoader) { objects, lastDocument in
+        let query = referance.reference?.limit(to: 10).whereField(field, isEqualTo: value)
+        return referance.fetchDocuments(query: query, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, lastDocument in
             guard let lastDocument = lastDocument else { handlerResponse([], nil, nil); return }
             let following = self.setFollows(objects)
             handlerResponse(following, lastDocument, nil)
@@ -74,9 +75,9 @@ class FollowController {
     }
 
     // MARK: - search Following for UserType == User
-    func searchFollowing(followerUserID: String, followingUserID: String, isShowLoder: Bool, handlerResponse: @escaping ((_ object: Follow?) -> Void)) -> FirebaseFirestoreController {
-        let fields = ["followerUserID": followerUserID, "followingUserID": followingUserID]
-        return referance.fetchDocumentsWithFields(fields: fields, limit: 1, lastDocument: nil, isShowLoder: isShowLoder) { objects, _ in
+    func searchFollowing(followerUserID: String, followingUserID: String, isShowLoader: Bool, handlerResponse: @escaping ((_ object: Follow?) -> Void)) -> FirebaseFirestoreController {
+        let query = referance.reference?.whereField("followerUserID", isEqualTo: followerUserID).whereField("followingUserID", isEqualTo: followingUserID)
+        return referance.fetchDocuments(query: query, lastDocument: nil, isShowLoader: isShowLoader) { objects, _ in
             if let follow = Follow.init(dictionary: objects.first) {
                 handlerResponse(follow)
             } else {

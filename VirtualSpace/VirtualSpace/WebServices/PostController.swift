@@ -22,7 +22,8 @@ class PostController {
     }
 
     func getPosts(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
-        return referance.fetchDocuments(limit: 10, lastDocument: lastDocument, isShowLoder: isShowLoader) { objects, lastDocument in
+        let query = referance.reference?.order(by: "modifiedAt", descending: true).limit(to: 10)
+        return referance.fetchDocuments(query: query, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, lastDocument in
             guard let lastDocument = lastDocument else { handlerResponse([], nil, nil); return }
             let posts = self.setPosts(objects)
             handlerResponse(posts, lastDocument, nil)
@@ -31,7 +32,10 @@ class PostController {
 
     func getPostsByUser(user: UserModel, lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
         guard let id = user.id else { return referance }
-        return referance.fetchDocumentsWithField(field: "userID", value: id, limit: 10, lastDocument: lastDocument, isShowLoder: isShowLoader) { objects, lastDocument in
+//        Not working order
+//        var query = referance.reference?.order(by: "modifiedAt", descending: true).limit(to: 10).whereField("userID", isEqualTo: id)
+        let query = referance.reference?.limit(to: 10).whereField("userID", isEqualTo: id)
+        return referance.fetchDocuments(query: query, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, lastDocument in
             guard let lastDocument = lastDocument else { handlerResponse([], nil, user); return }
             let posts = self.setPosts(objects)
             handlerResponse(posts, lastDocument, user)
