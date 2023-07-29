@@ -19,6 +19,7 @@ class AcceptedUserViewController: UIViewController {
     @IBOutlet weak var callButton: UIButton!
 
     // MARK: Properties
+    private var reservationUser: UserModel
     private var reservationUserID: String
     private var reservationUserName: String
     private var reservationUserImage: String
@@ -28,6 +29,7 @@ class AcceptedUserViewController: UIViewController {
 
     // MARK: Init
     init(reservationUserID: String, reservationUserName: String, reservationUserEmail: String, reservationUserPhone: String, reservationUserImage: String, reservationUserCoverImage: String) {
+        self.reservationUser = .init(id: reservationUserID, email: reservationUserEmail, name: reservationUserName, phone: reservationUserPhone, image: reservationUserImage, coverImage: reservationUserCoverImage, type: .User)
         self.reservationUserID = reservationUserID
         self.reservationUserName = reservationUserName
         self.reservationUserEmail = reservationUserEmail
@@ -65,8 +67,8 @@ private extension AcceptedUserViewController {
     @IBAction func messageAction(_ sender: Any) {
         debugPrint(#function)
         self._dismissVC()
-//        let vc = ChatViewController(conversationID: <#T##String#>, currentUser: <#T##UserModel#>, otherUser: <#T##UserModel#>)
-//        vc._push()
+        let vc = ChatViewController(otherUser: reservationUser)
+        vc._push()
     }
 }
 
