@@ -50,7 +50,8 @@ private extension FollowingViewController {
     }
 
     func setUpData() {
-        self.title = Strings.FOLLOWING_TITLE
+        guard let user = UserController().fetchUser() else { return }
+        self.title = user.type == .Business ? Strings.FOLLOWERS_TITLE :  Strings.FOLLOWING_TITLE
     }
 
     func fetchData() {

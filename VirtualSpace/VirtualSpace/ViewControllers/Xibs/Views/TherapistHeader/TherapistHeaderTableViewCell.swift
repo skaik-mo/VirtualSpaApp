@@ -79,7 +79,7 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
 
     private func setTitleButtons() {
         debugPrint(#function)
-        if let follow {
+        if follow != nil {
             self.followButton.titleLabel?.text = Strings.FOLLOWING_TITLE
             self.followButton.applyButtonStyle(.OutlinedPurple(40))
         } else {

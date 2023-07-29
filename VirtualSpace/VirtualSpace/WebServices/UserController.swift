@@ -243,7 +243,8 @@ extension UserController {
             Helper.showLoader(isLoding: true)
             auth.delete { error in
                 guard ResponseHandler.responseHandler(error: error) else { return }
-                self.userReference.deleteDocument(documentID: id, isShowLoader: false) {
+//                should delete My reservations, Conversations, Massages, My Friends and Following
+                _ = self.userReference.deleteDocument(documentID: id, isShowLoader: false) {
                     let imagePath = "Users/\(id)/userImage.jpeg"
                     let coverImagePath = "Users/\(id)/coverImage.jpeg"
                     FirebaseStorageController().deleteFile(path: imagePath, isShowLoader: false) {

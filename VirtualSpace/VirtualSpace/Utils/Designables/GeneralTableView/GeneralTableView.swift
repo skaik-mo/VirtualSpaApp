@@ -117,7 +117,7 @@ extension GeneralTableView {
             }
             self.lastDocument = lastDocument
             self.headerObject = headerObject
-            debugPrint("objects =>> \(self.objects.count) || is lastDocuments nil =>> \(lastDocument == nil), headerObject =>> \(headerObject)")
+            debugPrint("objects =>> \(self.objects.count) || is lastDocuments nil =>> \(lastDocument == nil), headerObject =>> \(headerObject ?? "")")
         })?.handlerDidFinishRequest(handler: {
             self.setEmptyData()
             self.control.endRefreshing()
