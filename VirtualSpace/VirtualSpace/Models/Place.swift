@@ -53,6 +53,26 @@ class Place {
         }
     }
 
+    func getDictionary() -> [String: Any] {
+        let dictionary: [String: Any?] = [
+            "id": self.id,
+            "name": self.name,
+            "address": self.address,
+            "description": self.description,
+            "icon": self.icon,
+            "coverImage": self.coverImage,
+            "audio": self.audio,
+            "audioName": self.audioName,
+            "images": self.images,
+            "categories": self.categories,
+            "subCategories": self.subCategories,
+            "therapists": self.therapistIDs,
+            "latitude": self.coordinate?.coordinate.latitude,
+            "longitude": self.coordinate?.coordinate.longitude
+        ]
+        return dictionary as [String: Any]
+    }
+
     func getTimeAndDistance() -> String {
         var time = ""
         var distance = ""

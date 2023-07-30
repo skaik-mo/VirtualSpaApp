@@ -15,9 +15,11 @@ class InviteViewController: UIViewController {
 
     // MARK: Properties
     var invitedUserIDs: [String] = []
+    var place: Place
 
     // MARK: Init
-    init() {
+    init(place: Place) {
+        self.place = place
         super.init(nibName: nil, bundle: nil)
     }
 

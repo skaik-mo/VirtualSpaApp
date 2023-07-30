@@ -23,6 +23,7 @@ enum GeneralController {
     case GetFollowers
     case GetConversations
     case GetNearbyUsers
+    case GetNotification
 
     // swiftlint:disable cyclomatic_complexity
     func sendRequest(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
@@ -57,6 +58,8 @@ enum GeneralController {
             }
         case .GetNearbyUsers:
             return UserController().getNearbyUsers(isShowLoader: isShowLoader, handlerResponse: handlerResponse)
+        case .GetNotification:
+            return NotificationController().getNotification(lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
         }
     }
 }

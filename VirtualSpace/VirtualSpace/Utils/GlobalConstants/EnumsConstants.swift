@@ -15,6 +15,23 @@ extension GlobalConstants {
         case Business = 1
     }
 
+    enum NotificationType: Int {
+        case alert = 0
+        case message = 1
+        case Invite = 2
+
+        static func getType(_ type: Int?) -> NotificationType {
+            switch type {
+            case 2:
+                return .Invite
+            case 1:
+                return .message
+            default:
+                return .alert
+            }
+        }
+    }
+
 }
 
 // MARK: - Firbase Collections
@@ -30,6 +47,7 @@ extension GlobalConstants {
         case Follow
         case Conversation
         case Message
+        case Notification
     }
 
 }

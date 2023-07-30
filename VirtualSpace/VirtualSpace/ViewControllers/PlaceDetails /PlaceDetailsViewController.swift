@@ -98,7 +98,7 @@ private extension PlaceDetailsViewController {
     }
 
     @objc func inviteAction() {
-        let vc = InviteViewController()
+        let vc = InviteViewController(place: place)
         vc._push()
     }
 

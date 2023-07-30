@@ -111,6 +111,7 @@ class Strings {
 
     // MARK: - Notification
     static let NOTIFY_TITLE = "Notification"._localizedKey
+    static let NO_NOTIFY_EMPTY_TITLE = "There are no notification yet"._localizedKey
 
     // MARK: - Friend
     static let MY_FRIENDS_TITLE = "My Friends"._localizedKey
@@ -126,7 +127,7 @@ class Strings {
     // MARK: - Invite
     static let NEARBY_TITLE = "Nearby"._localizedKey
     static let INVITE_TITLE = "Invite"._localizedKey
-    static let ADD_TITLE = "Add"._localizedKey
+    static let INVITED_TITLE = "Invited"._localizedKey
 
     // MARK: - Favorite
     static let FAVORITE_TITLE = "Favorite"._localizedKey

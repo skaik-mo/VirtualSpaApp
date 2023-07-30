@@ -8,23 +8,30 @@
 
 import UIKit
 
-class NotificationTableViewCell: UITableViewCell {
+class NotificationTableViewCell: GeneralTableViewCell {
 
     @IBOutlet weak var notifyImage: rImage!
     @IBOutlet weak var notifyTtitleLabel: UILabel!
     @IBOutlet weak var notifyDateLabel: UILabel!
     @IBOutlet weak var notifyDescrition: UILabel!
 
-    var object: Any?
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.selectionStyle = .none
     }
 
-    func configureCell() {
-
+    override func configureCell() {
+        if let object = object as? Notification {
+            self.notifyImage.fetchImage(object.image, .ic_placeholder)
+            self.notifyTtitleLabel.text = object.title
+            self.notifyDescrition.text = object.body
+            self.notifyDateLabel.text = object.createdAt?._timeAgoDisplay
+        } else {
+            self.notifyImage.image = nil
+            self.notifyTtitleLabel.text = nil
+            self.notifyDescrition.text = nil
+            self.notifyDateLabel.text = nil
+        }
     }
 
 }

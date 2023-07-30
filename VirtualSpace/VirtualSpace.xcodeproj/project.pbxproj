@@ -113,6 +113,8 @@
 		E7715DF12A5ED18F00143F92 /* TherapistsPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7715DEF2A5ED18F00143F92 /* TherapistsPlacesViewController.swift */; };
 		E7715DF22A5ED19000143F92 /* TherapistsPlacesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7715DF02A5ED18F00143F92 /* TherapistsPlacesViewController.xib */; };
 		E77781932A76448F0008EFD1 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77781922A76448F0008EFD1 /* Double.swift */; };
+		E77781952A7655FB0008EFD1 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77781942A7655FB0008EFD1 /* Notification.swift */; };
+		E77781972A7656E90008EFD1 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77781962A7656E90008EFD1 /* NotificationController.swift */; };
 		E77CF7B32A5BD41900E01D49 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7B22A5BD41900E01D49 /* UITextField.swift */; };
 		E77CF7C92A5BD5B400E01D49 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7C52A5BD5B400E01D49 /* ValidationError.swift */; };
 		E77CF7CA2A5BD5B400E01D49 /* ValidationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CF7C62A5BD5B400E01D49 /* ValidationRule.swift */; };
@@ -323,6 +325,8 @@
 		E7715DEF2A5ED18F00143F92 /* TherapistsPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TherapistsPlacesViewController.swift; sourceTree = "<group>"; };
 		E7715DF02A5ED18F00143F92 /* TherapistsPlacesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TherapistsPlacesViewController.xib; sourceTree = "<group>"; };
 		E77781922A76448F0008EFD1 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		E77781942A7655FB0008EFD1 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		E77781962A7656E90008EFD1 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		E77CF7B22A5BD41900E01D49 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		E77CF7C52A5BD5B400E01D49 /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		E77CF7C62A5BD5B400E01D49 /* ValidationRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationRule.swift; sourceTree = "<group>"; };
@@ -804,6 +808,7 @@
 				E79F63B02A70E48F00A7D8EE /* Reservation.swift */,
 				E7A9BAF32A711E7500921DFE /* Comment.swift */,
 				E7E0A1072A7147C80079A251 /* Follow.swift */,
+				E77781942A7655FB0008EFD1 /* Notification.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -821,6 +826,7 @@
 				E7C836CE2A6FC1BD008EC7A3 /* PostController.swift */,
 				E79F63B22A70E6AE00A7D8EE /* ReservationController.swift */,
 				E7A9BAF52A711FA200921DFE /* CommentController.swift */,
+				E77781962A7656E90008EFD1 /* NotificationController.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -1606,6 +1612,7 @@
 				E70F20762A6536A300FE212E /* MSSTakeImage.swift in Sources */,
 				E7D1A7F22A63CE6100A701E7 /* TextViewInputBar.swift in Sources */,
 				E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */,
+				E77781952A7655FB0008EFD1 /* Notification.swift in Sources */,
 				E756363A2A5AD4E00008C91B /* UIButton+style.swift in Sources */,
 				E7D1A7E72A63B7F500A701E7 /* Sender.swift in Sources */,
 				E799253A2A640B2B00B87500 /* PostDetailsViewController.swift in Sources */,
@@ -1672,6 +1679,7 @@
 				E7373F792A5AC9B5007A1186 /* UIStoryboard.swift in Sources */,
 				E727F0C72A665E4C00A3CEFB /* PlaceDetailsViewController.swift in Sources */,
 				E7A8619A2A5EC81200CFA14B /* PlaceTableViewCell.swift in Sources */,
+				E77781972A7656E90008EFD1 /* NotificationController.swift in Sources */,
 				E7B6F9322A5E97E0002A0693 /* NotificationTableViewCell.swift in Sources */,
 				E7868BAA2A601E5A008917DD /* MassageTableViewCell.swift in Sources */,
 				E7373F6F2A5AC9B5007A1186 /* String.swift in Sources */,

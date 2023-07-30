@@ -41,18 +41,22 @@ class InviteTableViewCell: GeneralTableViewCell {
     private func setInviteButton() {
         switch self.isInvited {
         case true:
-            self.inviteButton.titleLabel?.text = Strings.INVITE_TITLE
+            self.inviteButton.titleLabel?.text = Strings.INVITED_TITLE
             self.inviteButton.applyButtonStyle(.OutlinedPurple(35))
         case false:
-            self.inviteButton.titleLabel?.text = Strings.ADD_TITLE
+            self.inviteButton.titleLabel?.text = Strings.INVITE_TITLE
             self.inviteButton.applyButtonStyle(.Primary(35))
         }
     }
 
     @IBAction func inviteAction(_ sender: Any) {
-        guard let id = (object as? UserModel)?.id, let _topVC = _topVC as? InviteViewController else { return }
+        guard let recipientID = (object as? UserModel)?.id,
+            let sender = UserController().fetchUser(), let senderID = sender.id, let senderName = sender.name,
+            let _topVC = _topVC as? InviteViewController, let placeName = _topVC.place.name else { return }
         self.isInvited = true
-        _topVC.invitedUserIDs.append(id)
+        _topVC.invitedUserIDs.append(recipientID)
+        let notification = Notification.init(sender: senderID, recipient: recipientID, type: .Invite, title: "Invitation", body: "\(senderName) invites you to the place of \(placeName)", image: _topVC.place.icon, data: ["place": _topVC.place.getDictionary()])
+        NotificationController().sendNotification(notification: notification, isShowLoader: false)
     }
 
 }
