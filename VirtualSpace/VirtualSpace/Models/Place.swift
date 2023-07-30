@@ -6,14 +6,13 @@
 //
 
 import Foundation
+import CoreLocation
 
 class Place {
     var id: String?
     var name: String?
     var address: String?
     var description: String?
-    var time: String?
-    var distance: String?
     var icon: String?
     var coverImage: String?
     var audio: String?
@@ -23,6 +22,9 @@ class Place {
     var subCategories: [String] = []
     var therapistIDs: [String] = []
     var isFavorite: Bool = false
+    var coordinate: CLLocation?
+    var time: Double?
+    var distance: Double?
 
     init?(dictionary: [String: Any]?) {
         guard let dictionary, !dictionary.isEmpty else { return nil }
@@ -30,8 +32,6 @@ class Place {
         self.name = dictionary["name"] as? String
         self.address = dictionary["address"] as? String
         self.description = dictionary["description"] as? String
-        self.time = dictionary["time"] as? String
-        self.distance = dictionary["distance"] as? String
         self.icon = dictionary["icon"] as? String
         self.coverImage = dictionary["coverImage"] as? String
         self.audio = dictionary["audio"] as? String
@@ -41,17 +41,25 @@ class Place {
         self.subCategories = dictionary["subCategories"] as? [String] ?? []
         self.isFavorite = UserController().fetchUser()?.favoritePlaces.contains(self.id ?? "") ?? false
         for object in dictionary["therapists"] as? [String] ?? [] {
-                self.therapistIDs.append(object)
+            self.therapistIDs.append(object)
+        }
+        if let latitude = dictionary["latitude"] as? Double, let longitude = dictionary["longitude"] as? Double, let coordinate = UserController().fetchUser()?.coordinate {
+            self.coordinate = CLLocation(latitude: latitude, longitude: longitude)
+            let distanceInMeter = (self.coordinate?.distance(from: coordinate) ?? 0)
+            let mi = 1609.3471
+            self.distance = distanceInMeter / mi
+            let averageCarSpeed = 60.0
+            self.time = distanceInMeter / averageCarSpeed * 1000 / 3600
         }
     }
 
     func getTimeAndDistance() -> String {
         var time = ""
         var distance = ""
-        if let _distance = self.distance {
-            distance = "\(_distance) im"
+        if let _distance = self.distance?._toString {
+            distance = "\(_distance) mi"
         }
-        if let _time = self.time {
+        if let _time = self.time?._toString {
             time = "\(_time) min"
         }
         return "\(time) . \(distance)"

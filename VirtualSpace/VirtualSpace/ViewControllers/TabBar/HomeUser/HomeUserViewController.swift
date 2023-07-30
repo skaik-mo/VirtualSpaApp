@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class HomeUserViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class HomeUserViewController: UIViewController {
     @IBOutlet weak var homeCollectionView: UICollectionView!
 
     // MARK: Properties
+    var locationManger = CLLocationManager()
     var categories: [Category] = []
     var selectedCategories: Category?
     var subCategories: [SubCategory] = []
@@ -79,6 +81,8 @@ private extension HomeUserViewController {
 private extension HomeUserViewController {
 
     func setUpView() {
+        self.locationManger.delegate = self
+
         self.categoryCollectionView.dataSource = self
         self.categoryCollectionView.delegate = self
         self.categoryCollectionView._registerCell = PagerCollectionViewCell.self
@@ -243,5 +247,38 @@ extension HomeUserViewController: UICollectionViewDelegateFlowLayout {
 
         let width: CGFloat = (homeCollectionView.frame.width - homeCollectionView.contentInset.left - homeCollectionView.contentInset.right - spacing) / 2
         return .init(width: width, height: 220)
+    }
+}
+
+extension HomeUserViewController: CLLocationManagerDelegate {
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first, let user = UserController().fetchUser() {
+            user.coordinate = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            UserController().setUser(user: user, isShowLoader: false, isShowMessage: false)
+        }
+    }
+
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+        case .authorizedAlways, .authorizedWhenInUse:
+            manager.startUpdatingLocation()
+        case .notDetermined:
+            debugPrint("notDetermined")
+            locationManger.requestWhenInUseAuthorization()
+        case .restricted, .denied:
+            debugPrint("denied Or restricted location authorization")
+            self.showAlertIfDeniedOrRestricted()
+        @unknown default:
+            debugPrint("unknown")
+        }
+    }
+
+    private func showAlertIfDeniedOrRestricted() {
+        self._showAlert(title: Strings.DETERMINE_LOCATION_TITLE, message: Strings.LOCATION_PRIVACY_SETTINGS_MESSAGE, buttonAction1: {
+            self._pop()
+            guard let urlGeneral = URL(string: UIApplication.openSettingsURLString) else { return }
+            UIApplication.shared.open(urlGeneral)
+        })
     }
 }

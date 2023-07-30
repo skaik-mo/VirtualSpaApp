@@ -8,13 +8,11 @@
 
 import UIKit
 
-class InviteTableViewCell: UITableViewCell {
+class InviteTableViewCell: GeneralTableViewCell {
 
     @IBOutlet weak var authImage: rImage!
     @IBOutlet weak var authNameLabel: UILabel!
     @IBOutlet weak var inviteButton: UIButton!
-
-    var object: Any?
     var isInvited = false {
         didSet {
             self.setInviteButton()
@@ -24,11 +22,20 @@ class InviteTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.selectionStyle = .none
     }
 
-    func configureCell() {
-
+    override func configureCell() {
+        self.isInvited = false
+        if let object = object as? UserModel, let id = object.id {
+            self.authImage.fetchImage(object.image, .ic_placeholder)
+            self.authNameLabel.text = object.name
+            if let _topVC = _topVC as? InviteViewController {
+                self.isInvited = _topVC.invitedUserIDs.contains(id)
+            }
+        } else {
+            self.authImage.image = nil
+            self.authNameLabel.text = nil
+        }
     }
 
     private func setInviteButton() {
@@ -43,7 +50,9 @@ class InviteTableViewCell: UITableViewCell {
     }
 
     @IBAction func inviteAction(_ sender: Any) {
-        self.isInvited.toggle()
+        guard let id = (object as? UserModel)?.id, let _topVC = _topVC as? InviteViewController else { return }
+        self.isInvited = true
+        _topVC.invitedUserIDs.append(id)
     }
 
 }

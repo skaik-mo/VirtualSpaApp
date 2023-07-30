@@ -78,9 +78,9 @@ extension UserController {
         }
     }
 
-    func setUser(user: UserModel, completion: (() -> Void)? = nil) {
+    func setUser(user: UserModel, isShowLoader: Bool = true, isShowMessage: Bool = true, completion: (() -> Void)? = nil) {
         guard let id = user.id else { fatalError("\(#function) The user id is nil") }
-        _ = userReference.setData(document: id, dictionary: user.getDictionaryForDatabse(), success: {
+        _ = userReference.setData(document: id, dictionary: user.getDictionaryForDatabse(), isShowLoader: isShowLoader, isShowMessage: isShowMessage, success: {
                 self.saveUser(user: user)
                 completion?()
             }).handlerDidFinishRequest(handler: self.didFinishRequest).handlerofflineLoad(handler: self.offlineLoad)
@@ -272,10 +272,24 @@ extension UserController {
         }
     }
 
-    func getUsers(userIDs: [String], isShowLoader: Bool, handlerResponse: @escaping ((_ users: [UserModel]) -> Void)) -> FirebaseFirestoreController? {
-        return userReference.fetchDocuments(isShowLoader: isShowLoader) { objects in
+    func getUsersWithIDs(userIDs: [String], isShowLoader: Bool, handlerResponse: @escaping ((_ users: [UserModel]) -> Void)) -> FirebaseFirestoreController? {
+        let query = userReference.reference?.whereField(FieldPath.documentID(), in: userIDs)
+        return userReference.fetchDocuments(query: query, lastDocument: nil, isShowLoader: isShowLoader) { objects, _ in
             let users = self.setUsers(objects)
             handlerResponse(users)
+        }
+    }
+
+    func getNearbyUsers(isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController {
+        guard let user = self.fetchUser(), let id = user.id, let coordinate = user.coordinate else { return userReference }
+        let query = userReference.reference?.whereField("type", isEqualTo: 0).whereField(FieldPath.documentID(), isNotEqualTo: id)
+        return userReference.fetchDocuments(query: query, lastDocument: nil, isShowLoader: isShowLoader) { objects, _ in
+            var users = self.setUsers(objects)
+            users.forEach { user in
+                user.distance = user.coordinate?.distance(from: coordinate)
+            }
+            users.sort(by: >)
+            handlerResponse(users, nil, nil)
         }
     }
 

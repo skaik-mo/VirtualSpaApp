@@ -1,5 +1,5 @@
 // _________SKAIK_MO_________
-//  
+//
 //  InviteViewController.swift
 //  VirtualSpace
 //
@@ -11,9 +11,10 @@ import UIKit
 class InviteViewController: UIViewController {
 
     // MARK: Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: GeneralTableView!
 
     // MARK: Properties
+    var invitedUserIDs: [String] = []
 
     // MARK: Init
     init() {
@@ -43,10 +44,9 @@ private extension InviteViewController {
 
     func setUpView() {
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
-        self.tableView._registerCell = InviteTableViewCell.self
+        self.tableView.isPullToRefreshEnable = true
+        self.tableView.cell = InviteTableViewCell.self
         self.tableView.rowHeight = 70
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
     }
 
     func setUpData() {
@@ -54,25 +54,7 @@ private extension InviteViewController {
     }
 
     func fetchData() {
-
+        self.tableView.resetTableView(request: .GetNearbyUsers)
     }
 
-}
-
-extension InviteViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: InviteTableViewCell = tableView._dequeueReusableCell()
-        cell.isInvited = indexPath.row % 2 == 0
-//        cell.object =
-        cell.configureCell()
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        debugPrint(#function)
-    }
 }

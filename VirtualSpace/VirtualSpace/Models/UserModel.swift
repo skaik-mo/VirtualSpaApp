@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class UserModel {
     var id: String?
@@ -20,6 +21,8 @@ class UserModel {
     var favoritePosts: [String] = []
     var favoritePlaces: [String] = []
     var type: GlobalConstants.UserType?
+    var coordinate: CLLocation?
+    var distance: CLLocationDistance?
 
     init(id: String? = nil, email: String? = nil, password: String? = nil, name: String? = nil, countryCode: String? = nil, phone: String? = nil, bio: String? = nil, image: String? = nil, coverImage: String? = nil, type: GlobalConstants.UserType? = nil) {
         self.id = id
@@ -47,6 +50,7 @@ class UserModel {
         self.coverImage = dictionary["coverImage"] as? String
         self.favoritePosts = dictionary["favoritePosts"] as? [String] ?? []
         self.favoritePlaces = dictionary["favoritePlaces"] as? [String] ?? []
+        self.coordinate = CLLocation(latitude: dictionary["latitude"] as? Double ?? 0, longitude: dictionary["longitude"] as? Double ?? 0)
         if let type = dictionary["type"] as? Int {
             self.type = type == 0 ? .User : .Business
         }
@@ -89,6 +93,10 @@ class UserModel {
             "favoritePlaces": self.favoritePlaces,
             "type": self.type?.rawValue
         ]
+        if self.type == .User {
+            dictionary["latitude"] = self.coordinate?.coordinate.latitude
+            dictionary["longitude"] = self.coordinate?.coordinate.longitude
+        }
         if self.type == .Business {
             dictionary["bio"] = self.bio
         }
@@ -102,6 +110,13 @@ class UserModel {
             "image": self.image
         ]
         return dictionary as [String: Any]
+    }
+
+    static func > (next: UserModel, previous: UserModel) -> Bool {
+        if let previousDistance = previous.distance, let nextDistance = next.distance {
+            return previousDistance > nextDistance
+        }
+        return false
     }
 
 }

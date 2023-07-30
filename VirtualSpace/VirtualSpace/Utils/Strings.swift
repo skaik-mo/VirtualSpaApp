@@ -195,4 +195,9 @@ class Strings {
 
     // MARK: - Message
     static let MESSAGE_EMPTY_TITLE = "There are no message"._localizedKey
+
+    // MARK: - SelectLocation
+    static let DETERMINE_LOCATION_TITLE = "You must allow an app to determine your location"
+    static let LOCATION_PRIVACY_SETTINGS_MESSAGE = "Go to Settings > Privacy > Location Services."
+
 }

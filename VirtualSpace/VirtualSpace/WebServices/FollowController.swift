@@ -37,7 +37,7 @@ class FollowController {
             let followerUserIDs: [String] = objects.map { follow in
                 return follow.followerUserID ?? ""
             }
-            _ = UserController().getUsers(userIDs: followerUserIDs, isShowLoader: isShowLoader) { users in
+            _ = UserController().getUsersWithIDs(userIDs: followerUserIDs, isShowLoader: isShowLoader) { users in
                 objects.forEach { follow in
                     follow.user = users.first(where: { $0.id == follow.followerUserID })
                 }
@@ -53,7 +53,7 @@ class FollowController {
             let followingUserIDs: [String] = objects.map { follow in
                 return follow.followingUserID ?? ""
             }
-            _ = UserController().getUsers(userIDs: followingUserIDs, isShowLoader: isShowLoader) { users in
+            _ = UserController().getUsersWithIDs(userIDs: followingUserIDs, isShowLoader: isShowLoader) { users in
                 objects.forEach { follow in
                     follow.user = users.first(where: { $0.id == follow.followingUserID })
                 }
