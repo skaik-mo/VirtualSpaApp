@@ -128,6 +128,8 @@ class Strings {
     static let NEARBY_TITLE = "Nearby"._localizedKey
     static let INVITE_TITLE = "Invite"._localizedKey
     static let INVITED_TITLE = "Invited"._localizedKey
+    static let INVITATION_TITLE = "Invitation"._localizedKey
+    static let INVITATION_BODY = "{senderName} invites you to the place of {placeName}"._localizedKey
 
     // MARK: - Favorite
     static let FAVORITE_TITLE = "Favorite"._localizedKey
@@ -196,6 +198,8 @@ class Strings {
 
     // MARK: - Message
     static let MESSAGE_EMPTY_TITLE = "There are no message"._localizedKey
+    static let NEW_MESSAGE_TITLE = "New Message"._localizedKey
+    static let NEW_MESSAGE_BODY = "{senderName} sent you a new message"._localizedKey
 
     // MARK: - SelectLocation
     static let DETERMINE_LOCATION_TITLE = "You must allow an app to determine your location"

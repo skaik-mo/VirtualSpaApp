@@ -55,7 +55,9 @@ class InviteTableViewCell: GeneralTableViewCell {
             let _topVC = _topVC as? InviteViewController, let placeName = _topVC.place.name else { return }
         self.isInvited = true
         _topVC.invitedUserIDs.append(recipientID)
-        let notification = Notification.init(sender: senderID, recipient: recipientID, type: .Invite, title: "Invitation", body: "\(senderName) invites you to the place of \(placeName)", image: _topVC.place.icon, data: ["place": _topVC.place.getDictionary()])
+        var body = Strings.INVITATION_BODY.replacingOccurrences(of: "{senderName}", with: senderName)
+        body = body.replacingOccurrences(of: "{placeName}", with: placeName)
+        let notification = Notification.init(sender: senderID, recipient: recipientID, type: .Invite, title: Strings.INVITATION_TITLE, body: body, image: _topVC.place.icon, data: ["place": _topVC.place.getDictionary()])
         NotificationController().sendNotification(notification: notification, isShowLoader: false)
     }
 

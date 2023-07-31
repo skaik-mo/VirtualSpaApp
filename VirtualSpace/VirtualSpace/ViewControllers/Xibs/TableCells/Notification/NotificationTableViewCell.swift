@@ -34,4 +34,29 @@ class NotificationTableViewCell: GeneralTableViewCell {
         }
     }
 
+    override func didselect(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let object = object as? Notification else { return }
+        switch object.type {
+        case .alert:
+            break
+        case .message:
+            self.showMessage(object)
+        case .Invite:
+            self.showInvitation(object)
+        }
+    }
+
+    private func showMessage(_ notification: Notification) {
+        guard let conversationID = notification.data?["conversationID"] as? String, let sender =  UserModel(dictionary: notification.data?["sender"] as? [String: Any]) else { return }
+        let vc = ChatViewController(otherUser: sender)
+        vc.conversationID = conversationID
+        vc._push()
+    }
+
+    private func showInvitation(_ notification: Notification) {
+        guard let place = Place(dictionary: notification.data?["place"] as? [String: Any]) else { return }
+        let vc = PlaceDetailsViewController(place: place)
+        vc._push()
+    }
+
 }

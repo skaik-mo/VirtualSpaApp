@@ -133,6 +133,28 @@ private extension ChatViewController {
         return !Calendar.current.isDate(currentMessage.sentDate, inSameDayAs: previousMessage.sentDate)
     }
 
+    func sendMessage(conversation: Conversation, message: Message) {
+        _ = ConversationController().addConversation(conversation: conversation) {
+            _ = self.messageController.addMessage(message: message) {
+                debugPrint("message added")
+                self.sendNotification()
+            }
+        }
+    }
+
+    func sendNotification() {
+        guard let sender = currentUser, let senderName = sender.name, let conversationID else { return }
+        let notification = Notification.init(
+            sender: authSender.senderId,
+            recipient: otherSender.senderId,
+            type: .message,
+            title: Strings.NEW_MESSAGE_TITLE,
+            body: Strings.NEW_MESSAGE_BODY.replacingOccurrences(of: "{senderName}", with: senderName),
+            image: sender.image,
+            data: ["conversationID": conversationID, "sender": sender.getDictionary()])
+        NotificationController().sendNotification(notification: notification, isShowLoader: false)
+    }
+
 }
 
 // MARK: - MessagesDataSource
@@ -225,11 +247,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
             self.messagesCollectionView.reloadData()
             self.messagesCollectionView.scrollToLastItem(animated: true)
         }
-        _ = ConversationController().addConversation(conversation: conversation) {
-            _ = self.messageController.addMessage(message: message) {
-                debugPrint("message added")
-            }
-        }
+        self.sendMessage(conversation: conversation, message: message)
     }
 
 }
