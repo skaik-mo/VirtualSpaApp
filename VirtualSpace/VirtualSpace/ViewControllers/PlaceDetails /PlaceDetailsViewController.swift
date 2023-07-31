@@ -23,6 +23,8 @@ class PlaceDetailsViewController: UIViewController {
     @IBOutlet weak var bottomStack: UIStackView!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet weak var heightCollectionConstraint: NSLayoutConstraint!
+    @IBOutlet weak var audioIndicatorView: AudioVisualizationView!
+    @IBOutlet weak var audioIndicatorStack: UIStackView!
 
     // MARK: Properties
     private let audioController = AudioController()
@@ -116,6 +118,7 @@ private extension PlaceDetailsViewController {
 
     func setUpView() {
         self.isLoading = false
+        self.audioIndicatorStack.isHidden = true
         self.heightCollectionConstraint.constant = height
         self.setUpNaicgation()
         self.placeImageView.angleOffset = 180
@@ -133,6 +136,14 @@ private extension PlaceDetailsViewController {
         self.musicNameLabel.text = self.place.audioName
         self.descriptionLabel.numberOfLines = 3
         self.descriptionLabel.text = Strings.TAKE_TOUR_TITLE.replacingOccurrences(of: "{Club}", with: self.place.name ?? "")
+        self.audioController.getAmplitudes = { [weak self] amplitudes in
+            self?.audioIndicatorView.amplitudes = amplitudes
+            if amplitudes.isEmpty {
+                DispatchQueue.main.async {
+                    self?.playButton.isSelected = false
+                }
+            }
+        }
     }
 
     func setUpNaicgation() {
@@ -150,6 +161,7 @@ private extension PlaceDetailsViewController {
     func zoomInOutAnimation() {
         self.zoomButton.isSelected.toggle()
         UIView.animate(withDuration: 0.5) {
+            self.audioIndicatorStack.isHidden = !self.zoomButton.isSelected
             self._isHideNavigation = self.zoomButton.isSelected
             self.rotationStack.isHidden = self.zoomButton.isSelected
             self.descriptionStack.isHidden = self.zoomButton.isSelected
@@ -217,21 +229,24 @@ private extension PlaceDetailsViewController {
         } else {
             self.startPlayAudio()
         }
-        self.playButton.isSelected.toggle()
     }
 
     func startPlayAudio() {
+        self.playButton.isSelected = true
         self.isLoading = true
         self.audioController.downloadAudio(with: self.place.audio, completion: { url in
+            debugPrint("playing")
             DispatchQueue.main.async {
                 self.isLoading = false
-                self.audioController.startPlaying(url: url) { _ in }
+                self.audioController.startPlaying(url)
             }
         })
     }
 
     func stopPlayAudio() {
+        self.playButton.isSelected = false
         self.audioController.stopPlaying()
+        self.audioController.stopEngine()
     }
 
 }

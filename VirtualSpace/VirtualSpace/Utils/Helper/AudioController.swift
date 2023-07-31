@@ -5,15 +5,14 @@
 //  Created by Mohammed Skaik on 24/07/2023.
 //
 
-import UIKit
 import AVFoundation
-import AVKit
+import Accelerate
 
 class AudioController {
-
-    var audioRecorder: AVAudioRecorder?
-    var audioPlayer: AVAudioPlayer?
-    var player: AVPlayer?
+    var engine: AVAudioEngine?
+    let player = AVAudioPlayerNode()
+    let fftSetup = vDSP_DFT_zop_CreateSetup(nil, 1024, vDSP_DFT_Direction.FORWARD)
+    var getAmplitudes: ((_ amplitudes: [Float]) -> Void)?
 
     func fileURL(audioName: String = "recording.m4a") -> URL? {
         let folderName = "audioTemporary"
@@ -36,36 +35,44 @@ class AudioController {
         }
     }
 
-    func getAudioDuration(url: URL) -> Double? {
-        let asset = AVURLAsset(url: url)
-        return asset.duration.seconds
+    func processAudioData(buffer: AVAudioPCMBuffer) -> [Float] {
+        guard let fftSetup, let channelData = buffer.floatChannelData?[0] else { return [] }
+        return self.fft(data: channelData, setup: fftSetup)
     }
 
-    func startPlaying(url: URL?, timeObserver: @escaping (_ seconds: Double) -> Void) {
-        guard let url else { return }
-        debugPrint("Url =>>> \(url)")
-        let audioSession = AVAudioSession.sharedInstance()
+    func startPlaying(_ url: URL?) {
+        engine = AVAudioEngine()
+        guard let engine, let url = url else { return }
+        let mainMixerNode = engine.mainMixerNode
+        engine.prepare()
         do {
-            try audioSession.setActive(true)
-            try audioSession.setCategory(.playback, mode: .default, options: [])
-            let playerItem = AVPlayerItem(url: url)
-            player = AVPlayer(playerItem: playerItem)
-            player?.play()
-            player?.addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 10), queue: DispatchQueue.main, using: { [] time in
-                    if self.player?.currentItem?.status == AVPlayerItem.Status.readyToPlay {
-                        if (self.player?.currentItem?.isPlaybackLikelyToKeepUp) != nil {
-                            timeObserver(time.seconds)
-                        }
-                    }
-                })
-        } catch {
-            SceneDelegate.shared?._topVC?._showErrorAlertOK(message: error.localizedDescription)
+            try engine.start()
+            let audioFile = try AVAudioFile(forReading: url)
+            let format = audioFile.processingFormat
+            engine.attach(player)
+            engine.connect(player, to: mainMixerNode, format: format)
+            player.scheduleFile(audioFile, at: nil, completionHandler: { [weak self] in
+                print("Audio playback finished.")
+                self?.stopEngine()
+            })
+        } catch let error {
+            print(error.localizedDescription)
         }
+        mainMixerNode.installTap(onBus: 0, bufferSize: 1024, format: nil) { [weak self] (buffer, _) in
+            self?.getAmplitudes?(self?.processAudioData(buffer: buffer) ?? [])
+        }
+        player.play()
     }
 
     func stopPlaying() {
-        player?.pause()
-        player = nil
+        self.player.stop()
+    }
+
+    func stopEngine() {
+        self.engine?.stop()
+        self.engine?.reset()
+        self.engine?.mainMixerNode.removeTap(onBus: 0)
+        self.getAmplitudes?([])
     }
 
 }
@@ -97,4 +104,41 @@ extension AudioController {
         task.resume()
     }
 
+}
+
+extension AudioController {
+
+    // MARK: - fft is equal => Fast Fourier transform
+    func fft(data: UnsafeMutablePointer<Float>, setup: OpaquePointer) -> [Float] {
+        // output setup
+        var realIn = [Float](repeating: 0, count: 1024)
+        var imagIn = [Float](repeating: 0, count: 1024)
+        var realOut = [Float](repeating: 0, count: 1024)
+        var imagOut = [Float](repeating: 0, count: 1024)
+
+        // fill in real input part with audio samples
+        for i in 0...1023 {
+            realIn[i] = data[i]
+        }
+
+        vDSP_DFT_Execute(setup, &realIn, &imagIn, &realOut, &imagOut)
+
+        // our results are now inside realOut and imagOut
+
+        // package it inside a complex vector representation used in the vDSP framework
+        var complex = DSPSplitComplex(realp: &realOut, imagp: &imagOut)
+
+        // setup magnitude output
+        var magnitudes = [Float](repeating: 0, count: 512)
+
+        // calculate magnitude results
+        vDSP_zvabs(&complex, 1, &magnitudes, 1, 512)
+
+        // normalize
+        var normalizedMagnitudes = [Float](repeating: 0.0, count: 512)
+        var scalingFactor = Float(25.0 / 512)
+        vDSP_vsmul(&magnitudes, 1, &scalingFactor, &normalizedMagnitudes, 1, 512)
+
+        return normalizedMagnitudes
+    }
 }

@@ -86,6 +86,7 @@
 		E75636412A5AE4860008C91B /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E756363F2A5AE4860008C91B /* SignUpViewController.xib */; };
 		E75636452A5AE49E0008C91B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75636432A5AE49E0008C91B /* SignInViewController.swift */; };
 		E75636462A5AE49E0008C91B /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75636442A5AE49E0008C91B /* SignInViewController.xib */; };
+		E765337F2A77AAB100037523 /* AudioVisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765337E2A77AAB100037523 /* AudioVisualizationView.swift */; };
 		E7691E192A66A907009FAFFD /* PlaceImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7691E172A66A907009FAFFD /* PlaceImageCollectionViewCell.swift */; };
 		E7691E1A2A66A907009FAFFD /* PlaceImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7691E182A66A907009FAFFD /* PlaceImageCollectionViewCell.xib */; };
 		E77058552A5E9C3D004ADBF9 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77058532A5E9C3D004ADBF9 /* FriendsViewController.swift */; };
@@ -298,6 +299,7 @@
 		E756363F2A5AE4860008C91B /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		E75636432A5AE49E0008C91B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E75636442A5AE49E0008C91B /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
+		E765337E2A77AAB100037523 /* AudioVisualizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioVisualizationView.swift; sourceTree = "<group>"; };
 		E7691E172A66A907009FAFFD /* PlaceImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		E7691E182A66A907009FAFFD /* PlaceImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		E77058532A5E9C3D004ADBF9 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
@@ -847,6 +849,7 @@
 		E7373F672A5AC9B5007A1186 /* Designables */ = {
 			isa = PBXGroup;
 			children = (
+				E765337E2A77AAB100037523 /* AudioVisualizationView.swift */,
 				E7DE5EB02A6C11E4005B0DAE /* EmptyDataSet.swift */,
 				E723BB9D2A5D54160026782B /* TabBarIndicatorView.swift */,
 				E7DE5EA92A6C09BC005B0DAE /* GeneralTableView */,
@@ -1587,6 +1590,7 @@
 				E79925492A641BEC00B87500 /* HomeBusinessViewController.swift in Sources */,
 				E7DE5EAF2A6C0CC0005B0DAE /* GeneralTableViewHeaderFooterView.swift in Sources */,
 				E77058552A5E9C3D004ADBF9 /* FriendsViewController.swift in Sources */,
+				E765337F2A77AAB100037523 /* AudioVisualizationView.swift in Sources */,
 				E798C62C2A67B5F2009C7D86 /* ActivityIndicator.swift in Sources */,
 				E723BBBF2A5D84110026782B /* UISwitch.swift in Sources */,
 				E7E0A10A2A71484B0079A251 /* FollowController.swift in Sources */,
