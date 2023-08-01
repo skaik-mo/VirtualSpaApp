@@ -303,3 +303,13 @@ extension UserController {
         return users
     }
 }
+
+// MARK: - set Privacy
+extension UserController {
+
+    func setPrivacy(isPrivate: Bool) {
+        guard let user = self.fetchUser() else { return }
+        user.isPrivate = isPrivate
+        self.setUser(user: user, isShowLoader: false)
+    }
+}

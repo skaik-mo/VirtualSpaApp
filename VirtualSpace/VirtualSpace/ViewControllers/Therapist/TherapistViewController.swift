@@ -56,7 +56,7 @@ private extension TherapistViewController {
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: -20, right: 0)
         self.tableView.isPullToRefreshEnable = true
         self.tableView.isLoadMoreEnable = true
-        self.tableView.hedaer = TherapistHeaderTableViewCell.self
+        self.tableView.header = TherapistHeaderTableViewCell.self
         self.tableView.sectionHeaderHeight = 335
         self.tableView.cell = TherapistInfoTableViewCell.self
         self.tableView.cell = PlaceTableViewCell.self

@@ -96,7 +96,7 @@ private extension PostDetailsViewController {
         self.tableView.isPullToRefreshEnable = true
         self.tableView.emptyTitle = Strings.NO_COMMENTS_EMPTY_TITLE
         self.tableView.emptyHeaderHeight = 300
-        self.tableView.hedaer = PostHeaderViewTableViewCell.self
+        self.tableView.header = PostHeaderViewTableViewCell.self
         self.tableView.sectionHeaderHeight = UITableView.automaticDimension
         self.tableView.cell = CommentTableViewCell.self
         self.tableView.rowHeight = UITableView.automaticDimension

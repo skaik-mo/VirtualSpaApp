@@ -8,20 +8,18 @@
 
 import UIKit
 
-class ProfileHeaderTableViewCell: UITableViewHeaderFooterView {
+class ProfileHeaderTableViewCell: GeneralTableViewHeaderFooterView {
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var authImage: rImage!
     @IBOutlet weak var authNameLabel: UILabel!
     @IBOutlet weak var authEmailLabel: UILabel!
-
-    var headerOject: Any?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    func configureHeader() {
+    override func configureHeader() {
         let user = UserController().fetchUser()
         self.backgroundImage.fetchImage(user?.coverImage, .ic_placeholder)
         self.authNameLabel.text = user?.name

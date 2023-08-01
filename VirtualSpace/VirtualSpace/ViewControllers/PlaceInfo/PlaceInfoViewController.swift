@@ -44,7 +44,7 @@ class PlaceInfoViewController: UIViewController {
 private extension PlaceInfoViewController {
 
     func setUpView() {
-        self.tableView.hedaer = PlaceInfoHeaderTableViewCell.self
+        self.tableView.header = PlaceInfoHeaderTableViewCell.self
         self.tableView.sectionHeaderHeight = 360// UITableView.automaticDimension
         self.tableView.cell = CallTableViewCell.self
         self.tableView.rowHeight = 60

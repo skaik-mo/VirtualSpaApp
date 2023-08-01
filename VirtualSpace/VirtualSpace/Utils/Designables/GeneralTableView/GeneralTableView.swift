@@ -27,9 +27,9 @@ class GeneralTableView: UITableView {
     }
 
     private var headerObject: Any?
-    var hedaer: UITableViewHeaderFooterView.Type = UITableViewHeaderFooterView.self {
+    var header: UITableViewHeaderFooterView.Type = UITableViewHeaderFooterView.self {
         didSet {
-            self._registerHeaderAndFooter = hedaer.self
+            self._registerHeaderAndFooter = header.self
         }
     }
 
@@ -164,7 +164,7 @@ extension GeneralTableView: UITableViewDelegate, UITableViewDataSource {
 
     // MARK: Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header: GeneralTableViewHeaderFooterView = tableView._dequeueReusableHeaderFooterView(withIdentifier: hedaer._id)
+        let header: GeneralTableViewHeaderFooterView = tableView._dequeueReusableHeaderFooterView(withIdentifier: header._id)
         header.object = self.headerObject
         header.configureHeader()
         return header

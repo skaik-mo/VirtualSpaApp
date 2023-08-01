@@ -8,22 +8,25 @@
 
 import UIKit
 
-class DeleteTableViewCell: UITableViewCell {
+class DeleteTableViewCell: GeneralTableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
-    var object: Any?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.selectionStyle = .none
     }
 
-    func configureCell() {
-        if let object = object as? String {
-            self.titleLabel.text = object
+    override func configureCell() {
+        if let object = object as? GlobalConstants.ProfileMenu {
+            self.titleLabel.text = object.title
         } else {
             self.titleLabel.text = nil
         }
+    }
+
+    override func didselect(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let object = object as? GlobalConstants.ProfileMenu else { return }
+        object.action()
     }
 }

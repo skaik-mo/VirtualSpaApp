@@ -11,7 +11,7 @@ import UIKit
 class ProfileViewController: UIViewController {
 
     // MARK: Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: GeneralTableView!
 
     // MARK: Properties
     var menu: [GlobalConstants.ProfileMenu] = []
@@ -58,17 +58,35 @@ private extension ProfileViewController {
         let userMenu: [GlobalConstants.ProfileMenu] = [.AccountPrivacy, .Reservations, .Massages, .Following, .Friends, .EditProfile, .ChangePassword, .DeleteAccount]
         let busniessMenu: [GlobalConstants.ProfileMenu] = [.AccountPrivacy, .Massages, .Followers, .EditProfile, .ChangePassword]
         self.menu = UserController().fetchUser()?.type == .User ? userMenu : busniessMenu
+        self.tableView.objects = self.menu
     }
 
     func setUpTableView() {
-        self.tableView._registerHeaderAndFooter = ProfileHeaderTableViewCell.self
+        self.tableView.header = ProfileHeaderTableViewCell.self
         self.tableView.sectionHeaderHeight = 220
-        self.tableView._registerCell = ProfileTableViewCell.self
-        self.tableView._registerCell = SwitchTableViewCell.self
-        self.tableView._registerCell = DeleteTableViewCell.self
+        self.tableView.cell = ProfileTableViewCell.self
+        self.tableView.cell = SwitchTableViewCell.self
+        self.tableView.cell = DeleteTableViewCell.self
         self.tableView.rowHeight = 50
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
+        self.tableView.handleCell = { [weak self] indexPath in
+            guard let self else { return nil }
+            let item = self.menu[indexPath.row]
+            if item == .AccountPrivacy {
+                let cell: SwitchTableViewCell = self.tableView._dequeueReusableCell()
+                cell.object = item
+                cell.configureCell()
+                return cell
+            } else if item == .DeleteAccount {
+                let cell: DeleteTableViewCell = self.tableView._dequeueReusableCell()
+                cell.object = item
+                cell.configureCell()
+                return cell
+            }
+            let cell: ProfileTableViewCell = self.tableView._dequeueReusableCell()
+            cell.object = item
+            cell.configureCell()
+            return cell
+        }
     }
 
 }
@@ -83,41 +101,4 @@ extension ProfileViewController {
         navigationItem.rightBarButtonItems = [logout]
         return navigationItem
     }
-}
-
-extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.menu.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = self.menu[indexPath.row]
-        if item == .AccountPrivacy {
-            let cell: SwitchTableViewCell = tableView._dequeueReusableCell()
-            cell.object = item.title
-            cell.configureCell()
-            return cell
-        } else if item == .DeleteAccount {
-            let cell: DeleteTableViewCell = tableView._dequeueReusableCell()
-            cell.object = item.title
-            cell.configureCell()
-            return cell
-        }
-        let cell: ProfileTableViewCell = tableView._dequeueReusableCell()
-        cell.object = item.title
-        cell.configureCell()
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.menu[indexPath.row].action()
-    }
-
-    // MARK: Header
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header: ProfileHeaderTableViewCell = tableView._dequeueReusableHeaderFooterView()
-        header.configureHeader()
-        return header
-    }
-
 }

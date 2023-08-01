@@ -23,6 +23,7 @@ class UserModel {
     var type: GlobalConstants.UserType?
     var coordinate: CLLocation?
     var distance: CLLocationDistance?
+    var isPrivate: Bool?
 
     init(id: String? = nil, email: String? = nil, password: String? = nil, name: String? = nil, countryCode: String? = nil, phone: String? = nil, bio: String? = nil, image: String? = nil, coverImage: String? = nil, type: GlobalConstants.UserType? = nil) {
         self.id = id
@@ -50,6 +51,7 @@ class UserModel {
         self.coverImage = dictionary["coverImage"] as? String
         self.favoritePosts = dictionary["favoritePosts"] as? [String] ?? []
         self.favoritePlaces = dictionary["favoritePlaces"] as? [String] ?? []
+        self.isPrivate = dictionary["isPrivate"] as? Bool
         self.coordinate = CLLocation(latitude: dictionary["latitude"] as? Double ?? 0, longitude: dictionary["longitude"] as? Double ?? 0)
         if let type = dictionary["type"] as? Int {
             self.type = type == 0 ? .User : .Business
@@ -69,6 +71,7 @@ class UserModel {
         self.coverImage = dictionary["coverImage"] as? String
         self.favoritePosts = dictionary["favoritePosts"] as? [String] ?? []
         self.favoritePlaces = dictionary["favoritePlaces"] as? [String] ?? []
+        self.isPrivate = dictionary["isPrivate"] as? Bool
         if let type = dictionary["type"] as? Int {
             self.type = type == 0 ? .User : .Business
         }
@@ -91,6 +94,7 @@ class UserModel {
             "coverImage": self.coverImage,
             "favoritePosts": self.favoritePosts,
             "favoritePlaces": self.favoritePlaces,
+            "isPrivate": self.isPrivate,
             "type": self.type?.rawValue
         ]
         if self.type == .User {
