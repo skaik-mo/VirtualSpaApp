@@ -166,6 +166,10 @@ private extension EditProfileViewController {
             } else {
                 self.image = nil
             }
+        }, success: {
+            self._showAlertOK(message: Strings.EDITED_SUCCESSFULLY_MESSAGE) {
+                self._pop()
+            }
         }).handlerDidFinishRequest(handler: {
             self.isEnableSave = true
         }).handlerofflineLoad(handler: {

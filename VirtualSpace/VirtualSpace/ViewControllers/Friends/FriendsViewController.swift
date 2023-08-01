@@ -45,6 +45,7 @@ private extension FriendsViewController {
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
         self.tableView.isLoadMoreEnable = true
         self.tableView.isPullToRefreshEnable = true
+        self.tableView.emptyTitle = Strings.FRIENDS_EMPTY_TITLE
         self.tableView.cell = FriendTableViewCell.self
         self.tableView.rowHeight = 70
     }

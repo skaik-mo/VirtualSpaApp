@@ -99,6 +99,7 @@ class Strings {
     static let SAVE_TITLE = "Save"._localizedKey
     static let ADD_PHOTO_MESSSAGE = "Please add photo"._localizedKey
     static let ADD_COVER_PHOTO_MESSSAGE = "Please add cover photo"._localizedKey
+    static let EDITED_SUCCESSFULLY_MESSAGE = "Edited successfully"._localizedKey
 
     // MARK: - Change Password
     static let CHANGE_PASS_TITLE = "Change Password"._localizedKey
@@ -108,6 +109,7 @@ class Strings {
     static let CURRENT_PASS_INCORRECT_MESSAGE = "The current password is incorrect"._localizedKey
     static let NOT_SAME_PASS_MESSAGE = "The new password must not be the same as the current password"._localizedKey
     static let SAME_PASS_MESSAGE = "Ensure that the repeat password is the same as the new password"._localizedKey
+    static let CHANGED_PASS_SUCCESSFULLY_MESSAGE = "Changed password successfully"._localizedKey
 
     // MARK: - Notification
     static let NOTIFY_TITLE = "Notification"._localizedKey
@@ -117,9 +119,12 @@ class Strings {
     static let MY_FRIENDS_TITLE = "My Friends"._localizedKey
     static let UNFRIEND_TITLE = "Unfriend"._localizedKey
     static let ADD_TITLE = "Add"._localizedKey
+    static let FRIENDS_EMPTY_TITLE = "There are no friends yet"._localizedKey
 
     // MARK: - Following
     static let FOLLOWING_TITLE = "Following"._localizedKey
+    static let FOLLOWING_EMPTY_TITLE = "There are no Following yet"._localizedKey
+    static let FOLLOWER_EMPTY_TITLE = "There are no Follower yet"._localizedKey
 
     // MARK: - Reservations
     static let MY_RESERVATIONS_TITLE = "My reservations"._localizedKey

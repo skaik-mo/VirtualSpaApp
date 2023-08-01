@@ -34,6 +34,7 @@ class FollowController {
     func getFollowing(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController {
         guard let followingUser = UserController().fetchUser(), followingUser.type == .Business, let followingUserID = followingUser.id else { fatalError("\(#function) The user id is nil") }
         return self.getFollows(field: "followingUserID", value: followingUserID, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, lastDocument, headerObject in
+            guard !objects.isEmpty else { handlerResponse(objects, nil, nil); return}
             let followerUserIDs: [String] = objects.map { follow in
                 return follow.followerUserID ?? ""
             }
@@ -50,6 +51,7 @@ class FollowController {
     func getFollowers(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController {
         guard let followerUser = UserController().fetchUser(), followerUser.type == .User, let followerUserID = followerUser.id else { fatalError("\(#function) The user id is nil") }
         return self.getFollows(field: "followerUserID", value: followerUserID, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, lastDocument, headerObject in
+            guard !objects.isEmpty else { handlerResponse(objects, nil, nil); return}
             let followingUserIDs: [String] = objects.map { follow in
                 return follow.followingUserID ?? ""
             }

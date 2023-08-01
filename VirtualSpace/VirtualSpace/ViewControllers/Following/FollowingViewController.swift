@@ -27,8 +27,8 @@ class FollowingViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpView()
         setUpData()
+        setUpView()
         fetchData()
     }
 
@@ -52,6 +52,7 @@ private extension FollowingViewController {
     func setUpData() {
         guard let user = UserController().fetchUser() else { return }
         self.title = user.type == .Business ? Strings.FOLLOWERS_TITLE :  Strings.FOLLOWING_TITLE
+        self.tableView.emptyTitle = user.type == .Business ? Strings.FOLLOWER_EMPTY_TITLE : Strings.FOLLOWING_EMPTY_TITLE
     }
 
     func fetchData() {

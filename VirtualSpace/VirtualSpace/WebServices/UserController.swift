@@ -157,7 +157,7 @@ extension UserController {
         return self
     }
 
-    func changePassword(user: UserModel) -> Self {
+    func changePassword(user: UserModel, success: @escaping () -> Void) -> Self {
         guard let newPassword = user.password else { fatalError("\(#function) The new passowrd is nil") }
         guard Reachability.shared.isConnected() else {
             DispatchQueue.main.async {
@@ -171,7 +171,7 @@ extension UserController {
                 self.didFinishRequest?()
                 return
             }
-            self.saveUser(user: user)
+            self.setUser(user: user, completion: success)
             Helper.showLoader(isLoding: false)
             self.didFinishRequest?()
         }
@@ -182,7 +182,7 @@ extension UserController {
 // MARK: - Edit
 extension UserController {
 
-    func editUser(user: UserModel, image: UIImage?, coverImage: UIImage?, imageCompletion: @escaping (_ isCoverImage: Bool) -> Void) -> Self {
+    func editUser(user: UserModel, image: UIImage?, coverImage: UIImage?, imageCompletion: @escaping (_ isCoverImage: Bool) -> Void, success: (() -> Void)?) -> Self {
         guard let id = user.id else { fatalError("\(#function) The User id is nil") }
         guard Reachability.shared.isConnected() else {
             DispatchQueue.main.async {
@@ -210,7 +210,7 @@ extension UserController {
                     imageCompletion(true)
                     user.coverImage = coverImage
                 }
-                self.setUser(user: user)
+                self.setUser(user: user, completion: success)
             }).handlerofflineLoad(handler: self.offlineLoad).handlerDidFinishRequest(handler: { self.didFinishRequest?() })
         }
         return self
@@ -236,7 +236,7 @@ extension UserController {
 extension UserController {
 
     func deleteAccount() {
-        SceneDelegate.shared?._topVC?._showAlert(message: Strings.CONFIRM_DELETE_ACCOUNT_MESSAGE, buttonAction1: {
+        SceneDelegate.shared?._topVC?._showAlert(styleOK: .destructive, message: Strings.CONFIRM_DELETE_ACCOUNT_MESSAGE, buttonAction1: {
             guard let auth = self.auth.currentUser else { fatalError("\(#function) The User id is nil") }
             let id = auth.uid
             guard Reachability.shared.isConnected() else { return }

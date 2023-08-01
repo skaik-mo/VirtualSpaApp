@@ -122,7 +122,11 @@ private extension ChangePasswordViewController {
             self.isEnableSave = true
             return
         }
-        _ = UserController().changePassword(user: auth).handlerDidFinishRequest(handler: {
+        _ = UserController().changePassword(user: auth, success: {
+            self._showAlertOK(message: Strings.CHANGED_PASS_SUCCESSFULLY_MESSAGE) {
+                self._pop()
+            }
+        }).handlerDidFinishRequest(handler: {
             self.isEnableSave = true
             self.clearData()
         }).handlerofflineLoad(handler: {

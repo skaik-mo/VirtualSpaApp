@@ -103,9 +103,9 @@ extension UIViewController {
 //        self.present(alert, animated: true)
     }
 
-    func _showAlert(title: String = Strings.ALERT_TITLE, message: String?, buttonTitle1: String = Strings.OK_TITLE, buttonTitle2: String = Strings.CANCEL_TITLE, buttonAction1: @escaping (() -> Void), buttonAction2: (() -> Void)? = nil) {
+    func _showAlert(styleOK: UIAlertAction.Style = .default, title: String = Strings.ALERT_TITLE, message: String?, buttonTitle1: String = Strings.OK_TITLE, buttonTitle2: String = Strings.CANCEL_TITLE, buttonAction1: @escaping (() -> Void), buttonAction2: (() -> Void)? = nil) {
         let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
-        let okayAction = UIAlertAction.init(title: buttonTitle1, style: .default) { _ in
+        let okayAction = UIAlertAction.init(title: buttonTitle1, style: styleOK) { _ in
             debugPrint("Okay aciton is pressed")
             buttonAction1()
         }
