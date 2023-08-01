@@ -23,6 +23,7 @@ class UserDetailsViewController: UIViewController {
     private let friendController = FriendController()
     private let user: UserModel
     private var friend: Friend?
+    var isHidenFriendButton = false
 
     // MARK: Init
     init(user: UserModel, friend: Friend?) {
@@ -87,6 +88,7 @@ private extension UserDetailsViewController {
 private extension UserDetailsViewController {
 
     func setUpView() {
+        self.friendButton.isHidden = isHidenFriendButton
         self.messageButton.applyButtonStyle(.OutlinedPurple(40))
     }
 
@@ -100,6 +102,7 @@ private extension UserDetailsViewController {
     }
 
     func fetchData() {
+        guard !isHidenFriendButton else { return }
         if self.friend == nil {
             checkIsFriend()
         } else {

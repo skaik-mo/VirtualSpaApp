@@ -44,7 +44,7 @@ class NotificationTableViewCell: GeneralTableViewCell {
         case .Invite:
             self.showInvitation(object)
         case .Following:
-            break
+            self.showFollowing(object)
         case .Friend:
             self.showFriend(object)
         }
@@ -64,9 +64,16 @@ class NotificationTableViewCell: GeneralTableViewCell {
     }
 
     private func showFriend(_ notification: Notification) {
-        guard let object = object as? Notification, let friend = Friend(dictionary: object.data?["friend"] as? [String: Any]), let user = friend.users.first(where: { $0.id == object.sender }) else { return }
+        guard let friend = Friend(dictionary: notification.data?["friend"] as? [String: Any]), let user = friend.users.first(where: { $0.id == notification.sender }) else { return }
         // if you want pass friend should remove notification if user make unfriend
         let vc = UserDetailsViewController(user: user, friend: nil)
+        vc._push()
+    }
+
+    private func showFollowing(_ notification: Notification) {
+        guard let user = UserModel(dictionary: notification.data?["sender"] as? [String: Any]) else { return }
+        let vc = UserDetailsViewController(user: user, friend: nil)
+        vc.isHidenFriendButton = true
         vc._push()
     }
 
