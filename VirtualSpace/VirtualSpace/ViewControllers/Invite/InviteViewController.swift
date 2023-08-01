@@ -32,7 +32,7 @@ class InviteViewController: UIViewController {
         super.viewDidLoad()
         setUpView()
         setUpData()
-        fetchData()
+        fetchData(isShowLoader: true)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -46,7 +46,9 @@ private extension InviteViewController {
 
     func setUpView() {
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
-        self.tableView.isPullToRefreshEnable = true
+        self.tableView.isPullToRefreshEnable = false
+        self.tableView.control.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        self.tableView.refreshControl = self.tableView.control
         self.tableView.cell = InviteTableViewCell.self
         self.tableView.rowHeight = 70
     }
@@ -55,8 +57,14 @@ private extension InviteViewController {
         self.title = Strings.NEARBY_TITLE
     }
 
-    func fetchData() {
-        self.tableView.resetTableView(request: .GetNearbyUsers)
+    func fetchData(isShowLoader: Bool) {
+        _ = FriendController().getFriends(limit: nil, lastDocument: nil, isShowLoader: isShowLoader) { friends, _, _ in
+            self.tableView.resetTableView(request: .GetNearbyUsers(friends), isShowLoader: isShowLoader)
+        }
+    }
+
+    @objc func pullToRefresh() {
+        self.fetchData(isShowLoader: false)
     }
 
 }

@@ -1,5 +1,5 @@
 // _________SKAIK_MO_________
-//  
+//
 //  FriendsViewController.swift
 //  VirtualSpace
 //
@@ -11,7 +11,7 @@ import UIKit
 class FriendsViewController: UIViewController {
 
     // MARK: Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: GeneralTableView!
 
     // MARK: Properties
 
@@ -28,11 +28,12 @@ class FriendsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-        fetchData()
+        setUpData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        fetchData()
     }
 
 }
@@ -42,30 +43,18 @@ private extension FriendsViewController {
 
     func setUpView() {
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
-        self.tableView._registerCell = FriendTableViewCell.self
+        self.tableView.isLoadMoreEnable = true
+        self.tableView.isPullToRefreshEnable = true
+        self.tableView.cell = FriendTableViewCell.self
         self.tableView.rowHeight = 70
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
+    }
+
+    func setUpData() {
+        self.title = Strings.MY_FRIENDS_TITLE
     }
 
     func fetchData() {
-        self.title = Strings.MY_FRIENDS_TITLE
-    }
-}
-
-extension FriendsViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
+        self.tableView.resetTableView(request: .GetFriends)
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: FriendTableViewCell = tableView._dequeueReusableCell()
-//        cell.object =
-        cell.configureCell()
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        debugPrint(#function)
-    }
 }

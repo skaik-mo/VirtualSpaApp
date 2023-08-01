@@ -147,7 +147,7 @@ private extension ChatViewController {
         let notification = Notification.init(
             sender: authSender.senderId,
             recipient: otherSender.senderId,
-            type: .message,
+            type: .Message,
             title: Strings.NEW_MESSAGE_TITLE,
             body: Strings.NEW_MESSAGE_BODY.replacingOccurrences(of: "{senderName}", with: senderName),
             image: sender.image,

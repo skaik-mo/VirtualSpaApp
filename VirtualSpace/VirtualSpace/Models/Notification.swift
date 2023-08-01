@@ -11,7 +11,7 @@ class Notification {
     var id: String?
     var sender: String?
     var recipient: String?
-    var type: GlobalConstants.NotificationType = .alert
+    var type: GlobalConstants.NotificationType = .Alert
     var title: String?
     var body: String?
     var image: String?

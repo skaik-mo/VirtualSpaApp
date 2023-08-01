@@ -16,18 +16,24 @@ extension GlobalConstants {
     }
 
     enum NotificationType: Int {
-        case alert = 0
-        case message = 1
+        case Alert = 0
+        case Message = 1
         case Invite = 2
+        case Following = 3
+        case Friend = 4
 
         static func getType(_ type: Int?) -> NotificationType {
             switch type {
+            case 4:
+                return .Friend
+            case 3:
+                return .Following
             case 2:
                 return .Invite
             case 1:
-                return .message
+                return .Message
             default:
-                return .alert
+                return .Alert
             }
         }
     }
@@ -45,6 +51,7 @@ extension GlobalConstants {
         case SubCategory
         case Reservation
         case Follow
+        case Friend
         case Conversation
         case Message
         case Notification

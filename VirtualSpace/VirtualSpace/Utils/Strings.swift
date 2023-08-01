@@ -116,6 +116,7 @@ class Strings {
     // MARK: - Friend
     static let MY_FRIENDS_TITLE = "My Friends"._localizedKey
     static let UNFRIEND_TITLE = "Unfriend"._localizedKey
+    static let ADD_TITLE = "Add"._localizedKey
 
     // MARK: - Following
     static let FOLLOWING_TITLE = "Following"._localizedKey
@@ -163,6 +164,8 @@ class Strings {
     static let MESSAGE_THERAPIST_TITLE = "Massage Therapist"._localizedKey
     static let FOLLOW_TITLE = "Follow"._localizedKey
     static let BOOK_NOW_TITLE = "Book Now"._localizedKey
+    static let NEW_FOLLOWER_TITLE = "New Follower"._localizedKey
+    static let NEW_FOLLOWER_BODY = "{senderName} start following you"._localizedKey
 
     // MARK: - Posts
     static let SOCIAL_MEDIA_POSTS_TITLE = "Social Media Posts"._localizedKey
@@ -205,4 +208,7 @@ class Strings {
     static let DETERMINE_LOCATION_TITLE = "You must allow an app to determine your location"
     static let LOCATION_PRIVACY_SETTINGS_MESSAGE = "Go to Settings > Privacy > Location Services."
 
+    // MARK: - User Details
+    static let NEW_FRIEND_TITLE = "New Friend"._localizedKey
+    static let NEW_FRIEND_BODY = "{senderName} is now your friend"._localizedKey
 }

@@ -40,7 +40,7 @@ class GeneralTableView: UITableView {
     var emptySubTitle = ""
 
     // MARK: - PullToRefresh Properties
-    private let control = UIRefreshControl.init()
+    let control = UIRefreshControl.init()
     var isPullToRefreshEnable: Bool = false {
         didSet {
             if self.isPullToRefreshEnable {

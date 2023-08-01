@@ -96,6 +96,19 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
         self.callButton.isHidden = false
     }
 
+    func sendNotification() {
+        guard let sender = UserController().fetchUser(), let senderId = sender.id, let senderName = sender.name, let recipient = object as? UserModel, let recipientID = recipient.id else { return }
+        let notification = Notification.init(
+            sender: senderId,
+            recipient: recipientID,
+            type: .Following,
+            title: Strings.NEW_FOLLOWER_TITLE,
+            body: Strings.NEW_FOLLOWER_BODY.replacingOccurrences(of: "{senderName}", with: senderName),
+            image: sender.image,
+            data: ["sender": sender.getDictionary()])
+        NotificationController().sendNotification(notification: notification, isShowLoader: false)
+    }
+
     @IBAction func followAction(_ sender: Any) {
         guard let object = object as? UserModel, let followingUserID = object.id, let followerUserID = UserController().fetchUser()?.id else { return }
         if let follow, let followID = follow.id {
@@ -106,6 +119,7 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
             let follow = Follow(followerUserID: followerUserID, followingUserID: followingUserID)
             _ = followController.addFollowing(follow: follow) {
                 self.follow = follow
+                self.sendNotification()
             }
         }
     }

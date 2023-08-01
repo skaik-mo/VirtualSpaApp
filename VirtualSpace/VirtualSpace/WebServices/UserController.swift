@@ -280,7 +280,7 @@ extension UserController {
         }
     }
 
-    func getNearbyUsers(isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController {
+    func getNearbyUsers(friends: [Friend], isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController {
         guard let user = self.fetchUser(), let id = user.id, let coordinate = user.coordinate else { return userReference }
         let query = userReference.reference?.whereField("type", isEqualTo: 0).whereField(FieldPath.documentID(), isNotEqualTo: id)
         return userReference.fetchDocuments(query: query, lastDocument: nil, isShowLoader: isShowLoader) { objects, _ in
@@ -289,7 +289,13 @@ extension UserController {
                 user.distance = user.coordinate?.distance(from: coordinate)
             }
             users.sort(by: >)
-            handlerResponse(users, nil, nil)
+            let nearby: [(UserModel, Bool)] = users.map { user in
+                if friends.contains(where: { $0.userIDs.contains(where: { $0 == user.id }) }) {
+                    return (user, false)
+                }
+                return (user, true)
+            }
+            handlerResponse(nearby, nil, nil)
         }
     }
 

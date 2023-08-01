@@ -89,6 +89,10 @@
 		E765337F2A77AAB100037523 /* AudioVisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765337E2A77AAB100037523 /* AudioVisualizationView.swift */; };
 		E7691E192A66A907009FAFFD /* PlaceImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7691E172A66A907009FAFFD /* PlaceImageCollectionViewCell.swift */; };
 		E7691E1A2A66A907009FAFFD /* PlaceImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7691E182A66A907009FAFFD /* PlaceImageCollectionViewCell.xib */; };
+		E76DA69D2A78EC000096C21B /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76DA69B2A78EC000096C21B /* UserDetailsViewController.swift */; };
+		E76DA69E2A78EC000096C21B /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76DA69C2A78EC000096C21B /* UserDetailsViewController.xib */; };
+		E76DA6A02A78F0BC0096C21B /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76DA69F2A78F0BC0096C21B /* Friend.swift */; };
+		E76DA6A22A78F2250096C21B /* FriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76DA6A12A78F2250096C21B /* FriendController.swift */; };
 		E77058552A5E9C3D004ADBF9 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77058532A5E9C3D004ADBF9 /* FriendsViewController.swift */; };
 		E77058562A5E9C3D004ADBF9 /* FriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E77058542A5E9C3D004ADBF9 /* FriendsViewController.xib */; };
 		E770585A2A5E9CBB004ADBF9 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E77058582A5E9CBB004ADBF9 /* FriendTableViewCell.xib */; };
@@ -302,6 +306,10 @@
 		E765337E2A77AAB100037523 /* AudioVisualizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioVisualizationView.swift; sourceTree = "<group>"; };
 		E7691E172A66A907009FAFFD /* PlaceImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		E7691E182A66A907009FAFFD /* PlaceImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		E76DA69B2A78EC000096C21B /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
+		E76DA69C2A78EC000096C21B /* UserDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailsViewController.xib; sourceTree = "<group>"; };
+		E76DA69F2A78F0BC0096C21B /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		E76DA6A12A78F2250096C21B /* FriendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendController.swift; sourceTree = "<group>"; };
 		E77058532A5E9C3D004ADBF9 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		E77058542A5E9C3D004ADBF9 /* FriendsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsViewController.xib; sourceTree = "<group>"; };
 		E77058582A5E9CBB004ADBF9 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
@@ -707,6 +715,7 @@
 			children = (
 				E7373F4F2A5AC9B5007A1186 /* Xibs */,
 				E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */,
+				E76DA69A2A78EBDC0096C21B /* UserDetails */,
 				E727F0C42A665E3B00A3CEFB /* PlaceDetails  */,
 				E7868B9F2A600F1B008917DD /* AcceptedUser */,
 				E70F20772A654A7700FE212E /* Auth */,
@@ -810,6 +819,7 @@
 				E79F63B02A70E48F00A7D8EE /* Reservation.swift */,
 				E7A9BAF32A711E7500921DFE /* Comment.swift */,
 				E7E0A1072A7147C80079A251 /* Follow.swift */,
+				E76DA69F2A78F0BC0096C21B /* Friend.swift */,
 				E77781942A7655FB0008EFD1 /* Notification.swift */,
 			);
 			path = Models;
@@ -829,6 +839,7 @@
 				E79F63B22A70E6AE00A7D8EE /* ReservationController.swift */,
 				E7A9BAF52A711FA200921DFE /* CommentController.swift */,
 				E77781962A7656E90008EFD1 /* NotificationController.swift */,
+				E76DA6A12A78F2250096C21B /* FriendController.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -971,6 +982,15 @@
 				E7691E182A66A907009FAFFD /* PlaceImageCollectionViewCell.xib */,
 			);
 			path = PlaceImage;
+			sourceTree = "<group>";
+		};
+		E76DA69A2A78EBDC0096C21B /* UserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				E76DA69B2A78EC000096C21B /* UserDetailsViewController.swift */,
+				E76DA69C2A78EC000096C21B /* UserDetailsViewController.xib */,
+			);
+			path = UserDetails;
 			sourceTree = "<group>";
 		};
 		E77058522A5E9C2B004ADBF9 /* Friends */ = {
@@ -1484,6 +1504,7 @@
 				E7E35A262A5E6DE100733459 /* EditProfileViewController.xib in Resources */,
 				E75636382A5AD3040008C91B /* Poppins-Regular.ttf in Resources */,
 				E7868BB12A6023E7008917DD /* MessageViewController.xib in Resources */,
+				E76DA69E2A78EC000096C21B /* UserDetailsViewController.xib in Resources */,
 				E723469D2A5FD4B00061877B /* OrdersViewController.xib in Resources */,
 				E72346AC2A5FDFCE0061877B /* OrdersAcceptedViewController.xib in Resources */,
 				E723BBAF2A5D73D50026782B /* ProfileHeaderTableViewCell.xib in Resources */,
@@ -1618,6 +1639,7 @@
 				E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */,
 				E77781952A7655FB0008EFD1 /* Notification.swift in Sources */,
 				E756363A2A5AD4E00008C91B /* UIButton+style.swift in Sources */,
+				E76DA6A02A78F0BC0096C21B /* Friend.swift in Sources */,
 				E7D1A7E72A63B7F500A701E7 /* Sender.swift in Sources */,
 				E799253A2A640B2B00B87500 /* PostDetailsViewController.swift in Sources */,
 				E723BB9E2A5D54160026782B /* TabBarIndicatorView.swift in Sources */,
@@ -1662,6 +1684,7 @@
 				E723469C2A5FD4B00061877B /* OrdersViewController.swift in Sources */,
 				E7373F772A5AC9B5007A1186 /* UIResponder.swift in Sources */,
 				E798C6332A67BE7E009C7D86 /* Reachability.swift in Sources */,
+				E76DA69D2A78EC000096C21B /* UserDetailsViewController.swift in Sources */,
 				E72346982A5FC6140061877B /* PlaceInfoHeaderTableViewCell.swift in Sources */,
 				E75636452A5AE49E0008C91B /* SignInViewController.swift in Sources */,
 				E77058762A5EB05E004ADBF9 /* EnumsConstants.swift in Sources */,
@@ -1691,6 +1714,7 @@
 				E79925452A6418E500B87500 /* CommentTableViewCell.swift in Sources */,
 				E7D1A8222A64008600A701E7 /* UIViewEXForDatePicker.swift in Sources */,
 				E75636322A5AD1410008C91B /* AuthenticationViewController.swift in Sources */,
+				E76DA6A22A78F2250096C21B /* FriendController.swift in Sources */,
 				E73AA0682A5C03620022F8BE /* PasswordTextFieldView.swift in Sources */,
 				E723BBBD2A5D7C950026782B /* DeleteTableViewCell.swift in Sources */,
 				E723BBB02A5D73D50026782B /* ProfileHeaderTableViewCell.swift in Sources */,

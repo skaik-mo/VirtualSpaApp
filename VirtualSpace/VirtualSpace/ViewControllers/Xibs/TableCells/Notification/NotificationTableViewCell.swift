@@ -37,17 +37,21 @@ class NotificationTableViewCell: GeneralTableViewCell {
     override func didselect(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let object = object as? Notification else { return }
         switch object.type {
-        case .alert:
+        case .Alert:
             break
-        case .message:
+        case .Message:
             self.showMessage(object)
         case .Invite:
             self.showInvitation(object)
+        case .Following:
+            break
+        case .Friend:
+            self.showFriend(object)
         }
     }
 
     private func showMessage(_ notification: Notification) {
-        guard let conversationID = notification.data?["conversationID"] as? String, let sender =  UserModel(dictionary: notification.data?["sender"] as? [String: Any]) else { return }
+        guard let conversationID = notification.data?["conversationID"] as? String, let sender = UserModel(dictionary: notification.data?["sender"] as? [String: Any]) else { return }
         let vc = ChatViewController(otherUser: sender)
         vc.conversationID = conversationID
         vc._push()
@@ -56,6 +60,13 @@ class NotificationTableViewCell: GeneralTableViewCell {
     private func showInvitation(_ notification: Notification) {
         guard let place = Place(dictionary: notification.data?["place"] as? [String: Any]) else { return }
         let vc = PlaceDetailsViewController(place: place)
+        vc._push()
+    }
+
+    private func showFriend(_ notification: Notification) {
+        guard let object = object as? Notification, let friend = Friend(dictionary: object.data?["friend"] as? [String: Any]), let user = friend.users.first(where: { $0.id == object.sender }) else { return }
+        // if you want pass friend should remove notification if user make unfriend
+        let vc = UserDetailsViewController(user: user, friend: nil)
         vc._push()
     }
 

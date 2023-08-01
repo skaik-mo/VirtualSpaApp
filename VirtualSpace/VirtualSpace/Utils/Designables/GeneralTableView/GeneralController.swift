@@ -21,8 +21,9 @@ enum GeneralController {
     case GetCommentsForPost(Post)
     case GetFollowing
     case GetFollowers
+    case GetFriends
     case GetConversations
-    case GetNearbyUsers
+    case GetNearbyUsers([Friend])
     case GetNotification
 
     // swiftlint:disable cyclomatic_complexity
@@ -52,12 +53,14 @@ enum GeneralController {
             return FollowController().getFollowing(lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
         case .GetFollowers:
             return FollowController().getFollowers(lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
+        case .GetFriends:
+            return FriendController().getFriends(limit: 10, lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
         case .GetConversations:
             return ConversationController().getConversations(isShowLoader: isShowLoader) { objects, headerObject in
                 handlerResponse(objects, nil, headerObject)
             }
-        case .GetNearbyUsers:
-            return UserController().getNearbyUsers(isShowLoader: isShowLoader, handlerResponse: handlerResponse)
+        case .GetNearbyUsers(let friends):
+            return UserController().getNearbyUsers(friends: friends, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
         case .GetNotification:
             return NotificationController().getNotification(lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
         }

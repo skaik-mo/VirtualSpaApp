@@ -49,6 +49,9 @@
                                                 <rect key="frame" x="163" y="0.0" width="75" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="unfriendAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1gP-nl-8dW"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="16"/>
