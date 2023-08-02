@@ -55,18 +55,17 @@ extension UITableView {
     }
 
     func addLoading(_ indexPath: IndexPath, closure: @escaping (() -> Void)) {
-            if let lastVisibleIndexPath = self.indexPathsForVisibleRows?.last, indexPath == lastVisibleIndexPath && indexPath.row == self.numberOfRows(inSection: 0) - 1 {
-                indicatorView().startAnimating()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    closure()
-                }
+        if let lastVisibleIndexPath = self.indexPathsForVisibleRows?.last, indexPath == lastVisibleIndexPath && indexPath.row == self.numberOfRows(inSection: 0) - 1 {
+            indicatorView().startAnimating()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                closure()
             }
+        }
     }
 
     func stopLoading() {
-        if self.tableFooterView != nil {
-            self.indicatorView().stopAnimating()
-            self.tableFooterView = nil
-        }
+        guard let tableFooterView else { return }
+        self.indicatorView().stopAnimating()
+        self.tableFooterView = nil
     }
 }
