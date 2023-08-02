@@ -22,8 +22,8 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
     @IBOutlet weak var infoButton: UIButton!
 
     static var isInfoSelected = false
-    let followController = FollowController()
-    var follow: Follow? {
+    private let followController = FollowController()
+    private var follow: Follow? {
         didSet {
             self.setTitleButtons()
         }

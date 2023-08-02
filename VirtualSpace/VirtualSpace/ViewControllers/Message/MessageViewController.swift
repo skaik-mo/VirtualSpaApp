@@ -14,9 +14,9 @@ class MessageViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: Properties
-    var objects: [Any] = []
-    let emptyTitle = Strings.MESSAGE_EMPTY_TITLE
-    let conversationController = ConversationController()
+    private var objects: [Any] = []
+    private let emptyTitle = Strings.MESSAGE_EMPTY_TITLE
+    private let conversationController = ConversationController()
 
     // MARK: Init
     init() {

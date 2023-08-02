@@ -25,7 +25,6 @@ class PlaceTableViewCell: GeneralTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.selectionStyle = .none
     }
 
     override func configureCell() {

@@ -14,7 +14,7 @@ class PlaceInfoViewController: UIViewController {
     @IBOutlet weak var tableView: GeneralTableView!
 
     // MARK: Properties
-    var place: Place
+    private var place: Place
 
     // MARK: Init
     init(place: Place) {

@@ -14,7 +14,7 @@ class TherapistViewController: UIViewController {
     @IBOutlet weak var tableView: GeneralTableView!
 
     // MARK: Properties
-    var therapist: UserModel
+    private var therapist: UserModel
     var isInfoSelected = false
 
     // MARK: Init

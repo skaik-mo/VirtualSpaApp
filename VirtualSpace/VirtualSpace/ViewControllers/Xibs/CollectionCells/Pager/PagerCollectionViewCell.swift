@@ -14,7 +14,7 @@ class PagerCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var ineView: UIView!
 
     var object: Category?
-    var isSelectedCell = false {
+    private var isSelectedCell = false {
         didSet {
             self.setCell()
         }

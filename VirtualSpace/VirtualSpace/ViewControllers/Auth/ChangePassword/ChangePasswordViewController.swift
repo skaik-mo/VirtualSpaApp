@@ -17,7 +17,7 @@ class ChangePasswordViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
 
     // MARK: Properties
-    let auth = UserController().fetchUser()
+    private let auth = UserController().fetchUser()
     private var isEnableSave = true {
         didSet {
             self.saveButton.isEnabled = isEnableSave

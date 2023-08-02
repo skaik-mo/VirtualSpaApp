@@ -13,7 +13,7 @@ class SwitchTableViewCell: GeneralTableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var accountPrivacySwitch: UISwitch!
 
-    let userController = UserController()
+    private let userController = UserController()
 
     override func awakeFromNib() {
         super.awakeFromNib()

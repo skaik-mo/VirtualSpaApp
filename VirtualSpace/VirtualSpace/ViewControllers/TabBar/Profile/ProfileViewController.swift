@@ -14,7 +14,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var tableView: GeneralTableView!
 
     // MARK: Properties
-    var menu: [GlobalConstants.ProfileMenu] = []
+    private var menu: [GlobalConstants.ProfileMenu] = []
 
     // MARK: Init
     init() {

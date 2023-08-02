@@ -15,7 +15,7 @@ class MainTextView: UIView {
     @IBOutlet weak var textfield: UITextField!
 
     // MARK: Properties
-    var style: MainFieldStyle = .Normal
+    private var style: MainFieldStyle = .Normal
     var title: String = "" {
         didSet {
             self.label.text = self.title

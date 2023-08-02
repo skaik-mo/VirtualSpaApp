@@ -9,9 +9,9 @@ import AVFoundation
 import Accelerate
 
 class AudioController {
-    var engine: AVAudioEngine?
-    let player = AVAudioPlayerNode()
-    let fftSetup = vDSP_DFT_zop_CreateSetup(nil, 1024, vDSP_DFT_Direction.FORWARD)
+    private var engine: AVAudioEngine?
+    private let player = AVAudioPlayerNode()
+    private let fftSetup = vDSP_DFT_zop_CreateSetup(nil, 1024, vDSP_DFT_Direction.FORWARD)
     var getAmplitudes: ((_ amplitudes: [Float]) -> Void)?
 
     func fileURL(audioName: String = "recording.m4a") -> URL? {

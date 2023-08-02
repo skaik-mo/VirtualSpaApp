@@ -17,7 +17,7 @@ class ForgotPasswordViewController: UIViewController {
     @IBOutlet weak var sendButton: UIButton!
 
     // MARK: Properties
-    var isEnableSend = true {
+    private var isEnableSend = true {
         didSet {
             self.sendButton.isEnabled = isEnableSend
         }

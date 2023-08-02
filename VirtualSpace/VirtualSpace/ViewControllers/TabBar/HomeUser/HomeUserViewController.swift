@@ -17,14 +17,14 @@ class HomeUserViewController: UIViewController {
     @IBOutlet weak var homeCollectionView: UICollectionView!
 
     // MARK: Properties
-    var locationManger = CLLocationManager()
-    var categories: [Category] = []
-    var selectedCategories: Category?
-    var subCategories: [SubCategory] = []
-    var selectedSubCategories: SubCategory?
-    var places: [Place] = []
+    private var locationManger = CLLocationManager()
+    private var categories: [Category] = []
+    private var subCategories: [SubCategory] = []
+    private var places: [Place] = []
+    private let spacing: CGFloat = 10 // minimum Spacing For homeCollectionView
     var placesFilters: [Place] = []
-    let spacing: CGFloat = 10 // minimum Spacing For homeCollectionView
+    var selectedCategories: Category?
+    var selectedSubCategories: SubCategory?
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 280, height: 0))
         searchBar.delegate = self

@@ -16,7 +16,7 @@ class InviteTableViewCell: GeneralTableViewCell {
     enum InvieteStyle {
         case Add, Invite, Invited
     }
-    var style: InvieteStyle = .Add {
+    private var style: InvieteStyle = .Add {
         didSet {
             self.setCustmizeButton()
         }

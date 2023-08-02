@@ -21,16 +21,16 @@ class ChatViewController: MessagesViewController {
         inputBar.placeholder = Strings.WRITE_PLACEHOLDER
         return inputBar
     }()
-    let messageController = MessageController()
-    let conversationController = ConversationController()
-    var messages: [MessageType] = []
     var conversationID: String?
-    var currentUser: UserModel? = UserController().fetchUser()
-    var otherUser: UserModel
-    var otherSender: Sender {
+    private let messageController = MessageController()
+    private let conversationController = ConversationController()
+    private var messages: [MessageType] = []
+    private var currentUser: UserModel? = UserController().fetchUser()
+    private var otherUser: UserModel
+    private var otherSender: Sender {
         return Sender(senderId: otherUser.id ?? "", displayName: otherUser.name ?? "")
     }
-    var authSender: Sender {
+    private var authSender: Sender {
         return Sender(senderId: currentUser?.id ?? "", displayName: currentUser?.name ?? "")
     }
 

@@ -15,11 +15,11 @@ class MSSTakeImage: NSObject {
     var pickerController = UIImagePickerController()
 
     func present(getImage: ((UIImage) -> Void)?) {
-//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-//            self.pickerController.sourceType = .camera
-//        } else {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            self.pickerController.sourceType = .camera
+        } else {
         self.pickerController.sourceType = .photoLibrary
-//        }
+        }
         self.pickerController.delegate = self
         self.pickerController.allowsEditing = true
         self.getImage = getImage

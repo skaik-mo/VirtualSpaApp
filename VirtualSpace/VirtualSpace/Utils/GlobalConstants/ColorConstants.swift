@@ -74,8 +74,4 @@ extension UIColor {
         return UIColor(hexString: "#F9FAFF")
     }
 
-//    static var color_: UIColor {
-//        return UIColor(hexString: "#")
-//    }
-
 }

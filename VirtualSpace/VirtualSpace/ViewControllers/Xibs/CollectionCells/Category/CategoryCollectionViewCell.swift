@@ -15,7 +15,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var categoryLabel: UILabel!
 
     var object: SubCategory?
-    var isSelectedCell = false {
+    private var isSelectedCell = false {
         didSet {
             self.setCell()
         }

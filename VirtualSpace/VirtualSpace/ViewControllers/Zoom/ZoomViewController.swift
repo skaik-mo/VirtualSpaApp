@@ -15,10 +15,11 @@ class ZoomViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
 
     // MARK: Properties
-    var imageSelected: UIImage?
+    private var imageSelected: UIImage?
 
     // MARK: Init
-    init() {
+    init(imageSelected: UIImage?) {
+        self.imageSelected = imageSelected
         super.init(nibName: nil, bundle: nil)
     }
 

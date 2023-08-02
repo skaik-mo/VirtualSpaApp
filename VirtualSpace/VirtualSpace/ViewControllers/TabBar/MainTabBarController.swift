@@ -10,8 +10,8 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
-    var auth: GlobalConstants.UserType = UserController().fetchUser()?.type ?? .User
-    var indicatorView: TabBarIndicatorView?
+    private var auth: GlobalConstants.UserType = UserController().fetchUser()?.type ?? .User
+    private var indicatorView: TabBarIndicatorView?
     override var title: String? {
         didSet {
             self.navigationItem.title = title

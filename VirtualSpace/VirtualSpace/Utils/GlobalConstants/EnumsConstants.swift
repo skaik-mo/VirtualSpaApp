@@ -37,7 +37,6 @@ extension GlobalConstants {
             }
         }
     }
-
 }
 
 // MARK: - Firbase Collections
@@ -56,7 +55,6 @@ extension GlobalConstants {
         case Message
         case Notification
     }
-
 }
 
 // MARK: - Button Style

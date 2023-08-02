@@ -13,7 +13,7 @@ class LaunchViewController: UIViewController {
     // MARK: Outlets
 
     // MARK: Properties
-    var timer: Timer?
+    private var timer: Timer?
 
     // MARK: Init
     init() {
