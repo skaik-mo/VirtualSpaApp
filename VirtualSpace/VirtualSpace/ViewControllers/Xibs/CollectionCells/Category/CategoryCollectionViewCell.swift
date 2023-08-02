@@ -15,7 +15,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var categoryLabel: UILabel!
 
     var object: SubCategory?
-    private var isSelectedCell = false {
+    var isSelectedCell = false {
         didSet {
             self.setCell()
         }
@@ -30,9 +30,6 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         if let object {
             self.categoryImage.fetchImage(object.image, .ic_placeholder)
             self.categoryLabel.text = object.name
-            if let _topVC = SceneDelegate.shared?.rootNavigationController?.topViewController as? MainTabBarController, let presnt = _topVC.selectedViewController as? HomeUserViewController {
-                self.isSelectedCell = presnt.selectedSubCategories?.id == object.id
-            }
         } else {
             self.categoryImage.image = nil
             self.categoryLabel.text = nil

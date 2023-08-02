@@ -178,11 +178,13 @@ extension HomeUserViewController: UICollectionViewDelegate, UICollectionViewData
         if collectionView == categoryCollectionView {
             let cell: PagerCollectionViewCell = collectionView._dequeueReusableCell(for: indexPath)
             cell.object = self.categories[indexPath.row]
+            cell.isSelectedCell = selectedCategories?.id == self.categories[indexPath.row].id
             cell.configureCell()
             return cell
         } else if collectionView == subCategoryCollectionView {
             let cell: CategoryCollectionViewCell = collectionView._dequeueReusableCell(for: indexPath)
             cell.object = self.subCategories[indexPath.row]
+            cell.isSelectedCell = selectedSubCategories?.id == self.subCategories[indexPath.row].id
             cell.configureCell()
             return cell
         }
