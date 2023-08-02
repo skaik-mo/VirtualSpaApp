@@ -29,12 +29,14 @@ class PlaceTableViewCell: GeneralTableViewCell {
     }
 
     override func configureCell() {
+        self.iconButton.isHidden = true
         self.isFavoriteVC = self._topVC is FavoriteViewController
         if let object = object as? Place {
             self.placeImage.fetchImage(object.icon, .ic_placeholder)
             self.placeNameLabel.text = object.name
             self.placeAddressLabel.text = object.address
             self.availableTimeLabel.text = object.getTimeAndDistance()
+            self.iconButton.isHidden = false
         } else if let object = Place(dictionary: object as? [String: Any]) {
             self.placeImage.fetchImage(object.icon, .ic_placeholder)
             self.placeNameLabel.text = object.name
@@ -56,6 +58,7 @@ class PlaceTableViewCell: GeneralTableViewCell {
     @IBAction func removeAction(_ sender: Any) {
         guard let topVC = self._topVC as? FavoriteViewController, let object = object as? Place, let index = topVC.tableView.objects.firstIndex(where: { ($0 as? Place)?.id == object.id }) else { return }
         topVC.tableView.objects.remove(at: index)
+        topVC.tableView.setEmptyData()
         PlaceController().addFivoraitePlace(place: object)
     }
 

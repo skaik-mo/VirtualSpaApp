@@ -35,7 +35,7 @@ class ConversationController {
     func getConversation(otherUser: UserModel, isShowLoader: Bool, handlerResponse: @escaping ((_ conversation: Conversation) -> Void)) -> FirebaseFirestoreController {
         guard let auth = UserController().fetchUser(), let authID = auth.id,
             let otherUserID = otherUser.id else { fatalError("\(#function) The user id is nil") }
-        let query = referance.reference?.whereField("userIDs", isEqualTo: [authID, otherUserID])
+        let query = referance.reference?.whereField("userIDs", arrayContainsAny: [authID, otherUserID])
         return referance.fetchDocuments(query: query, lastDocument: nil, isShowLoader: isShowLoader) { objects, _ in
             let conversations = self.setConversations(objects)
             if let conversation = conversations.first {

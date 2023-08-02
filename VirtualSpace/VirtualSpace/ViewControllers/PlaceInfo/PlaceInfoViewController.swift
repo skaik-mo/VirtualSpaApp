@@ -48,8 +48,6 @@ private extension PlaceInfoViewController {
         self.tableView.sectionHeaderHeight = 360// UITableView.automaticDimension
         self.tableView.cell = CallTableViewCell.self
         self.tableView.rowHeight = 60
-        self.tableView.isLoadMoreEnable = true
-        self.tableView.isPullToRefreshEnable = true
         self.tableView.emptyHeaderHeight = 250
         self.tableView.emptyTitle = Strings.THERAPISTS_EMPTY_TITLE
     }

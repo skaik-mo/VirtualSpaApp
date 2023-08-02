@@ -15,8 +15,6 @@ class TherapistViewController: UIViewController {
 
     // MARK: Properties
     var therapist: UserModel
-    var posts: [Any] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-    var places: [Any] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     var isInfoSelected = false
 
     // MARK: Init
@@ -53,7 +51,7 @@ private extension TherapistViewController {
 
     func setUpView() {
         TherapistHeaderTableViewCell.isInfoSelected = false
-        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: -20, right: 0)
+        self.tableView.contentInset = UIEdgeInsets(top: -10, left: 0, bottom: -20, right: 0)
         self.tableView.isPullToRefreshEnable = true
         self.tableView.isLoadMoreEnable = true
         self.tableView.header = TherapistHeaderTableViewCell.self
@@ -61,7 +59,8 @@ private extension TherapistViewController {
         self.tableView.cell = TherapistInfoTableViewCell.self
         self.tableView.cell = PlaceTableViewCell.self
         self.tableView.cell = PostTableViewCell.self
-        self.tableView.handleCell = { indexPath in
+        self.tableView.handleCell = { [weak self] indexPath in
+            guard let self else { return nil }
             if self.isInfoSelected {
                 if indexPath.row == 0 {
                     let cell: TherapistInfoTableViewCell = self.tableView._dequeueReusableCell()
@@ -76,7 +75,8 @@ private extension TherapistViewController {
             }
             return nil
         }
-        self.tableView.handleHeightCell = { indexPath in
+        self.tableView.handleHeightCell = { [weak self] indexPath in
+            guard let self else { return 0 }
             if indexPath.item == 0 {
                 return self.isInfoSelected ? UITableView.automaticDimension : 330
             }
@@ -99,30 +99,3 @@ extension TherapistViewController {
         }
     }
 }
-
-// extension TherapistViewController: UITableViewDataSource, UITableViewDelegate {
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return isInfoSelected ? self.places.count + 1 : self.posts.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if isInfoSelected {
-//            if indexPath.row == 0 {
-//                let cell: TherapistInfoTableViewCell = tableView._dequeueReusableCell()
-////                cell.object = ""
-//                cell.configureCell()
-//                return cell
-//            }
-//            let cell: PlaceTableViewCell = tableView._dequeueReusableCell()
-////            cell.object = object[indexPath.row]
-//            cell.configureCell()
-//            return cell
-//        }
-//        let cell: PostTableViewCell = tableView._dequeueReusableCell()
-////        cell.object = object[indexPath.row]
-//        cell.configureCell()
-//        return cell
-//    }
-//
-// }

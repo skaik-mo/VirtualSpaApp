@@ -25,10 +25,12 @@ class FollowingTableViewCell: GeneralTableViewCell {
             self.authImage.fetchImage(user.image, .ic_placeholder)
             self.authNameLabel.text = user.name
             self.followingButton.titleLabel?.text = Strings.FOLLOWING_TITLE
+            self.followingButton.isHidden = false
         } else {
             self.authImage.image = nil
             self.authNameLabel.text = nil
             self.followingButton.titleLabel?.text = nil
+            self.followingButton.isHidden = true
         }
         self.followingButton.applyButtonStyle(.SecondaryLightPurple(35))
     }

@@ -48,7 +48,13 @@ class PlaceController {
     }
 
     func getFavoritePlaces(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
-        guard let user = UserController().fetchUser(), !user.favoritePlaces.isEmpty else { return referance }
+        guard let user = UserController().fetchUser(), !user.favoritePlaces.isEmpty else {
+            handlerResponse([], nil, nil)
+            DispatchQueue.main.async {
+                self.referance.didFinishRequest?()
+            }
+            return referance
+        }
         let query = referance.reference?.limit(to: 10).whereField(FieldPath.documentID(), in: user.favoritePlaces)
         return referance.fetchDocuments(query: query, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, lastDocument in
             guard let lastDocument = lastDocument else { handlerResponse([], nil, nil); return }

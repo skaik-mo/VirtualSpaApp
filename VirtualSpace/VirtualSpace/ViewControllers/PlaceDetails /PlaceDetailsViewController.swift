@@ -33,6 +33,7 @@ class PlaceDetailsViewController: UIViewController {
     private var selectedPlaceImage: UIImage?
     private var height = 90.0 // height for the collection view
     private var likeButton: UIBarButtonItem?
+    private var isStillInVC = true
     private var isLike = false {
         didSet {
             self.likeButton?.image = isLike ? .ic_heartCircleRed: .ic_heartCircle
@@ -74,6 +75,7 @@ class PlaceDetailsViewController: UIViewController {
         super.viewWillAppear(animated)
         SceneDelegate.shared?.rootNavigationController?.backgroundColor = .clear
         SceneDelegate.shared?.rootNavigationController?.shadowColor = .clear
+        self.isStillInVC = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -81,6 +83,7 @@ class PlaceDetailsViewController: UIViewController {
         SceneDelegate.shared?.rootNavigationController?.backgroundColor = .color_FFFFFF
         SceneDelegate.shared?.rootNavigationController?.shadowColor = .color_A3A3A3
         self.stopPlayAudio()
+        self.isStillInVC = false
     }
 }
 
@@ -234,16 +237,18 @@ private extension PlaceDetailsViewController {
     func startPlayAudio() {
         self.playButton.isSelected = true
         self.isLoading = true
-        self.audioController.downloadAudio(with: self.place.audio, completion: { url in
-            debugPrint("playing")
-            DispatchQueue.main.async {
-                self.isLoading = false
-                self.audioController.startPlaying(url)
+        self.audioController.downloadAudio(with: self.place.audio, completion: { [weak self] url in
+            DispatchQueue.main.async { [weak self] in
+                self?.isLoading = false
+                if let isStillInVC = self?.isStillInVC, isStillInVC {
+                    debugPrint("playing")
+                    self?.audioController.startPlaying(url)
+                }
             }
         })
     }
 
-    func stopPlayAudio() {
+    @objc func stopPlayAudio() {
         self.playButton.isSelected = false
         self.audioController.stopPlaying()
         self.audioController.stopEngine()

@@ -263,7 +263,13 @@ extension UserController {
 extension UserController {
 
     func getTherapists(place: Place, lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
-        guard !place.therapistIDs.isEmpty else { return userReference }
+        guard !place.therapistIDs.isEmpty else {
+            handlerResponse([], nil, place)
+            DispatchQueue.main.async {
+                self.userReference.didFinishRequest?()
+            }
+            return userReference
+        }
         let query = userReference.reference?.limit(to: 10).whereField(FieldPath.documentID(), in: place.therapistIDs)
         return userReference.fetchDocuments(query: query, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, lastDocument in
             guard let lastDocument else { handlerResponse([], nil, place); return }
@@ -273,6 +279,13 @@ extension UserController {
     }
 
     func getUsersWithIDs(userIDs: [String], isShowLoader: Bool, handlerResponse: @escaping ((_ users: [UserModel]) -> Void)) -> FirebaseFirestoreController? {
+        guard !userIDs.isEmpty else {
+            handlerResponse([])
+            DispatchQueue.main.async {
+                self.userReference.didFinishRequest?()
+            }
+            return userReference
+        }
         let query = userReference.reference?.whereField(FieldPath.documentID(), in: userIDs)
         return userReference.fetchDocuments(query: query, lastDocument: nil, isShowLoader: isShowLoader) { objects, _ in
             let users = self.setUsers(objects)
@@ -281,7 +294,13 @@ extension UserController {
     }
 
     func getNearbyUsers(friends: [Friend], isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController {
-        guard let user = self.fetchUser(), let id = user.id, let coordinate = user.coordinate else { return userReference }
+        guard let user = self.fetchUser(), let id = user.id, let coordinate = user.coordinate else {
+            handlerResponse([], nil, nil)
+            DispatchQueue.main.async {
+                self.userReference.didFinishRequest?()
+            }
+            return userReference
+        }
         let query = userReference.reference?.whereField("type", isEqualTo: 0).whereField(FieldPath.documentID(), isNotEqualTo: id)
         return userReference.fetchDocuments(query: query, lastDocument: nil, isShowLoader: isShowLoader) { objects, _ in
             var users = self.setUsers(objects)
