@@ -120,7 +120,7 @@
                                     <rect key="frame" x="0.0" y="83" width="345" height="75"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fN-Vf-AyI" customClass="PhoneTextFieldView" customModule="VirtualSpace" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fN-Vf-AyI" customClass="MSSPhoneNumberTextView" customModule="VirtualSpace" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="166" width="345" height="75"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>

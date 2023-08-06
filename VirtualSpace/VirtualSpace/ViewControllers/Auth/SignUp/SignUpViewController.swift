@@ -18,7 +18,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var busniessButton: UIButton!
     @IBOutlet weak var nameTextField: MainTextView!
     @IBOutlet weak var emailTextField: MainTextView!
-    @IBOutlet weak var phoneTextField: PhoneTextFieldView!
+    @IBOutlet weak var phoneTextField: MSSPhoneNumberTextView!
     @IBOutlet weak var passwordTextField: PasswordTextFieldView!
     @IBOutlet weak var privacyButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
@@ -99,7 +99,7 @@ private extension SignUpViewController {
         self.busniessButton.applyButtonStyle(.SecondaryLightGray)
         self.nameTextField.setUpView(.Normal)
         self.emailTextField.setUpView(.Email)
-        self.phoneTextField.setUpView(vc: self)
+        self.phoneTextField.setUpView()
         self.passwordTextField.setUpView()
         self.signUpButton.applyButtonStyle(.Primary(40))
         setButtonAttribute()
@@ -113,6 +113,7 @@ private extension SignUpViewController {
         self.nameTextField.title = Strings.NAME_TITLE
         self.emailTextField.title = Strings.EMAIL_TITLE
         self.phoneTextField.title = Strings.PHONE_NUM_TITLE
+        self.phoneTextField.countryDialCode = "970"
         self.passwordTextField.title = Strings.PASSWORD_TITLE
         self.passwordTextField.placeholder = Strings.PASSWORD_TITLE
         self.busniessButton.titleLabel?.text = Strings.BUSNIESS_TITLE
@@ -149,7 +150,7 @@ private extension SignUpViewController {
     }
 
     func getAuth() -> UserModel {
-        return .init(email: emailTextField.text, password: passwordTextField.text, name: nameTextField.text, countryCode: phoneTextField.countryCode, phone: phoneTextField.text, type: self.type)
+        return .init(email: emailTextField.text, password: passwordTextField.text, name: nameTextField.text, countryCode: phoneTextField.countryDialCode, phone: phoneTextField.phone, type: self.type)
     }
 
     func signUp() {

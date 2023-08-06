@@ -177,12 +177,10 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CTPanoramaView/CTPanoramaView.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/NKVPhonePicker/NKVPhonePicker.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CTPanoramaView/CTPanoramaView.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/NKVPhonePicker/NKVPhonePicker.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

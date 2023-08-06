@@ -1,24 +1,20 @@
 PODS:
   - CTPanoramaView (1.5)
-  - NKVPhonePicker (2.1.1)
   - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
   - CTPanoramaView (~> 1.5)
-  - NKVPhonePicker
   - XLPagerTabStrip (~> 9.0)
 
 SPEC REPOS:
   trunk:
     - CTPanoramaView
-    - NKVPhonePicker
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
   CTPanoramaView: f7af526aaffedb2d52e87112ee0d57bb115eb6a2
-  NKVPhonePicker: c71b3e8e53ce74e0b4e4d5c5adf54cbb3dd16fd8
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 16e5046738aac0103b871d2de97f9a0356b24154
+PODFILE CHECKSUM: 3938852c384269234e07d53c3523077347ee15b6
 
 COCOAPODS: 1.12.1

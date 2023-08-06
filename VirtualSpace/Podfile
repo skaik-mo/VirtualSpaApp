@@ -6,7 +6,6 @@ target 'VirtualSpace' do
   use_frameworks!
 
   # Pods for VirtualSpace
-pod 'NKVPhonePicker'
 pod 'XLPagerTabStrip', '~> 9.0'
 pod "CTPanoramaView", "~> 1.5"
 

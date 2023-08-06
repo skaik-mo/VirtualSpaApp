@@ -86,6 +86,15 @@
 		E75636412A5AE4860008C91B /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E756363F2A5AE4860008C91B /* SignUpViewController.xib */; };
 		E75636452A5AE49E0008C91B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75636432A5AE49E0008C91B /* SignInViewController.swift */; };
 		E75636462A5AE49E0008C91B /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75636442A5AE49E0008C91B /* SignInViewController.xib */; };
+		E75A932B2A7FBB2900D721B6 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75A932A2A7FBB2900D721B6 /* Country.swift */; };
+		E75A932D2A7FBB3000D721B6 /* MSSPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75A932C2A7FBB3000D721B6 /* MSSPhoneNumber.swift */; };
+		E75A93302A7FBB4D00D721B6 /* countryCodes.json in Resources */ = {isa = PBXBuildFile; fileRef = E75A932F2A7FBB4D00D721B6 /* countryCodes.json */; };
+		E75A93342A7FBB6700D721B6 /* MSSPhoneNumberTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75A93322A7FBB6700D721B6 /* MSSPhoneNumberTextView.swift */; };
+		E75A93352A7FBB6700D721B6 /* MSSPhoneNumberTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75A93332A7FBB6700D721B6 /* MSSPhoneNumberTextView.xib */; };
+		E75A933B2A7FBB9200D721B6 /* MSSPhoneNumberPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75A93392A7FBB9200D721B6 /* MSSPhoneNumberPickerViewController.swift */; };
+		E75A933C2A7FBB9200D721B6 /* MSSPhoneNumberPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75A933A2A7FBB9200D721B6 /* MSSPhoneNumberPickerViewController.xib */; };
+		E75A933F2A7FBB9900D721B6 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75A933D2A7FBB9900D721B6 /* CountryTableViewCell.xib */; };
+		E75A93402A7FBB9900D721B6 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75A933E2A7FBB9900D721B6 /* CountryTableViewCell.swift */; };
 		E765337F2A77AAB100037523 /* AudioVisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E765337E2A77AAB100037523 /* AudioVisualizationView.swift */; };
 		E7691E192A66A907009FAFFD /* PlaceImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7691E172A66A907009FAFFD /* PlaceImageCollectionViewCell.swift */; };
 		E7691E1A2A66A907009FAFFD /* PlaceImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7691E182A66A907009FAFFD /* PlaceImageCollectionViewCell.xib */; };
@@ -152,8 +161,6 @@
 		E799254A2A641BEC00B87500 /* HomeBusinessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79925482A641BEC00B87500 /* HomeBusinessViewController.xib */; };
 		E799254E2A64207700B87500 /* ZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E799254C2A64207700B87500 /* ZoomViewController.swift */; };
 		E799254F2A64207700B87500 /* ZoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E799254D2A64207700B87500 /* ZoomViewController.xib */; };
-		E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E799C9D12A5C1513003443C8 /* PhoneTextFieldView.swift */; };
-		E799C9D42A5C1513003443C8 /* PhoneTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */; };
 		E799C9F02A5C3705003443C8 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E799C9EF2A5C3705003443C8 /* IQKeyboardManagerSwift */; };
 		E79F63B12A70E48F00A7D8EE /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79F63B02A70E48F00A7D8EE /* Reservation.swift */; };
 		E79F63B32A70E6AE00A7D8EE /* ReservationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79F63B22A70E6AE00A7D8EE /* ReservationController.swift */; };
@@ -303,6 +310,15 @@
 		E756363F2A5AE4860008C91B /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		E75636432A5AE49E0008C91B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E75636442A5AE49E0008C91B /* SignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
+		E75A932A2A7FBB2900D721B6 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		E75A932C2A7FBB3000D721B6 /* MSSPhoneNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSSPhoneNumber.swift; sourceTree = "<group>"; };
+		E75A932F2A7FBB4D00D721B6 /* countryCodes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countryCodes.json; sourceTree = "<group>"; };
+		E75A93322A7FBB6700D721B6 /* MSSPhoneNumberTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSSPhoneNumberTextView.swift; sourceTree = "<group>"; };
+		E75A93332A7FBB6700D721B6 /* MSSPhoneNumberTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSSPhoneNumberTextView.xib; sourceTree = "<group>"; };
+		E75A93392A7FBB9200D721B6 /* MSSPhoneNumberPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSSPhoneNumberPickerViewController.swift; sourceTree = "<group>"; };
+		E75A933A2A7FBB9200D721B6 /* MSSPhoneNumberPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSSPhoneNumberPickerViewController.xib; sourceTree = "<group>"; };
+		E75A933D2A7FBB9900D721B6 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
+		E75A933E2A7FBB9900D721B6 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		E765337E2A77AAB100037523 /* AudioVisualizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioVisualizationView.swift; sourceTree = "<group>"; };
 		E7691E172A66A907009FAFFD /* PlaceImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		E7691E182A66A907009FAFFD /* PlaceImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceImageCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -365,8 +381,6 @@
 		E79925482A641BEC00B87500 /* HomeBusinessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBusinessViewController.xib; sourceTree = "<group>"; };
 		E799254C2A64207700B87500 /* ZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomViewController.swift; sourceTree = "<group>"; };
 		E799254D2A64207700B87500 /* ZoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZoomViewController.xib; sourceTree = "<group>"; };
-		E799C9D12A5C1513003443C8 /* PhoneTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextFieldView.swift; sourceTree = "<group>"; };
-		E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTextFieldView.xib; sourceTree = "<group>"; };
 		E79F63B02A70E48F00A7D8EE /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		E79F63B22A70E6AE00A7D8EE /* ReservationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationController.swift; sourceTree = "<group>"; };
 		E7A3305B2A72372A007D4852 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
@@ -777,7 +791,6 @@
 				E7D1A7F02A63CE0400A701E7 /* TextView */,
 				E72346942A5FC5FB0061877B /* PlaceInfoHeader */,
 				E723BBA82A5D731A0026782B /* ProfileHeader */,
-				E799C9D02A5C1503003443C8 /* PhoneTextField */,
 				E73AA06A2A5C036A0022F8BE /* PasswordTextField */,
 				E73AA0612A5BE55D0022F8BE /* MainText */,
 			);
@@ -871,6 +884,7 @@
 		E7373F6A2A5AC9B5007A1186 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				E75A93292A7FBB1500D721B6 /* MSSPhoneNumber */,
 				E7D1A81E2A64007E00A701E7 /*  AlertsAndPickers */,
 				E70F20752A6536A300FE212E /* MSSTakeImage.swift */,
 			);
@@ -973,6 +987,62 @@
 				E75636442A5AE49E0008C91B /* SignInViewController.xib */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		E75A93292A7FBB1500D721B6 /* MSSPhoneNumber */ = {
+			isa = PBXGroup;
+			children = (
+				E75A932A2A7FBB2900D721B6 /* Country.swift */,
+				E75A932C2A7FBB3000D721B6 /* MSSPhoneNumber.swift */,
+				E75A932E2A7FBB4500D721B6 /* Data */,
+				E75A93312A7FBB5D00D721B6 /* MSSPhoneNumberText */,
+				E75A93362A7FBB7900D721B6 /* Picker */,
+			);
+			path = MSSPhoneNumber;
+			sourceTree = "<group>";
+		};
+		E75A932E2A7FBB4500D721B6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E75A932F2A7FBB4D00D721B6 /* countryCodes.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E75A93312A7FBB5D00D721B6 /* MSSPhoneNumberText */ = {
+			isa = PBXGroup;
+			children = (
+				E75A93322A7FBB6700D721B6 /* MSSPhoneNumberTextView.swift */,
+				E75A93332A7FBB6700D721B6 /* MSSPhoneNumberTextView.xib */,
+			);
+			path = MSSPhoneNumberText;
+			sourceTree = "<group>";
+		};
+		E75A93362A7FBB7900D721B6 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				E75A93382A7FBB8A00D721B6 /* MSSPhoneNumberPicker */,
+				E75A93372A7FBB8200D721B6 /* CountryTableViewCell */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		E75A93372A7FBB8200D721B6 /* CountryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E75A933E2A7FBB9900D721B6 /* CountryTableViewCell.swift */,
+				E75A933D2A7FBB9900D721B6 /* CountryTableViewCell.xib */,
+			);
+			path = CountryTableViewCell;
+			sourceTree = "<group>";
+		};
+		E75A93382A7FBB8A00D721B6 /* MSSPhoneNumberPicker */ = {
+			isa = PBXGroup;
+			children = (
+				E75A93392A7FBB9200D721B6 /* MSSPhoneNumberPickerViewController.swift */,
+				E75A933A2A7FBB9200D721B6 /* MSSPhoneNumberPickerViewController.xib */,
+			);
+			path = MSSPhoneNumberPicker;
 			sourceTree = "<group>";
 		};
 		E7691E162A66A8DC009FAFFD /* PlaceImage */ = {
@@ -1181,15 +1251,6 @@
 				E799254D2A64207700B87500 /* ZoomViewController.xib */,
 			);
 			path = Zoom;
-			sourceTree = "<group>";
-		};
-		E799C9D02A5C1503003443C8 /* PhoneTextField */ = {
-			isa = PBXGroup;
-			children = (
-				E799C9D12A5C1513003443C8 /* PhoneTextFieldView.swift */,
-				E799C9D22A5C1513003443C8 /* PhoneTextFieldView.xib */,
-			);
-			path = PhoneTextField;
 			sourceTree = "<group>";
 		};
 		E7A3305D2A723B3A007D4852 /* Chat */ = {
@@ -1487,21 +1548,23 @@
 				E756363C2A5AE26A0008C91B /* LaunchScreen.storyboard in Resources */,
 				E73AA0652A5BE59E0022F8BE /* MainTextView.xib in Resources */,
 				E72346A12A5FD8EE0061877B /* AcceptedTableViewCell.xib in Resources */,
+				E75A93352A7FBB6700D721B6 /* MSSPhoneNumberTextView.xib in Resources */,
 				E7B7C4DE2A670D90008000D8 /* TherapistInfoTableViewCell.xib in Resources */,
 				E75636332A5AD1410008C91B /* AuthenticationViewController.xib in Resources */,
 				E7A861952A5EC0A100CFA14B /* FavoriteViewController.xib in Resources */,
 				E79925442A6418E500B87500 /* CommentTableViewCell.xib in Resources */,
 				E7E35A2B2A5E7DAC00733459 /* ChangePasswordViewController.xib in Resources */,
 				E75636412A5AE4860008C91B /* SignUpViewController.xib in Resources */,
-				E799C9D42A5C1513003443C8 /* PhoneTextFieldView.xib in Resources */,
 				E798C6312A67BBA2009C7D86 /* GoogleService-Info.plist in Resources */,
 				E770586E2A5EA765004ADBF9 /* ReservationTableViewCell.xib in Resources */,
 				E73AA0692A5C03620022F8BE /* PasswordTextFieldView.xib in Resources */,
 				E770585F2A5EA222004ADBF9 /* FollowingTableViewCell.xib in Resources */,
+				E75A933F2A7FBB9900D721B6 /* CountryTableViewCell.xib in Resources */,
 				E7868BA92A601E5A008917DD /* MassageTableViewCell.xib in Resources */,
 				E7107B192A5D3915008891B1 /* PrivacyPolicyViewController.xib in Resources */,
 				E7373F4E2A5AC9B5007A1186 /* LaunchViewController.xib in Resources */,
 				E7E35A262A5E6DE100733459 /* EditProfileViewController.xib in Resources */,
+				E75A933C2A7FBB9200D721B6 /* MSSPhoneNumberPickerViewController.xib in Resources */,
 				E75636382A5AD3040008C91B /* Poppins-Regular.ttf in Resources */,
 				E7868BB12A6023E7008917DD /* MessageViewController.xib in Resources */,
 				E76DA69E2A78EC000096C21B /* UserDetailsViewController.xib in Resources */,
@@ -1532,6 +1595,7 @@
 				E72346922A5FC1210061877B /* CallTableViewCell.xib in Resources */,
 				E7B6F92D2A5E973D002A0693 /* NotificationViewController.xib in Resources */,
 				E77058692A5EA6DB004ADBF9 /* ReservationsViewController.xib in Resources */,
+				E75A93302A7FBB4D00D721B6 /* countryCodes.json in Resources */,
 				E7D1A7F72A63E0D000A701E7 /* TherapistViewController.xib in Resources */,
 				E7B7C4D72A66F378008000D8 /* TherapistHeaderTableViewCell.xib in Resources */,
 			);
@@ -1617,6 +1681,7 @@
 				E7E0A10A2A71484B0079A251 /* FollowController.swift in Sources */,
 				E77CF7CA2A5BD5B400E01D49 /* ValidationRule.swift in Sources */,
 				E723BB942A5D3B190026782B /* MainTabBarController.swift in Sources */,
+				E75A932B2A7FBB2900D721B6 /* Country.swift in Sources */,
 				E77058602A5EA222004ADBF9 /* FollowingTableViewCell.swift in Sources */,
 				E77058782A5EB0FB004ADBF9 /* FontsConstants.swift in Sources */,
 				E7B7C4DA2A67057E008000D8 /* CALayer.swift in Sources */,
@@ -1636,11 +1701,12 @@
 				E70C100C2A65501B008DD58B /* HomeUserViewController.swift in Sources */,
 				E70F20762A6536A300FE212E /* MSSTakeImage.swift in Sources */,
 				E7D1A7F22A63CE6100A701E7 /* TextViewInputBar.swift in Sources */,
-				E799C9D32A5C1513003443C8 /* PhoneTextFieldView.swift in Sources */,
 				E77781952A7655FB0008EFD1 /* Notification.swift in Sources */,
 				E756363A2A5AD4E00008C91B /* UIButton+style.swift in Sources */,
 				E76DA6A02A78F0BC0096C21B /* Friend.swift in Sources */,
+				E75A93342A7FBB6700D721B6 /* MSSPhoneNumberTextView.swift in Sources */,
 				E7D1A7E72A63B7F500A701E7 /* Sender.swift in Sources */,
+				E75A932D2A7FBB3000D721B6 /* MSSPhoneNumber.swift in Sources */,
 				E799253A2A640B2B00B87500 /* PostDetailsViewController.swift in Sources */,
 				E723BB9E2A5D54160026782B /* TabBarIndicatorView.swift in Sources */,
 				E79F63B12A70E48F00A7D8EE /* Reservation.swift in Sources */,
@@ -1649,6 +1715,7 @@
 				E7A9BAF62A711FA200921DFE /* CommentController.swift in Sources */,
 				E7A3305F2A723B4D007D4852 /* ConversationController.swift in Sources */,
 				E7A9BAF42A711E7500921DFE /* Comment.swift in Sources */,
+				E75A93402A7FBB9900D721B6 /* CountryTableViewCell.swift in Sources */,
 				E7373F4C2A5AC9B5007A1186 /* LaunchViewController.swift in Sources */,
 				E7C836CF2A6FC1BD008EC7A3 /* PostController.swift in Sources */,
 				E7D1A7E22A63B7B500A701E7 /* Message.swift in Sources */,
@@ -1670,6 +1737,7 @@
 				E7107B182A5D3915008891B1 /* PrivacyPolicyViewController.swift in Sources */,
 				E723BB9C2A5D42500026782B /* PasswordValidator.swift in Sources */,
 				E72346AB2A5FDFCE0061877B /* OrdersAcceptedViewController.swift in Sources */,
+				E75A933B2A7FBB9200D721B6 /* MSSPhoneNumberPickerViewController.swift in Sources */,
 				E7D1A7DF2A63B5A700A701E7 /* ChatViewController.swift in Sources */,
 				E7D1A7EA2A63BC7D00A701E7 /* ChatDateHeader.swift in Sources */,
 				E7373F712A5AC9B5007A1186 /* UICollectionView.swift in Sources */,

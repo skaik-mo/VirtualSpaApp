@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import NKVPhonePicker
 
 class EditProfileViewController: UIViewController {
 
@@ -16,7 +15,7 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var authImage: UIImageView!
     @IBOutlet weak var authNameTextField: MainTextView!
     @IBOutlet weak var authEmailTextField: MainTextView!
-    @IBOutlet weak var authPhoneTextField: PhoneTextFieldView!
+    @IBOutlet weak var authPhoneTextField: MSSPhoneNumberTextView!
     @IBOutlet weak var bioStack: UIStackView!
     @IBOutlet weak var bioLabel: UILabel!
     @IBOutlet weak var bioTextView: UITextView!
@@ -90,7 +89,7 @@ private extension EditProfileViewController {
         self.authImage.addGestureRecognizer(imageGesture)
         self.authNameTextField.setUpView(.Normal)
         self.authEmailTextField.setUpView(.Email)
-        self.authPhoneTextField.setUpView(vc: self)
+        self.authPhoneTextField.setUpView()
         self.bioStack.isHidden = self.auth?.type == .User ? true : false
         self.saveButton.applyButtonStyle(.Primary(40))
     }
@@ -112,7 +111,7 @@ private extension EditProfileViewController {
         self.authNameTextField.textfield.text = auth?.name
         self.authEmailTextField.textfield.text = auth?.email
         self.authPhoneTextField.phone = auth?.phone
-        self.authPhoneTextField.countryCode = auth?.countryCode
+        self.authPhoneTextField.countryDialCode = auth?.countryCode
         self.bioTextView.text = auth?.bio
     }
 
@@ -146,8 +145,8 @@ private extension EditProfileViewController {
         guard let auth else { return nil }
         auth.name = authNameTextField.text
         auth.email = authEmailTextField.text
-        auth.countryCode = authPhoneTextField.countryCode
-        auth.phone = authPhoneTextField.text
+        auth.countryCode = authPhoneTextField.countryDialCode
+        auth.phone = authPhoneTextField.phone
         if auth.type == .Business {
             auth.bio = bioTextView.text
         }
