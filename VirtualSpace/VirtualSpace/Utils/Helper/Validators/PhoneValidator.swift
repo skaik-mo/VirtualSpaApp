@@ -14,7 +14,7 @@ struct PhoneValidator: Validator {
     init() {
         self.validationRules = [
 //            RegexValidationRule(field: field, regex: #"^(?:\+|00|01)\d+$"#),
-            CharacterCountValidationRule(field: field, minCount: 5, maxCount: 16)
+            CharacterCountValidationRule(field: field, minCount: 5, maxCount: 10)
         ]
     }
 }
