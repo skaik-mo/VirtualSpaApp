@@ -10,11 +10,6 @@ import UIKit
 
 // MARK: - Images
 extension UIImage {
-    // demo
-    static var demo: UIImage? {
-        "demo"._toImage
-    }
-
     static var ic_back: UIImage? {
         "ic_back"._toImage
     }

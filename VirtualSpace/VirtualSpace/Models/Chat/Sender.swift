@@ -12,7 +12,7 @@ import MessageKit
 class Sender: SenderType {
     var senderId: String
     var displayName: String
-    var image: UIImage? = .demo
+    var image: UIImage?
 
     init(senderId: String, displayName: String = "") {
         self.senderId = senderId

@@ -34,19 +34,19 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo" translatesAutoresizingMaskIntoConstraints="NO" id="iuZ-wg-5bR">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iuZ-wg-5bR">
                     <rect key="frame" x="0.0" y="50" width="375" height="125"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="125" id="UTL-Ek-fxX"/>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Nv2-QP-LsC">
-                    <rect key="frame" x="0.0" y="50" width="375" height="275.66666666666669"/>
+                    <rect key="frame" x="0.0" y="50" width="375" height="268.33333333333331"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="toc-4D-zcz">
-                            <rect key="frame" x="16" y="84.000000000000014" width="343" height="142.33333333333337"/>
+                            <rect key="frame" x="16" y="84" width="343" height="135"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo" translatesAutoresizingMaskIntoConstraints="NO" id="naG-7V-lER" customClass="rImage" customModule="VirtualSpace" customModuleProvider="target">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="naG-7V-lER" customClass="rImage" customModule="VirtualSpace" customModuleProvider="target">
                                     <rect key="frame" x="131.66666666666666" y="0.0" width="80" height="80"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="80" id="DOu-Y6-5HK"/>
@@ -54,16 +54,16 @@
                                     </constraints>
                                 </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="git-gv-84Q">
-                                    <rect key="frame" x="147" y="95" width="49" height="47.333333333333343"/>
+                                    <rect key="frame" x="150.33333333333334" y="95" width="42.666666666666657" height="40"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKu-mK-Ika">
-                                            <rect key="frame" x="0.0" y="0.0" width="49" height="22.666666666666668"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="42.666666666666664" height="18.666666666666668"/>
                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                             <color key="textColor" name="#000000"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eamile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4U-nv-xN7">
-                                            <rect key="frame" x="0.0" y="27.666666666666686" width="49" height="19.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="23.666666666666657" width="42.666666666666664" height="16.333333333333329"/>
                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                             <color key="textColor" name="#7A7A7A"/>
                                             <nil key="highlightedColor"/>
@@ -73,10 +73,10 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qm7-vW-TYI">
-                            <rect key="frame" x="16" y="241.33333333333334" width="343" height="34.333333333333343"/>
+                            <rect key="frame" x="16" y="234" width="343" height="34.333333333333314"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="90H-8g-vX4">
-                                    <rect key="frame" x="56.666666666666629" y="0.0" width="230.00000000000006" height="34.333333333333336"/>
+                                    <rect key="frame" x="56.666666666666686" y="0.0" width="230" height="34.333333333333336"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cY2-kP-3g7">
                                             <rect key="frame" x="0.0" y="0.0" width="190" height="34.333333333333336"/>
@@ -134,7 +134,6 @@
         </view>
     </objects>
     <resources>
-        <image name="demo" width="1280" height="1280"/>
         <image name="ic_call" width="30" height="30"/>
         <namedColor name="#000000">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

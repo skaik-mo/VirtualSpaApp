@@ -26,7 +26,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="328" height="377"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo" translatesAutoresizingMaskIntoConstraints="NO" id="ZiB-uX-XEJ">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZiB-uX-XEJ">
                         <rect key="frame" x="0.0" y="0.0" width="328" height="125"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="125" id="cwF-0T-ArH"/>
@@ -41,7 +41,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2Oa-ox-eZ3">
                                         <rect key="frame" x="16" y="0.0" width="296" height="142.33333333333334"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo" translatesAutoresizingMaskIntoConstraints="NO" id="xDB-0o-Bdp" customClass="rImage" customModule="VirtualSpace" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xDB-0o-Bdp" customClass="rImage" customModule="VirtualSpace" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="Gpr-hP-5Ln"/>
@@ -209,7 +209,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="demo" width="1280" height="1280"/>
         <image name="ic_call" width="30" height="30"/>
         <namedColor name="#000000">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -45,13 +45,13 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7D-pY-sHY">
                                             <rect key="frame" x="0.0" y="0.0" width="345" height="150"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo" translatesAutoresizingMaskIntoConstraints="NO" id="oZF-GG-WFL">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oZF-GG-WFL">
                                                     <rect key="frame" x="0.0" y="0.0" width="345" height="110"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="110" id="Iqm-mD-wG1"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo" translatesAutoresizingMaskIntoConstraints="NO" id="Lqd-Cp-QNl" customClass="rImage" customModule="VirtualSpace" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lqd-Cp-QNl" customClass="rImage" customModule="VirtualSpace" customModuleProvider="target">
                                                     <rect key="frame" x="132.66666666666666" y="70" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Lqd-Cp-QNl" secondAttribute="height" multiplier="1:1" id="3dE-Us-zod"/>
@@ -153,7 +153,6 @@
         </view>
     </objects>
     <resources>
-        <image name="demo" width="1280" height="1280"/>
         <image name="ic_call" width="30" height="30"/>
         <image name="ic_closeWhite" width="12" height="12"/>
         <namedColor name="#000000">

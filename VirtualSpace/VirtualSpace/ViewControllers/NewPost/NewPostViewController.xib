@@ -70,7 +70,7 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo" translatesAutoresizingMaskIntoConstraints="NO" id="EHL-ZB-sST" customClass="rImage" customModule="VirtualSpace" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EHL-ZB-sST" customClass="rImage" customModule="VirtualSpace" customModuleProvider="target">
                                                     <rect key="frame" x="318" y="0.0" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="EHL-ZB-sST" secondAttribute="height" multiplier="1:1" id="1Xy-4w-R8w"/>
@@ -176,7 +176,6 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="demo" width="1280" height="1280"/>
         <image name="ic_camera2" width="24" height="24"/>
         <image name="ic_pencil" width="20" height="20"/>
         <namedColor name="#000000">

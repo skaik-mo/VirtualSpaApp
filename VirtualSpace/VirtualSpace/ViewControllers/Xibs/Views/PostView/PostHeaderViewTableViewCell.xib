@@ -38,7 +38,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DW2-bG-qnu">
                                                 <rect key="frame" x="0.0" y="4" width="288" height="40"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo" translatesAutoresizingMaskIntoConstraints="NO" id="dWA-zq-Yuv" customClass="rImage" customModule="VirtualSpace" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dWA-zq-Yuv" customClass="rImage" customModule="VirtualSpace" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="dWA-zq-Yuv" secondAttribute="height" multiplier="1:1" id="naX-ba-7YP"/>
@@ -86,7 +86,7 @@
                                 </subviews>
                                 <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="16" bottom="0.0" trailing="16"/>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo" translatesAutoresizingMaskIntoConstraints="NO" id="d9M-PD-Yxj">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d9M-PD-Yxj">
                                 <rect key="frame" x="0.0" y="124.33333333333331" width="320" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="dcL-O5-p3l"/>
@@ -169,7 +169,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="demo" width="1280" height="1280"/>
         <image name="ic_coment" width="20" height="20"/>
         <image name="ic_heartOutline" width="23" height="20"/>
         <image name="ic_heartRed" width="23" height="20"/>
