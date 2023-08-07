@@ -1,6 +1,6 @@
 PODS:
   - CTPanoramaView (1.5)
-  - XLPagerTabStrip (9.0.0)
+  - XLPagerTabStrip (9.1.0)
 
 DEPENDENCIES:
   - CTPanoramaView (~> 1.5)
@@ -13,8 +13,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   CTPanoramaView: f7af526aaffedb2d52e87112ee0d57bb115eb6a2
-  XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
+  XLPagerTabStrip: 27f3bfe23c53b4251c6481b06b1c289458a3fc1d
 
-PODFILE CHECKSUM: 3938852c384269234e07d53c3523077347ee15b6
+PODFILE CHECKSUM: 3da3e918650016c6e0ec66bdb85788aa4dc022df
 
 COCOAPODS: 1.12.1

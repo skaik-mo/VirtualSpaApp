@@ -1,4 +1,4 @@
-//  ButtonBarViewCell.swift
+//  TwitterPagerTabStripViewController.swift
 //  XLPagerTabStrip ( https://github.com/xmartlabs/XLPagerTabStrip )
 //
 //  Copyright (c) 2017 Xmartlabs ( http://xmartlabs.com )
@@ -22,32 +22,30 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import UIKit
 import Foundation
+import UIKit
 
-open class ButtonBarViewCell: UICollectionViewCell {
-
-    @IBOutlet open var imageView: UIImageView!
-    @IBOutlet open var label: UILabel!
-
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
-        isAccessibilityElement = true
-        accessibilityTraits.insert([.button, .header])
-    }
-
-    open override var isSelected: Bool {
-        get {
-            return super.isSelected
+extension UIWindow {
+    static var isLandscape: Bool {
+        if #available(iOS 13.0, *) {
+            return UIApplication.shared.windows
+                .first?
+                .windowScene?
+                .interfaceOrientation
+                .isLandscape ?? false
+        } else {
+            return UIApplication.shared.statusBarOrientation.isLandscape
         }
-        set {
-            super.isSelected = newValue
-            if newValue {
-                accessibilityTraits.insert(.selected)
-            } else {
-                accessibilityTraits.remove(.selected)
-            }
+    }
+    static var isPortrait: Bool {
+        if #available(iOS 13.0, *) {
+            return UIApplication.shared.windows
+                .first?
+                .windowScene?
+                .interfaceOrientation
+                .isPortrait ?? false
+        } else {
+            return UIApplication.shared.statusBarOrientation.isPortrait
         }
     }
 }
