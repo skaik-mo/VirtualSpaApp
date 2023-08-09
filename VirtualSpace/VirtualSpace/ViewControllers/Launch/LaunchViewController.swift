@@ -11,6 +11,7 @@ import UIKit
 class LaunchViewController: UIViewController {
 
     // MARK: Outlets
+    @IBOutlet weak var launchImage: UIImageView!
 
     // MARK: Properties
     private var timer: Timer?
@@ -53,7 +54,15 @@ private extension LaunchViewController {
 private extension LaunchViewController {
 
     func setUpView() {
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(goToTabBar), userInfo: nil, repeats: false)
+        timer = Timer.scheduledTimer(timeInterval: 0.7, target: self, selector: #selector(goToTabBar), userInfo: nil, repeats: false)
+        self.animationIcon()
+    }
+
+    func animationIcon() {
+        UIView.animate(withDuration: 0.8, animations: { () -> Void in
+            self.launchImage?.transform = CGAffineTransform(scaleX: 2.4, y: 2.4)
+//            self.launchImage.center.y = (self.launchImage.center.y + 50)
+        }, completion: nil)
     }
 
 }

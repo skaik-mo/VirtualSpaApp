@@ -17,7 +17,7 @@ class ReservationController {
                 reservations.append(reservation)
             }
         }
-        reservations = reservations.sorted(by: >)
+//        reservations = reservations.sorted(by: >)
         return reservations
     }
 
@@ -33,8 +33,8 @@ class ReservationController {
 
     private func getReservations(field: String, value: Any, lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Reservation], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
 //        Not working order
-//        let query = referance.reference?.order(by: "date", descending: true).limit(to: 10).whereField(field, isEqualTo: value)
-        let query = referance.reference?.limit(to: 10).whereField(field, isEqualTo: value)
+        let query = referance.reference?.order(by: "date", descending: true).whereField(field, isEqualTo: value).limit(to: 10)
+//        let query = referance.reference?.limit(to: 10).whereField(field, isEqualTo: value)
         return referance.fetchDocuments(query: query, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, lastDocument in
             guard let lastDocument = lastDocument else { handlerResponse([], nil, nil); return }
             let reservations = self.setReservations(objects)

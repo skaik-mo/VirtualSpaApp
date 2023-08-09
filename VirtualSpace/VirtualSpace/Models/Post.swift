@@ -55,11 +55,4 @@ class Post {
         ]
         return dictionary as [String: Any]
     }
-
-    static func > (next: Post, previous: Post) -> Bool {
-        if let createdPrevious = previous.modifiedAt, let createdNext = next.modifiedAt {
-            return createdNext > createdPrevious
-        }
-        return false
-    }
 }

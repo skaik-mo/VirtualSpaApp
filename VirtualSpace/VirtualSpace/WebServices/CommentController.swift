@@ -17,7 +17,6 @@ class CommentController {
                 comments.append(comment)
             }
         }
-        comments = comments.sorted(by: >)
         return comments
     }
 
@@ -27,9 +26,7 @@ class CommentController {
 
     func getCommentsForPost(post: Post, lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
         guard let id = post.id else { return referance }
-//        Not working order
-//        let query = referance.reference?.order(by: "createdAt", descending: true).limit(to: 10).whereField("postID", isEqualTo: id)
-        let query = referance.reference?.limit(to: 10).whereField("postID", isEqualTo: id)
+        let query = referance.reference?.order(by: "createdAt", descending: true).whereField("postID", isEqualTo: id).limit(to: 10)
         return referance.fetchDocuments(query: query, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, lastDocument in
             guard let lastDocument = lastDocument else { handlerResponse([], nil, post); return }
             let comments = self.setComments(objects)

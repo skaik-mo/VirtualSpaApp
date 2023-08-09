@@ -51,12 +51,4 @@ class Friend {
         ]
         return dictionary as [String: Any]
     }
-
-    static func > (next: Friend, previous: Friend) -> Bool {
-        if let createdPrevious = previous.createdAt, let createdNext = next.createdAt {
-            return createdNext > createdPrevious
-        }
-        return false
-    }
-
 }

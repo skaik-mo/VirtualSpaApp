@@ -45,11 +45,4 @@ class Comment {
         ]
         return dictionary as [String: Any]
     }
-
-    static func > (next: Comment, previous: Comment) -> Bool {
-        if let createdPrevious = previous.createdAt, let createdNext = next.createdAt {
-            return createdNext > createdPrevious
-        }
-        return false
-    }
 }

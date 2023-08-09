@@ -17,7 +17,6 @@ class FriendController {
                 friends.append(friend)
             }
         }
-        friends = friends.sorted(by: >)
         return friends
     }
 
@@ -40,9 +39,7 @@ class FriendController {
 
     func getFriends(limit: Int?, lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Friend], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController {
         guard let id = UserController().fetchUser()?.id else { return referance }
-//        Not working order
-//        var query = referance.reference?.order(by: "createAt", descending: true).whereField("userIDs", arrayContains: id)
-        var query = referance.reference?.whereField("userIDs", arrayContains: id)
+        var query = referance.reference?.order(by: "createdAt", descending: true).whereField("userIDs", arrayContains: id)
         if let limit {
             query = query?.limit(to: limit)
         }
