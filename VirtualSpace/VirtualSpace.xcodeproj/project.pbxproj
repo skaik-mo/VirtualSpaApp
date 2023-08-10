@@ -1942,7 +1942,7 @@
 				DEVELOPMENT_TEAM = MW9V7DN89N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VirtualSpace/SupportingFiles/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Virtual Spa";
+				INFOPLIST_KEY_CFBundleDisplayName = "VIRTUAL SPA";
 				INFOPLIST_KEY_NSCameraUsageDescription = "By giving access to the camera, you can easily add your station icon.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "With access to photos, you can easily add your station icon.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1979,7 +1979,7 @@
 				DEVELOPMENT_TEAM = MW9V7DN89N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VirtualSpace/SupportingFiles/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Virtual Spa";
+				INFOPLIST_KEY_CFBundleDisplayName = "VIRTUAL SPA";
 				INFOPLIST_KEY_NSCameraUsageDescription = "By giving access to the camera, you can easily add your station icon.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "With access to photos, you can easily add your station icon.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
