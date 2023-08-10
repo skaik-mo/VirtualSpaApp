@@ -47,7 +47,6 @@ class HomeUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-        setUpData()
         fetchData()
     }
 
@@ -100,8 +99,9 @@ private extension HomeUserViewController {
         self.homeCollectionView.contentInset = .init(top: 5, left: 16, bottom: 20, right: 16)
     }
 
-    func setUpData() {
-
+    func reloadHomeCollection() {
+        self.homeCollectionView.reloadData()
+        self.homeCollectionView.emptyDataSet(title: Strings.NO_RESULTS_TITLE)
     }
 
     func fetchData() {
@@ -116,10 +116,10 @@ private extension HomeUserViewController {
                     self.places = places
                     self.setPlacesFilters()
                 }).handlerDidFinishRequest(handler: {
-                    self.homeCollectionView.reloadData()
+                    self.reloadHomeCollection()
                     Helper.showLoader(isLoding: false)
                 }).handlerofflineLoad(handler: {
-                    self.homeCollectionView.reloadData()
+                    self.reloadHomeCollection()
                     Helper.showLoader(isLoding: false)
                 })
             }.handlerDidFinishRequest(handler: {
@@ -146,7 +146,7 @@ private extension HomeUserViewController {
         } else {
             setPlacesFilters()
         }
-        self.homeCollectionView.reloadData()
+        self.reloadHomeCollection()
     }
 
 }
@@ -199,18 +199,18 @@ extension HomeUserViewController: UICollectionViewDelegate, UICollectionViewData
             self.selectedCategories = self.categories[indexPath.row]
             self.setPlacesFilters()
             collectionView.reloadData()
-            self.homeCollectionView.reloadData()
+            self.reloadHomeCollection()
         } else if collectionView == subCategoryCollectionView {
             self.selectedSubCategories = self.subCategories[indexPath.row]
             self.setPlacesFilters()
             collectionView.reloadData()
-            self.homeCollectionView.reloadData()
+            self.reloadHomeCollection()
         } else {
             let vc = PlaceDetailsViewController(place: self.placesFilters[indexPath.row])
             vc.handleBack = { [weak self] place in
                 if let index = self?.placesFilters.firstIndex(where: { $0.id == place.id }) {
                     self?.placesFilters[index] = place
-                    self?.homeCollectionView.reloadData()
+                    self?.reloadHomeCollection()
                 }
             }
             vc._push()
