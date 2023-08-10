@@ -162,6 +162,7 @@
 		E799254E2A64207700B87500 /* ZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E799254C2A64207700B87500 /* ZoomViewController.swift */; };
 		E799254F2A64207700B87500 /* ZoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E799254D2A64207700B87500 /* ZoomViewController.xib */; };
 		E799C9F02A5C3705003443C8 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E799C9EF2A5C3705003443C8 /* IQKeyboardManagerSwift */; };
+		E79B129F2A850D0C007310D2 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E79B129E2A850D0C007310D2 /* Montserrat-Regular.ttf */; };
 		E79F63B12A70E48F00A7D8EE /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79F63B02A70E48F00A7D8EE /* Reservation.swift */; };
 		E79F63B32A70E6AE00A7D8EE /* ReservationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79F63B22A70E6AE00A7D8EE /* ReservationController.swift */; };
 		E7A3305C2A72372A007D4852 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3305B2A72372A007D4852 /* Conversation.swift */; };
@@ -381,6 +382,7 @@
 		E79925482A641BEC00B87500 /* HomeBusinessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBusinessViewController.xib; sourceTree = "<group>"; };
 		E799254C2A64207700B87500 /* ZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomViewController.swift; sourceTree = "<group>"; };
 		E799254D2A64207700B87500 /* ZoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZoomViewController.xib; sourceTree = "<group>"; };
+		E79B129E2A850D0C007310D2 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		E79F63B02A70E48F00A7D8EE /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		E79F63B22A70E6AE00A7D8EE /* ReservationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationController.swift; sourceTree = "<group>"; };
 		E7A3305B2A72372A007D4852 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
@@ -964,9 +966,8 @@
 		E75636342A5AD2D30008C91B /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				E723BBB12A5D77C10026782B /* Poppins-SemiBold.ttf */,
-				E75636372A5AD3040008C91B /* Poppins-Regular.ttf */,
-				E75636352A5AD2EF0008C91B /* Poppins-Medium.ttf */,
+				E79B129D2A850D04007310D2 /* Montserrat */,
+				E79B129C2A850CFC007310D2 /* Poppins */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -1251,6 +1252,24 @@
 				E799254D2A64207700B87500 /* ZoomViewController.xib */,
 			);
 			path = Zoom;
+			sourceTree = "<group>";
+		};
+		E79B129C2A850CFC007310D2 /* Poppins */ = {
+			isa = PBXGroup;
+			children = (
+				E723BBB12A5D77C10026782B /* Poppins-SemiBold.ttf */,
+				E75636372A5AD3040008C91B /* Poppins-Regular.ttf */,
+				E75636352A5AD2EF0008C91B /* Poppins-Medium.ttf */,
+			);
+			path = Poppins;
+			sourceTree = "<group>";
+		};
+		E79B129D2A850D04007310D2 /* Montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				E79B129E2A850D0C007310D2 /* Montserrat-Regular.ttf */,
+			);
+			path = Montserrat;
 			sourceTree = "<group>";
 		};
 		E7A3305D2A723B3A007D4852 /* Chat */ = {
@@ -1578,6 +1597,7 @@
 				E75636362A5AD2EF0008C91B /* Poppins-Medium.ttf in Resources */,
 				E70C101C2A6557D4008DD58B /* HomeCollectionViewCell.xib in Resources */,
 				E72346B12A5FE37C0061877B /* OrdersPendingViewController.xib in Resources */,
+				E79B129F2A850D0C007310D2 /* Montserrat-Regular.ttf in Resources */,
 				E7A9BAFE2A7128FF00921DFE /* PostHeaderViewTableViewCell.xib in Resources */,
 				E7B6F9312A5E97E0002A0693 /* NotificationTableViewCell.xib in Resources */,
 				E723BBB72A5D7B3C0026782B /* SwitchTableViewCell.xib in Resources */,

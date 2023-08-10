@@ -8,6 +8,7 @@
 	<string>We need access to your location so that we can determine the distance between you and a therapist place</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Montserrat-Regular.ttf</string>
 		<string>Poppins-SemiBold.ttf</string>
 		<string>Poppins-Medium.ttf</string>
 		<string>Poppins-Regular.ttf</string>

@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
         <array key="Poppins-Medium.ttf">
             <string>Poppins-Medium</string>
         </array>
@@ -48,17 +51,17 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                     <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4fd-aF-Oc3">
-                    <rect key="frame" x="157.66666666666666" y="373.33333333333331" width="60" height="65.666666666666686"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4fd-aF-Oc3">
+                    <rect key="frame" x="157.66666666666666" y="372.66666666666669" width="60" height="66.666666666666686"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="360°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKe-sG-xks">
-                            <rect key="frame" x="6" y="0.0" width="47.666666666666664" height="29.666666666666668"/>
-                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="21"/>
+                            <rect key="frame" x="6" y="0.0" width="47.666666666666664" height="25.666666666666668"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="21"/>
                             <color key="textColor" name="#FFFFFF"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_360Rotate" translatesAutoresizingMaskIntoConstraints="NO" id="Kg4-H1-Dfi">
-                            <rect key="frame" x="0.0" y="29.666666666666686" width="60" height="36"/>
+                            <rect key="frame" x="0.0" y="30.666666666666629" width="60" height="36"/>
                         </imageView>
                     </subviews>
                 </stackView>
