@@ -113,10 +113,10 @@ private extension SignUpViewController {
         self.nameTextField.title = Strings.NAME_TITLE
         self.emailTextField.title = Strings.EMAIL_TITLE
         self.phoneTextField.title = Strings.PHONE_NUM_TITLE
-        self.phoneTextField.countryDialCode = "970"
+        self.phoneTextField.countryCode = "US"
         self.passwordTextField.title = Strings.PASSWORD_TITLE
         self.passwordTextField.placeholder = Strings.PASSWORD_TITLE
-        self.busniessButton.titleLabel?.text = Strings.BUSNIESS_TITLE
+        self.busniessButton.titleLabel?.text = Strings.BUSINESS_TITLE
         self.signUpButton.titleLabel?.text = Strings.SIGN_UP
     }
 
@@ -150,7 +150,7 @@ private extension SignUpViewController {
     }
 
     func getAuth() -> UserModel {
-        return .init(email: emailTextField.text, password: passwordTextField.text, name: nameTextField.text, countryCode: phoneTextField.countryDialCode, phone: phoneTextField.phone, type: self.type)
+        return .init(email: emailTextField.text, password: passwordTextField.text, name: nameTextField.text, countryCode: phoneTextField.countryCode, phone: phoneTextField.phone, type: self.type)
     }
 
     func signUp() {

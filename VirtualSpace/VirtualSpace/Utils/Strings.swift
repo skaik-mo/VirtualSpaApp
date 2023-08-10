@@ -66,7 +66,7 @@ class Strings {
     static let EMAIL_TITLE = "Email"._localizedKey
     static let FILL_DATA_TITLE = "Please fill in a few details below"._localizedKey
     static let USER_TITLE = "User"._localizedKey
-    static let BUSNIESS_TITLE = "Busniess"._localizedKey
+    static let BUSINESS_TITLE = "Business"._localizedKey
     static let PRIVACY_AGREE_TITLE = "By logging in or registering, you agree to our Terms of Service and Privacy Policy."._localizedKey
     static let NAME_TITLE = "Name"._localizedKey
     static let PASSWORD_TITLE = "Password"._localizedKey
@@ -203,6 +203,7 @@ class Strings {
 
     // MARK: - Home User
     static let SEARCH_FREIENDS_PLACEHOLDER = "Search Here…"._localizedKey
+    static let NO_RESULTS_TITLE = "No results found"._localizedKey
 
     // MARK: - Message
     static let MESSAGE_EMPTY_TITLE = "There are no message"._localizedKey

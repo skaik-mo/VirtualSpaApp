@@ -23,9 +23,9 @@ class MSSPhoneNumberTextView: UIView {
             self.setCode()
         }
     }
-    var countryDialCode: String? {
+    var countryCode: String? {
         didSet {
-            self.country = self.mssPhoneNumber.getCountry(dialCode: countryDialCode ?? "970")
+            self.country = self.mssPhoneNumber.getCountry(code: countryCode ?? "US")
         }
     }
     var WithSelectedCountry = false {
@@ -77,6 +77,8 @@ class MSSPhoneNumberTextView: UIView {
         self.codeLabel.isUserInteractionEnabled = true
         self.phoneTextField.keyboardType = .numberPad
         self.phoneTextField.delegate = self
+        self.phoneTextField.placeholder = "1xxxxx"
+        self.phoneTextField._setAttributedPlaceholder(color: .color_7A7A7A, font: .poppinsRegular14)
     }
 
     private func setCode() {
@@ -93,7 +95,7 @@ class MSSPhoneNumberTextView: UIView {
     @objc private func selectCode() {
         let vc = MSSPhoneNumberPickerViewController()
         vc.getSelectedCountry = { country in
-            self.countryDialCode = country.dialCode
+            self.countryCode = country.code
         }
         self.presentOnTopViewController(vc)
     }
@@ -101,7 +103,10 @@ class MSSPhoneNumberTextView: UIView {
 }
 
 extension MSSPhoneNumberTextView: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn _: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let newText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
+        let maxLength = 10
+        guard newText.count <= maxLength else { return false }
         let allowedCharacters = CharacterSet.decimalDigits
         let characterSet = CharacterSet(charactersIn: string)
         return allowedCharacters.isSuperset(of: characterSet)

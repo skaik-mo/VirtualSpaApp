@@ -20,10 +20,11 @@ extension UIButton {
     }
 
     func applyButtonStyle(_ style: GlobalConstants.ButtonStyle) {
+        let height = style.height
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: style.height)
+            heightAnchor.constraint(equalToConstant: height)
             ])
-        self.cornerRadius = style.setCorner(self.frame.height)
+        self.cornerRadius = style.setCorner(height)
         self.backgroundColor = style.buttonBackgroundColor
         self.borderColor = style.borderColor
         self.borderWidth = style.borderWidth

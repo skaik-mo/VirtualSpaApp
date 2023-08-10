@@ -111,7 +111,7 @@ private extension EditProfileViewController {
         self.authNameTextField.textfield.text = auth?.name
         self.authEmailTextField.textfield.text = auth?.email
         self.authPhoneTextField.phone = auth?.phone
-        self.authPhoneTextField.countryDialCode = auth?.countryCode
+        self.authPhoneTextField.countryCode = auth?.countryCode
         self.bioTextView.text = auth?.bio
     }
 
@@ -145,7 +145,7 @@ private extension EditProfileViewController {
         guard let auth else { return nil }
         auth.name = authNameTextField.text
         auth.email = authEmailTextField.text
-        auth.countryCode = authPhoneTextField.countryDialCode
+        auth.countryCode = authPhoneTextField.countryCode
         auth.phone = authPhoneTextField.phone
         if auth.type == .Business {
             auth.bio = bioTextView.text
