@@ -20,6 +20,7 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
     @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var postsButton: UIButton!
     @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var separatorView: UIView!
 
     static var isInfoSelected = false
     private let followController = FollowController()
@@ -42,6 +43,9 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
             self.TherapistNameLabel.text = object.name
             self.TherapistEmailLabel.text = object.email
             self.checkFollow()
+            self.postsButton.isHidden = false
+            self.infoButton.isHidden = false
+            self.separatorView.isHidden = false
         } else {
             self.backgroundImage.image = nil
             self.TherapistImage.image = nil
@@ -51,6 +55,9 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
             self.messageButton.isHidden = true
             self.bookNowButton.isHidden = true
             self.callButton.isHidden = true
+            self.postsButton.isHidden = true
+            self.infoButton.isHidden = true
+            self.separatorView.isHidden = true
         }
     }
 

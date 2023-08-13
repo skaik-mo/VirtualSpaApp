@@ -204,6 +204,7 @@
                 <outlet property="infoButton" destination="3U7-mE-yMm" id="7Y6-Bg-4LA"/>
                 <outlet property="messageButton" destination="IF1-KY-UtP" id="6HS-m4-D1w"/>
                 <outlet property="postsButton" destination="j6i-h5-oLB" id="AjC-m3-4Fc"/>
+                <outlet property="separatorView" destination="IWh-ID-kQy" id="shv-gX-NFm"/>
             </connections>
             <point key="canvasLocation" x="-351.14503816793894" y="-8.0985915492957758"/>
         </tableViewCell>
