@@ -12,18 +12,35 @@ import UIKit
 class MSSTakeImage: NSObject {
 
     private var getImage: ((UIImage) -> Void)?
+    let CHOOSE_TITLE = "Choose"
+    let CAMERA_TITLE = "Camera"
+    let GALLERY_TITLE = "Gallery"
+    let CANCEL_TITLE = Strings.CANCEL_TITLE
     var pickerController = UIImagePickerController()
 
-    func present(getImage: ((UIImage) -> Void)?) {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+    private func selectedType() {
+        guard let topVC = SceneDelegate.shared?.rootNavigationController?._topMostViewController else { return }
+        let alert = UIAlertController(title: CHOOSE_TITLE, message: nil, preferredStyle: .alert)
+        let cameraAction = UIAlertAction(title: CAMERA_TITLE, style: .default) { _ in
             self.pickerController.sourceType = .camera
-        } else {
-        self.pickerController.sourceType = .photoLibrary
+            topVC.present(self.pickerController, animated: true, completion: nil)
         }
+        let libraryAction = UIAlertAction(title: GALLERY_TITLE, style: .default) { _ in
+            self.pickerController.sourceType = .photoLibrary
+            topVC.present(self.pickerController, animated: true, completion: nil)
+        }
+        let cancelAction = UIAlertAction(title: CANCEL_TITLE, style: .cancel)
+        alert.addAction(cameraAction)
+        alert.addAction(libraryAction)
+        alert.addAction(cancelAction)
+        topVC.present(alert, animated: true)
+    }
+
+    func present(getImage: ((UIImage) -> Void)?) {
         self.pickerController.delegate = self
         self.pickerController.allowsEditing = true
         self.getImage = getImage
-        SceneDelegate.shared?._topVC?.present(self.pickerController, animated: true, completion: nil)
+        self.selectedType()
     }
 }
 
