@@ -44,8 +44,23 @@ class PostTableViewCell: GeneralTableViewCell {
         }
     }
 
+    private func reloadTableView(_ postID: String) {
+        let _topVC = SceneDelegate.shared?.rootNavigationController?._topMostViewController
+        if let _topVC = _topVC as? HomeBusinessViewController, let index = _topVC.tableView.objects.firstIndex(where: { ($0 as? Post)?.id == postID }) {
+            _topVC.tableView.objects.remove(at: index)
+        } else if let _topVC = _topVC as? PostsViewController, let index = _topVC.tableView.objects.firstIndex(where: { ($0 as? Post)?.id == postID }) {
+            _topVC.tableView.objects.remove(at: index)
+        } else if let _topVC = _topVC as? TherapistViewController, let index = _topVC.tableView.objects.firstIndex(where: { ($0 as? Post)?.id == postID }) {
+            _topVC.tableView.objects.remove(at: index)
+        }
+    }
+
     @IBAction func moreAction(_ sender: Any) {
         debugPrint(#function)
+        guard let object = self.object as? Post, let postID = object.id else { return }
+        PostController().optionPost(post: object) {
+            self.reloadTableView(postID)
+        }
     }
 
     @IBAction func likeAction(_ sender: Any) {
@@ -79,6 +94,10 @@ class PostTableViewCell: GeneralTableViewCell {
     func goToPostDetails() {
         guard let object = object as? Post else { return }
         let vc = PostDetailsViewController(post: object)
+        vc.completionDelete = { [weak self] post in
+            guard let postID = post.id else { return }
+            self?.reloadTableView(postID)
+        }
         vc._push()
     }
 

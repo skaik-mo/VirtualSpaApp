@@ -48,7 +48,7 @@ enum GeneralController {
         case .GetBusinessAcceptedReservations:
             return ReservationController().getBusinessAcceptedReservations(lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
         case .GetCommentsForPost(let post):
-            return CommentController().getCommentsForPost(post: post, lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
+            return CommentController().getCommentsForPostWithLimits(post: post, lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
         case .GetFollowing:
             return FollowController().getFollowing(lastDocument: lastDocument, isShowLoader: isShowLoader, handlerResponse: handlerResponse)
         case .GetFollowers:

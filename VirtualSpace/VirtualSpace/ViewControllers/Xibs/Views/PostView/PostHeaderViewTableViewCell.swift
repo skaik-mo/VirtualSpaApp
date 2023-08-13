@@ -48,7 +48,11 @@ class PostHeaderViewTableViewCell: GeneralTableViewHeaderFooterView {
     }
 
     @IBAction func moreAction(_ sender: Any) {
-        debugPrint(#function)
+        guard let post = object as? Post, let _topVC = _topVC as? PostDetailsViewController else { return }
+        PostController().optionPost(post: post) {
+            _topVC._pop()
+            _topVC.completionDelete?(post)
+        }
     }
 
     @IBAction func likeAction(_ sender: Any) {

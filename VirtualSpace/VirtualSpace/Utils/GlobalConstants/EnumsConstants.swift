@@ -55,6 +55,7 @@ extension GlobalConstants {
         case Conversation
         case Message
         case Notification
+        case Report
     }
 }
 

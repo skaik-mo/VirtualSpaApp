@@ -168,6 +168,8 @@
 		E7A3305C2A72372A007D4852 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3305B2A72372A007D4852 /* Conversation.swift */; };
 		E7A3305F2A723B4D007D4852 /* ConversationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3305E2A723B4D007D4852 /* ConversationController.swift */; };
 		E7A330612A725D81007D4852 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A330602A725D81007D4852 /* MessageController.swift */; };
+		E7A3AF982A88D36700759719 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3AF972A88D36700759719 /* Report.swift */; };
+		E7A3AF9A2A88D3C800759719 /* ReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A3AF992A88D3C800759719 /* ReportController.swift */; };
 		E7A861942A5EC0A100CFA14B /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A861922A5EC0A100CFA14B /* FavoriteViewController.swift */; };
 		E7A861952A5EC0A100CFA14B /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A861932A5EC0A100CFA14B /* FavoriteViewController.xib */; };
 		E7A861992A5EC81200CFA14B /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7A861972A5EC81200CFA14B /* PlaceTableViewCell.xib */; };
@@ -388,6 +390,8 @@
 		E7A3305B2A72372A007D4852 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		E7A3305E2A723B4D007D4852 /* ConversationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationController.swift; sourceTree = "<group>"; };
 		E7A330602A725D81007D4852 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
+		E7A3AF972A88D36700759719 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		E7A3AF992A88D3C800759719 /* ReportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportController.swift; sourceTree = "<group>"; };
 		E7A861922A5EC0A100CFA14B /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		E7A861932A5EC0A100CFA14B /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
 		E7A861972A5EC81200CFA14B /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
@@ -828,6 +832,7 @@
 				E7D1A7E32A63B7D000A701E7 /* Chat */,
 				E798C62E2A67B6F3009C7D86 /* UserModel.swift */,
 				E7F3E8E52A6E586F007270F6 /* Place.swift */,
+				E7A3AF972A88D36700759719 /* Report.swift */,
 				E7F3E8DD2A6E4D8D007270F6 /* Category.swift */,
 				E7F3E8E12A6E5452007270F6 /* SubCategory.swift */,
 				E7C836CC2A6FBF5E008EC7A3 /* Post.swift */,
@@ -855,6 +860,7 @@
 				E7A9BAF52A711FA200921DFE /* CommentController.swift */,
 				E77781962A7656E90008EFD1 /* NotificationController.swift */,
 				E76DA6A12A78F2250096C21B /* FriendController.swift */,
+				E7A3AF992A88D3C800759719 /* ReportController.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -1706,6 +1712,7 @@
 				E77058782A5EB0FB004ADBF9 /* FontsConstants.swift in Sources */,
 				E7B7C4DA2A67057E008000D8 /* CALayer.swift in Sources */,
 				E7F3E8E22A6E5452007270F6 /* SubCategory.swift in Sources */,
+				E7A3AF9A2A88D3C800759719 /* ReportController.swift in Sources */,
 				E7373F642A5AC9B5007A1186 /* Strings.swift in Sources */,
 				E7B6F92C2A5E973D002A0693 /* NotificationViewController.swift in Sources */,
 				E7A330612A725D81007D4852 /* MessageController.swift in Sources */,
@@ -1733,6 +1740,7 @@
 				E72346A22A5FD8EE0061877B /* AcceptedTableViewCell.swift in Sources */,
 				E7868BA52A6014F7008917DD /* Helper.swift in Sources */,
 				E7A9BAF62A711FA200921DFE /* CommentController.swift in Sources */,
+				E7A3AF982A88D36700759719 /* Report.swift in Sources */,
 				E7A3305F2A723B4D007D4852 /* ConversationController.swift in Sources */,
 				E7A9BAF42A711E7500921DFE /* Comment.swift in Sources */,
 				E75A93402A7FBB9900D721B6 /* CountryTableViewCell.swift in Sources */,

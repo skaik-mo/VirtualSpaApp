@@ -63,3 +63,49 @@ class PostController {
     }
 
 }
+
+// MARK: - Option
+extension PostController {
+
+    private func deletePost(post: Post, success: @escaping () -> Void) {
+        guard let documentID = post.id else { return }
+        _ = referance.deleteDocument(documentID: documentID, isShowLoader: false, success: {
+            success()
+            let path = "Posts/\(documentID).jpeg"
+            FirebaseStorageController().deleteFile(path: path, isShowLoader: false, success: { })
+            CommentController().deleteCommentsForPost(post: post)
+        })
+    }
+
+    private func reportAction(_ post: Post) -> UIAlertAction? {
+        guard let postID = post.id, let userID = UserController().fetchUser()?.id else { return nil }
+        return UIAlertAction(title: Strings.REPORT_TITLE, style: .default) { _ in
+            let report = Report(userID: userID, postID: postID)
+            ReportController().setReport(report: report)
+        }
+    }
+
+    private func deleteAction(_ post: Post, completion: @escaping () -> Void) -> UIAlertAction {
+        return UIAlertAction(title: Strings.DELETE_TITLE, style: .destructive) { _ in
+            self.deletePost(post: post) {
+                completion()
+            }
+        }
+    }
+
+    func optionPost(post: Post?, completionDelete: @escaping () -> Void) {
+        guard let post, let userID = UserController().fetchUser()?.id else { return }
+        let alert = UIAlertController(title: Strings.OPTION_TITLE, message: nil, preferredStyle: .actionSheet)
+        if post.userID == userID {
+            let deleteAction = deleteAction(post, completion: completionDelete)
+            alert.addAction(deleteAction)
+        } else {
+            if let reportAction = reportAction(post) {
+                alert.addAction(reportAction)
+            }
+        }
+        let cancelAction = UIAlertAction(title: Strings.CANCEL_TITLE, style: .cancel)
+        alert.addAction(cancelAction)
+        alert._presentVC()
+    }
+}

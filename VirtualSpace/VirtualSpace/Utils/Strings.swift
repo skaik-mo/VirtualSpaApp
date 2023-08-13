@@ -175,6 +175,10 @@ class Strings {
     static let SOCIAL_MEDIA_POSTS_TITLE = "Social Media Posts"._localizedKey
     static let POSTS_TITLE = "Posts"._localizedKey
     static let POST_EMPTY_TITLE = "There are no posts"._localizedKey
+    static let DELETE_TITLE = "Delete"._localizedKey
+    static let REPORT_TITLE = "Report"._localizedKey
+    static let OPTION_TITLE = "Option"._localizedKey
+    static let CONFIRM_REPORT_MESSAGE = "Are you sure you want to report this post?"._localizedKey
 
     // MARK: - TherapistInfo
     static let INFO_TITLE = "Information"._localizedKey
