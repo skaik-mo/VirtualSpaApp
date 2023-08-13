@@ -186,9 +186,9 @@ class Strings {
     static let WORK_IN_TITLE = "Work in"._localizedKey
 
     // MARK: - BookNow
-    static let SELECT_DATE_TITLE = "Select date & time"._localizedKey
+    static let SELECT_DATE_TITLE = "Select date"._localizedKey
     static let SUBMIT_TITLE = "Submit"._localizedKey
-    static let INVALID_DATE_TIME_MESSAGE = "date & time"._localizedKey
+    static let INVALID_DATE_TIME_MESSAGE = "date"._localizedKey
 
     // MARK: - Post Detials
     static let POSTS_DETAILS_TITLE = "Post Details"._localizedKey

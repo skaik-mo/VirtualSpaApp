@@ -28,14 +28,12 @@ class PlaceTableViewCell: GeneralTableViewCell {
     }
 
     override func configureCell() {
-        self.iconButton.isHidden = true
         self.isFavoriteVC = self._topVC is FavoriteViewController
         if let object = object as? Place {
             self.placeImage.fetchImage(object.icon, .ic_placeholder)
             self.placeNameLabel.text = object.name
             self.placeAddressLabel.text = object.address
             self.availableTimeLabel.text = object.getTimeAndDistance()
-            self.iconButton.isHidden = false
         } else if let object = Place(dictionary: object as? [String: Any]) {
             self.placeImage.fetchImage(object.icon, .ic_placeholder)
             self.placeNameLabel.text = object.name
@@ -62,8 +60,12 @@ class PlaceTableViewCell: GeneralTableViewCell {
     }
 
     override func didselect(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let object = object as? Place else { return }
-        let vc = PlaceInfoViewController(place: object)
-        vc._push()
+        if let object = object as? Place {
+            let vc = PlaceInfoViewController(place: object)
+            vc._push()
+        } else if let object = Place(dictionary: object as? [String: Any]) {
+            let vc = PlaceInfoViewController(place: object)
+            vc._push()
+        }
     }
 }

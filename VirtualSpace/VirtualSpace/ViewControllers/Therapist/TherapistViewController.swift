@@ -56,6 +56,7 @@ private extension TherapistViewController {
 
     func setUpView() {
         TherapistHeaderTableViewCell.isInfoSelected = false
+        TherapistHeaderTableViewCell.isRefreshView = true
         self.addOption()
         self.tableView.contentInset = UIEdgeInsets(top: -10, left: 0, bottom: -20, right: 0)
         self.tableView.isPullToRefreshEnable = true

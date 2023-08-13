@@ -23,6 +23,7 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
     @IBOutlet weak var separatorView: UIView!
 
     static var isInfoSelected = false
+    static var isRefreshView = true
     private let followController = FollowController()
     private var follow: Follow? {
         didSet {
@@ -37,6 +38,7 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
 
     override func configureHeader() {
         self.customizeButtons()
+        guard Self.isRefreshView else { return }
         if let object = object as? UserModel {
             self.backgroundImage.fetchImage(object.coverImage, .ic_placeholder)
             self.TherapistImage.fetchImage(object.image, .ic_placeholder2)
@@ -46,6 +48,7 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
             self.postsButton.isHidden = false
             self.infoButton.isHidden = false
             self.separatorView.isHidden = false
+            Self.isRefreshView = false
         } else {
             self.backgroundImage.image = nil
             self.TherapistImage.image = nil
