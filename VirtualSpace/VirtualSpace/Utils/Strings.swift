@@ -170,6 +170,7 @@ class Strings {
     static let FOLLOW_TITLE = "Follow"._localizedKey
     static let BOOK_NOW_TITLE = "Book Now"._localizedKey
     static let NEW_FOLLOWER_BODY = "{senderName} start following you"._localizedKey
+    static let CONFIRM_REPORT_THERAPIST_MESSAGE = "Are you sure you want to report this therapist?"._localizedKey
 
     // MARK: - Posts
     static let SOCIAL_MEDIA_POSTS_TITLE = "Social Media Posts"._localizedKey
@@ -178,7 +179,7 @@ class Strings {
     static let DELETE_TITLE = "Delete"._localizedKey
     static let REPORT_TITLE = "Report"._localizedKey
     static let OPTION_TITLE = "Option"._localizedKey
-    static let CONFIRM_REPORT_MESSAGE = "Are you sure you want to report this post?"._localizedKey
+    static let CONFIRM_REPORT_POST_MESSAGE = "Are you sure you want to report this post?"._localizedKey
 
     // MARK: - TherapistInfo
     static let INFO_TITLE = "Information"._localizedKey

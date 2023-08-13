@@ -44,6 +44,11 @@ class TherapistViewController: UIViewController {
 // MARK: - Actions
 private extension TherapistViewController {
 
+    @objc func optionAction() {
+        guard let therapistID = therapist.id else { return }
+        ReportController().optionPost(therapistID: therapistID)
+    }
+
 }
 
 // MARK: - Configurations
@@ -51,6 +56,7 @@ private extension TherapistViewController {
 
     func setUpView() {
         TherapistHeaderTableViewCell.isInfoSelected = false
+        self.addOption()
         self.tableView.contentInset = UIEdgeInsets(top: -10, left: 0, bottom: -20, right: 0)
         self.tableView.isPullToRefreshEnable = true
         self.tableView.isLoadMoreEnable = true
@@ -86,6 +92,11 @@ private extension TherapistViewController {
 
     func setUpData() {
         self.title = Strings.MESSAGE_THERAPIST_TITLE
+    }
+
+    func addOption() {
+        let optionButton = UIBarButtonItem(image: .ic_more, style: .done, target: self, action: #selector(optionAction))
+        self.navigationItem.rightBarButtonItem = optionButton
     }
 }
 

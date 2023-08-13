@@ -81,7 +81,7 @@ extension PostController {
         guard let postID = post.id, let userID = UserController().fetchUser()?.id else { return nil }
         return UIAlertAction(title: Strings.REPORT_TITLE, style: .default) { _ in
             let report = Report(userID: userID, postID: postID)
-            ReportController().setReport(report: report)
+            ReportController().setReport(report: report.getDictionaryPost(), message: Strings.CONFIRM_REPORT_POST_MESSAGE)
         }
     }
 

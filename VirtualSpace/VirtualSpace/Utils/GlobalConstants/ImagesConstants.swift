@@ -126,4 +126,8 @@ extension UIImage {
         "ic_auth"._toImage
     }
 
+    static var ic_more: UIImage? {
+        "ic_more"._toImage
+    }
+
 }
