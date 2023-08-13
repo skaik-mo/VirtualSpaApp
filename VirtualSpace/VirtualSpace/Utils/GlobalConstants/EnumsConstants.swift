@@ -63,7 +63,7 @@ extension GlobalConstants {
     enum ButtonStyle: Equatable {
         case Primary(CGFloat)
         case SecondaryLightPurple(CGFloat)
-        case SecondaryLightGray
+        case SecondaryLightGray(CGFloat)
         case SecondaryDarkGray
         case SecondaryGreen
         case SecondaryRed
@@ -80,8 +80,8 @@ extension GlobalConstants {
                 return height
             case .OutlinedPurple(let height):
                 return height
-            case .SecondaryLightGray:
-                return 35.0
+            case .SecondaryLightGray(let height):
+                return height
             case .SecondaryGreen, .SecondaryRed, .SecondaryDarkGray:
                 return 28
             }
@@ -148,6 +148,7 @@ extension GlobalConstants {
             case .Primary(let height), .SecondaryLightPurple(let height), .OutlinedPurple(let height):
                 return height / 2
             case .SecondaryLightGray, .OutlinedWhite:
+                if height == 28 { return 10 }
                 return height / 2
             case .SecondaryGreen, .SecondaryRed, .SecondaryDarkGray:
                 return 10

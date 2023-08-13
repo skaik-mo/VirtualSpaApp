@@ -36,10 +36,11 @@ class ReservationTableViewCell: GeneralTableViewCell {
     }
 
     private func setStatus(_ status: ReservationStatus) {
+        self.cornerRadius
         switch status {
         case .Pending:
             self.reservationButton.titleLabel?.text = Strings.PENDING_TITLE
-            self.reservationButton.applyButtonStyle(.SecondaryLightGray)
+            self.reservationButton.applyButtonStyle(.SecondaryLightGray(28))
         case .Accept:
             self.reservationButton.titleLabel?.text = Strings.ACCEPTED_TITLE
             self.reservationButton.applyButtonStyle(.SecondaryGreen)
