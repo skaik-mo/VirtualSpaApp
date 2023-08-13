@@ -36,7 +36,6 @@ class ReservationTableViewCell: GeneralTableViewCell {
     }
 
     private func setStatus(_ status: ReservationStatus) {
-        self.cornerRadius
         switch status {
         case .Pending:
             self.reservationButton.titleLabel?.text = Strings.PENDING_TITLE
