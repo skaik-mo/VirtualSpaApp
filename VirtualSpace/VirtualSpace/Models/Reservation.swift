@@ -68,7 +68,7 @@ class Reservation {
         self.reservationUserPhone = dictionary["reservationUserPhone"] as? String
         self.reservationUserImage = dictionary["reservationUserImage"] as? String
         self.reservationUserCoverImage = dictionary["reservationUserCoverImage"] as? String
-        self.date = (dictionary["date"] as? String)?._dateWithFormate(dataFormat: GlobalConstants.dateFormat)
+        self.date = Date.init(timeIntervalSince1970: (dictionary["date"] as? Double) ?? Date().timeIntervalSince1970)
         self.status = ReservationStatus.getStatus(status: dictionary["status"] as? Int)
     }
 
@@ -84,16 +84,9 @@ class Reservation {
             "reservationUserPhone": self.reservationUserPhone,
             "reservationUserImage": self.reservationUserImage,
             "reservationUserCoverImage": self.reservationUserCoverImage,
-            "date": self.date?._stringDate,
+            "date": self.date?.timeIntervalSince1970,
             "status": self.status.rawValue
         ]
         return dictionary as [String: Any]
-    }
-
-    static func > (next: Reservation, previous: Reservation) -> Bool {
-        if let createdPrevious = previous.date, let createdNext = next.date {
-            return createdNext > createdPrevious
-        }
-        return false
     }
 }
