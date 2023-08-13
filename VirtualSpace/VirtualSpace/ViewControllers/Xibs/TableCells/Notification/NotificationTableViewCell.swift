@@ -47,6 +47,8 @@ class NotificationTableViewCell: GeneralTableViewCell {
             self.showFollowing(object)
         case .Friend:
             self.showFriend(object)
+        case .Accept:
+            self.showAcceptReservation(object)
         }
     }
 
@@ -74,6 +76,12 @@ class NotificationTableViewCell: GeneralTableViewCell {
         guard let user = UserModel(dictionary: notification.data?["sender"] as? [String: Any]) else { return }
         let vc = UserDetailsViewController(user: user, friend: nil)
         vc.isHidenFriendButton = true
+        vc._push()
+    }
+
+    private func showAcceptReservation(_ notification: Notification) {
+        guard let user = UserModel(dictionary: notification.data?["sender"] as? [String: Any]) else { return }
+        let vc = TherapistViewController(therapist: user)
         vc._push()
     }
 

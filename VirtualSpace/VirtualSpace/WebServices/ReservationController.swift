@@ -44,7 +44,7 @@ class ReservationController {
 
     func getBusinessPendingReservations(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
         guard let therapistID = UserController().fetchUser()?.id else { fatalError("\(#function) The user id is nil") }
-        return self.getReservations(field: "therapistID", value: therapistID, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, _, _ in
+        return self.getReservations(field: "therapistID", value: therapistID, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, lastDocument, _ in
             let reservations = objects.filter({ $0.status == .Pending })
             handlerResponse(reservations, lastDocument, nil)
         }
@@ -52,7 +52,7 @@ class ReservationController {
 
     func getBusinessAcceptedReservations(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
         guard let therapistID = UserController().fetchUser()?.id else { fatalError("\(#function) The user id is nil") }
-        return self.getReservations(field: "therapistID", value: therapistID, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, _, _ in
+        return self.getReservations(field: "therapistID", value: therapistID, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, lastDocument, _ in
             let reservations = objects.filter({ $0.status == .Accept })
             handlerResponse(reservations, lastDocument, nil)
         }
@@ -60,7 +60,7 @@ class ReservationController {
 
     func getMyReservations(lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Any], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController? {
         guard let reservationUserID = UserController().fetchUser()?.id else { fatalError("\(#function) The user id is nil") }
-        return self.getReservations(field: "reservationUserID", value: reservationUserID, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, _, _ in
+        return self.getReservations(field: "reservationUserID", value: reservationUserID, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, lastDocument, _ in
             handlerResponse(objects, lastDocument, nil)
         }
     }

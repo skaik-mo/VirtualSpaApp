@@ -21,6 +21,7 @@ extension GlobalConstants {
         case Invite = 2
         case Following = 3
         case Friend = 4
+        case Accept = 5
 
         static func getType(_ type: Int?) -> NotificationType {
             switch type {

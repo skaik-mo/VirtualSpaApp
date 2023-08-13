@@ -102,7 +102,7 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
             sender: senderId,
             recipient: recipientID,
             type: .Following,
-            title: Strings.NEW_FOLLOWER_TITLE,
+            title: senderName,
             body: Strings.NEW_FOLLOWER_BODY.replacingOccurrences(of: "{senderName}", with: senderName),
             image: sender.image,
             data: ["sender": sender.getDictionary()])

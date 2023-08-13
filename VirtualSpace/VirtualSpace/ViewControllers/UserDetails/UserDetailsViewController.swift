@@ -55,7 +55,7 @@ private extension UserDetailsViewController {
 
     @IBAction func friendAction(_ sender: Any) {
         if let friend, let friendID = friend.id {
-            _ = friendController.deleteFriend(friendID: friendID) {
+            _ = friendController.deleteFriend(friendID: friendID, isShowLoader: true) {
                 self.friend = nil
                 self.setCustomizeFriendButton()
             }
@@ -120,7 +120,7 @@ private extension UserDetailsViewController {
             sender: senderId,
             recipient: recipientID,
             type: .Following,
-            title: Strings.NEW_FRIEND_TITLE,
+            title: senderName,
             body: Strings.NEW_FRIEND_BODY.replacingOccurrences(of: "{senderName}", with: senderName),
             image: sender.image,
             data: ["sender": sender.getDictionary()])

@@ -98,7 +98,7 @@ extension GeneralTableView {
 extension GeneralTableView {
 
     private func setPagination(_ indexPath: IndexPath) {
-        guard self.isLoadMoreEnable, self.lastDocument != nil, self.contentSize.height >= self.frame.height else { return }
+        guard self.isLoadMoreEnable, self.lastDocument != nil, self.contentSize.height >= self.frame.height - 100 else { return }
         self.addLoading(indexPath) {
             self.sendRequest(isAdd: true, self.request)
         }

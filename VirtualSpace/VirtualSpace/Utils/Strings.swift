@@ -134,8 +134,7 @@ class Strings {
     static let NEARBY_TITLE = "Nearby"._localizedKey
     static let INVITE_TITLE = "Invite"._localizedKey
     static let INVITED_TITLE = "Invited"._localizedKey
-    static let INVITATION_TITLE = "Invitation"._localizedKey
-    static let INVITATION_BODY = "{senderName} invites you to the place of {placeName}"._localizedKey
+    static let INVITATION_BODY = "invited you"._localizedKey
 
     // MARK: - Favorite
     static let FAVORITE_TITLE = "Favorite"._localizedKey
@@ -159,6 +158,7 @@ class Strings {
     static let REJECTED_TITLE = "Rejected"._localizedKey
     static let ORDERS_EMPTY_TITLE = "No orders received yet"._localizedKey
     static let ORDERS_EMPTY_ACCEPTED_TITLE = "No orders have been accepted yet"._localizedKey
+    static let ACCEPT_RESERVATAION_BODY = "Accept reservation"._localizedKey
 
     // MARK: - Chat
     static let TODAY_TITLE = "Today"._localizedKey
@@ -169,7 +169,6 @@ class Strings {
     static let MESSAGE_THERAPIST_TITLE = "Massage Therapist"._localizedKey
     static let FOLLOW_TITLE = "Follow"._localizedKey
     static let BOOK_NOW_TITLE = "Book Now"._localizedKey
-    static let NEW_FOLLOWER_TITLE = "New Follower"._localizedKey
     static let NEW_FOLLOWER_BODY = "{senderName} start following you"._localizedKey
 
     // MARK: - Posts
@@ -207,14 +206,12 @@ class Strings {
 
     // MARK: - Message
     static let MESSAGE_EMPTY_TITLE = "There are no message"._localizedKey
-    static let NEW_MESSAGE_TITLE = "New Message"._localizedKey
-    static let NEW_MESSAGE_BODY = "{senderName} sent you a new message"._localizedKey
+    static let NEW_MESSAGE_BODY = "sent you a new message"._localizedKey
 
     // MARK: - SelectLocation
     static let DETERMINE_LOCATION_TITLE = "You must allow an app to determine your location"
     static let LOCATION_PRIVACY_SETTINGS_MESSAGE = "Go to Settings > Privacy > Location Services."
 
     // MARK: - User Details
-    static let NEW_FRIEND_TITLE = "New Friend"._localizedKey
     static let NEW_FRIEND_BODY = "{senderName} is now your friend"._localizedKey
 }

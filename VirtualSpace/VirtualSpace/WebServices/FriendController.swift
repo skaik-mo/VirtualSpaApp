@@ -24,15 +24,15 @@ class FriendController {
         return referance.setData(dictionary: friend.getDictionaryforDatabase(), success: success)
     }
 
-    func deleteFriend(friendID: String, success: @escaping () -> Void) -> FirebaseFirestoreController {
-        return referance.deleteDocument(documentID: friendID, isShowLoader: false, success: success)
+    func deleteFriend(friendID: String, isShowLoader: Bool = false, success: @escaping () -> Void) -> FirebaseFirestoreController {
+        return referance.deleteDocument(documentID: friendID, isShowLoader: isShowLoader, success: success)
     }
 
     func checkFriend(otherUserID: String?, completion: @escaping (_ friend: Friend?) -> Void) -> FirebaseFirestoreController {
         guard let id = UserController().fetchUser()?.id, let otherUserID else { return referance }
-        let query = referance.reference?.whereField("userIDs", arrayContainsAny: [otherUserID, id])
+        let query = referance.reference?.whereField("userIDs", arrayContains: id)
         return referance.fetchDocuments(query: query, lastDocument: nil, isShowLoader: true) { objects, _ in
-            let friend = self.setFriends(objects).first
+            let friend = self.setFriends(objects).first(where: {$0.userIDs.contains(otherUserID)})
             completion(friend)
         }
     }

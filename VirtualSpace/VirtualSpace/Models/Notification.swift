@@ -38,7 +38,7 @@ class Notification {
         self.title = dictionary["title"] as? String
         self.body = dictionary["body"] as? String
         self.image = dictionary["image"] as? String
-        self.createdAt = (dictionary["createdAt"] as? String)?._dateWithFormate(dataFormat: GlobalConstants.dateAndTimeFormat)
+        self.createdAt = Date.init(timeIntervalSince1970: (dictionary["createdAt"] as? Double) ?? Date().timeIntervalSince1970)
         self.data = dictionary["data"] as? [String: Any]
     }
 
@@ -51,7 +51,7 @@ class Notification {
             "title": self.title,
             "body": self.body,
             "image": self.image,
-            "createdAt": self.createdAt?._string(dataFormat: GlobalConstants.dateAndTimeFormat),
+            "createdAt": self.createdAt?.timeIntervalSince1970,
             "data": self.data
         ]
         return dictionary as [String: Any]

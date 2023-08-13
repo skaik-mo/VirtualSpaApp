@@ -148,8 +148,8 @@ private extension ChatViewController {
             sender: authSender.senderId,
             recipient: otherSender.senderId,
             type: .Message,
-            title: Strings.NEW_MESSAGE_TITLE,
-            body: Strings.NEW_MESSAGE_BODY.replacingOccurrences(of: "{senderName}", with: senderName),
+            title: senderName,
+            body: Strings.NEW_MESSAGE_BODY,
             image: sender.image,
             data: ["conversationID": conversationID, "sender": sender.getDictionary()])
         NotificationController().sendNotification(notification: notification, isShowLoader: false)

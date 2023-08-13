@@ -39,6 +39,7 @@ class PendingTableViewCell: GeneralTableViewCell {
 
     @IBAction func acceptAction(_ sender: Any) {
         self.setStatus(.Accept)
+        self.sendNotification()
     }
 
     @IBAction func rejectAction(_ sender: Any) {
@@ -54,6 +55,19 @@ class PendingTableViewCell: GeneralTableViewCell {
         _ = ReservationController().setReservation(reservation: object) {
             parent.tableView.objects.remove(at: index)
         }
+    }
+
+    func sendNotification() {
+        guard let object = object as? Reservation, let recipientID = object.reservationUserID, let sender = UserController().fetchUser(), let senderId = sender.id, let senderName = sender.name else { return }
+        let notification = Notification.init(
+            sender: senderId,
+            recipient: recipientID,
+            type: .Accept,
+            title: senderName,
+            body: Strings.ACCEPT_RESERVATAION_BODY,
+            image: sender.image,
+            data: ["sender": sender.getDictionary()])
+        NotificationController().sendNotification(notification: notification, isShowLoader: false)
     }
 
 }

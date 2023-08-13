@@ -84,7 +84,7 @@ private extension InviteTableViewCell {
             sender: senderId,
             recipient: recipientID,
             type: .Friend,
-            title: Strings.NEW_FRIEND_TITLE,
+            title: senderName,
             body: Strings.NEW_FRIEND_BODY.replacingOccurrences(of: "{senderName}", with: senderName),
             image: sender.image,
             data: ["friend": friend.getDictionary()])
@@ -107,11 +107,10 @@ private extension InviteTableViewCell {
     func sendInvitation() {
         guard let object = object as? (user: UserModel, isAdd: Bool), let recipientID = object.user.id,
             let sender = UserController().fetchUser(), let senderID = sender.id, let senderName = sender.name,
-            let _topVC = _topVC as? InviteViewController, let placeName = _topVC.place.name else { return }
+            let _topVC = _topVC as? InviteViewController else { return }
         _topVC.invitedUserIDs.append(recipientID)
-        var body = Strings.INVITATION_BODY.replacingOccurrences(of: "{senderName}", with: senderName)
-        body = body.replacingOccurrences(of: "{placeName}", with: placeName)
-        let notification = Notification.init(sender: senderID, recipient: recipientID, type: .Invite, title: Strings.INVITATION_TITLE, body: body, image: _topVC.place.icon, data: ["place": _topVC.place.getDictionary()])
+        let body = Strings.INVITATION_BODY
+        let notification = Notification.init(sender: senderID, recipient: recipientID, type: .Invite, title: senderName, body: body, image: _topVC.place.icon, data: ["place": _topVC.place.getDictionary()])
         NotificationController().sendNotification(notification: notification, isShowLoader: false)
     }
 }
