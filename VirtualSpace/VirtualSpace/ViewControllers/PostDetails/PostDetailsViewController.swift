@@ -17,7 +17,7 @@ class PostDetailsViewController: UIViewController {
 
     // MARK: Properties
     private var post: Post
-    private var inpuTextHeight = 55.0
+    private var inpuTextHeight = 60.0
     var completionDelete: ((_ post: Post) -> Void)?
     lazy var inputText: TextViewInputBar = {
         let inputBar = TextViewInputBar()
@@ -75,7 +75,6 @@ private extension PostDetailsViewController {
         self.inputText.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.inputText.heightAnchor.constraint(equalToConstant: self.inpuTextHeight),
-            self.inputText.widthAnchor.constraint(equalToConstant: self.view.frame.width),
             self.inputText.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             self.inputText.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             self.inputText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
