@@ -25,7 +25,7 @@ class MassageTableViewCell: GeneralTableViewCell {
             self.authImage.fetchImage(user.image, .ic_placeholder)
             self.authNameLabel.text = user.name
             self.messageLabel.text = object.lastMessage
-            self.timeLabel.text = object.sentDate?._stringTime
+            self.timeLabel.text = object.sentDate?._timeAgoDisplay
         } else {
 
         }

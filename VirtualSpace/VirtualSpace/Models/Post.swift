@@ -24,8 +24,9 @@ class Post {
         self.userID = user?.id
         self.userName = user?.name
         self.userImage = user?.image
-        self.createdAt = Date()
-        self.modifiedAt = Date()
+        let date = Date()
+        self.createdAt = date
+        self.modifiedAt = date
         self.isFavorite = false
     }
 
@@ -37,8 +38,8 @@ class Post {
         self.userID = dictionary["userID"] as? String
         self.userName = dictionary["userName"] as? String
         self.userImage = dictionary["userImage"] as? String
-        self.createdAt = (dictionary["createdAt"] as? String)?._dateWithFormate(dataFormat: GlobalConstants.dateAndTimeFormat)
-        self.modifiedAt = (dictionary["modifiedAt"] as? String)?._dateWithFormate(dataFormat: GlobalConstants.dateAndTimeFormat)
+        self.createdAt = Date.init(timeIntervalSince1970: (dictionary["createdAt"] as? Double) ?? Date().timeIntervalSince1970)
+        self.modifiedAt = Date.init(timeIntervalSince1970: (dictionary["modifiedAt"] as? Double) ?? Date().timeIntervalSince1970)
         self.isFavorite = UserController().fetchUser()?.favoritePosts.contains(self.id ?? "") ?? false
     }
 
@@ -50,8 +51,8 @@ class Post {
             "userID": self.userID,
             "userName": self.userName,
             "userImage": self.userImage,
-            "createdAt": self.createdAt?._string(dataFormat: GlobalConstants.dateAndTimeFormat),
-            "modifiedAt": self.modifiedAt?._string(dataFormat: GlobalConstants.dateAndTimeFormat)
+            "createdAt": self.createdAt?.timeIntervalSince1970,
+            "modifiedAt": self.modifiedAt?.timeIntervalSince1970
         ]
         return dictionary as [String: Any]
     }

@@ -98,6 +98,10 @@ class PostTableViewCell: GeneralTableViewCell {
             guard let postID = post.id else { return }
             self?.reloadTableView(postID)
         }
+        vc.handleFavorite = { [weak self] post in
+            self?.object = post
+            self?.configureCell()
+        }
         vc._push()
     }
 

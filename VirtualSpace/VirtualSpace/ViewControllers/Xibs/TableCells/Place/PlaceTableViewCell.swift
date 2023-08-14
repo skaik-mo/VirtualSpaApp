@@ -30,7 +30,7 @@ class PlaceTableViewCell: GeneralTableViewCell {
     override func configureCell() {
         self.isFavoriteVC = self._topVC is FavoriteViewController
         if let object = object as? Place {
-            self.placeImage.fetchImage(object.icon, .ic_placeholder)
+            self.placeImage.fetchImage(object.icon, nil)
             self.placeNameLabel.text = object.name
             self.placeAddressLabel.text = object.address
             self.availableTimeLabel.text = object.getTimeAndDistance()

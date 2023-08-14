@@ -83,6 +83,7 @@ class Strings {
     static let RESET_PASSWORD_Message = "We have sent a password reset email to your email address:\n{email}.\nPlease check your inbox to continue."._localizedKey
 
     // MARK: - Profile
+    static let MY_PROFILE_TITLE = "My Profile"._localizedKey
     static let PROFILE_TITLE = "Profile"._localizedKey
     static let LOGOUT_TITLE = "Log out"._localizedKey
     static let DELETE_ACCOUNT_TITLE = "Delete account"._localizedKey

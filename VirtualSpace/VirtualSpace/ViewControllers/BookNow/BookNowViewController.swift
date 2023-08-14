@@ -89,7 +89,7 @@ private extension BookNowViewController {
     func showDateOrTime(handle: @escaping (_ value: Date?) -> Void) {
         let alert = UIAlertController(style: .actionSheet, title: Strings.SELECT_DATE_TITLE)
         var isSelectedValue = false
-        alert.addDatePicker(mode: .date, date: Date(), minimumDate: Date(), maximumDate: nil) { date in
+        alert.addDatePicker(mode: .date, date: Date(), minimumDate: Date(), maximumDate: Date()._add(years: 1)) { date in
             handle(date)
             isSelectedValue = true
         }

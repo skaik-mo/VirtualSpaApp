@@ -95,7 +95,7 @@ private extension ProfileViewController {
 extension ProfileViewController {
     func getUpNavigationItem() -> UINavigationItem {
         let navigationItem = UINavigationItem()
-        navigationItem.title = Strings.PROFILE_TITLE
+        navigationItem.title = Strings.MY_PROFILE_TITLE
         let logout = UIBarButtonItem(title: Strings.LOGOUT_TITLE, style: .plain, target: self, action: #selector(logoutAction))
         logout.setTitleTextAttributes([.font: UIFont.poppinsSemiBold14, .foregroundColor: UIColor.color_8C4EFF], for: .normal)
         navigationItem.rightBarButtonItems = [logout]

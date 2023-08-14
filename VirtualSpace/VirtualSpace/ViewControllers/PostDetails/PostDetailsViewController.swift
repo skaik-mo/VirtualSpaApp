@@ -19,6 +19,7 @@ class PostDetailsViewController: UIViewController {
     private var post: Post
     private var inpuTextHeight = 60.0
     var completionDelete: ((_ post: Post) -> Void)?
+    var handleFavorite: ((_ post: Post) -> Void)?
     lazy var inputText: TextViewInputBar = {
         let inputBar = TextViewInputBar()
         inputBar.delegate = self

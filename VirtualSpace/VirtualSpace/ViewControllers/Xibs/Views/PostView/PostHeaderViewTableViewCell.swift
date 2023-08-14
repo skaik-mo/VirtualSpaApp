@@ -57,10 +57,11 @@ class PostHeaderViewTableViewCell: GeneralTableViewHeaderFooterView {
 
     @IBAction func likeAction(_ sender: Any) {
         debugPrint(#function)
-        guard let object = object as? Post else { return }
+        guard let object = object as? Post, let _topVC = _topVC as? PostDetailsViewController else { return }
         self.likeButton.isSelected.toggle()
         object.isFavorite = self.likeButton.isSelected
         PostController().addFivoraitePost(post: object)
+        _topVC.handleFavorite?(object)
     }
 
     @IBAction func commentAction(_ sender: Any) {
