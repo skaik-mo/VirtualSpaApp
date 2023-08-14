@@ -25,7 +25,11 @@ class MSSPhoneNumberTextView: UIView {
     }
     var countryCode: String? {
         didSet {
-            self.country = self.mssPhoneNumber.getCountry(code: countryCode ?? "US")
+            if let country = self.mssPhoneNumber.getCountry(code: countryCode ?? "US") {
+                self.country = country
+                return
+            }
+            self.country = self.mssPhoneNumber.getCountry(code: "US")
         }
     }
     var WithSelectedCountry = false {
