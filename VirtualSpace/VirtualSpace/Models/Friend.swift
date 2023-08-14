@@ -30,7 +30,7 @@ class Friend {
                 self.users.append(_user)
             }
         }
-        self.createdAt = (dictionary["createdAt"] as? String)?._dateWithFormate(dataFormat: GlobalConstants.dateAndTimeFormat)
+        self.createdAt = Date.init(timeIntervalSince1970: (dictionary["createdAt"] as? Double) ?? Date().timeIntervalSince1970)
     }
 
     func getDictionary() -> [String: Any] {
@@ -38,7 +38,7 @@ class Friend {
             "id": self.id,
             "userIDs": self.userIDs,
             "users": self.users.map({ $0.getDictionary() }),
-            "createdAt": self.createdAt?._string(dataFormat: GlobalConstants.dateAndTimeFormat)
+            "createdAt": self.createdAt?.timeIntervalSince1970
         ]
         return dictionary as [String: Any]
     }
@@ -47,7 +47,7 @@ class Friend {
         let dictionary: [String: Any?] = [
             "userIDs": self.userIDs,
             "users": self.users.map({ $0.getDictionary() }),
-            "createdAt": self.createdAt?._string(dataFormat: GlobalConstants.dateAndTimeFormat)
+            "createdAt": self.createdAt?.timeIntervalSince1970
         ]
         return dictionary as [String: Any]
     }
