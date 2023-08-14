@@ -21,7 +21,8 @@ class FriendController {
     }
 
     func addFriend(friend: Friend, success: @escaping () -> Void) -> FirebaseFirestoreController {
-        return referance.setData(dictionary: friend.getDictionaryforDatabase(), success: success)
+        guard let friendID = friend.id else { return referance }
+        return referance.setData(document: friendID, dictionary: friend.getDictionaryforDatabase(), success: success)
     }
 
     func deleteFriend(friendID: String, isShowLoader: Bool = false, success: @escaping () -> Void) -> FirebaseFirestoreController {
@@ -32,7 +33,7 @@ class FriendController {
         guard let id = UserController().fetchUser()?.id, let otherUserID else { return referance }
         let query = referance.reference?.whereField("userIDs", arrayContains: id)
         return referance.fetchDocuments(query: query, lastDocument: nil, isShowLoader: true) { objects, _ in
-            let friend = self.setFriends(objects).first(where: {$0.userIDs.contains(otherUserID)})
+            let friend = self.setFriends(objects).first(where: { $0.userIDs.contains(otherUserID) })
             completion(friend)
         }
     }
