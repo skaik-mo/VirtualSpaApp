@@ -14,6 +14,7 @@ class NotificationTableViewCell: GeneralTableViewCell {
     @IBOutlet weak var notifyTtitleLabel: UILabel!
     @IBOutlet weak var notifyDateLabel: UILabel!
     @IBOutlet weak var notifyDescrition: UILabel!
+    @IBOutlet weak var readView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,11 +27,13 @@ class NotificationTableViewCell: GeneralTableViewCell {
             self.notifyTtitleLabel.text = object.title
             self.notifyDescrition.text = object.body
             self.notifyDateLabel.text = object.createdAt?._timeAgoDisplay
+            self.readView.isHidden = object.read ?? true
         } else {
             self.notifyImage.image = nil
             self.notifyTtitleLabel.text = nil
             self.notifyDescrition.text = nil
             self.notifyDateLabel.text = nil
+            self.readView.isHidden = true
         }
     }
 

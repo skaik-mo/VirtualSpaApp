@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -43,30 +44,53 @@
                                         <rect key="frame" x="0.0" y="0.0" width="252" height="39"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kUv-Lt-Lm6">
-                                                <rect key="frame" x="0.0" y="0.0" width="252" height="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="236" height="19.666666666666668"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4Z-gJ-67r">
-                                                        <rect key="frame" x="0.0" y="0.0" width="26.666666666666668" height="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="26.666666666666668" height="19.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                                         <color key="textColor" name="#000000"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uf7-0L-GqW">
-                                                        <rect key="frame" x="207.66666666666669" y="0.0" width="28.333333333333343" height="17"/>
+                                                        <rect key="frame" x="207.66666666666669" y="1.3333333333333321" width="28.333333333333343" height="17"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                         <color key="textColor" name="#7A7A7A"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="16"/>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descritpion" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hQ-WJ-vZ4">
-                                                <rect key="frame" x="0.0" y="21" width="252" height="18"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
-                                                <color key="textColor" name="#A3A3A3"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HEV-ng-nu6">
+                                                <rect key="frame" x="0.0" y="23.666666666666664" width="236" height="15.333333333333336"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uJF-5F-BpP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="236" height="15.333333333333334"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descritpion" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hQ-WJ-vZ4">
+                                                                <rect key="frame" x="0.0" y="0.0" width="73" height="15.333333333333334"/>
+                                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
+                                                                <color key="textColor" name="#A3A3A3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Wq-6h-wZa">
+                                                                <rect key="frame" x="228" y="3.6666666666666714" width="8" height="8"/>
+                                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="5Wq-6h-wZa" secondAttribute="height" multiplier="1:1" id="5XK-So-ZhD"/>
+                                                                    <constraint firstAttribute="width" constant="8" id="Qlh-qg-icC"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="4"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="16"/>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Scb-kJ-Zt4">
                                         <rect key="frame" x="0.0" y="54" width="252" height="1"/>
@@ -95,6 +119,7 @@
                 <outlet property="notifyDescrition" destination="3hQ-WJ-vZ4" id="Sc3-j2-tV3"/>
                 <outlet property="notifyImage" destination="DAx-6C-Zev" id="4Q2-W8-JWq"/>
                 <outlet property="notifyTtitleLabel" destination="r4Z-gJ-67r" id="ecA-No-dc9"/>
+                <outlet property="readView" destination="5Wq-6h-wZa" id="Gtq-SB-pvp"/>
             </connections>
             <point key="canvasLocation" x="-356" y="-35"/>
         </tableViewCell>
@@ -112,5 +137,8 @@
         <namedColor name="#F2F2F2">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

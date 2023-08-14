@@ -17,6 +17,7 @@ class Notification {
     var image: String?
     var createdAt: Date?
     var data: [String: Any]?
+    var read: Bool?
 
     init(sender: String?, recipient: String?, type: GlobalConstants.NotificationType, title: String?, body: String?, image: String?, data: [String: Any]?) {
         self.sender = sender
@@ -27,6 +28,7 @@ class Notification {
         self.image = image
         self.createdAt = Date()
         self.data = data
+        self.read = false
     }
 
     init?(dictionary: [String: Any]?) {
@@ -40,6 +42,7 @@ class Notification {
         self.image = dictionary["image"] as? String
         self.createdAt = Date.init(timeIntervalSince1970: (dictionary["createdAt"] as? Double) ?? Date().timeIntervalSince1970)
         self.data = dictionary["data"] as? [String: Any]
+        self.read = dictionary["read"] as? Bool
     }
 
     func getDictionary() -> [String: Any] {
@@ -52,16 +55,9 @@ class Notification {
             "body": self.body,
             "image": self.image,
             "createdAt": self.createdAt?.timeIntervalSince1970,
-            "data": self.data
+            "data": self.data,
+            "read": self.read
         ]
         return dictionary as [String: Any]
     }
-
-    static func > (next: Notification, previous: Notification) -> Bool {
-        if let createdPrevious = previous.createdAt, let createdNext = next.createdAt {
-            return createdNext > createdPrevious
-        }
-        return false
-    }
-
 }
