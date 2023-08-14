@@ -9,10 +9,17 @@
 import UIKit
 
 class ProfileHeaderTableViewCell: GeneralTableViewHeaderFooterView {
-    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var coverImageButton: UIButton!
+    @IBOutlet weak var coverImage: UIImageView!
     @IBOutlet weak var authImage: rImage!
     @IBOutlet weak var authNameLabel: UILabel!
     @IBOutlet weak var authEmailLabel: UILabel!
+
+    private var isEnableSave: Bool = true {
+        didSet {
+            self.coverImageButton.isUserInteractionEnabled = self.isEnableSave
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,7 +28,7 @@ class ProfileHeaderTableViewCell: GeneralTableViewHeaderFooterView {
 
     override func configureHeader() {
         let user = UserController().fetchUser()
-        self.backgroundImage.fetchImage(user?.coverImage, .ic_placeholder)
+        self.coverImage.fetchImage(user?.coverImage, .ic_placeholder)
         self.authNameLabel.text = user?.name
         self.authEmailLabel.text = user?.email
         if let image = user?.image {
@@ -29,6 +36,22 @@ class ProfileHeaderTableViewCell: GeneralTableViewHeaderFooterView {
         } else {
             self.authImage.image = .ic_placeholder2
         }
+    }
+
+    @IBAction func addCoverImageAction(_ sender: Any) {
+        Helper.takeImage { image in
+            self.coverImage.image = image
+            self.editCoverImage(coverImg: image)
+        }
+    }
+
+    func editCoverImage(coverImg: UIImage) {
+        self.isEnableSave = false
+        _ = UserController().editCoverImageUser(coverImage: coverImg).handlerDidFinishRequest(handler: {
+            self.isEnableSave = true
+        }).handlerofflineLoad(handler: {
+            self.isEnableSave = true
+        })
     }
 
 }

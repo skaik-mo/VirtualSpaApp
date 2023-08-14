@@ -11,7 +11,6 @@ import UIKit
 class EditProfileViewController: UIViewController {
 
     // MARK: Outlets
-    @IBOutlet weak var coverImage: UIImageView!
     @IBOutlet weak var authImage: UIImageView!
     @IBOutlet weak var authNameTextField: MainTextView!
     @IBOutlet weak var authEmailTextField: MainTextView!
@@ -24,7 +23,6 @@ class EditProfileViewController: UIViewController {
     // MARK: Properties
     private let auth = UserController().fetchUser()
     private var image: UIImage?
-    private var coverImg: UIImage?
     private var isEnableSave = true {
         didSet {
             self.saveButton.isEnabled = isEnableSave
@@ -62,14 +60,6 @@ private extension EditProfileViewController {
         self.edit()
     }
 
-    @objc func addCoverImage() {
-        debugPrint(#function)
-        Helper.takeImage { image in
-            self.coverImage.image = image
-            self.coverImg = image
-        }
-    }
-
     @objc func addImage() {
         debugPrint(#function)
         Helper.takeImage { image in
@@ -83,8 +73,6 @@ private extension EditProfileViewController {
 private extension EditProfileViewController {
 
     func setUpView() {
-        let coverGesture = UITapGestureRecognizer(target: self, action: #selector(addCoverImage))
-        self.coverImage.addGestureRecognizer(coverGesture)
         let imageGesture = UITapGestureRecognizer(target: self, action: #selector(addImage))
         self.authImage.addGestureRecognizer(imageGesture)
         self.authNameTextField.setUpView(.Normal)
@@ -107,7 +95,6 @@ private extension EditProfileViewController {
         } else {
             self.authImage.image = .ic_camera
         }
-        self.coverImage.fetchImage(auth?.coverImage, .ic_placeholder)
         self.authNameTextField.textfield.text = auth?.name
         self.authEmailTextField.textfield.text = auth?.email
         self.authPhoneTextField.phone = auth?.phone
@@ -126,10 +113,6 @@ private extension EditProfileViewController {
     func validation() -> Bool {
         guard self.authImage.image != nil && self.authImage.image != .ic_camera else {
             self._showErrorAlertOK(message: Strings.ADD_PHOTO_MESSSAGE)
-            return false
-        }
-        guard self.coverImage.image != nil && self.coverImage.image != .ic_placeholder else {
-            self._showErrorAlertOK(message: Strings.ADD_COVER_PHOTO_MESSSAGE)
             return false
         }
         guard self.authNameTextField.isInvalid else { return false }
@@ -159,17 +142,13 @@ private extension EditProfileViewController {
             self.isEnableSave = true
             return
         }
-        _ = UserController().editUser(user: auth, image: self.image, coverImage: self.coverImg, imageCompletion: { isCoverImage in
-            if isCoverImage {
-                self.coverImg = nil
-            } else {
-                self.image = nil
-            }
+        _ = UserController().editUser(user: auth, image: self.image, imageCompletion: {
+            self.image = nil
         }, success: {
-            self._showAlertOK(message: Strings.EDITED_SUCCESSFULLY_MESSAGE) {
-                self._pop()
-            }
-        }).handlerDidFinishRequest(handler: {
+                self._showAlertOK(message: Strings.EDITED_SUCCESSFULLY_MESSAGE) {
+                    self._pop()
+                }
+            }).handlerDidFinishRequest(handler: {
             self.isEnableSave = true
         }).handlerofflineLoad(handler: {
             self.isEnableSave = true

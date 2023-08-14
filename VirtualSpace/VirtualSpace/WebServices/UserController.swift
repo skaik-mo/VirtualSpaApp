@@ -182,7 +182,26 @@ extension UserController {
 // MARK: - Edit
 extension UserController {
 
-    func editUser(user: UserModel, image: UIImage?, coverImage: UIImage?, imageCompletion: @escaping (_ isCoverImage: Bool) -> Void, success: (() -> Void)?) -> Self {
+    func editCoverImageUser(coverImage: UIImage?) -> Self {
+        guard let user = self.fetchUser(), let id = user.id else { fatalError("\(#function) The User is nil") }
+        guard Reachability.shared.isConnected() else {
+            DispatchQueue.main.async {
+                self.offlineLoad?()
+            }
+            return self
+        }
+        let coverImagePath = "Users/\(id)/coverImage.jpeg"
+        _ = FirebaseStorageController().uploadFile(data: coverImage?.jpegData(compressionQuality: 0.8), path: coverImagePath, handler: { url in
+                if let image = url?.absoluteString {
+                    user.coverImage = image
+                    self.setUser(user: user, isShowLoader: false)
+                    Helper.showLoader(isLoding: false)
+                }
+            }).handlerofflineLoad(handler: self.offlineLoad).handlerDidFinishRequest(handler: { self.didFinishRequest?() })
+        return self
+    }
+
+    func editUser(user: UserModel, image: UIImage?, imageCompletion: @escaping () -> Void, success: (() -> Void)?) -> Self {
         guard let id = user.id else { fatalError("\(#function) The User id is nil") }
         guard Reachability.shared.isConnected() else {
             DispatchQueue.main.async {
@@ -194,21 +213,13 @@ extension UserController {
         self.updateEmail(email: user.email) {
             var data: [String: Data?] = [:]
             let imagePath = "Users/\(id)/userImage.jpeg"
-            let coverImagePath = "Users/\(id)/coverImage.jpeg"
             if let image {
                 data[imagePath] = image.jpegData(compressionQuality: 0.8)
             }
-            if let coverImage {
-                data[coverImagePath] = coverImage.jpegData(compressionQuality: 0.8)
-            }
             _ = FirebaseStorageController().uploadFiles(data: data, handler: { urls in
                 if let image = urls[imagePath]?.absoluteString {
-                    imageCompletion(false)
+                    imageCompletion()
                     user.image = image
-                }
-                if let coverImage = urls[coverImagePath]?.absoluteString {
-                    imageCompletion(true)
-                    user.coverImage = coverImage
                 }
                 self.setUser(user: user, completion: success)
             }).handlerofflineLoad(handler: self.offlineLoad).handlerDidFinishRequest(handler: { self.didFinishRequest?() })
