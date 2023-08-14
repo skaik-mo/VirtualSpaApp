@@ -129,7 +129,7 @@ class Strings {
 
     // MARK: - Reservations
     static let MY_RESERVATIONS_TITLE = "My reservations"._localizedKey
-    static let RESERVATIONS_EMPTY_TITLE = "You haven't made any reservations yet"._localizedKey
+    static let RESERVATIONS_EMPTY_TITLE = "You haven't booked yet"._localizedKey
 
     // MARK: - Invite
     static let NEARBY_TITLE = "Nearby"._localizedKey
