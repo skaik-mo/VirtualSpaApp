@@ -27,10 +27,11 @@ class PlaceDetailsViewController: UIViewController {
     @IBOutlet weak var audioIndicatorStack: UIStackView!
 
     // MARK: Properties
+    private let loader = UIActivityIndicatorView(style: .large)
+    private let imageView = UIImageView()
     private let audioController = AudioController()
     private var place: Place
     private var images: [String] = []
-    private var selectedPlaceImage: UIImage?
     private var height = 90.0 // height for the collection view
     private var likeButton: UIBarButtonItem?
     private var isStillInVC = true
@@ -45,13 +46,7 @@ class PlaceDetailsViewController: UIViewController {
         }
     }
     var handleBack: ((_ place: Place) -> Void)?
-    var selectedPlaceImageStr: String? {
-        didSet {
-            let imageView = UIImageView()
-            imageView.fetchImage(self.selectedPlaceImageStr, .ic_placeholder)
-            self.selectedPlaceImage = imageView.image
-        }
-    }
+    var selectedPlaceImageStr: String?
 
     // MARK: Init
     init(place: Place) {
@@ -132,10 +127,9 @@ private extension PlaceDetailsViewController {
     }
 
     func setUpData() {
+        self.addLoader()
+        self.setSelectedImage(self.images.first)
         self.isLike = self.place.isFavorite
-        self.selectedPlaceImageStr = self.images.first
-        self.placeImageView.image = self.selectedPlaceImage
-        self.placeImageView.panoramaType = .cylindrical
         self.musicNameLabel.text = self.place.audioName
         self.descriptionLabel.numberOfLines = 3
         self.descriptionLabel.text = Strings.TAKE_TOUR_TITLE.replacingOccurrences(of: "{Club}", with: self.place.name ?? "")
@@ -146,6 +140,30 @@ private extension PlaceDetailsViewController {
                     self?.playButton.isSelected = false
                 }
             }
+        }
+    }
+
+    func addLoader() {
+        loader.color = .color_8C4EFF
+        loader.translatesAutoresizingMaskIntoConstraints = false
+        placeImageView.addSubview(loader)
+        loader.centerXAnchor.constraint(equalTo: placeImageView.centerXAnchor).isActive = true
+        loader.centerYAnchor.constraint(equalTo: placeImageView.centerYAnchor).isActive = true
+    }
+
+    func setSelectedImage(_ selectedImage: String?) {
+        self.loader.isHidden = false
+        self.rotationStack.isHidden = true
+        self.loader.startAnimating()
+        self.selectedPlaceImageStr = selectedImage
+        let url = URL(string: self.selectedPlaceImageStr ?? "")
+        imageView.sd_setImage(with: url, placeholderImage: .ic_placeholder) { image, _, _, _ in
+            self.placeImageView.image = image
+            self.placeImageView.panoramaType = .cylindrical
+            guard let image else { return }
+            self.loader.stopAnimating()
+            self.loader.isHidden = true
+            self.rotationStack.isHidden = false
         }
     }
 
@@ -192,8 +210,10 @@ extension PlaceDetailsViewController: UICollectionViewDelegate, UICollectionView
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.selectedPlaceImageStr = self.images[indexPath.row]
-        self.placeImageView.image = self.selectedPlaceImage
+        let selectedImage = self.images[indexPath.row]
+        guard selectedPlaceImageStr != selectedImage, let cell = collectionView.cellForItem(at: indexPath) as? PlaceImageCollectionViewCell else { return }
+        self.setSelectedImage(selectedImage)
+        self.placeImageView.image = cell.placeImage.image
         self.placeImageView.panoramaType = .cylindrical
         collectionView.reloadData()
     }
