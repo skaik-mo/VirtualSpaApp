@@ -17,12 +17,11 @@ class FollowController {
                 follows.append(follow)
             }
         }
-        follows = follows.sorted(by: >)
         return follows
     }
 
     private func getFollows(field: String, value: Any, lastDocument: QueryDocumentSnapshot?, isShowLoader: Bool, handlerResponse: @escaping ((_ objects: [Follow], _ lastDocuments: QueryDocumentSnapshot?, _ headerObject: Any?) -> Void)) -> FirebaseFirestoreController {
-        let query = referance.reference?.limit(to: 10).whereField(field, isEqualTo: value)
+        let query = referance.reference?.order(by: "createdAt", descending: true).whereField(field, isEqualTo: value).limit(to: 10)
         return referance.fetchDocuments(query: query, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, lastDocument in
             guard let lastDocument = lastDocument else { handlerResponse([], nil, nil); return }
             let following = self.setFollows(objects)

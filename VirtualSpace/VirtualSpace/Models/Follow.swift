@@ -37,12 +37,4 @@ class Follow {
         ]
         return dictionary as [String: Any]
     }
-
-    static func > (next: Follow, previous: Follow) -> Bool {
-        if let createdPrevious = previous.createdAt, let createdNext = next.createdAt {
-            return createdNext > createdPrevious
-        }
-        return false
-    }
-
 }
