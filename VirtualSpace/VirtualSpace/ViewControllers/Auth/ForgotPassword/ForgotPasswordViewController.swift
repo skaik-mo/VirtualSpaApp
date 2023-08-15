@@ -58,7 +58,7 @@ private extension ForgotPasswordViewController {
 
     func setUpView() {
         self.emailTextField.setUpView(.Email)
-        self.sendButton.applyButtonStyle(.Primary(40))
+        self.sendButton.applyButtonStyle(.Primary())
     }
 
     func setUpData() {

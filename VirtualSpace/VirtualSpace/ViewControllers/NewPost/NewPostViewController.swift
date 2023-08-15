@@ -87,7 +87,7 @@ private extension NewPostViewController {
         self.superStack.cornerRadius = 16
         self.textView.delegate = self
         self.setTextPlaceholder()
-        self.postButton.applyButtonStyle(.Primary(40))
+        self.postButton.applyButtonStyle(.Primary())
     }
 
     func setUpData() {

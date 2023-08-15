@@ -72,7 +72,7 @@ private extension BookNowViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.selectDate))
         self.dateStack.addGestureRecognizer(tap)
         self.dateStack.isUserInteractionEnabled = true
-        self.submitButton.applyButtonStyle(.Primary(40))
+        self.submitButton.applyButtonStyle(.Primary())
     }
 
     func setUpData() {

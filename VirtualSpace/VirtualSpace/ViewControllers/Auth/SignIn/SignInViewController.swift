@@ -79,7 +79,7 @@ private extension SignInViewController {
         self.view.cornerRadius = 25
         self.emailTextField.setUpView(.Email)
         self.passwordTextField.setUpView()
-        self.signInButton.applyButtonStyle(.Primary(40))
+        self.signInButton.applyButtonStyle(.Primary())
         self.forgotPasswordButton._underline()
     }
 

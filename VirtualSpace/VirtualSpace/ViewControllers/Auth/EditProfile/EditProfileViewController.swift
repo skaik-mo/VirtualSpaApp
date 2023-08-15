@@ -79,7 +79,7 @@ private extension EditProfileViewController {
         self.authEmailTextField.setUpView(.Email)
         self.authPhoneTextField.setUpView()
         self.bioStack.isHidden = self.auth?.type == .User ? true : false
-        self.saveButton.applyButtonStyle(.Primary(40))
+        self.saveButton.applyButtonStyle(.Primary())
     }
 
     func setUpData() {

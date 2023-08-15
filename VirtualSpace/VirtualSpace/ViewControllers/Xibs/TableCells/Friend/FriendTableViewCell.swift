@@ -28,7 +28,7 @@ class FriendTableViewCell: GeneralTableViewCell {
             self.authNameLabel.text = nil
         }
         self.friendButton.titleLabel?.text = Strings.UNFRIEND_TITLE
-        self.friendButton.applyButtonStyle(.SecondaryLightPurple(35))
+        self.friendButton.applyButtonStyle(.SecondaryLightPurple())
     }
 
     @IBAction func unfriendAction(_ sender: Any) {

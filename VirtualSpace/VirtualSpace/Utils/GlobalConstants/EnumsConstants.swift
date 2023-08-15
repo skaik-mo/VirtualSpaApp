@@ -62,28 +62,21 @@ extension GlobalConstants {
 // MARK: - Button Style
 extension GlobalConstants {
     enum ButtonStyle: Equatable {
-        case Primary(CGFloat)
-        case SecondaryLightPurple(CGFloat)
-        case SecondaryLightGray(CGFloat)
-        case SecondaryDarkGray
+        case Primary(CGFloat = 45)
+        case SecondaryLightPurple(CGFloat = 35)
+        case SecondaryLightGray(CGFloat = 35)
         case SecondaryGreen
         case SecondaryRed
         case OutlinedWhite
-        case OutlinedPurple((CGFloat))
+        case OutlinedPurple(CGFloat = 35)
 
         var height: CGFloat {
             switch self {
-            case .Primary(let height):
+            case .Primary(let height), .SecondaryLightPurple(let height), .SecondaryLightGray(let height), .OutlinedPurple(let height):
                 return height
             case .OutlinedWhite:
-                return 40.0
-            case .SecondaryLightPurple(let height):
-                return height
-            case .OutlinedPurple(let height):
-                return height
-            case .SecondaryLightGray(let height):
-                return height
-            case .SecondaryGreen, .SecondaryRed, .SecondaryDarkGray:
+                return 45.0
+            case .SecondaryGreen, .SecondaryRed:
                 return 28
             }
         }
@@ -120,8 +113,6 @@ extension GlobalConstants {
                 return .color_18B58C
             case .SecondaryRed:
                 return .color_FF0101
-            case .SecondaryDarkGray:
-                return .color_000000.withAlphaComponent(0.05)
             case .OutlinedWhite, .OutlinedPurple:
                 return .clear
             }
@@ -133,8 +124,6 @@ extension GlobalConstants {
                 return .color_FFFFFF
             case .SecondaryLightGray:
                 return .color_000000
-            case .SecondaryDarkGray:
-                return .color_5E5E5E
             case .SecondaryLightPurple, .OutlinedPurple:
                 return .color_8C4EFF
             }
@@ -148,10 +137,12 @@ extension GlobalConstants {
             switch self {
             case .Primary(let height), .SecondaryLightPurple(let height), .OutlinedPurple(let height):
                 return height / 2
-            case .SecondaryLightGray, .OutlinedWhite:
+            case .SecondaryLightGray(let height):
                 if height == 28 { return 10 }
                 return height / 2
-            case .SecondaryGreen, .SecondaryRed, .SecondaryDarkGray:
+            case .OutlinedWhite:
+                return height / 2
+            case .SecondaryGreen, .SecondaryRed:
                 return 10
             }
         }

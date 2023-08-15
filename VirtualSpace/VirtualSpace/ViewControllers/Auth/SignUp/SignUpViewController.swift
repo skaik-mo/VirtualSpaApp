@@ -95,13 +95,11 @@ private extension SignUpViewController {
 
     func setUpView() {
         self.view.cornerRadius = 25
-        self.userButton.applyButtonStyle(.OutlinedPurple(35))
-        self.busniessButton.applyButtonStyle(.SecondaryLightGray(35))
         self.nameTextField.setUpView(.Normal)
         self.emailTextField.setUpView(.Email)
         self.phoneTextField.setUpView()
         self.passwordTextField.setUpView()
-        self.signUpButton.applyButtonStyle(.Primary(40))
+        self.signUpButton.applyButtonStyle(.Primary())
         setButtonAttribute()
     }
 
@@ -118,16 +116,17 @@ private extension SignUpViewController {
         self.passwordTextField.placeholder = Strings.PASSWORD_TITLE
         self.busniessButton.titleLabel?.text = Strings.BUSINESS_TITLE
         self.signUpButton.titleLabel?.text = Strings.SIGN_UP
+        self.type = .User
     }
 
     func setUpUserType() {
         switch self.type {
         case .User:
-            self.userButton.applyButtonStyle(.OutlinedPurple(35))
-            self.busniessButton.applyButtonStyle(.SecondaryLightGray(35))
+            self.userButton.applyButtonStyle(.OutlinedPurple())
+            self.busniessButton.applyButtonStyle(.SecondaryLightGray())
         case .Business:
-            self.userButton.applyButtonStyle(.SecondaryLightGray(35))
-            self.busniessButton.applyButtonStyle(.OutlinedPurple(35))
+            self.userButton.applyButtonStyle(.SecondaryLightGray())
+            self.busniessButton.applyButtonStyle(.OutlinedPurple())
         }
     }
 

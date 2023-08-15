@@ -32,7 +32,7 @@ class FollowingTableViewCell: GeneralTableViewCell {
             self.followingButton.titleLabel?.text = nil
             self.followingButton.isHidden = true
         }
-        self.followingButton.applyButtonStyle(.SecondaryLightPurple(35))
+        self.followingButton.applyButtonStyle(.SecondaryLightPurple())
     }
 
     @IBAction func followAction(_ sender: Any) {

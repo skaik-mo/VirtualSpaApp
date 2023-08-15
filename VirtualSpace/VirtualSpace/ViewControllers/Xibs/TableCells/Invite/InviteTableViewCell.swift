@@ -48,10 +48,10 @@ class InviteTableViewCell: GeneralTableViewCell {
             self.inviteButton.applyButtonStyle(.Primary(35))
         case .Invite:
             self.inviteButton.titleLabel?.text = Strings.INVITE_TITLE
-            self.inviteButton.applyButtonStyle(.OutlinedPurple(35))
+            self.inviteButton.applyButtonStyle(.OutlinedPurple())
         case .Invited:
             self.inviteButton.titleLabel?.text = Strings.INVITED_TITLE
-            self.inviteButton.applyButtonStyle(.SecondaryLightPurple(35))
+            self.inviteButton.applyButtonStyle(.SecondaryLightPurple())
         }
     }
 
