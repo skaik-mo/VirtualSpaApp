@@ -29,6 +29,7 @@ extension UIButton {
         self.borderColor = style.borderColor
         self.borderWidth = style.borderWidth
         self._setAttributedTitle(style)
+        self.contentEdgeInsets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14) // for iOS 14
     }
 
     func _setAttributedTitle(_ style: GlobalConstants.ButtonStyle) {

@@ -161,6 +161,7 @@
                 <outlet property="commentsLabel" destination="Vm4-qy-jj4" id="aYt-ab-MJm"/>
                 <outlet property="descriptionLabel" destination="Ofg-z1-wmA" id="XeZ-f3-ed3"/>
                 <outlet property="likeButton" destination="dkM-zC-Mtp" id="vDn-Wd-XgC"/>
+                <outlet property="moreButton" destination="zuD-PS-hrd" id="EiC-HS-jmB"/>
                 <outlet property="postImage" destination="d9M-PD-Yxj" id="ZG0-Bq-VjP"/>
                 <outlet property="postTimeLabel" destination="5s9-OD-SAc" id="jxv-y9-3P2"/>
                 <outlet property="shareButton" destination="X9B-bW-SyR" id="x7q-US-HSX"/>

@@ -17,9 +17,9 @@ class PostHeaderViewTableViewCell: GeneralTableViewHeaderFooterView {
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var moreButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var commentsLabel: UILabel!
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -37,6 +37,9 @@ class PostHeaderViewTableViewCell: GeneralTableViewHeaderFooterView {
             self.descriptionLabel.text = object.description
             self.postImage.fetchImage(object.image, .ic_placeholder)
             self.likeButton.isSelected = object.isFavorite
+            self.likeButton.isHidden = false
+            self.commentButton.isHidden = false
+            self.moreButton.isHidden = false
         } else {
             self.commentsLabel.text = nil
             self.authImage.image = nil
@@ -44,6 +47,9 @@ class PostHeaderViewTableViewCell: GeneralTableViewHeaderFooterView {
             self.postTimeLabel.text = nil
             self.descriptionLabel.text = nil
             self.postImage.image = nil
+            self.likeButton.isHidden = true
+            self.commentButton.isHidden = true
+            self.moreButton.isHidden = true
         }
     }
 
