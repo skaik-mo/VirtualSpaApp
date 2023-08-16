@@ -58,8 +58,16 @@ private extension InviteViewController {
     }
 
     func fetchData(isShowLoader: Bool) {
-        _ = FriendController().getFriends(limit: nil, lastDocument: nil, isShowLoader: isShowLoader) { friends, _, _ in
-            self.tableView.resetTableView(request: .GetNearbyUsers(friends), isShowLoader: isShowLoader)
+        if isShowLoader {
+            Helper.showLoader(isLoding: true)
+        }
+        _ = FriendController().getFriends(limit: nil, lastDocument: nil, isShowLoader: false) { friends, _, _ in
+            self.tableView.resetTableView(request: .GetNearbyUsers(friends), isShowLoader: false)
+            if isShowLoader {
+                self.tableView.handlerDidFinishRequest = {
+                    Helper.showLoader(isLoding: false)
+                }
+            }
         }
     }
 
