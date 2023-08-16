@@ -156,6 +156,7 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
     }
 
     @IBAction func postAction(_ sender: Any) {
+        guard Self.isInfoSelected else { return }
         Self.isInfoSelected = false
         if let topVC = self._topVC as? TherapistViewController {
             topVC.isInfoSelected = Self.isInfoSelected
@@ -164,6 +165,7 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
     }
 
     @IBAction func infoAction(_ sender: Any) {
+        guard !Self.isInfoSelected else { return }
         Self.isInfoSelected = true
         if let topVC = self._topVC as? TherapistViewController {
             topVC.isInfoSelected = Self.isInfoSelected

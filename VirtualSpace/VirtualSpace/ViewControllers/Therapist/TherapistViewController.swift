@@ -59,7 +59,9 @@ private extension TherapistViewController {
         TherapistHeaderTableViewCell.isRefreshView = true
         self.addOption()
         self.tableView.contentInset = UIEdgeInsets(top: -10, left: 0, bottom: -20, right: 0)
-        self.tableView.isPullToRefreshEnable = true
+        self.tableView.control.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        self.tableView.refreshControl = self.tableView.control
+        self.tableView.isPullToRefreshEnable = false
         self.tableView.isLoadMoreEnable = true
         self.tableView.header = TherapistHeaderTableViewCell.self
         self.tableView.sectionHeaderHeight = 335
@@ -93,6 +95,11 @@ private extension TherapistViewController {
 
     func setUpData() {
         self.title = Strings.MESSAGE_THERAPIST_TITLE
+    }
+
+    @objc func pullToRefresh() {
+        TherapistHeaderTableViewCell.isRefreshView = true
+        self.tableView.resetTableView(request: self.tableView.request, isShowLoader: false)
     }
 
     func addOption() {
