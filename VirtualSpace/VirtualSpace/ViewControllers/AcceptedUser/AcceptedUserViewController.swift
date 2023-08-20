@@ -22,13 +22,13 @@ class AcceptedUserViewController: UIViewController {
     private var reservationUser: UserModel
     private var reservationUserID: String
     private var reservationUserName: String
-    private var reservationUserImage: String
+    private var reservationUserImage: String?
     private var reservationUserEmail: String
     private var reservationUserPhone: String
-    private var reservationUserCoverImage: String
+    private var reservationUserCoverImage: String?
 
     // MARK: Init
-    init(reservationUserID: String, reservationUserName: String, reservationUserEmail: String, reservationUserPhone: String, reservationUserImage: String, reservationUserCoverImage: String) {
+    init(reservationUserID: String, reservationUserName: String, reservationUserEmail: String, reservationUserPhone: String, reservationUserImage: String?, reservationUserCoverImage: String?) {
         self.reservationUser = .init(id: reservationUserID, email: reservationUserEmail, name: reservationUserName, phone: reservationUserPhone, image: reservationUserImage, coverImage: reservationUserCoverImage, type: .User)
         self.reservationUserID = reservationUserID
         self.reservationUserName = reservationUserName

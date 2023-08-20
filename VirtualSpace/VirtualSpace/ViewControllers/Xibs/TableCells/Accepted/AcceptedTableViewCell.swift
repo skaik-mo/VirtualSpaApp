@@ -36,15 +36,13 @@ class AcceptedTableViewCell: GeneralTableViewCell {
             let reservationUserID = object.reservationUserID,
             let reservationUserName = object.reservationUserName,
             let reservationUserEmail = object.reservationUserEmail,
-            let reservationUserPhone = object.reservationUserPhone,
-            let reservationUserImage = object.reservationUserImage,
-            let reservationUserCoverImage = object.reservationUserCoverImage else { return }
+            let reservationUserPhone = object.reservationUserPhone else { return }
         let vc = AcceptedUserViewController(reservationUserID: reservationUserID,
                                             reservationUserName: reservationUserName,
                                             reservationUserEmail: reservationUserEmail,
                                             reservationUserPhone: reservationUserPhone,
-                                            reservationUserImage: reservationUserImage,
-                                            reservationUserCoverImage: reservationUserCoverImage)
+                                            reservationUserImage: object.reservationUserImage,
+                                            reservationUserCoverImage: object.reservationUserCoverImage)
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .custom
         vc._presentVC()
