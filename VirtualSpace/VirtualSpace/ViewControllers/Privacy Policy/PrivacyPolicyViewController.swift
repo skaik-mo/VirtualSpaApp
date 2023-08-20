@@ -1,5 +1,5 @@
 // _________SKAIK_MO_________
-//  
+//
 //  PrivacyPolicyViewController.swift
 //  VirtualSpace
 //
@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import WebKit
 
 class PrivacyPolicyViewController: UIViewController {
 
     // MARK: Outlets
+    @IBOutlet weak var webView: WKWebView!
 
     // MARK: Properties
 
@@ -27,7 +29,6 @@ class PrivacyPolicyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-        setUpData()
         fetchData()
     }
 
@@ -49,12 +50,26 @@ private extension PrivacyPolicyViewController {
         self.view.cornerRadius = 25
     }
 
-    func setUpData() {
-
+    func showLoader(_ isLoding: Bool) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                Helper.showLoader(isLoding: isLoding)
+            })
     }
 
     func fetchData() {
-
+        self.showLoader(true)
+        _ = PrivacyController().getPrivacy { value in
+            if let value {
+                self.webView.loadHTMLString(value, baseURL: nil)
+            } else {
+                self.webView.scrollView.emptyDataSet(title: Strings.PRIVACY_EMPTY_TITLE)
+            }
+        }.handlerDidFinishRequest(handler: {
+            self.showLoader(false)
+        }).handlerofflineLoad(handler: {
+            self.showLoader(false)
+            self.webView.scrollView.emptyDataSet(title: Strings.NETWORK_ERROR_TITLE)
+        })
     }
 
 }

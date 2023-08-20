@@ -220,4 +220,8 @@ class Strings {
 
     // MARK: - User Details
     static let NEW_FRIEND_BODY = "{senderName} is now your friend"._localizedKey
+
+    // MARK: - Privacy Policy
+    static let PRIVACY_EMPTY_TITLE = "There is no privacy policy"._localizedKey
+
 }

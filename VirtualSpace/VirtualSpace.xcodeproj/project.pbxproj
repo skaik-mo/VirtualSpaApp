@@ -55,6 +55,7 @@
 		E723BBBF2A5D84110026782B /* UISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723BBBE2A5D84110026782B /* UISwitch.swift */; };
 		E727F0C72A665E4C00A3CEFB /* PlaceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727F0C52A665E4C00A3CEFB /* PlaceDetailsViewController.swift */; };
 		E727F0C82A665E4C00A3CEFB /* PlaceDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E727F0C62A665E4C00A3CEFB /* PlaceDetailsViewController.xib */; };
+		E72C0E762A9204C20036E07D /* PrivacyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72C0E752A9204C20036E07D /* PrivacyController.swift */; };
 		E7373F422A5AC9B5007A1186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F412A5AC9B5007A1186 /* AppDelegate.swift */; };
 		E7373F442A5AC9B5007A1186 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F432A5AC9B5007A1186 /* SceneDelegate.swift */; };
 		E7373F492A5AC9B5007A1186 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7373F482A5AC9B5007A1186 /* MainNavigationViewController.swift */; };
@@ -280,6 +281,7 @@
 		E723BBBE2A5D84110026782B /* UISwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISwitch.swift; sourceTree = "<group>"; };
 		E727F0C52A665E4C00A3CEFB /* PlaceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsViewController.swift; sourceTree = "<group>"; };
 		E727F0C62A665E4C00A3CEFB /* PlaceDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceDetailsViewController.xib; sourceTree = "<group>"; };
+		E72C0E752A9204C20036E07D /* PrivacyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyController.swift; sourceTree = "<group>"; };
 		E7373F3E2A5AC9B5007A1186 /* VirtualSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7373F412A5AC9B5007A1186 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7373F432A5AC9B5007A1186 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -853,6 +855,7 @@
 				E723BB952A5D3E4D0026782B /* UserController.swift */,
 				E7F3E8E72A6E58E6007270F6 /* PlaceController.swift */,
 				E7E0A1092A71484B0079A251 /* FollowController.swift */,
+				E72C0E752A9204C20036E07D /* PrivacyController.swift */,
 				E7F3E8DF2A6E4DE1007270F6 /* CategoryController.swift */,
 				E7F3E8E32A6E5470007270F6 /* SubCategoryController.swift */,
 				E7C836CE2A6FC1BD008EC7A3 /* PostController.swift */,
@@ -1807,6 +1810,7 @@
 				E7868BAA2A601E5A008917DD /* MassageTableViewCell.swift in Sources */,
 				E7373F6F2A5AC9B5007A1186 /* String.swift in Sources */,
 				E7DE5EB32A6C2460005B0DAE /* GeneralController.swift in Sources */,
+				E72C0E762A9204C20036E07D /* PrivacyController.swift in Sources */,
 				E79925452A6418E500B87500 /* CommentTableViewCell.swift in Sources */,
 				E7D1A8222A64008600A701E7 /* UIViewEXForDatePicker.swift in Sources */,
 				E75636322A5AD1410008C91B /* AuthenticationViewController.swift in Sources */,

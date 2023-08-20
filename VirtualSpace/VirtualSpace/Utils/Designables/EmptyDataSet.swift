@@ -27,6 +27,10 @@ extension UIScrollView {
                     collectionView.backgroundView = view
                 }
             }
+            // ScrollView
+            else {
+                self.addSubview(view)
+            }
             self.animate(view)
 
         } else {
