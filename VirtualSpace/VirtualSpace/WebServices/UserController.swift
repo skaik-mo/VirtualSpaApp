@@ -61,7 +61,7 @@ extension UserController {
         self.createUser(email: userModel.email, password: userModel.password) { user in
             userModel.id = user.uid
             self.setUser(user: userModel, completion: {
-                MainNavigationController.showFirstView()
+                SceneDelegate.shared?.ShowFirstVC()
             })
         }
         return self
@@ -115,7 +115,7 @@ extension UserController {
             user.email = currentUser.email
             user.password = password
             self.saveUser(user: user)
-            MainNavigationController.showFirstView()
+            SceneDelegate.shared?.ShowFirstVC()
         }.handlerDidFinishRequest(handler: didFinishRequest).handlerofflineLoad(handler: offlineLoad)
     }
 
@@ -129,7 +129,7 @@ extension UserController {
             do {
                 try self.auth.signOut()
                 Helper.clearUserDefaults()
-                MainNavigationController.showFirstView()
+                SceneDelegate.shared?.ShowFirstVC()
             } catch let error {
                 SceneDelegate.shared?._topVC?._showErrorAlertOK(message: error.localizedFirebaseErrorMessage)
             }
@@ -260,7 +260,7 @@ extension UserController {
                     let coverImagePath = "Users/\(id)/coverImage.jpeg"
                     FirebaseStorageController().deleteFile(path: imagePath, isShowLoader: false) {
                         FirebaseStorageController().deleteFile(path: coverImagePath, isShowLoader: false) {
-                            MainNavigationController.showFirstView()
+                            SceneDelegate.shared?.ShowFirstVC()
                             Helper.showLoader(isLoding: false)
                         }
                     }

@@ -51,23 +51,20 @@ class SignInViewController: UIViewController {
 // MARK: - Actions
 private extension SignInViewController {
     @IBAction func signUpAction(_ sender: Any) {
-        debugPrint(#function)
         guard let allPresentedViews = self.getAllPresentedViews, allPresentedViews.firstIndex(of: self) == 0 else {
             self._dismissVC()
             return }
         let vc = SignUpViewController()
-        self.present(vc, animated: true)
+        self._presentVC(vc)
     }
 
     @IBAction func signInAction(_ sender: Any) {
-        debugPrint(#function)
         self.signIn()
     }
 
     @IBAction func forgotPasswordAction(_ sender: Any) {
-        debugPrint(#function)
         let vc = ForgotPasswordViewController()
-        self.present(vc, animated: true) // This code for second present
+        self._presentVC(vc)
     }
 
 }

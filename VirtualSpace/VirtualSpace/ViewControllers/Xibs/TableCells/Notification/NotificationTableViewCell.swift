@@ -59,33 +59,33 @@ class NotificationTableViewCell: GeneralTableViewCell {
         guard let conversationID = notification.data?["conversationID"] as? String, let sender = UserModel(dictionary: notification.data?["sender"] as? [String: Any]) else { return }
         let vc = ChatViewController(otherUser: sender)
         vc.conversationID = conversationID
-        vc._push()
+        self._push(vc)
     }
 
     private func showInvitation(_ notification: Notification) {
         guard let place = Place(dictionary: notification.data?["place"] as? [String: Any]) else { return }
         let vc = PlaceDetailsViewController(place: place)
-        vc._push()
+        self._push(vc)
     }
 
     private func showFriend(_ notification: Notification) {
         guard let friend = Friend(dictionary: notification.data?["friend"] as? [String: Any]), let user = friend.users.first(where: { $0.id == notification.sender }) else { return }
         // if you want pass friend should remove notification if user make unfriend
         let vc = UserDetailsViewController(user: user, friend: nil)
-        vc._push()
+        self._push(vc)
     }
 
     private func showFollowing(_ notification: Notification) {
         guard let user = UserModel(dictionary: notification.data?["sender"] as? [String: Any]) else { return }
         let vc = UserDetailsViewController(user: user, friend: nil)
         vc.isHidenFriendButton = true
-        vc._push()
+        self._push(vc)
     }
 
     private func showAcceptReservation(_ notification: Notification) {
         guard let user = UserModel(dictionary: notification.data?["sender"] as? [String: Any]) else { return }
         let vc = TherapistViewController(therapist: user)
-        vc._push()
+        self._push(vc)
     }
 
 }

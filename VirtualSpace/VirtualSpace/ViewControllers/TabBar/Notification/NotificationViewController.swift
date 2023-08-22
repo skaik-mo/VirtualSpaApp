@@ -34,15 +34,12 @@ class NotificationViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        if let navigationController = self.tabBarController?.viewControllers?[2] as? MainNavigationController, navigationController.viewControllers.last == self {
+            self.tabBarController?.tabBar.isHidden = false
+        }
     }
 
-}
-
-// MARK: - set Up Navigation
-extension NotificationViewController {
-    func getUpNavigationItem() -> UINavigationItem {
-        return UINavigationItem(title: Strings.NOTIFY_TITLE)
-    }
 }
 
 // MARK: - Configurations

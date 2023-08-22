@@ -68,7 +68,7 @@ private extension AcceptedUserViewController {
         debugPrint(#function)
         self._dismissVC()
         let vc = ChatViewController(otherUser: reservationUser)
-        vc._push()
+        ((SceneDelegate.shared?.window?.rootViewController as? MainTabBarController)?.selectedViewController as? MainNavigationController)?.topViewController?._push(vc)
     }
 }
 

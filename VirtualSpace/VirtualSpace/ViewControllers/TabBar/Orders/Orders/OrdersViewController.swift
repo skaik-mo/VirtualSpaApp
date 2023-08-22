@@ -32,6 +32,11 @@ class OrdersViewController: ButtonBarPagerTabStripViewController {
         setUpView()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+
     // MARK: - PagerTabStripDataSource
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let pending = OrdersPendingViewController()
@@ -45,12 +50,17 @@ class OrdersViewController: ButtonBarPagerTabStripViewController {
 private extension OrdersViewController {
 
     func setUpView() {
+        self.setUpNavigationItem()
         self.superStack.layoutMargins.top = (self.navigationController?.navigationBar.frame.height ?? 0) + (self._getStatusBarHeightTop ?? 0)
         let line = UIView()
         line.backgroundColor = .color_A3A3A3.withAlphaComponent(0.3)
         let height: CGFloat = 1
         line.frame = CGRect(x: 0, y: buttonBarView.frame.height - height - 0.5, width: buttonBarView.frame.width, height: height)
         buttonBarView.addSubview(line)
+    }
+
+    func setUpNavigationItem() {
+        navigationItem.title = Strings.ORDERS_TITLE
     }
 
     func setUpButtonBarPagerTab() {
@@ -72,11 +82,4 @@ private extension OrdersViewController {
         }
     }
 
-}
-
-// MARK: - set Up Navigation
-extension OrdersViewController {
-    func getUpNavigationItem() -> UINavigationItem {
-        return UINavigationItem(title: Strings.ORDERS_TITLE)
-    }
 }

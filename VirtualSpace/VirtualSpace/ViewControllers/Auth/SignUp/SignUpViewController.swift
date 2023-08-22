@@ -60,32 +60,27 @@ class SignUpViewController: UIViewController {
 // MARK: - Actions
 private extension SignUpViewController {
     @IBAction func signInAction(_ sender: Any) {
-        debugPrint(#function)
         guard let allPresentedViews = self.getAllPresentedViews, allPresentedViews.firstIndex(of: self) == 0 else {
             self._dismissVC()
             return }
         let vc = SignInViewController()
-        self.present(vc, animated: true)
+        self._presentVC(vc)
     }
 
     @IBAction func userAction(_ sender: Any) {
-        debugPrint(#function)
         self.type = .User
     }
 
     @IBAction func businessAction(_ sender: Any) {
-        debugPrint(#function)
         self.type = .Business
     }
 
     @IBAction func privacyAction(_ sender: Any) {
-        debugPrint(#function)
         let vc = PrivacyPolicyViewController()
-        self.present(vc, animated: true)
+        self._presentVC(vc)
     }
 
     @IBAction func signUpAction(_ sender: Any) {
-        debugPrint(#function)
         self.signUp()
     }
 }

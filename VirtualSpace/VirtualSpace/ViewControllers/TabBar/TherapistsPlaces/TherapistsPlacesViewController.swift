@@ -1,5 +1,5 @@
 // _________SKAIK_MO_________
-//  
+//
 //  TherapistsPlacesViewController.swift
 //  VirtualSpace
 //
@@ -33,6 +33,7 @@ class TherapistsPlacesViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
 
 }
@@ -41,6 +42,7 @@ class TherapistsPlacesViewController: UIViewController {
 private extension TherapistsPlacesViewController {
 
     func setUpView() {
+        self.setUpNavigation()
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
         self.tableView.cell = PlaceTableViewCell.self
         self.tableView.rowHeight = 85
@@ -49,15 +51,12 @@ private extension TherapistsPlacesViewController {
         self.tableView.emptyTitle = Strings.THERAPISTS_PLACES_EMPTY_TITLE
     }
 
+    func setUpNavigation() {
+        self.navigationItem.title = Strings.THERAPISTS_PLACES_TITLE
+    }
+
     func fetchData() {
         self.tableView.resetTableView(request: .GetPlaces)
     }
 
-}
-
-// MARK: - set Up Navigation
-extension TherapistsPlacesViewController {
-    func getUpNavigationItem() -> UINavigationItem {
-        return UINavigationItem(title: Strings.THERAPISTS_PLACES_TITLE)
-    }
 }

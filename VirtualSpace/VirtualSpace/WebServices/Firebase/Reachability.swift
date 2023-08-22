@@ -17,7 +17,7 @@ class Reachability {
             debugPrint("Disconnected")
             Helper.showLoader(isLoding: false)
             if isShowMessage {
-                SceneDelegate.shared?.rootNavigationController?._showErrorAlertOK(message: Strings.NETWORK_ERROR_TITLE)
+                SceneDelegate.shared?.window?.rootViewController?._showErrorAlertOK(message: Strings.NETWORK_ERROR_TITLE)
             }
             return false
         }

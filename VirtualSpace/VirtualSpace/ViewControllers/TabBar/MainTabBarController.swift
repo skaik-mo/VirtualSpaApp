@@ -23,16 +23,6 @@ class MainTabBarController: UITabBarController {
         self.setUpView()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setUpNavigation(selectedVC: self.selectedViewController)
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        setUpShadowColor()
-    }
-
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         indicatorView?.indicatorWidth = self.tabBar.frame.width / CGFloat(self.tabBar.items?.count ?? 0)
@@ -58,75 +48,55 @@ private extension MainTabBarController {
     func setUpUserViewControllers() {
         self.navigationController?.navigationBar.backgroundColor = .red
         let homeUser = HomeUserViewController()
-        homeUser.tabBarItem.image = .ic_home
-        homeUser.tabBarItem.selectedImage = .ic_homeSelected
+        let homeUserNavigation = MainNavigationController(rootViewController: homeUser)
+        homeUserNavigation.tabBarItem.image = .ic_home
+        homeUserNavigation.tabBarItem.selectedImage = .ic_homeSelected
 
-        let vc2 = TherapistsPlacesViewController()
-        vc2.tabBarItem.image = .ic_location
-        vc2.tabBarItem.selectedImage = .ic_locationSelected
+        let therapistsPlaces = TherapistsPlacesViewController()
+        let therapistsPlacesNavigation = MainNavigationController(rootViewController: therapistsPlaces)
+        therapistsPlacesNavigation.tabBarItem.image = .ic_location
+        therapistsPlacesNavigation.tabBarItem.selectedImage = .ic_locationSelected
 
         let posts = PostsViewController()
-        posts.tabBarItem.image = .ic_frinds
-        posts.tabBarItem.selectedImage = .ic_frindsSelected
+        let postsNavigation = MainNavigationController(rootViewController: posts)
+        postsNavigation.tabBarItem.image = .ic_frinds
+        postsNavigation.tabBarItem.selectedImage = .ic_frindsSelected
 
         let favorite = FavoriteViewController()
-        favorite.tabBarItem.image = .ic_heart
-        favorite.tabBarItem.selectedImage = .ic_heartSelected
+        let favoriteNavigation = MainNavigationController(rootViewController: favorite)
+        favoriteNavigation.tabBarItem.image = .ic_heart
+        favoriteNavigation.tabBarItem.selectedImage = .ic_heartSelected
 
         let profile = ProfileViewController()
-        profile.tabBarItem.image = .ic_profile
-        profile.tabBarItem.selectedImage = .ic_profileSelected
+        let profileNavigation = MainNavigationController(rootViewController: profile)
+        profileNavigation.tabBarItem.image = .ic_profile
+        profileNavigation.tabBarItem.selectedImage = .ic_profileSelected
 
-        self.setViewControllers([homeUser, vc2, posts, favorite, profile], animated: true)
+        self.setViewControllers([homeUserNavigation, therapistsPlacesNavigation, postsNavigation, favoriteNavigation, profileNavigation], animated: true)
     }
 
     func setUpBusinessViewControllers() {
         let homeBusiness = HomeBusinessViewController()
-        homeBusiness.tabBarItem.image = .ic_home
-        homeBusiness.tabBarItem.selectedImage = .ic_homeSelected
+        let homeBusinessNavigation = MainNavigationController(rootViewController: homeBusiness)
+        homeBusinessNavigation.tabBarItem.image = .ic_home
+        homeBusinessNavigation.tabBarItem.selectedImage = .ic_homeSelected
 
         let orders = OrdersViewController()
-        orders.tabBarItem.image = .ic_frinds
-        orders.tabBarItem.selectedImage = .ic_frindsSelected
+        let ordersNavigation = MainNavigationController(rootViewController: orders)
+        ordersNavigation.tabBarItem.image = .ic_frinds
+        ordersNavigation.tabBarItem.selectedImage = .ic_frindsSelected
 
         let notification = NotificationViewController()
-        notification.tabBarItem.image = .ic_notification
-        notification.tabBarItem.selectedImage = .ic_notificationSelected
+        let notificationNavigation = MainNavigationController(rootViewController: notification)
+        notificationNavigation.tabBarItem.image = .ic_notification
+        notificationNavigation.tabBarItem.selectedImage = .ic_notificationSelected
 
         let profile = ProfileViewController()
-        profile.tabBarItem.image = .ic_profile
-        profile.tabBarItem.selectedImage = .ic_profileSelected
+        let profileNavigation = MainNavigationController(rootViewController: profile)
+        profileNavigation.tabBarItem.image = .ic_profile
+        profileNavigation.tabBarItem.selectedImage = .ic_profileSelected
 
-        self.setViewControllers([homeBusiness, orders, notification, profile], animated: true)
-    }
-
-    func setUpNavigation(selectedVC: UIViewController?) {
-        self.setUpShadowColor()
-        guard let selectedVC else { return }
-        if let selectedVC = selectedVC as? HomeUserViewController {
-            self.setUpShadowColor(.clear)
-            self.setUpNavigationItem(selectedVC.getUpNavigationItem())
-        } else if let selectedVC = selectedVC as? FavoriteViewController {
-            self.setUpNavigationItem(selectedVC.getUpNavigationItem())
-        } else if let selectedVC = selectedVC as? PostsViewController {
-            self.setUpNavigationItem(selectedVC.getUpNavigationItem())
-        } else if let selectedVC = selectedVC as? TherapistsPlacesViewController {
-            self.setUpNavigationItem(selectedVC.getUpNavigationItem())
-        } else if let selectedVC = selectedVC as? HomeBusinessViewController {
-            self.setUpNavigationItem(selectedVC.getUpNavigationItem())
-        } else if let selectedVC = selectedVC as? NotificationViewController {
-            self.setUpNavigationItem(selectedVC.getUpNavigationItem())
-        } else if let selectedVC = selectedVC as? OrdersViewController {
-            self.setUpNavigationItem(selectedVC.getUpNavigationItem())
-        } else if let selectedVC = selectedVC as? ProfileViewController {
-            self.setUpNavigationItem(selectedVC.getUpNavigationItem())
-        } else {
-            self.setUpNavigationItem(UINavigationItem())
-        }
-    }
-
-    func setUpShadowColor(_ shadowColor: UIColor = .color_A3A3A3) {
-        SceneDelegate.shared?.rootNavigationController?.shadowColor = shadowColor
+        self.setViewControllers([homeBusinessNavigation, ordersNavigation, notificationNavigation, profileNavigation], animated: true)
     }
 
 }
@@ -135,18 +105,6 @@ extension MainTabBarController: UITabBarControllerDelegate {
 
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         indicatorView?.indicatorAnimate(self.selectedIndex)
-        self.setUpNavigation(selectedVC: tabBarController.selectedViewController)
-    }
-
-}
-
-extension UITabBarController {
-
-    func setUpNavigationItem(_ navigationItem: UINavigationItem) {
-        self.title = navigationItem.title
-        self.navigationItem.titleView = navigationItem.titleView
-        self.navigationItem.leftBarButtonItems = navigationItem.leftBarButtonItems
-        self.navigationItem.rightBarButtonItems = navigationItem.rightBarButtonItems
     }
 
 }

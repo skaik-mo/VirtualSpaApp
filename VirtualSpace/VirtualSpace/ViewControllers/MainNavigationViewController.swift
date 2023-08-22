@@ -25,7 +25,6 @@ class MainNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpNavigation()
-        self.setRoot()
     }
 }
 
@@ -56,22 +55,9 @@ extension MainNavigationController {
 // MARK: - Root transfers
 extension MainNavigationController {
 
-    private func setRoot() {
-        let vc = LaunchViewController()
-        vc._rootPush()
-    }
-
-    static func showFirstView() {
-        if  UserController().isLoggedIn {
-            let vc = MainTabBarController()
-            vc._rootPush()
-            vc._isHideNavigation = false
-            vc._dismissAllVCs()
-        } else {
-            let vc = AuthenticationViewController()
-            vc._rootPush()
-            vc._isHideNavigation = true
-        }
+    func setRoot() {
+        let vc = AuthenticationViewController()
+        self._rootPush(vc)
     }
 
 }
@@ -86,5 +72,9 @@ extension UINavigationController {
     private func setBackButton() {
         let backButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationBar.topItem?.backBarButtonItem = backButton
+    }
+
+    override func _rootPush(_ vc: UIViewController) {
+        self.setViewControllers([vc], animated: true)
     }
 }

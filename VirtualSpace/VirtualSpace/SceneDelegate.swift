@@ -10,7 +10,6 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     static weak var shared: SceneDelegate?
-    var rootNavigationController: MainNavigationController?
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -19,9 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        rootNavigationController = MainNavigationController()
-        window?.rootViewController = rootNavigationController
-        window?.makeKeyAndVisible()
+        let root = LaunchViewController()
+        setRootApp(root)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -50,6 +48,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+
+}
+
+extension SceneDelegate {
+
+    func setRootApp(_ root: UIViewController) {
+        window?.rootViewController = root
+        window?.makeKeyAndVisible()
+    }
+
+    func ShowFirstVC() {
+        if UserController().isLoggedIn {
+            let rootTabBarController = MainTabBarController()
+            self.setRootApp(rootTabBarController)
+        } else {
+            let rootNavigationController = MainNavigationController()
+            rootNavigationController.setRoot()
+            self.setRootApp(rootNavigationController)
+        }
     }
 
 }

@@ -71,7 +71,7 @@ class InviteTableViewCell: GeneralTableViewCell {
     override func didselect(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let object = object as? (user: UserModel, isAdd: Bool) else { return }
         let vc = UserDetailsViewController(user: object.user, friend: nil)
-        vc._push()
+        self._push(vc)
     }
 
 }

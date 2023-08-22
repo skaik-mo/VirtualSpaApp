@@ -45,7 +45,7 @@ class PostTableViewCell: GeneralTableViewCell {
     }
 
     private func reloadTableView(_ postID: String) {
-        let _topVC = SceneDelegate.shared?.rootNavigationController?._topMostViewController
+        let _topVC = self._topVC
         if let _topVC = _topVC as? HomeBusinessViewController, let index = _topVC.tableView.objects.firstIndex(where: { ($0 as? Post)?.id == postID }) {
             _topVC.tableView.objects.remove(at: index)
         } else if let _topVC = _topVC as? PostsViewController, let index = _topVC.tableView.objects.firstIndex(where: { ($0 as? Post)?.id == postID }) {
@@ -84,7 +84,7 @@ class PostTableViewCell: GeneralTableViewCell {
         let vc = ZoomViewController(imageSelected: self.postImage.image)
         vc.modalPresentationStyle = .custom
         vc.modalTransitionStyle = .crossDissolve
-        vc._presentVC()
+        self._topVC?._presentVC(vc)
     }
 
     override func didselect(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -102,7 +102,7 @@ class PostTableViewCell: GeneralTableViewCell {
             self?.object = post
             self?.configureCell()
         }
-        vc._push()
+        self._push(vc)
     }
 
 }

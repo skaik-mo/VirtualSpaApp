@@ -40,20 +40,8 @@ extension UIViewController {
         return presentedViewControllers
     }
 
-    func _rootPush() {
-        SceneDelegate.shared?.rootNavigationController?.setViewControllers([self], animated: true)
-    }
-
-    func _push() {
-        SceneDelegate.shared?.rootNavigationController?.pushViewController(self, animated: true)
-    }
-
-    func _presentVC() {
-        SceneDelegate.shared?.rootNavigationController?.present(self, animated: true, completion: nil)
-    }
-
-    func _pop() {
-        SceneDelegate.shared?.rootNavigationController?.popViewController(animated: true)
+    func _presentVC(_ vc: UIViewController) {
+        self.present(vc, animated: true, completion: nil)
     }
 
     func _dismissVC() {
@@ -62,6 +50,19 @@ extension UIViewController {
 
     func _dismissAllVCs() {
         SceneDelegate.shared?.window?.rootViewController?.dismiss(animated: true)
+    }
+
+    @objc func _rootPush(_ vc: UIViewController) {
+        self.navigationController?.setViewControllers([vc], animated: true)
+    }
+
+    override func _push(_ vc: UIViewController) {
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func _pop() {
+        self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func _popViewController(_ sender: Any) {
@@ -89,7 +90,7 @@ extension UIViewController {
             okButtonAction?()
         }
         alert.addAction(okayAction)
-        SceneDelegate.shared?.rootNavigationController?._topMostViewController?.present(alert, animated: true)
+        self._presentVC(alert)
     }
 
     func _showErrorAlertOK(title: String = Strings.WRONG_TITLE, message: String?, okButtonAction: (() -> Void)? = nil) {
@@ -99,8 +100,7 @@ extension UIViewController {
         }
 
         alert.addAction(okayAction)
-        SceneDelegate.shared?.rootNavigationController?._topMostViewController?.present(alert, animated: true)
-//        self.present(alert, animated: true)
+        self._presentVC(alert)
     }
 
     func _showAlert(styleOK: UIAlertAction.Style = .default, title: String = Strings.ALERT_TITLE, message: String?, buttonTitle1: String = Strings.OK_TITLE, buttonTitle2: String = Strings.CANCEL_TITLE, buttonAction1: @escaping (() -> Void), buttonAction2: (() -> Void)? = nil) {
@@ -115,7 +115,7 @@ extension UIViewController {
         }
         alert.addAction(okayAction)
         alert.addAction(cancelAction)
-        alert._presentVC()
+        self._presentVC(alert)
     }
 
 }

@@ -62,10 +62,10 @@ class PlaceTableViewCell: GeneralTableViewCell {
     override func didselect(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let object = object as? Place {
             let vc = PlaceInfoViewController(place: object)
-            vc._push()
+            self._push(vc)
         } else if let object = Place(dictionary: object as? [String: Any]) {
             let vc = PlaceInfoViewController(place: object)
-            vc._push()
+            self._push(vc)
         }
     }
 }

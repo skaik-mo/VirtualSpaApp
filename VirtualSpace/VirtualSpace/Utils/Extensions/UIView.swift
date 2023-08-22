@@ -74,17 +74,6 @@ extension UIView {
         }
     }
 
-    var toImage: UIImage? {
-        UIGraphicsBeginImageContext(self.frame.size)
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return nil
-        }
-        layer.render(in: context)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
-    }
-
     func _roundCorners(isTopLeft: Bool = false, isTopRight: Bool = false, isBottomLeft: Bool = false, isBottomRight: Bool = false) -> CACornerMask {
         var corners: CACornerMask = []
 
@@ -120,13 +109,4 @@ extension UIView {
         return corners
     }
 
-    func _dismissView() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self._dismiss))
-        tap.cancelsTouchesInView = false
-        self.addGestureRecognizer(tap)
-    }
-
-    @objc private func _dismiss() {
-        SceneDelegate.shared?.rootNavigationController?.topViewController?._dismissVC()
-    }
 }

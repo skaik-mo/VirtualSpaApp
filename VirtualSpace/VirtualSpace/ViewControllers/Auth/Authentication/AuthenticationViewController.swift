@@ -37,6 +37,7 @@ class AuthenticationViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self._isHideNavigation = true
     }
 
 }
@@ -45,15 +46,13 @@ class AuthenticationViewController: UIViewController {
 private extension AuthenticationViewController {
 
     @IBAction func signUpAction(_ sender: Any) {
-        debugPrint(#function)
         let vc = SignUpViewController()
-        vc._presentVC()
+        self._presentVC(vc)
     }
 
     @IBAction func signInAction(_ sender: Any) {
-        debugPrint(#function)
         let vc = SignInViewController()
-        vc._presentVC()
+        self._presentVC(vc)
     }
 }
 

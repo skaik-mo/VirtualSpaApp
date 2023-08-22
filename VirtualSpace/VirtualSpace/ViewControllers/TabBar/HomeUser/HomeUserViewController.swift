@@ -15,6 +15,7 @@ class HomeUserViewController: UIViewController {
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var subCategoryCollectionView: UICollectionView!
     @IBOutlet weak var homeCollectionView: UICollectionView!
+    @IBOutlet weak var lineView: UIView! // line under categoryCollectionView
 
     // MARK: Properties
     private var locationManger = CLLocationManager()
@@ -52,19 +53,18 @@ class HomeUserViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+        guard let navigationController = self.navigationController as? MainNavigationController else { return }
+        navigationController.backgroundColor = .color_FFFFFF
+        navigationController.shadowColor = .clear
     }
 
-}
-
-// MARK: - set Up Navigation
-extension HomeUserViewController {
-    func getUpNavigationItem() -> UINavigationItem {
-        let navigationItem = UINavigationItem()
-        navigationItem.titleView = self.searchBar
-        let notification = UIBarButtonItem(image: .ic_notification_ciracl, style: .plain, target: self, action: #selector(notificationAction))
-        navigationItem.rightBarButtonItems = [notification]
-        return navigationItem
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        guard let navigationController = self.navigationController as? MainNavigationController else { return }
+        navigationController.shadowColor = .color_A3A3A3
     }
+
 }
 
 // MARK: - Actions
@@ -72,7 +72,7 @@ private extension HomeUserViewController {
 
     @objc func notificationAction() {
         let vc = NotificationViewController()
-        vc._push()
+        self._push(vc)
     }
 }
 
@@ -80,6 +80,7 @@ private extension HomeUserViewController {
 private extension HomeUserViewController {
 
     func setUpView() {
+        self.setUpNavigationItem()
         self.locationManger.delegate = self
 
         self.categoryCollectionView.dataSource = self
@@ -99,12 +100,19 @@ private extension HomeUserViewController {
         self.homeCollectionView.contentInset = .init(top: 5, left: 16, bottom: 20, right: 16)
     }
 
+    func setUpNavigationItem() {
+        self.navigationItem.titleView = self.searchBar
+        let notification = UIBarButtonItem(image: .ic_notification_ciracl, style: .plain, target: self, action: #selector(notificationAction))
+        self.navigationItem.rightBarButtonItem = notification
+    }
+
     func reloadHomeCollection() {
         self.homeCollectionView.reloadData()
         self.homeCollectionView.emptyDataSet(title: Strings.NO_RESULTS_TITLE)
     }
 
     func fetchData() {
+        self.lineView.isHidden = true
         Helper.showLoader(isLoding: true)
         _ = CategoryController().getCategories(isShowLoader: false) { categories in
             self.categories = categories
@@ -130,6 +138,7 @@ private extension HomeUserViewController {
             })
         }.handlerDidFinishRequest(handler: {
             self.categoryCollectionView.reloadData()
+            self.lineView.isHidden = false
         }).handlerofflineLoad(handler: {
             self.categoryCollectionView.reloadData()
             Helper.showLoader(isLoding: false)
@@ -213,7 +222,7 @@ extension HomeUserViewController: UICollectionViewDelegate, UICollectionViewData
                     self?.reloadHomeCollection()
                 }
             }
-            vc._push()
+            self._push(vc)
         }
     }
 

@@ -33,27 +33,26 @@ class PostsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
 
-}
-
-// MARK: - set Up Navigation
-extension PostsViewController {
-    func getUpNavigationItem() -> UINavigationItem {
-        return UINavigationItem(title: Strings.SOCIAL_MEDIA_POSTS_TITLE)
-    }
 }
 
 // MARK: - Configurations
 private extension PostsViewController {
 
     func setUpView() {
+        self.setUpNavigation()
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
         self.tableView.cell = PostTableViewCell.self
         self.tableView.rowHeight = 330
         self.tableView.isPullToRefreshEnable = true
         self.tableView.isLoadMoreEnable = true
         self.tableView.emptyTitle = Strings.POST_EMPTY_TITLE
+    }
+
+    func setUpNavigation() {
+        self.navigationItem.title = Strings.SOCIAL_MEDIA_POSTS_TITLE
     }
 
     func fetchData() {

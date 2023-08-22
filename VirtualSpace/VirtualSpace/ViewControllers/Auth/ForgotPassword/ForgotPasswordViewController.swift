@@ -1,5 +1,5 @@
 // _________SKAIK_MO_________
-//  
+//
 //  ForgotPasswordViewController.swift
 //  VirtualSpace
 //
@@ -48,7 +48,6 @@ class ForgotPasswordViewController: UIViewController {
 // MARK: - Actions
 private extension ForgotPasswordViewController {
     @IBAction func sendAction(_ sender: Any) {
-        debugPrint(#function)
         self.send()
     }
 }

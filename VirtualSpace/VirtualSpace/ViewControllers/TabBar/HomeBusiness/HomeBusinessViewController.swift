@@ -33,6 +33,7 @@ class HomeBusinessViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
 
 }
@@ -49,31 +50,26 @@ private extension HomeBusinessViewController {
         }
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .custom
-        vc._presentVC()
-    }
-
-}
-
-// MARK: - set Up Navigation
-extension HomeBusinessViewController {
-    func getUpNavigationItem() -> UINavigationItem {
-        let navigationItem = UINavigationItem()
-        navigationItem.titleView = UIImageView.init(image: .ic_virtualSpace)
-        let addButton = UIBarButtonItem(image: .ic_add, style: .plain, target: self, action: #selector(addPost))
-        navigationItem.rightBarButtonItems = [addButton]
-        return navigationItem
+        self._presentVC(vc)
     }
 }
 
 // MARK: - Configurations
 private extension HomeBusinessViewController {
     func setUpView() {
+        self.setUpNavigationItem()
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
         self.tableView.cell = PostTableViewCell.self
         self.tableView.rowHeight = 330
         self.tableView.isPullToRefreshEnable = true
         self.tableView.isLoadMoreEnable = true
         self.tableView.emptyTitle = Strings.POST_EMPTY_TITLE
+    }
+
+    func setUpNavigationItem() {
+        self.navigationItem.titleView = UIImageView.init(image: .ic_virtualSpace)
+        let addButton = UIBarButtonItem(image: .ic_add, style: .plain, target: self, action: #selector(addPost))
+        self.navigationItem.rightBarButtonItems = [addButton]
     }
 
     func fetchData() {

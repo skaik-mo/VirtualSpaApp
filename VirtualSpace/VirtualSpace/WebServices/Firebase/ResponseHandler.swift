@@ -15,7 +15,7 @@ class ResponseHandler {
         guard let error else { return true }
         Helper.showLoader(isLoding: false)
         if isShowMessage {
-            SceneDelegate.shared?.rootNavigationController?._showErrorAlertOK(message: error.localizedFirebaseErrorMessage)
+            SceneDelegate.shared?.window?.rootViewController?._showErrorAlertOK(message: error.localizedFirebaseErrorMessage)
         }
         return false
     }

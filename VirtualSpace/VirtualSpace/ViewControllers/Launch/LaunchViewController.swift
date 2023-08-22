@@ -31,7 +31,6 @@ class LaunchViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self._isHideNavigation = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -45,7 +44,7 @@ class LaunchViewController: UIViewController {
 private extension LaunchViewController {
 
     @objc func goToTabBar() {
-        MainNavigationController.showFirstView()
+        SceneDelegate.shared?.ShowFirstVC()
     }
 
 }

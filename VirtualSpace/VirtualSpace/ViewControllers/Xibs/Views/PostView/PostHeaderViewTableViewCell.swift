@@ -86,7 +86,7 @@ class PostHeaderViewTableViewCell: GeneralTableViewHeaderFooterView {
         let vc = ZoomViewController(imageSelected: self.postImage.image)
         vc.modalPresentationStyle = .custom
         vc.modalTransitionStyle = .crossDissolve
-        vc._presentVC()
+        self._topVC?._presentVC(vc)
     }
 
 }

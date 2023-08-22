@@ -68,17 +68,19 @@ class PlaceDetailsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        SceneDelegate.shared?.rootNavigationController?.backgroundColor = .clear
-        SceneDelegate.shared?.rootNavigationController?.shadowColor = .clear
         self.isStillInVC = true
+        guard let navigationController = self.navigationController as? MainNavigationController else { return }
+        navigationController.backgroundColor = .clear
+        navigationController.shadowColor = .clear
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        SceneDelegate.shared?.rootNavigationController?.backgroundColor = .color_FFFFFF
-        SceneDelegate.shared?.rootNavigationController?.shadowColor = .color_A3A3A3
         self.stopPlayAudio()
         self.isStillInVC = false
+        guard let navigationController = self.navigationController as? MainNavigationController else { return }
+        navigationController.backgroundColor = .color_FFFFFF
+        navigationController.shadowColor = .color_A3A3A3
     }
 }
 
@@ -99,7 +101,7 @@ private extension PlaceDetailsViewController {
 
     @objc func inviteAction() {
         let vc = InviteViewController(place: place)
-        vc._push()
+        self._push(vc)
     }
 
     @objc func likeAction() {

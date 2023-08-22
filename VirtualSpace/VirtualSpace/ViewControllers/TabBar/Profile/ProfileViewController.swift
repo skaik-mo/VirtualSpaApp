@@ -34,6 +34,7 @@ class ProfileViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
         self.tableView.reloadData()
     }
 
@@ -52,6 +53,14 @@ private extension ProfileViewController {
 
     func setUpView() {
         self.setUpTableView()
+        self.setUpNavigationItem()
+    }
+
+    func setUpNavigationItem() {
+        self.navigationItem.title = Strings.MY_PROFILE_TITLE
+        let logout = UIBarButtonItem(title: Strings.LOGOUT_TITLE, style: .plain, target: self, action: #selector(logoutAction))
+        logout.setTitleTextAttributes([.font: UIFont.poppinsSemiBold14, .foregroundColor: UIColor.color_8C4EFF], for: .normal)
+        self.navigationItem.rightBarButtonItem = logout
     }
 
     func setUpData() {
@@ -89,16 +98,4 @@ private extension ProfileViewController {
         }
     }
 
-}
-
-// MARK: - set Up Navigation
-extension ProfileViewController {
-    func getUpNavigationItem() -> UINavigationItem {
-        let navigationItem = UINavigationItem()
-        navigationItem.title = Strings.MY_PROFILE_TITLE
-        let logout = UIBarButtonItem(title: Strings.LOGOUT_TITLE, style: .plain, target: self, action: #selector(logoutAction))
-        logout.setTitleTextAttributes([.font: UIFont.poppinsSemiBold14, .foregroundColor: UIColor.color_8C4EFF], for: .normal)
-        navigationItem.rightBarButtonItems = [logout]
-        return navigationItem
-    }
 }

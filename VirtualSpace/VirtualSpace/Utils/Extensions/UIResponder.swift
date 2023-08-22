@@ -15,7 +15,12 @@ extension UIResponder {
     }
 
     var _topVC: UIViewController? {
-        return SceneDelegate.shared?.rootNavigationController?._topMostViewController
+        return SceneDelegate.shared?.window?.rootViewController?._topMostViewController
+    }
+
+    @objc func _push(_ vc: UIViewController) {
+        _topVC?.tabBarController?.tabBar.isHidden = true
+        _topVC?.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

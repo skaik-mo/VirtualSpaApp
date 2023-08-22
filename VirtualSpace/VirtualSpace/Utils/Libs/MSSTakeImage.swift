@@ -19,7 +19,7 @@ class MSSTakeImage: NSObject {
     var pickerController = UIImagePickerController()
 
     private func selectedType() {
-        guard let topVC = SceneDelegate.shared?.rootNavigationController?._topMostViewController else { return }
+        guard let topVC = SceneDelegate.shared?.window?.rootViewController?._topMostViewController else { return }
         let alert = UIAlertController(title: CHOOSE_TITLE, message: nil, preferredStyle: .alert)
         let cameraAction = UIAlertAction(title: CAMERA_TITLE, style: .default) { _ in
             self.pickerController.sourceType = .camera

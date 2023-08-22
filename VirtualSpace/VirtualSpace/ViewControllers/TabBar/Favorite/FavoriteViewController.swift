@@ -32,6 +32,7 @@ class FavoriteViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
         fetchData()
     }
 
@@ -41,6 +42,7 @@ class FavoriteViewController: UIViewController {
 private extension FavoriteViewController {
 
     func setUpView() {
+        self.setUpNavigation()
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
         self.tableView.cell = PlaceTableViewCell.self
         self.tableView.rowHeight = 85
@@ -49,14 +51,11 @@ private extension FavoriteViewController {
         self.tableView.emptyTitle = Strings.FAVORITE_EMPTY_TITLE
     }
 
+    func setUpNavigation() {
+        self.navigationItem.title = Strings.FAVORITE_TITLE
+    }
+
     func fetchData() {
         self.tableView.resetTableView(request: .GetFavoritePlaces)
-    }
-}
-
-// MARK: - set Up Navigation
-extension FavoriteViewController {
-    func getUpNavigationItem() -> UINavigationItem {
-        return UINavigationItem(title: Strings.FAVORITE_TITLE)
     }
 }
