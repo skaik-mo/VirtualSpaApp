@@ -60,13 +60,15 @@ extension SceneDelegate {
     }
 
     func ShowFirstVC() {
-        if UserController().isLoggedIn {
-            let rootTabBarController = MainTabBarController()
-            self.setRootApp(rootTabBarController)
-        } else {
-            let rootNavigationController = MainNavigationController()
-            rootNavigationController.setRoot()
-            self.setRootApp(rootNavigationController)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+            if UserController().isLoggedIn {
+                let rootTabBarController = MainTabBarController()
+                self.setRootApp(rootTabBarController)
+            } else {
+                let rootNavigationController = MainNavigationController()
+                rootNavigationController.setRoot()
+                self.setRootApp(rootNavigationController)
+            }
         }
     }
 

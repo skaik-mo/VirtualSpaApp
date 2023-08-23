@@ -72,7 +72,7 @@ private extension HomeUserViewController {
 
     @objc func notificationAction() {
         let vc = NotificationViewController()
-        self._push(vc)
+        vc._push()
     }
 }
 
@@ -82,6 +82,9 @@ private extension HomeUserViewController {
     func setUpView() {
         self.setUpNavigationItem()
         self.locationManger.delegate = self
+        self.locationManger.requestWhenInUseAuthorization()
+        self.locationManger.requestAlwaysAuthorization()
+        self.locationManger.startUpdatingLocation()
 
         self.categoryCollectionView.dataSource = self
         self.categoryCollectionView.delegate = self
@@ -222,7 +225,7 @@ extension HomeUserViewController: UICollectionViewDelegate, UICollectionViewData
                     self?.reloadHomeCollection()
                 }
             }
-            self._push(vc)
+            vc._push()
         }
     }
 

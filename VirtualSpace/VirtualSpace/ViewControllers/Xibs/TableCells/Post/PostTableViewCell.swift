@@ -84,7 +84,7 @@ class PostTableViewCell: GeneralTableViewCell {
         let vc = ZoomViewController(imageSelected: self.postImage.image)
         vc.modalPresentationStyle = .custom
         vc.modalTransitionStyle = .crossDissolve
-        self._topVC?._presentVC(vc)
+        vc._presentVC()
     }
 
     override func didselect(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -102,7 +102,7 @@ class PostTableViewCell: GeneralTableViewCell {
             self?.object = post
             self?.configureCell()
         }
-        self._push(vc)
+        vc._push()
     }
 
 }

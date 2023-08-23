@@ -37,6 +37,6 @@ class CallTableViewCell: GeneralTableViewCell {
     override func didselect(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let object = object as? UserModel else { return }
         let vc = TherapistViewController(therapist: object)
-        self._push(vc)
+        vc._push()
     }
 }

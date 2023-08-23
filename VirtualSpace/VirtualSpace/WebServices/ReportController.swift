@@ -26,7 +26,7 @@ class ReportController {
         alert.addAction(reportAction)
         let cancelAction = UIAlertAction(title: Strings.CANCEL_TITLE, style: .cancel)
         alert.addAction(cancelAction)
-        SceneDelegate.shared?.window?.rootViewController?._presentVC(alert)
+        alert._presentVC()
     }
 
 }

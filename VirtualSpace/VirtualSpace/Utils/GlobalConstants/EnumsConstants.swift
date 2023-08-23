@@ -187,31 +187,30 @@ extension GlobalConstants {
         }
 
         func action() {
-            let topVC = SceneDelegate.shared?.window?.rootViewController?._topVC
             switch self {
             case .AccountPrivacy:
                 debugPrint("AccountPrivacy")
             case .Reservations:
                 let vc = ReservationsViewController()
-                topVC?._push(vc)
+                vc._push()
             case .Massages:
                 let vc = MessageViewController()
-                topVC?._push(vc)
+                vc._push()
             case .Following:
                 let vc = FollowingViewController()
-                topVC?._push(vc)
+                vc._push()
             case .Followers:
                 let vc = FollowingViewController()
-                topVC?._push(vc)
+                vc._push()
             case .Friends:
                 let vc = FriendsViewController()
-                topVC?._push(vc)
+                vc._push()
             case .EditProfile:
                 let vc = EditProfileViewController()
-                topVC?._push(vc)
+                vc._push()
             case .ChangePassword:
                 let vc = ChangePasswordViewController()
-                topVC?._push(vc)
+                vc._push()
             case .DeleteAccount:
                 UserController().deleteAccount()
             }

@@ -74,7 +74,7 @@ extension UINavigationController {
         navigationBar.topItem?.backBarButtonItem = backButton
     }
 
-    override func _rootPush(_ vc: UIViewController) {
+    func _rootPush(_ vc: UIViewController) {
         self.setViewControllers([vc], animated: true)
     }
 }

@@ -99,7 +99,7 @@ private extension BookNowViewController {
             }
         }
         alert.addAction(okayAction)
-        self.present(alert, animated: true)
+        alert._presentVC()
     }
 }
 

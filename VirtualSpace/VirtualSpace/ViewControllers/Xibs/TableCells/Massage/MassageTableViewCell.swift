@@ -35,7 +35,7 @@ class MassageTableViewCell: GeneralTableViewCell {
         guard let authID = UserController().fetchUser()?.id, let object = object as? Conversation, let user = object.users.first(where: { $0.id != authID }) else { return }
         let vc = ChatViewController(otherUser: user)
         vc.conversationID = object.id
-        self._push(vc)
+        vc._push()
     }
 
 }

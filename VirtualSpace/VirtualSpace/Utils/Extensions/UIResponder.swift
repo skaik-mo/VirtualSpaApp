@@ -14,13 +14,23 @@ extension UIResponder {
         return String(describing: self)
     }
 
-    var _topVC: UIViewController? {
-        return SceneDelegate.shared?.window?.rootViewController?._topMostViewController
+    var _rootViewController: UIViewController? {
+        return SceneDelegate.shared?.window?.rootViewController
     }
 
-    @objc func _push(_ vc: UIViewController) {
-        _topVC?.tabBarController?.tabBar.isHidden = true
-        _topVC?.navigationController?.pushViewController(vc, animated: true)
+    var _navigationController: UINavigationController? {
+        if let navigationController = _rootViewController as? UINavigationController {
+            return navigationController
+        } else if let tabBarController = _rootViewController as? UITabBarController {
+            if let selectedNavigationController = tabBarController.selectedViewController as? UINavigationController {
+                return selectedNavigationController
+            }
+        }
+        return nil
+    }
+
+    var _topVC: UIViewController? {
+        return _rootViewController?._topMostViewController
     }
 
 }

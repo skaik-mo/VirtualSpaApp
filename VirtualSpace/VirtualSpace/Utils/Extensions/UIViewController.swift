@@ -28,7 +28,7 @@ extension UIViewController {
     }
 
     var getAllPresentedViews: [UIViewController]? {
-        guard let rootViewController = UIApplication.shared.keyWindow?.rootViewController else { return nil }
+        guard let rootViewController = self._rootViewController else { return nil }
         var presentedViewControllers = [UIViewController]()
         func getAllPresentedViews(from viewController: UIViewController) {
             if let presentedViewController = viewController.presentedViewController {
@@ -40,8 +40,8 @@ extension UIViewController {
         return presentedViewControllers
     }
 
-    func _presentVC(_ vc: UIViewController) {
-        self.present(vc, animated: true, completion: nil)
+    func _presentVC() {
+        self._topVC?.present(self, animated: true, completion: nil)
     }
 
     func _dismissVC() {
@@ -49,16 +49,12 @@ extension UIViewController {
     }
 
     func _dismissAllVCs() {
-        SceneDelegate.shared?.window?.rootViewController?.dismiss(animated: true)
+        self._rootViewController?.dismiss(animated: true, completion: nil)
     }
 
-    @objc func _rootPush(_ vc: UIViewController) {
-        self.navigationController?.setViewControllers([vc], animated: true)
-    }
-
-    override func _push(_ vc: UIViewController) {
-        self.tabBarController?.tabBar.isHidden = true
-        self.navigationController?.pushViewController(vc, animated: true)
+    func _push() {
+        self._navigationController?.tabBarController?.tabBar.isHidden = true
+        self._navigationController?.pushViewController(self, animated: true)
     }
 
     func _pop() {
@@ -90,7 +86,7 @@ extension UIViewController {
             okButtonAction?()
         }
         alert.addAction(okayAction)
-        self._presentVC(alert)
+        alert._presentVC()
     }
 
     func _showErrorAlertOK(title: String = Strings.WRONG_TITLE, message: String?, okButtonAction: (() -> Void)? = nil) {
@@ -100,7 +96,7 @@ extension UIViewController {
         }
 
         alert.addAction(okayAction)
-        self._presentVC(alert)
+        alert._presentVC()
     }
 
     func _showAlert(styleOK: UIAlertAction.Style = .default, title: String = Strings.ALERT_TITLE, message: String?, buttonTitle1: String = Strings.OK_TITLE, buttonTitle2: String = Strings.CANCEL_TITLE, buttonAction1: @escaping (() -> Void), buttonAction2: (() -> Void)? = nil) {
@@ -115,7 +111,7 @@ extension UIViewController {
         }
         alert.addAction(okayAction)
         alert.addAction(cancelAction)
-        self._presentVC(alert)
+        alert._presentVC()
     }
 
 }

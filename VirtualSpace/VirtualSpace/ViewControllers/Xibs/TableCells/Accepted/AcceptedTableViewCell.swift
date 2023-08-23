@@ -45,6 +45,6 @@ class AcceptedTableViewCell: GeneralTableViewCell {
                                             reservationUserCoverImage: object.reservationUserCoverImage)
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .custom
-        self._topVC?._presentVC(vc)
+        vc._presentVC()
     }
 }

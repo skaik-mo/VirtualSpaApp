@@ -55,7 +55,7 @@ private extension SignInViewController {
             self._dismissVC()
             return }
         let vc = SignUpViewController()
-        self._presentVC(vc)
+        vc._presentVC()
     }
 
     @IBAction func signInAction(_ sender: Any) {
@@ -64,7 +64,7 @@ private extension SignInViewController {
 
     @IBAction func forgotPasswordAction(_ sender: Any) {
         let vc = ForgotPasswordViewController()
-        self._presentVC(vc)
+        vc._presentVC()
     }
 
 }

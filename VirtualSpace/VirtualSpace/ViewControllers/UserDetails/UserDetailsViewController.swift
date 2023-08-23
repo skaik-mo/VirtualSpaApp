@@ -73,7 +73,7 @@ private extension UserDetailsViewController {
     @IBAction func messageAction(_ sender: Any) {
         debugPrint(#function)
         let vc = ChatViewController(otherUser: user)
-        self._push(vc)
+        vc._push()
     }
 
     @IBAction func callAction(_ sender: Any) {

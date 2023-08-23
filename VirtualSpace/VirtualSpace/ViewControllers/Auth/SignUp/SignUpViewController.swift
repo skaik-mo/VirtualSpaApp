@@ -64,7 +64,7 @@ private extension SignUpViewController {
             self._dismissVC()
             return }
         let vc = SignInViewController()
-        self._presentVC(vc)
+        vc._presentVC()
     }
 
     @IBAction func userAction(_ sender: Any) {
@@ -77,7 +77,7 @@ private extension SignUpViewController {
 
     @IBAction func privacyAction(_ sender: Any) {
         let vc = PrivacyPolicyViewController()
-        self._presentVC(vc)
+        vc._presentVC()
     }
 
     @IBAction func signUpAction(_ sender: Any) {

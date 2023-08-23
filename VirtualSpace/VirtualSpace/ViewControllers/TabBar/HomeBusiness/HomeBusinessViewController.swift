@@ -50,7 +50,7 @@ private extension HomeBusinessViewController {
         }
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .custom
-        self._presentVC(vc)
+        vc._presentVC()
     }
 }
 

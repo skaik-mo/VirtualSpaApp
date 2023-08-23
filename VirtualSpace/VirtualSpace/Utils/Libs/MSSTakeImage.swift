@@ -19,21 +19,20 @@ class MSSTakeImage: NSObject {
     var pickerController = UIImagePickerController()
 
     private func selectedType() {
-        guard let topVC = SceneDelegate.shared?.window?.rootViewController?._topMostViewController else { return }
         let alert = UIAlertController(title: CHOOSE_TITLE, message: nil, preferredStyle: .alert)
         let cameraAction = UIAlertAction(title: CAMERA_TITLE, style: .default) { _ in
             self.pickerController.sourceType = .camera
-            topVC.present(self.pickerController, animated: true, completion: nil)
+            self.pickerController._presentVC()
         }
         let libraryAction = UIAlertAction(title: GALLERY_TITLE, style: .default) { _ in
             self.pickerController.sourceType = .photoLibrary
-            topVC.present(self.pickerController, animated: true, completion: nil)
+            self.pickerController._presentVC()
         }
         let cancelAction = UIAlertAction(title: CANCEL_TITLE, style: .cancel)
         alert.addAction(cameraAction)
         alert.addAction(libraryAction)
         alert.addAction(cancelAction)
-        topVC.present(alert, animated: true)
+        alert._presentVC()
     }
 
     func present(getImage: ((UIImage) -> Void)?) {

@@ -138,7 +138,7 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
         debugPrint(#function)
         guard let therapist = object as? UserModel else { return }
         let vc = ChatViewController(otherUser: therapist)
-        self._push(vc)
+        vc._push()
     }
 
     @IBAction func bookNowAction(_ sender: Any) {
@@ -146,7 +146,7 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
         let vc = BookNowViewController(therapist: object)
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .custom
-        self._topVC?._presentVC(vc)
+        vc._presentVC()
     }
 
     @IBAction func callAction(_ sender: Any) {

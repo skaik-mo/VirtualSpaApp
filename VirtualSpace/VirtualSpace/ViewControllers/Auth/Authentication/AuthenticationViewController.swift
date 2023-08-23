@@ -47,12 +47,12 @@ private extension AuthenticationViewController {
 
     @IBAction func signUpAction(_ sender: Any) {
         let vc = SignUpViewController()
-        self._presentVC(vc)
+        vc._presentVC()
     }
 
     @IBAction func signInAction(_ sender: Any) {
         let vc = SignInViewController()
-        self._presentVC(vc)
+        vc._presentVC()
     }
 }
 

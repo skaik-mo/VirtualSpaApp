@@ -40,7 +40,7 @@ class FriendTableViewCell: GeneralTableViewCell {
     override func didselect(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let object = object as? Friend, let authID = UserController().fetchUser()?.id, let user = object.users.first(where: { $0.id != authID }) else { return }
         let vc = UserDetailsViewController(user: user, friend: object)
-        self._push(vc)
+        vc._push()
     }
 
 }
