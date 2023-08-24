@@ -15,11 +15,13 @@ class TherapistViewController: UIViewController {
 
     // MARK: Properties
     private var therapist: UserModel
+    var placeID: String?
     var isInfoSelected = false
 
     // MARK: Init
-    init(therapist: UserModel) {
+    init(therapist: UserModel, placeID: String?) {
         self.therapist = therapist
+        self.placeID = placeID
         super.init(nibName: nil, bundle: nil)
     }
 

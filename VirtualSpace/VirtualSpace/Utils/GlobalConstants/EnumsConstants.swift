@@ -25,6 +25,8 @@ extension GlobalConstants {
 
         static func getType(_ type: Int?) -> NotificationType {
             switch type {
+            case 5:
+                return .Accept
             case 4:
                 return .Friend
             case 3:

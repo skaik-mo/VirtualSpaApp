@@ -41,8 +41,8 @@ class PlaceController {
         let query = referance.reference?.limit(to: 10).whereField("therapists", arrayContains: id)
         return referance.fetchDocuments(query: query, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, lastDocument in
             guard let lastDocument = lastDocument else { handlerResponse([], nil, therapist); return }
-            var _objects = objects
-            _objects.insert(therapist.getDictionary(), at: 0)
+            var _objects: [Any] = self.setPlaces(objects)
+            _objects.insert(therapist, at: 0)
             handlerResponse(_objects, lastDocument, therapist)
         }
     }

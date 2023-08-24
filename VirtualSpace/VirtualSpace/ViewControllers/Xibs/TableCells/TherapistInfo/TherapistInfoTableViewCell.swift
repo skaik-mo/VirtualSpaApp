@@ -22,8 +22,8 @@ class TherapistInfoTableViewCell: GeneralTableViewCell {
     override func configureCell() {
         self.bioTitleLabel.text = Strings.BIO_TITLE
         self.workInLabel.text = Strings.WORK_IN_TITLE
-        if let object = UserModel(dictionary: object as? [String: Any]) {
-            self.bioLabel.text = object.bio
+        if let therapist = object as? UserModel {
+            self.bioLabel.text = therapist.bio
         } else {
             self.bioLabel.text = nil
         }

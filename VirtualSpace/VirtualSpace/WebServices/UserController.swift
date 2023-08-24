@@ -284,7 +284,9 @@ extension UserController {
         let query = userReference.reference?.limit(to: 10).whereField(FieldPath.documentID(), in: place.therapistIDs)
         return userReference.fetchDocuments(query: query, lastDocument: lastDocument, isShowLoader: isShowLoader) { objects, lastDocument in
             guard let lastDocument else { handlerResponse([], nil, place); return }
-            let users = self.setUsers(objects)
+            let users: [(UserModel, Place)] = self.setUsers(objects).map { user in
+                return (user, place)
+            }
             handlerResponse(users, lastDocument, place)
         }
     }

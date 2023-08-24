@@ -84,7 +84,7 @@ class NotificationTableViewCell: GeneralTableViewCell {
 
     private func showAcceptReservation(_ notification: Notification) {
         guard let user = UserModel(dictionary: notification.data?["sender"] as? [String: Any]) else { return }
-        let vc = TherapistViewController(therapist: user)
+        let vc = TherapistViewController(therapist: user, placeID: nil)
         vc._push()
     }
 

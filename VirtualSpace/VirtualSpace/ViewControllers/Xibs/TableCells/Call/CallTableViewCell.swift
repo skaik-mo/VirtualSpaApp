@@ -19,9 +19,9 @@ class CallTableViewCell: GeneralTableViewCell {
     }
 
     override func configureCell() {
-        if let object = object as? UserModel {
-            self.authImage.fetchImage(object.image, .ic_placeholder)
-            self.authName.text = object.name
+        if let object = object as? (user: UserModel, place: Place) {
+            self.authImage.fetchImage(object.user.image, .ic_placeholder)
+            self.authName.text = object.user.name
         } else {
             self.authImage.image = nil
             self.authName.text = nil
@@ -35,8 +35,8 @@ class CallTableViewCell: GeneralTableViewCell {
     }
 
     override func didselect(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let object = object as? UserModel else { return }
-        let vc = TherapistViewController(therapist: object)
+        guard let object = object as? (user: UserModel, place: Place), let placeID = object.place.id else { return }
+        let vc = TherapistViewController(therapist: object.user, placeID: placeID)
         vc._push()
     }
 }
