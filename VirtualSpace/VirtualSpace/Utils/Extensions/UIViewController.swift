@@ -48,9 +48,9 @@ extension UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 
-    func _dismissAllVCs() {
-        self._rootViewController?.dismiss(animated: true, completion: nil)
-    }
+//    func _dismissAllVCs() {
+//        self._rootViewController?.dismiss(animated: true, completion: nil)
+//    }
 
     func _push() {
         self._navigationController?.tabBarController?.tabBar.isHidden = true
@@ -141,14 +141,6 @@ extension UIViewController {
         set {
             self.navigationController?.setNavigationBarHidden(newValue, animated: true)
         }
-    }
-
-    func _emptyImgaeNavigation() {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage.init(), for: .top, barMetrics: .default)
-    }
-
-    func _nilImgaeNavigation() {
-        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
     }
 
 }

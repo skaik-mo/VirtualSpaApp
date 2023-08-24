@@ -115,7 +115,7 @@ private extension ChatViewController {
         if let conversationID {
             getConversationID(conversationID)
         } else {
-            _ = ConversationController().getConversation(otherUser: self.otherUser, isShowLoader: false) { object in
+            _ = conversationController.getConversation(otherUser: self.otherUser, isShowLoader: false) { object in
                 if let id = object.id {
                     self.conversationID = id
                     getConversationID(id)
@@ -134,7 +134,7 @@ private extension ChatViewController {
     }
 
     func sendMessage(conversation: Conversation, message: Message) {
-        _ = ConversationController().addConversation(conversation: conversation) {
+        _ = conversationController.addConversation(conversation: conversation) {
             _ = self.messageController.addMessage(message: message) {
                 debugPrint("message added")
                 self.sendNotification()

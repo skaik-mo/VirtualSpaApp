@@ -17,6 +17,5 @@ class GlobalConstants {
     // MARK: - Format
     static let timeFormat = "hh:mm a"
     static let dateFormat = "dd MMM yyyy"
-    static let dateAndTimeFormat = "dd-MM-yyyy hh:mm:ss a"
 
 }

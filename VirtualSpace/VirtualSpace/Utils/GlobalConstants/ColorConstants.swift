@@ -38,18 +38,6 @@ extension UIColor {
         return UIColor(hexString: "#7A7A7A")
     }
 
-    static var color_424343: UIColor {
-        return UIColor(hexString: "#424343")
-    }
-
-    static var color_ECECEC: UIColor {
-        return UIColor(hexString: "#ECECEC")
-    }
-
-    static var color_5E5E5E: UIColor {
-        return UIColor(hexString: "#5E5E5E")
-    }
-
     static var color_9B9B9B: UIColor {
         return UIColor(hexString: "#9B9B9B")
     }

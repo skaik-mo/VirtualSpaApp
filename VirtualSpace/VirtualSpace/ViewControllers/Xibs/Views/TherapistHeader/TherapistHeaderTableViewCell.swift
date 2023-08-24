@@ -45,6 +45,8 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
             self.TherapistNameLabel.text = object.name
             self.TherapistEmailLabel.text = object.email
             self.checkFollow()
+            self.postsButton.setTitle(Strings.POSTS_TITLE, for: .normal)
+            self.infoButton.setTitle(Strings.INFO_TITLE, for: .normal)
             self.postsButton.isHidden = false
             self.infoButton.isHidden = false
             self.separatorView.isHidden = false
@@ -54,6 +56,8 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
             self.TherapistImage.image = nil
             self.TherapistNameLabel.text = nil
             self.TherapistEmailLabel.text = nil
+            self.postsButton.setTitle(nil, for: .normal)
+            self.infoButton.setTitle(nil, for: .normal)
             self.followButton.isHidden = true
             self.messageButton.isHidden = true
             self.bookNowButton.isHidden = true

@@ -9,7 +9,6 @@ import UIKit
 
 class AudioVisualizationView: UIView {
     private let barColor: UIColor = .white.withAlphaComponent(0.35)
-    private let spaceColor: UIColor = .red
     private let numberOfBars: Int = 30
     private let spaceWidth: CGFloat = 2.0
     var amplitudes: [Float] = [] {

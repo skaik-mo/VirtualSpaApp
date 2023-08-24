@@ -107,15 +107,6 @@ class UserModel {
         return dictionary as [String: Any]
     }
 
-    func getDictionaryForPost() -> [String: Any] {
-        let dictionary: [String: Any?] = [
-            "id": self.id,
-            "name": self.name,
-            "image": self.image
-        ]
-        return dictionary as [String: Any]
-    }
-
     static func > (next: UserModel, previous: UserModel) -> Bool {
         if let previousDistance = previous.distance, let nextDistance = next.distance {
             return previousDistance > nextDistance

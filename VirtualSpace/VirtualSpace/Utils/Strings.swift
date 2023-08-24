@@ -16,9 +16,6 @@ class Strings {
     static let ALERT_TITLE = "Alert"._localizedKey
     static let CANCEL_TITLE = "Cancel"._localizedKey
     static let NETWORK_ERROR_TITLE = "It seems that there is no internet connection."._localizedKey
-    static let PERMISSION_DENIED_TITLE = "Microphone Permission Denied"._localizedKey
-    static let PERMISSION_DENIED_MESSAGE = "Please grant microphone permission to use this feature. After changing the permission, please restart the app."._localizedKey
-    static let SETTINGS_TITLE = "Settings"._localizedKey
 
     // MARK: - Validators
     static let INVALID_VALUE_MESSAGE = "{field} field is required"._localizedKey
@@ -99,7 +96,6 @@ class Strings {
     static let BIO_TITLE = "Bio"._localizedKey
     static let SAVE_TITLE = "Save"._localizedKey
     static let ADD_PHOTO_MESSSAGE = "Please add photo"._localizedKey
-    static let ADD_COVER_PHOTO_MESSSAGE = "Please add cover photo"._localizedKey
     static let EDITED_SUCCESSFULLY_MESSAGE = "Edited successfully"._localizedKey
 
     // MARK: - Change Password

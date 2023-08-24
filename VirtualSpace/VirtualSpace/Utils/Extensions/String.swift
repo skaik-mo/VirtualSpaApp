@@ -15,14 +15,6 @@ extension String {
         return UIColor.init(named: self) ?? UIColor.init(hexString: self)
     }
 
-    var _color: UIColor {
-        return UIColor.init(named: self) ?? UIColor.init(hexString: self)
-    }
-
-    var _colorcg: CGColor {
-        return self._hexColor.cgColor
-    }
-
     var _toImage: UIImage? {
         return UIImage.init(named: self)
     }
@@ -36,15 +28,6 @@ extension String {
 
     var _isValidValue: Bool {
         return !self._removeWhiteSpace.isEmpty
-    }
-
-    // if emailTest == true
-    // This is a valid email such as "Example@gmail.com".
-    var _isEmailValid: Bool {
-        let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-
-        let emailTest = NSPredicate(format: "SELF MATCHES %@", emailFormat)
-        return emailTest.evaluate(with: self)
     }
 
     // If the value is invalid, the output default value will be 0
