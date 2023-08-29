@@ -26,7 +26,7 @@ class MainTabBarController: UITabBarController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         indicatorView?.indicatorWidth = self.tabBar.frame.width / CGFloat(self.tabBar.items?.count ?? 0)
-        indicatorView?.indicatorAnimate(0)
+        indicatorView?.indicatorAnimate(self.selectedIndex)
     }
 
 }
