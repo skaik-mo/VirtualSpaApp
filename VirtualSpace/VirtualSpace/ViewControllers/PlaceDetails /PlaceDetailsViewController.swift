@@ -70,8 +70,14 @@ class PlaceDetailsViewController: UIViewController {
         super.viewWillAppear(animated)
         self.isStillInVC = true
         guard let navigationController = self.navigationController as? MainNavigationController else { return }
-        navigationController.backgroundColor = .clear
-        navigationController.shadowColor = .clear
+        if #available(iOS 15.0, *) {
+            navigationController.backgroundColor = .clear
+            navigationController.shadowColor = .clear
+        } else {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithTransparentBackground()
+            navigationController.navigationBar.standardAppearance = navBarAppearance
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
