@@ -81,14 +81,14 @@ private extension SignInViewController {
     }
 
     func setUpData() {
-        self.signUpButton.titleLabel?.text = Strings.SIGN_UP
+        self.signUpButton.title = Strings.SIGN_UP
         self.signInLabel.text = Strings.SIGN_IN
         self.descriptionLabel.text = Strings.SIGN_IN_PLACEHOLER
         self.emailTextField.title = Strings.EMAIL_TITLE
         self.passwordTextField.title = Strings.PASSWORD_TITLE
         self.passwordTextField.placeholder = Strings.PASSWORD_TITLE
-        self.signInButton.titleLabel?.text = Strings.SIGN_IN
-        self.forgotPasswordButton.titleLabel?.text = Strings.FORGOT_TITLE
+        self.signInButton.title = Strings.SIGN_IN
+        self.forgotPasswordButton.title = Strings.FORGOT_TITLE
     }
 
 }

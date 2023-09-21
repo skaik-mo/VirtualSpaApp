@@ -98,7 +98,7 @@ private extension UserDetailsViewController {
         self.userImage.fetchImage(user.image, .ic_placeholder2)
         self.userNameLabel.text = user.name
         self.userEmailLabel.text = user.email
-        self.messageButton.titleLabel?.text = Strings.MESSAGE_TITLE
+        self.messageButton.title = Strings.MESSAGE_TITLE
     }
 
     func fetchData() {
@@ -137,10 +137,10 @@ private extension UserDetailsViewController {
 
     func setCustomizeFriendButton() {
         if friend == nil {
-            self.friendButton.titleLabel?.text = Strings.ADD_TITLE
+            self.friendButton.title = Strings.ADD_TITLE
             self.friendButton.applyButtonStyle(.Primary(40))
         } else {
-            self.friendButton.titleLabel?.text = Strings.UNFRIEND_TITLE
+            self.friendButton.title = Strings.UNFRIEND_TITLE
             self.friendButton.applyButtonStyle(.SecondaryLightPurple(40))
         }
     }

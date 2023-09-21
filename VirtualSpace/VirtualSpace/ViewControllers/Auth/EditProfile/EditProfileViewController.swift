@@ -88,7 +88,7 @@ private extension EditProfileViewController {
         self.authEmailTextField.title = Strings.EMAIL_TITLE
         self.authPhoneTextField.title = Strings.PHONE_NUM_TITLE
         self.bioLabel.text = Strings.BIO_TITLE
-        self.saveButton.titleLabel?.text = Strings.SAVE_TITLE
+        self.saveButton.title = Strings.SAVE_TITLE
 
         if let image = auth?.image, image._isValidValue {
             self.authImage.fetchImage(image, .ic_placeholder)

@@ -94,14 +94,14 @@ class TherapistHeaderTableViewCell: GeneralTableViewHeaderFooterView {
     private func setTitleButtons() {
         debugPrint(#function)
         if follow != nil {
-            self.followButton.titleLabel?.text = Strings.FOLLOWING_TITLE
+            self.followButton.title = Strings.FOLLOWING_TITLE
             self.followButton.applyButtonStyle(.OutlinedPurple(40))
         } else {
-            self.followButton.titleLabel?.text = Strings.FOLLOW_TITLE
+            self.followButton.title = Strings.FOLLOW_TITLE
             self.followButton.applyButtonStyle(.Primary(40))
         }
-        self.messageButton.titleLabel?.text = Strings.MESSAGE_TITLE
-        self.bookNowButton.titleLabel?.text = Strings.BOOK_NOW_TITLE
+        self.messageButton.title = Strings.MESSAGE_TITLE
+        self.bookNowButton.title = Strings.BOOK_NOW_TITLE
         self.messageButton.applyButtonStyle(.OutlinedPurple(40))
         self.bookNowButton.applyButtonStyle(.SecondaryLightPurple(40))
         self.followButton.isHidden = false

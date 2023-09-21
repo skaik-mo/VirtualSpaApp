@@ -27,7 +27,7 @@ class FriendTableViewCell: GeneralTableViewCell {
             self.authImage.image = nil
             self.authNameLabel.text = nil
         }
-        self.friendButton.titleLabel?.text = Strings.UNFRIEND_TITLE
+        self.friendButton.title = Strings.UNFRIEND_TITLE
         self.friendButton.applyButtonStyle(.SecondaryLightPurple())
     }
 

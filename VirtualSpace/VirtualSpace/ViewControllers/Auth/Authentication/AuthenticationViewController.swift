@@ -67,7 +67,7 @@ private extension AuthenticationViewController {
     func setUpData() {
         self.titleLabel.text = Strings.VIRTUAL_SPA_TITLE
         self.subTitleLabel.text =  Strings.LOREM_IPSUM_TITLE
-        self.signInButton.titleLabel?.text = Strings.SIGN_IN
-        self.signUpButton.titleLabel?.text = Strings.SIGN_UP
+        self.signInButton.title = Strings.SIGN_IN
+        self.signUpButton.title = Strings.SIGN_UP
     }
 }

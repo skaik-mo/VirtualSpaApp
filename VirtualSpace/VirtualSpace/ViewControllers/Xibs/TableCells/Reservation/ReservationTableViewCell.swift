@@ -38,13 +38,13 @@ class ReservationTableViewCell: GeneralTableViewCell {
     private func setStatus(_ status: ReservationStatus) {
         switch status {
         case .Pending:
-            self.reservationButton.titleLabel?.text = Strings.PENDING_TITLE
+            self.reservationButton.title = Strings.PENDING_TITLE
             self.reservationButton.applyButtonStyle(.SecondaryLightGray(28))
         case .Accept:
-            self.reservationButton.titleLabel?.text = Strings.ACCEPTED_TITLE
+            self.reservationButton.title = Strings.ACCEPTED_TITLE
             self.reservationButton.applyButtonStyle(.SecondaryGreen)
         case .Reject:
-            self.reservationButton.titleLabel?.text = Strings.REJECTED_TITLE
+            self.reservationButton.title = Strings.REJECTED_TITLE
             self.reservationButton.applyButtonStyle(.SecondaryRed)
         }
     }

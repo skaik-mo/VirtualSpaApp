@@ -19,6 +19,17 @@ extension UIButton {
         }
     }
 
+    var title: String? {
+        get {
+            return currentTitle
+        }
+        set {
+            UIView.performWithoutAnimation {
+                self.setTitle(newValue, for: .normal)
+            }
+        }
+    }
+
     func applyButtonStyle(_ style: GlobalConstants.ButtonStyle) {
         let height = style.height
         NSLayoutConstraint.activate([
@@ -33,8 +44,9 @@ extension UIButton {
     }
 
     func _setAttributedTitle(_ style: GlobalConstants.ButtonStyle) {
-        let attribute = NSAttributedString(string: self.titleLabel?.text ?? "", attributes: [NSAttributedString.Key.foregroundColor: style.titleColor, NSAttributedString.Key.font: style.font])
-        self.setAttributedTitle(attribute, for: .normal)
+        let attribute = NSAttributedString(string: self.title ?? "", attributes: [NSAttributedString.Key.font: style.font])
+        setAttributedTitle(attribute, for: .normal)
+        tintColor = style.titleColor
     }
 
     func _underline() {

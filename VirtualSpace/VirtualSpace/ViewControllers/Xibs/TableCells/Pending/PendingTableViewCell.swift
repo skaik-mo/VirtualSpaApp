@@ -22,8 +22,8 @@ class PendingTableViewCell: GeneralTableViewCell {
     }
 
     override func configureCell() {
-        self.acceptButton.titleLabel?.text = Strings.ACCEPT_TITLE
-        self.rejectButton.titleLabel?.text = Strings.REJECT_TITLE
+        self.acceptButton.title = Strings.ACCEPT_TITLE
+        self.rejectButton.title = Strings.REJECT_TITLE
         self.acceptButton.applyButtonStyle(.SecondaryGreen)
         self.rejectButton.applyButtonStyle(.SecondaryRed)
         if let object = object as? Reservation {

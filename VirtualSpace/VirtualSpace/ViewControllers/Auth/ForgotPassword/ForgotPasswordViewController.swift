@@ -65,7 +65,7 @@ private extension ForgotPasswordViewController {
         self.forgotPasswordLabel.text = Strings.FORGOT_PASSWORD_TITLE
         self.descriptionLabel.text = Strings.FILL_DATA_TITLE
         self.emailTextField.title = Strings.EMAIL_TITLE
-        self.sendButton.titleLabel?.text = Strings.SEND_TITLE
+        self.sendButton.title = Strings.SEND_TITLE
     }
 
 }

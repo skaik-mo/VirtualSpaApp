@@ -21,7 +21,6 @@ class Reachability {
             }
             return false
         }
-        debugPrint("Connected")
         return true
     }
 

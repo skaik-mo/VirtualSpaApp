@@ -80,7 +80,7 @@ private extension BookNowViewController {
         self.selectdateLabel.text = Strings.SELECT_DATE_TITLE
         self.date = Date()
         self.dateLabel.text = self.date?._stringDate
-        self.submitButton.titleLabel?.text = Strings.SUBMIT_TITLE
+        self.submitButton.title = Strings.SUBMIT_TITLE
     }
 
 }

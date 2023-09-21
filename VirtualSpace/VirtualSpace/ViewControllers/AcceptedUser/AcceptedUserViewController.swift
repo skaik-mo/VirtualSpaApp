@@ -81,7 +81,7 @@ private extension AcceptedUserViewController {
     }
 
     func setUpData() {
-        self.messageButton.titleLabel?.text = Strings.MESSAGE_TITLE
+        self.messageButton.title = Strings.MESSAGE_TITLE
         self.backgroundImage.fetchImage(reservationUserCoverImage, .ic_placeholder)
         self.authImage.fetchImage(reservationUserImage, .ic_placeholder2)
         self.authNameLabel.text = reservationUserName

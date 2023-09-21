@@ -99,18 +99,18 @@ private extension SignUpViewController {
     }
 
     func setUpData() {
-        self.signInButton.titleLabel?.text = Strings.SIGN_IN
+        self.signInButton.title = Strings.SIGN_IN
         self.signUpLabel.text = Strings.SIGN_UP
         self.descriptionLabel.text = Strings.FILL_DATA_TITLE
-        self.userButton.titleLabel?.text = Strings.USER_TITLE
+        self.userButton.title = Strings.USER_TITLE
         self.nameTextField.title = Strings.NAME_TITLE
         self.emailTextField.title = Strings.EMAIL_TITLE
         self.phoneTextField.title = Strings.PHONE_NUM_TITLE
         self.phoneTextField.countryCode = "US"
         self.passwordTextField.title = Strings.PASSWORD_TITLE
         self.passwordTextField.placeholder = Strings.PASSWORD_TITLE
-        self.busniessButton.titleLabel?.text = Strings.BUSINESS_TITLE
-        self.signUpButton.titleLabel?.text = Strings.SIGN_UP
+        self.busniessButton.title = Strings.BUSINESS_TITLE
+        self.signUpButton.title = Strings.SIGN_UP
         self.type = .User
     }
 

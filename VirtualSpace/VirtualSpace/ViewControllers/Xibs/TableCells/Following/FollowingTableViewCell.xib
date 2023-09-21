@@ -34,21 +34,21 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="0AO-U8-p9Q">
-                                <rect key="frame" x="66" y="15.000000000000004" width="254" height="48.333333333333343"/>
+                                <rect key="frame" x="66" y="15" width="254" height="44"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6r7-JQ-s1l">
-                                        <rect key="frame" x="0.0" y="0.0" width="254" height="34.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="254" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eee-NF-I3E">
-                                                <rect key="frame" x="0.0" y="0.0" width="42" height="34.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                                 <color key="textColor" name="#000000"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxv-3U-0Jm">
-                                                <rect key="frame" x="163" y="0.0" width="75" height="34.333333333333336"/>
+                                                <rect key="frame" x="192" y="0.0" width="46" height="30"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                 <connections>
                                                     <action selector="followAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Xai-ud-QC4"/>
                                                 </connections>
@@ -57,7 +57,7 @@
                                         <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="16"/>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fbg-LZ-Pvz">
-                                        <rect key="frame" x="0.0" y="47.333333333333336" width="254" height="1"/>
+                                        <rect key="frame" x="0.0" y="43" width="254" height="1"/>
                                         <color key="backgroundColor" name="#F2F2F2"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="fQP-ld-oAf"/>

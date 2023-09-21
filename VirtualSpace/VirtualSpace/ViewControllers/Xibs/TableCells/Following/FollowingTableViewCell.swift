@@ -24,15 +24,15 @@ class FollowingTableViewCell: GeneralTableViewCell {
         if let object = object as? Follow, let user = object.user {
             self.authImage.fetchImage(user.image, .ic_placeholder)
             self.authNameLabel.text = user.name
-            self.followingButton.titleLabel?.text = Strings.FOLLOWING_TITLE
+            self.followingButton.title = Strings.FOLLOWING_TITLE
             self.followingButton.isHidden = false
+            self.followingButton.applyButtonStyle(.SecondaryLightPurple())
         } else {
             self.authImage.image = nil
             self.authNameLabel.text = nil
-            self.followingButton.titleLabel?.text = nil
+            self.followingButton.title = nil
             self.followingButton.isHidden = true
         }
-        self.followingButton.applyButtonStyle(.SecondaryLightPurple())
     }
 
     @IBAction func followAction(_ sender: Any) {

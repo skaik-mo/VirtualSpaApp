@@ -34,35 +34,33 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="eWp-kE-0K8">
-                                <rect key="frame" x="66" y="15" width="254" height="44"/>
+                                <rect key="frame" x="66" y="15.000000000000004" width="254" height="48.333333333333343"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZE4-PZ-Dtu">
-                                        <rect key="frame" x="0.0" y="0.0" width="254" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="254" height="34.333333333333336"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYZ-Ua-N9G">
-                                                <rect key="frame" x="0.0" y="0.0" width="35" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="42" height="34.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                                 <color key="textColor" name="#000000"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZc-a0-7va">
-                                                <rect key="frame" x="163" y="0.0" width="75" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4v-dS-XAy">
+                                                <rect key="frame" x="163" y="0.0" width="75" height="34.333333333333336"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="75" id="vnx-Hg-sJn"/>
+                                                    <constraint firstAttribute="width" constant="75" id="31z-jY-bv9"/>
                                                 </constraints>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="title">
-                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                 <connections>
-                                                    <action selector="inviteAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="L5W-P2-N2X"/>
+                                                    <action selector="inviteAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="BOR-1z-oBC"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="0.0" bottom="0.0" trailing="16"/>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0RA-QG-BvM">
-                                        <rect key="frame" x="0.0" y="43" width="254" height="1"/>
+                                        <rect key="frame" x="0.0" y="47.333333333333336" width="254" height="1"/>
                                         <color key="backgroundColor" name="#F2F2F2"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="D68-eb-dfr"/>
@@ -86,7 +84,7 @@
             <connections>
                 <outlet property="authImage" destination="HbV-ks-req" id="5Sn-uX-FnU"/>
                 <outlet property="authNameLabel" destination="MYZ-Ua-N9G" id="3Pt-kA-lmD"/>
-                <outlet property="inviteButton" destination="zZc-a0-7va" id="ZpE-La-4GP"/>
+                <outlet property="inviteButton" destination="y4v-dS-XAy" id="mhi-Wv-07D"/>
             </connections>
             <point key="canvasLocation" x="-356" y="-35"/>
         </tableViewCell>

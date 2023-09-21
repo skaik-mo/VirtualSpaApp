@@ -94,7 +94,7 @@ private extension NewPostViewController {
         self.newPostLabel.text = Strings.NEW_POST_TITLE
         self.authImage.fetchImage(user?.image, .ic_placeholder)
         self.postImage.image = nil
-        self.postButton.titleLabel?.text = Strings.POST_TITLE
+        self.postButton.title = Strings.POST_TITLE
     }
 
     func setTextPlaceholder() {

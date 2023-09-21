@@ -74,7 +74,7 @@ private extension ChangePasswordViewController {
         self.newPassworTextField.placeholder = Strings.PASSWORD_TITLE
         self.repeatPassworTextField.title = Strings.REPEAT_PASS_TITLE
         self.repeatPassworTextField.placeholder = Strings.PASSWORD_TITLE
-        self.saveButton.titleLabel?.text = Strings.SAVE_TITLE
+        self.saveButton.title = Strings.SAVE_TITLE
     }
 
     func fetchData() {
